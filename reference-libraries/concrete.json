@@ -1,0 +1,18 @@
+{
+  "vertical": "concrete",
+  "references": [
+    {
+      "url": "https://agcconcrete.com/",
+      "notes": "Native reference for the concrete vertical — captures the aesthetic MLA wants. Type-driven layout, editorial section rhythm, earth-tone palette, real project photography, fixed section order. No gradients / glass morphism / purple accents.",
+      "tags": ["editorial", "type-driven", "earth-tones", "real-photography", "fixed-section-order", "native-vertical"]
+    }
+  ],
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic construction stock photo",
+    "handshake stock photo"
+  ]
+}

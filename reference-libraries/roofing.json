@@ -1,0 +1,19 @@
+{
+  "vertical": "roofing",
+  "references": [
+    {
+      "url": "https://agcconcrete.com/",
+      "notes": "Type-driven layout, editorial section rhythm, earth-tone palette, real project photography, no gradient hero, no glass morphism, no purple accents. Reference for visual DNA — apply to roofing vertical (adjust palette to reds/rich neutrals as appropriate).",
+      "tags": ["editorial", "type-driven", "earth-tones", "real-photography", "fixed-section-order"]
+    }
+  ],
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic construction stock photo",
+    "handshake stock photo",
+    "diverse-team-in-hardhats stock photo"
+  ]
+}
