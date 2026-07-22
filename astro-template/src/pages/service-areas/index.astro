@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry, getCollection } from 'astro:content';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import CTA from '../../components/CTA.astro';
+import ContactBlock from '../../components/ContactBlock.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/service-areas' }];
+---
+<BaseLayout
+  title={`Service Areas — ${site.business_name}`}
+  description={`${site.business_name} proudly serves ${areas.length} areas across ${site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/service-areas"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <section class="areas-index">
+    <div class="container">
+      <h1>Service Areas</h1>
+      <div class="grid">
+        {areas.map((a) => (
+          <a href={`/${a.slug}`} class="card">
+            <h2>{a.data.name}, {a.data.state}</h2>
+            {a.data.local_context && <p>{a.data.local_context}</p>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTA headline="Not sure if we serve you?" />
+  <ContactBlock />
+</BaseLayout>
+<style>
+  .areas-index { padding: var(--space-4) 0 var(--space-5); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
+  .card { display: block; padding: var(--space-3); background: var(--color-surface); border-radius: var(--radius-md); text-decoration: none; }
+  .card h2 { margin: 0 0 var(--space-1); font-size: 1.25rem; }
+  .card p { color: var(--color-muted); margin: 0; }
+</style>

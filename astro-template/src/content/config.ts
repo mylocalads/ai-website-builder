@@ -17,13 +17,27 @@ const services = defineCollection({
   }),
 });
 
+// v2.2: service_areas entries resolve at the flat root URL `/{filename-slug}`
+// via `src/pages/[area].astro`. The filename MUST match the pattern
+// `city-state.md` with a two-letter lowercase state (e.g. `denver-co.md`,
+// `miami-fl.md`) since Task 10 removed the `slug` field from the schema and
+// Astro derives the entry slug from the filename. Reserved top-level slugs
+// (about, services, service-areas, contact, pricing, our-work, privacy,
+// terms, accessibility, 404, _astro, sitemap-index.xml, sitemap-0.xml,
+// robots.txt) MUST NOT be used — the `[area].astro` route enforces this
+// at build time in getStaticPaths.
 const service_areas = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
     county: z.string().optional(),
     state: z.string(),
-    state_abbr: z.string().length(2).optional(),
+    state_abbr: z.string()
+      .length(2)
+      .refine((v) => /^[a-z]{2}$/.test(v), {
+        message: 'state_abbr must be two lowercase letters (e.g. "co", "fl") to match the filename slug convention',
+      })
+      .optional(),
     neighborhoods: z.array(z.string()).default([]),
     local_context: z.string().optional(),
     order: z.number().default(0),
