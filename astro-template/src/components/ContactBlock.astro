@@ -9,8 +9,9 @@ const site = (await getEntry('site', 'config')).data as any;
       <p><a href={`tel:${site.phone}`}>{site.phone_display}</a></p>
       {site.email && <p><a href={`mailto:${site.email}`}>{site.email}</a></p>}
       <address>
+        <strong>{site.business_name}</strong><br />
         {site.address.street && <>{site.address.street}<br /></>}
-        {site.address.city}, {site.address.state} {site.address.postal ?? ''}
+        {site.address.city}, {site.address.state}{site.address.postal ? ` ${site.address.postal}` : ''}
       </address>
     </div>
     {site.hours && (
