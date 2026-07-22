@@ -11,6 +11,10 @@ const services = defineCollection({
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     hero_photo: z.string().url().optional(),
     order: z.number().default(0),
+    gallery: z.array(z.object({
+      photo: z.string().url(),
+      alt: z.string(),
+    })).default([]),
   }),
 });
 
@@ -21,9 +25,14 @@ const service_areas = defineCollection({
     slug: z.string(),
     county: z.string().optional(),
     state: z.string(),
+    state_abbr: z.string().length(2).optional(),
     neighborhoods: z.array(z.string()).default([]),
     local_context: z.string().optional(),
     order: z.number().default(0),
+    gallery: z.array(z.object({
+      photo: z.string().url(),
+      alt: z.string(),
+    })).default([]),
   }),
 });
 
@@ -70,7 +79,40 @@ const site = defineCollection({
       years_in_business: z.number().optional(),
       social: z.record(z.string().url()).default({}),
       reference_urls: z.array(z.string().url()).default([]),
+      // DEPRECATED (v2.2): section order is fixed per page type; this field is no longer read.
       section_rhythm: z.array(z.string()).default([]),
+      partners: z.array(z.object({
+        name: z.string(),
+        logo_url: z.string().url(),
+        link_url: z.string().url().optional(),
+      })).default([]),
+      why_choose_us: z.array(z.object({
+        icon: z.string(),
+        title: z.string(),
+        description: z.string(),
+      })).default([]),
+      financing: z.object({
+        enabled: z.boolean().default(false),
+        headline: z.string().optional(),
+        description: z.string().optional(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+        logo_url: z.string().url().optional(),
+      }).default({ enabled: false }),
+      us_vs_them: z.object({
+        enabled: z.boolean().default(false),
+        headline: z.string().optional(),
+        us_label: z.string().optional(),
+        them_label: z.string().optional(),
+        rows: z.array(z.object({ us: z.string(), them: z.string() })).default([]),
+      }).default({ enabled: false, rows: [] }),
+      gallery: z.array(z.object({
+        title: z.string().optional(),
+        location: z.string().optional(),
+        photo: z.string().url(),
+        alt: z.string(),
+        description: z.string().optional(),
+      })).default([]),
       compliance: z.object({
         ada: z.boolean().default(true),
         gdpr: z.boolean().default(true),
