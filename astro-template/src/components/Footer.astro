@@ -1,0 +1,61 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand">{site.business_name}</div>
+        <p>{site.tagline}</p>
+        <address>
+          {site.address.street && <>{site.address.street}<br /></>}
+          {site.address.city}, {site.address.state} {site.address.postal ?? ''}
+        </address>
+        <p><a href={`tel:${site.phone}`}>{site.phone_display}</a></p>
+        {site.email && <p><a href={`mailto:${site.email}`}>{site.email}</a></p>}
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>{services.map((s) => <li><a href={`/services/${s.data.slug}`}>{s.data.title}</a></li>)}</ul>
+      </div>
+      <div>
+        <h3>Service Areas</h3>
+        <ul>{areas.map((a) => <li><a href={`/service-areas/${a.data.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/our-work">Our Work</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <ul>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/accessibility">Accessibility Statement</a></li>
+      </ul>
+      <p>© {year} {site.legal_name ?? site.business_name}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { background: var(--color-surface); padding: var(--space-5) 0 var(--space-3); margin-top: var(--space-5); }
+  .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+  .brand { font-family: var(--font-display); font-size: 1.15rem; }
+  h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1); }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 0.25rem 0; }
+  address { font-style: normal; }
+  .footer-legal { border-top: 1px solid rgba(0,0,0,0.08); padding-top: var(--space-2); margin-top: var(--space-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.875rem; color: var(--color-muted); }
+  .footer-legal ul { display: flex; gap: var(--space-3); }
+  @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
+</style>

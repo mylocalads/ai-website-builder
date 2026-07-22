@@ -1,0 +1,51 @@
+---
+import { getEntry, getCollection } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+---
+<header class="site-header">
+  <div class="container header-row">
+    <a href="/" class="brand" aria-label={`${site.business_name} — Home`}>{site.business_name}</a>
+    <nav aria-label="Primary">
+      <ul class="nav-list">
+        <li class="has-menu">
+          <a href="/services" aria-haspopup="true">Services ▾</a>
+          <ul class="submenu">
+            {services.map((s) => <li><a href={`/services/${s.data.slug}`}>{s.data.title}</a></li>)}
+            <li><a href="/services">All services</a></li>
+          </ul>
+        </li>
+        <li class="has-menu">
+          <a href="/service-areas" aria-haspopup="true">Service Areas ▾</a>
+          <ul class="submenu">
+            {areas.map((a) => <li><a href={`/service-areas/${a.data.slug}`}>{a.data.name}</a></li>)}
+            <li><a href="/service-areas">All areas</a></li>
+          </ul>
+        </li>
+        <li><a href="/our-work">Our Work</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href={`tel:${site.phone}`} class="phone-cta">{site.phone_display}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<style>
+  .site-header { border-bottom: 1px solid var(--color-surface); position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  .header-row { display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; gap: var(--space-3); }
+  .brand { font-family: var(--font-display); font-size: 1.25rem; text-decoration: none; }
+  .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: center; }
+  .nav-list a { text-decoration: none; }
+  .has-menu { position: relative; }
+  .submenu {
+    position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--color-bg);
+    border: 1px solid var(--color-surface); padding: var(--space-1) 0; margin: 0; list-style: none;
+    display: none; box-shadow: 0 4px 14px rgba(0,0,0,0.08); border-radius: var(--radius-sm);
+  }
+  .has-menu:hover .submenu, .has-menu:focus-within .submenu { display: block; }
+  .submenu li a { display: block; padding: 0.5rem var(--space-2); }
+  .phone-cta { background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-sm); }
+  @media (max-width: 900px) { .nav-list li:not(.phone-cta-item) { display: none; } .phone-cta { display: inline-block; } }
+</style>
