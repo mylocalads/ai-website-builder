@@ -68,12 +68,7 @@ const site = defineCollection({
       insured: z.boolean().default(false),
       bonded: z.boolean().default(false),
       years_in_business: z.number().optional(),
-      social: z.object({
-        google_maps: z.string().url().optional(),
-        facebook: z.string().url().optional(),
-        instagram: z.string().url().optional(),
-        yelp: z.string().url().optional(),
-      }).default({}),
+      social: z.record(z.string().url()).default({}),
       reference_urls: z.array(z.string().url()).default([]),
       section_rhythm: z.array(z.string()).default([]),
       compliance: z.object({
