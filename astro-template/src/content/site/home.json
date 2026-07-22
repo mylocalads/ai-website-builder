@@ -1,0 +1,12 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Denver, CO",
+    "headline": "Local roofing you can count on",
+    "subheadline": "Fast, honest, licensed work for Denver homeowners.",
+    "cta_text": "Get a free estimate",
+    "cta_href": "/contact"
+  },
+  "testimonials": [],
+  "faqs": []
+}
