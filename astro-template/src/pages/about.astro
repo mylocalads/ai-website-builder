@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AboutSection from '../components/AboutSection.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTA from '../components/CTA.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const aboutEntry = await getEntry('site', 'about').catch(() => null);
+const story = (aboutEntry?.data as any)?.story ?? `${site.business_name} — locally owned and operated in ${site.address.city}, ${site.address.state}.`;
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const testimonials = (homeEntry?.data as any)?.testimonials ?? [];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
+---
+<BaseLayout
+  title={`About ${site.business_name}`}
+  description={`About ${site.business_name} — serving ${site.address.city}, ${site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/about"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <AboutSection heading={`About ${site.business_name}`} body={story} />
+  <TrustBadges />
+  <Testimonials items={testimonials} />
+  <CTA headline="Work with a local team." />
+  <ContactBlock />
+  <GHLChatWidget />
+</BaseLayout>

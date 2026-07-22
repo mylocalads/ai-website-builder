@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={pricing.intro}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <section class="pricing-hero">
+    <div class="container">
+      <h1>Pricing</h1>
+      <p>{pricing.intro}</p>
+    </div>
+  </section>
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+  <Financing />
+  <FAQ items={faqs} />
+  <CTA headline="Ready to talk pricing?" />
+  <ContactBlock />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-4) 0 var(--space-2); }
+  .pricing-hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
+  .pricing-hero p { color: var(--color-muted); font-size: 1.05rem; max-width: 45rem; }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+</style>
