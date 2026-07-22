@@ -7,7 +7,7 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
     <h2>Our services</h2>
     <div class="grid">
       {services.map((s) => (
-        <a href={`/services/${s.data.slug}`} class="card">
+        <a href={`/services/${s.slug}`} class="card">
           <h3>{s.data.title}</h3>
           <p>{s.data.short_description}</p>
         </a>

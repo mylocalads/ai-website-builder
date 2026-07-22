@@ -12,14 +12,14 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
         <li class="has-menu">
           <a href="/services" aria-haspopup="true">Services <span aria-hidden="true">▾</span></a>
           <ul class="submenu">
-            {services.map((s) => <li><a href={`/services/${s.data.slug}`}>{s.data.title}</a></li>)}
+            {services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
             <li><a href="/services">All services</a></li>
           </ul>
         </li>
         <li class="has-menu">
           <a href="/service-areas" aria-haspopup="true">Service Areas <span aria-hidden="true">▾</span></a>
           <ul class="submenu">
-            {areas.map((a) => <li><a href={`/service-areas/${a.data.slug}`}>{a.data.name}</a></li>)}
+            {areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}</a></li>)}
             <li><a href="/service-areas">All areas</a></li>
           </ul>
         </li>

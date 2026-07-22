@@ -21,11 +21,11 @@ const year = new Date().getFullYear();
       </div>
       <div>
         <h3>Services</h3>
-        <ul>{services.map((s) => <li><a href={`/services/${s.data.slug}`}>{s.data.title}</a></li>)}</ul>
+        <ul>{services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}</ul>
       </div>
       <div>
         <h3>Service Areas</h3>
-        <ul>{areas.map((a) => <li><a href={`/service-areas/${a.data.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
+        <ul>{areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
       </div>
       <div>
         <h3>Company</h3>

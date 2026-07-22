@@ -7,7 +7,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
     <h2>Our service area</h2>
     <ul class="area-list">
       {areas.map((a) => (
-        <li><a href={`/${a.data.slug}`}>{a.data.name}, {a.data.state}</a></li>
+        <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>
       ))}
     </ul>
   </div>

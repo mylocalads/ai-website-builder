@@ -21,7 +21,6 @@ const service_areas = defineCollection({
   type: 'content',
   schema: z.object({
     name: z.string(),
-    slug: z.string(),
     county: z.string().optional(),
     state: z.string(),
     state_abbr: z.string().length(2).optional(),
