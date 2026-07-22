@@ -1,0 +1,12 @@
+{
+  "kind": "config",
+  "business_name": "Example Roofing Co",
+  "legal_name": "Example Roofing LLC",
+  "tagline": "Local roofing you can count on",
+  "phone": "+15555550100",
+  "phone_display": "(555) 555-0100",
+  "address": { "city": "Denver", "state": "CO", "country": "US" },
+  "site_url": "https://REPLACE_SITE_URL",
+  "reference_urls": [],
+  "section_rhythm": ["hero", "trust", "services", "areas", "testimonials", "cta", "faq", "contact"]
+}
