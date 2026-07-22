@@ -1,0 +1,35 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const u = site.us_vs_them ?? { enabled: false, rows: [] };
+---
+{u.enabled && u.rows.length > 0 && (
+  <section class="us-vs-them" aria-label="Comparison">
+    <div class="container">
+      {u.headline && <h2>{u.headline}</h2>}
+      <table>
+        <thead>
+          <tr><th></th><th>{u.us_label ?? 'Us'}</th><th>{u.them_label ?? 'Them'}</th></tr>
+        </thead>
+        <tbody>
+          {u.rows.map((row: { us: string; them: string }, i: number) => (
+            <tr>
+              <td class="row-num">{i + 1}</td>
+              <td class="us">{row.us}</td>
+              <td class="them">{row.them}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+)}
+<style>
+  .us-vs-them { padding: var(--space-5) 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: var(--space-3); }
+  th, td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  th { font-family: var(--font-display); font-size: 1.15rem; }
+  .row-num { color: var(--color-muted); width: 3ch; }
+  .us { background: rgba(0, 0, 0, 0.02); }
+  .them { color: var(--color-muted); }
+</style>

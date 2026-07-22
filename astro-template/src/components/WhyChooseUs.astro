@@ -1,0 +1,29 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const items = site.why_choose_us ?? [];
+---
+{items.length > 0 && (
+  <section class="why-choose-us" aria-label="Why choose us">
+    <div class="container">
+      <h2>Why choose us</h2>
+      <div class="grid">
+        {items.map((i: any) => (
+          <article class="tile">
+            <div class="icon" aria-hidden="true">{i.icon}</div>
+            <h3>{i.title}</h3>
+            <p>{i.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+<style>
+  .why-choose-us { padding: var(--space-5) 0; background: var(--color-surface); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); }
+  .tile { padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-md); }
+  .icon { font-size: 2rem; margin-bottom: var(--space-1); }
+  h3 { margin: 0 0 var(--space-1); font-size: 1.1rem; }
+  p { color: var(--color-muted); margin: 0; }
+</style>
