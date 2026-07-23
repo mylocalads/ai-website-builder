@@ -18,7 +18,7 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
             <div class="col-title">{u.us_label ?? 'US'}</div>
           </div>
           {u.rows.map((row: any) => (
-            <div class="cell">{row.us ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
+            <div class="cell" data-label={row.label}>{row.us ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
           ))}
         </div>
         <div class="col them-col">
@@ -27,7 +27,7 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
             <div class="col-title">{u.them_label ?? 'THEM'}</div>
           </div>
           {u.rows.map((row: any) => (
-            <div class="cell">{row.them ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
+            <div class="cell" data-label={row.label}>{row.them ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
           ))}
         </div>
       </div>
@@ -49,10 +49,12 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
   .cell { padding: var(--space-2); text-align: center; border-top: 1px solid var(--color-surface); min-height: 68px; display: flex; align-items: center; justify-content: center; }
   .check, .x { font-size: 1.75rem; }
   @media (max-width: 780px) {
-    .grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
     .labels { display: none; }
     .col { margin: var(--space-2) 0; }
-    .cell { justify-content: space-between; padding-left: var(--space-3); padding-right: var(--space-3); }
-    .cell::before { content: attr(data-label); font-weight: 500; }
+    .col-header { text-align: center; }
+    .cell { justify-content: space-between; padding-left: var(--space-3); padding-right: var(--space-3); text-align: left; }
+    .cell::before { content: attr(data-label); font-weight: 500; flex: 1; }
+    .cell .check, .cell .x { flex-shrink: 0; }
   }
 </style>

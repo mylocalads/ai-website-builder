@@ -6,13 +6,12 @@ import PartnerBadges from '../components/PartnerBadges.astro';
 import AboutSection from '../components/AboutSection.astro';
 import OurServices from '../components/OurServices.astro';
 import WhyChooseUs from '../components/WhyChooseUs.astro';
-import Testimonials from '../components/Testimonials.astro';
+import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
 import Financing from '../components/Financing.astro';
 import UsVsThem from '../components/UsVsThem.astro';
 import ServiceAreaGrid from '../components/ServiceAreaGrid.astro';
 import Gallery from '../components/Gallery.astro';
 import FAQ from '../components/FAQ.astro';
-import ContactBlock from '../components/ContactBlock.astro';
 import CTA from '../components/CTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
@@ -52,13 +51,12 @@ const faqJsonLd = home.faqs && home.faqs.length > 0 ? {
   <AboutSection heading="About us" body={aboutStory} photo={site.team_photo} photo_alt={`${site.business_name} team`} />
   <OurServices />
   <WhyChooseUs />
-  <Testimonials items={home.testimonials ?? []} />
+  <GHLReviewsWidget />
   <Financing />
   <UsVsThem />
   <ServiceAreaGrid />
   <Gallery items={site.gallery ?? []} heading="Our work" />
   <FAQ items={home.faqs ?? []} />
-  <ContactBlock />
   <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
   <GHLChatWidget />
 </BaseLayout>

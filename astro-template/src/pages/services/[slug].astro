@@ -8,11 +8,10 @@ import AboutSection from '../../components/AboutSection.astro';
 import Gallery from '../../components/Gallery.astro';
 import WhyChooseUs from '../../components/WhyChooseUs.astro';
 import OurServices from '../../components/OurServices.astro';
-import Testimonials from '../../components/Testimonials.astro';
+import GHLReviewsWidget from '../../components/GHLReviewsWidget.astro';
 import Financing from '../../components/Financing.astro';
 import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
 import FAQ from '../../components/FAQ.astro';
-import ContactBlock from '../../components/ContactBlock.astro';
 import CTA from '../../components/CTA.astro';
 import GHLChatWidget from '../../components/GHLChatWidget.astro';
 
@@ -26,8 +25,6 @@ export async function getStaticPaths() {
 
 const { service } = Astro.props;
 const site = (await getEntry('site', 'config')).data as any;
-const home = await getEntry('site', 'home').catch(() => null);
-const testimonials = (home?.data as any)?.testimonials ?? [];
 
 const heroFormUrl = site.crm?.estimate_form_embed_url ?? site.crm?.contact_form_embed_url;
 
@@ -84,11 +81,10 @@ const faqLd = service.data.faqs.length > 0 ? {
   <Gallery items={service.data.gallery ?? []} heading={`${service.data.title} gallery`} />
   <WhyChooseUs />
   <OurServices />
-  <Testimonials items={testimonials} />
+  <GHLReviewsWidget />
   <Financing />
   <ServiceAreaGrid />
   <FAQ items={service.data.faqs ?? []} />
-  <ContactBlock />
   <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
   <GHLChatWidget />
 </BaseLayout>

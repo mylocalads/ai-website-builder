@@ -28,7 +28,6 @@ const heroBg = photo ? `background-image: linear-gradient(rgba(15,20,25,0.55), r
     <div class="hero-form">
       {calendarSnippet ? (
         <div class="calendar-wrap">
-          <SMSConsent />
           <Fragment set:html={calendarSnippet} />
         </div>
       ) : form_embed_url ? (
@@ -42,8 +41,8 @@ const heroBg = photo ? `background-image: linear-gradient(rgba(15,20,25,0.55), r
 </section>
 <style>
   .hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
-  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: center; min-height: 480px; }
-  .hero-copy { max-width: 34rem; }
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: start; min-height: 480px; }
+  .hero-copy { max-width: 34rem; padding-top: var(--space-3); }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; opacity: 0.9; margin: 0 0 var(--space-1); }
   h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
   .sub { font-size: 1.2rem; opacity: 0.95; max-width: 32rem; }

@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CTA from '../../components/CTA.astro';
-import ContactBlock from '../../components/ContactBlock.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
@@ -30,7 +29,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/service
     </div>
   </section>
   <CTA headline="Not sure what you need?" />
-  <ContactBlock />
 </BaseLayout>
 <style>
   .services-index { padding: var(--space-4) 0 var(--space-5); }

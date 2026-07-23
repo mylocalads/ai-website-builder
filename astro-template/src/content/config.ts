@@ -71,6 +71,12 @@ const site = defineCollection({
       legal_name: z.string().optional(),
       logo_url: z.string().url().optional(),
       team_photo: z.string().url().optional(),
+      team_members: z.array(z.object({
+        name: z.string(),
+        role: z.string().optional(),
+        photo: z.string().url(),
+        bio: z.string().optional(),
+      })).default([]),
       tagline: z.string(),
       phone: z.string(),
       phone_display: z.string(),

@@ -18,6 +18,12 @@ const year = new Date().getFullYear();
         </address>
         <p><a href={`tel:${site.phone}`}>{site.phone_display}</a></p>
         {site.email && <p><a href={`mailto:${site.email}`}>{site.email}</a></p>}
+        {site.hours && (
+          <div class="hours">
+            <strong>Hours</strong>
+            <ul>{Object.entries(site.hours).map(([day, hrs]) => <li><span class="day">{day}:</span> {hrs}</li>)}</ul>
+          </div>
+        )}
       </div>
       <div>
         <h3>Services</h3>
@@ -57,6 +63,10 @@ const year = new Date().getFullYear();
   address { font-style: normal; }
   .footer-legal { border-top: 1px solid rgba(0,0,0,0.08); padding-top: var(--space-2); margin-top: var(--space-3); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-2); font-size: 0.875rem; color: var(--color-muted); }
   .footer-legal ul { display: flex; gap: var(--space-3); }
+  .hours { margin-top: var(--space-2); }
+  .hours ul { list-style: none; padding: 0; margin: var(--space-1) 0 0; font-size: 0.9rem; }
+  .hours li { padding: 0.15rem 0; color: var(--color-muted); }
+  .hours .day { text-transform: capitalize; color: var(--color-text); font-weight: 500; }
   @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
 </style>

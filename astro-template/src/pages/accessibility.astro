@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import ContactBlock from '../components/ContactBlock.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const updated = '2026-07-22';
@@ -38,7 +37,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Accessibility', href: '/ac
     <h2>Feedback</h2>
     <p>If you encounter an accessibility barrier, contact us at {site.phone_display}{site.email ? ` or ${site.email}` : ''}. We aim to respond within 5 business days.</p>
   </article>
-  <ContactBlock />
 </BaseLayout>
 <style>
   .legal { padding: var(--space-4) 0 var(--space-5); max-width: 800px; }

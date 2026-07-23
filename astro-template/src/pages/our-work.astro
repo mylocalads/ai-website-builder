@@ -4,7 +4,6 @@ import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Gallery from '../components/Gallery.astro';
 import CTA from '../components/CTA.astro';
-import ContactBlock from '../components/ContactBlock.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -28,7 +27,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   </section>
   <Gallery items={projects} heading="" />
   <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
-  <ContactBlock />
   <GHLChatWidget />
 </BaseLayout>
 <style>
