@@ -84,13 +84,13 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .mobile-nav summary { cursor: pointer; list-style: none; padding: 0.25rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .mobile-nav summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
   .mobile-nav summary::-webkit-details-marker { display: none; }
-  .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+  .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); max-height: calc(100vh - 96px); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
   .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
-  .mobile-nav nav ul li a { display: block; padding: 0.5rem 0; text-decoration: none; }
-  .mobile-nav .group-heading { font-weight: 700; }
-  .mobile-nav .sub { padding: 0.25rem 0 0.5rem 0; margin: 0 0 0.25rem 0.75rem; border-left: 2px solid var(--color-surface); }
-  .mobile-nav .sub li a { padding: 0.35rem 0 0.35rem 0.75rem; font-size: 0.95rem; color: var(--color-muted); }
-  .mobile-nav .sub .all { font-style: italic; font-size: 0.9rem; }
+  .mobile-nav nav ul li a { display: block; padding: 0.35rem 0; text-decoration: none; line-height: 1.3; }
+  .mobile-nav .group-heading { font-weight: 700; padding: 0.5rem 0 0.25rem; }
+  .mobile-nav .sub { padding: 0; margin: 0 0 0.5rem 0.6rem; border-left: 2px solid var(--color-surface); }
+  .mobile-nav .sub li a { padding: 0.2rem 0 0.2rem 0.6rem; font-size: 0.95rem; color: var(--color-muted); line-height: 1.3; }
+  .mobile-nav .sub .all { font-style: italic; font-size: 0.85rem; }
 
   @keyframes phone-glow {
     0%   { box-shadow: 0 0 0 0 rgba(248,174,168,0.75); }
