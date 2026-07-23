@@ -42,18 +42,28 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
       <nav aria-label="Mobile primary">
         <ul>
           <li class="group">
-            <a href="/services" class="group-heading">Services</a>
-            <ul class="sub">
-              {services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
-              <li><a href="/services" class="all">All services</a></li>
-            </ul>
+            <details class="mobile-submenu">
+              <summary class="group-heading">
+                <span>Services</span>
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ul class="sub">
+                <li><a href="/services" class="all">All services</a></li>
+                {services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+              </ul>
+            </details>
           </li>
           <li class="group">
-            <a href="/service-areas" class="group-heading">Service Areas</a>
-            <ul class="sub">
-              {areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}
-              <li><a href="/service-areas" class="all">All areas</a></li>
-            </ul>
+            <details class="mobile-submenu">
+              <summary class="group-heading">
+                <span>Service Areas</span>
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ul class="sub">
+                <li><a href="/service-areas" class="all">All areas</a></li>
+                {areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}
+              </ul>
+            </details>
           </li>
           <li><a href="/our-work">Our Work</a></li>
           <li><a href="/pricing">Pricing</a></li>
@@ -87,10 +97,15 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); max-height: calc(100vh - 96px); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
   .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
   .mobile-nav nav ul li a { display: block; padding: 0.35rem 0; text-decoration: none; line-height: 1.3; }
-  .mobile-nav .group-heading { font-weight: 700; padding: 0.5rem 0 0.25rem; }
-  .mobile-nav .sub { padding: 0; margin: 0 0 0.5rem 0.6rem; border-left: 2px solid var(--color-surface); }
-  .mobile-nav .sub li a { padding: 0.2rem 0 0.2rem 0.6rem; font-size: 0.95rem; color: var(--color-muted); line-height: 1.3; }
-  .mobile-nav .sub .all { font-style: italic; font-size: 0.85rem; }
+  .mobile-nav .mobile-submenu { border-bottom: 1px solid var(--color-surface); }
+  .mobile-nav .mobile-submenu:last-of-type { border-bottom: 0; }
+  .mobile-nav .mobile-submenu > .group-heading { font-weight: 700; padding: 0.6rem 0; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+  .mobile-nav .mobile-submenu > .group-heading::-webkit-details-marker { display: none; }
+  .mobile-nav .mobile-submenu > .group-heading .chev { color: var(--color-muted); transition: transform 0.2s ease; flex-shrink: 0; }
+  .mobile-nav .mobile-submenu[open] > .group-heading .chev { transform: rotate(180deg); color: var(--color-accent); }
+  .mobile-nav .sub { padding: 0.25rem 0 0.5rem; margin: 0 0 0.5rem 0.6rem; border-left: 2px solid var(--color-surface); }
+  .mobile-nav .sub li a { padding: 0.25rem 0 0.25rem 0.6rem; font-size: 0.95rem; color: var(--color-muted); line-height: 1.3; }
+  .mobile-nav .sub .all { font-weight: 600; color: var(--color-text); }
 
   @keyframes phone-glow {
     0%   { box-shadow: 0 0 0 0 rgba(248,174,168,0.75); }
