@@ -177,32 +177,19 @@ Repeat per partner:
 
 ---
 
-## 12. GHL / CRM Widgets (paste-only)
+## 12. Client-supplied paste-in fields (only three things the client provides)
 
-Paste the FULL HTML/script snippet exactly as GHL gives it. Do NOT rewrite or shorten.
+The operator handles everything else (Meta Pixel setup, GTM, marketing_city override, custom domain, etc.) on the CRM side. The **client only needs to give you these three**:
 
-- **[required for booking] Calendar embed snippet** — the `<iframe>` + `<script>` block from GHL's calendar widget code. Used on the hero and the `/book` page.
-- **[optional] Chat widget snippet** — the `<script>` tag from GHL's chat widget.
-- **[optional] Reviews widget snippet** — the `<script>` + `<iframe>` from GHL's reputation review widget.
-- **[optional] Contact form embed snippet** — the `<iframe>` + `<script>` block for the general contact form. Used on `/contact`.
-- **[optional] Estimate form embed URL** — just the iframe `src` URL (for shorter service-page forms if you want a different form than the calendar).
-- **[optional] Call-tracking script snippet** — GHL number-swap script if you use one.
-- **[optional] Call-tracking display number** — the number shown to visitors if number-swap is active.
+1. **[required] GHL forms, surveys, OR calendar booking widget snippet** — one of the three, whichever the client uses. Paste the FULL `<iframe>` + `<script>` block exactly as GHL gives it. This drives the hero form and the `/book` page.
+2. **[optional] GHL reviews widget snippet** — the `<script>` + `<iframe>` from the client's GHL reputation review widget. If missing, the reviews section on the home page and About page silently self-hides.
+3. **[optional] Tracking phone number** — the number-swap-friendly phone the client wants displayed instead of their real line. If missing, we use the real GBP-listed phone.
+
+Paste each field exactly as delivered. Never rewrite, shorten, or reformat GHL snippets.
 
 ---
 
-## 13. Code Injection (paste-only)
-
-For pixels, analytics, third-party tracking. Site-wide by default; per-page overrides are supported but rarely needed.
-
-- **[optional] `<head>` injection** — Meta Pixel base code, Google Tag Manager, Google Ads gtag, meta verification tags, etc.
-- **[optional] `<body>` start injection** — GTM noscript fallback, etc.
-- **[optional] `<body>` end injection** — chat widgets not covered above, custom scripts, analytics beacons.
-- **Per-page overrides needed?** Rare. If yes, specify which page path + which slot.
-
----
-
-## 14. Pricing Page (optional)
+## 13. Pricing Page (optional)
 
 Leave blank to keep the default sparse pricing page.
 
@@ -212,7 +199,7 @@ Leave blank to keep the default sparse pricing page.
 
 ---
 
-## 15. Legal & Compliance
+## 14. Legal & Compliance
 
 Defaults are on for ADA / GDPR / A2P. Only fill in overrides:
 
@@ -221,7 +208,7 @@ Defaults are on for ADA / GDPR / A2P. Only fill in overrides:
 
 ---
 
-## 16. Domain
+## 15. Domain
 
 - **[optional] Custom domain** — the domain you'll attach to Vercel. If blank, we deploy to `<slug>.vercel.app`.
 
@@ -232,7 +219,6 @@ Defaults are on for ADA / GDPR / A2P. Only fill in overrides:
 Once you've filled this in, hand it back to the AI Website Builder operator along with:
 
 - Direct URLs (not Google Drive links) for every photo, logo, and video field.
-- All GHL widget snippets pasted **exactly** as provided by GoHighLevel — don't reformat.
-- Any Meta Pixel / GTM / analytics IDs already generated on your accounts.
+- The three client-supplied paste-ins from section 12 (GHL forms/surveys/calendar snippet, reviews widget snippet, tracking phone number) — pasted **exactly** as provided by GoHighLevel, no reformatting.
 
 Estimated turnaround: ~1 hour from filled intake → live Vercel URL.

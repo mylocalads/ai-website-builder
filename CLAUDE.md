@@ -46,7 +46,7 @@ For multiple businesses, process each sequentially through the full pipeline wit
 
 ### What to show at each pause:
 
-- **After intake-from-web:** GBP confirmation card (business name, address, phone, website URL) — hard stop until operator confirms. Then aggregated `intake-scraped.json` summary with a scraped ✓ / partial / needs-paste-in table. Explicitly list the fields that STILL need operator paste-in (GHL widget snippets, code_injection, marketing_city override, custom domain).
+- **After intake-from-web:** GBP confirmation card (business name, address, phone, website URL) — hard stop until operator confirms. Then aggregated `intake-scraped.json` summary with a scraped ✓ / partial / needs-paste-in table. Client-supplied paste-ins are narrow: (1) GHL forms/surveys/calendar booking snippet, (2) GHL reviews widget snippet, (3) tracking phone number. Everything else (Meta Pixel/GTM code injection, marketing_city override, custom domain) is operator-configured, not client-provided.
 - **After find-business:** Business found — name, address, phone, email, rating, website URL. Confirm correct business.
 - **After scrape-content:** Pages scraped, key content found (services, testimonials, photos), any gaps.
 - **After local-research:** Pain points, what customers value, how this business stands out, suggested copy angles.
