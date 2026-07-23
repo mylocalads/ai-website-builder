@@ -56,7 +56,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .site-header { border-bottom: 1px solid var(--color-surface); position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
   .header-row { display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; gap: var(--space-3); }
   .brand { font-family: var(--font-display); font-size: 1.25rem; text-decoration: none; flex: 1; display: inline-flex; align-items: center; }
-  .brand-logo { max-height: 66px; width: auto; display: block; }
+  .brand-logo { max-height: 99px; width: auto; display: block; }
   .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: center; }
   .nav-list a { text-decoration: none; }
   .has-menu { position: relative; }
@@ -91,7 +91,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
       animation: phone-glow 1.8s ease-out infinite;
     }
     .brand { flex: 0 1 auto; }
-    .brand-logo { max-height: 54px; }
+    .brand-logo { max-height: 81px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .mobile-phone { animation: none; }
