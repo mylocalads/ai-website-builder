@@ -55,9 +55,10 @@ const heroVideo = video ?? site.default_hero_video;
   .hero-photo { background-size: cover; background-position: center; background-repeat: no-repeat; }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)); z-index: 1; }
   .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: start; min-height: 480px; position: relative; z-index: 2; }
-  .hero-copy { max-width: 34rem; padding-top: var(--space-3); }
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; opacity: 0.9; margin: 0 0 var(--space-1); }
-  h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .hero-copy { max-width: 34rem; padding: var(--space-3) 0 0; text-align: left; }
+  .hero-copy > * { margin-left: 0; padding-left: 0; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; opacity: 0.9; margin: 0 0 var(--space-1); text-align: left; }
+  h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3); text-align: left; margin: 0 0 var(--space-2); }
   .sub { font-size: 1.2rem; opacity: 0.95; max-width: 32rem; }
   .cta { display: inline-block; margin-top: var(--space-2); background: var(--color-accent); color: white; padding: 1rem 1.75rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 1.05rem; }
   .cta:hover { filter: brightness(1.1); }
