@@ -19,7 +19,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   pagePath="/our-work"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="ow-hero">
+  <section class="ow-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
     <div class="container">
       <h1>Our work</h1>
       <p>{intro}</p>
@@ -30,7 +30,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   <GHLChatWidget />
 </BaseLayout>
 <style>
-  .ow-hero { padding: var(--space-4) 0 var(--space-2); }
-  .ow-hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
-  .ow-hero p { color: var(--color-muted); font-size: 1.05rem; max-width: 45rem; }
+  .ow-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .ow-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .ow-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
 </style>

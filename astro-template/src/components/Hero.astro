@@ -15,7 +15,8 @@ export interface Props {
 const { eyebrow, headline, subheadline, cta_text, cta_href, photo, form_embed_url, form_title = 'Book now' } = Astro.props;
 const site = (await getEntry('site', 'config')).data as any;
 const calendarSnippet = site.crm?.calendar_embed_snippet;
-const heroBg = photo ? `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${photo});` : '';
+const heroPhoto = photo ?? site.default_hero_photo;
+const heroBg = heroPhoto ? `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${heroPhoto});` : '';
 ---
 <section class="hero" style={heroBg}>
   <div class="container hero-inner">

@@ -40,6 +40,7 @@ const service_areas = defineCollection({
       .optional(),
     neighborhoods: z.array(z.string()).default([]),
     local_context: z.string().optional(),
+    hero_photo: z.string().url().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
       photo: z.string().url(),
@@ -70,6 +71,7 @@ const site = defineCollection({
       business_name: z.string(),
       legal_name: z.string().optional(),
       logo_url: z.string().url().optional(),
+      default_hero_photo: z.string().url().optional(),
       team_photo: z.string().url().optional(),
       team_members: z.array(z.object({
         name: z.string(),

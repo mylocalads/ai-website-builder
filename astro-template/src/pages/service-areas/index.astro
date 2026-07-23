@@ -15,9 +15,14 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/se
   pagePath="/service-areas"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="areas-index">
+  <section class="areas-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
     <div class="container">
       <h1>Service Areas</h1>
+      <p>Where {site.business_name} shows up.</p>
+    </div>
+  </section>
+  <section class="areas-index">
+    <div class="container">
       <div class="grid">
         {areas.map((a) => (
           <a href={`/${a.slug}`} class="card">
@@ -31,6 +36,9 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/se
   <CTA headline="Not sure if we serve you?" />
 </BaseLayout>
 <style>
+  .areas-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .areas-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); margin-bottom: var(--space-1); }
+  .areas-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; }
   .areas-index { padding: var(--space-4) 0 var(--space-5); }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
   .card { display: block; padding: var(--space-3); background: var(--color-surface); border-radius: var(--radius-md); text-decoration: none; }
