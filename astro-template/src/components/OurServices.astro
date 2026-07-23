@@ -3,54 +3,27 @@ import { getEntry, getCollection } from 'astro:content';
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
 const site = (await getEntry('site', 'config')).data as any;
 const section = site.services_section ?? { eyebrow: 'Our Services' };
-
-function splitTitle(title: string, highlight?: string) {
-  if (!highlight) return { before: '', highlight: '', after: title };
-  const idx = title.toLowerCase().indexOf(highlight.toLowerCase());
-  if (idx === -1) return { before: '', highlight: '', after: title };
-  const actual = title.slice(idx, idx + highlight.length);
-  return {
-    before: title.slice(0, idx),
-    highlight: actual,
-    after: title.slice(idx + highlight.length),
-  };
-}
 ---
 <section id="services" class="our-services" aria-label="Services">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">{section.eyebrow}</p>
-      {(section.heading_lead || section.heading_rest) ? (
-        <h2 class="two-tone">
-          {section.heading_lead && <span class="lead">{section.heading_lead}</span>}
-          {section.heading_lead && section.heading_rest && ' '}
-          {section.heading_rest && <span class="rest">{section.heading_rest}</span>}
-        </h2>
-      ) : (
-        <h2 class="two-tone"><span class="rest">Our services</span></h2>
-      )}
+      <h2>{section.heading_lead ? `${section.heading_lead} ${section.heading_rest ?? ''}`.trim() : 'Our services'}</h2>
       {section.subtitle && <p class="subtitle">{section.subtitle}</p>}
     </div>
     <div class="grid">
-      {services.map((s) => {
-        const parts = splitTitle(s.data.title, s.data.title_highlight);
-        return (
-          <a
-            href={`/services/${s.slug}`}
-            class="card"
-            style={s.data.hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.20) 0%, rgba(15,20,25,0.85) 100%), url(${s.data.hero_photo});`}
-          >
-            <div class="card-inner">
-              <h3 class="tile-title">
-                {parts.before && <span class="tile-rest">{parts.before}</span>}
-                {parts.highlight && <span class="tile-lead">{parts.highlight}</span>}
-                {parts.after && <span class="tile-rest">{parts.after}</span>}
-              </h3>
-              <span class="btn">Learn more</span>
-            </div>
-          </a>
-        );
-      })}
+      {services.map((s) => (
+        <a
+          href={`/services/${s.slug}`}
+          class="card"
+          style={s.data.hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.20) 0%, rgba(15,20,25,0.85) 100%), url(${s.data.hero_photo});`}
+        >
+          <div class="card-inner">
+            <h3 class="tile-title">{s.data.title}</h3>
+            <span class="btn">Learn More</span>
+          </div>
+        </a>
+      ))}
     </div>
   </div>
 </section>
@@ -58,55 +31,21 @@ function splitTitle(title: string, highlight?: string) {
   .our-services { padding: var(--space-5) 0; }
   .section-head { text-align: center; max-width: 780px; margin: 0 auto var(--space-4); }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
-  .two-tone { font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); font-weight: 400; }
-  .two-tone .lead { font-family: var(--font-display); font-style: italic; color: var(--color-accent); font-weight: 500; }
-  .two-tone .rest { font-family: var(--font-display); color: var(--color-text); font-weight: 700; }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); }
   .subtitle { color: var(--color-muted); font-size: 1.05rem; margin: 0; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
   .card {
-    display: block;
-    aspect-ratio: 4 / 3;
-    background: var(--color-surface);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 14px;
-    text-decoration: none;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 8px 28px rgba(15, 20, 25, 0.10), 0 0 0 1px rgba(255,255,255,0.6) inset;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: block; aspect-ratio: 4 / 3; background: var(--color-surface);
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    border-radius: 14px; text-decoration: none; color: white; position: relative; overflow: hidden;
+    box-shadow: 0 8px 22px rgba(15,20,25,0.08);
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
   }
   .card:hover, .card:focus-visible {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(15, 20, 25, 0.18), 0 0 0 1px rgba(255,255,255,0.7) inset;
+    transform: translateY(-5px);
+    box-shadow: 0 18px 42px rgba(15,20,25,0.22), 0 4px 12px rgba(0, 207, 209, 0.15);
   }
-  .card-inner {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-3);
-    text-align: center;
-    gap: var(--space-2);
-  }
-  .tile-title { margin: 0; font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.15; font-weight: 400; }
-  .tile-title .tile-lead { font-family: var(--font-display); font-style: italic; color: var(--color-accent); font-weight: 500; }
-  .tile-title .tile-rest { font-family: var(--font-display); font-weight: 700; color: white; }
-  .btn {
-    display: inline-block;
-    background: var(--color-accent);
-    color: white;
-    padding: 0.7rem 1.2rem;
-    border-radius: var(--radius-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-family: var(--font-body);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
-  }
+  .card-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-3); text-align: center; gap: var(--space-2); }
+  .tile-title { margin: 0; font-family: var(--font-display); font-weight: 700; color: white; font-size: clamp(1.35rem, 2.2vw, 1.9rem); line-height: 1.15; }
+  .btn { display: inline-block; background: var(--color-accent); color: white; padding: 0.7rem 1.4rem; border-radius: var(--radius-sm); font-size: 0.95rem; font-weight: 600; font-family: var(--font-body); letter-spacing: 0.01em; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
 </style>

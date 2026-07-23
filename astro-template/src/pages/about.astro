@@ -34,7 +34,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
     </section>
   )}
 
-  <AboutSection heading="About us" body={story} />
+  <AboutSection eyebrow="About Us" heading="About us" body={story} photo={site.about_photo} photo_alt={`${site.business_name}`} photo_position="right" />
 
   {teamMembers.length > 0 && (
     <section class="team-grid" aria-label="Team members">
@@ -58,7 +58,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
 
   <TrustBadges />
   <GHLReviewsWidget />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
+  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/contact" />
   <GHLChatWidget />
 </BaseLayout>
 <style>

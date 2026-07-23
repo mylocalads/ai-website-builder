@@ -9,16 +9,25 @@ export interface Props {
   cta_text: string;
   cta_href: string;
   photo?: string;
+  video?: string;
   form_embed_url?: string;
   form_title?: string;
 }
-const { eyebrow, headline, subheadline, cta_text, cta_href, photo, form_embed_url, form_title = 'Book now' } = Astro.props;
+const { eyebrow, headline, subheadline, cta_text, cta_href, photo, video, form_embed_url, form_title = 'Book now' } = Astro.props;
 const site = (await getEntry('site', 'config')).data as any;
 const calendarSnippet = site.crm?.calendar_embed_snippet;
 const heroPhoto = photo ?? site.default_hero_photo;
-const heroBg = heroPhoto ? `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${heroPhoto});` : '';
+const heroVideo = video ?? site.default_hero_video;
 ---
-<section class="hero" style={heroBg}>
+<section class="hero">
+  {heroVideo ? (
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster={heroPhoto}>
+      <source src={heroVideo} type="video/mp4" />
+    </video>
+  ) : heroPhoto ? (
+    <div class="hero-photo" style={`background-image: url(${heroPhoto});`}></div>
+  ) : null}
+  <div class="hero-overlay"></div>
   <div class="container hero-inner">
     <div class="hero-copy">
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
@@ -41,8 +50,11 @@ const heroBg = heroPhoto ? `background-image: linear-gradient(rgba(15,20,25,0.55
   </div>
 </section>
 <style>
-  .hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
-  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: start; min-height: 480px; }
+  .hero { padding: var(--space-5) 0; color: white; position: relative; overflow: hidden; }
+  .hero-video, .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+  .hero-photo { background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)); z-index: 1; }
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: start; min-height: 480px; position: relative; z-index: 2; }
   .hero-copy { max-width: 34rem; padding-top: var(--space-3); }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; opacity: 0.9; margin: 0 0 var(--space-1); }
   h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }

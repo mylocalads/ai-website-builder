@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import SectionHead from './SectionHead.astro';
 const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
 ---
 <section id="areas" class="areas" aria-label="Service areas">
   <div class="container">
-    <h2>Our service area</h2>
+    <SectionHead eyebrow="Where We Serve" heading="Our service area" />
     <ul class="area-list">
       {areas.map((a) => (
         <li>

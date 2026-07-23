@@ -5,6 +5,7 @@ const services = defineCollection({
   schema: z.object({
     title: z.string(),
     title_highlight: z.string().optional(),
+    seo_h1: z.string().optional(),
     short_description: z.string(),
     long_description: z.string(),
     icon: z.string().optional(),
@@ -42,6 +43,8 @@ const service_areas = defineCollection({
     neighborhoods: z.array(z.string()).default([]),
     local_context: z.string().optional(),
     hero_photo: z.string().url().optional(),
+    landmark_photo: z.string().url().optional(),
+    landmark_alt: z.string().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
       photo: z.string().url(),
@@ -73,6 +76,8 @@ const site = defineCollection({
       legal_name: z.string().optional(),
       logo_url: z.string().url().optional(),
       default_hero_photo: z.string().url().optional(),
+      default_hero_video: z.string().url().optional(),
+      about_photo: z.string().url().optional(),
       team_photo: z.string().url().optional(),
       team_members: z.array(z.object({
         name: z.string(),
@@ -156,6 +161,7 @@ const site = defineCollection({
         call_tracking_snippet: z.string().optional(),
         call_tracking_number: z.string().optional(),
         calendar_embed_snippet: z.string().optional(),
+        contact_form_snippet: z.string().optional(),
       }).default({ provider: 'ghl' }),
       code_injection: codeInjectionSlots.extend({
         per_page: z.record(codeInjectionSlots).default({}),

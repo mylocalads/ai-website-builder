@@ -78,9 +78,9 @@ const serviceLd = {
   <div class="container"><Breadcrumbs items={crumbs} /></div>
   <Hero
     eyebrow={`${area.data.name}, ${area.data.state}`}
-    headline={`${site.business_name} — Serving ${area.data.name}`}
+    headline={`${site.business_name} — Serving ${area.data.name}, ${area.data.state}`}
     subheadline={area.data.local_context || `Local service across ${area.data.name} and surrounding communities.`}
-    cta_text="Get a free estimate"
+    cta_text="Get Your Free Estimate!"
     cta_href="/contact"
     photo={area.data.hero_photo}
     form_embed_url={heroFormUrl}
@@ -88,9 +88,12 @@ const serviceLd = {
   />
   <PartnerBadges />
   <AboutSection
-    heading={`About our ${area.data.name} location`}
+    eyebrow={`About ${area.data.name}`}
+    heading={`Local roots in ${area.data.name}`}
     body={area.data.local_context || `${site.business_name} proudly serves ${area.data.name} and the surrounding areas with fast, honest, licensed work.`}
-    photo_position="left"
+    photo={area.data.landmark_photo}
+    photo_alt={area.data.landmark_alt ?? `${area.data.name} landmark`}
+    photo_position="right"
   />
   <Gallery items={area.data.gallery ?? []} heading={`${area.data.name} work`} />
   <WhyChooseUs />
@@ -99,6 +102,6 @@ const serviceLd = {
   <Financing />
   <ServiceAreaGrid />
   <FAQ items={homeFaqs} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
+  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/contact" />
   <GHLChatWidget />
 </BaseLayout>

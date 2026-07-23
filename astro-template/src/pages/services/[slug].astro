@@ -62,9 +62,9 @@ const faqLd = service.data.faqs.length > 0 ? {
   <div class="container"><Breadcrumbs items={crumbs} /></div>
   <Hero
     eyebrow={`${site.address.city}, ${site.address.state}`}
-    headline={`${service.data.title} in ${site.address.city}`}
+    headline={service.data.seo_h1 ?? `${service.data.title} in ${site.address.city}, ${site.address.state}`}
     subheadline={service.data.short_description}
-    cta_text="Get a free estimate"
+    cta_text="Get Your Free Estimate!"
     cta_href="/contact"
     photo={service.data.hero_photo}
     form_embed_url={heroFormUrl}
@@ -85,6 +85,6 @@ const faqLd = service.data.faqs.length > 0 ? {
   <Financing />
   <ServiceAreaGrid />
   <FAQ items={service.data.faqs ?? []} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
+  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/contact" />
   <GHLChatWidget />
 </BaseLayout>

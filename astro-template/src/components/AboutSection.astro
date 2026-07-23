@@ -1,18 +1,20 @@
 ---
+import SectionHead from './SectionHead.astro';
 export interface Props {
+  eyebrow?: string;
   heading: string;
   body: string;
   photo?: string;
   photo_alt?: string;
   photo_position?: 'left' | 'right';
 }
-const { heading, body, photo, photo_alt = '', photo_position = 'right' } = Astro.props;
+const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right' } = Astro.props;
 ---
 <section class="about-section" aria-labelledby="about-heading">
   <div class="container">
     <div class={`about-grid ${photo_position === 'left' ? 'photo-left' : ''}`}>
       <div class="about-copy">
-        <h2 id="about-heading">{heading}</h2>
+        <SectionHead eyebrow={eyebrow ?? 'About Us'} heading={heading} align="left" />
         <p>{body}</p>
       </div>
       {photo && <img src={photo} alt={photo_alt} class="about-photo" loading="lazy" />}
@@ -25,8 +27,7 @@ const { heading, body, photo, photo_alt = '', photo_position = 'right' } = Astro
   .about-grid.photo-left { grid-template-areas: 'photo copy'; }
   .about-grid.photo-left .about-copy { grid-area: copy; }
   .about-grid.photo-left .about-photo { grid-area: photo; }
-  .about-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
-  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .about-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
   p { font-size: 1.05rem; line-height: 1.65; color: var(--color-muted); }
   @media (max-width: 780px) { .about-grid, .about-grid.photo-left { grid-template-columns: 1fr; grid-template-areas: none; } }
 </style>

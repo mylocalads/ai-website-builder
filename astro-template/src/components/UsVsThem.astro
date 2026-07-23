@@ -1,12 +1,13 @@
 ---
 import { getEntry } from 'astro:content';
+import SectionHead from './SectionHead.astro';
 const site = (await getEntry('site', 'config')).data as any;
 const u = site.us_vs_them ?? { enabled: false, rows: [] };
 ---
 {u.enabled && u.rows.length > 0 && (
   <section class="us-vs-them" aria-label="Comparison">
     <div class="container">
-      {u.headline && <h2>{u.headline}</h2>}
+      <SectionHead eyebrow="Comparison" heading={u.headline ?? 'Why us'} />
       <div class="grid">
         <div class="labels" aria-hidden="true">
           <div class="corner"></div>

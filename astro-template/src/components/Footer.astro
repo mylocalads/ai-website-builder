@@ -9,7 +9,11 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="brand">{site.business_name}</div>
+        {site.logo_url ? (
+          <img src={site.logo_url} alt={site.business_name} class="footer-logo" />
+        ) : (
+          <div class="brand">{site.business_name}</div>
+        )}
         <p>{site.tagline}</p>
         <address>
           <strong>{site.business_name}</strong><br />
@@ -57,6 +61,7 @@ const year = new Date().getFullYear();
   .site-footer { background: var(--color-surface); padding: var(--space-5) 0 var(--space-3); margin-top: var(--space-5); }
   .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
   .brand { font-family: var(--font-display); font-size: 1.15rem; }
+  .footer-logo { max-height: 60px; width: auto; display: block; margin-bottom: var(--space-2); }
   h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1); }
   ul { list-style: none; padding: 0; }
   ul li { padding: 0.25rem 0; }

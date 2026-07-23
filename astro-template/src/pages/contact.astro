@@ -2,27 +2,32 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Hero from '../components/Hero.astro';
+import SectionHead from '../components/SectionHead.astro';
 import CTA from '../components/CTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
+const formSnippet = site.crm?.contact_form_snippet;
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact' }];
 ---
 <BaseLayout
   title={`Contact ${site.business_name}`}
-  description={`Reach ${site.business_name} in ${site.address.city}, ${site.address.state}. Book a free inspection online or call ${site.phone_display}.`}
+  description={`Reach ${site.business_name} in ${site.address.city}, ${site.address.state}. Send us a message or call ${site.phone_display}.`}
   breadcrumbs={crumbs}
   pagePath="/contact"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <Hero
-    eyebrow={`${site.address.city}, ${site.address.state}`}
-    headline="Get in touch"
-    subheadline="Book a free inspection online, or call us — we reply within one business day."
-    cta_text={site.phone_display}
-    cta_href={`tel:${site.phone}`}
-  />
+  <section class="contact-page">
+    <div class="container">
+      <SectionHead eyebrow="Get In Touch" heading="Send us a message" subtitle="We reply within one business day, usually much faster." />
+      {formSnippet && <div class="form-wrap"><Fragment set:html={formSnippet} /></div>}
+    </div>
+  </section>
   <CTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
   <GHLChatWidget />
 </BaseLayout>
+<style>
+  .contact-page { padding: var(--space-4) 0 var(--space-5); }
+  .form-wrap { max-width: 800px; margin: 0 auto; }
+  .form-wrap iframe { width: 100%; min-height: 1391px; border: 0; }
+</style>

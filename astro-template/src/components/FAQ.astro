@@ -1,4 +1,5 @@
 ---
+import SectionHead from './SectionHead.astro';
 export interface FAQItem { q: string; a: string; }
 export interface Props { items: FAQItem[]; }
 const { items } = Astro.props;
@@ -6,12 +7,17 @@ const { items } = Astro.props;
 {items.length > 0 && (
   <section class="faq" aria-label="Frequently asked questions">
     <div class="container">
-      <h2>Frequently asked</h2>
+      <SectionHead eyebrow="FAQs" heading="Frequently asked" />
       <div class="list">
         {items.map((i) => (
-          <details>
-            <summary>{i.q}</summary>
-            <p>{i.a}</p>
+          <details class="faq-item">
+            <summary>
+              <span class="q">{i.q}</span>
+              <span class="chev" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </summary>
+            <div class="a"><p>{i.a}</p></div>
           </details>
         ))}
       </div>
@@ -19,8 +25,16 @@ const { items } = Astro.props;
   </section>
 )}
 <style>
-  .faq { padding: var(--space-5) 0; }
-  details { border-bottom: 1px solid var(--color-surface); padding: var(--space-2) 0; }
-  summary { font-weight: 600; cursor: pointer; }
-  details[open] summary { margin-bottom: var(--space-1); }
+  .faq { padding: var(--space-5) 0; background: var(--color-surface); }
+  .list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-2); }
+  .faq-item { background: var(--color-bg); border: 1px solid rgba(15,20,25,0.08); border-radius: 12px; box-shadow: 0 2px 10px rgba(15,20,25,0.04); overflow: hidden; transition: box-shadow 0.2s ease, border-color 0.2s ease; }
+  .faq-item:hover { box-shadow: 0 6px 20px rgba(15,20,25,0.08); border-color: rgba(15,20,25,0.14); }
+  .faq-item[open] { box-shadow: 0 6px 20px rgba(15,20,25,0.10); }
+  summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); padding: 1.1rem 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.05rem; list-style: none; color: var(--color-text); }
+  summary::-webkit-details-marker { display: none; }
+  summary::marker { display: none; }
+  .chev { color: var(--color-muted); transition: transform 0.2s ease; display: inline-flex; }
+  .faq-item[open] .chev { transform: rotate(180deg); color: var(--color-accent); }
+  .a { padding: 0 1.5rem 1.25rem; color: var(--color-muted); line-height: 1.65; }
+  .a p { margin: 0; }
 </style>
