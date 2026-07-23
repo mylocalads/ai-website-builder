@@ -6,10 +6,11 @@
 
 You are an autonomous website builder agent. Your job is to take a business name or website URL, research the business from multiple angles, scaffold an Astro project per client from a shared template, and deploy it live to Vercel.
 
-## The 8 Skills
+## The 9 Skills
 
 | Skill | Trigger | What It Does | Cost |
 |-------|---------|-------------|------|
+| `intake-from-web` | `/intake-from-web` | Confirms the client business via Google Business Profile → Firecrawls the confirmed website + optional socials → auto-populates `sites/{slug}/intake-scraped.json` with brand tokens (fonts, colors, logo) + business context only. Never extracts design/layout patterns. | ~$0.20–0.35 total (GBP + Firecrawl) |
 | `find-business` | `/find-business` | Finds the business on Google Maps, extracts contact/profile data | ~$0.004 per lookup |
 | `scrape-content` | `/scrape-content` | Extracts rich content from the business website | Free (Firecrawl fallback may cost) |
 | `local-research` | `/local-research` | Searches Reddit for local pain points and copy angles | Free |
@@ -25,16 +26,17 @@ Full workflow: `.agent/workflows/website-builder.md`
 ## Running the Pipeline
 
 When the user says **"build site for [business name or URL]"**:
-1. Determine if input is a URL or business name
+1. Determine if input is a URL, business name, or both
 2. Run skills in this order (see workflow):
-   1. find-business
-   2. scrape-content
-   3. local-research
-   4. site-audit
-   5. design-reference (NEW — reference URLs or vertical library)
-   6. site-generate (replaces site-redesign — scaffolds Astro project)
-   7. vercel-deploy (build + deploy + optional domain attach)
-   8. short-link (optional)
+   1. intake-from-web (auto-populates `sites/{slug}/intake-scraped.json` from GBP + web; replaces the manual `docs/client-intake.md` fill-in step)
+   2. find-business (called internally by intake-from-web; also usable standalone)
+   3. scrape-content (optional — used only when intake-from-web wants deeper content or when Firecrawl blocked/incomplete)
+   4. local-research
+   5. site-audit (screenshots the OLD site for OPERATOR reference only — never as design DNA)
+   6. design-reference (reference-libraries + intake brand tokens → design_reference.json; prefers `role: "primary"` library entries)
+   7. site-generate (scaffolds Astro project from intake + design_reference)
+   8. vercel-deploy (build + deploy + optional domain attach)
+   9. short-link (optional)
 3. **Pause after each step by default** — show results and wait for approval
 4. Print a final summary table with the live URL
 
@@ -44,6 +46,7 @@ For multiple businesses, process each sequentially through the full pipeline wit
 
 ### What to show at each pause:
 
+- **After intake-from-web:** GBP confirmation card (business name, address, phone, website URL) — hard stop until operator confirms. Then aggregated `intake-scraped.json` summary with a scraped ✓ / partial / needs-paste-in table. Explicitly list the fields that STILL need operator paste-in (GHL widget snippets, code_injection, marketing_city override, custom domain).
 - **After find-business:** Business found — name, address, phone, email, rating, website URL. Confirm correct business.
 - **After scrape-content:** Pages scraped, key content found (services, testimonials, photos), any gaps.
 - **After local-research:** Pain points, what customers value, how this business stands out, suggested copy angles.
@@ -62,6 +65,7 @@ For multiple businesses, process each sequentially through the full pipeline wit
 2. Wait for explicit approval before proceeding
 
 **Known costs:**
+- `/intake-from-web` — ~$0.20–0.35 total (batched). Broken down: GBP lookup ~$0.004, Firecrawl homepage ~$0.02, inner-page batch (5–10 pages) ~$0.10–0.20, each social profile ~$0.02. Warn per paid sub-step; wait for approval before the batch after GBP confirmation.
 - `/find-business` — ~$0.004 per lookup (5 places at $4/1,000). Before running, tell the user: "I'm about to search Google Maps for [business], which will cost approximately $0.004. OK to proceed?"
 - `/scrape-content` — Free when using Playwright. If Firecrawl fallback is triggered, warn the user: "Playwright didn't capture enough content. Firecrawl may have usage costs depending on your plan. OK to try Firecrawl?" Wait for approval.
 - `/design-reference` — ~$0.02 per reference URL (Firecrawl). Confirm the reference set with the user before scraping.
@@ -110,11 +114,13 @@ cd sites/{slug} && npm run build && npm run preview
 
 ## File Conventions
 
+- `sites/{slug}/intake-scraped.json` — auto-populated intake from `/intake-from-web` (brand tokens + business context)
 - `sites/{slug}/business_profile.json` — Maps data
 - `sites/{slug}/scraped_content.json` — website content (optional)
 - `sites/{slug}/local_research.json` — Reddit research
-- `sites/{slug}/audit_results.json` — screenshot + assessment (optional)
+- `sites/{slug}/audit_results.json` — screenshot + assessment (optional, OPERATOR reference only — never design DNA)
 - `sites/{slug}/design_reference.json` — reference-URL-derived design tokens
+- `docs/client-intake.md` — human-readable questionnaire; fields that `/intake-from-web` couldn't scrape (GHL widgets, code_injection, marketing_city, domain) are collected manually per this doc
 - `sites/{slug}/` (Astro project) — src/content/, src/styles/tokens.css, astro.config.mjs, package.json, etc.
 - `screenshots/{slug}.png` — old-site screenshot
 - `sites/build-log.md` — build log with deploy URLs + page counts

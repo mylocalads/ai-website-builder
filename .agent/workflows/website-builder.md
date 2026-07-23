@@ -1,41 +1,43 @@
 ---
-description: Website builder pipeline — 8 skills, run in sequence with dynamic ordering
+description: Website builder pipeline — 9 skills, run in sequence with dynamic ordering
 ---
 
 # Website Builder Workflow
 
 ## Overview
 
-Eight skills. Run them in order based on input type. At the end you have a live Vercel URL showing the business's freshly-scaffolded Astro site — ready to use as proof-of-work in outreach.
+Nine skills. Run them in order. At the end you have a live Vercel URL showing the business's freshly-scaffolded Astro site — ready to use as proof-of-work in outreach.
 
-## Dynamic Step Ordering
+## Pipeline Order
 
-**When URL is provided (e.g., "build site for joesplumbing.com"):**
 ```
-/scrape-content → /find-business → /local-research → /site-audit → /design-reference → /site-generate → /vercel-deploy → /short-link (optional)
-```
-
-**When business name is provided (e.g., "build site for Joe's Plumbing in Austin TX"):**
-```
-/find-business → /scrape-content → /local-research → /site-audit → /design-reference → /site-generate → /vercel-deploy → /short-link (optional)
+/intake-from-web → /find-business (called by intake-from-web) → /scrape-content (optional deeper pass) → /local-research → /site-audit → /design-reference → /site-generate → /vercel-deploy → /short-link (optional)
 ```
 
-Both find-business and scrape-content always run. Maps provides structured contact data; the scrape provides rich content.
+The operator can start with either a business name, a website URL, or both — `/intake-from-web` asks for whichever is available in step 1 and uses Google Business Profile as the source-of-truth confirmation step. GBP-listed website URL wins over an operator-provided URL by default (operator can override).
+
+`/intake-from-web` invokes `/find-business` internally as its GBP confirmation step. Running `/find-business` again standalone is only necessary if intake-from-web was skipped.
+
+`/scrape-content` is now optional. It runs when `/intake-from-web` hits a site that blocks Firecrawl and needs the Playwright fallback, or when the operator wants a deeper full-site content pass beyond what intake-from-web extracts.
 
 ## Slug Generation
 
-- **Name provided:** `/find-business` generates the canonical slug from the confirmed Maps result name.
-- **URL provided:** `/scrape-content` generates a temporary slug from the domain name. When `/find-business` runs next, the slug is updated to canonical form and the `sites/` directory is renamed.
+`/intake-from-web` owns slug generation. On operator input:
+- **Name provided:** canonical slug comes from the confirmed GBP result name.
+- **URL provided (name inferred):** a temporary slug is built from the URL's domain; once GBP confirms, the slug is upgraded to canonical form and any partially-written `sites/{slug}/` directory is renamed.
+- **Both provided:** GBP-derived canonical name wins for the slug.
 
 Format: lowercase, hyphenated, special characters removed (`Joe's Plumbing` → `joes-plumbing`).
 
 ## No-Website Edge Case
 
-If `/find-business` returns a business with no website URL:
-1. Inform the user
-2. Skip `/scrape-content` and `/site-audit`
-3. Proceed with `/local-research` and `/design-reference` (falls back to the vertical reference library)
-4. `/site-generate` scaffolds the Astro project from Maps data + local research + design tokens + Unsplash imagery
+If `/intake-from-web` (via GBP confirmation) returns a business with no listed website URL:
+1. Inform the operator
+2. Skip Firecrawl web + inner-page scrapes; keep GBP-derived data only (name, address, phone, hours, rating, social URLs listed on GBP)
+3. Skip `/scrape-content` and `/site-audit`
+4. Proceed with `/local-research` and `/design-reference` (falls back to the vertical reference library)
+5. `/site-generate` scaffolds the Astro project from GBP data + local research + design tokens + Unsplash imagery
+6. Flag to the operator that more paste-in intake fields will be needed than usual (services list, testimonials, team members are all missing without a website)
 
 ## Architectural Ground Rules
 
@@ -44,9 +46,24 @@ Every run must respect these amendments from `docs/plans/2026-07-22-astro-refact
 - **Fixed section order per page type (v2.2 amendment E)** — Home, Service, and Service-area pages ship a fixed section order. Do not randomize or reshuffle.
 - **CRM widgets are paste-only (v2.1 amendment B)** — GHL chat/reviews/form/call-tracking snippets are supplied by the user via paste-in during `/site-generate`. Never synthesize loader URLs or IDs.
 - **Universal code injection (v2.1 amendment C)** — Every site exposes `head` / `body_start` / `body_end` code-injection slots (per-site plus per-page overrides) for pixels, GTM, GHL number-swap, and similar third-party scripts.
-- **Reference libraries** — Curated per-vertical reference URLs live under `reference-libraries/{vertical}.json` (`default`, `roofing`, `concrete`, …). `/design-reference` reads these when the user does not supply their own URLs.
+- **Reference libraries** — Curated per-vertical reference URLs live under `reference-libraries/{vertical}.json` (`default`, `roofing`, `concrete`, …). `/design-reference` reads these when the user does not supply their own URLs. Entries carry an optional `role` field; `/design-reference` weighs `role: "primary"` first (currently `https://firefly-cd.vercel.app/` for both roofing and concrete), then `secondary`, then unclassified.
+- **Client website is brand-only, never design DNA** — `/intake-from-web` extracts fonts, colors, logo URL, and business context text from the client's existing site. It NEVER extracts layout patterns, section rhythms, component styling, or screenshots-as-inspiration. The astro-template is the sole source of truth for design and structure. `/site-audit` produces screenshots for OPERATOR reference only — never for design cloning.
+- **Manual intake fallback** — the operator-facing questionnaire at `docs/client-intake.md` remains the reference for fields that `/intake-from-web` cannot scrape (GHL widget snippets, code_injection, marketing_city override, custom domain). Anything left blank on `intake-scraped.json` after intake-from-web must be paste-in-filled per that document.
 
 ## Step Details
+
+### Step 1 — `/intake-from-web` (NEW, replaces manual questionnaire fill-in)
+**Skill:** `.agent/skills/intake-from-web/SKILL.md`
+
+Discovers and confirms the client business, then auto-populates as much of the intake as possible from public web presence. Cost-gated at every paid sub-step.
+
+- **Input:** business name and/or website URL (accepts either or both — URL disambiguates when GBP returns multiple hits).
+- **Process:** GBP lookup via `/find-business` → confirmation card → Firecrawl homepage → Firecrawl approved inner pages → Firecrawl approved social profiles → aggregate into `sites/{slug}/intake-scraped.json`.
+- **Extracts:** brand tokens (fonts, colors, logo URL), business context (name, phone, address, hours, rating, services list, testimonials text, team members, credentials, social URLs), and hero photo candidates.
+- **Does NOT extract:** layout patterns, section rhythm, component styles, or screenshots-as-design-DNA from the client's existing website. Enforced anti-pattern lock.
+- **Output:** `sites/{slug}/intake-scraped.json` matching the schema in `astro-template/src/content/config.ts`, plus a report table of which fields were populated vs which still need operator paste-in per `docs/client-intake.md`.
+- **Cost:** ~$0.20–0.35 for the batch (GBP + Firecrawl + optional socials). Sub-step warnings on every paid call.
+
 
 ### Step 1 or 2 — `/find-business`
 **Skill:** `.agent/skills/find-business/SKILL.md`
