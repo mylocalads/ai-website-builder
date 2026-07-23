@@ -7,29 +7,52 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
   <section class="us-vs-them" aria-label="Comparison">
     <div class="container">
       {u.headline && <h2>{u.headline}</h2>}
-      <table>
-        <thead>
-          <tr><th></th><th>{u.us_label ?? 'Us'}</th><th>{u.them_label ?? 'Them'}</th></tr>
-        </thead>
-        <tbody>
-          {u.rows.map((row: { us: string; them: string }, i: number) => (
-            <tr>
-              <td class="row-num">{i + 1}</td>
-              <td class="us">{row.us}</td>
-              <td class="them">{row.them}</td>
-            </tr>
+      <div class="grid">
+        <div class="labels" aria-hidden="true">
+          <div class="corner"></div>
+          {u.rows.map((row: any) => <div class="row-label">{row.label}</div>)}
+        </div>
+        <div class="col us-col">
+          <div class="col-header">
+            {u.us_photo && <img src={u.us_photo} alt="" class="col-photo" loading="lazy" />}
+            <div class="col-title">{u.us_label ?? 'US'}</div>
+          </div>
+          {u.rows.map((row: any) => (
+            <div class="cell">{row.us ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
           ))}
-        </tbody>
-      </table>
+        </div>
+        <div class="col them-col">
+          <div class="col-header">
+            {u.them_photo && <img src={u.them_photo} alt="" class="col-photo" loading="lazy" />}
+            <div class="col-title">{u.them_label ?? 'THEM'}</div>
+          </div>
+          {u.rows.map((row: any) => (
+            <div class="cell">{row.them ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
+          ))}
+        </div>
+      </div>
+      <div class="mobile-labels" aria-hidden="true"></div>
     </div>
   </section>
 )}
 <style>
   .us-vs-them { padding: var(--space-5) 0; }
-  table { width: 100%; border-collapse: collapse; margin-top: var(--space-3); }
-  th, td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
-  th { font-family: var(--font-display); font-size: 1.15rem; }
-  .row-num { color: var(--color-muted); width: 3ch; }
-  .us { background: rgba(0, 0, 0, 0.02); }
-  .them { color: var(--color-muted); }
+  h2 { text-align: center; font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: var(--space-4); }
+  .grid { display: grid; grid-template-columns: minmax(160px, 1.2fr) 1fr 1fr; gap: 0; align-items: stretch; }
+  .labels { display: flex; flex-direction: column; }
+  .corner { height: 300px; }
+  .row-label { padding: var(--space-2) var(--space-2); font-weight: 500; border-bottom: 1px solid var(--color-surface); display: flex; align-items: center; min-height: 68px; }
+  .col { border: 1px solid var(--color-surface); border-radius: var(--radius-md); overflow: hidden; margin: 0 var(--space-1); }
+  .col-header { padding: 0; text-align: center; }
+  .col-photo { width: 100%; height: 240px; object-fit: cover; display: block; }
+  .col-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; padding: var(--space-2); background: var(--color-bg); }
+  .cell { padding: var(--space-2); text-align: center; border-top: 1px solid var(--color-surface); min-height: 68px; display: flex; align-items: center; justify-content: center; }
+  .check, .x { font-size: 1.75rem; }
+  @media (max-width: 780px) {
+    .grid { grid-template-columns: 1fr; }
+    .labels { display: none; }
+    .col { margin: var(--space-2) 0; }
+    .cell { justify-content: space-between; padding-left: var(--space-3); padding-right: var(--space-3); }
+    .cell::before { content: attr(data-label); font-weight: 500; }
+  }
 </style>

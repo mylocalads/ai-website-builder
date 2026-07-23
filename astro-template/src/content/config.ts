@@ -69,6 +69,8 @@ const site = defineCollection({
       kind: z.literal('config'),
       business_name: z.string(),
       legal_name: z.string().optional(),
+      logo_url: z.string().url().optional(),
+      team_photo: z.string().url().optional(),
       tagline: z.string(),
       phone: z.string(),
       phone_display: z.string(),
@@ -114,10 +116,16 @@ const site = defineCollection({
       us_vs_them: z.object({
         enabled: z.boolean().default(false),
         headline: z.string().optional(),
-        us_label: z.string().optional(),
-        them_label: z.string().optional(),
-        rows: z.array(z.object({ us: z.string(), them: z.string() })).default([]),
-      }).default({ enabled: false, rows: [] }),
+        us_label: z.string().default('US'),
+        them_label: z.string().default('THEM'),
+        us_photo: z.string().url().optional(),
+        them_photo: z.string().url().optional(),
+        rows: z.array(z.object({
+          label: z.string(),
+          us: z.boolean().default(true),
+          them: z.boolean().default(false),
+        })).default([]),
+      }).default({ enabled: false, us_label: 'US', them_label: 'THEM', rows: [] }),
       gallery: z.array(z.object({
         title: z.string().optional(),
         location: z.string().optional(),
@@ -138,6 +146,7 @@ const site = defineCollection({
         reviews_widget_snippet: z.string().optional(),
         call_tracking_snippet: z.string().optional(),
         call_tracking_number: z.string().optional(),
+        calendar_embed_snippet: z.string().optional(),
       }).default({ provider: 'ghl' }),
       code_injection: codeInjectionSlots.extend({
         per_page: z.record(codeInjectionSlots).default({}),

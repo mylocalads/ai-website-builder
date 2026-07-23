@@ -7,9 +7,16 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
     <h2>Our services</h2>
     <div class="grid">
       {services.map((s) => (
-        <a href={`/services/${s.slug}`} class="card">
-          <h3>{s.data.title}</h3>
-          <p>{s.data.short_description}</p>
+        <a
+          href={`/services/${s.slug}`}
+          class="card"
+          style={s.data.hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.15) 0%, rgba(15,20,25,0.85) 100%), url(${s.data.hero_photo});`}
+        >
+          <div class="card-inner">
+            <h3>{s.data.title}</h3>
+            <p>{s.data.short_description}</p>
+            <span class="learn">Learn more →</span>
+          </div>
         </a>
       ))}
     </div>
@@ -17,9 +24,26 @@ const services = (await getCollection('services')).sort((a, b) => a.data.order -
 </section>
 <style>
   .our-services { padding: var(--space-5) 0; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
-  .card { display: block; padding: var(--space-3); background: var(--color-surface); border-radius: var(--radius-md); text-decoration: none; transition: transform 0.15s; }
-  .card:hover, .card:focus-visible { transform: translateY(-2px); }
-  .card h3 { margin: 0 0 var(--space-1); }
-  .card p { color: var(--color-muted); margin: 0; }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: var(--space-3); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
+  .card {
+    display: block;
+    min-height: 320px;
+    padding: var(--space-3);
+    background: var(--color-surface);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover, .card:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+  .card-inner { position: absolute; bottom: var(--space-3); left: var(--space-3); right: var(--space-3); }
+  .card h3 { margin: 0 0 var(--space-1); font-size: 1.65rem; color: white; text-shadow: 0 2px 6px rgba(0,0,0,0.4); }
+  .card p { color: rgba(255,255,255,0.9); margin: 0 0 var(--space-1); line-height: 1.5; }
+  .learn { display: inline-block; margin-top: var(--space-1); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em; }
 </style>

@@ -49,7 +49,7 @@ const faqJsonLd = home.faqs && home.faqs.length > 0 ? {
     form_title="Get a free estimate"
   />
   <PartnerBadges />
-  <AboutSection heading="About us" body={aboutStory} />
+  <AboutSection heading="About us" body={aboutStory} photo={site.team_photo} photo_alt={`${site.business_name} team`} />
   <OurServices />
   <WhyChooseUs />
   <Testimonials items={home.testimonials ?? []} />
@@ -59,6 +59,6 @@ const faqJsonLd = home.faqs && home.faqs.length > 0 ? {
   <Gallery items={site.gallery ?? []} heading="Our work" />
   <FAQ items={home.faqs ?? []} />
   <ContactBlock />
-  <CTA headline="Ready to get started?" />
+  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Book a free inspection" cta_href="/contact" />
   <GHLChatWidget />
 </BaseLayout>

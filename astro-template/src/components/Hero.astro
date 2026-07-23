@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 import GHLFormEmbed from './GHLFormEmbed.astro';
 import SMSConsent from './SMSConsent.astro';
 export interface Props {
@@ -11,9 +12,12 @@ export interface Props {
   form_embed_url?: string;
   form_title?: string;
 }
-const { eyebrow, headline, subheadline, cta_text, cta_href, photo, form_embed_url, form_title = 'Get in touch' } = Astro.props;
+const { eyebrow, headline, subheadline, cta_text, cta_href, photo, form_embed_url, form_title = 'Book now' } = Astro.props;
+const site = (await getEntry('site', 'config')).data as any;
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const heroBg = photo ? `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${photo});` : '';
 ---
-<section class="hero">
+<section class="hero" style={heroBg}>
   <div class="container hero-inner">
     <div class="hero-copy">
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
@@ -21,21 +25,31 @@ const { eyebrow, headline, subheadline, cta_text, cta_href, photo, form_embed_ur
       <p class="sub">{subheadline}</p>
       <a href={cta_href} class="cta">{cta_text}</a>
     </div>
-    {form_embed_url ? (
-      <div class="hero-form">
-        <SMSConsent />
-        <GHLFormEmbed embed_url={form_embed_url} title={form_title} />
-      </div>
-    ) : photo && <img src={photo} alt="" class="hero-photo" loading="eager" />}
+    <div class="hero-form">
+      {calendarSnippet ? (
+        <div class="calendar-wrap">
+          <SMSConsent />
+          <Fragment set:html={calendarSnippet} />
+        </div>
+      ) : form_embed_url ? (
+        <div class="form-wrap">
+          <SMSConsent />
+          <GHLFormEmbed embed_url={form_embed_url} title={form_title} />
+        </div>
+      ) : null}
+    </div>
   </div>
 </section>
 <style>
-  .hero { padding: var(--space-5) 0; }
-  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: center; }
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--color-muted); margin: 0 0 var(--space-1); }
-  h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
-  .sub { font-size: 1.15rem; color: var(--color-muted); max-width: 32rem; }
-  .cta { display: inline-block; margin-top: var(--space-2); background: var(--color-accent); color: white; padding: 0.85rem 1.5rem; border-radius: var(--radius-sm); text-decoration: none; }
-  .hero-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
-  @media (max-width: 780px) { .hero-inner { grid-template-columns: 1fr; } }
+  .hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: center; min-height: 480px; }
+  .hero-copy { max-width: 34rem; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; opacity: 0.9; margin: 0 0 var(--space-1); }
+  h1 { font-size: clamp(2.25rem, 4.5vw, 3.75rem); color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .sub { font-size: 1.2rem; opacity: 0.95; max-width: 32rem; }
+  .cta { display: inline-block; margin-top: var(--space-2); background: var(--color-accent); color: white; padding: 1rem 1.75rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; font-size: 1.05rem; }
+  .cta:hover { filter: brightness(1.1); }
+  .hero-form { background: white; color: var(--color-text); border-radius: var(--radius-md); padding: var(--space-2); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  .calendar-wrap iframe { width: 100%; min-height: 500px; border: 0; }
+  @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; min-height: auto; } .hero-form { margin-top: var(--space-3); } }
 </style>

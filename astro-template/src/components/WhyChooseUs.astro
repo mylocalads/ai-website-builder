@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
 const items = site.why_choose_us ?? [];
+const isUrl = (s: string) => typeof s === 'string' && /^https?:\/\//i.test(s);
 ---
 {items.length > 0 && (
   <section class="why-choose-us" aria-label="Why choose us">
@@ -10,7 +11,9 @@ const items = site.why_choose_us ?? [];
       <div class="grid">
         {items.map((i: any) => (
           <article class="tile">
-            <div class="icon" aria-hidden="true">{i.icon}</div>
+            <div class="icon" aria-hidden="true">
+              {isUrl(i.icon) ? <img src={i.icon} alt="" loading="lazy" /> : <span class="emoji">{i.icon}</span>}
+            </div>
             <h3>{i.title}</h3>
             <p>{i.description}</p>
           </article>
@@ -21,9 +24,12 @@ const items = site.why_choose_us ?? [];
 )}
 <style>
   .why-choose-us { padding: var(--space-5) 0; background: var(--color-surface); }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: var(--space-3); }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); }
-  .tile { padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-md); }
-  .icon { font-size: 2rem; margin-bottom: var(--space-1); }
-  h3 { margin: 0 0 var(--space-1); font-size: 1.1rem; }
+  .tile { padding: var(--space-3); background: var(--color-bg); border-radius: var(--radius-md); text-align: center; }
+  .icon { height: 72px; margin-bottom: var(--space-2); display: flex; align-items: center; justify-content: center; }
+  .icon img { max-height: 72px; width: auto; }
+  .icon .emoji { font-size: 3rem; }
+  h3 { margin: 0 0 var(--space-1); font-size: 1.15rem; }
   p { color: var(--color-muted); margin: 0; }
 </style>
