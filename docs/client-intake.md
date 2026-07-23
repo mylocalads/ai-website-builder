@@ -177,13 +177,15 @@ Repeat per partner:
 
 ---
 
-## 12. Client-supplied paste-in fields (only three things the client provides)
+## 12. Client-supplied paste-in fields (the short list from the client)
 
-The operator handles everything else (Meta Pixel setup, GTM, marketing_city override, custom domain, etc.) on the CRM side. The **client only needs to give you these three**:
+The operator handles everything else (Meta Pixel setup, GTM, marketing_city override, custom domain, etc.) on the CRM/deploy side. The **client only needs to give you these five**:
 
 1. **[required] GHL forms, surveys, OR calendar booking widget snippet** — one of the three, whichever the client uses. Paste the FULL `<iframe>` + `<script>` block exactly as GHL gives it. This drives the hero form and the `/book` page.
 2. **[optional] GHL reviews widget snippet** — the `<script>` + `<iframe>` from the client's GHL reputation review widget. If missing, the reviews section on the home page and About page silently self-hides.
-3. **[optional] Tracking phone number** — the number-swap-friendly phone the client wants displayed instead of their real line. If missing, we use the real GBP-listed phone.
+3. **[optional] GHL Live Chat widget snippet** — the `<script>` from GHL's chat widget. If missing, no floating chat bubble renders.
+4. **[optional] Tracking phone number** — the number-swap-friendly phone the client wants displayed instead of their real line. If missing, we use the real GBP-listed phone.
+5. **[fallback] Brand color codes** — only needed if `intake-from-web` couldn't auto-detect brand colors from the client's existing site or logo. Hex codes for accent, background, text, muted — 2–5 codes total. See section 2 for the primary Branding intake; this section 12 entry is the belt-and-suspenders fallback.
 
 Paste each field exactly as delivered. Never rewrite, shorten, or reformat GHL snippets.
 
