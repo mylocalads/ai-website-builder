@@ -81,7 +81,7 @@ const serviceLd = {
     headline={`${site.business_name} — Serving ${area.data.name}, ${area.data.state}`}
     subheadline={area.data.local_context || `Local service across ${area.data.name} and surrounding communities.`}
     cta_text="Get Your Free Estimate!"
-    cta_href="/contact"
+    cta_href="/book"
     photo={area.data.hero_photo}
     form_embed_url={heroFormUrl}
     form_title={`${area.data.name} estimate request`}
@@ -102,6 +102,6 @@ const serviceLd = {
   <Financing />
   <ServiceAreaGrid />
   <FAQ items={homeFaqs} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/contact" />
+  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
   <GHLChatWidget />
 </BaseLayout>
