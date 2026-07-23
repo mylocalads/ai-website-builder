@@ -1,241 +1,365 @@
 ---
 name: site-generate
-description: Scaffold a per-client Astro project from the shared astro-template, populated with content collections, design tokens, GHL widget snippets, and code-injection blocks from pipeline data and user paste-in.
-trigger: "site-generate" or "generate site" or "build site" or "scaffold site"
+description: Scaffold a per-client Astro project under sites/{slug}/ from the shared astro-template, driven by a completed docs/client-intake.md questionnaire plus any pipeline JSON (business_profile, local_research, scraped_content, audit_results, design_reference). Writes every content-collection file, tokens.css, and paste-in CRM + code-injection blocks; validates against the schema; runs the local build; hands off to vercel-deploy.
+trigger: "site-generate" or "generate site" or "scaffold site" or "build site" or "spin up the site"
 ---
 
-## What This Skill Does
+## What this skill does
 
-Takes all researched data about a business (Maps profile, scraped content, Reddit research, site audit, design reference) and scaffolds a full Astro project under `sites/{slug}/` populated with:
+Takes a filled-in `docs/client-intake.md` (the operator-facing questionnaire) plus optional pipeline data and produces a complete Astro project at `sites/{slug}/` that matches the reference site at https://firefly-cd.vercel.app one-for-one on shape and quality.
 
-- `src/content/site/config.json` — business identity, address, contact, credentials, ratings, social, compliance defaults, CRM snippets, code injection slots
-- `src/content/site/home.json` — hero copy, testimonials, FAQs
-- `src/content/site/about.json` — company story
-- `src/content/site/our-work.json` — projects gallery
-- `src/content/site/pricing.json` — pricing packages (if applicable)
-- `src/content/services/*.md` — one file per service (max 5)
-- `src/content/service_areas/*.md` — one file per city-state slug (max 5)
-- `src/styles/tokens.css` — CSS custom properties from design_reference.json
-- `astro.config.mjs` — with site URL substituted
-- `public/robots.txt` — with site URL substituted
+The canonical example of a completed site is `sites/firefly-cd/`. Every field this skill writes exists in that project — when in doubt about what a field should look like, read the equivalent file there. Do NOT invent example values that differ from Firefly.
 
-**Legal pages, header, footer, and section order are inherited from the shared astro-template unchanged** — no per-client body edits.
+This skill only writes files under `sites/{slug}/`. Page composition, layouts, components, and section order live in `astro-template/` and are inherited unchanged. Structural changes to the template are a separate workflow; never edit `astro-template/` from this skill.
 
-## Inputs
+## Inputs (must exist before running)
 
-Reads from `sites/{slug}/`:
+Required in the conversation / on disk:
 
-- `business_profile.json` (required) — Google Maps profile
-- `local_research.json` (required) — Reddit copy angles, pain points, differentiators
-- `design_reference.json` (required — produced by `design-reference` skill)
-- `scraped_content.json` (optional — no-website edge case)
-- `audit_results.json` (optional)
+- A completed `docs/client-intake.md` handed over by the operator (the source of truth for every content field).
+- `sites/{slug}/business_profile.json` — Google Business Profile snapshot from `find-business`.
+- `sites/{slug}/local_research.json` — Reddit / local copy angles.
+- `sites/{slug}/design_reference.json` — required, produced by `design-reference`. Provides palette, typography, radius, and spacing tokens.
 
-## Output
+Optional:
 
-- `sites/{slug}/` — complete Astro project ready to build and deploy
+- `sites/{slug}/scraped_content.json` — parsed existing-site content (no-website edge case: skip).
+- `sites/{slug}/audit_results.json` — audit findings from an existing site.
 
-## Process
+If ANY required intake field is missing, stop and tell the operator to complete the intake — do NOT re-prompt the client interactively. This skill is not the intake channel.
 
-### 1. Copy template
+## Cost rules
 
-Copy `astro-template/` → `sites/{slug}/`, excluding `node_modules`, `dist`, `.astro`, `.vercel`.
+Free. The paid steps (Google Maps profile lookup, design-reference generation, any Firecrawl scrapes) already happened upstream. This skill only reads local files and writes local files.
 
-### 2. Determine site URL
+## Anti-patterns (hard bans — enforced during content generation)
 
-Prompt user for target domain. If they haven't attached one yet, use `https://{slug}.vercel.app` as a placeholder. Store this as `site_url` — the `vercel-deploy` skill will rewrite it to the real URL after deploy.
+The generated content, tokens, and copy MUST NOT include any of the following. If the intake supplies one of these values, replace or ask the operator to revise:
 
-### 3. Substitute `REPLACE_SITE_URL`
+- Gradient hero backgrounds (linear / radial / conic — none).
+- Glass morphism / backdrop-blur panels.
+- Bento grid section layouts.
+- Purple / indigo / violet accent palettes unless the client's own brand is explicitly one of those.
+- Rows of outline (Lucide-style) icons — max one icon per section, only where semantically load-bearing.
+- Stock hero photography of "professionals shaking hands" or "diverse team pointing at a laptop / hardhat closeup."
+- Copy like "Trusted by 10,000+ customers" without a real number sourced from `business_profile.json` or client intake.
+- Section headers reading "Stunning", "Beautiful", "Powerful", "Seamless", or "Effortless".
+- Randomized section order. Page composition is FIXED (hero → partner-badges → about → services → why-choose-us → testimonials → financing → us-vs-them → service-area-grid → gallery → faq → contact → CTA → footer) and lives in the template. Do not touch it.
 
-Rewrite `sites/{slug}/astro.config.mjs` — replace `REPLACE_SITE_URL` with the determined URL.
-Rewrite `sites/{slug}/public/robots.txt` — replace `REPLACE_SITE_URL` with the determined URL.
+Section rhythm and reference_urls fields on the site config are deprecated — leave as empty arrays.
 
-### 4. Prompt user for CRM snippets (v2.1 B — paste-only)
+## Reserved slugs (refuse conflicts)
 
-CRITICAL: the agent never synthesizes GHL loader URLs. It only asks and pastes verbatim.
+The `[area].astro` route enforces these at build time. This skill must also refuse to write a `service_areas/*.md` (or a service markdown) whose derived slug is in this set:
 
-Prompts (one at a time, allow blank for skip):
+`about`, `services`, `service-areas`, `contact`, `pricing`, `our-work`, `privacy`, `terms`, `accessibility`, `book`, `404`, `_astro`, `index`, `sitemap-index.xml`, `sitemap-0.xml`, `robots.txt`
 
-- "Paste the GHL chat widget snippet (or blank if none):"
-- "Paste the GHL reviews widget snippet (or blank if none):"
-- "Paste the GHL number-swap call-tracking script (or blank if none):"
-- "Paste the contact form embed URL (or blank if none):"
-- "Paste the estimate form embed URL (or blank if none):"
-- "Call-tracking display number (or blank):"
+Service-area slugs MUST match `^[a-z0-9-]+-[a-z]{2}$` (city-lowercase-hyphens + two-letter state, e.g. `spokane-wa`, `miami-fl`, `post-falls-id`). Reject anything else and ask the operator to fix the intake.
 
-Store as `site.crm.chat_widget_snippet`, `reviews_widget_snippet`, `call_tracking_snippet`, `contact_form_embed_url`, `estimate_form_embed_url`, `call_tracking_number`.
+## Astro 5 content-layer gotcha (do not forget)
 
-### 5. Prompt user for code injection snippets (v2.1 C)
+- Filenames derive the slug. Do NOT include a `slug:` field in service or service-area frontmatter — the schema does not allow it.
+- Templates that iterate service or area collections must reference `entry.slug`, not `entry.data.slug`. This skill does not touch templates, but if a build fails with "cannot read data.slug", it is a template regression and belongs upstream in astro-template — flag it, don't patch it inside the client site.
+- Write all markdown files with LF line endings.
 
-- "Paste any HTML/scripts to inject in <head> site-wide (Meta Pixel, GTM, Google Ads gtag, meta verification, etc.) — or blank:"
-- "Paste any HTML/scripts to inject immediately after <body> (GTM noscript, etc.) — or blank:"
-- "Paste any HTML/scripts to inject before </body> (chat/analytics/GHL number swap) — or blank:"
-- "Per-page overrides needed? (rare — press enter to skip)"
+---
 
-Store as `site.code_injection.head`, `body_start`, `body_end`, `per_page`.
+## Process (execute in this order — do not reorder)
 
-### 6. Sanity-check code injection snippets
+### 1. Confirm the slug
 
-Before writing, do a lightweight parse of each pasted snippet:
+Derive the slug from the business name: lowercased, ASCII, hyphens only (e.g. "Firefly Contractors & Design" → `firefly-cd`). Confirm the slug with the operator before proceeding. Refuse if it collides with any reserved slug above.
 
-- Count `<script>` vs `</script>` occurrences — reject if mismatched.
-- Look for stray `</head>`, `</body>`, or `</html>` — warn.
-- If parse fails, ask the user to fix the paste and retry.
+### 2. Copy the template
 
-### 7. Write `src/content/site/config.json`
+Copy `astro-template/` → `sites/{slug}/`, excluding `node_modules`, `dist`, `.astro`, `.vercel`, and any lockfile that would pin to the template's install path. Do not modify the template in place under any circumstance.
 
-Populate from `business_profile.json` + `local_research.json`:
+### 3. Determine site URL and substitute placeholders
 
-- `kind`: "config"
-- `business_name`, `legal_name` (from GBP)
-- `tagline` — synthesize from category + top copy angle
-- `phone`, `phone_display` (E.164 + display)
-- `email` (from GBP or scraped contact)
-- `address` (street, city, state, postal, country)
-- `geo` (lat, lng from Maps)
-- `hours` (record keyed by weekday from GBP)
-- `site_url` (from step 2)
-- `rating`, `review_count` (from GBP)
-- `licensed`, `insured`, `bonded` (default true for home services)
-- `years_in_business` (from GBP or scrape)
-- `social` (map of platform → URL from GBP)
-- `compliance`: `{ ada: true, gdpr: true, a2p: true }`
-- `crm`: from step 4
-- `code_injection`: from step 5
+- If intake §16 supplies a custom domain, use `https://{that-domain}`.
+- Otherwise use `https://{slug}.vercel.app`.
 
-Skip `reference_urls` and `section_rhythm` — deprecated.
+Then rewrite the two `REPLACE_SITE_URL` placeholders:
 
-### 8. Populate v2.2 site config sections
+- `sites/{slug}/astro.config.mjs` — replaces `https://REPLACE_SITE_URL` in the `site:` field.
+- `sites/{slug}/public/robots.txt` — replaces the same token in the `Sitemap:` URL.
 
-Also on the same config.json (if user has provided data):
+`vercel-deploy` will overwrite these again once the real production URL is known.
 
-- `partners`: user provides partner badge list (name + logo_url + optional link_url)
-- `why_choose_us`: synthesize from copy angles OR user provides (icon + title + description)
-- `financing`: user opts in with headline/description/CTA
-- `us_vs_them`: user opts in with headline/rows
-- `gallery`: pull scraped project photos + Unsplash if needed
+### 4. Write `src/content/site/config.json` (kind: "config")
 
-Prompt user for each block. Allow skips.
+Populate from intake §1, §2, §8, §9, §10, §11, §12, §13, §15. Refer to `sites/firefly-cd/src/content/site/config.json` for the exact shape. Fields to set:
 
-### 9. Write `src/content/site/home.json`
+Identity + credentials:
 
-- `kind`: "home"
-- `hero`: `{ eyebrow: "{city}, {state}", headline: from top copy angle, subheadline, cta_text, cta_href }`
-- `testimonials`: from GBP reviews (top 5-10)
-- `faqs`: from local_research pain points → Q&A
+- `kind: "config"`
+- `business_name` (intake §1) — required.
+- `legal_name` (intake §1) — optional, omit key if blank.
+- `tagline` (intake §1) — required. Short, appears in the browser title.
+- `phone` — E.164 (`+1` + 10 digits, no spaces). Derive from the intake phone.
+- `phone_display` — intake phone as given.
+- `email` — omit if blank.
+- `address: { street, city, state, postal, country: "US" }` — required city + state; street / postal optional.
+- `marketing_city` / `marketing_state` — set ONLY if intake §1 fills those in. When set, the service page hero eyebrow uses `marketing_city`; otherwise it falls back to `address.city`. Firefly is the reference example: office in Otis Orchards, marketing to Spokane.
+- `hours` — one key per weekday the business is open. Omit keys for closed days (do not write `"closed"` strings — omit the key entirely, matching Firefly).
+- `site_url` — from step 3.
+- `rating`, `review_count` — from intake §1 or `business_profile.json`. Numbers, not strings. Omit if blank.
+- `licensed`, `insured`, `bonded` — booleans from intake §1. Default `true` for home services if the intake box is checked; explicit `false` otherwise.
+- `years_in_business` — number, omit if blank.
+- `social` — object of `{ platform: url }` for facebook, instagram, youtube, google_maps, yelp. Only include keys the intake actually provides.
 
-### 10. Write `src/content/site/about.json`
+Branding + hero media:
 
-- `kind`: "about"
-- `story`: from scraped About page OR synthesize from category + copy angles
+- `logo_url` — required (intake §2).
+- `default_hero_photo` — required backup; used when a page-level hero photo is unset.
+- `default_hero_video` — optional; when set, hero video takes priority over photo (matches Firefly behavior).
+- `about_photo` — optional (intake §3).
+- `team_photo` — optional (intake §4 group photo, if any).
+- `team_members: [{ name, role, photo, bio? }]` — up to 6 (intake §4). Empty array if none.
 
-### 11. Write `src/content/site/our-work.json`
+Deprecated (leave empty):
 
-- `kind`: "our-work"
-- `intro`: short line about the work
-- `projects`: from scraped photos + Unsplash
+- `reference_urls: []`
+- `section_rhythm: []`
 
-### 12. Write `src/content/site/pricing.json` (optional)
+Marketing blocks (all default off / empty when the intake is blank — no defaults invented):
 
-- `kind`: "pricing"
-- `intro`, `packages` (from category defaults if unclear)
+- `partners: [{ name, logo_url, link_url? }]` — intake §11. Empty array to hide the badge strip.
+- `why_choose_us: [{ icon, title, description }]` — intake §8, 4 tiles standard. `icon` is EITHER a URL for CSS-mask tinting (as in Firefly) OR an emoji as fallback. Empty array hides the section.
+- `financing: { enabled, headline?, description?, cta_text?, cta_href?, logo_url? }` — intake §10. `enabled: false` when the intake box is unchecked.
+- `us_vs_them: { enabled, headline?, us_label: "US", them_label: "THEM", us_photo?, them_photo?, rows: [{ label, us: bool, them: bool }] }` — intake §9. `enabled: false` to hide the whole section.
+- `gallery: [{ title?, location?, photo, alt, description? }]` — intake §7, 6–8 entries. Renders on the home page and `/our-work`. Empty array is allowed but the section will render empty; recommend at least 4 entries.
 
-### 13. Write `src/content/services/{slug}.md` (max 5)
+Header / footer content is driven by `services_section` and address — no separate keys:
 
-One file per service. Prefer real scraped services first; if fewer than 5, synthesize category defaults (e.g. roofer: Roof Replacement, Roof Repair, Storm Damage, Gutter Installation, Inspection).
+- `services_section: { eyebrow: "Our Services", heading_lead?, heading_rest?, subtitle? }` — controls the OurServices home section header. Defaults to `{ eyebrow: "Our Services" }` if the operator has not authored copy; when they have, populate `heading_lead` + `heading_rest` (see Firefly: "Full-service" + "home remodeling").
 
-Frontmatter shape (per Task 2 schema, minus `slug` field which Astro derives from filename):
+Compliance defaults (rarely overridden — only touch on intake §15 override):
+
+- `compliance: { ada: true, gdpr: true, a2p: true }`.
+
+CRM paste-only block (intake §12 — paste verbatim, DO NOT synthesize URLs, DO NOT reformat):
+
+- `crm.provider: "ghl"`.
+- `crm.calendar_embed_snippet` — full `<iframe>` + `<script>` block from GHL.
+- `crm.chat_widget_snippet` — full `<script>` tag.
+- `crm.reviews_widget_snippet` — full `<script>` + `<iframe>` block.
+- `crm.contact_form_snippet` — full `<iframe>` + `<script>` block for the contact form.
+- `crm.contact_form_embed_url` — bare iframe src URL for the general contact form (if the operator gave a URL instead of a full snippet).
+- `crm.estimate_form_embed_url` — bare iframe src URL for the shorter estimate form on service pages.
+- `crm.call_tracking_snippet` — GHL number-swap `<script>`.
+- `crm.call_tracking_number` — the display number that number-swap replaces.
+
+Omit any key the operator left blank. Do not write empty-string values.
+
+Code injection (intake §13 — paste verbatim):
+
+- `code_injection.head` — Meta Pixel base code, GTM, Google Ads gtag, meta verification tags, etc.
+- `code_injection.body_start` — GTM noscript fallback, etc.
+- `code_injection.body_end` — analytics beacons, additional chat scripts, etc.
+- `code_injection.per_page` — record of `{ "path": { head?, body_start?, body_end? } }`. Empty object `{}` when no overrides.
+
+Before writing, do a lightweight sanity check on each pasted snippet: count `<script>` vs `</script>` occurrences (reject if mismatched); warn on stray `</head>`, `</body>`, or `</html>`. If a paste fails, ask the operator to fix and retry — do NOT silently rewrite the paste.
+
+### 5. Write `src/content/site/home.json` (kind: "home")
+
+From intake §1, §3, §5 (hero copy), plus reviews from `business_profile.json` when available.
+
+- `kind: "home"`.
+- `hero`:
+  - `eyebrow` — `"{marketing_city or address.city}, {marketing_state or address.state}"`. Matches Firefly's `"Spokane, WA"`.
+  - `headline` — the SEO H1 for the primary service, or the tagline if no clear primary. Reference Firefly's headline for tone (real, benefit-driven, no fluff).
+  - `subheadline` — one line summarizing what the business does (list top services separated by commas, ending "— done right by a local team." style — see Firefly).
+  - `cta_text` — default `"Get Your Free Estimate!"` unless the operator supplies otherwise.
+  - `cta_href` — default `/book`. Change ONLY if the site is not using the built-in booking page (rare).
+  - `photo` — direct URL. Defaults to `config.default_hero_photo` if the operator didn't supply a home-specific hero.
+- `testimonials: [{ name, location?, text, rating? }]` — 3–10 entries. Prefer real GBP reviews from `business_profile.json.reviews`; otherwise use intake-provided testimonials. Never fabricate reviewer names.
+- `faqs: [{ q, a }]` — 5–8 general FAQs. Draw from intake §5 per-service FAQs or common categories: timelines, permits, warranty, insurance, financing, service area. Answers should be 2–4 sentences and specific to the business.
+
+### 6. Write `src/content/site/about.json` (kind: "about")
+
+- `kind: "about"`.
+- `story` — 2–3 paragraphs from intake §3. Preserve the operator's phrasing; only fix obvious grammar. If the intake is blank AND `scraped_content.json` has an About page, use that; if neither exists, stop and ask the operator for copy.
+
+### 7. Write `src/content/site/pricing.json` (kind: "pricing")
+
+- `kind: "pricing"`.
+- `intro` — one paragraph from intake §14. Firefly's intro is a good tone reference: transparent, anti-corporate, no upsell language.
+- `packages: []` when the operator opts out of tiered pricing (this is the common case — matches Firefly). Otherwise `[{ name, price, unit?, includes: [], cta_text, cta_href }]`.
+- `notes` — omit if blank.
+
+### 8. Write `src/content/site/our-work.json` (kind: "our-work")
+
+- `kind: "our-work"`.
+- `intro` — one paragraph on craftsmanship / process. Firefly's intro references project count and "no cutting corners" — mirror that tone using intake facts, not generic filler.
+- `projects: [{ title, location?, photo, alt, description? }]` — usually empty, since the site-wide `config.gallery` already provides the imagery this page renders. Only populate `projects` if the client wants a distinct project set here.
+
+### 9. Write per-service markdowns under `src/content/services/{filename}.md` (max 6)
+
+One file per service block in intake §5. Filename is the kebab-cased service name (e.g. `roofing.md`, `kitchen-remodels.md`, `bathroom-remodels.md`). The slug is derived from the filename — do NOT include a `slug:` frontmatter field.
+
+Frontmatter fields (all required unless marked optional — see `sites/firefly-cd/src/content/services/roofing.md` for the reference shape):
 
 ```yaml
 ---
-title: Roof Repair
-short_description: ...
-long_description: ...
-faqs: [{q, a}]
-hero_photo: https://...
-order: 1
-gallery: [{photo, alt}]
+title: Roofing                              # intake §5 required
+title_highlight: Roofing                    # optional; a word to visually highlight — currently unused post-redesign but still schema-valid
+seo_h1: Roof Replacement & Repair Services in Spokane, WA   # intake §5 required
+short_description: ...                      # intake §5 required — 1–2 sentences, used in meta description
+long_description: ...                       # intake §5 required — 2–4 sentences with brand names / materials / warranty
+order: 1                                    # 1-indexed, matches intake order
+sub_services:                               # intake §5 required — 3–5 items
+  - Roof Replacements
+  - Roof Repairs
+  - Roof Inspections
+  - Shingle, Metal, Tile, and Flat Roofs
+about_heading: ...                          # optional — override "About our {service} services" for awkward plurals (e.g. "About our kitchen remodeling services" for "Kitchen Remodels")
+hero_photo: https://...                     # intake §5 required — direct URL
+gallery:                                    # intake §5 required — 2–3 entries
+  - photo: https://...
+    alt: ...
+faqs:                                       # intake §5 optional
+  - q: ...
+    a: ...
 ---
+
+One-line body summary of the service (renders in the service tile subtitle). Keep it one sentence, present tense.
 ```
 
-Filename `roof-repair.md` — the derived slug is `roof-repair`.
+### 10. Write per-area markdowns under `src/content/service_areas/{slug}.md` (max 5)
 
-### 14. Write `src/content/service_areas/{city-state}.md` (max 5)
+One file per area block in intake §6. Filename MUST match the intake slug and pass `^[a-z0-9-]+-[a-z]{2}$`. Reject reserved-slug conflicts (see reserved slug list above).
 
-One file per area. Slug convention (per v2.2 amendment F): `{city-slug}-{state-lowercase}` (e.g. `denver-co`, `miami-fl`). Filename must match. Reserved slugs must NOT be used — see the `RESERVED_SLUGS` set in `src/pages/[area].astro`.
-
-Frontmatter shape (per Task 6 schema, minus `slug`):
+Frontmatter fields (see `sites/firefly-cd/src/content/service_areas/spokane-wa.md`):
 
 ```yaml
 ---
-name: Denver
-state: CO
-state_abbr: co
-county: Denver County
-neighborhoods: [Capitol Hill, Highland, Washington Park]
-local_context: ...
-order: 1
-gallery: [{photo, alt}]
+name: Spokane                               # intake §6 required — display name
+state: WA                                   # intake §6 required — 2-letter uppercase (schema stores as-is)
+state_abbr: wa                              # 2-letter LOWERCASE — must match the filename suffix
+county: Spokane County                      # optional; derive from GBP or intake context
+neighborhoods: [South Hill, North Side]     # intake §6 optional
+local_context: ...                          # intake §6 optional — 1–2 sentences on presence
+hero_photo: https://...                     # intake §6 optional — top-of-page image
+landmark_photo: https://...                 # intake §6 required — the recognizable-area image
+landmark_alt: ...                           # optional but recommended; describes landmark_photo
+order: 1                                    # 1-indexed, matches intake order
+gallery: []                                 # optional; usually empty (uses site-wide gallery)
 ---
+
+One-line body summary of what the business does in the area.
 ```
 
-### 15. Write `src/styles/tokens.css`
+### 11. Write `src/styles/tokens.css`
 
-From `design_reference.json` — replace the placeholder tokens.css with real values:
+Replace the placeholder tokens.css copied from the template with real values from `design_reference.json` and intake §2. Reference `sites/firefly-cd/src/styles/tokens.css` for the exact shape.
+
+Contents:
 
 ```css
+@import url('https://fonts.googleapis.com/css2?family={DISPLAY_FONT}:opsz,wght@9..144,400;9..144,600..900&family={BODY_FONT}:wght@400;500;700&display=swap');
+
 :root {
-  --color-bg: {palette.bg};
-  --color-text: {palette.text};
-  --color-muted: {palette.muted};
-  --color-accent: {palette.accent};
-  --color-surface: {palette.surface};
-  --color-focus: #0057ff;
+  --color-bg: {palette.bg};                 /* usually #ffffff */
+  --color-text: {palette.text};             /* near-black */
+  --color-muted: {palette.muted};           /* mid-grey */
+  --color-accent: {palette.accent};         /* client brand accent — NOT purple/indigo unless the brand is */
+  --color-surface: {palette.surface};       /* light section fill */
+  --color-focus: #0057ff;                   /* fixed */
   --font-display: '{typography.display}', Georgia, serif;
   --font-body: '{typography.body}', system-ui, sans-serif;
-  --radius-sm: {radius.sm};
-  --radius-md: {radius.md};
+  --radius-sm: {radius.sm};                 /* e.g. 4px */
+  --radius-md: {radius.md};                 /* e.g. 8px */
   --space-1: {spacing[0]}; --space-2: {spacing[1]}; --space-3: {spacing[2]}; --space-4: {spacing[3]}; --space-5: {spacing[4]};
   --max-width: 1200px;
 }
 ```
 
-Also add Google Fonts `<link>` to BaseLayout.astro if the fonts differ from the placeholder — insert into head via `code_injection.head` as a safer alternative (avoids touching the template).
+Defaults if the intake left fonts blank: `Fraunces` display + `Inter` body. Defaults if palette is missing: match Firefly exactly.
 
-### 16. Append to `sites/build-log.md`
+Do NOT modify `BaseLayout.astro` from this skill to add font links. The `@import` at the top of tokens.css is the loading mechanism.
+
+### 12. Validate content collections
+
+Run `npx astro sync` inside `sites/{slug}/`. If it errors, the schema is unhappy — fix the offending file and retry. Common failures:
+
+- Extra `slug:` field on a service or area (remove it).
+- `state_abbr` uppercase (must be two lowercase letters).
+- Bare `photo:` field without `alt:` in a gallery entry.
+- Empty required string field (schema rejects `""`).
+
+### 13. Local build gate
+
+Run `npm install` (if node_modules not present) then `npm run build` inside `sites/{slug}/`. Must exit 0 and produce a `dist/` directory. If it fails, fix and retry — do NOT hand off a failing build to `vercel-deploy`.
+
+### 14. Append to `sites/build-log.md`
+
+Create the file with the header row if it doesn't exist yet. Append one line:
 
 ```markdown
-| Business | Slug | Reference URLs | Pages | Vercel URL | Date |
-|----------|------|----------------|-------|------------|------|
-| {name} | {slug} | {urls} | (filled by deploy) | (filled by deploy) | YYYY-MM-DD |
+| Business | Slug | Pages | Vercel URL | Date |
+|----------|------|-------|------------|------|
+| {business_name} | {slug} | {count from dist/} | (filled by vercel-deploy) | YYYY-MM-DD |
 ```
 
-## Anti-Patterns (enforced during content generation)
+Page count = number of `index.html` files under `dist/` (approximate: home + about + services + pricing + our-work + contact + book + privacy + terms + accessibility + per-service pages + per-area pages).
 
-The generated content and tokens MUST NOT include:
+### 15. Hand off to `vercel-deploy`
 
-- Gradient hero backgrounds (linear/radial/conic — none)
-- Glass morphism
-- Bento grid section layouts
-- Purple / indigo / violet accent palettes unless the reference URL explicitly uses one
-- Rows of outline icons (max 1 per section, only where semantically load-bearing)
-- Stock hero photography of "professional shaking hands" or "diverse team pointing at laptop"
-- "Trusted by 10,000+ customers" without a real number from business_profile.json
-- Section headers reading "Stunning", "Beautiful", "Powerful", "Seamless", or "Effortless"
+Print a handoff summary for the operator:
 
-Section order is FIXED per page type (v2.2 amendment E) — do not randomize, do not add or remove sections. Financing and Us-vs-Them are conditional on `enabled` flags.
+```
+Site scaffold complete — sites/{slug}/
+
+Business:   {business_name}
+Slug:       {slug}
+Site URL:   {site_url}  (placeholder — vercel-deploy will update)
+
+Services populated:      {N}/6 — [list]
+Service areas populated: {N}/5 — [list]
+Home testimonials:       {N}
+Home FAQs:               {N}
+Site-wide gallery items: {N}
+
+Paste-only fields left blank (section will self-hide):
+  - {each unset optional CRM / marketing block}
+
+Next: run vercel-deploy to push to Vercel and update site_url.
+```
+
+Do NOT run `vercel-deploy` yourself. The operator triggers that skill separately.
+
+---
 
 ## Rules
 
-- Real content only — no placeholder text in generated JSON/markdown
-- Copy angles from `local_research.json` drive the hero headline and subheadline
-- Testimonials use real GBP reviews first (from `business_profile.json.reviews`)
-- If fewer than 5 services in scraped content, synthesize category defaults
-- Service area slugs are `{city-slug}-{state-abbr-lowercase}` — required format for the flat `/[area]` route
-- Never write raw HTML into the generated content — write Markdown / JSON that Astro content collections consume
-- Never touch files outside `sites/{slug}/`
-- Never modify `astro-template/` (structural changes go there through a separate workflow)
+- Real content only — no `Lorem ipsum`, no `"Coming soon"`, no placeholder counts. If a required field is missing, stop and ask.
+- NAP (name, address, phone) must be consistent across `config.json`, structured data, footer text, and any pasted CRM snippets.
+- Paste-only for CRM and code-injection: never synthesize a GHL loader URL, never edit a pasted snippet. If a paste is malformed, ask the operator to re-paste.
+- Never touch files outside `sites/{slug}/`.
+- Never modify `astro-template/` from this skill — template edits are a separate workflow.
+- Write markdown files with LF line endings.
+- Refuse to write reserved slugs.
+- Do not re-prompt the operator for anything already covered in `docs/client-intake.md` — if the intake is incomplete, name the missing field and stop.
 
-## Build log
+## What NOT to ask about
 
-Append to `sites/build-log.md`. If it doesn't exist yet, create it with a header row.
+Everything in `docs/client-intake.md` §1–§16 is the operator's job to hand you. Do not run an interactive questionnaire. The only interactive prompts allowed in this skill are:
+
+1. Confirming the derived slug.
+2. Asking the operator to fix a specific malformed paste (identify which field).
+3. Asking the operator to supply a specific missing required field (name it precisely).
+
+## Handoff invariants
+
+At the end of a successful run, the following must be true:
+
+- `sites/{slug}/dist/` exists and `npm run build` exits 0.
+- `sites/{slug}/src/content/site/config.json` validates as `kind: "config"`.
+- Every service and area markdown validates against the schema.
+- Every reserved slug is absent from `src/content/service_areas/`.
+- `tokens.css` has real values, not template placeholders.
+- `astro.config.mjs` and `public/robots.txt` no longer contain `REPLACE_SITE_URL`.
+- `sites/build-log.md` has a fresh row for this client.
+
+If any invariant fails, the skill has not completed — do not report success.
