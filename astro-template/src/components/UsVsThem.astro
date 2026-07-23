@@ -7,16 +7,16 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
 {u.enabled && u.rows.length > 0 && (
   <section class="us-vs-them" aria-label="Comparison">
     <div class="container">
-      <SectionHead eyebrow="Comparison" heading={u.headline ?? 'Why us'} />
+      <SectionHead eyebrow="Us vs Them" heading={u.headline ?? 'Why us'} />
       <div class="grid">
         <div class="labels" aria-hidden="true">
-          <div class="corner"></div>
+          <div class="col-header spacer"></div>
           {u.rows.map((row: any) => <div class="row-label">{row.label}</div>)}
         </div>
         <div class="col us-col">
           <div class="col-header">
             {u.us_photo && <img src={u.us_photo} alt="" class="col-photo" loading="lazy" />}
-            <div class="col-title">{u.us_label ?? 'US'}</div>
+            <span class="col-title-overlay">{u.us_label ?? 'US'}</span>
           </div>
           {u.rows.map((row: any) => (
             <div class="cell" data-label={row.label}>{row.us ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
@@ -25,36 +25,43 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
         <div class="col them-col">
           <div class="col-header">
             {u.them_photo && <img src={u.them_photo} alt="" class="col-photo" loading="lazy" />}
-            <div class="col-title">{u.them_label ?? 'THEM'}</div>
+            <span class="col-title-overlay">{u.them_label ?? 'THEM'}</span>
           </div>
           {u.rows.map((row: any) => (
             <div class="cell" data-label={row.label}>{row.them ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
           ))}
         </div>
       </div>
-      <div class="mobile-labels" aria-hidden="true"></div>
     </div>
   </section>
 )}
 <style>
   .us-vs-them { padding: var(--space-5) 0; }
-  h2 { text-align: center; font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: var(--space-4); }
-  .grid { display: grid; grid-template-columns: minmax(160px, 1.2fr) 1fr 1fr; gap: 0; align-items: stretch; }
+  .grid { display: grid; grid-template-columns: minmax(180px, 1.2fr) 1fr 1fr; gap: 0; align-items: stretch; max-width: 1000px; margin: 0 auto; }
+  .col-header { position: relative; height: 260px; overflow: hidden; border-radius: var(--radius-md); }
+  .col-header.spacer { height: 260px; background: transparent; border-radius: 0; }
+  .col-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .col-title-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700;
+    color: white; letter-spacing: 0.06em;
+    background: linear-gradient(rgba(15,20,25,0.15), rgba(15,20,25,0.6));
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
   .labels { display: flex; flex-direction: column; }
-  .corner { height: 300px; }
-  .row-label { padding: var(--space-2) var(--space-2); font-weight: 500; border-bottom: 1px solid var(--color-surface); display: flex; align-items: center; min-height: 68px; }
-  .col { border: 1px solid var(--color-surface); border-radius: var(--radius-md); overflow: hidden; margin: 0 var(--space-1); }
-  .col-header { padding: 0; text-align: center; }
-  .col-photo { width: 100%; height: 240px; object-fit: cover; display: block; }
-  .col-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; padding: var(--space-2); background: var(--color-bg); }
-  .cell { padding: var(--space-2); text-align: center; border-top: 1px solid var(--color-surface); min-height: 68px; display: flex; align-items: center; justify-content: center; }
-  .check, .x { font-size: 1.75rem; }
+  .row-label { padding: 0 var(--space-2); font-weight: 500; border-bottom: 1px solid var(--color-surface); display: flex; align-items: center; height: 68px; }
+  .col { display: flex; flex-direction: column; margin: 0 var(--space-1); }
+  .cell { padding: 0 var(--space-2); text-align: center; border-bottom: 1px solid var(--color-surface); height: 68px; display: flex; align-items: center; justify-content: center; }
+  .cell:last-child { border-bottom: 0; }
+  .row-label:last-child { border-bottom: 0; }
+  .check, .x { font-size: 1.75rem; line-height: 1; }
   @media (max-width: 780px) {
-    .grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+    .grid { grid-template-columns: 1fr; max-width: 480px; }
     .labels { display: none; }
     .col { margin: var(--space-2) 0; }
-    .col-header { text-align: center; }
-    .cell { justify-content: space-between; padding-left: var(--space-3); padding-right: var(--space-3); text-align: left; }
+    .col-header { height: 200px; }
+    .col-header.spacer { display: none; }
+    .cell { justify-content: space-between; padding: 0 var(--space-3); text-align: left; height: 56px; }
     .cell::before { content: attr(data-label); font-weight: 500; flex: 1; }
     .cell .check, .cell .x { flex-shrink: 0; }
   }
