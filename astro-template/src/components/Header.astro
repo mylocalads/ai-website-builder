@@ -32,8 +32,13 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
         <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta">{site.phone_display}</a></li>
       </ul>
     </nav>
+    <a href={`tel:${site.phone}`} class="phone-cta mobile-phone">{site.phone_display}</a>
     <details class="mobile-nav">
-      <summary aria-label="Menu">Menu</summary>
+      <summary aria-label="Open menu">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#111" stroke-width="2.25" stroke-linecap="round" />
+        </svg>
+      </summary>
       <nav aria-label="Mobile primary">
         <ul>
           <li><a href="/services">Services</a></li>
@@ -45,14 +50,13 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
         </ul>
       </nav>
     </details>
-    <a href={`tel:${site.phone}`} class="phone-cta mobile-phone">{site.phone_display}</a>
   </div>
 </header>
 <style>
   .site-header { border-bottom: 1px solid var(--color-surface); position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
   .header-row { display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; gap: var(--space-3); }
   .brand { font-family: var(--font-display); font-size: 1.25rem; text-decoration: none; flex: 1; display: inline-flex; align-items: center; }
-  .brand-logo { max-height: 44px; width: auto; display: block; }
+  .brand-logo { max-height: 66px; width: auto; display: block; }
   .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: center; }
   .nav-list a { text-decoration: none; }
   .has-menu { position: relative; }
@@ -63,15 +67,33 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   }
   .has-menu:hover .submenu, .has-menu:focus-within .submenu { display: block; }
   .submenu li a { display: block; padding: 0.5rem var(--space-2); }
-  .phone-cta { background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-sm); text-decoration: none; }
+  .phone-cta { background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; }
   .mobile-nav, .mobile-phone { display: none; }
-  .mobile-nav summary { cursor: pointer; list-style: none; padding: 0.5rem 0.75rem; border: 1px solid var(--color-surface); border-radius: var(--radius-sm); }
+  .mobile-nav summary { cursor: pointer; list-style: none; padding: 0.25rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
+  .mobile-nav summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
   .mobile-nav summary::-webkit-details-marker { display: none; }
   .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
   .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
   .mobile-nav nav ul li a { display: block; padding: 0.5rem 0; text-decoration: none; }
+
+  @keyframes phone-glow {
+    0%   { box-shadow: 0 0 0 0 rgba(248,174,168,0.75); }
+    70%  { box-shadow: 0 0 0 14px rgba(248,174,168,0); }
+    100% { box-shadow: 0 0 0 0 rgba(248,174,168,0); }
+  }
+
   @media (max-width: 900px) {
     .primary-nav { display: none; }
-    .mobile-nav, .mobile-phone { display: inline-block; }
+    .mobile-nav { display: inline-flex; }
+    .mobile-phone {
+      display: inline-block;
+      margin: 0 auto;
+      animation: phone-glow 1.8s ease-out infinite;
+    }
+    .brand { flex: 0 1 auto; }
+    .brand-logo { max-height: 54px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-phone { animation: none; }
   }
 </style>
