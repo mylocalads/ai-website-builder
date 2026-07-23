@@ -27,8 +27,10 @@ const { service } = Astro.props;
 const site = (await getEntry('site', 'config')).data as any;
 
 const heroFormUrl = site.crm?.estimate_form_embed_url ?? site.crm?.contact_form_embed_url;
+const marketCity = site.marketing_city ?? site.address.city;
+const marketState = site.marketing_state ?? site.address.state;
 
-const title = `${service.data.title} in ${site.address.city}, ${site.address.state} | ${site.business_name}`;
+const title = `${service.data.title} in ${marketCity}, ${marketState} | ${site.business_name}`;
 const description = service.data.short_description;
 const crumbs = [
   { name: 'Home', href: '/' },
@@ -61,8 +63,8 @@ const faqLd = service.data.faqs.length > 0 ? {
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
   <Hero
-    eyebrow={`${site.address.city}, ${site.address.state}`}
-    headline={service.data.seo_h1 ?? `${service.data.title} in ${site.address.city}, ${site.address.state}`}
+    eyebrow={`${marketCity}, ${marketState}`}
+    headline={service.data.seo_h1 ?? `${service.data.title} in ${marketCity}, ${marketState}`}
     subheadline={service.data.short_description}
     cta_text="Get Your Free Estimate!"
     cta_href="/book"

@@ -98,6 +98,8 @@ const site = defineCollection({
         postal: z.string().optional(),
         country: z.string().default('US'),
       }),
+      marketing_city: z.string().optional(),
+      marketing_state: z.string().optional(),
       geo: z.object({ lat: z.number(), lng: z.number() }).optional(),
       hours: z.record(z.string()).optional(),
       site_url: z.string().url(),
