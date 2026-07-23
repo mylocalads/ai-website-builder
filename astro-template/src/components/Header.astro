@@ -41,8 +41,20 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
       </summary>
       <nav aria-label="Mobile primary">
         <ul>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/service-areas">Service Areas</a></li>
+          <li class="group">
+            <a href="/services" class="group-heading">Services</a>
+            <ul class="sub">
+              {services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+              <li><a href="/services" class="all">All services</a></li>
+            </ul>
+          </li>
+          <li class="group">
+            <a href="/service-areas" class="group-heading">Service Areas</a>
+            <ul class="sub">
+              {areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}
+              <li><a href="/service-areas" class="all">All areas</a></li>
+            </ul>
+          </li>
           <li><a href="/our-work">Our Work</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/about">About</a></li>
@@ -75,6 +87,10 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
   .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
   .mobile-nav nav ul li a { display: block; padding: 0.5rem 0; text-decoration: none; }
+  .mobile-nav .group-heading { font-weight: 700; }
+  .mobile-nav .sub { padding: 0.25rem 0 0.5rem 0; margin: 0 0 0.25rem 0.75rem; border-left: 2px solid var(--color-surface); }
+  .mobile-nav .sub li a { padding: 0.35rem 0 0.35rem 0.75rem; font-size: 0.95rem; color: var(--color-muted); }
+  .mobile-nav .sub .all { font-style: italic; font-size: 0.9rem; }
 
   @keyframes phone-glow {
     0%   { box-shadow: 0 0 0 0 rgba(248,174,168,0.75); }
