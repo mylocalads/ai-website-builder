@@ -1,5 +1,4 @@
 ---
-import SectionHead from './SectionHead.astro';
 export interface Props {
   eyebrow?: string;
   heading: string;
@@ -7,15 +6,28 @@ export interface Props {
   photo?: string;
   photo_alt?: string;
   photo_position?: 'left' | 'right';
+  bullets?: string[];
+  bullet_icon?: string;
 }
-const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right' } = Astro.props;
+const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [], bullet_icon } = Astro.props;
 ---
 <section class="about-section" aria-labelledby="about-heading">
   <div class="container">
     <div class={`about-grid ${photo_position === 'left' ? 'photo-left' : ''}`}>
       <div class="about-copy">
-        <SectionHead eyebrow={eyebrow ?? 'About Us'} heading={heading} align="left" />
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <h2 id="about-heading">{heading}</h2>
         <p>{body}</p>
+        {bullets.length > 0 && (
+          <ul class="bullets">
+            {bullets.map((b) => (
+              <li>
+                <span class="check" aria-hidden="true" style={bullet_icon ? `--mask: url(${bullet_icon});` : ''}></span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       {photo && <img src={photo} alt={photo_alt} class="about-photo" loading="lazy" />}
     </div>
@@ -27,7 +39,18 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right' 
   .about-grid.photo-left { grid-template-areas: 'photo copy'; }
   .about-grid.photo-left .about-copy { grid-area: copy; }
   .about-grid.photo-left .about-photo { grid-area: photo; }
-  .about-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; width: 100%; }
+  .about-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 2.75rem); line-height: 1.15; margin: 0 0 var(--space-2); }
   p { font-size: 1.05rem; line-height: 1.65; color: var(--color-muted); }
+  .bullets { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-direction: column; gap: 0.65rem; }
+  .bullets li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; color: var(--color-text); }
+  .check {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    background-color: var(--color-accent);
+    -webkit-mask: var(--mask, url('https://www.freeiconspng.com/uploads/check-mark-icon-21.png')) no-repeat center / contain;
+    mask: var(--mask, url('https://www.freeiconspng.com/uploads/check-mark-icon-21.png')) no-repeat center / contain;
+  }
   @media (max-width: 780px) { .about-grid, .about-grid.photo-left { grid-template-columns: 1fr; grid-template-areas: none; } }
 </style>
