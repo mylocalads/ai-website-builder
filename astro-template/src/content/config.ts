@@ -4,6 +4,7 @@ const services = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    title_highlight: z.string().optional(),
     short_description: z.string(),
     long_description: z.string(),
     icon: z.string().optional(),
@@ -159,6 +160,12 @@ const site = defineCollection({
       code_injection: codeInjectionSlots.extend({
         per_page: z.record(codeInjectionSlots).default({}),
       }).default({ per_page: {} }),
+      services_section: z.object({
+        eyebrow: z.string().default('Our Services'),
+        heading_lead: z.string().optional(),
+        heading_rest: z.string().optional(),
+        subtitle: z.string().optional(),
+      }).default({ eyebrow: 'Our Services' }),
     }),
     z.object({
       kind: z.literal('home'),
