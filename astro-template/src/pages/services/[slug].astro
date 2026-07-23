@@ -73,7 +73,7 @@ const faqLd = service.data.faqs.length > 0 ? {
   <PartnerBadges />
   <AboutSection
     eyebrow="Our Service"
-    heading={`About our ${service.data.title.toLowerCase()}`}
+    heading={service.data.about_heading ?? `About our ${service.data.title.toLowerCase()} services`}
     body={service.data.long_description}
     photo={service.data.hero_photo}
     photo_alt={`${service.data.title} — ${site.business_name}`}

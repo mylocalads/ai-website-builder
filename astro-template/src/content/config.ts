@@ -17,6 +17,7 @@ const services = defineCollection({
       alt: z.string(),
     })).default([]),
     sub_services: z.array(z.string()).default([]),
+    about_heading: z.string().optional(),
   }),
 });
 
