@@ -7,9 +7,8 @@ export interface Props {
   photo_alt?: string;
   photo_position?: 'left' | 'right';
   bullets?: string[];
-  bullet_icon?: string;
 }
-const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [], bullet_icon } = Astro.props;
+const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [] } = Astro.props;
 ---
 <section class="about-section" aria-labelledby="about-heading">
   <div class="container">
@@ -22,7 +21,10 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
           <ul class="bullets">
             {bullets.map((b) => (
               <li>
-                <span class="check" aria-hidden="true" style={bullet_icon ? `--mask: url(${bullet_icon});` : ''}></span>
+                <svg class="check" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.14" />
+                  <path d="M7 12.5l3.5 3.5L17 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
                 <span>{b}</span>
               </li>
             ))}
@@ -45,12 +47,6 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
   p { font-size: 1.05rem; line-height: 1.65; color: var(--color-muted); }
   .bullets { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-direction: column; gap: 0.65rem; }
   .bullets li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; color: var(--color-text); }
-  .check {
-    flex-shrink: 0;
-    width: 24px; height: 24px;
-    background-color: var(--color-accent);
-    -webkit-mask: var(--mask, url('https://www.freeiconspng.com/uploads/check-mark-icon-21.png')) no-repeat center / contain;
-    mask: var(--mask, url('https://www.freeiconspng.com/uploads/check-mark-icon-21.png')) no-repeat center / contain;
-  }
+  .check { flex-shrink: 0; color: var(--color-accent); }
   @media (max-width: 780px) { .about-grid, .about-grid.photo-left { grid-template-columns: 1fr; grid-template-areas: none; } }
 </style>
