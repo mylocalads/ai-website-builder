@@ -16,7 +16,7 @@ Allowed write roots (per invocation, scoped to ONE confirmed slug):
   sites/{slug}/.site-edit-history/**      ← version-control snapshots + JSONL log
 
 Explicit deny (refuse even if the operator asks):
-  astro-template/**                       ← template edits are a separate workflow
+  astro-templates/**                       ← template edits are a separate workflow
   Anything outside sites/{slug}/          ← other clients' files, agent config, workflows
 -->
 
@@ -50,7 +50,7 @@ Rules the skill MUST follow, in every invocation:
 - **No adjacent cleanups.** If the operator asks for a phone-number change, do not also fix a typo you noticed two lines away, do not reformat JSON, do not sort keys, do not "improve" a nearby description. If it isn't in the confirmed spec, it isn't in the diff.
 - **No invented values.** If the request is missing information (e.g. "make the service page match the new hero"), stop and ask the operator to specify the exact target value. Do not guess. Do not use "reasonable defaults."
 - **No copy rewrites.** Never rephrase, shorten, or "polish" copy the operator did not ask you to change. Copy edits are ONLY made when the operator gives the new copy verbatim.
-- **No template edits.** `astro-template/**` is off-limits. If the operator's request can only be satisfied by editing the template, refuse and tell them a template change is a separate workflow.
+- **No template edits.** `astro-templates/**` is off-limits. If the operator's request can only be satisfied by editing the template, refuse and tell them a template change is a separate workflow.
 - **No cross-site edits.** One invocation edits one `sites/{slug}/`. If the operator asks to edit two clients at once, refuse and ask them to run the skill twice.
 - **No scope inflation via "obvious related fields."** The ONE explicit exception is the mechanical derivation of `phone` (E.164) from a `phone_display` change and vice versa — that's called out in Step 3 below. Every other "well, if we change X we should probably also change Y" instinct is wrong here. Ask the operator; don't act.
 - **Atomic apply or full revert.** If any file in the batch fails to write, revert every file already written in this batch from the snapshot before reporting the failure. Never leave the site in a partially-applied state.
@@ -474,7 +474,7 @@ Handle each explicitly. Never silently fail.
 
 ## Rules (summary)
 
-- Never edit `astro-template/`.
+- Never edit `astro-templates/`.
 - Never write outside the confirmed `sites/{slug}/`.
 - Never edit outside `src/content/**`, `src/styles/tokens.css`, `src/components/**`, or `.site-edit-history/**` within that slug.
 - Never rewrite a pasted-in snippet (CRM, code injection, financing, partners).

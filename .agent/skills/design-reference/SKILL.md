@@ -41,7 +41,7 @@ Writes `sites/{slug}/design_reference.json`.
 1. Determine invocation mode (interactive / library / URLs / combo).
 2. Build the working URL list (deduplicate URLs).
    - **Library ordering rule:** When reading `reference-libraries/{vertical}.json`, entries carry an optional `role` field. Order the URL list as `role: "primary"` first, then `role: "secondary"`, then unclassified. This guarantees the canonical MLA reference (currently `https://firefly-cd.vercel.app/`) is scraped and weighted ahead of secondary inspirations (agcconcrete.com, etc.). If a `primary` entry becomes unreachable, warn the operator and fall through to the next primary or the highest-ranked secondary — don't silently drop.
-   - **URL fragility note:** Reference library entries may include a `note_url_fragility` field flagging URLs likely to move (e.g. Vercel preview aliases). If a primary URL 404s and its entry carries that note, tell the operator and point them at the astro-template repo itself (`ai-website-builder/astro-template/`) as the structural source of truth while they update the library.
+   - **URL fragility note:** Reference library entries may include a `note_url_fragility` field flagging URLs likely to move (e.g. Vercel preview aliases). If a primary URL 404s and its entry carries that note, tell the operator and point them at the matching template directory itself (`ai-website-builder/astro-templates/{firefly,owl}/`) as the structural source of truth while they update the library.
 3. For each URL:
    a. Warn user of Firecrawl cost (~$0.02 per URL) and total.
    b. Wait for approval.
@@ -83,7 +83,7 @@ If `sites/{slug}/audit_results.json` shows the client's current site uses gradie
 
 ## Rules
 
-- Never write to `astro-template/` — only to `sites/{slug}/design_reference.json`.
+- Never write to `astro-templates/` — only to `sites/{slug}/design_reference.json`.
 - Always show the user the synthesized tokens for confirmation before finalizing.
 - Never fabricate reference URLs — only use library entries or user-supplied URLs.
 - Firecrawl failures on a URL: proceed with remaining URLs, note the failure in the output.

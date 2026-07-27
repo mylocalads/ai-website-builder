@@ -23,7 +23,7 @@ Pipeline position (this skill is FIRST):
 
 Kickstarts the client intake by discovering the business on Google Business Profile, confirming the correct listing with the operator, and then Firecrawl-scraping the confirmed website (plus optional inner pages and social profiles) to auto-populate as much of `docs/client-intake.md` as possible.
 
-Output: `sites/{slug}/intake-scraped.json` — a partially-filled intake payload that mirrors the schema `site-generate` expects (see `astro-template/src/content/config.ts`), plus a per-URL raw archive under `sites/{slug}/raw/` for debugging. The operator then adds the paste-in-only fields (CRM widgets, code-injection blocks, custom domain) and hands the completed intake to `site-generate`.
+Output: `sites/{slug}/intake-scraped.json` — a partially-filled intake payload that mirrors the schema `site-generate` expects (see `astro-templates/{template}/src/content/config.ts`), plus a per-URL raw archive under `sites/{slug}/raw/` for debugging. The operator then adds the paste-in-only fields (CRM widgets, code-injection blocks, custom domain) and hands the completed intake to `site-generate`.
 
 ---
 
@@ -37,9 +37,9 @@ This skill NEVER extracts, saves, or references the following from the client's 
 - **Screenshots as design inspiration.** Screenshots taken by `site-audit` exist for OPERATOR REFERENCE only — they are NOT design DNA and must never seed `design-reference` or `tokens.css`.
 - **HTML structure, DOM patterns, or CSS class taxonomies.** Never save selectors, class names, or markup shape.
 
-**The `astro-template/` is the sole source of truth for site design and structure.** The client's existing website is a source of BRAND TOKENS (fonts, colors, logo) and BUSINESS CONTEXT (name, phone, address, hours, services, team, testimonials text) only.
+**The selected template under `astro-templates/` is the sole source of truth for site design and structure.** The client's existing website is a source of BRAND TOKENS (fonts, colors, logo) and BUSINESS CONTEXT (name, phone, address, hours, services, team, testimonials text) only.
 
-This is not a soft preference. It is a hard rule. If a downstream reader (or a future operator, or a future maintainer of this skill) is tempted to copy the client's existing site layout, the answer is always **no** — use the astro-template. The whole point of the pipeline is that every generated site inherits one strong, tested design; scraping the client's site to mimic it defeats that.
+This is not a soft preference. It is a hard rule. If a downstream reader (or a future operator, or a future maintainer of this skill) is tempted to copy the client's existing site layout, the answer is always **no** — use the template. The whole point of the pipeline is that every generated site inherits one strong, tested design; scraping the client's site to mimic it defeats that.
 
 **What this skill IS allowed to extract, exhaustively:**
 
@@ -55,7 +55,7 @@ This is not a soft preference. It is a hard rule. If a downstream reader (or a f
 - Social profile URLs.
 - FAQs — question + answer text pairs.
 
-Everything else is either the operator's paste-in job (§12–§16 of `docs/client-intake.md`) or comes from the astro-template.
+Everything else is either the operator's paste-in job (§12–§16 of `docs/client-intake.md`) or comes from the template.
 
 ---
 
@@ -229,15 +229,15 @@ Extract only:
 
 - Additional team member names/photos (Instagram grid where team is tagged, Facebook "about" section for owner names).
 - Additional testimonials — for Facebook or Yelp, save reviews as `{name, location?, text, _source: "social:{platform}"}`.
-- Brand voice / bio text — save as a `brand_voice_sample` string; `site-generate` may use it to match tone in generated copy, but the astro-template's structural copy stays intact.
+- Brand voice / bio text — save as a `brand_voice_sample` string; `site-generate` may use it to match tone in generated copy, but the template's structural copy stays intact.
 
-**Same anti-pattern lock.** Do not save any styling or layout from social profiles. Do not attempt to mimic the client's Instagram aesthetic in the generated site — the astro-template design wins.
+**Same anti-pattern lock.** Do not save any styling or layout from social profiles. Do not attempt to mimic the client's Instagram aesthetic in the generated site — the template design wins.
 
 ### 9. Aggregate into `sites/{slug}/intake-scraped.json`
 
 Derive the slug from the business name (lowercase, ASCII, hyphens only — mirror `find-business` Step 9). Confirm the slug with the operator only if it collides with a reserved slug or a slug already in `sites/`.
 
-Write the aggregated payload. Shape mirrors the schema `site-generate` consumes (see `astro-template/src/content/config.ts`). At minimum populate the following top-level keys — set to `null` (not empty string) for fields you could not detect, so downstream skills can tell "missing" from "empty":
+Write the aggregated payload. Shape mirrors the schema `site-generate` consumes (see `astro-templates/{template}/src/content/config.ts`). At minimum populate the following top-level keys — set to `null` (not empty string) for fields you could not detect, so downstream skills can tell "missing" from "empty":
 
 ```jsonc
 {
@@ -340,7 +340,7 @@ Write the aggregated payload. Shape mirrors the schema `site-generate` consumes 
 **Field-mapping rules:**
 
 - `phone` is normalized to E.164 (`+1` + 10 digits, no spaces). `phone_display` is verbatim from the site.
-- `address.state` is 2-letter uppercase; `service_areas[].state_abbr` is 2-letter LOWERCASE (matches the astro-template filename convention).
+- `address.state` is 2-letter uppercase; `service_areas[].state_abbr` is 2-letter LOWERCASE (matches the template filename convention).
 - `hours` uses lowercase weekday keys; omit closed-day keys entirely (do NOT write `"closed"` strings).
 - `licensed` / `insured` / `bonded` are set to `true` ONLY when a badge, footer disclosure, or credentials section explicitly says so. Default to `false` when uncertain — never guess `true`.
 - `years_in_business` requires an explicit "Since YYYY" or "N+ years" statement on the site. Do not derive from GBP or infer.
@@ -413,7 +413,7 @@ Handle each explicitly. Never silently fail.
 
 ## Rules
 
-- Never write to `astro-template/`. Structural / template changes happen through a separate workflow, not this skill.
+- Never write to `astro-templates/`. Structural / template changes happen through a separate workflow, not this skill.
 - Never save CSS beyond `font-family` values and color values. No spacing, no radii, no shadows, no borders, no animations, no class names, no selectors.
 - Never save layout or component patterns from the scraped site. See the anti-pattern lock at the top.
 - Never save screenshots of the scraped site as design inspiration. Screenshots are the operator's reference material from `site-audit`, nothing more.

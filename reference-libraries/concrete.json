@@ -6,7 +6,7 @@
       "role": "primary",
       "notes": "Firefly Contractors & Design — the canonical MLA reference. Even though it's a roofing/remodeling brand, every structural pattern (fixed section order, two-column hero with calendar, editorial two-tone eyebrow + serif H2s, service tiles, WhyChooseUs with CSS-mask icons, UsVsThem, sub-services check bullets, /book calendar page) applies 1:1 to concrete. Swap accent color / photography / copy for the vertical.",
       "tags": ["primary", "editorial", "type-driven", "fixed-section-order", "two-column-hero-calendar", "seo-service-h1", "css-mask-icons"],
-      "note_url_fragility": "This URL may move when the site is attached to a permanent domain. If the URL 404s, cross-reference the astro-template repo directly at ai-website-builder/astro-template/ for the current shape."
+      "note_url_fragility": "This URL may move when the site is attached to a permanent domain. If the URL 404s, cross-reference the template repo directly at ai-website-builder/astro-templates/firefly/ for the current shape."
     },
     {
       "url": "https://agcconcrete.com/",
@@ -24,6 +24,6 @@
     "Lucide icon rows (max 1 outline icon per section, semantic only)",
     "\"Trusted by 10,000+ customers\" without a real number from GBP",
     "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
-    "randomized section order — always use the fixed order from the astro-template"
+    "randomized section order — always use the fixed order from the template"
   ]
 }

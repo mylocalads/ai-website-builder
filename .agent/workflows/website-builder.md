@@ -47,7 +47,7 @@ Every run must respect these amendments from `docs/plans/2026-07-22-astro-refact
 - **CRM widgets are paste-only (v2.1 amendment B)** — GHL chat/reviews/form/call-tracking snippets are supplied by the user via paste-in during `/site-generate`. Never synthesize loader URLs or IDs.
 - **Universal code injection (v2.1 amendment C)** — Every site exposes `head` / `body_start` / `body_end` code-injection slots (per-site plus per-page overrides) for pixels, GTM, GHL number-swap, and similar third-party scripts.
 - **Reference libraries** — Curated per-vertical reference URLs live under `reference-libraries/{vertical}.json` (`default`, `roofing`, `concrete`, …). `/design-reference` reads these when the user does not supply their own URLs. Entries carry an optional `role` field; `/design-reference` weighs `role: "primary"` first (currently `https://firefly-cd.vercel.app/` for both roofing and concrete), then `secondary`, then unclassified.
-- **Client website is brand-only, never design DNA** — `/intake-from-web` extracts fonts, colors, logo URL, and business context text from the client's existing site. It NEVER extracts layout patterns, section rhythms, component styling, or screenshots-as-inspiration. The astro-template is the sole source of truth for design and structure. `/site-audit` produces screenshots for OPERATOR reference only — never for design cloning.
+- **Client website is brand-only, never design DNA** — `/intake-from-web` extracts fonts, colors, logo URL, and business context text from the client's existing site. It NEVER extracts layout patterns, section rhythms, component styling, or screenshots-as-inspiration. The selected template is the sole source of truth for design and structure. `/site-audit` produces screenshots for OPERATOR reference only — never for design cloning.
 - **Manual intake fallback** — the operator-facing questionnaire at `docs/client-intake.md` remains the reference for fields that `/intake-from-web` cannot scrape. Client-supplied paste-ins are narrow (see section 12 of the questionnaire): (1) GHL forms/surveys/calendar booking snippet, (2) GHL reviews widget snippet, (3) GHL Live Chat widget snippet, (4) tracking phone number, (5) brand color codes as a fallback for when `intake-from-web` couldn't auto-detect them from the client's site/logo. Operator-configured fields (Meta Pixel/GTM in `code_injection.head`, `marketing_city`/`marketing_state` overrides, custom Vercel domain) are set on the CRM/deploy side, not requested from the client.
 
 ## Step Details
@@ -61,7 +61,7 @@ Discovers and confirms the client business, then auto-populates as much of the i
 - **Process:** GBP lookup via `/find-business` → confirmation card → Firecrawl homepage → Firecrawl approved inner pages → Firecrawl approved social profiles → aggregate into `sites/{slug}/intake-scraped.json`.
 - **Extracts:** brand tokens (fonts, colors, logo URL), business context (name, phone, address, hours, rating, services list, testimonials text, team members, credentials, social URLs), and hero photo candidates.
 - **Does NOT extract:** layout patterns, section rhythm, component styles, or screenshots-as-design-DNA from the client's existing website. Enforced anti-pattern lock.
-- **Output:** `sites/{slug}/intake-scraped.json` matching the schema in `astro-template/src/content/config.ts`, plus a report table of which fields were populated vs which still need operator paste-in per `docs/client-intake.md`.
+- **Output:** `sites/{slug}/intake-scraped.json` matching the schema in `astro-templates/{template}/src/content/config.ts`, plus a report table of which fields were populated vs which still need operator paste-in per `docs/client-intake.md`.
 - **Cost:** ~$0.20–0.35 for the batch (GBP + Firecrawl + optional socials). Sub-step warnings on every paid call.
 
 
@@ -115,7 +115,7 @@ Scrapes the reference URLs, synthesizes design tokens, and merges the anti-patte
 **Input:** All JSON files from previous steps + user paste-in for CRM snippets & code-injection blocks
 **Output:** Full Astro project at `sites/{slug}/` (src/content/, src/styles/tokens.css, src/pages/, astro.config.mjs, package.json, …) + `sites/build-log.md`
 
-Scaffolds a per-client Astro project from the shared `astro-template/`. Populates content collections from the JSON files. Writes `tokens.css` from `design_reference.json`. Prompts the user to paste GHL chat/reviews/form/call-tracking snippets and any pixel / GTM / number-swap injection blocks (paste-only — never synthesized). Enforces the fixed section order for Home, Service, and Service-area pages. Emits up to 5 services and up to 5 service-area subpages.
+Scaffolds a per-client Astro project from the selected template under `astro-templates/`. Populates content collections from the JSON files. Writes `tokens.css` from `design_reference.json`. Prompts the user to paste GHL chat/reviews/form/call-tracking snippets and any pixel / GTM / number-swap injection blocks (paste-only — never synthesized). Enforces the fixed section order for Home, Service, and Service-area pages. Emits up to 5 services and up to 5 service-area subpages.
 
 > **Pause:** Show the config summary — content counts, tokens, code-injection blocks, CRM widgets. Ask: "Build and deploy?"
 

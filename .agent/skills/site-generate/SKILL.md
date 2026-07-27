@@ -1,6 +1,6 @@
 ---
 name: site-generate
-description: Scaffold a per-client Astro project under sites/{slug}/ from the shared astro-template, driven by a completed docs/client-intake.md questionnaire plus any pipeline JSON (business_profile, local_research, scraped_content, audit_results, design_reference). Writes every content-collection file, tokens.css, and paste-in CRM + code-injection blocks; validates against the schema; runs the local build; hands off to vercel-deploy.
+description: Scaffold a per-client Astro project under sites/{slug}/ from the selected template under astro-templates/, driven by a completed docs/client-intake.md questionnaire plus any pipeline JSON (business_profile, local_research, scraped_content, audit_results, design_reference). Writes every content-collection file, tokens.css, and paste-in CRM + code-injection blocks; validates against the schema; runs the local build; hands off to vercel-deploy.
 trigger: "site-generate" or "generate site" or "scaffold site" or "build site" or "spin up the site"
 ---
 
@@ -10,7 +10,7 @@ Takes a filled-in `docs/client-intake.md` (the operator-facing questionnaire) pl
 
 The canonical example of a completed site is `sites/firefly-cd/`. Every field this skill writes exists in that project — when in doubt about what a field should look like, read the equivalent file there. Do NOT invent example values that differ from Firefly.
 
-This skill only writes files under `sites/{slug}/`. Page composition, layouts, components, and section order live in `astro-template/` and are inherited unchanged. Structural changes to the template are a separate workflow; never edit `astro-template/` from this skill.
+This skill only writes files under `sites/{slug}/`. Page composition, layouts, components, and section order live in the selected template under `astro-templates/` and are inherited unchanged. Structural changes to a template are a separate workflow; never edit `astro-templates/` from this skill.
 
 ## Inputs (must exist before running)
 
@@ -59,7 +59,7 @@ Service-area slugs MUST match `^[a-z0-9-]+-[a-z]{2}$` (city-lowercase-hyphens + 
 ## Astro 5 content-layer gotcha (do not forget)
 
 - Filenames derive the slug. Do NOT include a `slug:` field in service or service-area frontmatter — the schema does not allow it.
-- Templates that iterate service or area collections must reference `entry.slug`, not `entry.data.slug`. This skill does not touch templates, but if a build fails with "cannot read data.slug", it is a template regression and belongs upstream in astro-template — flag it, don't patch it inside the client site.
+- Templates that iterate service or area collections must reference `entry.slug`, not `entry.data.slug`. This skill does not touch templates, but if a build fails with "cannot read data.slug", it is a template regression and belongs upstream in the template — flag it, don't patch it inside the client site.
 - Write all markdown files with LF line endings.
 
 ---
@@ -72,7 +72,7 @@ Derive the slug from the business name: lowercased, ASCII, hyphens only (e.g. "F
 
 ### 2. Copy the template
 
-Copy `astro-template/` → `sites/{slug}/`, excluding `node_modules`, `dist`, `.astro`, `.vercel`, and any lockfile that would pin to the template's install path. Do not modify the template in place under any circumstance.
+Copy `astro-templates/{template}/` → `sites/{slug}/`, excluding `node_modules`, `dist`, `.astro`, `.vercel`, and any lockfile that would pin to the template's install path. Do not modify the template in place under any circumstance.
 
 ### 3. Determine site URL and substitute placeholders
 
@@ -337,7 +337,7 @@ Do NOT run `vercel-deploy` yourself. The operator triggers that skill separately
 - NAP (name, address, phone) must be consistent across `config.json`, structured data, footer text, and any pasted CRM snippets.
 - Paste-only for CRM and code-injection: never synthesize a GHL loader URL, never edit a pasted snippet. If a paste is malformed, ask the operator to re-paste.
 - Never touch files outside `sites/{slug}/`.
-- Never modify `astro-template/` from this skill — template edits are a separate workflow.
+- Never modify `astro-templates/` from this skill — template edits are a separate workflow.
 - Write markdown files with LF line endings.
 - Refuse to write reserved slugs.
 - Do not re-prompt the operator for anything already covered in `docs/client-intake.md` — if the intake is incomplete, name the missing field and stop.
