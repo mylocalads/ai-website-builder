@@ -32,6 +32,6 @@ const items = site.why_choose_us ?? [];
   .tile { counter-increment: reason; padding: var(--space-3); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); transition: transform 0.2s ease, border-color 0.2s ease; }
   .tile::before { content: counter(reason, decimal-leading-zero); display: block; font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--color-accent); margin-bottom: var(--space-2); }
   .tile:hover { transform: translateY(-5px); border-color: var(--color-accent); }
-  .tile h3 { margin: 0 0 var(--space-1); font-size: 1.15rem; color: var(--color-on-primary); }
+  .tile h3 { margin: 0 0 var(--space-1); font-size: 1.15rem; color: var(--color-on-primary); text-transform: capitalize; }
   .tile p { color: var(--color-on-primary); opacity: 0.78; margin: 0; line-height: 1.6; }
 </style>

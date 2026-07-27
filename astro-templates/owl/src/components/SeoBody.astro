@@ -8,6 +8,13 @@ export interface Props {
     image?: string;
     image_alt?: string;
     image_position?: 'left' | 'right';
+    review?: {
+      name: string;
+      text: string;
+      rating?: number;
+      source?: string;
+      avatar?: string;
+    };
   };
 }
 const { data } = Astro.props;
@@ -15,6 +22,13 @@ const paragraphs = data?.paragraphs ?? [];
 const checklist = data?.checklist ?? [];
 const image = data?.image;
 const imageLeft = data?.image_position === 'left';
+const review = data?.review;
+// Initials stand in for a photo. A stock or generated face next to a real named
+// customer would be a fabricated testimonial, which is exactly what we stripped
+// out of the old site.
+const initials = review
+  ? review.name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase()
+  : '';
 ---
 {data && (
   <section class="seo-body" aria-label={data.headline}>
@@ -32,6 +46,27 @@ const imageLeft = data?.image_position === 'left';
       {image && (
         <div class="media">
           <img src={image} alt={data.image_alt ?? ''} loading="lazy" />
+          {review && (
+            <figure class="review">
+              <div class="review-head">
+                {review.avatar
+                  ? <img class="avatar" src={review.avatar} alt="" loading="lazy" />
+                  : <span class="avatar initials" aria-hidden="true">{initials}</span>}
+                <div>
+                  <p class="name">{review.name}</p>
+                  <p class="meta">
+                    {review.source && <span class="src">{review.source}</span>}
+                    {review.rating && (
+                      <span class="stars" aria-label={`${review.rating} out of 5 stars`}>
+                        <span aria-hidden="true">{'★'.repeat(Math.round(review.rating))}</span>
+                      </span>
+                    )}
+                  </p>
+                </div>
+              </div>
+              <blockquote><p>{review.text}</p></blockquote>
+            </figure>
+          )}
         </div>
       )}
     </div>
@@ -54,5 +89,22 @@ const imageLeft = data?.image_position === 'left';
   .checklist li { position: relative; padding-left: 1.9rem; color: var(--color-text); line-height: 1.6; }
   .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-accent); font-weight: 700; }
 
-  .media img { width: 100%; border-radius: var(--radius-lg); aspect-ratio: 4/3; object-fit: cover; }
+  .media { position: relative; }
+  .media img { width: 100%; border-radius: var(--radius-lg); aspect-ratio: 4/3; object-fit: cover; display: block; }
+
+  .review { position: absolute; left: var(--space-3); bottom: var(--space-3); width: min(21rem, 72%); margin: 0; background: var(--color-surface); border-radius: var(--radius-md); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); }
+  .review-head { display: flex; align-items: center; gap: 0.75rem; margin-bottom: var(--space-2); }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .avatar.initials { display: inline-flex; align-items: center; justify-content: center; background: var(--color-primary); color: var(--color-on-primary); font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; }
+  .review .name { margin: 0; font-weight: 700; color: var(--color-text); font-size: 0.95rem; }
+  .review .meta { margin: 0.1rem 0 0; display: flex; align-items: center; gap: 0.45rem; font-size: 0.85rem; color: var(--color-muted); }
+  .review .stars { color: var(--color-accent); letter-spacing: 0.08em; }
+  .review blockquote { margin: 0; }
+  .review blockquote p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: var(--color-text); }
+
+  /* Below the split breakpoint the card would swallow the photo, so it drops
+     underneath instead of floating over it. */
+  @media (max-width: 860px) {
+    .review { position: static; width: auto; margin-top: var(--space-2); box-shadow: 0 8px 22px rgba(15,20,25,0.12); }
+  }
 </style>

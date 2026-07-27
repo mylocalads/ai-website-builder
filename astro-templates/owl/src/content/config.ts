@@ -277,6 +277,13 @@ const site = defineCollection({
         image: z.string().optional(),
         image_alt: z.string().optional(),
         image_position: z.enum(['left', 'right']).optional(),
+        review: z.object({
+          name: z.string(),
+          text: z.string(),
+          rating: z.number().optional(),
+          source: z.string().optional(),
+          avatar: z.string().optional(),
+        }).optional(),
       }).optional(),
       testimonials: z.array(z.object({
         name: z.string(), location: z.string().optional(), text: z.string(), rating: z.number().optional(),
