@@ -1,4 +1,5 @@
 ---
+import { getIcon } from '../lib/icons';
 import { getEntry, getCollection } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
@@ -27,10 +28,10 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta">{site.phone_display}</a></li>
+        <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a></li>
       </ul>
     </nav>
-    <a href={`tel:${site.phone}`} class="phone-cta mobile-phone">{site.phone_display}</a>
+    <a href={`tel:${site.phone}`} class="phone-cta mobile-phone"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a>
     <details class="mobile-nav">
       <summary aria-label="Open menu">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -85,7 +86,15 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   }
   .has-menu:hover .submenu, .has-menu:focus-within .submenu { display: block; }
   .submenu li a { display: block; padding: 0.5rem var(--space-2); }
-  .phone-cta { background: var(--color-accent); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-sm); text-decoration: none; font-weight: 600; }
+  /* Icon badge + stacked label/number, rather than a solid pill. The number is
+     the emphasis; the badge carries the accent colour. */
+  .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: var(--color-text); }
+  .phone-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 50%; background: rgba(241,85,55,0.14); color: var(--color-accent); }
+  .phone-icon svg { width: 1.35rem; height: 1.35rem; }
+  .phone-copy { display: flex; flex-direction: column; line-height: 1.15; }
+  .phone-label { font-size: 0.72rem; font-weight: 600; color: var(--color-muted); }
+  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--color-text); white-space: nowrap; }
+  .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { color: var(--color-accent); }
   .mobile-nav, .mobile-phone { display: none; }
   .mobile-nav summary { cursor: pointer; list-style: none; padding: 0.25rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .mobile-nav summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
@@ -104,23 +113,23 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .mobile-nav .sub .all { font-weight: 600; color: var(--color-text); }
 
   @keyframes phone-glow {
-    0%   { box-shadow: 0 0 0 0 rgba(248,174,168,0.75); }
-    70%  { box-shadow: 0 0 0 14px rgba(248,174,168,0); }
-    100% { box-shadow: 0 0 0 0 rgba(248,174,168,0); }
+    0%   { box-shadow: 0 0 0 0 rgba(241,85,55,0.55); }
+    70%  { box-shadow: 0 0 0 12px rgba(241,85,55,0); }
+    100% { box-shadow: 0 0 0 0 rgba(241,85,55,0); }
   }
 
   @media (max-width: 900px) {
     .primary-nav { display: none; }
     .mobile-nav { display: inline-flex; }
-    .mobile-phone {
-      display: inline-block;
-      margin: 0 auto;
-      animation: phone-glow 1.8s ease-out infinite;
-    }
+    .mobile-phone { display: inline-flex; margin: 0 auto; }
+    /* The pulse rides the circular badge now — on the transparent layout a
+       box-shadow on the link itself would throb as a rectangle around the text. */
+    .mobile-phone .phone-icon { animation: phone-glow 1.8s ease-out infinite; }
+    .mobile-phone .phone-label { display: none; }
     .brand { flex: 0 1 auto; }
     .brand-logo { max-height: 81px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .mobile-phone { animation: none; }
+    .mobile-phone .phone-icon { animation: none; }
   }
 </style>

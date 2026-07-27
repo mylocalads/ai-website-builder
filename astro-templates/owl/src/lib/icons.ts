@@ -31,6 +31,8 @@ export const ICONS: Record<string, string> = {
     '<rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2.4" width="6" height="3.4" rx="1.2"/><path d="M9 12h6M9 15.5h4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>',
   hammer:
     '<path d="m14.4 3 6.2 6.2-2.5 2.5-2.2-2.2-8.6 8.6a2 2 0 0 1-2.8-2.8l8.6-8.6-2.2-2.2Z"/>',
+  phone:
+    '<path d="M7.6 3.2c.6 0 1.1.35 1.35.9l1.35 3.05c.24.54.13 1.17-.28 1.6L8.7 10.1a12.6 12.6 0 0 0 5.2 5.2l1.35-1.32c.43-.41 1.06-.52 1.6-.28l3.05 1.35c.55.25.9.75.9 1.35v2.5c0 1.2-1 2.2-2.2 2.05C10.9 20.3 3.7 13.1 3.05 5.4 2.9 4.2 3.9 3.2 5.1 3.2Z"/>',
   clock:
     '<circle cx="12" cy="12" r="9"/><path d="M12 7v5.4l3.4 2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
 };
