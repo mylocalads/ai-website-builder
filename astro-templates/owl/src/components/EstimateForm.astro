@@ -9,7 +9,7 @@ export interface Props {
   rating?: number;
   review_count?: number;
 }
-const { heading = 'Get a free estimate', intro, compact = false, rating, review_count } = Astro.props;
+const { heading = 'Get A Free Estimate Today!', intro, compact = false, rating, review_count } = Astro.props;
 
 const site = (await getEntry('site', 'config')).data as any;
 
@@ -147,7 +147,7 @@ const SERVICES = [
   .estimate-form.compact .btn { font-size: 1.25rem; padding: 0.8rem 1.5rem; width: 100%; }
   .trust-strip { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: center; margin: 0 0 var(--space-2); font-size: 0.85rem; color: var(--color-muted); }
   .trust-strip .stars { color: var(--color-accent); letter-spacing: 0.1em; }
-  .form-heading { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: 0 0 var(--space-2); }
+  .form-heading { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.15; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.01em; }
   .form-intro { color: var(--color-muted); margin: 0 0 var(--space-3); }
   .form-error { background: rgba(241,85,55,0.10); border-left: 3px solid var(--color-accent); padding: var(--space-2); font-size: 0.92rem; color: var(--color-text); margin: 0 0 var(--space-3); }
 
