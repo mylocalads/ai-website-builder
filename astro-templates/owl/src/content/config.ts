@@ -182,6 +182,11 @@ const site = defineCollection({
         call_tracking_number: z.string().optional(),
         calendar_embed_snippet: z.string().optional(),
         contact_form_snippet: z.string().optional(),
+        // Native EstimateForm: operator-supplied POST endpoint and captcha
+        // markup. Never synthesize either — an unset action renders the
+        // form disabled rather than silently dropping submissions.
+        form_action_url: z.string().url().optional(),
+        captcha_snippet: z.string().optional(),
       }).default({ provider: 'ghl' }),
       code_injection: codeInjectionSlots.extend({
         per_page: z.record(codeInjectionSlots).default({}),
@@ -227,7 +232,15 @@ const site = defineCollection({
         eyebrow: z.string().optional(),
         headline: z.string(),
         intro: z.string().optional(),
-        blocks: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
+        blocks: z.array(z.object({
+          title: z.string(),
+          body: z.string(),
+          // `icon` is a KEY into the component's icon registry (shield,
+          // document, umbrella, calendar, broom, home). An unknown key
+          // renders nothing — it is never printed as text.
+          icon: z.string().optional(),
+          image: z.string().url().optional(),
+        })).default([]),
         steps_title: z.string().optional(),
         steps: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
         guarantee: z.object({
@@ -235,6 +248,8 @@ const site = defineCollection({
           body: z.string(),
           cta_text: z.string().optional(),
           cta_href: z.string().optional(),
+          badge_image: z.string().optional(),   // URL or local path e.g. /badge.svg
+          badge_alt: z.string().optional(),
         }).optional(),
       }).optional(),
       process_steps: z.object({
@@ -246,8 +261,12 @@ const site = defineCollection({
         headline: z.string(),
         body: z.string(),
         checklist: z.array(z.string()).default([]),
-        photo: z.string().url().optional(),
+        photo: z.string().optional(),        // URL or local path
         photo_alt: z.string().optional(),
+        // Set true for a transparent PNG cut-out (e.g. the owner). Drops the
+        // rounded frame and bottom-aligns so the subject stands on the baseline
+        // instead of floating in a rounded box.
+        photo_cutout: z.boolean().default(false),
       }).optional(),
       seo_body: z.object({
         headline: z.string(),

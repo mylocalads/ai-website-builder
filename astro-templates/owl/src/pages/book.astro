@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
+import EstimateForm from '../components/EstimateForm.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const calendarSnippet = site.crm?.calendar_embed_snippet;
@@ -22,7 +23,12 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
       <SectionHead eyebrow="Free Inspection" heading="Get a 100% FREE estimate & book your inspection" />
       <div class="book-grid">
         <div class="cal-col">
-          {calendarSnippet && <div class="cal-wrap"><Fragment set:html={calendarSnippet} /></div>}
+          {calendarSnippet
+            ? <div class="cal-wrap"><Fragment set:html={calendarSnippet} /></div>
+            : <EstimateForm
+                heading="Get a free estimate"
+                intro="Tell us about the project and we'll come out, look at it properly, and put a written number in your hand."
+              />}
         </div>
         <aside class="info-col">
           <h3>What's next after you book?</h3>

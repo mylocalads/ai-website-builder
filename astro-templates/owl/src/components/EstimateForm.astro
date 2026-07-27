@@ -1,0 +1,155 @@
+---
+import { getEntry } from 'astro:content';
+
+export interface Props {
+  heading?: string;
+  intro?: string;
+  compact?: boolean;
+}
+const { heading = 'Get a free estimate', intro, compact = false } = Astro.props;
+
+const site = (await getEntry('site', 'config')).data as any;
+
+// Where the form posts. Operator-supplied only — never synthesize an endpoint.
+// With no action set the form is rendered disabled rather than silently
+// swallowing leads, which is worse than showing nothing.
+const action: string | undefined = site.crm?.form_action_url;
+const captchaSnippet: string | undefined = site.crm?.captcha_snippet;
+const business = site.business_name;
+const phone = site.phone;
+const phoneDisplay = site.phone_display;
+// Operator diagnostics belong in dev only. On a public page a "not configured"
+// notice plus a dead submit button reads as a broken site to a homeowner, so
+// production falls back to a real call-to-action instead of a form that cannot
+// submit anywhere.
+const isDev = import.meta.env.DEV;
+const showForm = true;
+
+const SERVICES = [
+  'Attic venting',
+  'Gutter installation',
+  'Gutter repair',
+  'Other',
+  'Roof damage repair',
+  'Roof inspection',
+  'Roof installation',
+  'Roof repair',
+  'Skylight installation',
+  'Skylight repair',
+];
+---
+<div class={`estimate-form ${compact ? 'compact' : ''}`}>
+  <h2 class="form-heading">{heading}</h2>
+  {intro && <p class="form-intro">{intro}</p>}
+
+  {!action && isDev && (
+    <p class="form-disabled" role="status">
+      DEV ONLY — this form is not connected. Add <code>crm.form_action_url</code>
+      to the site config. In production this block is replaced by a call CTA.
+    </p>
+  )}
+
+  {showForm && (
+  <form
+    method="post"
+    action={action ?? undefined}
+    novalidate={false}
+    aria-describedby="consent-text"
+  >
+    <div class="row">
+      <label for="ef-name">Full name <span aria-hidden="true">*</span></label>
+      <input id="ef-name" name="full_name" type="text" autocomplete="name" required />
+    </div>
+
+    <div class="two-up">
+      <div class="row">
+        <label for="ef-email">Email <span aria-hidden="true">*</span></label>
+        <input id="ef-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="row">
+        <label for="ef-phone">Phone <span aria-hidden="true">*</span></label>
+        <input id="ef-phone" name="phone" type="tel" autocomplete="tel" required />
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="ef-address">Property address <span aria-hidden="true">*</span></label>
+      <input id="ef-address" name="address" type="text" autocomplete="street-address" required />
+    </div>
+
+    <div class="row">
+      <label for="ef-service">Select a service <span aria-hidden="true">*</span></label>
+      <select id="ef-service" name="service" required>
+        <option value="">Choose one…</option>
+        {SERVICES.map((s) => <option value={s}>{s}</option>)}
+      </select>
+    </div>
+
+    {/* Honeypot: hidden from people, catches naive bots. Not a captcha substitute. */}
+    <div class="hp" aria-hidden="true">
+      <label for="ef-company">Company (leave blank)</label>
+      <input id="ef-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="consent">
+      <input id="ef-consent" name="tcpa_consent" type="checkbox" required />
+      <label for="ef-consent" id="consent-text">
+        I consent to receive informational and marketing Emails, Text messages, and Calls
+        from {business}. I understand that I can opt-out at any time and that communication
+        frequency may vary.
+      </label>
+    </div>
+
+    {captchaSnippet && <div class="captcha"><Fragment set:html={captchaSnippet} /></div>}
+    {!captchaSnippet && isDev && (
+      <p class="captcha-missing">DEV ONLY — add <code>crm.captcha_snippet</code> to the site config.</p>
+    )}
+
+    {action
+      ? <button type="submit" class="btn">Get My Free Estimate</button>
+      : (
+        <div class="fallback">
+          <a class="btn" href={`tel:${phone}`}>Call {phoneDisplay}</a>
+          <p class="fallback-note">Online submissions are being switched on. Until then, calling is the fastest way to get on the schedule.</p>
+        </div>
+      )}
+  </form>
+  )}
+</div>
+
+<style>
+  .estimate-form { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.12); }
+  .estimate-form.compact { padding: var(--space-3); box-shadow: none; }
+  .form-heading { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin: 0 0 var(--space-2); }
+  .form-intro { color: var(--color-muted); margin: 0 0 var(--space-3); }
+  .form-disabled { background: rgba(0,0,0,0.05); border-left: 3px solid var(--color-accent); padding: var(--space-2); font-size: 0.9rem; color: var(--color-text); margin: 0 0 var(--space-3); }
+
+  form { display: grid; gap: var(--space-2); }
+  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+  @media (max-width: 560px) { .two-up { grid-template-columns: 1fr; } }
+
+  .row { display: grid; gap: 0.35rem; }
+  label { font-weight: 600; font-size: 0.92rem; color: var(--color-text); }
+  input[type="text"], input[type="email"], input[type="tel"], select {
+    width: 100%; padding: 0.7rem 0.85rem; font: inherit; color: var(--color-text);
+    background: var(--color-bg); border: 1px solid rgba(0,0,0,0.22); border-radius: var(--radius-sm);
+  }
+  input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 2.5rem; }
+
+  /* Off-screen rather than display:none so bots that skip hidden fields still fill it. */
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .consent { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; align-items: start; margin-top: var(--space-1); }
+  .consent input { margin-top: 0.2rem; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+  .consent label { font-weight: 400; font-size: 0.78rem; line-height: 1.5; color: var(--color-muted); }
+
+  .captcha { margin-top: var(--space-1); }
+  .captcha-missing { font-size: 0.8rem; color: var(--color-muted); margin: 0; }
+  .fallback { margin-top: var(--space-1); }
+  .fallback .btn { display: inline-block; text-decoration: none; margin: 0; }
+  .fallback-note { color: var(--color-muted); font-size: 0.85rem; margin: var(--space-2) 0 0; line-height: 1.5; }
+
+  .btn { margin-top: var(--space-1); background: var(--color-accent); color: var(--color-on-accent); border: 0; padding: 0.95rem 1.75rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; cursor: pointer; }
+  .btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+</style>

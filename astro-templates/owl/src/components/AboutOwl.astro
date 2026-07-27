@@ -7,6 +7,7 @@ export interface Props {
     checklist?: string[];
     photo?: string;
     photo_alt?: string;
+    photo_cutout?: boolean;
   };
   fallback_photo?: string;
   business_name: string;
@@ -29,7 +30,7 @@ const checklist = data?.checklist ?? [];
         )}
       </div>
       {photo && (
-        <div class="media">
+        <div class={`media ${data.photo_cutout ? "cutout" : ""}`}>
           <img src={photo} alt={data.photo_alt ?? `The ${business_name} team`} loading="lazy" />
         </div>
       )}
@@ -46,4 +47,7 @@ const checklist = data?.checklist ?? [];
   .checklist li { position: relative; padding-left: 1.9rem; color: var(--color-text); line-height: 1.6; }
   .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-accent); font-weight: 700; }
   .media img { width: 100%; border-radius: var(--radius-lg); }
+  /* Transparent PNG cut-outs get no frame and sit on the baseline. */
+  .media.cutout { align-self: end; }
+  .media.cutout img { border-radius: 0; object-fit: contain; max-height: 30rem; margin-inline: auto; }
 </style>
