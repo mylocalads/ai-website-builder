@@ -90,11 +90,11 @@ const site = defineCollection({
       kind: z.literal('config'),
       business_name: z.string(),
       legal_name: z.string().optional(),
-      logo_url: z.string().url().optional(),
-      default_hero_photo: z.string().url().optional(),
+      logo_url: z.string().optional(),            // URL or local path, e.g. /logo.png
+      default_hero_photo: z.string().optional(),  // URL or local path
       default_hero_video: z.string().url().optional(),
-      about_photo: z.string().url().optional(),
-      team_photo: z.string().url().optional(),
+      about_photo: z.string().optional(),         // URL or local path
+      team_photo: z.string().optional(),          // URL or local path
       team_members: z.array(z.object({
         name: z.string(),
         role: z.string().optional(),
