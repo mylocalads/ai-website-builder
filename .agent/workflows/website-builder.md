@@ -115,7 +115,7 @@ Scrapes the reference URLs, synthesizes design tokens, and merges the anti-patte
 **Input:** All JSON files from previous steps + user paste-in for CRM snippets & code-injection blocks
 **Output:** Full Astro project at `sites/{slug}/` (src/content/, src/styles/tokens.css, src/pages/, astro.config.mjs, package.json, …) + `sites/build-log.md`
 
-Scaffolds a per-client Astro project from the selected template under `astro-templates/`. Populates content collections from the JSON files. Writes `tokens.css` from `design_reference.json`. Prompts the user to paste GHL chat/reviews/form/call-tracking snippets and any pixel / GTM / number-swap injection blocks (paste-only — never synthesized). Enforces the fixed section order for Home, Service, and Service-area pages. Emits up to 5 services and up to 5 service-area subpages.
+Scaffolds a per-client Astro project from the selected template under `astro-templates/` (`--template firefly` by default, or `--template owl`). Populates content collections from the JSON files. Writes `tokens.css` from `design_reference.json`. Prompts the user to paste GHL chat/reviews/form/call-tracking snippets and any pixel / GTM / number-swap injection blocks (paste-only — never synthesized). Enforces the fixed section order for Home, Service, and Service-area pages. Emits up to 5 services and up to 5 service-area subpages.
 
 > **Pause:** Show the config summary — content counts, tokens, code-injection blocks, CRM widgets. Ask: "Build and deploy?"
 

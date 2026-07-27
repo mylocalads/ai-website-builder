@@ -126,4 +126,4 @@ cd sites/{slug} && npm run build && npm run preview
 - `sites/build-log.md` — build log with deploy URLs + page counts
 - `reference-libraries/{vertical}.json` — curated reference URLs per vertical (default, roofing, concrete)
 - Slug format: lowercase, hyphenated (`Joe's Plumbing` → `joes-plumbing`)
-- Service-area slug format: `city-state-abbr` (lowercase), e.g. `denver-co`, `miami-fl` — reserved slugs are documented in `astro-templates/firefly/src/pages/[area].astro`
+- Service-area slug format: `city-state-abbr` (lowercase), e.g. `denver-co`, `miami-fl`. In the `firefly` template these resolve at the flat root and reserved slugs are enforced in `astro-templates/firefly/src/pages/[area].astro`. In the `owl` template they resolve under `/service-area/` and only `index` is reserved — see `astro-templates/owl/src/pages/service-area/[slug].astro`

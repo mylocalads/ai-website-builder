@@ -9,6 +9,12 @@
       "note_url_fragility": "This URL may move when the site is attached to a permanent domain. If the URL 404s, cross-reference the template repo directly at ai-website-builder/astro-templates/firefly/ for the current shape."
     },
     {
+      "url": "https://owlroofing.com/",
+      "role": "primary",
+      "notes": "Owl Roofing — the reference behind the `owl` template. Section order: hero (full-bleed media + floating quote card) → promise bar → services grid with category labels + sub-service lists → testimonials → promise band → signature system (intro + sub-blocks + numbered steps + guarantee) → 4-step process strip on a dark band → about with checklist → long-form SEO body with a second checklist → FAQ → recent-articles row → closing CTA. Clone the STRUCTURE only. Their program names ('We Give A Hoot', 'Protect Your Nest System', 'Get It Right Guarantee') are Owl brand assets and must never appear in a generated site — the components are content-driven so each client supplies its own. Deliberately NOT cloned: the sticky side-rail quote tab, the floating quote popup, and the two video-testimonial blocks.",
+      "tags": ["primary", "owl-template", "dark-bands", "numbered-process", "signature-system", "blog-hub", "checklist-bullets", "hero-quote-card"]
+    },
+    {
       "url": "https://agcconcrete.com/",
       "role": "secondary",
       "notes": "AGC Concrete — original inspiration for the editorial type treatment, section rhythm, and real-photography approach. Use as backup reference when Firefly's URL is unreachable or when a client wants a distinctly editorial aesthetic vs Firefly's brighter cyan-accented direction.",

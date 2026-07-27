@@ -72,7 +72,24 @@ Derive the slug from the business name: lowercased, ASCII, hyphens only (e.g. "F
 
 ### 2. Copy the template
 
+Templates live under `astro-templates/`. Two exist:
+
+| Name | Directory | Shape |
+|---|---|---|
+| `firefly` (default) | `astro-templates/firefly/` | Flat service-area URLs, no blog. Section order: hero → partner-badges → about → services → why-choose-us → testimonials → financing → us-vs-them → service-area-grid → gallery → faq → contact → CTA → footer |
+| `owl` | `astro-templates/owl/` | Nested `/service-area/{city-st}` URLs, blog collection. Section order: hero → promise-bar → services-grid → testimonials → promise-band → signature-system → process-steps → about → seo-body → faq → blog-cards → closing-cta → footer |
+
+The operator selects one with `--template {name}`. When the flag is absent, use `firefly`. Confirm the resolved template name with the operator before copying — a mismatch is expensive to undo once content is written.
+
 Copy `astro-templates/{template}/` → `sites/{slug}/`, excluding `node_modules`, `dist`, `.astro`, `.vercel`, and any lockfile that would pin to the template's install path. Do not modify the template in place under any circumstance.
+
+**Owl-specific notes:**
+
+- The `blog` collection is required. Write at least one article to `src/content/blog/`, or the `/blog` index renders an empty list and `BlogCards` omits itself from the home page.
+- Service-area filenames are unchanged (`city-st.md`) — only the resolved URL differs. Because the route is nested, the reserved-slug list collapses to just `index`.
+- Services support a `category` field and `sub_services` list, both surfaced on the home-page service cards. Populate them or the cards lose their top label and sub-service list.
+- The home content supports six optional section objects: `promise_bar`, `promise_band`, `signature_system`, `process_steps`, `about_block`, `seo_body`. Omit a key and that section does not render at all. `signature_system` is the generic form of a branded process program — supply the client's own name for it, never another company's.
+- Button label color comes from `--color-on-accent`. Set it per client based on measured contrast against `--color-accent`; do not assume white.
 
 ### 3. Determine site URL and substitute placeholders
 
