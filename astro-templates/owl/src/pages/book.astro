@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CTA from '../components/CTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
+---
+<BaseLayout
+  title={`Book Your Free Inspection — ${site.business_name}`}
+  description={`Book a 100% free estimate and inspection with ${site.business_name} in ${site.address.city}, ${site.address.state}. A team member will confirm your in-person appointment shortly.`}
+  breadcrumbs={crumbs}
+  pagePath="/book"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <section class="book-page">
+    <div class="container">
+      <SectionHead eyebrow="Free Inspection" heading="Get a 100% FREE estimate & book your inspection" />
+      <div class="book-grid">
+        <div class="cal-col">
+          {calendarSnippet && <div class="cal-wrap"><Fragment set:html={calendarSnippet} /></div>}
+        </div>
+        <aside class="info-col">
+          <h3>What's next after you book?</h3>
+          <p class="lede">
+            One of our {site.business_name.split(' ')[0]} team members will contact you back shortly to confirm your in-person appointment. We'll walk the project with you on site, answer questions, and give you a written estimate — no pressure, no upcharging.
+          </p>
+          <div class="row">
+            <strong>Call us directly:</strong>
+            <p class="phone-large"><a href={`tel:${site.phone}`}>{site.phone_display}</a></p>
+          </div>
+          {site.hours && (
+            <div class="row">
+              <strong>Assistance Hours:</strong>
+              <ul>{Object.entries(site.hours).map(([day, hrs]) => <li><span class="day">{day}</span> — {hrs}</li>)}</ul>
+            </div>
+          )}
+          <div class="row">
+            <strong>Office Address:</strong>
+            <address>
+              {site.address.street && <>{site.address.street}<br /></>}
+              {site.address.city}, {site.address.state}{site.address.postal ? ` ${site.address.postal}` : ''}
+            </address>
+          </div>
+          {site.email && (
+            <div class="row"><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></div>
+          )}
+          <div class="row biz-info">
+            <strong>{site.business_name}</strong>
+            {site.legal_name && site.legal_name !== site.business_name && <><br />{site.legal_name}</>}
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <CTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .book-page { padding: var(--space-4) 0 var(--space-5); }
+  .book-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); align-items: start; }
+  .cal-col { min-width: 0; }
+  .cal-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+  .info-col h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-2); line-height: 1.2; }
+  .info-col .lede { color: var(--color-muted); line-height: 1.65; margin: 0 0 var(--space-3); font-size: 1rem; }
+  .phone-large { font-size: 1.35rem; font-weight: 600; margin: 0.25rem 0 0; }
+  .phone-large a { text-decoration: none; color: var(--color-accent); }
+  .row { margin-bottom: var(--space-2); font-size: 0.95rem; line-height: 1.65; }
+  .row strong { display: block; margin-bottom: 0.25rem; }
+  .row address { font-style: normal; color: var(--color-muted); }
+  .row ul { list-style: none; padding: 0; margin: 0.25rem 0 0; color: var(--color-muted); }
+  .row ul li { padding: 0.1rem 0; }
+  .row ul .day { text-transform: capitalize; color: var(--color-text); font-weight: 500; }
+  .biz-info { margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--color-surface); font-size: 0.95rem; color: var(--color-muted); }
+  @media (max-width: 900px) {
+    .book-grid { grid-template-columns: 1fr; }
+  }
+</style>

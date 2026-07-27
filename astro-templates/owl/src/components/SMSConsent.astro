@@ -1,0 +1,13 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+---
+{site.compliance?.a2p && (
+  <p class="sms-consent">
+    By submitting, you agree to receive SMS/MMS messages from {site.business_name} at the phone number provided. Reply STOP to opt out.
+    Msg &amp; data rates may apply. See our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.
+  </p>
+)}
+<style>
+  .sms-consent { font-size: 0.85rem; color: var(--color-muted); max-width: 720px; margin: var(--space-1) auto; }
+</style>
