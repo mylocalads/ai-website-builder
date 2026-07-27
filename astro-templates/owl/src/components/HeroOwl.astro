@@ -27,11 +27,19 @@ export interface Props {
   /** Render the native estimate form in the aside. */
   show_form?: boolean;
   form_heading?: string;
+  /** Third-party proof shown between the sub-copy and the CTA. */
+  trust_badges?: Array<{
+    mark?: 'google' | 'bbb';
+    rating?: number;
+    label: string;
+    sublabel?: string;
+  }>;
 }
 const {
   eyebrow, headline, subheadline, cta_text, cta_href,
   photo, video, video_link_text, video_link_href, quote_card,
   form_embed_url, form_title = 'Book now', show_form = false, form_heading,
+  trust_badges = [],
 } = Astro.props;
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -69,6 +77,24 @@ const asideMode = form_embed_url && calendarSnippet
       {eyebrow && <p class="eyebrow">{eyebrow}</p>}
       <h1>{headline}</h1>
       <p class="sub">{subheadline}</p>
+      {trust_badges.length > 0 && (
+        <ul class="trust-badges">
+          {trust_badges.map((b) => (
+            <li>
+              {b.mark === 'google' && <span class="mark mark-g" aria-hidden="true">G</span>}
+              {b.mark === 'bbb' && <span class="mark mark-bbb" aria-hidden="true">BBB</span>}
+              <span class="badge-copy">
+                {b.rating && (
+                  <span class="stars" aria-hidden="true">{'★'.repeat(Math.round(b.rating))}</span>
+                )}
+                <span class="badge-label">{b.label}</span>
+                {b.sublabel && <span class="badge-sub">{b.sublabel}</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+
       <div class="actions">
         <a class="btn" href={cta_href}>{cta_text}</a>
         {video_link_text && video_link_href && (
@@ -142,6 +168,17 @@ const asideMode = form_embed_url && calendarSnippet
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; margin: 0 0 var(--space-2); }
   h1 { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(2.2rem, 5.6vw, 4.2rem); line-height: 1.05; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.005em; }
   .sub { font-size: clamp(1rem, 1.4vw, 1.15rem); max-width: 46ch; margin: 0 0 var(--space-3); }
+  .trust-badges { list-style: none; margin: 0 0 var(--space-3); padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); }
+  .trust-badges li { display: flex; align-items: center; gap: 0.6rem; }
+  /* Monochrome letterforms, not reproductions of the Google or BBB logos. */
+  .mark { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-display); font-weight: 800; color: #ffffff; line-height: 1; }
+  .mark-g { width: 2.1rem; height: 2.1rem; border-radius: 50%; border: 2px solid rgba(255,255,255,0.85); font-size: 1.2rem; }
+  .mark-bbb { font-size: 1.15rem; letter-spacing: 0.02em; padding: 0.2rem 0.4rem; border: 2px solid rgba(255,255,255,0.85); border-radius: var(--radius-sm); }
+  .badge-copy { display: flex; flex-direction: column; line-height: 1.2; }
+  .badge-copy .stars { color: var(--color-accent); font-size: 0.95rem; letter-spacing: 0.08em; }
+  .badge-label { color: #ffffff; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .badge-sub { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
+
   .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
   .video-link { color: #ffffff; font-weight: 600; text-decoration: underline; }
 

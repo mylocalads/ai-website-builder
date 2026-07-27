@@ -210,6 +210,12 @@ const site = defineCollection({
         video: z.string().url().optional(),
         video_link_text: z.string().optional(),
         video_link_href: z.string().optional(),
+        trust_badges: z.array(z.object({
+          mark: z.enum(['google', 'bbb']).optional(),
+          rating: z.number().optional(),
+          label: z.string(),
+          sublabel: z.string().optional(),
+        })).default([]),
         quote_card: z.object({
           quote: z.string(),
           author: z.string().optional(),
