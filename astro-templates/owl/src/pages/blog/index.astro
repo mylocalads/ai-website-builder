@@ -28,6 +28,11 @@ function formatDate(iso: string): string {
       <ul class="grid">
         {posts.map((p) => (
           <li class="card">
+            {p.data.hero_image && (
+              <a href={`/blog/${p.slug}`} class="card-img-link" tabindex="-1" aria-hidden="true">
+                <img class="card-img" src={p.data.hero_image} alt="" loading="lazy" />
+              </a>
+            )}
             <p class="meta">{p.data.read_time} · Posted {formatDate(p.data.publish_date)}</p>
             <h2><a href={`/blog/${p.slug}`}>{p.data.title}</a></h2>
             <p class="excerpt">{p.data.description}</p>
@@ -41,7 +46,14 @@ function formatDate(iso: string): string {
 <style>
   .blog-index { padding: var(--space-5) 0; }
   .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
-  .card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 8px 22px rgba(15,20,25,0.08); }
+  .card { background: var(--color-surface); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 8px 22px rgba(15,20,25,0.08); display: flex; flex-direction: column; }
+  /* Image link is aria-hidden and untabbable: the heading link below already
+     names the destination, so a second tab stop is pure noise. */
+  .card-img-link { display: block; }
+  .card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .card > :not(.card-img-link) { padding-inline: var(--space-3); }
+  .card > .meta { padding-top: var(--space-3); }
+  .card > .keep { padding-bottom: var(--space-3); }
   .meta { margin: 0 0 var(--space-1); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-muted); }
   h2 { font-size: 1.3rem; margin: 0 0 var(--space-2); }
   h2 a { color: var(--color-text); text-decoration: none; }

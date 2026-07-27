@@ -242,6 +242,7 @@ const site = defineCollection({
           image: z.string().url().optional(),
         })).default([]),
         steps_title: z.string().optional(),
+        steps_icon: z.string().optional(),   // icon registry key
         steps: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
         guarantee: z.object({
           title: z.string(),
@@ -272,6 +273,9 @@ const site = defineCollection({
         headline: z.string(),
         paragraphs: z.array(z.string()).default([]),
         checklist: z.array(z.string()).default([]),
+        image: z.string().optional(),
+        image_alt: z.string().optional(),
+        image_position: z.enum(['left', 'right']).optional(),
       }).optional(),
       testimonials: z.array(z.object({
         name: z.string(), location: z.string().optional(), text: z.string(), rating: z.number().optional(),

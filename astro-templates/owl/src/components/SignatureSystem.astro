@@ -6,6 +6,7 @@ export interface Props {
     intro?: string;
     blocks?: Array<{ title: string; body: string; icon?: string; image?: string }>;
     steps_title?: string;
+    steps_icon?: string;
     steps?: Array<{ title: string; body: string }>;
     guarantee?: {
       title: string;
@@ -59,6 +60,11 @@ const hasIcon = (k?: string) => !!k && Object.prototype.hasOwnProperty.call(ICON
 
         {steps.length > 0 && (
           <article class="card steps-card">
+            {hasIcon(data.steps_icon) && (
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" set:html={ICONS[data.steps_icon!]} />
+              </span>
+            )}
             {data.steps_title && <h3 class="steps-title">{data.steps_title}</h3>}
             <ol>
               {steps.map((s) => (
