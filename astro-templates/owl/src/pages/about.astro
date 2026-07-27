@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AboutSection from '../components/AboutSection.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
-import CTA from '../components/CTA.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -58,7 +58,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
 
   <TrustBadges />
   <GHLReviewsWidget />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
   <GHLChatWidget />
 </BaseLayout>
 <style>

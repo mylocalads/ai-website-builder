@@ -2,17 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import Hero from '../../components/Hero.astro';
+import HeroOwl from '../../components/HeroOwl.astro';
 import PartnerBadges from '../../components/PartnerBadges.astro';
 import AboutSection from '../../components/AboutSection.astro';
 import Gallery from '../../components/Gallery.astro';
 import WhyChooseUs from '../../components/WhyChooseUs.astro';
-import OurServices from '../../components/OurServices.astro';
+import ServicesGridOwl from '../../components/ServicesGridOwl.astro';
 import GHLReviewsWidget from '../../components/GHLReviewsWidget.astro';
 import Financing from '../../components/Financing.astro';
 import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
 import FAQ from '../../components/FAQ.astro';
-import CTA from '../../components/CTA.astro';
+import ClosingCTA from '../../components/ClosingCTA.astro';
 import GHLChatWidget from '../../components/GHLChatWidget.astro';
 
 export async function getStaticPaths() {
@@ -62,7 +62,7 @@ const faqLd = service.data.faqs.length > 0 ? {
   pagePath={`/services/${service.slug}`}
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <Hero
+  <HeroOwl
     eyebrow={`${marketCity}, ${marketState}`}
     headline={service.data.seo_h1 ?? `${service.data.title} in ${marketCity}, ${marketState}`}
     subheadline={service.data.short_description}
@@ -84,11 +84,11 @@ const faqLd = service.data.faqs.length > 0 ? {
   />
   <Gallery items={service.data.gallery ?? []} heading={`${service.data.title} gallery`} />
   <WhyChooseUs />
-  <OurServices />
+  <ServicesGridOwl />
   <GHLReviewsWidget />
   <Financing />
   <ServiceAreaGrid />
   <FAQ items={service.data.faqs ?? []} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
   <GHLChatWidget />
 </BaseLayout>

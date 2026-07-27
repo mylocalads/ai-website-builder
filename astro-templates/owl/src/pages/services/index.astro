@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import CTA from '../../components/CTA.astro';
+import ClosingCTA from '../../components/ClosingCTA.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
@@ -33,7 +33,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/service
       </div>
     </div>
   </section>
-  <CTA headline="Not sure what you need?" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA headline="Not sure what you need?" cta_text="Get Your Free Estimate!" cta_href="/book" />
 </BaseLayout>
 <style>
   .services-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }

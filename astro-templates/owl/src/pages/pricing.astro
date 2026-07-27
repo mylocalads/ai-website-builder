@@ -5,7 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import PricingTable from '../components/PricingTable.astro';
 import Financing from '../components/Financing.astro';
 import FAQ from '../components/FAQ.astro';
-import CTA from '../components/CTA.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -76,7 +76,7 @@ const roofCostRows = [
 
   <Financing />
   <FAQ items={faqs} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
   <GHLChatWidget />
 </BaseLayout>
 <style>
