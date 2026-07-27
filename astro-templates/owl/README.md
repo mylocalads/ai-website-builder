@@ -38,6 +38,12 @@ signature program simply omits `signature_system`.
 
 Button label color MUST come from `--color-on-accent`. Never hardcode `white`.
 
+Every accent-backed label in this template is **1.25rem (20px) at weight 700**.
+That is deliberate: WCAG's large-text threshold is 18.66px bold, and at 20px a
+3:1 ratio is sufficient instead of 4.5:1. Dropping any accent-backed label below
+1.25rem re-imposes the 4.5:1 requirement and will break light accents. If you
+shrink a button, re-run the contrast check at the stricter threshold.
+
 White on this template's default gold (`#c8973f`) measures 2.64:1 and fails even
 large-text AA, which is why the default label is near-black at 6.51:1. A client
 with a darker accent will set it to white instead. Hardcoding the label color in
