@@ -61,6 +61,21 @@ const legal = defineCollection({
   }),
 });
 
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publish_date: z.string().refine((v) => /^\d{4}-\d{2}-\d{2}$/.test(v), {
+      message: 'publish_date must be ISO yyyy-mm-dd so posts sort correctly',
+    }),
+    read_time: z.string(),
+    hero_image: z.string().url().optional(),
+    author: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
 const codeInjectionSlots = z.object({
   head: z.string().optional(),
   body_start: z.string().optional(),
@@ -211,4 +226,4 @@ const site = defineCollection({
   ]),
 });
 
-export const collections = { services, service_areas, legal, site };
+export const collections = { services, service_areas, legal, site, blog };
