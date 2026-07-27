@@ -1,4 +1,6 @@
 ---
+// Reads ?error= from the estimate endpoint redirect, so it renders per request.
+export const prerender = false;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
