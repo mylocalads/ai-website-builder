@@ -22,6 +22,44 @@ const SERVICES = new Set([
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+/**
+ * Same-site check, replacing Astro's security.checkOrigin.
+ *
+ * Astro's version compares Origin against the origin the serverless function
+ * observes, which behind a Vercel alias is the internal deployment host — so it
+ * rejects genuine submissions from the site's own /book page. This compares the
+ * Origin (or Referer) host against an explicit allowlist instead.
+ *
+ * A missing Origin is still rejected: browsers always send it on cross-origin
+ * form POSTs, so absence means the request did not come from our page.
+ */
+function sameSite(request: Request): boolean {
+  const header = request.headers.get('origin') ?? request.headers.get('referer');
+  if (!header) return false;
+
+  let host: string;
+  try {
+    host = new URL(header).host;
+  } catch {
+    return false;
+  }
+
+  const allowed = new Set<string>();
+  const add = (v?: string | null) => {
+    if (!v) return;
+    try {
+      allowed.add(new URL(v.startsWith('http') ? v : `https://${v}`).host);
+    } catch { /* ignore malformed */ }
+  };
+  add(import.meta.env.SITE);
+  add(process.env.VERCEL_URL);
+  add(process.env.VERCEL_PROJECT_PRODUCTION_URL);
+  add(process.env.VERCEL_BRANCH_URL);
+  add(new URL(request.url).origin);
+
+  return allowed.has(host);
+}
+
 function redirect(to: string, status = 303): Response {
   return new Response(null, { status, headers: { Location: to } });
 }
@@ -58,6 +96,10 @@ async function captchaOk(form: FormData, ip: string | null): Promise<boolean> {
 }
 
 export const POST: APIRoute = async ({ request, clientAddress }) => {
+  if (!sameSite(request)) {
+    return new Response('Cross-site POST form submissions are forbidden', { status: 403 });
+  }
+
   let form: FormData;
   try {
     form = await request.formData();
