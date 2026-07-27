@@ -68,7 +68,7 @@ const faqLd = service.data.faqs.length > 0 ? {
     subheadline={service.data.short_description}
     cta_text="Get Your Free Estimate!"
     cta_href="/book"
-    photo={service.data.hero_photo}
+    photo={service.data.hero_photo ?? site.default_hero_photo}
     form_embed_url={heroFormUrl}
     form_title={`${service.data.title} estimate`}
   />

@@ -133,7 +133,9 @@ const site = defineCollection({
         link_url: z.string().url().optional(),
       })).default([]),
       why_choose_us: z.array(z.object({
-        icon: z.string(),
+        // Optional and unused by the owl template: WhyChooseUs renders a
+        // typographic tile grid with no icon slot. Kept for firefly parity.
+        icon: z.string().optional(),
         title: z.string(),
         description: z.string(),
       })).default([]),

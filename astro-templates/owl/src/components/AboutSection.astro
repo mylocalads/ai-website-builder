@@ -12,7 +12,7 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
 ---
 <section class="about-section" aria-labelledby="about-heading">
   <div class="container">
-    <div class={`about-grid ${photo_position === 'left' ? 'photo-left' : ''}`}>
+    <div class={`about-grid ${photo ? (photo_position === 'left' ? 'photo-left' : '') : 'no-photo'}`}>
       <div class="about-copy">
         {eyebrow && <p class="eyebrow">{eyebrow}</p>}
         <h2 id="about-heading">{heading}</h2>
@@ -38,6 +38,9 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
 <style>
   .about-section { padding: var(--space-5) 0; }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: center; }
+  /* With no photo the two-column grid leaves a dead empty column. Collapse to a
+     single readable measure instead of stranding the copy in one half. */
+  .about-grid.no-photo { grid-template-columns: minmax(0, 820px); }
   .about-grid.photo-left { grid-template-areas: 'photo copy'; }
   .about-grid.photo-left .about-copy { grid-area: copy; }
   .about-grid.photo-left .about-photo { grid-area: photo; }
