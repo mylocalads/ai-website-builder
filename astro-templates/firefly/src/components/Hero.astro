@@ -1,7 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
 import GHLFormEmbed from './GHLFormEmbed.astro';
-import SMSConsent from './SMSConsent.astro';
 export interface Props {
   eyebrow?: string;
   headline: string;
@@ -42,7 +41,6 @@ const heroVideo = video ?? site.default_hero_video;
         </div>
       ) : form_embed_url ? (
         <div class="form-wrap">
-          <SMSConsent />
           <GHLFormEmbed embed_url={form_embed_url} title={form_title} />
         </div>
       ) : null}

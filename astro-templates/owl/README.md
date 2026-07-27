@@ -60,9 +60,17 @@ console.log((r(tok(f),tok(b))>=4.5?"PASS":"FAIL"),l,r(tok(f),tok(b)).toFixed(2))
 `HeroOwl` renders exactly one thing in its right-hand column, in priority order:
 
 1. `calendar_embed_snippet` from the site CRM config, when the page passes `form_embed_url`
-2. `SMSConsent` + `GHLFormEmbed`, when the page passes `form_embed_url`
+2. `GHLFormEmbed`, when the page passes `form_embed_url`
 3. the `quote_card` from home content, when it does not
 
 Service and area pages pass `form_embed_url`; the home page passes `quote_card`.
-The A2P consent language rides along with the form — removing the form slot
-would strand it, since nothing else on the page renders `SMSConsent`.
+
+## A2P / SMS consent
+
+The template renders **no** SMS consent language of its own. Consent is collected
+inside the embedded GHL form or calendar, which is where the phone number is
+actually captured — so that is where the disclosure belongs.
+
+The `compliance.a2p` flag still exists in the site config schema, but nothing in
+the template reads it. It is declarative, the same as `compliance.ada`. Only
+`compliance.gdpr` gates a component (`CookieConsent` in `BaseLayout`).

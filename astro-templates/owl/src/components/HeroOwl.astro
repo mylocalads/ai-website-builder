@@ -1,6 +1,5 @@
 ---
 import { getEntry } from 'astro:content';
-import SMSConsent from './SMSConsent.astro';
 import GHLFormEmbed from './GHLFormEmbed.astro';
 
 export interface Props {
@@ -77,7 +76,6 @@ const asideMode = form_embed_url && calendarSnippet
 
     {asideMode === 'form' && (
       <aside class="panel" aria-label={form_title}>
-        <SMSConsent />
         <GHLFormEmbed embed_url={form_embed_url!} title={form_title} />
       </aside>
     )}
