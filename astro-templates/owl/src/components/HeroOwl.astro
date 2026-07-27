@@ -1,0 +1,102 @@
+---
+export interface Props {
+  eyebrow?: string;
+  headline: string;
+  subheadline: string;
+  cta_text: string;
+  cta_href: string;
+  photo?: string;
+  video?: string;
+  video_link_text?: string;
+  video_link_href?: string;
+  quote_card?: {
+    quote: string;
+    author?: string;
+    author_photo?: string;
+    cta_text: string;
+    cta_href: string;
+    rating?: number;
+    review_count?: number;
+  };
+}
+const {
+  eyebrow, headline, subheadline, cta_text, cta_href,
+  photo, video, video_link_text, video_link_href, quote_card,
+} = Astro.props;
+---
+<section class="hero" aria-label="Introduction">
+  <div
+    class="media"
+    aria-hidden="true"
+    style={photo ? `background-image: url(${photo});` : undefined}
+  >
+    {video && <video src={video} autoplay muted loop playsinline poster={photo}></video>}
+    <span class="scrim"></span>
+  </div>
+
+  <div class="container inner">
+    <div class="copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{headline}</h1>
+      <p class="sub">{subheadline}</p>
+      <div class="actions">
+        <a class="btn" href={cta_href}>{cta_text}</a>
+        {video_link_text && video_link_href && (
+          <a class="video-link" href={video_link_href}>{video_link_text}</a>
+        )}
+      </div>
+    </div>
+
+    {quote_card && (
+      <aside class="quote-card" aria-label="Customer feedback">
+        <figure>
+          {quote_card.author_photo && <img class="avatar" src={quote_card.author_photo} alt="" />}
+          <blockquote><p>{quote_card.quote}</p></blockquote>
+          {quote_card.author && <figcaption>{quote_card.author}</figcaption>}
+        </figure>
+        <a class="btn btn-block" href={quote_card.cta_href}>{quote_card.cta_text}</a>
+        {quote_card.rating && (
+          <p class="rating">
+            <span aria-hidden="true" class="stars">{'★'.repeat(Math.round(quote_card.rating))}</span>
+            <span>
+              {quote_card.rating.toFixed(1)} rating{quote_card.review_count ? ` from ${quote_card.review_count} reviews` : ''}
+            </span>
+          </p>
+        )}
+      </aside>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; isolation: isolate; min-height: clamp(30rem, 70vh, 44rem); display: flex; align-items: center; }
+  .media { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; background-color: var(--color-primary); }
+  .media video { width: 100%; height: 100%; object-fit: cover; }
+  .scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,20,25,0.82) 0%, rgba(15,20,25,0.45) 60%, rgba(15,20,25,0.25) 100%); }
+
+  /* Honor reduced-motion by dropping the video entirely; the poster image is
+     already painted as the .media background, so the hero stays intact. */
+  @media (prefers-reduced-motion: reduce) { .media video { display: none; } }
+
+  .inner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: var(--space-4); align-items: center; padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  @media (max-width: 900px) { .inner { grid-template-columns: 1fr; } }
+
+  .copy { color: #ffffff; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; margin: 0 0 var(--space-2); }
+  h1 { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(2.5rem, 6.5vw, 5rem); line-height: 1.02; margin: 0 0 var(--space-2); }
+  .sub { font-size: clamp(1rem, 1.4vw, 1.15rem); max-width: 46ch; margin: 0 0 var(--space-3); }
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+  .video-link { color: #ffffff; font-weight: 600; text-decoration: underline; }
+
+  .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.125rem; letter-spacing: 0.02em; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+  .btn-block { display: block; text-align: center; }
+
+  .quote-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); }
+  .quote-card figure { margin: 0 0 var(--space-3); display: grid; gap: var(--space-1); justify-items: center; text-align: center; }
+  .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .quote-card blockquote { margin: 0; }
+  .quote-card blockquote p { margin: 0; font-size: 1.05rem; color: var(--color-text); }
+  .quote-card figcaption { color: var(--color-muted); font-size: 0.9rem; }
+  .rating { margin: var(--space-2) 0 0; text-align: center; font-size: 0.9rem; color: var(--color-muted); }
+  .stars { color: var(--color-accent); letter-spacing: 0.1em; margin-right: 0.4rem; }
+</style>
