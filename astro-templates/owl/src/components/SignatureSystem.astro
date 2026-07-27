@@ -22,17 +22,8 @@ const { data } = Astro.props;
 const blocks = data?.blocks ?? [];
 const steps = data?.steps ?? [];
 
-// Icon registry. Content supplies a KEY, never markup and never a raw label —
-// an unknown key renders nothing rather than printing the key as text.
-const ICONS: Record<string, string> = {
-  shield: '<path d="M12 2.5 4.5 5.8v5.6c0 4.7 3.2 9.1 7.5 10.1 4.3-1 7.5-5.4 7.5-10.1V5.8L12 2.5Z"/><path d="m8.8 12 2.3 2.4 4.3-4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
-  document: '<path d="M6 2.5h7.2L19 8.3V21a.5.5 0 0 1-.5.5h-12A.5.5 0 0 1 6 21V3a.5.5 0 0 1 .5-.5Z"/><path d="M13 2.6V8.5h5.9" fill="none" stroke="#fff" stroke-width="1.4"/><path d="M9 13.5h6M9 16.5h6" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>',
-  umbrella: '<path d="M12 3a9 9 0 0 0-9 9h6a3 3 0 0 1 6 0h6a9 9 0 0 0-9-9Z"/><path d="M12 12v6.5a2.2 2.2 0 0 1-4.4 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
-  calendar: '<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17" fill="none" stroke="#fff" stroke-width="1.5"/><path d="M8 2.8v3.6M16 2.8v3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
-  broom: '<path d="M13.8 3.2 10 7l3.4 3.4 3.8-3.8a2.4 2.4 0 0 0-3.4-3.4Z"/><path d="M9.6 7.4 4 13v6.8h6.8L16.4 14 9.6 7.4Z"/>',
-  home: '<path d="M12 3 2.8 10.4h2.4V21h5.2v-5.6h3.2V21h5.2V10.4h2.4L12 3Z"/>',
-};
-const hasIcon = (k?: string) => !!k && Object.prototype.hasOwnProperty.call(ICONS, k);
+import { getIcon } from '../lib/icons';
+const hasIcon = (k?: string) => getIcon(k) !== null;
 ---
 {data && (
   <section class="signature" aria-label={data.headline}>
@@ -50,7 +41,7 @@ const hasIcon = (k?: string) => !!k && Object.prototype.hasOwnProperty.call(ICON
               ? <img class="card-img" src={blocks[0].image} alt="" loading="lazy" />
               : hasIcon(blocks[0].icon) && (
                   <span class="icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={ICONS[blocks[0].icon!]} />
+                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(blocks[0].icon)!} />
                   </span>
                 )}
             <h3>{blocks[0].title}</h3>
@@ -62,7 +53,7 @@ const hasIcon = (k?: string) => !!k && Object.prototype.hasOwnProperty.call(ICON
           <article class="card steps-card">
             {hasIcon(data.steps_icon) && (
               <span class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor" set:html={ICONS[data.steps_icon!]} />
+                <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(data.steps_icon)!} />
               </span>
             )}
             {data.steps_title && <h3 class="steps-title">{data.steps_title}</h3>}
@@ -83,7 +74,7 @@ const hasIcon = (k?: string) => !!k && Object.prototype.hasOwnProperty.call(ICON
               ? <img class="card-img" src={blocks[1].image} alt="" loading="lazy" />
               : hasIcon(blocks[1].icon) && (
                   <span class="icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={ICONS[blocks[1].icon!]} />
+                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(blocks[1].icon)!} />
                   </span>
                 )}
             <h3>{blocks[1].title}</h3>
@@ -100,7 +91,7 @@ const hasIcon = (k?: string) => !!k && Object.prototype.hasOwnProperty.call(ICON
                 ? <img class="card-img" src={b.image} alt="" loading="lazy" />
                 : hasIcon(b.icon) && (
                     <span class="icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="currentColor" set:html={ICONS[b.icon!]} />
+                      <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(b.icon)!} />
                     </span>
                   )}
               <h3>{b.title}</h3>

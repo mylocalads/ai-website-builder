@@ -8,6 +8,8 @@ export interface Props {
     photo?: string;
     photo_alt?: string;
     photo_cutout?: boolean;
+    cta_text?: string;
+    cta_href?: string;
   };
   fallback_photo?: string;
   business_name: string;
@@ -28,6 +30,9 @@ const checklist = data?.checklist ?? [];
             {checklist.map((item) => <li>{item}</li>)}
           </ul>
         )}
+        {data.cta_text && data.cta_href && (
+          <div class="section-cta"><a class="btn" href={data.cta_href}>{data.cta_text}</a></div>
+        )}
       </div>
       {photo && (
         <div class={`media ${data.photo_cutout ? "cutout" : ""}`}>
@@ -38,6 +43,10 @@ const checklist = data?.checklist ?? [];
   </section>
 )}
 <style>
+  .section-cta { text-align: center; margin-top: var(--space-4); }
+  .section-cta .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; }
+  .about .section-cta { text-align: left; }
+
   .about { padding: var(--space-5) 0; }
   .inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4); align-items: center; }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }

@@ -1,4 +1,6 @@
 ---
+import { getIcon } from '../lib/icons';
+
 export interface Props {
   data?: {
     eyebrow?: string;
@@ -6,13 +8,23 @@ export interface Props {
     body: string;
     cta_text?: string;
     cta_href?: string;
+    icon?: string;
+    image?: string;
   };
 }
 const { data } = Astro.props;
+const svg = getIcon(data?.icon);
 ---
 {data && (
   <section class="promise-band" aria-label={data.headline}>
     <div class="container inner">
+      {data.image
+        ? <img class="band-img" src={data.image} alt="" loading="lazy" />
+        : svg && (
+            <span class="band-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" set:html={svg} />
+            </span>
+          )}
       {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
       <h2>{data.headline}</h2>
       <p class="body">{data.body}</p>
@@ -25,6 +37,9 @@ const { data } = Astro.props;
 <style>
   .promise-band { background: var(--color-surface); padding: var(--space-5) 0; }
   .inner { max-width: 780px; text-align: center; }
+  .band-icon { display: inline-flex; align-items: center; justify-content: center; width: 4.5rem; height: 4.5rem; border-radius: 50%; background: var(--color-accent); color: var(--color-on-accent); margin: 0 auto var(--space-3); }
+  .band-icon svg { width: 2.4rem; height: 2.4rem; }
+  .band-img { width: 100%; max-width: 220px; height: auto; margin: 0 auto var(--space-3); display: block; }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
   h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.01em; }
   .body { color: var(--color-muted); font-size: 1.05rem; line-height: 1.7; margin: 0 0 var(--space-3); }

@@ -220,13 +220,18 @@ const site = defineCollection({
           review_count: z.number().optional(),
         }).optional(),
       }),
-      promise_bar: z.array(z.string()).default([]),
+      promise_bar: z.array(z.union([
+        z.string(),
+        z.object({ text: z.string(), icon: z.string().optional() }),
+      ])).default([]),
       promise_band: z.object({
         eyebrow: z.string().optional(),
         headline: z.string(),
         body: z.string(),
         cta_text: z.string().optional(),
         cta_href: z.string().optional(),
+        icon: z.string().optional(),
+        image: z.string().optional(),
       }).optional(),
       signature_system: z.object({
         eyebrow: z.string().optional(),
@@ -255,7 +260,14 @@ const site = defineCollection({
       }).optional(),
       process_steps: z.object({
         headline: z.string(),
-        steps: z.array(z.object({ label: z.string(), title: z.string() })).default([]),
+        steps: z.array(z.object({
+          label: z.string(),
+          title: z.string(),
+          body: z.string().optional(),
+          icon: z.string().optional(),
+        })).default([]),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
       }).optional(),
       about_block: z.object({
         eyebrow: z.string().optional(),
@@ -268,6 +280,8 @@ const site = defineCollection({
         // rounded frame and bottom-aligns so the subject stands on the baseline
         // instead of floating in a rounded box.
         photo_cutout: z.boolean().default(false),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
       }).optional(),
       seo_body: z.object({
         eyebrow: z.string().optional(),
@@ -284,6 +298,8 @@ const site = defineCollection({
           source: z.string().optional(),
           avatar: z.string().optional(),
         }).optional(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
       }).optional(),
       testimonials: z.array(z.object({
         name: z.string(), location: z.string().optional(), text: z.string(), rating: z.number().optional(),
