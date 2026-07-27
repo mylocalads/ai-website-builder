@@ -46,7 +46,7 @@ const year = new Date().getFullYear();
       </div>
       <div>
         <h3>Service Areas</h3>
-        <ul>{areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
+        <ul>{areas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
       </div>
       <div>
         <h3>Company</h3>

@@ -21,15 +21,13 @@ const services = defineCollection({
   }),
 });
 
-// v2.2: service_areas entries resolve at the flat root URL `/{filename-slug}`
-// via `src/pages/[area].astro`. The filename MUST match the pattern
+// Owl: service_areas entries resolve at `/service-area/{filename-slug}` via
+// `src/pages/service-area/[slug].astro`. The filename MUST match the pattern
 // `city-state.md` with a two-letter lowercase state (e.g. `denver-co.md`,
-// `miami-fl.md`) since Task 10 removed the `slug` field from the schema and
-// Astro derives the entry slug from the filename. Reserved top-level slugs
-// (about, services, service-areas, contact, pricing, our-work, privacy,
-// terms, accessibility, 404, _astro, sitemap-index.xml, sitemap-0.xml,
-// robots.txt) MUST NOT be used — the `[area].astro` route enforces this
-// at build time in getStaticPaths.
+// `miami-fl.md`) — the schema has no `slug` field and Astro derives the entry
+// slug from the filename. Because the route is nested, city slugs can no longer
+// collide with top-level static routes; only `index` is reserved, enforced in
+// getStaticPaths.
 const service_areas = defineCollection({
   type: 'content',
   schema: z.object({

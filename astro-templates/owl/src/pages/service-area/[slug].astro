@@ -1,28 +1,26 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Hero from '../components/Hero.astro';
-import PartnerBadges from '../components/PartnerBadges.astro';
-import AboutSection from '../components/AboutSection.astro';
-import Gallery from '../components/Gallery.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import OurServices from '../components/OurServices.astro';
-import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
-import Financing from '../components/Financing.astro';
-import ServiceAreaGrid from '../components/ServiceAreaGrid.astro';
-import FAQ from '../components/FAQ.astro';
-import CTA from '../components/CTA.astro';
-import GHLChatWidget from '../components/GHLChatWidget.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import HeroOwl from '../../components/HeroOwl.astro';
+import PartnerBadges from '../../components/PartnerBadges.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import Gallery from '../../components/Gallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServicesGridOwl from '../../components/ServicesGridOwl.astro';
+import GHLReviewsWidget from '../../components/GHLReviewsWidget.astro';
+import Financing from '../../components/Financing.astro';
+import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
+import FAQ from '../../components/FAQ.astro';
+import ClosingCTA from '../../components/ClosingCTA.astro';
+import GHLChatWidget from '../../components/GHLChatWidget.astro';
 
 export async function getStaticPaths() {
   // Defined inside getStaticPaths because Astro extracts this function into its
   // own module at build time and does not carry along frontmatter-level consts.
-  const RESERVED_SLUGS = new Set([
-    'about', 'services', 'service-areas', 'contact', 'pricing', 'our-work',
-    'privacy', 'terms', 'accessibility', '404', '_astro', 'index',
-    'sitemap-index.xml', 'sitemap-0.xml', 'robots.txt',
-  ]);
+  // Nesting under /service-area/ means a city slug can no longer collide with a
+  // top-level static route, so only the directory index is reserved.
+  const RESERVED_SLUGS = new Set(['index']);
   const SLUG_PATTERN = /^[a-z0-9-]+-[a-z]{2}$/;
 
   const areas = await getCollection('service_areas');
@@ -32,7 +30,7 @@ export async function getStaticPaths() {
     .filter((a) => {
       const s = a.slug;
       if (RESERVED_SLUGS.has(s)) {
-        console.warn(`[service_areas] Skipping "${s}" — reserved slug conflicts with a static route.`);
+        console.warn(`[service_areas] Skipping "${s}" — reserved slug conflicts with the directory index.`);
         return false;
       }
       if (!SLUG_PATTERN.test(s)) {
@@ -41,22 +39,22 @@ export async function getStaticPaths() {
       }
       return true;
     });
-  return validated.map((a) => ({ params: { area: a.slug }, props: { area: a } }));
+  return validated.map((a) => ({ params: { slug: a.slug }, props: { area: a } }));
 }
 
 const { area } = Astro.props;
 const site = (await getEntry('site', 'config')).data as any;
 const home = await getEntry('site', 'home').catch(() => null);
-const homeFaqs = (home?.data as any)?.faqs ?? [];
-
-const heroFormUrl = site.crm?.estimate_form_embed_url ?? site.crm?.contact_form_embed_url;
+const homeData = (home?.data as any) ?? {};
+const homeFaqs = homeData.faqs ?? [];
 
 const title = `${site.business_name} — Serving ${area.data.name}, ${area.data.state}`;
 const description = `${site.business_name} serves ${area.data.name}, ${area.data.state} with local, licensed service across ${area.data.neighborhoods.slice(0, 3).join(', ') || 'the metro area'}.`;
+const path = `/service-area/${area.slug}`;
 const crumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Service Areas', href: '/service-areas' },
-  { name: `${area.data.name}, ${area.data.state}`, href: `/${area.slug}` },
+  { name: 'Service Areas', href: '/service-area' },
+  { name: `${area.data.name}, ${area.data.state}`, href: path },
 ];
 
 const serviceLd = {
@@ -68,23 +66,15 @@ const serviceLd = {
   description,
 };
 ---
-<BaseLayout
-  title={title}
-  description={description}
-  breadcrumbs={crumbs}
-  jsonLd={[serviceLd]}
-  pagePath={`/${area.slug}`}
->
+<BaseLayout title={title} description={description} breadcrumbs={crumbs} jsonLd={[serviceLd]} pagePath={path}>
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <Hero
+  <HeroOwl
     eyebrow={`${area.data.name}, ${area.data.state}`}
     headline={`${site.business_name} — Serving ${area.data.name}, ${area.data.state}`}
     subheadline={area.data.local_context || `Local service across ${area.data.name} and surrounding communities.`}
     cta_text="Get Your Free Estimate!"
     cta_href="/book"
-    photo={area.data.hero_photo}
-    form_embed_url={heroFormUrl}
-    form_title={`${area.data.name} estimate request`}
+    photo={area.data.hero_photo ?? site.default_hero_photo}
   />
   <PartnerBadges />
   <AboutSection
@@ -97,11 +87,11 @@ const serviceLd = {
   />
   <Gallery items={area.data.gallery ?? []} heading={`${area.data.name} work`} />
   <WhyChooseUs />
-  <OurServices />
+  <ServicesGridOwl />
   <GHLReviewsWidget />
   <Financing />
   <ServiceAreaGrid />
   <FAQ items={homeFaqs} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA headline="It's time for a new roof" cta_text="Let's Get Started" cta_href="/book" />
   <GHLChatWidget />
 </BaseLayout>
