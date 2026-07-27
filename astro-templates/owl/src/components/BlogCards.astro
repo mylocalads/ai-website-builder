@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+export interface Props { limit?: number; }
+const { limit = 3 } = Astro.props;
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.publish_date.localeCompare(a.data.publish_date))
+  .slice(0, limit);
+
+function formatDate(iso: string): string {
+  const [y, m, d] = iso.split('-');
+  return `${Number(m)}.${Number(d)}.${y}`;
+}
+---
+{posts.length > 0 && (
+  <section class="blog-cards" aria-label="Recent articles">
+    <div class="container">
+      <div class="head">
+        <div>
+          <p class="eyebrow">Recent Articles</p>
+          <h2>Explore the blog</h2>
+        </div>
+        <a class="see-all" href="/blog">See all articles</a>
+      </div>
+      <ul class="grid">
+        {posts.map((p) => (
+          <li class="card">
+            <p class="meta">{p.data.read_time} · Posted {formatDate(p.data.publish_date)}</p>
+            <h3><a href={`/blog/${p.slug}`}>{p.data.title}</a></h3>
+            <p class="excerpt">{p.data.description}</p>
+            <span class="keep" aria-hidden="true">Keep Reading →</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .blog-cards { padding: var(--space-5) 0; }
+  .head { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: flex-end; justify-content: space-between; margin-bottom: var(--space-4); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0; }
+  .see-all { font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-text); }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
+  .card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 8px 22px rgba(15,20,25,0.08); }
+  .meta { margin: 0 0 var(--space-1); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-muted); }
+  h3 { font-size: 1.25rem; margin: 0 0 var(--space-2); }
+  h3 a { color: var(--color-text); text-decoration: none; }
+  h3 a:hover, h3 a:focus-visible { text-decoration: underline; }
+  .excerpt { margin: 0 0 var(--space-2); color: var(--color-muted); line-height: 1.6; }
+  .keep { font-weight: 700; color: var(--color-accent); }
+</style>

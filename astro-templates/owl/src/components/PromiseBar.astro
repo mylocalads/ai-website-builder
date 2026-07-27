@@ -1,0 +1,19 @@
+---
+export interface Props { items?: string[]; }
+const { items = [] } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="promise-bar" aria-label="What sets us apart">
+    <div class="container">
+      <ul>
+        {items.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .promise-bar { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-2) 0; }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-1) var(--space-3); }
+  li { font-weight: 600; letter-spacing: 0.02em; font-size: clamp(0.95rem, 1.6vw, 1.15rem); }
+  li + li::before { content: '·'; margin-right: var(--space-3); opacity: 0.6; }
+</style>

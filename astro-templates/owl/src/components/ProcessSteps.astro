@@ -1,0 +1,34 @@
+---
+export interface Props {
+  data?: {
+    headline: string;
+    steps?: Array<{ label: string; title: string }>;
+  };
+}
+const { data } = Astro.props;
+const steps = data?.steps ?? [];
+---
+{data && steps.length > 0 && (
+  <section class="process" aria-label={data.headline}>
+    <div class="container">
+      <h2>{data.headline}</h2>
+      <ol>
+        {steps.map((s) => (
+          <li>
+            <p class="label">{s.label}</p>
+            <h3>{s.title}</h3>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)}
+<style>
+  .process { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-5) 0; }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-on-primary); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-4); text-align: center; }
+  ol { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
+  li { counter-increment: step; text-align: center; }
+  li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; border: 2px solid var(--color-accent); color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; margin-bottom: var(--space-2); }
+  .label { margin: 0 0 var(--space-1); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.78rem; font-weight: 600; opacity: 0.85; }
+  h3 { font-size: 1.15rem; margin: 0; color: var(--color-on-primary); }
+</style>
