@@ -270,6 +270,7 @@ const site = defineCollection({
         photo_cutout: z.boolean().default(false),
       }).optional(),
       seo_body: z.object({
+        eyebrow: z.string().optional(),
         headline: z.string(),
         paragraphs: z.array(z.string()).default([]),
         checklist: z.array(z.string()).default([]),

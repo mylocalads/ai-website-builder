@@ -5,6 +5,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
+import EstimateForm from '../components/EstimateForm.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const formSnippet = site.crm?.contact_form_snippet;
@@ -24,7 +25,14 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact'
       <SectionHead eyebrow="Get In Touch" heading="Send us a message" />
       <div class="contact-grid">
         <div class="form-col">
-          {formSnippet && <div class="form-wrap"><Fragment set:html={formSnippet} /></div>}
+          {formSnippet
+            ? <div class="form-wrap"><Fragment set:html={formSnippet} /></div>
+            : <EstimateForm
+                heading="Send us a message"
+                intro="Tell us about the project and we'll get back to you."
+                rating={site.rating}
+                review_count={site.review_count}
+              />}
         </div>
         <aside class="info-col">
           <h3>Additional Info</h3>

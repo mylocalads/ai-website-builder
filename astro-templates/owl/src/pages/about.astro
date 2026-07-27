@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroOwl from '../components/HeroOwl.astro';
 import AboutSection from '../components/AboutSection.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
@@ -22,6 +23,17 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
   pagePath="/about"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
+
+  <HeroOwl
+    eyebrow={`About ${site.business_name}`}
+    headline={`About ${site.business_name}`}
+    subheadline={story.slice(0, 190)}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.about_photo ?? site.default_hero_photo}
+    show_form
+    form_heading="Get a free estimate"
+  />
 
   {teamHero && (
     <section class="team-hero">

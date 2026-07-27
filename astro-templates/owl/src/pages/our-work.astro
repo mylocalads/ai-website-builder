@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroOwl from '../components/HeroOwl.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
@@ -19,12 +20,16 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   pagePath="/our-work"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="ow-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
-    <div class="container">
-      <h1>Our work</h1>
-      <p>{intro}</p>
-    </div>
-  </section>
+  <HeroOwl
+    eyebrow="Recent Projects"
+    headline="Our work"
+    subheadline={intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Want work like this?"
+  />
 
   {services.map((s) => {
     const gallery = s.data.gallery ?? [];

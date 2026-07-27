@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroOwl from '../components/HeroOwl.astro';
 import PricingTable from '../components/PricingTable.astro';
 import Financing from '../components/Financing.astro';
 import FAQ from '../components/FAQ.astro';
@@ -30,12 +31,16 @@ const roofCostRows = [
   pagePath="/pricing"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="pricing-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
-    <div class="container">
-      <h1>Pricing</h1>
-      <p>{pricing.intro}</p>
-    </div>
-  </section>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your roof"
+  />
 
   <section class="roof-cost">
     <div class="container">

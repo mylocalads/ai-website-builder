@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import GHLFormEmbed from './GHLFormEmbed.astro';
+import EstimateForm from './EstimateForm.astro';
 
 export interface Props {
   eyebrow?: string;
@@ -23,11 +24,14 @@ export interface Props {
   };
   form_embed_url?: string;
   form_title?: string;
+  /** Render the native estimate form in the aside. */
+  show_form?: boolean;
+  form_heading?: string;
 }
 const {
   eyebrow, headline, subheadline, cta_text, cta_href,
   photo, video, video_link_text, video_link_href, quote_card,
-  form_embed_url, form_title = 'Book now',
+  form_embed_url, form_title = 'Book now', show_form = false, form_heading,
 } = Astro.props;
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -37,13 +41,18 @@ const calendarSnippet = site.crm?.calendar_embed_snippet;
 // social proof: a calendar the operator pasted in takes priority, then a form
 // embed, and only pages that requested neither fall back to the quote card.
 // Service and area pages pass form_embed_url; the home page passes quote_card.
+// One slot, resolved by how directly each option captures a lead. An operator
+// who pasted a calendar or a GHL embed meant it, so those win; otherwise the
+// native form is preferred over the quote card wherever a page asks for it.
 const asideMode = form_embed_url && calendarSnippet
   ? 'calendar'
   : form_embed_url
     ? 'form'
-    : quote_card
-      ? 'quote'
-      : 'none';
+    : show_form
+      ? 'native'
+      : quote_card
+        ? 'quote'
+        : 'none';
 ---
 <section class="hero" aria-label="Introduction">
   <div
@@ -77,6 +86,17 @@ const asideMode = form_embed_url && calendarSnippet
     {asideMode === 'form' && (
       <aside class="panel" aria-label={form_title}>
         <GHLFormEmbed embed_url={form_embed_url!} title={form_title} />
+      </aside>
+    )}
+
+    {asideMode === 'native' && (
+      <aside class="panel form-panel" aria-label={form_heading ?? 'Get a free estimate'}>
+        <EstimateForm
+          compact
+          heading={form_heading ?? 'Get a free estimate'}
+          rating={quote_card?.rating}
+          review_count={quote_card?.review_count}
+        />
       </aside>
     )}
 
@@ -116,7 +136,7 @@ const asideMode = form_embed_url && calendarSnippet
 
   .copy { color: #ffffff; }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; margin: 0 0 var(--space-2); }
-  h1 { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(2.5rem, 6.5vw, 5rem); line-height: 1.02; margin: 0 0 var(--space-2); }
+  h1 { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(2.2rem, 5.6vw, 4.2rem); line-height: 1.05; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.005em; }
   .sub { font-size: clamp(1rem, 1.4vw, 1.15rem); max-width: 46ch; margin: 0 0 var(--space-3); }
   .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
   .video-link { color: #ffffff; font-weight: 600; text-decoration: underline; }
@@ -126,6 +146,8 @@ const asideMode = form_embed_url && calendarSnippet
 
   .panel { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); color: var(--color-text); }
   .panel :global(iframe) { border-radius: var(--radius-sm); }
+  /* The form brings its own surface and shadow, so the wrapper gets out of the way. */
+  .form-panel { padding: 0; background: transparent; box-shadow: none; }
 
   .quote-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); }
   .quote-card figure { margin: 0 0 var(--space-3); display: grid; gap: var(--space-1); justify-items: center; text-align: center; }

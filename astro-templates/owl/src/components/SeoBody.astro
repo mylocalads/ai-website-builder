@@ -1,6 +1,7 @@
 ---
 export interface Props {
   data?: {
+    eyebrow?: string;
     headline: string;
     paragraphs?: string[];
     checklist?: string[];
@@ -19,6 +20,7 @@ const imageLeft = data?.image_position === 'left';
   <section class="seo-body" aria-label={data.headline}>
     <div class={`container inner ${image ? 'split' : ''} ${imageLeft ? 'image-left' : ''}`}>
       <div class="copy">
+        {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
         <h2>{data.headline}</h2>
         {paragraphs.map((p) => <p class="para">{p}</p>)}
         {checklist.length > 0 && (
@@ -45,7 +47,8 @@ const imageLeft = data?.image_position === 'left';
   .inner.split.image-left .media { order: 1; }
   @media (max-width: 860px) { .inner.split { grid-template-columns: 1fr; } .inner.split.image-left .copy, .inner.split.image-left .media { order: initial; } }
 
-  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-3); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-3); text-transform: uppercase; letter-spacing: 0.01em; }
   .para { color: var(--color-muted); font-size: 1.05rem; line-height: 1.75; margin: 0 0 var(--space-2); }
   .checklist { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-1) var(--space-3); }
   .checklist li { position: relative; padding-left: 1.9rem; color: var(--color-text); line-height: 1.6; }

@@ -109,20 +109,28 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 
   const get = (k: string) => ((form.get(k) as string | null) ?? '').trim();
 
+  // Bounce validation errors back to the originating page. Only a same-site
+  // absolute path is accepted — never an absolute URL or a protocol-relative
+  // one, or this becomes an open redirect.
+  const rawReturn = get('return_to');
+  const back =
+    /^\/(?!\/)[A-Za-z0-9\-._~!$&'()*+,;=:@%/]*$/.test(rawReturn) ? rawReturn : '/book';
+  const fail = (code: string) => redirect(`${back}?error=${code}`);
+
   // Honeypot. A real person never sees this field, so any value is a bot.
   // Answer 303 as though it succeeded so the bot gets no signal to retry.
   if (get('company') !== '') return redirect('/thank-you');
 
   const missing = REQUIRED.filter((k) => get(k) === '');
-  if (missing.length) return redirect('/book?error=missing');
-  if (!EMAIL_RE.test(get('email'))) return redirect('/book?error=email');
-  if (!SERVICES.has(get('service'))) return redirect('/book?error=service');
+  if (missing.length) return fail('missing');
+  if (!EMAIL_RE.test(get('email'))) return fail('email');
+  if (!SERVICES.has(get('service'))) return fail('service');
   // TCPA consent is the legal basis for calling or texting this person. No
   // checkbox, no lead — this is not a field to be lenient about.
-  if (!form.get('tcpa_consent')) return redirect('/book?error=consent');
+  if (!form.get('tcpa_consent')) return fail('consent');
 
   const ip = clientAddress ?? null;
-  if (!(await captchaOk(form, ip))) return redirect('/book?error=captcha');
+  if (!(await captchaOk(form, ip))) return fail('captcha');
 
   const lead = {
     full_name: get('full_name'),
@@ -174,11 +182,11 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
       // No destination configured. Fail loudly in the log and tell the visitor
       // to call, rather than accepting the lead and dropping it on the floor.
       console.error('[estimate] No destination configured. Set LEAD_WEBHOOK_URL, or RESEND_API_KEY + LEAD_NOTIFY_EMAIL + LEAD_FROM_EMAIL.');
-      return redirect('/book?error=unavailable');
+      return fail('unavailable');
     }
   } catch (err) {
     console.error('[estimate] delivery failed:', err);
-    return redirect('/book?error=delivery');
+    return fail('delivery');
   }
 
   return redirect('/thank-you');

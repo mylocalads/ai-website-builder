@@ -25,7 +25,7 @@ const steps = data?.steps ?? [];
 )}
 <style>
   .process { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-5) 0; }
-  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-on-primary); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-4); text-align: center; }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-on-primary); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-4); text-align: center; text-transform: uppercase; letter-spacing: 0.01em; }
   ol { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); }
   li { counter-increment: step; text-align: center; }
   li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; border: 2px solid var(--color-accent); color: var(--color-accent); font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; margin-bottom: var(--space-2); }
