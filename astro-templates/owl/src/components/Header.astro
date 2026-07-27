@@ -127,7 +127,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
     .mobile-phone .phone-icon { animation: phone-glow 1.8s ease-out infinite; }
     .mobile-phone .phone-label { display: none; }
     .brand { flex: 0 1 auto; }
-    .brand-logo { max-height: 81px; }
+    .brand-logo { max-height: 69px; }   /* 81px - 15%, trims the mobile header bar */
   }
   @media (prefers-reduced-motion: reduce) {
     .mobile-phone .phone-icon { animation: none; }
