@@ -1,12 +1,111 @@
 {
   "kind": "home",
   "hero": {
-    "eyebrow": "Denver, CO",
-    "headline": "Local roofing you can count on",
-    "subheadline": "Fast, honest, licensed work for Denver homeowners.",
-    "cta_text": "Get a free estimate",
-    "cta_href": "/book"
+    "eyebrow": "The Sample County Trusted Roofing Company",
+    "headline": "We Answer The Phone",
+    "subheadline": "Most homeowners struggle to get a contractor on the phone. We decided that was unacceptable, and built the whole company around fixing it. Call, text, or email — whichever you prefer.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "video_link_text": "What makes us different?",
+    "video_link_href": "/about",
+    "quote_card": {
+      "quote": "They actually picked up every single time I called.",
+      "author": "Sample Customer",
+      "cta_text": "Price My Roof",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 42
+    }
   },
-  "testimonials": [],
-  "faqs": []
+  "promise_bar": [
+    "Over-communicative",
+    "Storm damage specialists",
+    "Three-stage cleanup"
+  ],
+  "promise_band": {
+    "eyebrow": "Company Promise",
+    "headline": "No question goes unanswered",
+    "body": "Nothing is worse than entrusting your home to a contractor and then being unable to reach them. That is why clear communication is our first priority, not an afterthought. Text us, call us, or ask in person — you will get a real answer from a real person.",
+    "cta_text": "Learn more",
+    "cta_href": "/about"
+  },
+  "signature_system": {
+    "eyebrow": "Our Standard",
+    "headline": "A roofing system that puts your home first",
+    "intro": "Our process is designed to keep your property protected at every stage of the project — from the first tarp to the final walkthrough.",
+    "blocks": [
+      {
+        "title": "Property protection",
+        "body": "We shield siding, landscaping, and outdoor living space before a single shingle comes off, so the project starts without collateral damage."
+      },
+      {
+        "title": "Long-term aftercare",
+        "body": "We leave leftover materials stored and weather-protected on site, so future repairs match the roof you actually have."
+      }
+    ],
+    "steps_title": "Three-stage cleanup",
+    "steps": [
+      { "title": "The crew does a first pass", "body": "Roofing sites are messy. Round one gets the bulk of it into the dumpster before anyone goes home." },
+      { "title": "A magnet sweep", "body": "A rolling roofing magnet collects nails and metal scrap across the yard and driveway in round two." },
+      { "title": "Project manager quality control", "body": "A manager walks the property last. No one can promise every nail, but three passes gets far closer than one." }
+    ],
+    "guarantee": {
+      "title": "Our get-it-right guarantee",
+      "body": "Every roofing project hits the occasional bump. What matters is whether your contractor makes it right. We either get it right the first time, or we come back until we have.",
+      "cta_text": "Learn more",
+      "cta_href": "/about"
+    }
+  },
+  "process_steps": {
+    "headline": "We've perfected the roofing process",
+    "steps": [
+      { "label": "Step One", "title": "Contact our team" },
+      { "label": "Step Two", "title": "Detailed inspection" },
+      { "label": "Step Three", "title": "Review your estimate" },
+      { "label": "Step Four", "title": "Install the perfect roof" }
+    ]
+  },
+  "about_block": {
+    "eyebrow": "About Us",
+    "headline": "Roofing that's clear, calm, and actually human",
+    "body": "Most homeowners don't want to chase contractors, decode estimates, or wonder what happens next. We exist to take that weight off your shoulders. We live nearby, we answer the phone, and we explain things plainly.",
+    "checklist": [
+      "A local team that actually responds",
+      "Text, call, or email — your choice",
+      "Clear estimates with photos and plain-English explanations",
+      "No pressure, no mystery, no disappearing acts"
+    ]
+  },
+  "seo_body": {
+    "headline": "The wise choice for local roofing",
+    "paragraphs": [
+      "Roofing does not need to feel chaotic. We have built a process that is steady, predictable, and easy to follow, so you always know what is happening and why.",
+      "Whether you are dealing with storm damage or planning ahead, our goal is to help you make a smart decision without feeling rushed. Every roof we install is specified for local conditions and tailored to your home, so it holds up year after year."
+    ],
+    "checklist": [
+      "Fast response and scheduling",
+      "Thorough inspection with real photos",
+      "Clear options, not one-size-fits-all quotes",
+      "Clean, careful installation with full cleanup"
+    ]
+  },
+  "testimonials": [
+    {
+      "name": "Sample Customer",
+      "location": "Denver, CO",
+      "text": "Responsive from the first phone call through final cleanup. The crew did great work and the project manager kept me updated the whole way.",
+      "rating": 5
+    },
+    {
+      "name": "Second Sample Customer",
+      "location": "Denver, CO",
+      "text": "Straightforward from the beginning. Clear communication, real attention to detail, and high-quality work.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    { "q": "How much will a new roof cost?", "a": "Cost depends on size, pitch, material, and the condition of the decking underneath. We give you a written estimate with photos after an inspection, not a number over the phone." },
+    { "q": "Do you offer warranties on your work?", "a": "Yes. Manufacturer warranties cover the materials and our own workmanship warranty covers the installation. Both are in writing before work begins." },
+    { "q": "How long will it take to replace my roof?", "a": "Most residential roofs are a one to two day job once materials are on site. Weather and complexity can extend that, and we tell you up front if we expect it to." }
+  ]
 }

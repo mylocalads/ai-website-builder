@@ -1,6 +1,11 @@
 ---
 title: Roof Repair
 slug: roof-repair
+category: Roofing
+sub_services:
+  - Storm Damage Repair
+  - Leak Repair
+  - Flashing & Vent Repair
 short_description: Fast, reliable roof repair for storm damage, leaks, and wear.
 long_description: We diagnose, quote, and repair — usually within 48 hours. Every job is signed off by a licensed roofer, with clear pricing and a written warranty.
 order: 1
