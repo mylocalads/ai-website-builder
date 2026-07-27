@@ -10,25 +10,29 @@ const heading = section.heading_lead
 <section id="services" class="services" aria-label="Services">
   <div class="container">
     <div class="head">
-      <div>
-        <p class="eyebrow">{section.eyebrow}</p>
-        <h2>{heading}</h2>
-        {section.subtitle && <p class="subtitle">{section.subtitle}</p>}
-      </div>
+      <p class="eyebrow">{section.eyebrow}</p>
+      <h2>{heading}</h2>
+      {section.subtitle && <p class="subtitle">{section.subtitle}</p>}
       <a class="see-all" href="/services">See all services</a>
     </div>
+
     <ul class="grid">
       {services.map((s) => (
-        <li class="card">
-          {s.data.category && <p class="category">{s.data.category}</p>}
-          {s.data.sub_services.length > 0 && (
-            <ul class="subs">
-              {s.data.sub_services.slice(0, 3).map((sub) => <li>{sub}</li>)}
-            </ul>
-          )}
-          <p class="desc">{s.data.short_description}</p>
-          <a class="learn" href={`/services/${s.slug}`}>
-            Learn More<span class="visually-hidden"> about {s.data.title}</span>
+        <li>
+          <a
+            class={`tile ${s.data.hero_photo ? '' : 'no-photo'}`}
+            href={`/services/${s.slug}`}
+            style={s.data.hero_photo ? `background-image: url(${s.data.hero_photo});` : undefined}
+          >
+            <span class="scrim" aria-hidden="true"></span>
+            <span class="body">
+              <span class="title">{s.data.title}</span>
+              {s.data.sub_services.length > 0 && (
+                <span class="chips">
+                  {s.data.sub_services.slice(0, 3).map((sub) => <span class="chip">{sub}</span>)}
+                </span>
+              )}
+            </span>
           </a>
         </li>
       ))}
@@ -37,16 +41,31 @@ const heading = section.heading_lead
 </section>
 <style>
   .services { padding: var(--space-5) 0; }
-  .head { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: flex-end; justify-content: space-between; margin-bottom: var(--space-4); }
+  .head { text-align: center; max-width: 820px; margin: 0 auto var(--space-4); }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
-  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0; }
-  .subtitle { color: var(--color-muted); margin: var(--space-1) 0 0; }
-  .see-all { font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; color: var(--color-text); }
-  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
-  .card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); display: flex; flex-direction: column; box-shadow: 0 8px 22px rgba(15,20,25,0.08); }
-  .category { margin: 0 0 var(--space-2); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-accent); }
-  .subs { list-style: none; margin: 0 0 var(--space-2); padding: 0; }
-  .subs li { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--color-text); line-height: 1.3; }
-  .desc { color: var(--color-muted); margin: 0 0 var(--space-3); flex: 1; }
-  .learn { font-weight: 700; color: var(--color-text); text-decoration: underline; text-underline-offset: 4px; }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); }
+  .subtitle { color: var(--color-muted); font-size: 1.05rem; margin: 0 0 var(--space-3); }
+  .see-all { display: inline-block; margin-top: var(--space-2); padding: 0.75rem 1.75rem; border: 2px solid var(--color-text); border-radius: var(--radius-sm); color: var(--color-text); font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
+  .see-all:hover, .see-all:focus-visible { background: var(--color-text); color: var(--color-bg); }
+
+  /* Two-up photo tiles, matching the reference layout. Tiles are image-led:
+     the service name sits over the photo, sub-services read as chips beneath. */
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: var(--space-3); }
+  .tile {
+    position: relative; display: block; overflow: hidden;
+    aspect-ratio: 16 / 10; border-radius: var(--radius-lg);
+    background-color: var(--color-primary); background-size: cover; background-position: center;
+    text-decoration: none; box-shadow: 0 8px 22px rgba(15,20,25,0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .tile:hover, .tile:focus-visible { transform: translateY(-5px); box-shadow: 0 18px 42px rgba(15,20,25,0.24); }
+  /* A tile with no photo still has to look deliberate rather than broken. */
+  .tile.no-photo { background-image: linear-gradient(160deg, var(--color-primary) 0%, rgba(0,0,0,0.65) 100%); }
+  .scrim { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,12,16,0.88) 0%, rgba(10,12,16,0.35) 45%, rgba(10,12,16,0.08) 100%); }
+  .body { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
+  .title { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.1; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.28); color: #ffffff; font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 999px; backdrop-filter: none; }
+
+  @media (max-width: 560px) { .tile { aspect-ratio: 4 / 3; } }
 </style>
