@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+---
+<BaseLayout
+  title="Campaign Planner | My Local Ads"
+  description="Plan your Pay Per Lead campaign. Set your ad budget, target cost per lead, and booking rate — see expected leads, appointments, and total investment."
+>
+  <section class="planner-hero">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">Campaign Planner</span>
+      <h1>Plan Your Pay Per Lead Campaign &amp; Set Goals</h1>
+      <p class="lead">Adjust the sliders to see how your target advertising budget maps to booked inspections and cost per lead.</p>
+    </div>
+  </section>
+
+  <section class="planner-section">
+    <div class="planner-container">
+      <div class="planner-frame">
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-82569543-cec0-4711-b397-bfe3870c8258" data-elfsight-app-lazy></div>
+      </div>
+    </div>
+
+    <div class="container container-narrow">
+      <div class="text-center" style="margin-top: var(--space-4);">
+        <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-primary btn-lg" rel="noopener">Get Started!</a>
+      </div>
+
+      <p class="disclaimer" style="margin-top: var(--space-3);">
+        <strong>Disclaimer:</strong> Advertising results, pricing, and earnings are not guaranteed, and vary per customer. Minimum advertising budget of $2,500 required. All leads are exclusive. Lead fees are charged separate from ad spend. Billed bi-weekly or the following month. Agency fee is capped at 100% of ad spend. Terms of service apply.
+      </p>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  .lead { font-size: 1.15rem; color: var(--color-text-muted); }
+
+  /* Reduced vertical spacing: was ~136px hero-bottom + section-top, now ~48px total (~65% reduction) */
+  .planner-hero { padding: var(--space-5) 0 var(--space-2); background: var(--color-bg); }
+  .planner-section { padding: var(--space-3) 0 var(--space-6); background: var(--color-bg); }
+
+  /* Elfsight widget: no blue border/shadow, transparent frame */
+  .planner-container {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+    padding: 0 var(--space-3);
+  }
+  .planner-frame {
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 0;
+    box-shadow: none;
+    min-height: 480px;
+    overflow: hidden;
+  }
+
+  /* Mobile: give the widget the full page width (edge-to-edge, no gutter) */
+  @media (max-width: 900px) {
+    .planner-container { max-width: none; padding: 0; }
+    .planner-frame { border-radius: 0; }
+  }
+</style>

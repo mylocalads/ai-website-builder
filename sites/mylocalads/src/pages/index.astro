@@ -1,0 +1,924 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+
+const partners = [
+  { name: 'Klaus Roofing Systems', logo: 'https://msgsndr-private.storage.googleapis.com/locationPhotos/39c82c0b-1eeb-477e-8070-19517afe234e.png' },
+  { name: 'Partner', logo: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://cdn.filesafe.space/locationPhotos%2FMbfynyuvfW7xQSprWY1K.png?alt=media&token=55af8d67-2148-461d-b9cc-13a681380f40' },
+  { name: 'KRS Upstate NY', logo: 'https://cdn.treehouseinternetgroup.com/cms_images/3238/KRS-of-Upstate-New-York-Logo.svg' },
+  { name: 'Partner', logo: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/z3EkWHCfxj0adESFsfwp/media/665498a34215bcfe1820f7a8.png' },
+  { name: 'Altitude Roofing NM', logo: 'https://www.altituderoofingnm.com/wp-content/uploads/2024/10/Untitled-design-28.png' },
+  { name: 'Partner', logo: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/6P6d6CTfyHPLuLt14aB9/media/66e2dd31e662a0b58077a2b6.png' },
+];
+
+const ppl_baseIncluded = [
+  'Exclusive homeowner leads',
+  'Project details included',
+  'Lead nurturing sequences',
+  '7 days to dispute a lead',
+  '24/7 email support',
+  'TCPA compliance certificate',
+];
+
+const pplTiers = [
+  {
+    name: '3-Month Commit',
+    subtitle: 'For testing the waters',
+    priceBooked: '$85',
+    priceForm: '$35',
+    ctaLabel: 'Get Started',
+    ctaHref: 'https://start.mylocalads.co/book-now-v2',
+    ctaStyle: 'btn-secondary',
+    included: ppl_baseIncluded,
+  },
+  {
+    name: '6-Month Commit',
+    subtitle: 'Most popular',
+    priceBooked: '$75',
+    priceForm: '$25',
+    ctaLabel: 'Get Started',
+    ctaHref: 'https://start.mylocalads.co/book-now-v2',
+    ctaStyle: 'btn-primary',
+    included: ppl_baseIncluded,
+    highlight: true,
+    badge: 'Save $10/Lead',
+  },
+  {
+    name: '12-Month Commit',
+    subtitle: 'Best value, biggest savings',
+    priceBooked: '$65',
+    priceForm: '$15',
+    ctaLabel: 'Get Started',
+    ctaHref: 'https://start.mylocalads.co/book-now-v2',
+    ctaStyle: 'btn-secondary',
+    included: ppl_baseIncluded,
+    badge: 'Save $20/Lead',
+  },
+];
+
+const addOns = [
+  {
+    title: 'CRM',
+    subtitle: 'Automate and grow your marketing with the all-in-one CRM suite from GoHighLevel.',
+    price: '7-Day Free Trial',
+    priceSub: 'After $97/mo. Usage Rates Apply.*',
+    cta: 'Get Started',
+    href: 'https://start.mylocalads.co/growth',
+  },
+  {
+    title: 'AI Agents',
+    subtitle: '(Voice + Chat) — Let AI handle calls and conversations with leads on auto-pilot.',
+    price: 'From $250/mo.*',
+    priceSub: 'Requires CRM*',
+    cta: 'Get Started',
+    href: '/ai-employee-add-on',
+  },
+  {
+    title: 'Google Business Profile Optimization',
+    subtitle: 'Appear organically in Google\'s Map Pack results to maximize lead flow.',
+    price: 'From $500*',
+    priceSub: 'Does not include website edits.*',
+    cta: 'Get Started',
+    href: 'https://start.mylocalads.co/gbp',
+  },
+  {
+    title: 'Website',
+    subtitle: 'Close more deals with a stunning website while we manage your site A-Z.',
+    price: 'From $300/mo.*',
+    priceSub: 'Requires active CRM account.',
+    cta: 'Get Started',
+    href: 'https://start.mylocalads.co/all-in-one-website',
+  },
+  {
+    title: 'Roof Quote PRO™ Instant Estimator',
+    subtitle: 'Boost your Ad campaign results & improve lead quality. Only available for Roofers!',
+    price: 'From $500/mo.*',
+    priceSub: 'No setup fee. Requires active Facebook Ads or Google Ads campaign.*',
+    cta: 'Get Started',
+    href: '/roof-instant-estimator',
+  },
+  {
+    title: 'NFC Review Cards',
+    subtitle: 'Tap a customer\'s smartphone & capture Google reviews in seconds for local SEO.',
+    price: 'From $150*',
+    priceSub: 'Pack of 10. Physical product. 5-7 day shipping.*',
+    cta: 'Get Started',
+    href: 'https://start.mylocalads.co/buy-10-pack',
+  },
+];
+
+const howItWorks = [
+  {
+    step: '1',
+    title: 'Book a call with our team',
+    body: 'Walk us through your business — we map your local market, competitor lead flow, and what you\'d need to hit your growth targets.',
+  },
+  {
+    step: '2',
+    title: 'We build & launch your campaigns',
+    body: 'Custom ad creative, landing pages, tracking, and offers — deployed across Meta and Google in days, not months.',
+  },
+  {
+    step: '3',
+    title: 'Qualified leads land in your inbox',
+    body: 'Every lead is exclusive to you, project details verified, TCPA compliant, and ready to book. Never shared, never resold.',
+  },
+  {
+    step: '4',
+    title: 'You close more jobs, pay per lead',
+    body: 'Only pay for leads that meet spec. Scale up or down commit-by-commit — no long-term retainers, no surprise fees.',
+  },
+];
+
+// bgImage URLs are placeholders (loremflickr serves industry-keyword photos).
+// Swap for licensed industry photography (Unsplash, Pexels, or client-owned) when ready.
+const industries = [
+  {
+    slug: 'roofing',
+    name: 'Roofing',
+    tagline: 'You install, replace, and repair residential roofs.',
+    trackLabel: 'Track:',
+    trackItems: 'booked inspections, storm-restoration leads, insurance jobs, close rates',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>`,
+    bgImage: 'https://loremflickr.com/1200/800/roofing,contractor?lock=101',
+  },
+  {
+    slug: 'general-contractors',
+    name: 'General Contractors',
+    tagline: 'You handle multi-phase remodels, additions, and full-service builds.',
+    trackLabel: 'Track:',
+    trackItems: 'qualified estimate requests, project value, deposit conversions, referral leads',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l7 7-4 4-7-7z"/><path d="M10 7L3 14l4 4 7-7"/><path d="M8 19l-3 3"/></svg>`,
+    bgImage: 'https://loremflickr.com/1200/800/construction,site,worker?lock=102',
+  },
+  {
+    slug: 'concrete',
+    name: 'Concrete',
+    tagline: 'You pour driveways, patios, walkways and slabs.',
+    trackLabel: 'Track:',
+    trackItems: 'sqft-based leads, seasonal demand pulse, quote turnaround, per-project margin',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M7 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>`,
+    bgImage: 'https://loremflickr.com/1200/800/concrete,driveway?lock=103',
+  },
+  {
+    slug: 'kitchen-bath',
+    name: 'Kitchen & Bath',
+    tagline: 'You remodel high-ticket rooms — kitchens, bathrooms, whole-home.',
+    trackLabel: 'Track:',
+    trackItems: 'showroom appointments, financing-eligible leads, design consultations',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16"/><path d="M4 8v10a2 2 0 002 2h12a2 2 0 002-2V8"/><path d="M9 4h6v4H9z"/></svg>`,
+    bgImage: 'https://loremflickr.com/1200/800/kitchen,remodel?lock=104',
+  },
+];
+
+const categories = [
+  'General Contractors',
+  'Roofers',
+  'Concrete Contractors',
+  'Kitchen Remodelers',
+  'Bathroom Remodelers',
+  '& Similar...',
+];
+
+const faqs = [
+  { q: 'How do I get started?', a: 'Get started here by clicking \'Get More Leads\' and following the signup and onboarding process.' },
+  { q: 'Do your prices include Ad budgets?', a: 'No, our pay-per-lead prices do not include the cost of the advertising budget. You pay for the ads separately.' },
+  { q: 'How is your customer support?', a: 'We provide 24/7 email customer support and we usually resolve our tickets in less than 12 hrs if it\'s not a deep technical issue. Our support team is a mix of admins and advertising experts which enables us to support clients with the best expertise in the industry.' },
+  { q: 'Can I buy your plans individually?', a: 'Yes, you can buy each of our plans individually.' },
+  { q: 'Is there a commitment required?', a: 'We have 3-month (minimum), 6-month, and 12-month commitment offers. Terms of service apply.' },
+  { q: 'Are the leads shared?', a: 'Never! All of our leads are generated directly from direct response campaigns, showing your brand, and we do not share lead information with multiple contractors at the same time. This creates high-intent leads for your business, and a much higher chance to close more jobs.' },
+  { q: 'How are these leads generated?', a: 'Every lead we generate for you is generated with direct response campaigns across search engines and social media platforms. That means, a) these leads see your brand and offer in the ad, and b) they have decided to inquire about your services. We do not reactivate stale leads. We do not scrape & sell contact lists. We do not sell shared leads.' },
+  { q: 'How will I receive new leads?', a: 'You will receive leads via email, and your leads will also be available in their CRM account if the access was purchased.' },
+  { q: 'Do you qualify leads for us?', a: 'Yes, our leads are qualified before they reach your inbox. Phone numbers and Emails are also \'look-up\' verified, to make sure your team is not bogged down by spam leads. Lastly, we have human(s) in the loop to quality check each lead generated to ensure quality.' },
+  { q: 'Are your leads TCPA compliant?', a: 'Yes! All of our leads come with a TCPA compliant certificate and full session recording of their sign-up to make sure that you can safely follow up with these leads.' },
+  { q: 'Are your leads re-sold?', a: 'No! We only sell direct-response leads, meaning when our leads sign-up with you, they just converted from an ad online, and the lead wants to take action now! We do not re-sell or buy stale or old leads.' },
+  { q: 'Can I dispute leads?', a: 'Absolutely. You can dispute any lead within 7 days if it doesn\'t meet our qualification standards described in our terms of service. If approved, you\'ll receive a credit toward future leads.' },
+  { q: 'How long will it take for me to get leads?', a: 'Since we do not scrape leads, or re-sell old leads, we need about 5-20 business days after our initial setup to generate a consistent flow of leads for you.' },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<BaseLayout
+  title="My Local Ads | In Ads We Trust!"
+  description="Our team spent $150MM+ on Facebook & Google Ads to understand what works and what doesn't for your home service business. Let's get you on the right path with our pay-per-lead model."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} slot="head" />
+
+  {/* HERO */}
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Qualified Leads For America's Top <span class="hl">Roofers</span>, <span class="hl">Home Remodelers</span>, <span class="hl">Concrete Pros</span> & More!</h1>
+      <p class="hero-sub">Our team spent <strong>$150MM+</strong> on Facebook &amp; Google Ads to get <strong>YOU</strong> 🫵 the best pay-per-lead model yet.</p>
+      <div class="hero-ctas">
+        <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-primary btn-lg" rel="noopener">Get More Leads!</a>
+        <a href="/booking-page" class="btn btn-secondary btn-lg">Book A Call</a>
+      </div>
+
+      <div class="hero-social-feed">
+        <p class="hero-social-feed-label">Live from our Facebook — fresh campaign breakdowns</p>
+        <div class="elfsight-embed">
+          <script src="https://static.elfsight.com/platform/platform.js" async></script>
+          <div class="elfsight-app-55b1cb14-add9-4f8a-8944-e7f14522a25c" data-elfsight-app-lazy></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* PARTNERS — one horizontal line: title-left, logos flowing right */}
+  <section class="partners-band">
+    <div class="container partners-row">
+      <div class="partners-title-block">
+        <span class="partners-title-main">Trusted By</span>
+        <span class="partners-title-sub">&amp; 100+ Other Contractors!</span>
+      </div>
+      <div class="partners-logos">
+        <div class="partners-logos-track">
+          {partners.map((p) => (
+            <img src={p.logo} alt={p.name} loading="lazy" class="partner-logo" />
+          ))}
+          {partners.map((p) => (
+            <img src={p.logo} alt="" aria-hidden="true" loading="lazy" class="partner-logo partner-logo-dup" />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ABOUT MY LOCAL ADS — split-screen with founders photo + note */}
+  <section class="section about-mla-section" id="about">
+    <div class="container">
+      <div class="about-mla">
+        <div class="about-mla-photo">
+          <img
+            src="https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a67a229b7fe5a8e3108ce34.png"
+            alt="Eric Meese and Marcellus Gaag — Co-founders of My Local Ads"
+            class="about-mla-photo-img"
+            width="1152"
+            height="928"
+          />
+        </div>
+        <div class="about-mla-body">
+          <span class="eyebrow">About My Local Ads</span>
+          <h2>Founder's Note</h2>
+          <p class="about-mla-lede">Every roof replaced, every kitchen remodeled, every driveway poured — that's a family building the life they want, and a contractor building the business they've worked for.</p>
+          <p>We started My Local Ads because too many great American contractors were losing that fight to opaque agency contracts, shared leads, and marketing that never quite turned into booked work. Since 2022 we've partnered with <strong>300+ home service businesses</strong> — from solo roofers to national brands like Klaus Roofing Systems — putting over <strong>$150MM+ into ad campaigns that actually book jobs</strong>.</p>
+          <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-primary btn-lg about-mla-cta" rel="noopener">Meet With Our Team!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* HOW IT WORKS — 4-step process */}
+  <section class="section how-it-works-section" id="how-it-works">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">How It Works</span>
+        <h2>From First Call To Booked Jobs — In 4 Steps</h2>
+        <p class="section-lead">Simple, transparent, and built to move fast. No 90-day agency onboardings, no long-term contracts.</p>
+      </div>
+      <div class="hiw-grid">
+        {howItWorks.map((s) => (
+          <div class="hiw-card">
+            <div class="hiw-step">{s.step}</div>
+            <h3 class="hiw-title">{s.title}</h3>
+            <p class="hiw-body">{s.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* CHOOSE YOUR INDUSTRY */}
+  <section class="section section-alt industries-section" id="industries">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Industries We Serve</span>
+        <h2>Choose Your Industry Solution</h2>
+        <p class="section-lead">Same playbook, tuned to how your specific corner of home services actually buys, closes, and scales.</p>
+      </div>
+      <div class="industries-grid">
+        {industries.map((i) => (
+          <div class="industry-card" style={i.bgImage ? `background-image: url('${i.bgImage}');` : ''}>
+            <div class="industry-card-overlay" aria-hidden="true"></div>
+            <div class="industry-card-content">
+              <div class="industry-card-head">
+                <div class="industry-icon" set:html={i.icon}></div>
+              </div>
+              <h3 class="industry-name">{i.name}</h3>
+              <p class="industry-tagline">{i.tagline}</p>
+              <p class="industry-track"><span class="industry-track-label">{i.trackLabel}</span> {i.trackItems}</p>
+              <a href="/booking-page" class="btn btn-secondary btn-sm industry-cta">Book A Call</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* PAY PER LEAD ADVERTISING — 3 commit-length tiles */}
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Pay Per Lead</span>
+        <h2>Pay Per Lead Advertising</h2>
+        <p class="section-lead">Every lead comes from a direct-response ad we run on <strong>Meta (Facebook &amp; Instagram)</strong> and <strong>Google (Search, YouTube, Local Services)</strong> — exclusive to you, never shared, always ready to book. Choose the commitment length that fits your growth plan.</p>
+      </div>
+
+      <div class="ppl-tiles">
+        {pplTiers.map((t) => (
+          <div class={`ppl-tile${t.highlight ? ' ppl-tile-highlight' : ''}`}>
+            {t.highlight && <div class="ppl-tile-banner">Most Popular</div>}
+            <div class="ppl-tile-head">
+              <h3 class="ppl-tile-name">{t.name}</h3>
+              <p class="ppl-tile-subtitle">{t.subtitle}</p>
+            </div>
+
+            <div class="ppl-tile-channels" aria-label="Advertising channels">
+              <span class="channel-badge">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.47H15.19c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7A10 10 0 0 0 22 12.06c0-5.53-4.5-10.02-10-10.02Z"/>
+                </svg>
+                Meta
+              </span>
+              <span class="channel-badge">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
+                  <path d="M21.35 11.1H12.18v2.84h5.24c-.24 1.44-1.71 4.22-5.24 4.22-3.15 0-5.72-2.61-5.72-5.83s2.57-5.83 5.72-5.83c1.8 0 3 .77 3.68 1.42l2.5-2.42C16.63 3.9 14.6 3 12.18 3 6.85 3 2.55 7.3 2.55 12.63s4.3 9.63 9.63 9.63c5.55 0 9.24-3.9 9.24-9.4 0-.63-.07-1.11-.17-1.76Z"/>
+                </svg>
+                Google
+              </span>
+            </div>
+
+            <div class="ppl-tile-price">
+              <div class="ppl-tile-price-row">
+                <span class="ppl-tile-amount">{t.priceBooked}</span>
+                <span class="ppl-tile-per">/ booked inspection lead</span>
+              </div>
+              <div class="ppl-tile-price-row ppl-tile-price-row-sub">
+                <span class="ppl-tile-amount-sub">{t.priceForm}</span>
+                <span class="ppl-tile-per">/ form or call lead</span>
+              </div>
+              {t.badge && <span class="ppl-tile-badge">{t.badge}</span>}
+            </div>
+
+            <div class="ppl-tile-features">
+              <div class="ppl-tile-features-label">Everything included:</div>
+              <ul>
+                {t.included.map((f) => (
+                  <li><span class="check">✓</span> {f}</li>
+                ))}
+              </ul>
+            </div>
+
+            <a href={t.ctaHref} class={`btn ${t.ctaStyle} ppl-tile-cta`} rel="noopener">{t.ctaLabel}</a>
+          </div>
+        ))}
+      </div>
+
+      <p class="disclaimer text-center ppl-disclaimer">
+        Prices do not include ad budget. Minimum $2,500 advertising budget required. Terms of Service apply.
+      </p>
+    </div>
+  </section>
+
+  {/* ADD-ONS */}
+  <section class="section" id="add-ons">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Add-Ons</span>
+        <h2>Growth Add-Ons</h2>
+        <p class="section-lead">Get better marketing results with our partner tools and custom white-glove services.</p>
+      </div>
+      <div class="addon-grid">
+        {addOns.map((a) => (
+          <div class="card addon-card">
+            <h3>{a.title}</h3>
+            <p class="addon-sub">{a.subtitle}</p>
+            <div class="addon-price">{a.price}</div>
+            <div class="addon-price-sub">{a.priceSub}</div>
+            <a href={a.href} class="btn btn-primary btn-sm addon-cta" rel="noopener">{a.cta}</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* CASE STUDIES — DM Construction video */}
+  <section class="section section-alt" id="case-studies">
+    <div class="container container-narrow">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Case Study</span>
+        <h2>Breaking Down What Works In 2026!</h2>
+        <p class="section-lead">Watch the full breakdown of what we did for DM Construction of SWFL (General Contractor) — start to finish, real numbers.</p>
+      </div>
+      <div class="case-video-frame">
+        <video
+          class="case-video"
+          controls
+          preload="none"
+          playsinline
+          poster="https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/67b73888c5b8394682c0233d.jpeg"
+        >
+          <source src="https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/67b73af381979580d9ecfdbf.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+          <a href="https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/67b73af381979580d9ecfdbf.mp4">Download the case study video</a>.
+        </video>
+      </div>
+      <div class="text-center case-cta">
+        <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-primary btn-lg" rel="noopener">Get More Leads!</a>
+      </div>
+    </div>
+  </section>
+
+  {/* CATEGORIES — matches live: black bg, big blue-accented headline */}
+  <section class="section categories-section">
+    <div class="container text-center">
+      <h2 class="categories-title">Let's Build <span class="hl">America</span> Together!</h2>
+      <p class="section-lead muted">We work best with home service businesses in the following categories.</p>
+      <div class="category-grid">
+        {categories.map((c) => (
+          <div class="category-chip">{c}</div>
+        ))}
+      </div>
+      <p class="muted" style="max-width: 720px; margin: var(--space-3) auto;">
+        If your business category is not listed here don't hesitate to contact us at <a href="mailto:support@mylocalads.co">support@mylocalads.co</a>. We've also had tremendous success with other business categories that are not listed here.
+      </p>
+      <div class="hero-ctas" style="justify-content: center;">
+        <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-primary btn-lg" rel="noopener">Get More Leads!</a>
+        <a href="/#case-studies" class="btn btn-secondary btn-lg">Watch Case Study!</a>
+      </div>
+    </div>
+  </section>
+
+  {/* FAQs */}
+  <section class="section section-alt" id="faqs">
+    <div class="container container-narrow">
+      <div class="text-center">
+        <span class="eyebrow">FAQs</span>
+        <h2>Still Got Questions?</h2>
+        <a href="/booking-page" class="btn btn-primary">Book A Call!</a>
+      </div>
+      <div class="faq-list">
+        {faqs.map((f) => (
+          <details class="faq-item">
+            <summary><span class="faq-q">{f.q}</span><span class="faq-toggle" aria-hidden="true">+</span></summary>
+            <div class="faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .hero {
+    background: #000000;
+    padding: var(--space-6) 0 var(--space-5);
+  }
+  .hero-inner { text-align: center; max-width: 900px; margin: 0 auto; }
+  .hero h1 { margin-bottom: var(--space-3); color: #fff; line-height: 1; }
+  .hero h1 .hl { color: #fff; text-shadow: 0 0 24px rgba(0, 56, 255, 0.55); }
+  .hero-sub { font-size: 1.25rem; color: var(--color-text-muted); max-width: 720px; margin: 0 auto var(--space-3); }
+  .hero-ctas { display: flex; gap: var(--space-2); justify-content: center; flex-wrap: wrap; margin-top: var(--space-3); }
+
+  /* ABOUT MY LOCAL ADS — split-screen founders note */
+  .about-mla-section { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  .about-mla {
+    display: grid; grid-template-columns: 380px 1fr;
+    gap: var(--space-5);
+    align-items: center;
+  }
+  .about-mla-photo { text-align: center; }
+  .about-mla-photo-img {
+    width: 100%; max-width: 380px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    display: block;
+    margin: 0 auto;
+  }
+  .about-mla-body h2 { margin-bottom: var(--space-2); }
+  .about-mla-body p { color: var(--color-text-muted); margin-bottom: var(--space-2); }
+  .about-mla-body strong { color: #fff; }
+  .about-mla-lede {
+    font-size: 1.35rem; line-height: 1.4; color: #fff !important;
+    font-family: var(--font-display); font-weight: 600;
+  }
+  .about-mla-cta { margin-top: var(--space-2); }
+  @media (max-width: 900px) {
+    .about-mla { grid-template-columns: 1fr; gap: var(--space-3); }
+    .about-mla-photo-img { max-width: 280px; }
+    .about-mla-body { text-align: left; }
+  }
+
+  /* HOW IT WORKS */
+  .how-it-works-section { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  .hiw-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3); max-width: 1100px; margin: 0 auto;
+  }
+  .hiw-card {
+    background: var(--color-bg-elev);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    position: relative;
+    display: flex; flex-direction: column; gap: var(--space-2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .hiw-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-strong);
+  }
+  .hiw-step {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: #faf24c; color: #000;
+    font-family: var(--font-display); font-weight: 900; font-size: 1.15rem;
+    line-height: 1;
+  }
+  .hiw-title { font-size: 1.1rem; margin: 0; color: #fff; }
+  .hiw-body { color: var(--color-text-muted); margin: 0; font-size: 0.95rem; }
+  @media (max-width: 900px) { .hiw-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .hiw-grid { grid-template-columns: 1fr; } }
+
+  /* INDUSTRIES */
+  .industries-section { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  .industries-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3); max-width: 1000px; margin: 0 auto;
+  }
+  @media (max-width: 780px) { .industries-grid { grid-template-columns: 1fr; } }
+  .industry-card {
+    position: relative;
+    background-color: var(--color-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 0;
+    overflow: hidden;
+    min-height: 340px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    isolation: isolate;
+  }
+  .industry-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-border-strong);
+  }
+  .industry-card-overlay {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.80) 55%, rgba(0,0,0,0.92) 100%);
+    z-index: 1;
+    transition: background 0.25s ease;
+  }
+  .industry-card:hover .industry-card-overlay {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.75) 55%, rgba(0,0,0,0.90) 100%);
+  }
+  .industry-card-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; gap: var(--space-2);
+    padding: var(--space-3);
+    height: 100%;
+  }
+  .industry-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: var(--radius-md);
+    background: rgba(0,56,255,0.25);
+    border: 1px solid rgba(0, 56, 255, 0.45);
+    color: #fff;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .industry-name { font-size: 1.5rem; margin: 0; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+  .industry-tagline {
+    font-family: var(--font-display); font-weight: 600;
+    color: #fff; margin: 0; font-size: 1rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  }
+  .industry-track {
+    color: rgba(255,255,255,0.85); margin: 0; font-size: 0.9rem;
+    flex: 1;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+  }
+  .industry-track-label { color: #faf24c; font-weight: 700; }
+  .industry-cta { align-self: flex-start; margin-top: var(--space-1); }
+
+  /* PPL TILE — advertising channel badges */
+  .ppl-tile-channels {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .channel-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    color: var(--color-text);
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 0.78rem; letter-spacing: 0.02em;
+  }
+  .channel-badge svg { flex-shrink: 0; opacity: 0.85; }
+
+  /* PARTNERS BAND — single horizontal row, title-left */
+  .partners-band { background: var(--color-accent); padding: var(--space-3) 0; }
+  .partners-row {
+    display: flex; align-items: center; gap: var(--space-4);
+    flex-wrap: nowrap;
+  }
+  .partners-title-block {
+    flex: 0 0 auto; text-align: center; color: #fff;
+    padding-right: var(--space-3);
+    border-right: 1px solid rgba(255,255,255,0.25);
+  }
+  .partners-title-main {
+    display: block; font-family: var(--font-display);
+    font-weight: 800; font-size: 1rem;
+    text-transform: uppercase; letter-spacing: 0.18em;
+    line-height: 1.1;
+  }
+  .partners-title-sub {
+    display: block; font-family: var(--font-display);
+    font-weight: 500; font-size: 0.8rem;
+    color: rgba(255,255,255,0.85);
+    text-transform: none; letter-spacing: 0;
+    margin-top: 0.25rem;
+    max-width: 140px;
+  }
+  .partners-logos {
+    flex: 1 1 auto; min-width: 0;
+    overflow: hidden;
+  }
+  .partners-logos-track {
+    display: flex; align-items: center;
+    gap: var(--space-3);
+    justify-content: space-between;
+    width: 100%;
+  }
+  .partner-logo {
+    max-height: 56px; max-width: 100%; width: auto; height: auto; object-fit: contain;
+    flex: 0 1 auto;
+    opacity: 0.95; transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .partner-logo:hover { opacity: 1; transform: translateY(-2px); }
+  .partner-logo-dup { display: none; }
+
+  @media (max-width: 900px) {
+    /* Mobile: title stacked on top, logos become a horizontal marquee below */
+    .partners-row { flex-wrap: wrap; gap: var(--space-2); }
+    .partners-title-block {
+      border-right: none; padding-right: 0; padding-bottom: var(--space-2);
+      text-align: center; width: 100%;
+    }
+    .partners-title-sub { max-width: none; }
+    .partners-logos {
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    }
+    .partners-logos-track {
+      width: max-content;
+      justify-content: flex-start;
+      gap: 2.75rem;
+      animation: partners-marquee 30s linear infinite;
+      will-change: transform;
+    }
+    .partner-logo { max-height: 44px; flex: 0 0 auto; }
+    .partner-logo-dup { display: block; }
+  }
+
+  @keyframes partners-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .partners-logos-track { animation: none; }
+  }
+
+  .section-lead { font-size: 1.1rem; max-width: 640px; margin: 0 auto var(--space-4); }
+
+  /* PAY PER LEAD TILES — 3-commit column layout */
+  .check { color: var(--color-green); font-weight: 900; flex-shrink: 0; }
+  .ppl-tiles {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px; margin: 0 auto;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .ppl-tile {
+    position: relative;
+    display: flex; flex-direction: column; gap: var(--space-3);
+    padding: var(--space-4) var(--space-3);
+    background: var(--color-bg);
+    border-right: 1px solid var(--color-border);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .ppl-tile:last-child { border-right: none; }
+  .ppl-tile:hover {
+    background: rgba(255,255,255,0.03);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.10), 0 12px 32px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+    z-index: 1;
+  }
+  .ppl-tile-highlight {
+    background: linear-gradient(180deg, rgba(0,56,255,0.10) 0%, rgba(0,56,255,0.02) 60%, var(--color-bg) 100%);
+    padding-top: calc(var(--space-4) + 1.75rem);
+  }
+  .ppl-tile-highlight:hover {
+    background: linear-gradient(180deg, rgba(0,56,255,0.16) 0%, rgba(0,56,255,0.04) 60%, var(--color-bg) 100%);
+    box-shadow: inset 0 0 0 1px rgba(250, 242, 76, 0.35), 0 14px 40px rgba(0, 0, 0, 0.45);
+  }
+  .ppl-tile-banner {
+    position: absolute; top: 0; left: 0; right: 0;
+    background: #faf24c; color: #000000;
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-align: center;
+    padding: 0.4rem 0.5rem;
+  }
+  .ppl-tile-head {}
+  .ppl-tile-name { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin: 0 0 0.25rem; color: #fff; }
+  .ppl-tile-subtitle { color: var(--color-text-muted); font-size: 0.9rem; margin: 0; }
+  .ppl-tile-price { position: relative; }
+  .ppl-tile-price-row { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.35rem; }
+  .ppl-tile-price-row-sub { margin-top: 0.15rem; opacity: 0.85; }
+  .ppl-tile-amount { font-family: var(--font-display); font-weight: 800; font-size: 2.75rem; color: #fff; line-height: 1; }
+  .ppl-tile-amount-sub { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: #fff; line-height: 1; }
+  .ppl-tile-per { font-family: var(--font-body); font-size: 0.85rem; color: var(--color-text-muted); }
+  .ppl-tile-badge {
+    display: inline-block; margin-top: 0.5rem;
+    background: rgba(250, 85, 24, 0.18); color: var(--color-orange);
+    border: 1px solid rgba(250, 85, 24, 0.35);
+    padding: 0.25rem 0.7rem; border-radius: var(--radius-pill);
+    font-family: var(--font-display); font-weight: 700; font-size: 0.72rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .ppl-tile-features { flex: 1; }
+  .ppl-tile-features-label {
+    font-family: var(--font-body); font-size: 0.85rem;
+    color: var(--color-text-muted); margin-bottom: 0.5rem;
+  }
+  .ppl-tile-features ul { list-style: none; padding: 0; margin: 0; }
+  .ppl-tile-features li {
+    padding: 0.3rem 0; display: flex; align-items: start; gap: 0.6rem;
+    font-size: 0.92rem; color: var(--color-text);
+  }
+  .ppl-tile-cta { align-self: flex-start; margin-top: auto; }
+  .ppl-disclaimer { max-width: 720px; margin: var(--space-4) auto 0; }
+  @media (max-width: 900px) {
+    .ppl-tiles { grid-template-columns: 1fr; }
+    .ppl-tile { border-right: none; border-bottom: 1px solid var(--color-border); }
+    .ppl-tile:last-child { border-bottom: none; }
+  }
+
+  /* ADD-ON GRID */
+  .addon-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+  .addon-card { display: flex; flex-direction: column; }
+  .addon-card h3 { margin-bottom: var(--space-1); }
+  .addon-sub { color: var(--color-text-muted); font-size: 0.95rem; flex: 1; }
+  .addon-price {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.35rem;
+    color: #ffffff; margin-top: var(--space-2);
+  }
+  .addon-price-sub { font-size: 0.8rem; color: var(--color-text-subtle); margin-bottom: var(--space-2); }
+  .addon-cta { align-self: flex-start; }
+  @media (max-width: 900px) { .addon-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .addon-grid { grid-template-columns: 1fr; } }
+
+  /* Section heading — plain, centered, on desktop and mobile */
+  .section-heading {
+    max-width: 820px; margin: 0 auto var(--space-4);
+    text-align: center;
+  }
+  .section-heading .eyebrow { color: var(--color-accent-soft); }
+  .section-heading h2 { margin: 0.35rem 0 var(--space-1); color: #fff; }
+  .section-heading .section-lead {
+    color: var(--color-text-muted); font-size: 1.05rem; margin: 0 auto;
+    max-width: 640px;
+  }
+
+  /* ELFSIGHT EMBED */
+  .elfsight-embed {
+    max-width: 1080px; margin: 0 auto;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2);
+    min-height: 320px;
+  }
+  .hero-social-feed { margin-top: var(--space-5); }
+  .hero-social-feed-label {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--color-text-muted); margin-bottom: var(--space-2);
+    text-align: center;
+  }
+  .hero-social-feed .elfsight-embed { max-width: 900px; }
+
+  /* CASE STUDY VIDEO */
+  .case-video-frame {
+    max-width: 900px; margin: 0 auto;
+    background: #000;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    aspect-ratio: 16 / 9;
+  }
+  .case-video {
+    width: 100%; height: 100%; display: block;
+    background: #000;
+    object-fit: contain;
+  }
+  .case-cta { margin-top: var(--space-4); }
+
+  /* CATEGORIES */
+  .categories-section { padding-bottom: var(--space-5); }
+  .categories-title { font-size: clamp(2rem, 5vw, 3.5rem); }
+  .categories-title .hl { color: var(--color-accent); }
+  .category-grid {
+    display: flex; flex-wrap: wrap; gap: var(--space-2);
+    justify-content: center; margin: var(--space-4) auto var(--space-2);
+    max-width: 900px;
+  }
+  .category-chip {
+    background: transparent; color: #fff;
+    padding: 0.9rem 1.6rem; border-radius: var(--radius-pill);
+    font-family: var(--font-display); font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border: 2px solid var(--color-accent);
+    font-size: 0.95rem;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .category-chip:hover { background: rgba(0,56,255,0.15); transform: translateY(-2px); }
+
+  /* FINAL CTA on blue */
+  .final-cta { padding: var(--space-6) 0; }
+  .final-cta p { color: rgba(255,255,255,0.95); }
+  .final-cta strong { color: #fff; }
+  .btn-inverse {
+    background: #faf24c; color: #000000;
+    padding: 1.1rem 2.2rem; font-size: 1.1rem;
+    font-family: var(--font-display); font-weight: 700;
+    border-radius: var(--radius-pill); text-decoration: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 24px rgba(250, 242, 76, 0.4);
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-inverse:hover, .btn-inverse:focus-visible {
+    background: #fff34d; color: #000000; transform: translateY(-2px);
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(250, 242, 76, 0.6);
+  }
+
+  /* FAQs */
+  .faq-list { margin-top: var(--space-4); }
+  .faq-item {
+    background: var(--color-bg-elev); border: 1px solid var(--color-border);
+    border-radius: var(--radius-md); margin-bottom: var(--space-1);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    cursor: pointer; list-style: none;
+    padding: var(--space-2) var(--space-3);
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--font-display); font-weight: 600;
+    color: #fff;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-q { flex: 1; padding-right: var(--space-2); }
+  .faq-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--color-accent); color: #fff;
+    font-weight: 700; font-size: 1.25rem; line-height: 1;
+    flex-shrink: 0;
+  }
+  .faq-item[open] .faq-toggle { transform: rotate(45deg); }
+  .faq-a { padding: 0 var(--space-3) var(--space-2); color: var(--color-text-muted); }
+</style>

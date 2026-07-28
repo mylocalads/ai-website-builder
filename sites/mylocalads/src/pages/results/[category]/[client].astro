@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BottomCTA from '../../../components/BottomCTA.astro';
+import { collections, findCaseStudy } from '../../../data/caseStudies.js';
+
+export function getStaticPaths() {
+  return collections.flatMap((c) =>
+    c.caseStudies.map((cs) => ({
+      params: { category: c.slug, client: cs.slug },
+    }))
+  );
+}
+
+const { category, client } = Astro.params;
+const match = findCaseStudy(category, client);
+if (!match) throw new Error(`Case study not found: ${category}/${client}`);
+const { collection, caseStudy } = match;
+
+const isWebsites = collection.slug === 'websites';
+---
+<BaseLayout
+  title={`${caseStudy.client} — ${collection.name} Case Study | My Local Ads`}
+  description={caseStudy.summary}
+>
+  <article class="section case-study-page">
+    <div class="container container-narrow">
+      <nav class="case-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/results">Results</a>
+        <span aria-hidden="true">›</span>
+        <span class="current">{collection.name} — {caseStudy.client}</span>
+      </nav>
+
+      <header class="case-header">
+        <span class="case-pill">{collection.name}</span>
+        <h1 class="case-headline">{caseStudy.headline}</h1>
+        <p class="case-lede">{caseStudy.summary}</p>
+      </header>
+
+      <dl class="case-meta">
+        <div><dt>Client</dt><dd>{caseStudy.client}</dd></div>
+        <div><dt>Industry</dt><dd>{caseStudy.industry}</dd></div>
+        <div><dt>Location</dt><dd>{caseStudy.location}</dd></div>
+        <div><dt>Duration</dt><dd>{caseStudy.duration}</dd></div>
+      </dl>
+
+      <section class="case-metrics" data-metric-count={caseStudy.metrics.length}>
+        {caseStudy.metrics.map((m) => (
+          <div class="case-metric-tile">
+            <div class="case-metric-value">{m.value}</div>
+            <div class="case-metric-label">{m.label}</div>
+          </div>
+        ))}
+      </section>
+
+      {isWebsites && caseStudy.beforeImage && caseStudy.afterImage && (
+        <section class="site-before-after">
+          <h2>Before &amp; After</h2>
+          <div class="ba-grid">
+            <figure class="ba-cell">
+              <img src={caseStudy.beforeImage} alt={`${caseStudy.client} homepage before`} loading="lazy" />
+              <figcaption><span class="ba-label">Before</span> — the old site</figcaption>
+            </figure>
+            <figure class="ba-cell">
+              <img src={caseStudy.afterImage} alt={`${caseStudy.client} homepage after`} loading="lazy" />
+              <figcaption><span class="ba-label ba-label-after">After</span> — the MLA rebuild</figcaption>
+            </figure>
+          </div>
+        </section>
+      )}
+
+      {isWebsites && caseStudy.activeFeatures && caseStudy.activeFeatures.length > 0 && (
+        <section class="site-features">
+          <h2>Active Features</h2>
+          <ul class="feature-chip-list">
+            {caseStudy.activeFeatures.map((f) => (
+              <li class="feature-chip">
+                <span class="feature-dot" aria-hidden="true"></span> {f}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {!isWebsites && caseStudy.dashboardImage && (
+        <section class="case-dashboard-section">
+          <h2>Live Dashboard</h2>
+          <div class="case-dashboard-frame">
+            <img src={caseStudy.dashboardImage} alt={`${caseStudy.client} campaign dashboard`} loading="lazy" />
+          </div>
+          <p class="case-dashboard-caption">Client dashboard — real-time reporting on every campaign we run.</p>
+        </section>
+      )}
+
+      <section class="case-body">
+        <h2>The Challenge</h2>
+        <p>{caseStudy.challenge}</p>
+
+        <h2>Our Approach</h2>
+        <ul class="case-approach">
+          {caseStudy.approach.map((step) => (
+            <li><span class="check" aria-hidden="true">✓</span> {step}</li>
+          ))}
+        </ul>
+
+        <h2>The Outcome</h2>
+        <p>{caseStudy.outcome}</p>
+
+        {caseStudy.quote && (
+          <blockquote class="case-quote">
+            <p>&ldquo;{caseStudy.quote.text}&rdquo;</p>
+            <cite>— {caseStudy.quote.attribution}</cite>
+          </blockquote>
+        )}
+      </section>
+
+      <div class="case-footer-nav">
+        <a href="/results" class="case-back">← Back to all results</a>
+        <a href="/booking-page" class="btn btn-primary btn-lg case-cta">Meet With Our Team!</a>
+      </div>
+    </div>
+  </article>
+
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  .case-study-page { padding-top: var(--space-4); padding-bottom: var(--space-5); }
+
+  .case-breadcrumbs {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+    font-size: 0.85rem; color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+  }
+  .case-breadcrumbs a { color: var(--color-text-muted); text-decoration: none; transition: color 0.15s ease; }
+  .case-breadcrumbs a:hover { color: #fff; }
+  .case-breadcrumbs .current { color: #fff; }
+
+  .case-header { margin-bottom: var(--space-3); }
+  .case-pill {
+    display: inline-block;
+    padding: 0.4rem 0.9rem; border-radius: var(--radius-pill);
+    background: rgba(0, 56, 255, 0.18);
+    border: 1px solid rgba(0, 56, 255, 0.4);
+    color: #fff;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+    margin-bottom: var(--space-2);
+  }
+  .case-headline {
+    font-size: clamp(1.75rem, 4.2vw, 2.75rem);
+    margin: 0 0 var(--space-2);
+    color: #fff; line-height: 1.15;
+  }
+  .case-lede {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 1.15rem; line-height: 1.5;
+    color: var(--color-text-muted); margin: 0;
+  }
+
+  .case-meta {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+    padding: var(--space-3) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin: var(--space-3) 0;
+  }
+  .case-meta > div { display: flex; flex-direction: column; gap: 0.15rem; }
+  .case-meta dt {
+    font-size: 0.72rem; color: var(--color-text-subtle);
+    font-family: var(--font-display); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin: 0;
+  }
+  .case-meta dd { color: #fff; font-weight: 600; margin: 0; }
+  @media (max-width: 700px) { .case-meta { grid-template-columns: 1fr 1fr; } }
+
+  .case-metrics {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2); margin-bottom: var(--space-4);
+  }
+  .case-metrics[data-metric-count="2"] { grid-template-columns: repeat(2, 1fr); }
+  .case-metrics[data-metric-count="3"] { grid-template-columns: repeat(3, 1fr); }
+  .case-metric-tile {
+    background: linear-gradient(180deg, rgba(0,56,255,0.10) 0%, var(--color-bg-elev) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-2);
+    text-align: center;
+  }
+  .case-metric-value {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 1.75rem; color: #fff; line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .case-metric-label {
+    font-size: 0.72rem; color: var(--color-text-subtle);
+    font-family: var(--font-display); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  @media (max-width: 700px) { .case-metrics { grid-template-columns: 1fr 1fr; } }
+
+  /* Dashboard section (non-Websites) */
+  .case-dashboard-section { margin-bottom: var(--space-4); }
+  .case-dashboard-section h2 { color: #fff; margin: 0 0 var(--space-2); font-size: 1.4rem; }
+  .case-dashboard-frame {
+    background: #000;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .case-dashboard-frame img { width: 100%; height: auto; display: block; }
+  .case-dashboard-caption {
+    font-size: 0.8rem; color: var(--color-text-subtle); font-style: italic;
+    margin: 0.75rem 0 0;
+  }
+
+  /* Websites-only Before/After */
+  .site-before-after { margin-bottom: var(--space-4); }
+  .site-before-after h2 { color: #fff; margin: 0 0 var(--space-2); font-size: 1.4rem; }
+  .ba-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+  }
+  @media (max-width: 700px) { .ba-grid { grid-template-columns: 1fr; } }
+  .ba-cell {
+    position: relative; margin: 0;
+    border-radius: var(--radius-md); overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .ba-cell img { width: 100%; height: auto; display: block; }
+  .ba-cell figcaption {
+    padding: 0.5rem 0.75rem; font-size: 0.8rem;
+    color: var(--color-text-muted); background: rgba(255,255,255,0.02);
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .ba-label {
+    display: inline-block;
+    background: rgba(255,255,255,0.1); color: #fff;
+    padding: 0.15rem 0.5rem; border-radius: var(--radius-sm);
+    font-family: var(--font-display); font-weight: 700; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .ba-label-after { background: #faf24c; color: #000; }
+
+  /* Websites-only Active Features chip list */
+  .site-features { margin-bottom: var(--space-4); }
+  .site-features h2 { color: #fff; margin: 0 0 var(--space-2); font-size: 1.4rem; }
+  .feature-chip-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+  }
+  .feature-chip {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.5rem 1rem; border-radius: var(--radius-pill);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--color-border);
+    color: #fff;
+    font-family: var(--font-display); font-weight: 600; font-size: 0.9rem;
+  }
+  .feature-dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--color-green);
+    box-shadow: 0 0 8px rgba(55, 202, 55, 0.6);
+  }
+
+  .case-body h2 {
+    font-size: 1.4rem; color: #fff;
+    margin: var(--space-4) 0 var(--space-2);
+  }
+  .case-body h2:first-child { margin-top: 0; }
+  .case-body p { color: var(--color-text-muted); margin: 0 0 var(--space-2); line-height: 1.65; }
+
+  .case-approach { list-style: none; padding: 0; margin: 0 0 var(--space-3); }
+  .case-approach li {
+    display: flex; gap: 0.7rem; align-items: start;
+    padding: 0.5rem 0;
+    color: var(--color-text-muted); line-height: 1.55;
+  }
+  .case-approach .check {
+    color: var(--color-green); font-weight: 900; flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .case-quote {
+    margin: var(--space-4) 0;
+    padding: var(--space-3);
+    border-left: 3px solid #faf24c;
+    background: rgba(255,255,255,0.03);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  .case-quote p {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 1.2rem; color: #fff; margin: 0 0 0.5rem;
+    line-height: 1.4;
+  }
+  .case-quote cite {
+    font-style: normal;
+    font-family: var(--font-body); font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .case-footer-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: var(--space-3); flex-wrap: wrap;
+    margin-top: var(--space-5); padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+  }
+  .case-back {
+    color: var(--color-text-muted);
+    font-family: var(--font-display); font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .case-back:hover { color: #fff; }
+</style>

@@ -1,0 +1,187 @@
+---
+import { collections } from '../data/caseStudies.js';
+
+const logo = 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/646f73501647a84ed22f6a8d.png';
+
+// Each dropdown item links to /results with the category hash — /results reads
+// the hash on load and pre-selects that category in the carousel.
+const resultsCollections = collections.map((c) => ({
+  slug: c.slug,
+  name: c.name,
+  href: `/results#${c.slug}`,
+}));
+---
+<header class="site-header">
+  <div class="container header-row">
+    <a href="/" class="brand" aria-label="My Local Ads — Home">
+      <img src={logo} alt="My Local Ads" class="brand-logo" width="180" height="60" />
+    </a>
+    <nav aria-label="Primary" class="primary-nav">
+      <ul class="nav-list">
+        <li><a href="/planner">Campaign Planner</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li class="has-submenu">
+          <a href="/results" aria-haspopup="true">
+            Results
+            <svg class="submenu-caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <ul class="submenu">
+            {resultsCollections.map((c) => (
+              <li><a href={c.href}>{c.name}</a></li>
+            ))}
+          </ul>
+        </li>
+        <li><a href="/team">Team</a></li>
+        <li><a href="/#faqs">FAQs</a></li>
+        <li><a href="/contact-us">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-secondary btn-sm cta" rel="noopener">Get More Leads!</a>
+    <details class="mobile-nav">
+      <summary aria-label="Open menu">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" />
+        </svg>
+      </summary>
+      <nav aria-label="Mobile primary">
+        <ul>
+          <li><a href="/planner">Campaign Planner</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li class="mobile-has-submenu">
+            <a href="/results">Results</a>
+            <ul class="mobile-submenu">
+              {resultsCollections.map((c) => (
+                <li><a href={`/results/${c.slug}`}>{c.name}</a></li>
+              ))}
+            </ul>
+          </li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/#faqs">FAQs</a></li>
+          <li><a href="/contact-us">Contact</a></li>
+          <li><a href="https://start.mylocalads.co/book-now-v2" class="btn btn-secondary btn-sm" rel="noopener">Get More Leads!</a></li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--color-accent);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .header-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem var(--space-3); gap: var(--space-3);
+  }
+  .brand { display: inline-flex; align-items: center; }
+  .brand-logo { max-height: 60px; width: auto; display: block; }
+  .primary-nav .nav-list {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; gap: var(--space-3); align-items: center;
+  }
+  .primary-nav a {
+    text-decoration: none; color: #fff;
+    font-family: var(--font-display); font-weight: 600; font-size: 0.95rem;
+    transition: opacity 0.15s ease;
+  }
+  .primary-nav a:hover, .primary-nav a:focus-visible { opacity: 0.75; color: #fff; }
+  .header-row .cta { margin-left: auto; white-space: nowrap; }
+  @media (min-width: 901px) { .header-row .cta { margin-left: 0; } }
+
+  /* Desktop submenu */
+  .primary-nav .has-submenu { position: relative; }
+  .primary-nav .has-submenu > a {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+  .submenu-caret { transition: transform 0.2s ease; opacity: 0.85; }
+  .primary-nav .has-submenu:hover .submenu-caret,
+  .primary-nav .has-submenu:focus-within .submenu-caret {
+    transform: rotate(180deg);
+  }
+  .primary-nav .submenu {
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px);
+    list-style: none; margin: 0;
+    min-width: 220px;
+    background: var(--color-bg-elev);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 0.35rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 56, 255, 0.15);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .primary-nav .has-submenu:hover > .submenu,
+  .primary-nav .has-submenu:focus-within > .submenu {
+    opacity: 1; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .primary-nav .submenu li { padding: 0; }
+  .primary-nav .submenu a {
+    display: block; padding: 0.6rem 0.85rem;
+    color: #fff; font-size: 0.9rem; font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: background 0.15s ease;
+    opacity: 1;
+  }
+  .primary-nav .submenu a:hover,
+  .primary-nav .submenu a:focus-visible {
+    background: rgba(255,255,255,0.06);
+    color: #fff; opacity: 1;
+  }
+
+  .mobile-nav { display: none; }
+  .mobile-nav summary {
+    cursor: pointer; list-style: none;
+    padding: 0.25rem; display: inline-flex; align-items: center; justify-content: center;
+    border-radius: var(--radius-sm);
+  }
+  .mobile-nav summary::-webkit-details-marker { display: none; }
+  .mobile-nav[open] > nav {
+    position: absolute; top: 100%; right: var(--space-3); left: var(--space-3);
+    background: var(--color-accent); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-md); padding: var(--space-2);
+    box-shadow: var(--shadow-md);
+  }
+  .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
+  .mobile-nav nav ul li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .mobile-nav nav ul li:last-child { border-bottom: 0; padding-top: 0.75rem; }
+  .mobile-nav nav ul li a {
+    display: block; text-decoration: none; color: #fff;
+    font-family: var(--font-display); font-weight: 600;
+  }
+  .mobile-nav nav ul li a.btn { display: inline-flex; }
+
+  /* Mobile inline submenu */
+  .mobile-submenu {
+    list-style: none; padding: 0.4rem 0 0 0.9rem !important; margin: 0.4rem 0 0 !important;
+    border-left: 2px solid rgba(255,255,255,0.25);
+  }
+  .mobile-submenu li {
+    padding: 0.3rem 0 !important; border-bottom: none !important;
+  }
+  .mobile-submenu li a {
+    font-size: 0.9rem !important; font-weight: 500 !important;
+    color: rgba(255,255,255,0.85) !important;
+  }
+
+  @media (max-width: 900px) {
+    .primary-nav { display: none; }
+    .mobile-nav { display: inline-flex; }
+    .brand-logo { max-height: 48px; }
+    .header-row {
+      gap: 0.6rem;
+      padding: 0.7rem var(--space-2);
+    }
+    .header-row .cta {
+      margin-left: auto;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+  }
+  @media (max-width: 380px) {
+    .brand-logo { max-height: 40px; }
+    .header-row .cta { padding: 0.45rem 0.75rem; font-size: 0.8rem; }
+  }
+</style>

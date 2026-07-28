@@ -1,0 +1,442 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+import { collections } from '../data/caseStudies.js';
+
+// Shared partner logos, matching the homepage
+const partners = [
+  { name: 'Klaus Roofing Systems', logo: 'https://msgsndr-private.storage.googleapis.com/locationPhotos/39c82c0b-1eeb-477e-8070-19517afe234e.png' },
+  { name: 'Partner', logo: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://cdn.filesafe.space/locationPhotos%2FMbfynyuvfW7xQSprWY1K.png?alt=media&token=55af8d67-2148-461d-b9cc-13a681380f40' },
+  { name: 'KRS Upstate NY', logo: 'https://cdn.treehouseinternetgroup.com/cms_images/3238/KRS-of-Upstate-New-York-Logo.svg' },
+  { name: 'Partner', logo: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/z3EkWHCfxj0adESFsfwp/media/665498a34215bcfe1820f7a8.png' },
+  { name: 'Altitude Roofing NM', logo: 'https://www.altituderoofingnm.com/wp-content/uploads/2024/10/Untitled-design-28.png' },
+  { name: 'Partner', logo: 'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/6P6d6CTfyHPLuLt14aB9/media/66e2dd31e662a0b58077a2b6.png' },
+];
+
+const defaultCategory = collections[0].slug;
+---
+<BaseLayout
+  title="Results | My Local Ads"
+  description="Real results across every service we run — Lead Generation, AI Agents, CRM, and Websites — for home service contractors nationwide."
+>
+  <section class="section results-hero">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">Results</span>
+      <h1>Real Results. Real Contractors.</h1>
+      <p class="lead">300+ home service businesses have grown with My Local Ads. Pick a category below to see the case studies.</p>
+    </div>
+  </section>
+
+  <section class="section-tight case-carousel-section">
+    <div class="container">
+      <div class="category-pills" role="tablist" aria-label="Result categories">
+        {collections.map((c) => (
+          <button
+            type="button"
+            class={`category-pill${c.slug === defaultCategory ? ' is-active' : ''}`}
+            data-category={c.slug}
+            role="tab"
+            aria-selected={c.slug === defaultCategory ? 'true' : 'false'}
+          >
+            {c.name}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="carousel-viewport">
+      {collections.map((c) => (
+        <div
+          class="carousel-track"
+          data-category={c.slug}
+          style={c.slug === defaultCategory ? '' : 'display:none;'}
+        >
+          {c.caseStudies.map((cs, i) => (
+            <article class={`case-slide${i === 0 ? ' is-active' : ''}`} data-index={i}>
+              <div class="case-slide-body">
+                <div class="case-slide-head">
+                  <span class="case-slide-pill">{c.name}</span>
+                  <h2 class="case-slide-headline">{cs.headline}</h2>
+                  <p class="case-slide-summary">{cs.summary}</p>
+                </div>
+                <div class="case-slide-meta">
+                  <span><strong>Client:</strong> {cs.client}</span>
+                  <span><strong>Industry:</strong> {cs.industry}</span>
+                  <span><strong>Location:</strong> {cs.location}</span>
+                </div>
+                <div class="case-slide-metrics" data-metric-count={cs.metrics.length}>
+                  {cs.metrics.map((m) => (
+                    <div class="case-metric-tile">
+                      <div class="case-metric-value">{m.value}</div>
+                      <div class="case-metric-label">{m.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <a href={`/results/${c.slug}/${cs.slug}`} class="case-slide-cta">Read full case study →</a>
+              </div>
+              <div class="case-slide-visual">
+                {c.slug === 'websites' && cs.beforeImage && cs.afterImage ? (
+                  <div class="site-before-after-mini">
+                    <div class="ba-mini-cell">
+                      <span class="ba-mini-label">Before</span>
+                      <img src={cs.beforeImage} alt={`${cs.client} website before`} loading="lazy" />
+                    </div>
+                    <div class="ba-mini-cell">
+                      <span class="ba-mini-label ba-mini-label-after">After</span>
+                      <img src={cs.afterImage} alt={`${cs.client} website after`} loading="lazy" />
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={cs.dashboardImage}
+                    alt={`${cs.client} campaign dashboard`}
+                    class="case-slide-dashboard"
+                    loading="lazy"
+                  />
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <div class="carousel-controls">
+      <button type="button" class="carousel-arrow" data-dir="prev" aria-label="Previous case study">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel-position" aria-live="polite">
+        <span class="current-index">1</span> / <span class="total-count">{collections[0].caseStudies.length}</span>
+      </div>
+      <button type="button" class="carousel-arrow" data-dir="next" aria-label="Next case study">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <section class="section-tight trusted-strip">
+    <div class="container text-center">
+      <p class="trusted-caption">Trusted by 300+ home service contractors — from solo operators to national brands</p>
+      <div class="trusted-logos">
+        {partners.map((p) => (
+          <img src={p.logo} alt={p.name} loading="lazy" class="trusted-logo" />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<script is:inline>
+  (function () {
+    const pills = Array.from(document.querySelectorAll('.category-pill'));
+    const tracks = new Map();
+    document.querySelectorAll('.carousel-track').forEach((t) => tracks.set(t.dataset.category, t));
+    const prevBtn = document.querySelector('.carousel-arrow[data-dir="prev"]');
+    const nextBtn = document.querySelector('.carousel-arrow[data-dir="next"]');
+    const currentEl = document.querySelector('.current-index');
+    const totalEl = document.querySelector('.total-count');
+
+    // Read URL hash on load so /results#lead-generation pre-selects that category.
+    const validSlugs = new Set(pills.map((p) => p.dataset.category));
+    const hashSlug = window.location.hash.replace(/^#/, '');
+    let activeCategory = validSlugs.has(hashSlug)
+      ? hashSlug
+      : (pills.find((p) => p.classList.contains('is-active'))?.dataset.category
+        || pills[0]?.dataset.category);
+    let activeIndex = 0;
+
+    function slidesFor(cat) {
+      const t = tracks.get(cat);
+      return t ? Array.from(t.querySelectorAll('.case-slide')) : [];
+    }
+
+    function render() {
+      // Show only active track
+      tracks.forEach((t, cat) => {
+        t.style.display = cat === activeCategory ? '' : 'none';
+      });
+      // Update pill states
+      pills.forEach((p) => {
+        const on = p.dataset.category === activeCategory;
+        p.classList.toggle('is-active', on);
+        p.setAttribute('aria-selected', String(on));
+      });
+      // Active slide within active track
+      const slides = slidesFor(activeCategory);
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === activeIndex));
+      const target = slides[activeIndex];
+      if (target && target.scrollIntoView) {
+        target.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+      // Position indicator
+      currentEl.textContent = String(activeIndex + 1);
+      totalEl.textContent = String(slides.length);
+      // Disable arrows when only 1 slide
+      const single = slides.length <= 1;
+      prevBtn.disabled = single;
+      nextBtn.disabled = single;
+    }
+
+    function activateCategory(cat, opts) {
+      activeCategory = cat;
+      activeIndex = 0;
+      render();
+      // Sync URL hash so /results#{cat} is shareable + back-button friendly.
+      if (!opts || opts.updateHash !== false) {
+        const desired = '#' + cat;
+        if (window.location.hash !== desired) {
+          history.replaceState(null, '', desired);
+        }
+      }
+    }
+
+    function nav(dir) {
+      const slides = slidesFor(activeCategory);
+      if (slides.length === 0) return;
+      activeIndex = ((activeIndex + dir) % slides.length + slides.length) % slides.length;
+      render();
+    }
+
+    pills.forEach((p) => p.addEventListener('click', () => activateCategory(p.dataset.category)));
+    prevBtn && prevBtn.addEventListener('click', () => nav(-1));
+    nextBtn && nextBtn.addEventListener('click', () => nav(1));
+
+    // Respond to hash changes (e.g., user hits Back/Forward or pastes /results#crm)
+    window.addEventListener('hashchange', () => {
+      const nextSlug = window.location.hash.replace(/^#/, '');
+      if (validSlugs.has(nextSlug) && nextSlug !== activeCategory) {
+        activateCategory(nextSlug, { updateHash: false });
+      }
+    });
+
+    // Sync active slide on scroll/swipe within the active track
+    tracks.forEach((t) => {
+      let scrollTimer;
+      t.addEventListener('scroll', () => {
+        if (t.dataset.category !== activeCategory) return;
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          const slides = slidesFor(activeCategory);
+          const center = t.scrollLeft + t.clientWidth / 2;
+          let closest = 0, bestDelta = Infinity;
+          slides.forEach((s, idx) => {
+            const mid = s.offsetLeft + s.offsetWidth / 2;
+            const delta = Math.abs(mid - center);
+            if (delta < bestDelta) { bestDelta = delta; closest = idx; }
+          });
+          if (closest !== activeIndex) {
+            activeIndex = closest;
+            slides.forEach((s, i) => s.classList.toggle('is-active', i === activeIndex));
+            currentEl.textContent = String(activeIndex + 1);
+          }
+        }, 90);
+      });
+    });
+
+    render();
+  })();
+</script>
+
+<style>
+  .results-hero { padding-top: var(--space-5); padding-bottom: var(--space-2); }
+  .results-hero .lead { font-size: 1.15rem; color: var(--color-text-muted); max-width: 680px; margin: 0 auto; }
+
+  /* CATEGORY PILLS */
+  .case-carousel-section { padding-top: var(--space-3); padding-bottom: var(--space-4); }
+  .category-pills {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
+    margin-bottom: var(--space-3);
+  }
+  .category-pill {
+    padding: 0.55rem 1.1rem; border-radius: var(--radius-pill);
+    background: transparent; color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    font-family: var(--font-display); font-weight: 700; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .category-pill:hover { color: #fff; border-color: var(--color-border-strong); }
+  .category-pill.is-active {
+    background: #faf24c; color: #000; border-color: #faf24c;
+  }
+
+  /* CAROUSEL VIEWPORT */
+  .carousel-viewport { position: relative; }
+  .carousel-track {
+    display: flex; gap: var(--space-3);
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: var(--space-3) max(6vw, 40px);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+
+  .case-slide {
+    flex: 0 0 min(920px, 92%);
+    scroll-snap-align: center;
+    background: linear-gradient(180deg, rgba(0,56,255,0.10) 0%, var(--color-bg-elev) 60%, var(--color-bg-elev) 100%);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    align-items: stretch;
+    opacity: 0.45;
+    transform: scale(0.96);
+    transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+  .case-slide.is-active {
+    opacity: 1;
+    transform: scale(1);
+    border-color: rgba(0, 56, 255, 0.55);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(250, 242, 76, 0.10);
+  }
+  @media (max-width: 900px) {
+    .case-slide { grid-template-columns: 1fr; padding: var(--space-3); }
+  }
+
+  .case-slide-body { display: flex; flex-direction: column; gap: var(--space-2); }
+  .case-slide-visual { display: flex; align-items: center; justify-content: center; min-height: 200px; }
+  .case-slide-dashboard {
+    width: 100%; max-width: 100%; height: auto; display: block;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  /* Websites before/after mini */
+  .site-before-after-mini {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0.5rem; width: 100%;
+  }
+  .ba-mini-cell {
+    position: relative;
+    border-radius: var(--radius-md); overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: #000;
+  }
+  .ba-mini-cell img { width: 100%; height: auto; display: block; }
+  .ba-mini-label {
+    position: absolute; top: 6px; left: 6px;
+    background: rgba(0,0,0,0.7); color: #fff;
+    padding: 0.2rem 0.5rem; border-radius: var(--radius-sm);
+    font-family: var(--font-display); font-weight: 700; font-size: 0.65rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    backdrop-filter: blur(4px);
+  }
+  .ba-mini-label-after { background: rgba(250, 242, 76, 0.9); color: #000; }
+
+  .case-slide-pill {
+    display: inline-block; align-self: flex-start;
+    padding: 0.4rem 0.9rem; border-radius: var(--radius-pill);
+    background: rgba(0, 56, 255, 0.18);
+    border: 1px solid rgba(0, 56, 255, 0.4);
+    color: #fff;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .case-slide-headline {
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    margin: var(--space-1) 0 0.5rem;
+    color: #fff;
+    line-height: 1.15;
+  }
+  .case-slide-summary { color: var(--color-text-muted); margin: 0; }
+
+  .case-slide-meta {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem;
+    padding: var(--space-2) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.85rem; color: var(--color-text-muted);
+  }
+  .case-slide-meta strong { color: #fff; font-weight: 600; }
+
+  .case-slide-metrics {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+  .case-slide-metrics[data-metric-count="3"] { grid-template-columns: repeat(3, 1fr); }
+  .case-slide-metrics[data-metric-count="4"] { grid-template-columns: repeat(2, 1fr); }
+  .case-metric-tile {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+  }
+  .case-metric-value {
+    font-family: var(--font-display); font-weight: 900;
+    font-size: 1.35rem; color: #fff; line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .case-metric-label {
+    font-size: 0.7rem; color: var(--color-text-subtle);
+    font-family: var(--font-display); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  .case-slide-cta {
+    align-self: flex-start;
+    color: #faf24c;
+    font-family: var(--font-display); font-weight: 700;
+    text-decoration: none; letter-spacing: 0.02em;
+    transition: opacity 0.15s ease;
+  }
+  .case-slide-cta:hover { opacity: 0.85; color: #faf24c; text-decoration: underline; }
+
+  /* CONTROLS */
+  .carousel-controls {
+    display: flex; align-items: center; justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+    flex-wrap: wrap;
+  }
+  .carousel-arrow {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+  }
+  .carousel-arrow:hover:not(:disabled) {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+  }
+  .carousel-arrow:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  .carousel-position {
+    font-family: var(--font-display); font-weight: 700; font-size: 0.9rem;
+    color: var(--color-text-muted); min-width: 60px; text-align: center;
+  }
+  .carousel-position .current-index { color: #fff; }
+
+  /* TRUSTED STRIP */
+  .trusted-strip { padding-top: var(--space-3); padding-bottom: var(--space-5); }
+  .trusted-caption {
+    color: var(--color-text-muted);
+    font-family: var(--font-display); font-weight: 600;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: var(--space-3);
+  }
+  .trusted-logos {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+    gap: var(--space-3) var(--space-4);
+    max-width: 1000px; margin: 0 auto;
+  }
+  .trusted-logo {
+    max-height: 44px; width: auto; object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+  }
+  .trusted-logo:hover { opacity: 1; }
+</style>

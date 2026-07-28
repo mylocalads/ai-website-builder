@@ -1,0 +1,324 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+
+const coFounders = [
+  {
+    name: 'Marcellus Gaag',
+    initials: 'MG',
+    photo: 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a67c2f4b7fe5a8e31317d39.jpg',
+    role: 'Co-Founder & Head of Operations',
+    bio: 'Marcellus runs the operations side of My Local Ads and is the reason a home-service contractor working with us gets a product-grade experience instead of the usual agency chaos. He is AI-native and obsessive about lean processes — every hour that would otherwise be spent on account admin gets automated, so support gets faster and pricing stays fair. His whole focus is making sure a $500K/year roofer and a $100MM/year national brand both feel like the most important customer on the roster.',
+  },
+  {
+    name: 'Eric Meese',
+    initials: 'EM',
+    photo: 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a67c2ba88106326197f7c7e.jpg',
+    role: 'Co-Founder & Head of Acquisition',
+    bio: 'Eric leads the advertising team and has spent $150MM+ on Meta and Google Ads across e-commerce, home services, healthcare and more. He built the campaign playbook that lets us hold cost-per-lead steady whether you\'re a solo roofer starting at $2.5K/month or a multi-market brand running six figures. He is deeply skeptical of agency retainer culture — every dollar has to earn its keep in booked jobs, or it does not belong on the plan.',
+  },
+];
+
+const disciplines = [
+  { label: 'Video Editors', icon: '🎬' },
+  { label: 'UGC Models', icon: '📱' },
+  { label: 'Web Developers', icon: '💻' },
+  { label: 'Automation Experts', icon: '⚙️' },
+  { label: 'AI Experts', icon: '🤖' },
+  { label: 'Software Developers', icon: '🧑‍💻' },
+];
+
+const directors = [
+  {
+    name: 'Evan Barhonovich',
+    initials: 'EB',
+    photo: 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a67c2bad5a8878e0acfb836.jpg',
+    role: 'Creative Director',
+    bio: 'Evan owns the ad creative pipeline — hooks, scripts, static designs and short-form video. He specializes in making SMB-scale creative that competes with what national brands put out, so a local roofer\'s ad in Louisville feels as sharp as anything Home Depot ships. Every asset is built for click-through, not for a design award.',
+  },
+  {
+    name: 'Martin Gonzalez',
+    initials: 'MgZ',
+    photo: 'https://pro2-bar-s3-cdn-cf.myportfolio.com/7fa5afc57ac6d9fd2e60618e0770a3c5/1b601053-0301-4859-8cd1-4021d1e4375b_rw_1200.jpg?h=b3d2754f5d1c7cb6cd1370e063e2220b',
+    role: 'Design Director',
+    bio: 'Martin runs landing-page and funnel design across every client account. His rule is simple: if the page after the click doesn\'t convert, the ad spend was wasted. That obsession with the post-click experience is why our sales landing pages routinely convert at rates most SMBs never see from their own websites.',
+  },
+  {
+    name: 'Neha Jamil',
+    initials: 'NJ',
+    photo: null,
+    role: 'Support Director',
+    bio: 'Neha leads customer support, which at MLA means 24/7 email coverage with human-in-the-loop review on every ticket. Most inquiries get resolved in under 12 hours, and she personally makes sure no contractor is ever waiting on a dispute, a lead-quality question, or a campaign tweak. She is the reason the churn rate on the roster is what it is.',
+  },
+];
+---
+<BaseLayout
+  title="Meet Our Team | My Local Ads"
+  description="Meet the founders and directors behind My Local Ads — the team building the fairest pay-per-lead program in the home service industry."
+>
+  {/* HERO */}
+  <section class="section team-hero">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">The Team</span>
+      <h1>Meet Our Team!</h1>
+      <p class="lead">My Local Ads was founded in 2022 by Eric &amp; Marcellus. Since then we've served 300+ home service contractors — from local SMBs to national brands.</p>
+    </div>
+  </section>
+
+  {/* FOUNDER'S NOTE */}
+  <section class="section-tight founders-note-section">
+    <div class="container">
+      <div class="founders-note">
+        <div class="founders-note-photo">
+          <img
+            src="https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a67a229b7fe5a8e3108ce34.png"
+            alt="Eric Meese and Marcellus Gaag — Co-founders of My Local Ads"
+            class="founders-photo"
+            width="1152"
+            height="928"
+          />
+        </div>
+        <div class="founders-note-body">
+          <span class="eyebrow">We're On A Mission</span>
+          <h2>Founder's Note</h2>
+          <p class="founders-lede">Every roof replaced, every kitchen remodeled, every driveway poured — that's a family building the life they want, and a contractor building the business they've worked for.</p>
+          <p>We started My Local Ads because too many great American contractors were losing that fight to opaque agency contracts, shared leads, and marketing that never quite turned into booked work. Since 2022 we've partnered with <strong>300+ home service businesses</strong> — from solo roofers to national brands like Klaus Roofing Systems — putting over <strong>$150MM+ into ad campaigns that actually book jobs</strong>. Every dollar we deploy is a small vote for the tradespeople whose work built this country, and for the homeowners who deserve to hire someone they can trust. Eric leads acquisition, Marcellus leads operations, and together we're building this so any contractor — whether a $500K solo owner or a $100MM+ multi-market brand — can grow without gambling their margin on hope. If we do our job right, more contractors close more jobs, more homeowners get better work, and marketing stops being the reason great small businesses fail — that's the world we're building, and we'd love for you to build it with us.</p>
+          <div class="founders-signature">
+            <span>— Eric Meese &amp; Marcellus Gaag</span>
+            <span class="founders-signature-role">Co-founders, My Local Ads</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* CO-FOUNDERS */}
+  <section class="section" id="co-founders">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Co-Founders</span>
+        <h2>The People Building The System</h2>
+      </div>
+      <div class="team-grid team-grid-2">
+        {coFounders.map((m) => (
+          <article class="team-card">
+            {m.photo ? (
+              <>
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  class="team-avatar team-avatar-photo"
+                  width="640"
+                  height="640"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="team-avatar" style="display:none" aria-label={`${m.name} photo placeholder`}>
+                  <span>{m.initials}</span>
+                </div>
+              </>
+            ) : (
+              <div class="team-avatar" aria-label={`${m.name} photo placeholder`}>
+                <span>{m.initials}</span>
+              </div>
+            )}
+            <div class="team-card-body">
+              <span class="team-role">{m.role}</span>
+              <h3 class="team-name">{m.name}</h3>
+              <p class="team-bio">{m.bio}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* DIRECTORS */}
+  <section class="section section-alt" id="directors">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Directors</span>
+        <h2>The Team Behind Every Campaign</h2>
+      </div>
+      <div class="team-grid team-grid-3">
+        {directors.map((m) => (
+          <article class="team-card team-card-compact">
+            {m.photo ? (
+              <>
+                <img
+                  src={m.photo}
+                  alt={m.name}
+                  class="team-avatar team-avatar-photo"
+                  width="640"
+                  height="640"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="team-avatar" style="display:none" aria-label={`${m.name} photo placeholder`}>
+                  <span>{m.initials}</span>
+                </div>
+              </>
+            ) : (
+              <div class="team-avatar" aria-label={`${m.name} photo placeholder`}>
+                <span>{m.initials}</span>
+              </div>
+            )}
+            <div class="team-card-body">
+              <span class="team-role">{m.role}</span>
+              <h3 class="team-name">{m.name}</h3>
+              <p class="team-bio">{m.bio}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ADDITIONAL TEAM MEMBERS */}
+  <section class="section" id="additional-team">
+    <div class="container">
+      <div class="text-center section-heading">
+        <span class="eyebrow">Extended Bench</span>
+        <h2>Additional Team Members</h2>
+        <p class="section-lead">Beyond the core team, My Local Ads continuously taps into a network of specialists across disciplines — so every campaign is powered by the right expertise, on demand, without agency overhead. That's how we keep customer success high and campaigns profitable.</p>
+      </div>
+      <div class="disciplines-grid">
+        {disciplines.map((d) => (
+          <div class="discipline-chip">
+            <span class="discipline-icon" aria-hidden="true">{d.icon}</span>
+            <span class="discipline-label">{d.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  .team-hero { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  .team-hero .lead { font-size: 1.15rem; color: var(--color-text-muted); max-width: 680px; margin: 0 auto; }
+
+  /* FOUNDER'S NOTE */
+  .founders-note-section { padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  .founders-note {
+    display: grid; grid-template-columns: 320px 1fr;
+    gap: var(--space-4);
+    align-items: start;
+  }
+  .founders-lede {
+    font-size: 1.35rem; line-height: 1.4;
+    color: #fff;
+    font-family: var(--font-display); font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+  .founders-lede strong { color: var(--color-accent-soft); }
+  .founders-note-photo { text-align: center; }
+  .founders-photo {
+    width: 100%; max-width: 320px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    display: block;
+    margin: 0 auto;
+  }
+  .founders-note-body h2 { margin-bottom: var(--space-2); }
+  .founders-note-body p { color: var(--color-text-muted); margin-bottom: var(--space-2); }
+  .founders-note-body strong { color: #fff; }
+  .founders-signature {
+    margin-top: var(--space-3); padding-top: var(--space-2);
+    border-top: 1px solid var(--color-border);
+    display: flex; flex-direction: column; gap: 0.15rem;
+    font-family: var(--font-display); font-weight: 700; color: #fff;
+  }
+  .founders-signature-role {
+    font-weight: 500; font-size: 0.85rem;
+    color: var(--color-text-muted); letter-spacing: 0.02em;
+  }
+  @media (max-width: 780px) {
+    .founders-note { grid-template-columns: 1fr; }
+    .team-avatar-hero { max-width: 240px; margin: 0 auto; }
+  }
+
+  /* TEAM CARDS */
+  .team-grid { display: grid; gap: var(--space-3); }
+  .team-grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .team-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) {
+    .team-grid-2, .team-grid-3 { grid-template-columns: 1fr; }
+  }
+  .team-card {
+    background: var(--color-bg-elev);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    display: flex; flex-direction: column; gap: var(--space-2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-strong);
+  }
+  .team-card .team-avatar { width: 100%; aspect-ratio: 1 / 1; font-size: 2.5rem; }
+  .team-card-compact .team-avatar { font-size: 2rem; }
+  .team-card-body { display: flex; flex-direction: column; gap: 0.35rem; }
+  .team-role {
+    font-family: var(--font-display); font-weight: 700; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--color-accent-soft);
+  }
+  .team-name { margin: 0; color: #fff; font-size: 1.4rem; }
+  .team-bio { color: var(--color-text-muted); margin: 0.35rem 0 0; font-size: 0.95rem; }
+
+  /* ADDITIONAL TEAM MEMBERS — discipline chips */
+  .disciplines-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+    max-width: 900px; margin: 0 auto;
+  }
+  .discipline-chip {
+    background: var(--color-bg-elev);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2) var(--space-3);
+    display: flex; align-items: center; gap: 0.85rem;
+    color: var(--color-text);
+    font-family: var(--font-display); font-weight: 700;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .discipline-chip:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-sm);
+  }
+  .discipline-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+  .discipline-label { font-size: 1rem; letter-spacing: 0.01em; }
+  @media (max-width: 700px) { .disciplines-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .disciplines-grid { grid-template-columns: 1fr; } }
+
+  /* AVATAR — CSS monogram, easy to swap for real <img> later */
+  .team-avatar {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg);
+    background:
+      radial-gradient(circle at 30% 30%, rgba(250,242,76,0.15) 0%, transparent 55%),
+      linear-gradient(135deg, #0038FF 0%, #000321 100%);
+    color: #fff;
+    font-family: var(--font-display); font-weight: 900;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--color-border);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+  .team-avatar span { line-height: 1; }
+
+  /* Real photo variant — overrides monogram styling */
+  .team-avatar-photo {
+    background: #000;
+    object-fit: cover;
+    padding: 0;
+    text-shadow: none;
+  }
+</style>

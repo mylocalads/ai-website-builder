@@ -1,0 +1,93 @@
+---
+interface Props {
+  badge?: string;
+  name: string;
+  price: string;
+  unit?: string;
+  subprice?: string;
+  tagline: string;
+  features: string[];
+  bonuses?: string[];
+  footnote: string;
+  cta: string;
+  href: string;
+}
+
+const {
+  badge,
+  name,
+  price,
+  unit = '/mo*',
+  subprice,
+  tagline,
+  features,
+  bonuses = [],
+  footnote,
+  cta,
+  href,
+} = Astro.props as Props;
+---
+<div class="plan-card">
+  {badge && <div class="plan-badge">{badge}</div>}
+  <h2 class="plan-name">{name}</h2>
+  <div class="plan-price">
+    <span class="plan-amount">{price}</span>
+    <span class="plan-unit">{unit}</span>
+  </div>
+  {subprice && <div class="plan-subprice">{subprice}</div>}
+  <p class="plan-tagline">{tagline}</p>
+  <ul class="plan-features">
+    {features.map((f) => <li><span class="check">✓</span> {f}</li>)}
+  </ul>
+  {bonuses.length > 0 && (
+    <div class="plan-bonus">
+      <div class="plan-bonus-label">Bonus</div>
+      <ul>
+        {bonuses.map((b) => <li><span class="check">★</span> {b}</li>)}
+      </ul>
+    </div>
+  )}
+  <a href={href} class="btn btn-primary btn-lg plan-cta" rel="noopener">{cta}</a>
+  <p class="disclaimer">{footnote}</p>
+</div>
+
+<style>
+  .plan-card {
+    max-width: 480px; margin: 0 auto;
+    background: linear-gradient(180deg, rgba(0,56,255,0.15) 0%, var(--color-bg-elev) 100%);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-xl); padding: var(--space-4);
+    box-shadow: var(--shadow-accent);
+    display: flex; flex-direction: column;
+    text-align: center;
+    color: var(--color-text);
+  }
+  .plan-badge {
+    display: inline-block; background: var(--color-orange); color: #fff;
+    padding: 0.35rem 0.9rem; border-radius: var(--radius-pill);
+    font-family: var(--font-display); font-weight: 800; font-size: 0.75rem;
+    letter-spacing: 0.08em; text-transform: uppercase; align-self: center;
+    margin-bottom: var(--space-2);
+  }
+  .plan-name { font-size: 1.6rem; margin-bottom: var(--space-1); color: #fff; }
+  .plan-price { display: flex; align-items: baseline; gap: 0.35rem; justify-content: center; }
+  .plan-amount { font-family: var(--font-display); font-size: 3.25rem; font-weight: 900; color: #fff; }
+  .plan-unit { font-family: var(--font-display); font-weight: 600; color: var(--color-text-muted); }
+  .plan-subprice { font-family: var(--font-display); font-weight: 700; color: var(--color-accent-soft); font-size: 1rem; margin-bottom: var(--space-2); }
+  .plan-tagline { color: var(--color-text-muted); margin: var(--space-1) 0 var(--space-3); }
+  .plan-features { list-style: none; padding: 0; margin: 0 0 var(--space-2); text-align: left; color: var(--color-text-muted); }
+  .plan-features li { padding: 0.35rem 0; display: flex; align-items: start; gap: 0.5rem; }
+  .plan-bonus {
+    background: rgba(255,255,255,0.05); border-radius: var(--radius-md);
+    padding: var(--space-2); margin-bottom: var(--space-2); text-align: left;
+  }
+  .plan-bonus-label {
+    font-family: var(--font-display); font-weight: 800; font-size: 0.8rem;
+    color: var(--color-accent-soft); text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+  }
+  .plan-bonus ul { list-style: none; padding: 0; margin: 0; }
+  .plan-bonus li { display: flex; align-items: start; gap: 0.5rem; font-weight: 600; padding: 0.2rem 0; }
+  .plan-bonus .check { color: var(--color-orange); }
+  .plan-cta { align-self: center; margin: var(--space-2) auto; }
+</style>

@@ -1,0 +1,54 @@
+---
+const faqs = [
+  { q: 'How do I get started?', a: 'Either pick a plan on this website if you already know what you would like to get started with, and follow the signup, payment, and onboarding process 100% online. Or, book a call with us if you still have questions before signing up with us!' },
+  { q: 'Do your prices include Ad budgets?', a: 'No. The prices presented on this website do not include advertising budgets.' },
+  { q: 'How is your customer support?', a: 'We provide 24/7 email customer support and we usually resolve our tickets in less than 12 hrs if it\'s not a deep technical issue. Our support team is a mix of admins and advertising experts which enables us to support clients with the best expertise in the industry.' },
+  { q: 'Can I buy your plans individually?', a: 'Yes, you can buy each of our plans individually.' },
+  { q: 'Is there a commitment required?', a: 'Yes for our advertising services, we require 3-month minimum commitments! No for our NFC Cards, CRM, and other one-off services. Our terms of services describe this.' },
+  { q: 'Are the leads shared?', a: 'No, we never share leads. In fact, we promote your brand directly to leads, unlike lead vendors like Angie, Home Buddy, and similar. That way you do not only get the most cost-effective leads, but you also build your brand! All of our leads are exclusively generated from Google and Facebook, depending on your plan with us.' },
+  { q: 'What is your advertising process like?', a: 'Please watch our case study video for that! It\'s a quick 5 minute video explaining exactly how we do what we do.' },
+  { q: 'How will I receive new leads?', a: 'Each of our partners that advertises with us receives a limited-access (free) CRM account setup. Your leads will be tracked in the CRM account and you can manage leads from within the account together with your team.' },
+  { q: 'Do you vet and qualify leads for us?', a: 'We do not! If you don\'t already have admin staff & a call center, we can support you with AI call center and conversation agent capabilities through our CRM system (paid feature) that can take lead information & pre-qualify prospects, but we do not handle any of the incoming leads for you.' },
+];
+---
+<section class="section section-alt">
+  <div class="container container-narrow">
+    <div class="text-center">
+      <span class="eyebrow">FAQs</span>
+      <h2>Still Got Questions?</h2>
+      <p class="muted">Call or text sales at <a href="tel:+18664511915">(866) 451-1915</a>, or email support at <a href="mailto:support@mylocalads.co">support@mylocalads.co</a>.</p>
+    </div>
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details class="faq-item">
+          <summary><span class="faq-q">{f.q}</span><span class="faq-toggle" aria-hidden="true">+</span></summary>
+          <div class="faq-a">{f.a}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list { margin-top: var(--space-4); }
+  .faq-item {
+    background: var(--color-bg-elev); border: 1px solid var(--color-border);
+    border-radius: var(--radius-md); margin-bottom: var(--space-1); overflow: hidden;
+  }
+  .faq-item summary {
+    cursor: pointer; list-style: none;
+    padding: var(--space-2) var(--space-3);
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: var(--font-display); font-weight: 600; color: #fff;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-q { flex: 1; padding-right: var(--space-2); }
+  .faq-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--color-accent); color: #fff;
+    font-weight: 700; font-size: 1.25rem; line-height: 1; flex-shrink: 0;
+  }
+  .faq-item[open] .faq-toggle { transform: rotate(45deg); }
+  .faq-a { padding: 0 var(--space-3) var(--space-2); color: var(--color-text-muted); }
+</style>

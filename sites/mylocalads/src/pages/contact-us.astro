@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+---
+<BaseLayout
+  title="Contact Us! | My Local Ads"
+  description="We are here to assist you with your digital marketing & advertising needs. Sales: (866) 451-1915. Email: support@mylocalads.co."
+>
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Contact Us</span>
+          <h1>We're here to assist you with your digital marketing &amp; advertising needs.</h1>
+          <ul class="contact-list">
+            <li><strong>Sales (Phone):</strong> <a href="tel:+18664511915">(866) 451-1915</a></li>
+            <li><strong>Email:</strong> <a href="mailto:support@mylocalads.co">support@mylocalads.co</a></li>
+          </ul>
+          <p class="muted">We aim to respond to all inbound inquiries within one business day.</p>
+        </div>
+
+        <div class="contact-form-frame">
+          <iframe
+            src="https://links.mylocalads.info/widget/form/SBI2UVSanngNWiB81x8r"
+            id="inline-SBI2UVSanngNWiB81x8r"
+            data-layout={"{'id':'INLINE'}"}
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Contact Us Form"
+            data-height="1678"
+            data-layout-iframe-id="inline-SBI2UVSanngNWiB81x8r"
+            data-form-id="SBI2UVSanngNWiB81x8r"
+            title="Contact Us Form"
+            class="ghl-form-iframe"
+          ></iframe>
+          <script src="https://links.mylocalads.info/js/form_embed.js"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-5); align-items: start; }
+  .contact-list { list-style: none; padding: 0; margin: var(--space-3) 0; }
+  .contact-list li { padding: 0.4rem 0; font-size: 1.05rem; }
+  .contact-form-frame {
+    background: var(--color-bg-elev);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    min-height: 1700px;
+  }
+  .ghl-form-iframe {
+    width: 100%;
+    height: 1678px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+  }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>

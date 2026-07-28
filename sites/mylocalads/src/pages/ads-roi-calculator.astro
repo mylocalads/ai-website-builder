@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+---
+<BaseLayout
+  title="Free Ads ROI Calculator | My Local Ads"
+  description="Plan Your Pay Per Lead Campaign & Set Goals. Compute the ad budget you need to hit your booked-inspection targets."
+>
+  <section class="section">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">Campaign Planner</span>
+      <h1>Plan Your Pay Per Lead Campaign &amp; Set Goals</h1>
+      <p class="lead">Adjust the sliders to see how your target advertising budget maps to booked inspections and cost per lead.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="calc-card">
+        <div class="calc-row">
+          <label class="calc-label">Cost Per Booked Inspection Lead
+            <span class="calc-value">$<span id="cost-per-lead-value">85</span></span>
+          </label>
+          <input type="range" id="cost-per-lead" min="65" max="150" value="85" step="5" />
+          <div class="calc-scale"><span>$65</span><span>$150</span></div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">Facebook / Google CPA (Cost per acquisition)
+            <span class="calc-value">$<span id="cpa-value">75</span></span>
+          </label>
+          <input type="range" id="cpa" min="25" max="500" value="75" step="5" />
+          <div class="calc-scale"><span>$25</span><span>$500</span></div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">Target Ads Budget
+            <span class="calc-value">$<span id="budget-value">5,000</span></span>
+          </label>
+          <input type="range" id="budget" min="2500" max="50000" value="5000" step="500" />
+          <div class="calc-scale"><span>$2,500</span><span>$50,000</span></div>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result-cell">
+            <div class="calc-result-label">Expected Booked Inspections</div>
+            <div class="calc-result-value" id="result-booked">66</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">Total Agency Bill</div>
+            <div class="calc-result-value" id="result-agency">$5,610</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">Total Investment (Ads + Agency)</div>
+            <div class="calc-result-value" id="result-total">$10,610</div>
+          </div>
+        </div>
+
+        <div class="calc-cta text-center">
+          <a href="https://start.mylocalads.co/order-services-page" class="btn btn-primary btn-lg" rel="noopener">Create Account!</a>
+          <p class="disclaimer">You will be redirected to a sign-up page.</p>
+        </div>
+
+        <p class="disclaimer" style="margin-top: var(--space-3);">
+          <strong>Disclaimer:</strong> Advertising results, pricing, and earnings are not guaranteed, and vary per customer. Minimum advertising budget of $2,500 required. All leads are exclusive. Lead fees are charged separate from ad spend. Billed bi-weekly or the following month. Agency fee is capped at 100% of ad spend. Terms of service apply.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<script is:inline>
+  const fmt = (n) => n.toLocaleString('en-US');
+
+  const $ = (id) => document.getElementById(id);
+  const costPerLead = $('cost-per-lead');
+  const cpa = $('cpa');
+  const budget = $('budget');
+
+  function recalc() {
+    const cpl = parseInt(costPerLead.value, 10);
+    const c = parseInt(cpa.value, 10);
+    const b = parseInt(budget.value, 10);
+
+    $('cost-per-lead-value').textContent = fmt(cpl);
+    $('cpa-value').textContent = fmt(c);
+    $('budget-value').textContent = fmt(b);
+
+    const bookedInspections = Math.round(b / c);
+    const agencyBill = Math.min(bookedInspections * cpl, b);
+    const total = b + agencyBill;
+
+    $('result-booked').textContent = fmt(bookedInspections);
+    $('result-agency').textContent = '$' + fmt(agencyBill);
+    $('result-total').textContent = '$' + fmt(total);
+  }
+
+  [costPerLead, cpa, budget].forEach((el) => el && el.addEventListener('input', recalc));
+  recalc();
+</script>
+
+<style>
+  .lead { font-size: 1.15rem; color: var(--color-text-muted); }
+  .calc-card {
+    background: var(--color-bg-elev); border: 2px solid var(--color-accent);
+    border-radius: var(--radius-xl); padding: var(--space-4);
+    box-shadow: var(--shadow-accent);
+    color: var(--color-text);
+  }
+  .calc-row { margin-bottom: var(--space-3); }
+  .calc-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--font-display); font-weight: 700; color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .calc-value { font-family: var(--font-display); font-weight: 900; color: var(--color-accent-soft); font-size: 1.35rem; }
+  .calc-row input[type="range"] {
+    width: 100%; -webkit-appearance: none; appearance: none;
+    height: 6px; background: rgba(255,255,255,0.15); border-radius: var(--radius-pill);
+    outline: none;
+  }
+  .calc-row input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 24px; height: 24px;
+    background: var(--color-accent); border-radius: 50%; cursor: pointer;
+    box-shadow: var(--shadow-accent);
+  }
+  .calc-row input[type="range"]::-moz-range-thumb {
+    width: 24px; height: 24px;
+    background: var(--color-accent); border-radius: 50%; cursor: pointer;
+    border: none;
+  }
+  .calc-scale { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--color-text-subtle); margin-top: 0.25rem; }
+  .calc-results {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2);
+    margin-top: var(--space-4); background: rgba(255,255,255,0.05);
+    padding: var(--space-3); border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+  .calc-result-cell { text-align: center; }
+  .calc-result-label { font-size: 0.85rem; color: var(--color-text-muted); font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+  .calc-result-value { font-family: var(--font-display); font-weight: 900; font-size: 1.75rem; color: #fff; }
+  .calc-cta { margin-top: var(--space-4); }
+  @media (max-width: 700px) { .calc-results { grid-template-columns: 1fr; } }
+</style>

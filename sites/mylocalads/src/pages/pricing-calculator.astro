@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+
+const billableLeads = [
+  {
+    title: 'Scheduled In-Person Estimate Leads',
+    subtitle: 'Booked Meeting + Project Details + Contact Info',
+  },
+  {
+    title: 'Survey Inquiry Leads',
+    subtitle: 'Project Details + Contact Info',
+  },
+  {
+    title: 'Inbound Phone Call Leads',
+    subtitle: 'Contact Info + Call Recording',
+  },
+];
+
+const channels = [
+  { title: 'Meta Ads (Facebook & Instagram)', body: 'Reach a wider audience and achieve lower cost per lead with Instagram and Facebook Ads.' },
+  { title: 'Google Search & Local Service Ads', body: 'Capture the highest intent leads on Google with Search and Local Service Ads.' },
+];
+---
+<BaseLayout
+  title="Ads Pricing Calculator | My Local Ads"
+  description="Pay only for qualified & exclusive leads, no retainer fee. Use our campaign simulator to gauge how much to spend on Ads to meet your sales goals."
+>
+  <section class="section">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">Pricing Calculator</span>
+      <h1>Only Pay* For Qualified &amp; Exclusive Leads, No Retainer Fee!</h1>
+      <p class="fine-print">*Requires $2,500 One-Time Setup Fee To Get Started</p>
+      <p class="lead">Before you get started use the campaign simulator below to gauge how much to spend on Ads in order to meet your sales goals. <span class="muted">*Terms of service apply.</span></p>
+      <a href="https://start.mylocalads.co/order-services-page" class="btn btn-primary btn-lg" rel="noopener">Create Account!</a>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-header">3-Month Commit</div>
+          <div class="tier-price"><strong>$85</strong> / Booked Inspection Lead</div>
+          <div class="tier-price"><strong>$35</strong> / Form Or Call Lead</div>
+        </div>
+        <div class="tier-card tier-highlight">
+          <div class="tier-badge">Save $10/Lead!</div>
+          <div class="tier-header">6-Month Commit</div>
+          <div class="tier-price"><strong>$75</strong> / Booked Inspection Lead</div>
+          <div class="tier-price"><strong>$25</strong> / Form Or Call Lead</div>
+        </div>
+        <div class="tier-card">
+          <div class="tier-badge">Save $20/Lead!</div>
+          <div class="tier-header">12-Month Commit</div>
+          <div class="tier-price"><strong>$65</strong> / Booked Inspection Lead</div>
+          <div class="tier-price"><strong>$15</strong> / Form Or Call Lead</div>
+        </div>
+      </div>
+
+      <div class="calc-card" style="margin-top: var(--space-4);">
+        <h3 class="text-center">Campaign Simulator</h3>
+        <div class="calc-row">
+          <label class="calc-label">Target Lead Volume
+            <span class="calc-value"><span id="volume-value">66</span></span>
+          </label>
+          <input type="range" id="volume" min="10" max="500" value="66" />
+          <div class="calc-scale"><span>10</span><span>500</span></div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">Expected Cost Per Lead (CPA)
+            <span class="calc-value">$<span id="cpl-value">75</span></span>
+          </label>
+          <input type="range" id="cpl" min="25" max="500" value="75" step="5" />
+          <div class="calc-scale"><span>$25</span><span>$500</span></div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">Target Ads Budget
+            <span class="calc-value">$<span id="budget-value">5,000</span></span>
+          </label>
+          <input type="range" id="budget" min="2500" max="50000" value="5000" step="500" />
+          <div class="calc-scale"><span>$2,500</span><span>$50,000</span></div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">System Booking Rate
+            <span class="calc-value"><span id="booking-value">35</span>%</span>
+          </label>
+          <input type="range" id="booking" min="10" max="100" value="35" />
+          <div class="calc-scale"><span>10%</span><span>100%</span></div>
+        </div>
+
+        <div class="calc-row">
+          <label class="calc-label">Commit Length</label>
+          <select id="commit">
+            <option value="3">3-Month Commit ($85 / $35)</option>
+            <option value="6">6-Month Commit ($75 / $25)</option>
+            <option value="12">12-Month Commit ($65 / $15)</option>
+          </select>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result-cell">
+            <div class="calc-result-label">🎯 Target Ads Budget</div>
+            <div class="calc-result-value" id="r-target">$5,000</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">➡️ Ads Spend</div>
+            <div class="calc-result-value" id="r-spend">$4,950</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">✅ Agency Bill</div>
+            <div class="calc-result-value" id="r-agency">$3,465</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">Avg. Cost Per Lead</div>
+            <div class="calc-result-value" id="r-cpl">$128</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">Booked Inspections</div>
+            <div class="calc-result-value" id="r-booked">23</div>
+          </div>
+          <div class="calc-result-cell">
+            <div class="calc-result-label">Form/Call Leads</div>
+            <div class="calc-result-value" id="r-forms">43</div>
+          </div>
+        </div>
+
+        <p class="disclaimer" style="margin-top: var(--space-3);">
+          <strong>Disclaimer:</strong> Advertising results, pricing, and earnings are not guaranteed, and vary per customer. Minimum advertising budget of $2,500 required. All leads are exclusive. Lead fees are charged separate from ad spend. Billed bi-weekly or the following month. Agency fee is capped at 100% of ad spend. Terms of service apply.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow">Billable Leads</span>
+        <h2>Only Pay For 3 Qualified Lead Types</h2>
+      </div>
+      <div class="grid grid-3">
+        {billableLeads.map((l) => (
+          <div class="card text-center">
+            <h3>{l.title}</h3>
+            <p class="muted">{l.subtitle}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center">
+        <span class="eyebrow">Maximize Presence</span>
+        <h2>Combine Social Media &amp; Search Ads</h2>
+      </div>
+      <div class="grid grid-2">
+        {channels.map((c) => (
+          <div class="card">
+            <h3>{c.title}</h3>
+            <p>{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="text-center">
+        <span class="eyebrow">Please Note</span>
+        <h2>Prices Listed Above Do Not Include</h2>
+      </div>
+      <ul class="notice-list">
+        <li><span class="check">•</span> <strong>$2,500 Setup Fee</strong> Paid Upon Sign-Up</li>
+        <li><span class="check">•</span> <strong>CRM Usage Rates</strong> [~$0–$15/mo Depends On Usage — recorded calls, SMS sent, and similar]</li>
+      </ul>
+      <p class="disclaimer">
+        For more information about our setup fee or CRM usage rates, please contact our sales team or <a href="mailto:support@mylocalads.co">support@mylocalads.co</a>. CRM usage rate only applies if you purchase full CRM access from us. Usage rates are minimal charges for the use of the CRM for features such as Email, SMS/MMS sending, call recordings etc. This is not a guarantee, but the majority of our marketing partners cover their usage rate with $5–$15/mo. To see the full list of our usage rates, please read our terms of services.
+      </p>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<script is:inline>
+  const fmt = (n) => n.toLocaleString('en-US');
+  const $ = (id) => document.getElementById(id);
+
+  // Per-commit lead pricing
+  const pricing = {
+    3:  { inspect: 85, form: 35 },
+    6:  { inspect: 75, form: 25 },
+    12: { inspect: 65, form: 15 },
+  };
+
+  function recalc() {
+    const volume = parseInt($('volume').value, 10);
+    const cpl = parseInt($('cpl').value, 10);
+    const budget = parseInt($('budget').value, 10);
+    const bookingPct = parseInt($('booking').value, 10);
+    const commit = $('commit').value;
+
+    $('volume-value').textContent = fmt(volume);
+    $('cpl-value').textContent = fmt(cpl);
+    $('budget-value').textContent = fmt(budget);
+    $('booking-value').textContent = bookingPct;
+
+    // Approximate: spend follows the requested budget within a small tolerance
+    const spend = Math.min(budget, cpl * volume);
+    const booked = Math.round(volume * (bookingPct / 100));
+    const forms = volume - booked;
+    const p = pricing[commit];
+    const agency = booked * p.inspect + forms * p.form;
+    const avgCpl = volume > 0 ? Math.round((spend + agency) / volume) : 0;
+
+    $('r-target').textContent = '$' + fmt(budget);
+    $('r-spend').textContent = '$' + fmt(spend);
+    $('r-agency').textContent = '$' + fmt(agency);
+    $('r-cpl').textContent = '$' + fmt(avgCpl);
+    $('r-booked').textContent = fmt(booked);
+    $('r-forms').textContent = fmt(forms);
+  }
+
+  ['volume', 'cpl', 'budget', 'booking', 'commit'].forEach((id) => {
+    const el = $(id);
+    if (el) el.addEventListener('input', recalc);
+    if (el && el.tagName === 'SELECT') el.addEventListener('change', recalc);
+  });
+  recalc();
+</script>
+
+<style>
+  .fine-print { color: var(--color-orange); font-family: var(--font-display); font-weight: 700; margin-bottom: var(--space-2); }
+  .lead { font-size: 1.15rem; color: var(--color-text-muted); }
+
+  .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+  .tier-card { background: var(--color-bg-elev); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-3); text-align: center; position: relative; color: var(--color-text); }
+  .tier-highlight { border-color: var(--color-accent); box-shadow: var(--shadow-accent); }
+  .tier-header { font-family: var(--font-display); font-weight: 800; color: #fff; margin-bottom: var(--space-2); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.9rem; }
+  .tier-price { padding: 0.25rem 0; color: var(--color-text-muted); }
+  .tier-price strong { color: var(--color-accent-soft); font-size: 1.25rem; font-family: var(--font-display); }
+  .tier-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-orange); color: #fff; padding: 0.2rem 0.7rem; border-radius: var(--radius-pill); font-family: var(--font-display); font-weight: 800; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .calc-card { background: var(--color-bg-elev); border: 2px solid var(--color-accent); border-radius: var(--radius-xl); padding: var(--space-4); box-shadow: var(--shadow-accent); color: var(--color-text); }
+  .calc-row { margin-bottom: var(--space-3); }
+  .calc-label { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-display); font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+  .calc-value { font-family: var(--font-display); font-weight: 900; color: var(--color-accent-soft); font-size: 1.35rem; }
+  .calc-row input[type="range"] { width: 100%; -webkit-appearance: none; appearance: none; height: 6px; background: rgba(255,255,255,0.15); border-radius: var(--radius-pill); outline: none; }
+  .calc-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; background: var(--color-accent); border-radius: 50%; cursor: pointer; box-shadow: var(--shadow-accent); }
+  .calc-row input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; background: var(--color-accent); border-radius: 50%; cursor: pointer; border: none; }
+  .calc-row select { width: 100%; padding: 0.7rem 0.9rem; border: 1px solid var(--color-border-strong); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 1rem; background: var(--color-bg); color: var(--color-text); }
+  .calc-scale { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--color-text-subtle); margin-top: 0.25rem; }
+  .calc-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); margin-top: var(--space-4); background: rgba(255,255,255,0.05); padding: var(--space-3); border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+  .calc-result-cell { text-align: center; }
+  .calc-result-label { font-size: 0.8rem; color: var(--color-text-muted); font-family: var(--font-display); font-weight: 700; margin-bottom: 0.25rem; }
+  .calc-result-value { font-family: var(--font-display); font-weight: 900; font-size: 1.5rem; color: #fff; }
+
+  .notice-list { list-style: none; padding: 0; margin: var(--space-3) 0; }
+  .notice-list li { padding: 0.5rem 0; font-size: 1.05rem; }
+
+  @media (max-width: 800px) {
+    .tier-grid { grid-template-columns: 1fr; }
+    .calc-results { grid-template-columns: 1fr 1fr; }
+  }
+</style>

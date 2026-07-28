@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlanCard from '../components/PlanCard.astro';
+import PlanFAQs from '../components/PlanFAQs.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+---
+<BaseLayout
+  title="Roofer Instant Estimates | My Local Ads"
+  description="Boost your roofing leads with Roof QuotePRO® Instant Estimator. $500/mo, no setup fees. Only for roofers."
+>
+  <section class="section">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">Add-On For Roofers</span>
+      <h1>Boost Your Roofing Leads With Instant Estimates!</h1>
+      <p class="lead">Give homeowners an instant, aerial-measured roof estimate the moment they land on your ad — cut junk leads and boost close rates.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <PlanCard
+        name="Roof Instant Estimator Plan"
+        price="$500"
+        subprice="No Setup Fees!"
+        tagline="Perfect for roofers wanting to improve the quality of their leads!"
+        features={[
+          'Roof QuotePRO® Access',
+          '24/7 Email/SMS Support',
+          'Only For Roofers',
+        ]}
+        footnote="Price does not include multiple locations or businesses. Additional locations (up to 60 mile radius) can be purchased at $100/mo extra.*"
+        cta="Create Account →"
+        href="https://start.mylocalads.co/order-services-page"
+      />
+    </div>
+  </section>
+
+  <PlanFAQs />
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  .lead { font-size: 1.15rem; color: var(--color-text-muted); }
+</style>

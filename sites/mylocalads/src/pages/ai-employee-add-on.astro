@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PlanCard from '../components/PlanCard.astro';
+import PlanFAQs from '../components/PlanFAQs.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+---
+<BaseLayout
+  title="Supercharge Your CRM With AI Agents | My Local Ads"
+  description="AI Employee (Voice + Chat) — let AI handle calls and conversations with leads on auto-pilot. $250/mo, requires active CRM account."
+>
+  <section class="section">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">CRM Add-On</span>
+      <h1>Supercharge Your CRM With AI Agents</h1>
+      <p class="lead">Let AI handle inbound calls and chat conversations with your leads on auto-pilot — qualify prospects and book appointments before a human ever picks up.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <PlanCard
+        name="AI Employee (CRM Add-On)"
+        price="$250"
+        subprice="Requires active CRM account!"
+        tagline="Perfect for businesses wanting to use AI Agents to help qualify leads."
+        features={[
+          'AI Employee (Voice & Chat)',
+          'Runs inside your existing CRM',
+          '24/7 automated lead handling',
+        ]}
+        footnote="Price does not include usage rates. CRM & AI Employee subscriptions can be canceled at any time."
+        cta="Create Account →"
+        href="https://start.mylocalads.co/order-services-page"
+      />
+    </div>
+  </section>
+
+  <PlanFAQs />
+  <BottomCTA />
+</BaseLayout>
+
+<style>
+  .lead { font-size: 1.15rem; color: var(--color-text-muted); }
+</style>

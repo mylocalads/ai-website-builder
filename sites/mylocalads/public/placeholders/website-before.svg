@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Website before placeholder">
+  <rect width="800" height="500" fill="#f3f3f0"/>
+  <!-- Browser chrome -->
+  <rect x="0" y="0" width="800" height="36" fill="#e0e0dc"/>
+  <circle cx="18" cy="18" r="5" fill="#d4d4cf"/>
+  <circle cx="34" cy="18" r="5" fill="#d4d4cf"/>
+  <circle cx="50" cy="18" r="5" fill="#d4d4cf"/>
+  <rect x="90" y="10" width="200" height="16" rx="3" fill="#ffffff" stroke="#c8c8c3"/>
+  <!-- Nav -->
+  <rect x="0" y="36" width="800" height="34" fill="#4d4d4d"/>
+  <rect x="20" y="48" width="60" height="10" fill="#a8a8a8"/>
+  <rect x="100" y="48" width="50" height="10" fill="#a8a8a8"/>
+  <rect x="170" y="48" width="60" height="10" fill="#a8a8a8"/>
+  <rect x="250" y="48" width="50" height="10" fill="#a8a8a8"/>
+  <!-- Hero mess -->
+  <rect x="0" y="70" width="800" height="200" fill="#cccccc"/>
+  <text x="30" y="130" font-family="Times, serif" font-size="30" font-weight="bold" fill="#333">Welcome To Our Website</text>
+  <text x="30" y="160" font-family="Arial, sans-serif" font-size="14" fill="#555">Best remodeling contractor in the area. Call us today for a free quote!</text>
+  <text x="30" y="182" font-family="Arial, sans-serif" font-size="14" fill="#555">Family owned and operated since 1998.</text>
+  <rect x="30" y="200" width="120" height="34" fill="#7a9c3f"/>
+  <text x="50" y="222" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff">CLICK HERE</text>
+  <!-- Cluttered blocks -->
+  <rect x="20" y="290" width="240" height="80" fill="#ffffff" stroke="#cccccc"/>
+  <text x="30" y="312" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SERVICES</text>
+  <line x1="30" y1="322" x2="240" y2="322" stroke="#dddddd"/>
+  <text x="30" y="340" font-family="Arial, sans-serif" font-size="10" fill="#666">• Roofing • Siding • Windows</text>
+  <text x="30" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666">• Kitchens • Bathrooms • Additions</text>
+  <rect x="280" y="290" width="240" height="80" fill="#ffffff" stroke="#cccccc"/>
+  <text x="290" y="312" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">CONTACT</text>
+  <line x1="290" y1="322" x2="510" y2="322" stroke="#dddddd"/>
+  <text x="290" y="340" font-family="Arial, sans-serif" font-size="10" fill="#666">Phone: 555-1234</text>
+  <text x="290" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666">Email: info@example.com</text>
+  <rect x="540" y="290" width="240" height="80" fill="#ffffff" stroke="#cccccc"/>
+  <text x="550" y="312" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">HOURS</text>
+  <line x1="550" y1="322" x2="770" y2="322" stroke="#dddddd"/>
+  <text x="550" y="340" font-family="Arial, sans-serif" font-size="10" fill="#666">M-F 8am-5pm</text>
+  <text x="550" y="356" font-family="Arial, sans-serif" font-size="10" fill="#666">Weekends by appointment</text>
+  <!-- More clutter -->
+  <rect x="20" y="390" width="760" height="60" fill="#ffffe0" stroke="#e0d000"/>
+  <text x="40" y="415" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">SPECIAL OFFER! CALL NOW FOR 10% OFF! LIMITED TIME!</text>
+  <text x="40" y="435" font-family="Arial, sans-serif" font-size="10" fill="#666">Terms and conditions apply. Not valid with other offers. See store for details.</text>
+  <rect x="0" y="470" width="800" height="30" fill="#333333"/>
+  <text x="30" y="490" font-family="Arial, sans-serif" font-size="9" fill="#aaaaaa">© 2018 Copyright. All rights reserved.</text>
+</svg>
