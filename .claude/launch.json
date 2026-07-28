@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "firefly-cd",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "preview", "--prefix", "sites/firefly-cd", "--", "--port", "4399"],
+      "port": 4399,
+      "autoPort": false
+    },
+    {
+      "name": "mylocalads",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/mylocalads", "--", "--port", "4321"],
+      "port": 4321,
+      "autoPort": false
+    }
+  ]
+}
