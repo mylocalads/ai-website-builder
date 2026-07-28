@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SectionHead from '../../components/SectionHead.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -14,7 +13,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/se
   breadcrumbs={crumbs}
   pagePath="/service-area"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="areas">
     <div class="container">
       <SectionHead eyebrow="Where We Work" heading="Service areas" />

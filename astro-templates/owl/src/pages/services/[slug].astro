@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import HeroOwl from '../../components/HeroOwl.astro';
 import PartnerBadges from '../../components/PartnerBadges.astro';
 import AboutSection from '../../components/AboutSection.astro';
@@ -61,7 +60,6 @@ const faqLd = service.data.faqs.length > 0 ? {
   jsonLd={faqLd ? [serviceLd, faqLd] : [serviceLd]}
   pagePath={`/services/${service.slug}`}
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <HeroOwl
     eyebrow={`${marketCity}, ${marketState}`}
     headline={service.data.seo_h1 ?? `${service.data.title} in ${marketCity}, ${marketState}`}

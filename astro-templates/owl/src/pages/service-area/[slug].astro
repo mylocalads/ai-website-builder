@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import HeroOwl from '../../components/HeroOwl.astro';
 import PartnerBadges from '../../components/PartnerBadges.astro';
 import AboutSection from '../../components/AboutSection.astro';
@@ -67,7 +66,6 @@ const serviceLd = {
 };
 ---
 <BaseLayout title={title} description={description} breadcrumbs={crumbs} jsonLd={[serviceLd]} pagePath={path}>
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <HeroOwl
     eyebrow={`${area.data.name}, ${area.data.state}`}
     headline={`${site.business_name} — Serving ${area.data.name}, ${area.data.state}`}

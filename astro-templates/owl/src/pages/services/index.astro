@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ClosingCTA from '../../components/ClosingCTA.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -14,7 +13,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/service
   breadcrumbs={crumbs}
   pagePath="/services"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="services-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
     <div class="container">
       <h1>Services</h1>
