@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import HeroOwl from '../components/HeroOwl.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
@@ -19,7 +18,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   breadcrumbs={crumbs}
   pagePath="/our-work"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <HeroOwl
     eyebrow="Recent Projects"
     headline="Our work"

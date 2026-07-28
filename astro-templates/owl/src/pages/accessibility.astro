@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const updated = '2026-07-22';
@@ -13,7 +12,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Accessibility', href: '/ac
   breadcrumbs={crumbs}
   pagePath="/accessibility"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <article class="legal container">
     <h1>Accessibility Statement</h1>
     <p class="updated">Last updated: {updated}</p>

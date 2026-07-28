@@ -3,7 +3,6 @@
 export const prerender = false;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
@@ -19,7 +18,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
   breadcrumbs={crumbs}
   pagePath="/book"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="book-page">
     <div class="container">
       <SectionHead eyebrow="Free Inspection" heading="Get a 100% FREE estimate & book your inspection" />

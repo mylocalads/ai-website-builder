@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
@@ -19,7 +18,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact'
   breadcrumbs={crumbs}
   pagePath="/contact"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="contact-page">
     <div class="container">
       <SectionHead eyebrow="Get In Touch" heading="Send us a message" />

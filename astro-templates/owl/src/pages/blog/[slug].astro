@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import ClosingCTA from '../../components/ClosingCTA.astro';
 
 export async function getStaticPaths() {
@@ -38,7 +37,6 @@ const articleLd = {
   ogImage={post.data.hero_image}
   pagePath={path}
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <article class="post">
     <div class="container narrow">
       <div class="sheet">

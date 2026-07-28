@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import HeroOwl from '../components/HeroOwl.astro';
 import AboutSection from '../components/AboutSection.astro';
 import TrustBadges from '../components/TrustBadges.astro';
@@ -22,7 +21,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
   breadcrumbs={crumbs}
   pagePath="/about"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
 
   <HeroOwl
     eyebrow={`About ${site.business_name}`}

@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SectionHead from '../../components/SectionHead.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -21,7 +20,6 @@ function formatDate(iso: string): string {
   breadcrumbs={crumbs}
   pagePath="/blog"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="blog-index">
     <div class="container">
       <SectionHead eyebrow="Recent Articles" heading="Explore the blog" />

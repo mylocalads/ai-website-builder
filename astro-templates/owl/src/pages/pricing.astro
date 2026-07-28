@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import HeroOwl from '../components/HeroOwl.astro';
 import PricingTable from '../components/PricingTable.astro';
 import Financing from '../components/Financing.astro';
@@ -30,7 +29,6 @@ const roofCostRows = [
   breadcrumbs={crumbs}
   pagePath="/pricing"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <HeroOwl
     eyebrow="Transparent Pricing"
     headline="Pricing"
