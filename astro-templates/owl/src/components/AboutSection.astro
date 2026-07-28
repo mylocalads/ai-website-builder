@@ -7,8 +7,11 @@ export interface Props {
   photo_alt?: string;
   photo_position?: 'left' | 'right';
   bullets?: string[];
+  /** Required by CC BY / CC BY-SA sources. Rendered under the image. */
+  photo_credit?: string;
+  photo_credit_href?: string;
 }
-const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [] } = Astro.props;
+const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [], photo_credit, photo_credit_href } = Astro.props;
 ---
 <section class="about-section" aria-labelledby="about-heading">
   <div class="container">
@@ -31,7 +34,18 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
           </ul>
         )}
       </div>
-      {photo && <img src={photo} alt={photo_alt} class="about-photo" loading="lazy" />}
+      {photo && (
+        <figure class="about-figure">
+          <img src={photo} alt={photo_alt} class="about-photo" loading="lazy" />
+          {photo_credit && (
+            <figcaption class="photo-credit">
+              {photo_credit_href
+                ? <a href={photo_credit_href} rel="noopener nofollow">{photo_credit}</a>
+                : photo_credit}
+            </figcaption>
+          )}
+        </figure>
+      )}
     </div>
   </div>
 </section>
@@ -43,7 +57,13 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
   .about-grid.no-photo { grid-template-columns: minmax(0, 820px); }
   .about-grid.photo-left { grid-template-areas: 'photo copy'; }
   .about-grid.photo-left .about-copy { grid-area: copy; }
-  .about-grid.photo-left .about-photo { grid-area: photo; }
+  .about-grid.photo-left .about-figure { grid-area: photo; }
+  /* grid-area belongs ONLY under .photo-left. On the default grid there are
+     no named areas, so an unconditional `grid-area: photo` creates an
+     implicit one and collapses the copy column to a few characters wide. */
+  .about-figure { margin: 0; }
+  .photo-credit { margin: 0.4rem 0 0; font-size: 0.72rem; color: var(--color-muted); opacity: 0.8; }
+  .photo-credit a { color: inherit; }
   .about-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
   h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 2.75rem); line-height: 1.15; margin: 0 0 var(--space-2); }

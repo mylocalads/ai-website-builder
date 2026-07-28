@@ -1,8 +1,8 @@
 ---
 import { getEntry, getCollection } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
-const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">

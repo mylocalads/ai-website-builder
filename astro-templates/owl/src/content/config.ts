@@ -46,6 +46,9 @@ const service_areas = defineCollection({
     hero_photo: z.string().url().optional(),
     landmark_photo: z.string().url().optional(),
     landmark_alt: z.string().optional(),
+    // CC BY / CC BY-SA sources require visible attribution.
+    landmark_credit: z.string().optional(),
+    landmark_credit_href: z.string().url().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
       photo: z.string().url(),

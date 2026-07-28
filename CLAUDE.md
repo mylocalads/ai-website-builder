@@ -90,7 +90,7 @@ If a Maps lookup has already been run, you can re-download results from Apify wi
 - **Log everything** — every build and deploy goes in `sites/build-log.md`
 - **Playwright first, Firecrawl fallback** — for content scraping
 - **Maps lookup always runs** — regardless of whether URL or name was provided
-- **Up to 5 services + 5 service-area subpages** — enforced by dynamic route slicing
+- **Up to 5 services + service-area subpages** — enforced by dynamic route slicing. `firefly` caps areas at 5; `owl` caps at 6 so the HQ city can have a page alongside outlying towns. Raise deliberately: the cap exists to prevent a pile of thin near-duplicate pages.
 - **Copy angles drive messaging** — local research findings shape the hero, headlines, and initial content
 - **Compliance defaults ON** — ADA, GDPR, A2P flags default true across all sites
 

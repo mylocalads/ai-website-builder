@@ -25,7 +25,7 @@ export async function getStaticPaths() {
   const areas = await getCollection('service_areas');
   const validated = areas
     .sort((a, b) => a.data.order - b.data.order)
-    .slice(0, 5)
+    .slice(0, 6)
     .filter((a) => {
       const s = a.slug;
       if (RESERVED_SLUGS.has(s)) {
@@ -83,6 +83,8 @@ const serviceLd = {
     body={area.data.local_context || `${site.business_name} proudly serves ${area.data.name} and the surrounding areas with fast, honest, licensed work.`}
     photo={area.data.landmark_photo}
     photo_alt={area.data.landmark_alt ?? `${area.data.name} landmark`}
+    photo_credit={area.data.landmark_credit}
+    photo_credit_href={area.data.landmark_credit_href}
     photo_position="right"
   />
   <Gallery items={area.data.gallery ?? []} heading={`${area.data.name} work`} />
