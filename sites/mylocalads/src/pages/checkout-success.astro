@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BottomCTA from '../components/BottomCTA.astro';
+---
+<BaseLayout
+  title="Order Confirmed | My Local Ads"
+  description="Your My Local Ads order is confirmed. Our team will reach out with next steps."
+>
+  <section class="section">
+    <div class="container container-narrow text-center">
+      <span class="eyebrow">Order Confirmed</span>
+      <h1>You're All Set!</h1>
+      <p class="lead">
+        Thanks for your order. Our team will reach out within one business day with
+        onboarding next steps. Questions right now? Call
+        <a href="tel:+18664511915">(866) 451-1915</a>.
+      </p>
+      <a href="/" class="btn btn-primary">Back To Home</a>
+    </div>
+  </section>
+
+  <BottomCTA />
+</BaseLayout>
+
+<script>
+  // Payment succeeded — empty the cart so a refresh or a later visit does not
+  // show items the customer has already bought.
+  import { cart } from '../lib/cart-store.js';
+  cart.clear();
+</script>
