@@ -37,6 +37,23 @@ const json = (body, status) =>
     headers: { 'Content-Type': 'application/json' },
   });
 
+// Astro's request URL is the INTERNAL origin on Vercel's serverless runtime —
+// it resolves to https://localhost, which produced a broken "Back" link and a
+// broken post-payment redirect on Stripe's hosted page.
+//
+// Prefer the forwarded host the customer actually used, so this keeps working
+// through the DNS migration from mylocalads.vercel.app to mylocalads.co with no
+// code change. PUBLIC_SITE_URL is an optional override.
+function publicOrigin(request, url) {
+  const forwardedHost = request.headers.get('x-forwarded-host') ?? request.headers.get('host');
+  if (forwardedHost && !/^localhost(:|$)/.test(forwardedHost)) {
+    const proto = request.headers.get('x-forwarded-proto') ?? 'https';
+    return `${proto}://${forwardedHost}`;
+  }
+  if (process.env.PUBLIC_SITE_URL) return process.env.PUBLIC_SITE_URL.replace(/\/$/, '');
+  return url.origin;
+}
+
 export async function POST({ request, url }) {
   const secret = process.env.STRIPE_SECRET_KEY;
   if (!secret) {
@@ -52,11 +69,15 @@ export async function POST({ request, url }) {
     return json({ error: 'bad_request' }, 400);
   }
 
+  const origin = publicOrigin(request, url);
+
   let params;
   try {
     params = buildSessionParams(items, addOns, priceIds(), {
-      successUrl: `${url.origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancelUrl: `${url.origin}/cart`,
+      successUrl: `${origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
+      // Stripe's logo / "Back" control on the hosted page uses cancel_url, so
+      // this is what a customer clicking the brand mark lands on.
+      cancelUrl: `${origin}/`,
     });
   } catch (err) {
     if (err instanceof UnknownItemError) return json({ error: 'unknown_item' }, 400);

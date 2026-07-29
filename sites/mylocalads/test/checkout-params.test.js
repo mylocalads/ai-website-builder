@@ -88,6 +88,11 @@ describe('buildSessionParams', () => {
     expect(() => buildSessionParams(['gbp'], FIXTURE, PRICES, URLS)).not.toThrow();
   });
 
+  it('requires an explicit Terms of Service checkbox at checkout', () => {
+    expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).consent_collection)
+      .toEqual({ terms_of_service: 'required' });
+  });
+
   it('enables promotion codes so Stripe shows the promo field', () => {
     expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).allow_promotion_codes).toBe(true);
   });

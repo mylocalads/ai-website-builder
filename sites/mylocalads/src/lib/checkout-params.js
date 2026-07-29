@@ -47,6 +47,11 @@ export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, can
     // Stripe's hosted page shows the "Add promotion code" field. Codes are
     // created and managed in the Stripe dashboard.
     allow_promotion_codes: true,
+    // Requires an explicit "I agree to the terms of service" checkbox before
+    // paying, rather than the passive footer text. Stripe needs a Terms of
+    // service URL set under Settings → Checkout and Payment Links, or session
+    // creation fails.
+    consent_collection: { terms_of_service: 'required' },
   };
 
   if (trialApplies) {

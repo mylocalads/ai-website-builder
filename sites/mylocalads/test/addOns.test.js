@@ -101,8 +101,18 @@ describe('addOns data', () => {
     expect(addOns.every((a) => a.shipping === false)).toBe(true);
   });
 
+  // Tiles are ~330px wide; bullets longer than this wrap to a second line and
+  // break the tiles' even rhythm. 32 chars is the measured safe ceiling.
+  it('keeps every bullet short enough to render on one line', () => {
+    for (const a of addOns) {
+      for (const b of a.includes) {
+        expect(b.length, `${a.id}: "${b}" is ${b.length} chars`).toBeLessThanOrEqual(32);
+      }
+    }
+  });
+
   it('looks up by id', () => {
-    expect(byId('crm').title).toBe('My Local Ads CRM');
+    expect(byId('crm').title).toBe('Home Service CRM');
     expect(byId('nope')).toBeUndefined();
   });
 });
