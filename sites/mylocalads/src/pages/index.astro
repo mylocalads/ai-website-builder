@@ -431,6 +431,7 @@ const faqLd = {
   // keeps the cart bar in sync. Everything degrades to the fallback links if
   // this never runs.
   import { cart, addOns } from '../lib/cart-store.js';
+  import { startCheckout } from '../lib/checkout-client.js';
 
   const money = (cents) => `$${(cents / 100).toLocaleString('en-US')}`;
 
@@ -479,6 +480,27 @@ const faqLd = {
       }
       cart.toggle(id);
     });
+  });
+
+  // Cart bar checkout: creates the Stripe session and leaves the site, with no
+  // intermediate page. /cart remains available via the bar's Review link and
+  // the header badge.
+  const barCheckout = document.querySelector('[data-cart-checkout]');
+  const barError = document.querySelector('[data-cart-bar-error]');
+
+  barCheckout?.addEventListener('click', async () => {
+    barCheckout.disabled = true;
+    barCheckout.textContent = 'Starting checkout…';
+    barError.hidden = true;
+
+    const result = await startCheckout();
+    if (!result.ok) {
+      barError.innerHTML = result.html;
+      barError.hidden = false;
+    }
+
+    barCheckout.disabled = false;
+    barCheckout.textContent = 'Get Started →';
   });
 </script>
 

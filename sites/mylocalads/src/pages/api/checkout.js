@@ -16,7 +16,6 @@ import {
   buildSessionParams,
   UnknownItemError,
   MissingPriceError,
-  ConsentRequiredError,
 } from '../../lib/checkout-params.js';
 
 const priceIds = () => ({
@@ -42,9 +41,8 @@ export async function POST({ request, url }) {
   }
 
   let items;
-  let consent;
   try {
-    ({ items, consent } = await request.json());
+    ({ items } = await request.json());
   } catch {
     return json({ error: 'bad_request' }, 400);
   }
@@ -54,12 +52,9 @@ export async function POST({ request, url }) {
     params = buildSessionParams(items, addOns, priceIds(), {
       successUrl: `${url.origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancelUrl: `${url.origin}/cart`,
-      consent,
-      consentedAt: new Date().toISOString(),
     });
   } catch (err) {
     if (err instanceof UnknownItemError) return json({ error: 'unknown_item' }, 400);
-    if (err instanceof ConsentRequiredError) return json({ error: 'consent_required' }, 400);
     if (err instanceof MissingPriceError) {
       return json({ error: 'stripe_not_configured', fallback: true }, 503);
     }

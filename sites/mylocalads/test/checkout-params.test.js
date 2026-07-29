@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildSessionParams, UnknownItemError, MissingPriceError, ConsentRequiredError } from '../src/lib/checkout-params.js';
+import { buildSessionParams, UnknownItemError, MissingPriceError } from '../src/lib/checkout-params.js';
 
 // Fixture keeps one-time and shipping cases covered even though the current
 // live catalog is all-recurring — so those branches stay verified if a
@@ -18,8 +18,7 @@ const PRICES = {
   'nfc-cards': 'price_nfc',
 };
 
-// ToS consent is required for every call; individual tests override it.
-const URLS = { successUrl: 'https://x.co/ok', cancelUrl: 'https://x.co/cart', consent: { tos: true } };
+const URLS = { successUrl: 'https://x.co/ok', cancelUrl: 'https://x.co/cart' };
 
 describe('buildSessionParams', () => {
   it('uses payment mode when nothing recurs', () => {
@@ -83,36 +82,14 @@ describe('buildSessionParams', () => {
     expect(() => buildSessionParams(['crm'], FIXTURE, {}, URLS)).toThrow(MissingPriceError);
   });
 
-  it('throws ConsentRequiredError when ToS is not accepted', () => {
-    expect(() => buildSessionParams(['gbp'], FIXTURE, PRICES, { ...URLS, consent: { tos: false } }))
-      .toThrow(ConsentRequiredError);
+  // Terms of Service / Privacy acceptance happens on Stripe's hosted page, so
+  // the builder deliberately does not gate on a consent flag.
+  it('does not require a consent flag', () => {
+    expect(() => buildSessionParams(['gbp'], FIXTURE, PRICES, URLS)).not.toThrow();
   });
 
-  it('throws ConsentRequiredError when consent is absent entirely', () => {
-    expect(() => buildSessionParams(['gbp'], FIXTURE, PRICES, { ...URLS, consent: undefined }))
-      .toThrow(ConsentRequiredError);
-  });
-
-  it('rejects a truthy-but-not-true ToS value', () => {
-    expect(() => buildSessionParams(['gbp'], FIXTURE, PRICES, { ...URLS, consent: { tos: 'yes' } }))
-      .toThrow(ConsentRequiredError);
-  });
-
-  // TCPA marketing consent is optional by law and must never gate a purchase.
-  it('allows checkout when TCPA consent is declined', () => {
-    const p = buildSessionParams(['gbp'], FIXTURE, PRICES, { ...URLS, consent: { tos: true, tcpa: false } });
-    expect(p.metadata.consent_tcpa_marketing).toBe('false');
-  });
-
-  it('records TCPA consent when granted', () => {
-    const p = buildSessionParams(['gbp'], FIXTURE, PRICES, { ...URLS, consent: { tos: true, tcpa: true } });
-    expect(p.metadata.consent_tcpa_marketing).toBe('true');
-    expect(p.metadata.consent_tos).toBe('true');
-  });
-
-  it('records the consent timestamp when supplied', () => {
-    const p = buildSessionParams(['gbp'], FIXTURE, PRICES, { ...URLS, consentedAt: '2026-07-28T12:00:00.000Z' });
-    expect(p.metadata.consented_at).toBe('2026-07-28T12:00:00.000Z');
+  it('enables promotion codes so Stripe shows the promo field', () => {
+    expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).allow_promotion_codes).toBe(true);
   });
 
   // Trust boundary: the client sends ids only. Anything else it sends must have

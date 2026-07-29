@@ -3,9 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BottomCTA from '../components/BottomCTA.astro';
 
 // Two-column cart: line items on the left, a sticky order summary on the right
-// that collapses under the items on mobile. Consent is collected here rather
-// than on Stripe's page so the agreed text is ours and is captured before the
-// session is created.
+// that collapses under the items on mobile. Reachable from the header badge and
+// the cart bar's Review link; the bar itself checks out directly.
+//
+// Terms of Service and Privacy acceptance happens on Stripe's hosted page.
 ---
 <BaseLayout
   title="Your Cart | My Local Ads"
@@ -64,34 +65,14 @@ import BottomCTA from '../components/BottomCTA.astro';
             </div>
             <p class="cart-recurring-note" data-recurring-note></p>
 
-            <div class="cart-consents">
-              <label class="cart-consent">
-                <input type="checkbox" data-consent-tos />
-                <span>
-                  I agree to the
-                  <a href="https://start.mylocalads.co/terms-of-service" target="_blank" rel="noopener">Terms of Service</a>
-                  and
-                  <a href="https://start.mylocalads.co/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>,
-                  including the billing terms for the items above.
-                </span>
-              </label>
-
-              <label class="cart-consent">
-                <input type="checkbox" data-consent-tcpa />
-                <span>
-                  I consent to receive marketing text messages, calls, and emails from
-                  My Local Ads at the number and email I provide, including messages sent
-                  by autodialer. Consent is not a condition of purchase. Message and data
-                  rates may apply. Message frequency varies. Reply STOP to unsubscribe.
-                </span>
-              </label>
-            </div>
-
-            <button type="button" class="btn btn-primary cart-checkout" data-checkout disabled>
+            <button type="button" class="btn btn-primary cart-checkout" data-checkout>
               Checkout →
             </button>
-            <p class="cart-consent-hint" data-consent-hint>Accept the Terms of Service to continue.</p>
             <p class="cart-error" data-cart-error hidden></p>
+
+            <p class="cart-terms">
+              Terms of Service and Privacy Policy are presented at payment.
+            </p>
 
             <p class="cart-secure">
               <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -110,28 +91,13 @@ import BottomCTA from '../components/BottomCTA.astro';
 
 <script>
   import { cart, addOns } from '../lib/cart-store.js';
+  import { startCheckout } from '../lib/checkout-client.js';
 
   const money = (cents) => `$${(cents / 100).toLocaleString('en-US')}`;
   const $ = (sel) => document.querySelector(sel);
   const byId = (id) => addOns.find((a) => a.id === id);
 
-  const SUPPORT_HTML =
-    'Call <a href="tel:+18664511915">(866) 451-1915</a> or ' +
-    '<a href="https://start.mylocalads.co/book-now-v2" rel="noopener">book a call</a>.';
-
-  const tos = $('[data-consent-tos]');
-  const tcpa = $('[data-consent-tcpa]');
   const checkoutBtn = $('[data-checkout]');
-  const hint = $('[data-consent-hint]');
-
-  // ToS is required to transact. TCPA marketing consent is optional by law —
-  // it must not gate the purchase — so it is recorded but never blocks.
-  function syncConsent() {
-    checkoutBtn.disabled = !tos.checked;
-    hint.hidden = tos.checked;
-  }
-  tos.addEventListener('change', syncConsent);
-  syncConsent();
 
   cart.subscribe((items) => {
     const empty = items.length === 0;
@@ -227,40 +193,14 @@ import BottomCTA from '../components/BottomCTA.astro';
     checkoutBtn.textContent = 'Starting checkout…';
     err.hidden = true;
 
-    try {
-      const res = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: cart.items(),
-          consent: { tos: tos.checked, tcpa: tcpa.checked },
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
-
-      if (res.ok && data.url) {
-        window.location.href = data.url;
-        return;
-      }
-
-      if (data.error === 'unknown_item') {
-        cart.clear();
-        err.textContent = 'Some items are no longer available and have been removed from your cart.';
-      } else if (data.error === 'consent_required') {
-        err.textContent = 'Please accept the Terms of Service to continue.';
-      } else if (data.fallback) {
-        err.innerHTML = `Online checkout isn't available right now. ${SUPPORT_HTML}`;
-      } else {
-        err.innerHTML = `We couldn't start checkout. ${SUPPORT_HTML}`;
-      }
+    const result = await startCheckout();
+    if (!result.ok) {
+      err.innerHTML = result.html;
       err.hidden = false;
-    } catch {
-      err.textContent = 'Network error. Please check your connection and try again.';
-      err.hidden = false;
-    } finally {
-      checkoutBtn.textContent = 'Checkout →';
-      syncConsent();
     }
+
+    checkoutBtn.disabled = false;
+    checkoutBtn.textContent = 'Checkout →';
   });
 </script>
 
@@ -408,43 +348,14 @@ import BottomCTA from '../components/BottomCTA.astro';
     margin: 0.5rem 0 0;
   }
 
-  /* CONSENT */
-  .cart-consents {
-    margin: var(--space-3) 0 var(--space-2);
-    padding-top: var(--space-3);
-    border-top: 1px solid var(--color-border);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-  .cart-consent {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
-    font-size: 0.78rem;
-    line-height: 1.45;
-    color: var(--color-text-muted);
-    cursor: pointer;
-  }
-  .cart-consent input[type='checkbox'] {
-    flex-shrink: 0;
-    width: 16px;
-    height: 16px;
-    margin-top: 0.12rem;
-    accent-color: #faf24c;
-    cursor: pointer;
-  }
-  .cart-consent a { color: var(--color-accent-soft); }
-
   .cart-checkout { width: 100%; justify-content: center; }
   .cart-checkout:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: none; }
-  .cart-consent-hint {
+  .cart-terms {
     color: var(--color-text-subtle);
-    font-size: 0.78rem;
-    margin: 0.5rem 0 0;
+    font-size: 0.75rem;
+    margin: 0.6rem 0 0;
     text-align: center;
   }
-  .cart-consent-hint[hidden] { display: none; }
   .cart-error { color: var(--color-orange); font-size: 0.85rem; margin: 0.6rem 0 0; }
   .cart-error[hidden] { display: none; }
   .cart-secure {

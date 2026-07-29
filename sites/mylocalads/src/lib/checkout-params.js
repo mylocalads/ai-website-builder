@@ -7,30 +7,20 @@
 //   - trial_period_days lives on subscription_data and applies to the WHOLE
 //     subscription, so it is only set when the trial item is the entire cart.
 //
+// Terms of Service and Privacy acceptance is handled on Stripe's hosted page,
+// which displays them at the point of payment.
+//
 // Trust boundary: `priceIds` comes from server env, never from the request.
 // The caller passes item ids only; nothing a client sends can change a price.
 
 export class UnknownItemError extends Error {}
 export class MissingPriceError extends Error {}
-export class ConsentRequiredError extends Error {}
 
 const SHIPPING_COUNTRIES = ['US', 'CA'];
 
-export function buildSessionParams(
-  itemIds,
-  catalog,
-  priceIds,
-  { successUrl, cancelUrl, consent = {}, consentedAt } = {},
-) {
+export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, cancelUrl } = {}) {
   if (!Array.isArray(itemIds) || itemIds.length === 0) {
     throw new UnknownItemError('Cart is empty');
-  }
-
-  // Terms of Service acceptance is required to transact. TCPA marketing consent
-  // is optional by law — it must never be a condition of purchase — so it is
-  // recorded but never blocks checkout.
-  if (consent.tos !== true) {
-    throw new ConsentRequiredError('Terms of Service must be accepted');
   }
 
   const records = itemIds.map((id) => {
@@ -53,14 +43,10 @@ export function buildSessionParams(
     line_items,
     success_url: successUrl,
     cancel_url: cancelUrl,
-    metadata: {
-      items: records.map((r) => r.id).join(','),
-      // Consent evidence travels with the Stripe object so there is a durable
-      // record tied to the transaction, not just a checkbox that was ticked.
-      consent_tos: 'true',
-      consent_tcpa_marketing: consent.tcpa === true ? 'true' : 'false',
-      ...(consentedAt ? { consented_at: consentedAt } : {}),
-    },
+    metadata: { items: records.map((r) => r.id).join(',') },
+    // Stripe's hosted page shows the "Add promotion code" field. Codes are
+    // created and managed in the Stripe dashboard.
+    allow_promotion_codes: true,
   };
 
   if (trialApplies) {
