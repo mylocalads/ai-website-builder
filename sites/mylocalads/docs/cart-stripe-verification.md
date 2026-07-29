@@ -1,105 +1,143 @@
-# Cart — Stripe Test-Mode Verification
+# Cart — Stripe Verification
 
-**Date:** 2026-07-28
-**Mode:** Stripe **test** mode
-**Plan:** `docs/superpowers/plans/2026-07-28-mylocalads-addon-cart.md` (Tasks 12–13)
+**Last verified:** 2026-07-29 against **live** Stripe
+**Plan:** `docs/superpowers/plans/2026-07-28-mylocalads-addon-cart.md`
 
-Observed results, not expected results. Every row below was executed against the
-live Stripe test API and the created session was retrieved and inspected.
+Observed results, not expected results. Sessions were created against the live
+API and the hosted checkout pages were read to confirm actual amounts. **No
+payment was completed** — creating and viewing a session charges nothing.
 
-## Price ID mapping
+## Catalog
 
-Resolved by querying the Stripe API. All four amounts match the tile prices.
+| Cart id | Plan label | Title | Price | Billing | Requires |
+|---|---|---|---|---|---|
+| `crm` | CRM Plan | My Local Ads CRM | $97/mo | recurring, 7-day trial | — |
+| `ai-agents` | Conversion Plan | CRM AI Voice + AI Chat | $250/mo | recurring | `crm` |
+| `seo-plan` | SEO Plan | Google Business Profile Management | $250/mo | recurring | — |
+| `website` | Website Plan | Unlimited Changes | $300/mo | recurring | `crm` |
+| `ppl-ads-3mo` / `-6mo` / `-12mo` | Ads Plan | Pay-Per-Lead Ads Setup | $2,500 one-time (list $5,000) | one-time | — |
 
-| Add-on | Stripe product | Amount | Type |
-|---|---|---|---|
-| `crm` | Growth | $97.00 | recurring/month |
-| `ai-agents` | AI Employee (Add-On) | $250.00 | recurring/month |
-| `website` | Custom Website Unlimited Edits | $300.00 | recurring/month |
-| `roof-quote-pro` | Instant Estimator Powered By Roofle® | $500.00 | recurring/month |
-| `seo-plan` | **no test price exists** | — | — |
+The three Ads Plan entries are one Stripe product (`STRIPE_PRICE_ADS_SETUP`)
+offered at three commitment terms. They share `group: 'ppl-ads'`, so adding one
+displaces the others — the cart can never hold two.
 
-## Checkout session matrix
+Roof Quote PRO was removed: no price ID exists and it is not in the current
+catalog.
 
-| Cart | Mode | amount_total | Line items | Result |
-|---|---|---|---|---|
-| `crm` | subscription | **$0.00** | Growth $0.00 | ✅ trial applied |
-| `crm` + `ai-agents` | subscription | **$347.00** | Growth $97.00, AI Employee $250.00 | ✅ no trial |
-| `website` (auto-adds `crm`) | subscription | **$397.00** | Website $300.00, Growth $97.00 | ✅ dependency auto-added |
-| `crm` + `ai-agents` + `website` + `roof-quote-pro` | subscription | **$1,147.00** | 4 line items | ✅ no trial, one subscription |
-| `roof-quote-pro` | subscription | **$500.00** | Instant Estimator $500.00 | ✅ |
-| `seo-plan` | — | — | — | ✅ 503 `stripe_not_configured` fallback |
+## Live amount verification
 
-**The trial rule is proven, not assumed.** The same CRM price ID renders
-`$0.00` when it is the whole cart and `$97.00` when bundled with AI Agents.
-That is the design decision working: a customer cannot get a free week of a
-website build or AI Agents by adding CRM to the cart.
+Cart: all four monthly plans + Ads Plan 6-month.
 
-`payment` mode and shipping collection were **not** exercised — the catalog is
-now all-recurring (NFC retired, GBP became a recurring SEO Plan). Those code
-paths remain unit-tested in `test/checkout-params.test.js` against a fixture.
+Stripe's hosted page showed:
 
-## Failure paths
+```
+Pay My Local Ads LLC
+$3,397.00
+Then $897.00 per month
+Add code
+```
+
+Reconciles exactly against the tiles:
+
+| | Amount |
+|---|---|
+| CRM | $97 |
+| Conversion Plan | $250 |
+| SEO Plan | $250 |
+| Website Plan | $300 |
+| **Monthly** | **$897** ✅ matches "Then $897.00 per month" |
+| Ads Plan setup (one-time) | $2,500 |
+| **Due today** | **$3,397** ✅ matches "$3,397.00" |
+
+This confirms the Ads Plan Stripe price is **$2,500**, not the $5,000 list price,
+and that all four monthly prices are as displayed. The cart bar's
+"$897/mo + $2,500 once" and the cart page's "Due today $3,397" both agree with
+Stripe.
+
+"Add code" confirms `allow_promotion_codes: true` — a promo code can still be
+applied on top of the 50%-off setup price.
+
+## Trial verification (live)
+
+Cart: `crm` alone. Stripe's hosted page showed:
+
+```
+Try CRM Plan - LeadConnector
+7 days free
+Then $97.00 per month starting August 5, 2026
+Includes 7-day free trial if purchased by itself.
+```
+
+August 5 is 7 days from the verification date. Note the product description in
+Stripe says **"if purchased by itself"** — the same rule the code enforces.
+
+Earlier test-mode runs proved the inverse: the same CRM price renders $0.00 alone
+and $97.00 when bundled, so the trial is dropped whenever CRM is combined.
+
+## Session matrix (live, all created successfully)
+
+| Cart | Result |
+|---|---|
+| `crm` | ✅ subscription, 7-day trial, $0 today |
+| `ai-agents` + `crm` | ✅ session created |
+| `seo-plan` | ✅ session created |
+| `website` + `crm` | ✅ session created |
+| `ppl-ads-6mo` | ✅ session created |
+| all five | ✅ $3,397 today, then $897/mo |
+
+## Failure paths (verified test mode)
 
 | Request | Status | Body |
 |---|---|---|
-| `{"items":["ghost"]}` | 400 | `{"error":"unknown_item"}` |
-| `{"items":[]}` | 400 | `{"error":"unknown_item"}` |
-| malformed JSON body | 400 | `{"error":"bad_request"}` |
-| `{"items":["seo-plan"]}` (no price configured) | 503 | `{"error":"stripe_not_configured","fallback":true}` |
+| unknown item id | 400 | `{"error":"unknown_item"}` |
+| empty cart | 400 | `{"error":"unknown_item"}` |
+| malformed JSON | 400 | `{"error":"bad_request"}` |
+| price not configured | 503 | `{"error":"stripe_not_configured","fallback":true}` |
 
 ## Tampering
 
-Posted a payload with client-supplied pricing:
-
-```json
-{"items":["crm","ai-agents"],"price":1,"unit_amount":1,
- "line_items":[{"price_data":{"unit_amount":1}}]}
-```
-
-Session created charged **$347.00** — the injected fields were ignored entirely.
-Prices are re-derived server-side from env vars; only item IDs cross the trust
-boundary.
+A payload carrying `unit_amount: 1` and a fabricated `price_data` still produced
+the correct charge. Prices are re-derived server-side from env vars; only item
+ids cross the trust boundary.
 
 ## Secret handling
 
-- `.env` is gitignored and does not appear in `git status`.
-- Build output searched for `sk_test`, `sk_live`, and the literal key value:
-  **no matches** in `dist/` or `.vercel/output/`.
+- `.env` is gitignored; no env file is tracked.
+- Build output searched for `sk_test`, `sk_live`, and literal key values: no
+  matches in `dist/` or `.vercel/output/`.
 - The function bundle references `process.env.STRIPE_SECRET_KEY` as a runtime
   lookup, never an inlined value.
+- `STRIPE_SECRET_KEY` and `STRIPE_TEST_KEY` are marked Sensitive in Vercel, so
+  their values cannot be read back — `vercel env pull` returns `[SENSITIVE]`.
 
 ## Browser verification
 
 | Check | Result |
 |---|---|
-| 5 tiles render with checkmark bullets (6/3/4/5/4) | ✅ |
-| Buttons ship as product links, upgraded by JS | ✅ |
-| Cart bar hidden when empty | ✅ |
-| CRM alone → "Free for 7 days, then $97/mo" | ✅ |
-| Website → auto-adds CRM, CRM button reads "Added ✓", $397/mo | ✅ |
-| + SEO Plan → $647/mo | ✅ |
-| Cart page lines, totals, due-today, trial note | ✅ |
-| One-time subtotal row hidden (nothing is one-time) | ✅ |
-| Badge persists across pages and reloads | ✅ |
-| 375px and 320px — no horizontal overflow, header fits | ✅ |
+| 4 add-on tiles, bullets 6/8/7/7 | ✅ |
+| Plan-label kicker above each title | ✅ |
+| 3 PPL tiles with "Ads Plan" kicker | ✅ |
+| "Channels we run ads on:" label above Meta/Google | ✅ |
+| PPL setup fee $5,000 struck through → $2,500 | ✅ |
+| Two cart bars stay synced | ✅ |
+| Commit terms mutually exclusive (12-mo displaces 3-mo) | ✅ |
+| Website auto-adds CRM | ✅ |
+| Mixed cart reads "$897/mo + $2,500 once" | ✅ |
+| 375px and 320px — no horizontal overflow | ✅ |
 
 ## Unit tests
 
 ```
-✓ test/cart-core.test.js       (21 tests)
-✓ test/checkout-params.test.js (14 tests)
-✓ test/addOns.test.js          (10 tests)
-  45 passed
+✓ test/cart-core.test.js       (26 tests)
+✓ test/checkout-params.test.js (16 tests)
+✓ test/addOns.test.js          (14 tests)
+  56 passed
 ```
 
 ## Not yet verified
 
-1. **SEO Plan end-to-end** — no test-mode price ID exists. Currently returns the
-   fallback. Needs a `$250/mo` recurring price created in Stripe.
-2. **Live mode** — all IDs above are test mode. Live price IDs differ and must be
-   set separately in Vercel.
-3. **A real completed payment** — sessions were created and inspected, but no
-   checkout was carried through with card `4242 4242 4242 4242`, so the
-   post-payment redirect to `/checkout-success` and the cart-clearing behavior
-   are untested against a real Stripe redirect.
+**No payment has been completed.** Sessions were created and their amounts read,
+but no card was run, so the post-payment redirect to `/checkout-success` and the
+cart-clearing behaviour remain untested against a real Stripe redirect. Verifying
+this requires either a live purchase or test-mode price IDs (the current price
+IDs are live-only and do not exist in test mode).
