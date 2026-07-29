@@ -1,9 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { addOns, byId } from '../src/data/addOns.js';
+import { addOns, byId, bySection } from '../src/data/addOns.js';
 
 describe('addOns data', () => {
-  it('has five add-ons', () => {
-    expect(addOns).toHaveLength(5);
+  it('has seven entries: four add-ons plus three Ads Plan commit terms', () => {
+    expect(addOns).toHaveLength(7);
+    expect(bySection('addons')).toHaveLength(4);
+    expect(bySection('ppl')).toHaveLength(3);
   });
 
   it('gives every add-on the required fields', () => {
@@ -20,6 +22,8 @@ describe('addOns data', () => {
       expect(typeof a.fallbackHref, `${a.id}.fallbackHref`).toBe('string');
       expect(Array.isArray(a.requires), `${a.id}.requires`).toBe(true);
       expect(typeof a.shipping, `${a.id}.shipping`).toBe('boolean');
+      expect(typeof a.planLabel, `${a.id}.planLabel`).toBe('string');
+      expect(['addons', 'ppl'], `${a.id}.section`).toContain(a.section);
     }
   });
 
@@ -53,15 +57,44 @@ describe('addOns data', () => {
     }
   });
 
+  // Guards against a label and an amount drifting apart — the cart totals from
+  // priceCents while the tile displays priceLabel, so a mismatch would show one
+  // price and charge another. Compares thousands-separated, matching the label.
   it('states a price label consistent with priceCents', () => {
     for (const a of addOns) {
-      const dollars = a.priceCents / 100;
-      expect(a.priceLabel, `${a.id}`).toContain(String(dollars));
+      const formatted = (a.priceCents / 100).toLocaleString('en-US');
+      expect(a.priceLabel, `${a.id} label vs priceCents`).toContain(formatted);
     }
   });
 
-  it('is currently all-recurring, so every cart uses subscription mode', () => {
-    expect(addOns.every((a) => a.billing === 'recurring')).toBe(true);
+  it('states a was-price higher than the price actually charged', () => {
+    for (const a of addOns.filter((x) => x.wasPriceLabel)) {
+      const was = Number(a.wasPriceLabel.replace(/[$,]/g, '')) * 100;
+      expect(was, `${a.id}`).toBeGreaterThan(a.priceCents);
+    }
+  });
+
+  it('has exactly one one-time product: the Ads Plan setup fee', () => {
+    const oneTime = addOns.filter((a) => a.billing === 'one_time');
+    expect(oneTime).toHaveLength(3);
+    expect(oneTime.every((a) => a.group === 'ppl-ads')).toBe(true);
+  });
+
+  it('groups the three Ads Plan terms so only one can be carted', () => {
+    const ads = addOns.filter((a) => a.group === 'ppl-ads');
+    expect(ads).toHaveLength(3);
+    expect(new Set(ads.map((a) => a.priceCents)).size).toBe(1);
+  });
+
+  it('shows the struck-through list price only on the discounted Ads Plan', () => {
+    for (const a of addOns) {
+      if (a.group === 'ppl-ads') expect(a.wasPriceLabel).toBe('$5,000');
+      else expect(a.wasPriceLabel, `${a.id}`).toBeNull();
+    }
+  });
+
+  it('no longer includes Roof Quote PRO', () => {
+    expect(byId('roof-quote-pro')).toBeUndefined();
   });
 
   it('has no physical products, so no cart needs shipping', () => {
@@ -69,7 +102,7 @@ describe('addOns data', () => {
   });
 
   it('looks up by id', () => {
-    expect(byId('crm').title).toBe('CRM');
+    expect(byId('crm').title).toBe('My Local Ads CRM');
     expect(byId('nope')).toBeUndefined();
   });
 });

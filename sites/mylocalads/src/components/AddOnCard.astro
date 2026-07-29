@@ -17,7 +17,9 @@ export interface Props {
     id: string;
     title: string;
     subtitle: string;
+    planLabel: string;
     priceLabel: string;
+    wasPriceLabel: string | null;
     priceNote: string;
     includes: string[];
     fallbackHref: string;
@@ -36,12 +38,14 @@ const [, amount, unit] = addOn.priceLabel.match(/^(\$[\d,]+)(.*)$/) ?? [null, ad
   {addOn.trialDays && <div class="addon-tile-banner">7-Day Free Trial</div>}
 
   <div class="addon-tile-head">
-    <h3 class="addon-tile-name">{addOn.title}</h3>
+    <h3 class="addon-tile-plan">{addOn.planLabel}</h3>
+    <h4 class="addon-tile-name">{addOn.title}</h4>
     <p class="addon-tile-subtitle">{addOn.subtitle}</p>
   </div>
 
   <div class="addon-tile-price">
     <div class="addon-tile-price-row">
+      {addOn.wasPriceLabel && <span class="addon-tile-was">{addOn.wasPriceLabel}</span>}
       <span class="addon-tile-amount">{amount}</span>
       <span class="addon-tile-per">{unit}</span>
     </div>
@@ -107,6 +111,15 @@ const [, amount, unit] = addOn.priceLabel.match(/^(\$[\d,]+)(.*)$/) ?? [null, ad
   }
   .addon-tile:has(.addon-tile-banner) { padding-top: calc(var(--space-4) + 1.75rem); }
 
+  .addon-tile-plan {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-soft);
+    margin: 0 0 0.3rem;
+  }
   .addon-tile-name {
     font-family: var(--font-display);
     font-weight: 700;
@@ -134,6 +147,14 @@ const [, amount, unit] = addOn.priceLabel.match(/^(\$[\d,]+)(.*)$/) ?? [null, ad
     font-family: var(--font-body);
     font-size: 0.85rem;
     color: var(--color-text-muted);
+  }
+  .addon-tile-was {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--color-text-subtle);
+    text-decoration: line-through;
+    line-height: 1;
   }
   .addon-tile-note { font-size: 0.8rem; color: var(--color-text-subtle); }
   .addon-tile-badge {

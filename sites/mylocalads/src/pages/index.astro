@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BottomCTA from '../components/BottomCTA.astro';
 import AddOnCard from '../components/AddOnCard.astro';
 import CartBar from '../components/CartBar.astro';
-import { addOns } from '../data/addOns.js';
+import { addOns, bySection } from '../data/addOns.js';
 
 const partners = [
   { name: 'Klaus Roofing Systems', logo: 'https://msgsndr-private.storage.googleapis.com/locationPhotos/39c82c0b-1eeb-477e-8070-19517afe234e.png' },
@@ -26,6 +26,7 @@ const ppl_baseIncluded = [
 const pplTiers = [
   {
     name: '3-Month Commit',
+    cartId: 'ppl-ads-3mo',
     subtitle: 'For testing the waters',
     priceBooked: '$85',
     priceForm: '$35',
@@ -36,6 +37,7 @@ const pplTiers = [
   },
   {
     name: '6-Month Commit',
+    cartId: 'ppl-ads-6mo',
     subtitle: 'Most popular',
     priceBooked: '$75',
     priceForm: '$25',
@@ -48,6 +50,7 @@ const pplTiers = [
   },
   {
     name: '12-Month Commit',
+    cartId: 'ppl-ads-12mo',
     subtitle: 'Best value, biggest savings',
     priceBooked: '$65',
     priceForm: '$15',
@@ -291,10 +294,12 @@ const faqLd = {
           <div class={`ppl-tile${t.highlight ? ' ppl-tile-highlight' : ''}`}>
             {t.highlight && <div class="ppl-tile-banner">Most Popular</div>}
             <div class="ppl-tile-head">
-              <h3 class="ppl-tile-name">{t.name}</h3>
+              <h3 class="ppl-tile-plan">Ads Plan</h3>
+              <h4 class="ppl-tile-name">{t.name}</h4>
               <p class="ppl-tile-subtitle">{t.subtitle}</p>
             </div>
 
+            <div class="ppl-tile-channels-label">Channels we run ads on:</div>
             <div class="ppl-tile-channels" aria-label="Advertising channels">
               <span class="channel-badge">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true">
@@ -331,10 +336,26 @@ const faqLd = {
               </ul>
             </div>
 
-            <a href={t.ctaHref} class={`btn ${t.ctaStyle} ppl-tile-cta`} rel="noopener">{t.ctaLabel}</a>
+            <div class="ppl-tile-setup">
+              <span class="ppl-tile-setup-was">$5,000</span>
+              <span class="ppl-tile-setup-now">$2,500</span>
+              <span class="ppl-tile-setup-label">one-time setup</span>
+            </div>
+
+            <div class="ppl-tile-actions">
+              <a
+                href={t.ctaHref}
+                class="btn btn-primary btn-sm ppl-tile-cart"
+                data-cart-toggle={t.cartId}
+                rel="noopener"
+              >Add to cart</a>
+              <a href={t.ctaHref} class="ppl-tile-book" rel="noopener">or book a call</a>
+            </div>
           </div>
         ))}
       </div>
+
+      <CartBar />
 
       <p class="disclaimer text-center ppl-disclaimer">
         Prices do not include ad budget. Minimum $2,500 advertising budget required. Terms of Service apply.
@@ -351,7 +372,7 @@ const faqLd = {
         <p class="section-lead">Get better marketing results with our partner tools and custom white-glove services.</p>
       </div>
       <div class="addon-grid">
-        {addOns.map((a) => <AddOnCard addOn={a} />)}
+        {bySection('addons').map((a) => <AddOnCard addOn={a} />)}
       </div>
       <CartBar />
     </div>
@@ -452,17 +473,19 @@ const faqLd = {
       el.textContent = inCart ? 'Added ✓' : 'Add to cart';
     });
 
-    const bar = document.querySelector('[data-cart-bar]');
-    if (!bar) return;
-
-    bar.hidden = items.length === 0;
-    if (items.length === 0) return;
-
+    // Two bars on this page (Pay-Per-Lead and Growth Add-Ons). Both read the
+    // same store, so they always show the same cart.
+    const bars = document.querySelectorAll('[data-cart-bar]');
     const t = cart.totals();
-    bar.querySelector('[data-cart-total]').textContent = summaryLine(t);
-    bar.querySelector('[data-cart-items]').textContent = items.map(titleOf).join(' · ');
-    bar.querySelector('[data-cart-count]').textContent =
-      `${t.count} item${t.count === 1 ? '' : 's'}`;
+
+    bars.forEach((bar) => {
+      bar.hidden = items.length === 0;
+      if (items.length === 0) return;
+      bar.querySelector('[data-cart-total]').textContent = summaryLine(t);
+      bar.querySelector('[data-cart-items]').textContent = items.map(titleOf).join(' · ');
+      bar.querySelector('[data-cart-count]').textContent =
+        `${t.count} item${t.count === 1 ? '' : 's'}`;
+    });
   });
 
   document.querySelectorAll('[data-cart-toggle]').forEach((el) => {
@@ -485,22 +508,23 @@ const faqLd = {
   // Cart bar checkout: creates the Stripe session and leaves the site, with no
   // intermediate page. /cart remains available via the bar's Review link and
   // the header badge.
-  const barCheckout = document.querySelector('[data-cart-checkout]');
-  const barError = document.querySelector('[data-cart-bar-error]');
+  document.querySelectorAll('[data-cart-checkout]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const err = btn.closest('.cart-bar')?.parentElement
+        ?.querySelector('[data-cart-bar-error]');
+      btn.disabled = true;
+      btn.textContent = 'Starting checkout…';
+      if (err) err.hidden = true;
 
-  barCheckout?.addEventListener('click', async () => {
-    barCheckout.disabled = true;
-    barCheckout.textContent = 'Starting checkout…';
-    barError.hidden = true;
+      const result = await startCheckout();
+      if (!result.ok && err) {
+        err.innerHTML = result.html;
+        err.hidden = false;
+      }
 
-    const result = await startCheckout();
-    if (!result.ok) {
-      barError.innerHTML = result.html;
-      barError.hidden = false;
-    }
-
-    barCheckout.disabled = false;
-    barCheckout.textContent = 'Get Started →';
+      btn.disabled = false;
+      btn.textContent = 'Get Started →';
+    });
   });
 </script>
 
@@ -793,7 +817,42 @@ const faqLd = {
     padding: 0.4rem 0.5rem;
   }
   .ppl-tile-head {}
+  .ppl-tile-plan {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--color-accent-soft); margin: 0 0 0.3rem;
+  }
   .ppl-tile-name { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; margin: 0 0 0.25rem; color: #fff; }
+  .ppl-tile-channels-label {
+    font-family: var(--font-body); font-size: 0.85rem;
+    color: var(--color-text-muted); margin-bottom: 0.5rem;
+  }
+  .ppl-tile-setup {
+    display: flex; align-items: baseline; gap: 0.45rem; flex-wrap: wrap;
+    padding-top: var(--space-2); border-top: 1px solid var(--color-border);
+  }
+  .ppl-tile-setup-was {
+    font-family: var(--font-display); font-weight: 700; font-size: 1rem;
+    color: var(--color-text-subtle); text-decoration: line-through;
+  }
+  .ppl-tile-setup-now {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.5rem;
+    color: #fff; line-height: 1;
+  }
+  .ppl-tile-setup-label { font-size: 0.8rem; color: var(--color-text-muted); }
+  .ppl-tile-actions {
+    display: flex; align-items: center; gap: var(--space-2);
+    flex-wrap: wrap; margin-top: auto;
+  }
+  .ppl-tile-cart[data-in-cart='true'] {
+    background: transparent; color: var(--color-green);
+    border: 1px solid var(--color-green); box-shadow: none;
+  }
+  .ppl-tile-book { font-size: 0.85rem; color: var(--color-text-muted); text-decoration: underline; }
+  .ppl-tile-book:hover { color: #fff; }
+  .ppl-tile:has(.ppl-tile-cart[data-in-cart='true']) {
+    box-shadow: inset 0 0 0 1px rgba(250, 242, 76, 0.45);
+  }
   .ppl-tile-subtitle { color: var(--color-text-muted); font-size: 0.9rem; margin: 0; }
   .ppl-tile-price { position: relative; }
   .ppl-tile-price-row { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.35rem; }
@@ -819,7 +878,6 @@ const faqLd = {
     padding: 0.3rem 0; display: flex; align-items: start; gap: 0.6rem;
     font-size: 0.92rem; color: var(--color-text);
   }
-  .ppl-tile-cta { align-self: flex-start; margin-top: auto; }
   .ppl-disclaimer { max-width: 720px; margin: var(--space-4) auto 0; }
   @media (max-width: 900px) {
     .ppl-tiles { grid-template-columns: 1fr; }

@@ -18,12 +18,17 @@ import {
   MissingPriceError,
 } from '../../lib/checkout-params.js';
 
+// The three Ads Plan commit terms are one Stripe product (the setup fee), so
+// they all resolve to the same price. cart-core keeps them mutually exclusive,
+// and the chosen term reaches Stripe via session metadata.
 const priceIds = () => ({
   'crm': process.env.STRIPE_PRICE_CRM,
   'ai-agents': process.env.STRIPE_PRICE_AI_AGENTS,
   'seo-plan': process.env.STRIPE_PRICE_SEO_PLAN,
   'website': process.env.STRIPE_PRICE_WEBSITE,
-  'roof-quote-pro': process.env.STRIPE_PRICE_ROOF_QUOTE_PRO,
+  'ppl-ads-3mo': process.env.STRIPE_PRICE_ADS_SETUP,
+  'ppl-ads-6mo': process.env.STRIPE_PRICE_ADS_SETUP,
+  'ppl-ads-12mo': process.env.STRIPE_PRICE_ADS_SETUP,
 });
 
 const json = (body, status) =>

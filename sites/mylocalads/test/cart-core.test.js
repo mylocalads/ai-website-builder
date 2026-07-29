@@ -4,11 +4,15 @@ import { addItem, removeItem, sanitize, computeTotals, dependentsOf } from '../s
 // Fixture rather than the real catalog: these tests describe the LOGIC, and
 // should not break when a price changes or an add-on is added/removed.
 const FIXTURE = [
-  { id: 'crm', priceCents: 9700, billing: 'recurring', trialDays: 7, requires: [], shipping: false },
-  { id: 'website', priceCents: 30000, billing: 'recurring', trialDays: null, requires: ['crm'], shipping: false },
-  { id: 'ai-agents', priceCents: 25000, billing: 'recurring', trialDays: null, requires: ['crm'], shipping: false },
-  { id: 'gbp', priceCents: 50000, billing: 'one_time', trialDays: null, requires: [], shipping: false },
-  { id: 'nfc-cards', priceCents: 15000, billing: 'one_time', trialDays: null, requires: [], shipping: true },
+  { id: 'crm', priceCents: 9700, billing: 'recurring', trialDays: 7, requires: [], group: null, shipping: false },
+  { id: 'website', priceCents: 30000, billing: 'recurring', trialDays: null, requires: ['crm'], group: null, shipping: false },
+  { id: 'ai-agents', priceCents: 25000, billing: 'recurring', trialDays: null, requires: ['crm'], group: null, shipping: false },
+  { id: 'gbp', priceCents: 50000, billing: 'one_time', trialDays: null, requires: [], group: null, shipping: false },
+  { id: 'nfc-cards', priceCents: 15000, billing: 'one_time', trialDays: null, requires: [], group: null, shipping: true },
+  // Mutually exclusive variants of one product (same price, different term).
+  { id: 'ads-3mo', priceCents: 250000, billing: 'one_time', trialDays: null, requires: [], group: 'ads', shipping: false },
+  { id: 'ads-6mo', priceCents: 250000, billing: 'one_time', trialDays: null, requires: [], group: 'ads', shipping: false },
+  { id: 'ads-12mo', priceCents: 250000, billing: 'one_time', trialDays: null, requires: [], group: 'ads', shipping: false },
 ];
 
 describe('addItem', () => {
@@ -49,6 +53,34 @@ describe('removeItem', () => {
 
   it('does not remove the dependency when a dependent is removed', () => {
     expect(removeItem(['crm', 'website'], 'website', FIXTURE)).toEqual(['crm']);
+  });
+});
+
+describe('addItem — mutually exclusive groups', () => {
+  it('replaces an existing item from the same group', () => {
+    expect(addItem(['ads-3mo'], 'ads-6mo', FIXTURE)).toEqual(['ads-6mo']);
+  });
+
+  it('never leaves two items from one group in the cart', () => {
+    let items = [];
+    for (const id of ['ads-3mo', 'ads-6mo', 'ads-12mo', 'ads-3mo']) {
+      items = addItem(items, id, FIXTURE);
+    }
+    expect(items).toEqual(['ads-3mo']);
+  });
+
+  it('leaves items outside the group untouched', () => {
+    const result = addItem(['crm', 'ads-3mo'], 'ads-12mo', FIXTURE);
+    expect(result.sort()).toEqual(['ads-12mo', 'crm']);
+  });
+
+  it('does not group ungrouped items together', () => {
+    const result = addItem(['crm'], 'gbp', FIXTURE);
+    expect(result.sort()).toEqual(['crm', 'gbp']);
+  });
+
+  it('sanitize collapses a stale cart holding two of one group', () => {
+    expect(sanitize(['ads-3mo', 'ads-6mo'], FIXTURE)).toEqual(['ads-6mo']);
   });
 });
 

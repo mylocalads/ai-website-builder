@@ -13,7 +13,17 @@ export function addItem(items, id, catalog) {
   const record = find(catalog, id);
   if (!record) return items;
 
-  const next = new Set(items);
+  // Items sharing a group are mutually exclusive — the three Ads Plan commit
+  // terms are one Stripe product, so adding one must displace the others.
+  let base = items;
+  if (record.group) {
+    base = items.filter((itemId) => {
+      const existing = find(catalog, itemId);
+      return !existing || existing.group !== record.group;
+    });
+  }
+
+  const next = new Set(base);
   next.add(id);
   for (const req of record.requires) {
     if (find(catalog, req)) next.add(req);

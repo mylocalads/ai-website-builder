@@ -1,4 +1,4 @@
-// Single source of truth for the Growth Add-Ons section.
+// Single source of truth for every cart-purchasable product.
 // Consumed by: src/components/AddOnCard.astro, src/pages/index.astro,
 // src/pages/cart.astro, src/lib/cart-store.js, src/pages/api/checkout.js.
 //
@@ -6,32 +6,33 @@
 // inside src/pages/api/checkout.js so they never enter the client bundle and
 // never land in git.
 //
-// Bullet copy is sourced from the client's own product pages:
-//   crm            -> start.mylocalads.co/growth
-//   ai-agents      -> src/pages/ai-employee-add-on.astro
-//   seo-plan       -> start.mylocalads.co/gbp (adapted: was a $500 one-time
-//                     GBP optimization, now a $250/mo recurring SEO plan)
-//   website        -> start.mylocalads.co/all-in-one-website
-//   roof-quote-pro -> src/pages/roof-instant-estimator.astro
+// FIELDS
+//   section    'addons' renders in the Growth Add-Ons grid; 'ppl' renders in the
+//              Pay-Per-Lead section (its Add to cart lives on the PPL tiles).
+//   planLabel  Small kicker above the title, e.g. "CRM Plan" over
+//              "My Local Ads CRM". Mirrors the PPL tiles' "Ads Plan" kicker.
+//   group      Items sharing a group are MUTUALLY EXCLUSIVE — adding one
+//              removes the others. The three Ads Plan commit terms are the same
+//              Stripe product, so only one can be in the cart at a time.
+//   wasPriceLabel  Struck-through list price shown beside a discounted price.
 //
-// NFC Review Cards was removed from this section (product being retired).
-//
-// Every add-on is currently `recurring`, so every cart resolves to Stripe
-// subscription mode. The `billing`, `shipping`, and one-time handling in
-// cart-core.js / checkout-params.js are retained and tested so a one-time or
-// physical product can be reintroduced without reworking the logic.
+// Copy supplied by the client 2026-07-29 along with the live price IDs.
 
 export const addOns = [
   {
     id: 'crm',
-    title: 'CRM',
-    subtitle: 'Automate and grow your marketing with the all-in-one CRM suite from GoHighLevel.',
+    section: 'addons',
+    planLabel: 'CRM Plan',
+    title: 'My Local Ads CRM',
+    subtitle: 'Automate and grow your marketing with the all-in-one CRM suite.',
     priceCents: 9700,
     priceLabel: '$97/mo',
+    wasPriceLabel: null,
     priceNote: 'After 7-day free trial. Usage rates apply.',
     billing: 'recurring',
     trialDays: 7,
     requires: [],
+    group: null,
     shipping: false,
     includes: [
       'Unlimited users & all-in-one inbox',
@@ -45,82 +46,120 @@ export const addOns = [
   },
   {
     id: 'ai-agents',
-    title: 'AI Agents',
-    subtitle: '(Voice + Chat) — Let AI handle calls and conversations with leads on auto-pilot.',
+    section: 'addons',
+    planLabel: 'Conversion Plan',
+    title: 'CRM AI Voice + AI Chat',
+    subtitle: 'Let AI handle calls and conversations with leads on auto-pilot.',
     priceCents: 25000,
     priceLabel: '$250/mo',
+    wasPriceLabel: null,
     priceNote: 'Requires CRM.',
     billing: 'recurring',
     trialDays: null,
     requires: ['crm'],
+    group: null,
     shipping: false,
     includes: [
-      'AI Employee (Voice & Chat)',
-      'Runs inside your existing CRM',
-      '24/7 automated lead handling',
+      'Automate lead nurturing & conversation follow-ups',
+      'No missed calls — handles calls instantly',
+      '24/7 lead qualification & routing',
+      'Calendar integrated booking & rescheduling',
+      'Handles SMS, email, live chat, & social DMs',
+      'Fully customize AI system prompt, voice, & more',
+      'Choose AI models to power your agent',
+      'Can trigger API actions & workflows',
     ],
     fallbackHref: '/ai-employee-add-on',
   },
   {
     id: 'seo-plan',
-    title: 'SEO Plan',
+    section: 'addons',
+    planLabel: 'SEO Plan',
+    title: 'Google Business Profile Management',
     subtitle: 'Appear organically in Google\'s Map Pack results to maximize lead flow.',
     priceCents: 25000,
     priceLabel: '$250/mo',
+    wasPriceLabel: null,
     priceNote: 'Monthly Google Business Profile management.',
     billing: 'recurring',
     trialDays: null,
     requires: [],
+    group: null,
     shipping: false,
     includes: [
-      'A-Z optimization of your Google Business Profile',
-      'Keyword optimization for specific services',
-      'Local SEO best-practices implemented',
-      'Ongoing local SEO reporting',
+      'Fully optimize Google Business Profile',
+      'Improve Google Map Pack visibility',
+      'Monthly profile posts',
+      'Profile maintenance & upkeep',
+      'Review replies',
+      'Call tracking implementation (if CRM active)',
+      'Backed by AI agents',
     ],
     fallbackHref: 'https://start.mylocalads.co/gbp',
   },
   {
     id: 'website',
-    title: 'Website',
+    section: 'addons',
+    planLabel: 'Website Plan',
+    title: 'Unlimited Changes',
     subtitle: 'Close more deals with a stunning website while we manage your site A-Z.',
     priceCents: 30000,
     priceLabel: '$300/mo',
-    priceNote: 'Requires active CRM account.',
+    wasPriceLabel: null,
+    priceNote: 'No setup fee. Requires active CRM account.',
     billing: 'recurring',
     trialDays: null,
     requires: ['crm'],
+    group: null,
     shipping: false,
     includes: [
-      'Built for conversion rate, SEO & brand',
-      'Home, Our Work, Pricing, Contact + legal pages',
-      'Up to 5 service and 5 service-area sub-pages',
-      'ADA, GDPR & A2P compliant',
-      '10-20 business day turnaround',
+      'Conversion optimized website design',
+      'Full integration w/ My Local Ads CRM',
+      'Best in-class local SEO',
+      'Includes up to 5 service & service area pages',
+      'Includes hosting & custom domain',
+      'Unlimited edit requests',
+      'Backed by AI agents',
     ],
     fallbackHref: 'https://start.mylocalads.co/all-in-one-website',
   },
-  {
-    id: 'roof-quote-pro',
-    title: 'Roof Quote PRO™ Instant Estimator',
-    subtitle: 'Boost your Ad campaign results & improve lead quality. Only available for Roofers!',
-    priceCents: 50000,
-    priceLabel: '$500/mo',
-    priceNote: 'No setup fee. Requires an active Facebook or Google Ads campaign.',
-    billing: 'recurring',
+
+  // Ads Plan — one Stripe product (the setup fee) offered at three commitment
+  // terms. Same price for all three; the term is what the customer is choosing,
+  // so they share a group and only one can be carted.
+  ...['3-Month', '6-Month', '12-Month'].map((term) => ({
+    id: `ppl-ads-${term.split('-')[0].toLowerCase()}mo`,
+    section: 'ppl',
+    planLabel: 'Ads Plan',
+    title: `Pay-Per-Lead Ads Setup — ${term} Commit`,
+    subtitle: 'One-time setup for your pay-per-lead ad campaigns.',
+    priceCents: 250000,
+    priceLabel: '$2,500',
+    wasPriceLabel: '$5,000',
+    priceNote: 'One-time setup fee. 50% off list price.',
+    billing: 'one_time',
     trialDays: null,
     requires: [],
+    group: 'ppl-ads',
     shipping: false,
     includes: [
-      'Roof QuotePRO® access',
-      'Instant aerial-measured roof estimates',
-      '24/7 email & SMS support',
-      'Only for roofers',
+      'Qualified & exclusive homeowner leads',
+      '7 days to dispute unqualified leads',
+      'Full ad management & optimizations',
+      'Creative production included',
+      'Pixel & UTM tracking installation',
+      'Lead nurturing automations',
+      'Capture TCPA compliant leads w/ audit trail',
+      'Backed by AI agents',
     ],
-    fallbackHref: '/roof-instant-estimator',
-  },
+    fallbackHref: 'https://start.mylocalads.co/book-now-v2',
+  })),
 ];
 
 export function byId(id) {
   return addOns.find((a) => a.id === id);
+}
+
+export function bySection(section) {
+  return addOns.filter((a) => a.section === section);
 }
