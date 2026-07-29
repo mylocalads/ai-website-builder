@@ -1146,14 +1146,17 @@ import Stripe from 'stripe';
 import { addOns } from '../../data/addOns.js';
 import { buildSessionParams, UnknownItemError, MissingPriceError } from '../../lib/checkout-params.js';
 
-const PRICE_IDS = {
-  'crm': import.meta.env.STRIPE_PRICE_CRM,
-  'ai-agents': import.meta.env.STRIPE_PRICE_AI_AGENTS,
-  'gbp': import.meta.env.STRIPE_PRICE_GBP,
-  'website': import.meta.env.STRIPE_PRICE_WEBSITE,
-  'roof-quote-pro': import.meta.env.STRIPE_PRICE_ROOF_QUOTE_PRO,
-  'nfc-cards': import.meta.env.STRIPE_PRICE_NFC_CARDS,
-};
+// process.env, NOT import.meta.env: Astro inlines import.meta.env at build
+// time, which would write the secret key into the built function bundle.
+// process.env is read at runtime, so nothing sensitive lands in build output.
+const PRICE_IDS = () => ({
+  'crm': process.env.STRIPE_PRICE_CRM,
+  'ai-agents': process.env.STRIPE_PRICE_AI_AGENTS,
+  'gbp': process.env.STRIPE_PRICE_GBP,
+  'website': process.env.STRIPE_PRICE_WEBSITE,
+  'roof-quote-pro': process.env.STRIPE_PRICE_ROOF_QUOTE_PRO,
+  'nfc-cards': process.env.STRIPE_PRICE_NFC_CARDS,
+});
 
 const json = (body, status) =>
   new Response(JSON.stringify(body), {
@@ -1162,7 +1165,7 @@ const json = (body, status) =>
   });
 
 export async function POST({ request, url }) {
-  const secret = import.meta.env.STRIPE_SECRET_KEY;
+  const secret = process.env.STRIPE_SECRET_KEY;
   if (!secret) {
     return json({ error: 'stripe_not_configured', fallback: true }, 503);
   }
@@ -1176,7 +1179,7 @@ export async function POST({ request, url }) {
 
   let params;
   try {
-    params = buildSessionParams(items, addOns, PRICE_IDS, {
+    params = buildSessionParams(items, addOns, PRICE_IDS(), {
       successUrl: `${url.origin}/checkout-success?session_id={CHECKOUT_SESSION_ID}`,
       cancelUrl: `${url.origin}/cart`,
     });
