@@ -26,6 +26,7 @@ Resolved by querying the Stripe API. All four amounts match the tile prices.
 | `crm` | subscription | **$0.00** | Growth $0.00 | ✅ trial applied |
 | `crm` + `ai-agents` | subscription | **$347.00** | Growth $97.00, AI Employee $250.00 | ✅ no trial |
 | `website` (auto-adds `crm`) | subscription | **$397.00** | Website $300.00, Growth $97.00 | ✅ dependency auto-added |
+| `crm` + `ai-agents` + `website` + `roof-quote-pro` | subscription | **$1,147.00** | 4 line items | ✅ no trial, one subscription |
 | `roof-quote-pro` | subscription | **$500.00** | Instant Estimator $500.00 | ✅ |
 | `seo-plan` | — | — | — | ✅ 503 `stripe_not_configured` fallback |
 
