@@ -17,6 +17,7 @@ export class UnknownItemError extends Error {}
 export class MissingPriceError extends Error {}
 
 const SHIPPING_COUNTRIES = ['US', 'CA'];
+const TOS_URL = 'https://start.mylocalads.co/terms-of-service';
 
 export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, cancelUrl } = {}) {
   if (!Array.isArray(itemIds) || itemIds.length === 0) {
@@ -52,6 +53,28 @@ export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, can
     // service URL set under Settings → Checkout and Payment Links, or session
     // creation fails.
     consent_collection: { terms_of_service: 'required' },
+    // Stripe supports exactly ONE consent checkbox (terms_of_service) and its
+    // custom_fields types are only dropdown/numeric/text — there is no way to
+    // add a second checkbox. The MSA commitment is folded into the same
+    // required checkbox so it is still explicitly agreed to before payment.
+    custom_text: {
+      terms_of_service_acceptance: {
+        message: `I agree to the [Terms of Service](${TOS_URL}) and to sign the Master Service Agreement to complete this purchase.`,
+      },
+    },
+    // Required phone number. Stripe marks this field mandatory whenever
+    // collection is enabled.
+    phone_number_collection: { enabled: true },
+    // Business name. `optional: false` makes it mandatory.
+    custom_fields: [
+      {
+        key: 'businessname',
+        label: { type: 'custom', custom: 'Business name' },
+        type: 'text',
+        optional: false,
+        text: { minimum_length: 2, maximum_length: 100 },
+      },
+    ],
   };
 
   if (trialApplies) {

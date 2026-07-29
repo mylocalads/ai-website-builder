@@ -93,6 +93,33 @@ describe('buildSessionParams', () => {
       .toEqual({ terms_of_service: 'required' });
   });
 
+  it('folds the Master Service Agreement into the required consent checkbox', () => {
+    const msg = buildSessionParams(['gbp'], FIXTURE, PRICES, URLS)
+      .custom_text.terms_of_service_acceptance.message;
+    expect(msg).toContain('Master Service Agreement');
+    expect(msg).toContain('start.mylocalads.co/terms-of-service');
+  });
+
+  it('collects a mandatory phone number', () => {
+    expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).phone_number_collection)
+      .toEqual({ enabled: true });
+  });
+
+  it('collects a mandatory business name', () => {
+    const fields = buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).custom_fields;
+    expect(fields).toHaveLength(1);
+    expect(fields[0].key).toBe('businessname');
+    expect(fields[0].type).toBe('text');
+    expect(fields[0].optional).toBe(false);
+    expect(fields[0].label).toEqual({ type: 'custom', custom: 'Business name' });
+  });
+
+  // Stripe caps custom_fields at 3.
+  it('stays within Stripe\'s custom field limit', () => {
+    expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).custom_fields.length)
+      .toBeLessThanOrEqual(3);
+  });
+
   it('enables promotion codes so Stripe shows the promo field', () => {
     expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).allow_promotion_codes).toBe(true);
   });

@@ -9,7 +9,7 @@ import { cart } from './cart-store.js';
 
 const SUPPORT_HTML =
   'Call <a href="tel:+18664511915">(866) 451-1915</a> or ' +
-  '<a href="https://start.mylocalads.co/book-now-v2" rel="noopener">book a call</a>.';
+  '<a href="/booking-page">book a call</a>.';
 
 /**
  * Creates a Stripe Checkout Session for the current cart and redirects to it.

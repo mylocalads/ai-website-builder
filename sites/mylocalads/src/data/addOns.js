@@ -152,7 +152,7 @@ export const addOns = [
       'TCPA compliant, audit trail',
       'Backed by AI agents',
     ],
-    fallbackHref: 'https://start.mylocalads.co/book-now-v2',
+    fallbackHref: '/booking-page',
   })),
 ];
 
