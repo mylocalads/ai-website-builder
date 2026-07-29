@@ -1,5 +1,11 @@
 ---
-// One Growth Add-On tile: price, feature bullets, and an Add to cart control.
+// One Growth Add-On tile.
+//
+// Internal structure deliberately mirrors the Pay-Per-Lead tiles in
+// index.astro (.ppl-tile-*): head block, large display price with a muted unit
+// label, an "Everything included:" list with green checks, then the CTA pinned
+// to the bottom. Same type scale and spacing so the two pricing sections read
+// as one system.
 //
 // The control ships as a plain <a> pointing at the add-on's existing product
 // page. Client JS upgrades it into a cart button on load. A visitor who clicks
@@ -15,50 +21,156 @@ export interface Props {
     priceNote: string;
     includes: string[];
     fallbackHref: string;
+    trialDays: number | null;
+    requires: string[];
   };
 }
 
 const { addOn } = Astro.props;
+
+// "$97/mo" -> amount "$97", unit "/mo" so the two render at different weights,
+// matching the PPL tiles' amount + per-unit treatment.
+const [, amount, unit] = addOn.priceLabel.match(/^(\$[\d,]+)(.*)$/) ?? [null, addOn.priceLabel, ''];
 ---
-<div class="card addon-card" data-addon-id={addOn.id}>
-  <h3>{addOn.title}</h3>
-  <p class="addon-sub">{addOn.subtitle}</p>
+<div class="addon-tile" data-addon-id={addOn.id}>
+  {addOn.trialDays && <div class="addon-tile-banner">7-Day Free Trial</div>}
 
-  <div class="addon-price">{addOn.priceLabel}</div>
-  <div class="addon-price-sub">{addOn.priceNote}</div>
+  <div class="addon-tile-head">
+    <h3 class="addon-tile-name">{addOn.title}</h3>
+    <p class="addon-tile-subtitle">{addOn.subtitle}</p>
+  </div>
 
-  <ul class="addon-includes">
-    {addOn.includes.map((item) => (
-      <li><span class="check" aria-hidden="true">✓</span>{item}</li>
-    ))}
-  </ul>
+  <div class="addon-tile-price">
+    <div class="addon-tile-price-row">
+      <span class="addon-tile-amount">{amount}</span>
+      <span class="addon-tile-per">{unit}</span>
+    </div>
+    <div class="addon-tile-note">{addOn.priceNote}</div>
+    {addOn.requires.length > 0 && <span class="addon-tile-badge">Requires CRM</span>}
+  </div>
+
+  <div class="addon-tile-features">
+    <div class="addon-tile-features-label">Everything included:</div>
+    <ul>
+      {addOn.includes.map((item) => (
+        <li><span class="check">✓</span> {item}</li>
+      ))}
+    </ul>
+  </div>
 
   <a
     href={addOn.fallbackHref}
-    class="btn btn-primary btn-sm addon-cta"
+    class="btn btn-primary btn-sm addon-tile-cta"
     data-cart-toggle={addOn.id}
     rel="noopener"
   >Add to cart</a>
 </div>
 
 <style>
-  .addon-includes {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 var(--space-2);
-    flex: 1;
-  }
-  .addon-includes li {
+  .addon-tile {
+    position: relative;
     display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-3);
+    background: var(--color-bg-elev);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .addon-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.10), 0 12px 32px rgba(0, 0, 0, 0.35);
+    border-color: var(--color-border-strong);
+  }
+  /* In-cart tiles get the yellow ring so the selection reads at a glance. */
+  .addon-tile:has(.addon-tile-cta[data-in-cart='true']) {
+    border-color: #faf24c;
+    box-shadow: inset 0 0 0 1px rgba(250, 242, 76, 0.35);
+  }
+
+  .addon-tile-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #faf24c;
+    color: #000;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.4rem 0.5rem;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .addon-tile:has(.addon-tile-banner) { padding-top: calc(var(--space-4) + 1.75rem); }
+
+  .addon-tile-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin: 0 0 0.25rem;
+    color: #fff;
+  }
+  .addon-tile-subtitle { color: var(--color-text-muted); font-size: 0.9rem; margin: 0; }
+
+  .addon-tile-price { position: relative; }
+  .addon-tile-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+  }
+  .addon-tile-amount {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2.75rem;
+    color: #fff;
+    line-height: 1;
+  }
+  .addon-tile-per {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .addon-tile-note { font-size: 0.8rem; color: var(--color-text-subtle); }
+  .addon-tile-badge {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background: rgba(0, 56, 255, 0.18);
+    color: var(--color-accent-soft);
+    border: 1px solid rgba(0, 56, 255, 0.45);
+    padding: 0.25rem 0.7rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .addon-tile-features { flex: 1; }
+  .addon-tile-features-label {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+  }
+  .addon-tile-features ul { list-style: none; padding: 0; margin: 0; }
+  .addon-tile-features li {
     padding: 0.3rem 0;
+    display: flex;
+    align-items: start;
+    gap: 0.6rem;
     font-size: 0.92rem;
     color: var(--color-text);
     line-height: 1.4;
   }
-  /* Added state: reads as confirmation, not as another primary action. */
-  .addon-cta[data-in-cart='true'] {
+
+  .addon-tile-cta { align-self: flex-start; margin-top: auto; }
+  .addon-tile-cta[data-in-cart='true'] {
     background: transparent;
     color: var(--color-green);
     border: 1px solid var(--color-green);

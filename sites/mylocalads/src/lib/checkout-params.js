@@ -12,12 +12,25 @@
 
 export class UnknownItemError extends Error {}
 export class MissingPriceError extends Error {}
+export class ConsentRequiredError extends Error {}
 
 const SHIPPING_COUNTRIES = ['US', 'CA'];
 
-export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, cancelUrl }) {
+export function buildSessionParams(
+  itemIds,
+  catalog,
+  priceIds,
+  { successUrl, cancelUrl, consent = {}, consentedAt } = {},
+) {
   if (!Array.isArray(itemIds) || itemIds.length === 0) {
     throw new UnknownItemError('Cart is empty');
+  }
+
+  // Terms of Service acceptance is required to transact. TCPA marketing consent
+  // is optional by law — it must never be a condition of purchase — so it is
+  // recorded but never blocks checkout.
+  if (consent.tos !== true) {
+    throw new ConsentRequiredError('Terms of Service must be accepted');
   }
 
   const records = itemIds.map((id) => {
@@ -40,7 +53,14 @@ export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, can
     line_items,
     success_url: successUrl,
     cancel_url: cancelUrl,
-    metadata: { items: records.map((r) => r.id).join(',') },
+    metadata: {
+      items: records.map((r) => r.id).join(','),
+      // Consent evidence travels with the Stripe object so there is a durable
+      // record tied to the transaction, not just a checkbox that was ticked.
+      consent_tos: 'true',
+      consent_tcpa_marketing: consent.tcpa === true ? 'true' : 'false',
+      ...(consentedAt ? { consented_at: consentedAt } : {}),
+    },
   };
 
   if (trialApplies) {
