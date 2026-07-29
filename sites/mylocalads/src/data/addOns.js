@@ -67,7 +67,7 @@ export const addOns = [
     subtitle: 'Appear organically in Google\'s Map Pack results to maximize lead flow.',
     priceCents: 25000,
     priceLabel: '$250/mo',
-    priceNote: 'Ongoing local SEO management.',
+    priceNote: 'Monthly Google Business Profile management.',
     billing: 'recurring',
     trialDays: null,
     requires: [],

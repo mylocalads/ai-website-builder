@@ -1,0 +1,67 @@
+---
+// One Growth Add-On tile: price, feature bullets, and an Add to cart control.
+//
+// The control ships as a plain <a> pointing at the add-on's existing product
+// page. Client JS upgrades it into a cart button on load. A visitor who clicks
+// before hydration, or who has JS disabled, still lands on a working purchase
+// page rather than a dead button.
+
+export interface Props {
+  addOn: {
+    id: string;
+    title: string;
+    subtitle: string;
+    priceLabel: string;
+    priceNote: string;
+    includes: string[];
+    fallbackHref: string;
+  };
+}
+
+const { addOn } = Astro.props;
+---
+<div class="card addon-card" data-addon-id={addOn.id}>
+  <h3>{addOn.title}</h3>
+  <p class="addon-sub">{addOn.subtitle}</p>
+
+  <div class="addon-price">{addOn.priceLabel}</div>
+  <div class="addon-price-sub">{addOn.priceNote}</div>
+
+  <ul class="addon-includes">
+    {addOn.includes.map((item) => (
+      <li><span class="check" aria-hidden="true">✓</span>{item}</li>
+    ))}
+  </ul>
+
+  <a
+    href={addOn.fallbackHref}
+    class="btn btn-primary btn-sm addon-cta"
+    data-cart-toggle={addOn.id}
+    rel="noopener"
+  >Add to cart</a>
+</div>
+
+<style>
+  .addon-includes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-2);
+    flex: 1;
+  }
+  .addon-includes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.3rem 0;
+    font-size: 0.92rem;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+  /* Added state: reads as confirmation, not as another primary action. */
+  .addon-cta[data-in-cart='true'] {
+    background: transparent;
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+    box-shadow: none;
+  }
+</style>

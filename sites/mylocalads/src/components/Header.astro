@@ -1,5 +1,6 @@
 ---
 import { collections } from '../data/caseStudies.js';
+import CartButton from './CartButton.astro';
 
 const logo = 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/646f73501647a84ed22f6a8d.png';
 
@@ -36,6 +37,7 @@ const resultsCollections = collections.map((c) => ({
         <li><a href="/contact-us">Contact</a></li>
       </ul>
     </nav>
+    <CartButton />
     <a href="https://start.mylocalads.co/book-now-v2" class="btn btn-secondary btn-sm cta" rel="noopener">Get More Leads!</a>
     <details class="mobile-nav">
       <summary aria-label="Open menu">
@@ -58,6 +60,7 @@ const resultsCollections = collections.map((c) => ({
           <li><a href="/team">Team</a></li>
           <li><a href="/#faqs">FAQs</a></li>
           <li><a href="/contact-us">Contact</a></li>
+          <li data-cart-badge hidden><a href="/cart">Cart (<span data-cart-badge-count>0</span>)</a></li>
           <li><a href="https://start.mylocalads.co/book-now-v2" class="btn btn-secondary btn-sm" rel="noopener">Get More Leads!</a></li>
         </ul>
       </nav>

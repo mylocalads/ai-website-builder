@@ -66,5 +66,19 @@ const orgLd = {
     <Header />
     <main id="main" tabindex="-1"><slot /></main>
     <Footer />
+
+    <script>
+      // Keeps the header cart badge in sync on every page, so the cart is
+      // visible wherever the visitor navigates.
+      import { cart } from '../lib/cart-store.js';
+      cart.subscribe((items) => {
+        document.querySelectorAll('[data-cart-badge]').forEach((el) => {
+          el.hidden = items.length === 0;
+        });
+        document.querySelectorAll('[data-cart-badge-count]').forEach((el) => {
+          el.textContent = String(items.length);
+        });
+      });
+    </script>
   </body>
 </html>
