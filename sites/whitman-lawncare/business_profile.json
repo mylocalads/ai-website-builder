@@ -1,0 +1,14 @@
+{
+  "name": "Whitman Lawn Care LLC",
+  "email": "dan@whitmanlawncare.net",
+  "phone": "+15704513683",
+  "address": "PO Box 3092, Scranton, PA 18505",
+  "website": "https://whitmanlawncare.com/website/",
+  "rating": null,
+  "reviewCount": null,
+  "category": "Lawn Care Service",
+  "hours": "Mon-Fri 8:30am-4:30pm",
+  "slug": "whitman-lawncare",
+  "reviews": [],
+  "_notes": "Apify Google Maps lookup run 2026-07-29 against both 'Scranton PA' (run sudYb2BOeJcpCnXXp) and 'Avoca, Pennsylvania' (run zekmPV8obZbA4CAPg) returned zero places. No Google Business Profile found. Yelp and Manta listings are unclaimed. No public reviews exist. Contact fields sourced from whitmanlawncare.com and public directory listings."
+}
