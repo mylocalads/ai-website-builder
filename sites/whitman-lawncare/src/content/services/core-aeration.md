@@ -9,6 +9,8 @@ sub_services:
 short_description: "Pulls soil cores to relieve compaction and let air, water, and nutrients reach the root zone."
 long_description: "One of the key techniques for keeping a lawn vibrant and free from disease is proper aeration. Core aeration creates small holes in the soil, promoting better air circulation, water absorption, and nutrient uptake. The process alleviates soil compaction, encourages root growth, and improves the overall health of your grass. Aeration can be performed any time the ground is not frozen, but early spring and late fall are the best windows — the lawn is in a growth phase then and recovers quickly. It pairs naturally with overseeding and with lime, since the open cores give both a direct path into the soil rather than leaving them sitting on the surface."
 hero_photo: /img/core-aeration.jpg
+about_photo: /img/organic-fertilizer.jpg
+about_photo_alt: "A thick green lawn beside a Northeast Pennsylvania home"
 order: 3
 faqs:
   - q: "When is the best time to aerate?"

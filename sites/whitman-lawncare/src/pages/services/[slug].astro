@@ -1,4 +1,5 @@
 ---
+import { SERVICE_LIMIT } from '../../lib/limits';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
 import HeroOwl from '../../components/HeroOwl.astro';
@@ -18,7 +19,7 @@ export async function getStaticPaths() {
   const services = await getCollection('services');
   return services
     .sort((a, b) => a.data.order - b.data.order)
-    .slice(0, 10)
+    .slice(0, SERVICE_LIMIT)
     .map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
 }
 
@@ -77,8 +78,8 @@ const faqLd = service.data.faqs.length > 0 ? {
     eyebrow="Our Service"
     heading={service.data.about_heading ?? `About our ${service.data.title.toLowerCase()} services`}
     body={service.data.long_description}
-    photo={service.data.hero_photo}
-    photo_alt={`${service.data.title} — ${site.business_name}`}
+    photo={service.data.about_photo}
+    photo_alt={service.data.about_photo_alt ?? `${service.data.title} — ${site.business_name}`}
     photo_position="left"
     bullets={service.data.sub_services ?? []}
   />

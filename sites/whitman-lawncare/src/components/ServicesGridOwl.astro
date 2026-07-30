@@ -1,6 +1,7 @@
 ---
+import { SERVICE_LIMIT } from '../lib/limits';
 import { getCollection, getEntry } from 'astro:content';
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 10);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
 const site = (await getEntry('site', 'config')).data as any;
 const section = site.services_section ?? { eyebrow: 'Our Services' };
 export interface Props { cta_text?: string; cta_href?: string; }

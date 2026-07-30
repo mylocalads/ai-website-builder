@@ -9,6 +9,8 @@ sub_services:
 short_description: "Identify what is actually damaging the lawn — root feeders, leaf feeders, juice suckers, or moles — then treat it."
 long_description: "Pests have a significant impact on the health of your lawn. Some are harmless and even beneficial; others infect the soil, damage roots, and draw the vital juices from your plants. Identifying which are present is what makes management effective. Soil and root infesters feed underground, weakening grass into unhealthy patches. Stem and leaf feeders cause visible damage and stress. Juice suckers extract nutrients and stunt growth. Moles rarely eat grass directly, but their constant tunneling wrecks lawns and landscape beds. Our team identifies what is living in your lawn, assesses whether it is actually doing harm, and gives you tailored recommendations and control strategies — including telling you when a population is harmless and does not warrant treatment at all."
 hero_photo: /img/pest-control.jpg
+about_photo: /img/organic-fertilizer.jpg
+about_photo_alt: "A thick green lawn beside a Northeast Pennsylvania home"
 order: 6
 faqs:
   - q: "Do all lawn insects need to be treated?"

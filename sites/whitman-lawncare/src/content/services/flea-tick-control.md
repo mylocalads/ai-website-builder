@@ -9,6 +9,8 @@ sub_services:
 short_description: "Barrier treatments that make the yard usable again and cut the disease risk to your family and pets."
 long_description: "Fleas, ticks, and mosquitoes are more than a nuisance — they pose real health risks to your pets and family. These pests thrive close to woods, open fields, and anywhere wildlife moves through, which describes most properties in this part of Pennsylvania. They carry diseases that affect both animals and humans, cause discomfort and allergic reactions, and in the case of ticks transmit serious illness. Effective professional treatment programs exist, and we specialize in comprehensive outdoor pest solutions tailored to your property. We use safe, labeled methods to clear these pests from your outdoor space, focusing on the shaded edges and tall growth where they actually live rather than blanket-spraying open turf."
 hero_photo: /img/flea-tick-control.jpg
+about_photo: /img/hero-lawn.jpg
+about_photo_alt: "An established lawn and treeline in Northeast Pennsylvania"
 order: 5
 faqs:
   - q: "How often do treatments need to be repeated?"

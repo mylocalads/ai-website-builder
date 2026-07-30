@@ -61,19 +61,30 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
   /* grid-area belongs ONLY under .photo-left. On the default grid there are
      no named areas, so an unconditional `grid-area: photo` creates an
      implicit one and collapses the copy column to a few characters wide. */
-  .about-figure { margin: 0; }
+  .about-figure { margin: 0; min-width: 0; }
   .photo-credit { margin: 0.4rem 0 0; font-size: 0.72rem; color: var(--color-muted); opacity: 0.8; }
   .photo-credit a { color: inherit; }
-  .about-photo { border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
+  /* width:100% is load-bearing. Without it the img falls back to its intrinsic
+     width, so a source narrower than the column (client photos often are)
+     leaves a ragged gap beside it. */
+  .about-photo { width: 100%; border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
   h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 2.75rem); line-height: 1.15; margin: 0 0 var(--space-2); }
   p { font-size: 1.05rem; line-height: 1.65; color: var(--color-muted); }
   .bullets { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-direction: column; gap: 0.65rem; }
   .bullets li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; color: var(--color-text); }
-  .check { flex-shrink: 0; color: var(--color-accent); }
+  .check { flex-shrink: 0; color: var(--color-accent-ink); }
   @media (max-width: 780px) {
     .about-grid, .about-grid.photo-left { grid-template-columns: 1fr; grid-template-areas: none; gap: var(--space-3); align-items: start; }
-    .about-grid.photo-left .about-copy, .about-grid.photo-left .about-photo { grid-area: auto; }
+    /* Reset the FIGURE, not the img. `.about-figure` is the grid item that
+       carries `grid-area: photo` on desktop; `.about-photo` is the <img> inside
+       it and was never a grid item. Resetting only the img left the figure
+       pointing at a named area that no longer exists once grid-template-areas
+       is `none`, so it collapsed to its intrinsic width — measured 151px wide on
+       a 375px viewport instead of filling the column. Only bites the
+       photo_position="left" variant, i.e. every service page. */
+    .about-grid.photo-left .about-copy, .about-grid.photo-left .about-figure { grid-area: auto; }
+    .about-figure { width: 100%; min-width: 0; }
     .about-photo { aspect-ratio: 4/3; width: 100%; }
   }
 </style>

@@ -2,6 +2,7 @@
 |----------|------|-------|------------|------|
 | Headley Construction Group | headley-construction-group | 19 | https://headley-construction-group.vercel.app | 2026-07-23 |
 | Bilski's Lawn Care | bilskis-lawncare | 23 | https://bilskis-lawncare.vercel.app | 2026-07-29 |
+| Smile Lawn Care | smile-lawn-care | 38 | https://smile-lawn-care.vercel.app | 2026-07-29 |
 
 ## mylocalads (2026-07-25)
 - Source: 1:1 recreation of live https://mylocalads.co (all 9 pages)
@@ -88,65 +89,6 @@
 - `.form-error` tinted itself with `--color-accent`; on a green-accent client the error banner reads as success. Now a fixed red
 - Roofing copy baked into component/page defaults: `ServicesGridOwl`, `BlogCards`, `HeroOwl`, `book.astro`, `pricing.astro`, `blog/index.astro`
 
-## smile-lawn-care — 2026-07-29
-
-- **Client:** Smile Lawn Care (legal: Smile Lawn Care & Landscapers), Wilkes-Barre PA
-- **Brief:** duplicate of the `gilroy-roofing` build (same `owl` structure) for the business at https://lawnmowingwilkesbarre.com/ — operator-supplied logo, palette, 7 services and 18 service areas; calendar + contact form to be placeholder images
-- **Template:** `owl`, cloned from `sites/bilskis-lawncare` rather than `sites/gilroy-roofing`. Same structure either way, but bilskis already carries the template bug fixes logged in its entry below (the two `SERVICES` lists, the hardcoded `color: white` on accent fills, the `.form-error` accent tint, the Gilroy copy baked into component defaults). Cloning from Gilroy would have meant re-fixing all of them.
-- **Status:** BUILT AND VERIFIED LOCALLY — not yet deployed
-- **Pages:** 38 prerendered, plus `/book` and `/api/estimate` served by the Vercel render function (both `prerender = false`) — home, about, 7 services + index, 18 service areas + index (nested `/service-area/`), blog + 1 post, contact, book, pricing, our-work, thank-you, privacy, terms, accessibility. 38/38 routes 200 on the dev server; sitemap 39 URLs (38 prerendered + `/book`)
-
-### NOT the same business as bilskis-lawncare
-Worth flagging because the two look identical at a glance: same market, and the **exact same 18-town service area list**. They are different clients — Bilski's is 839 N Main St, Hilldale, (570) 899-6400, 4.9/40; Smile is 147 Abbott St, Wilkes-Barre, (570) 855-0780, 5.0/37. The shared 18-town list is just the standard MLA Wyoming Valley coverage set.
-
-### Palette — this build INVERTS the owl assumption
-Operator-supplied: bg `#ffffff`, secondary bg `#f5cf39`, CTA `#79a832`, with the brief stating the yellow is the "main colour focus" and the header menu colour. In every other owl build `--color-primary` is a **dark** panel colour carrying white text; here it is a **light yellow**, so:
-- `--color-on-primary` is `#1a1a1a` (11.49:1). White on the yellow is **1.51:1** — unusable.
-- `--color-accent` `#79a832` is **fill-only**. As text it is 2.81:1 on white and 1.86:1 on the yellow. Introduced `--color-accent-ink` `#35591f` for every foreground use of the green — 8.08:1 on bg, 7.53:1 on surface, 5.33:1 on the yellow. One token safe on all three backgrounds.
-- Introduced `--color-accent-edge` `#2f4a17` because a green button on a yellow band is 1.86:1, below the 3:1 WCAG 1.4.11 floor for a control boundary.
-- Tile washes on primary-backed sections (`ProcessSteps`, `WhyChooseUs`, `Testimonials`) flipped from `rgba(255,255,255,…)` to `rgba(0,0,0,…)`. White overlays are invisible on yellow.
-- `ClosingCTA` had a latent bug: it sets `color: var(--color-on-primary)` but paints a **dark** scrim when passed a `photo`, so near-black text would land on a dark photo. Added a `.has-photo` branch that flips back to white. No call site passes a photo today; fixed so the prop is not a trap.
-- Header is `--color-primary` with a near-white phone badge — a translucent green wash disappears into the yellow.
-- **Verified:** all 10 token pairs ≥ 4.5:1 via the README script, and a live-DOM audit found **0 failures across 179 text elements** outside the photo-scrim regions (hero + service tiles, which paint white over a dark scrim and were confirmed visually).
-
-### Deliberate scope calls
-- **18 service-area pages, cap raised from 6.** Operator explicitly chose this over the 6-pages-plus-named-in-copy approach that `bilskis-lawncare` took at the same fork. `getStaticPaths` uncapped in both dynamic routes; header areas menu is now two-column (`.submenu.two-col`, 420px, verified to fit at 1280px) and the mobile nav's existing max-height/overflow handles all 18 (scrollHeight 1020 vs clientHeight 714). All 18 towns carry **genuinely differentiated** `local_context` — terrain, housing stock, tree cover, lot size — tied to what each actually changes about the lawn work, rather than 18 interchangeable pages. This is the doorway-page risk CLAUDE.md warns about; mitigated by the copy, not ignored.
-- **7 services, cap raised from 5.** All seven are distinct services the client already sells and already navigates to on their own funnel.
-- **Email omitted from the site config.** `Contact@SmileLawns.com` (decoded from the funnel's Cloudflare email-protection blob) is on a domain with **no A record and no MX record** — the mailbox is dead. A live mailto is worse than none.
-- **No years-in-business claim anywhere.** Nothing verifiable was published. Earliest Google review is 2024-04-20 and the logo hit the GHL CDN in March 2024, but neither establishes a founding year, so the site makes no "since 20XX" claim. Note the regenerated satisfaction badge says "5.0 ★ 37 REVIEWS" where Bilski's said "SINCE 2020".
-- **Pricing page carries no dollar figures** — same reasoning as the bilskis build. No rate card for this client.
-- **Pressure Washing has no photo.** Its grid tile uses the template's `.no-photo` gradient (which reads as deliberate, not broken) and its page hero falls back to the mowing photo. Did not substitute stock: a generic pressure-washing photo on a service tile implies it is their crew's work. It is the one asset gap.
-- **FAQ rewritten from scratch.** The client's live funnel ships the GHL template's **commercial-real-estate-development** boilerplate ("What factors should I consider when selecting a commercial development site?", "our architectural design approach") — three questions with nothing to do with lawn care. Replaced with seven real ones.
-
-### Content provenance
-- **Testimonials, rating, trust badges:** 12 real 5-star Google reviews with attribution, all verbatim. Rating 5.0 / 37 reviews is GBP-verified and feeds `AggregateRating` in the LocalBusiness JSON-LD.
-- **Owner's first name (Eric)** came out of the reviews themselves — used in the about copy and the "Talk to Eric" guarantee CTA. No surname is published anywhere, so none is claimed.
-- **Copy angles** derive from the review corpus: punctuality and communication are what reviewers lead with, ahead of the work itself, so "we turn up on the day we said" is the site's spine rather than a generic quality claim.
-- **Imagery:** 6 real client job photos hotlinked from the GHL/filesafe CDN, each matched to the service it actually depicts, all verified 200 and confirmed loading in-browser. Logo pulled as the original 896×808 RGBA PNG (the `f_webp` CDN variant transcodes to WebP despite the `.png` path).
-- **Reddit local-research was skipped** — no cost incurred and nothing it would have added; the 12-review corpus already gave concrete, attributable copy angles.
-
-### Intake spend: ~$0.012
-Three Apify runs. The first (`lukaskrivka~google-maps-with-contact-details`, "Smile Lawn Care" in "Wilkes-Barre, Pennsylvania") returned **0 places** — the same `outOfLocation` filtering that hit the bilskis build, because the GBP pin sits east of the city. Re-ran against the **Google Maps place URL directly**, which bypasses location filtering entirely and returned the profile — that is the approach to reach for first on any service-area business whose pin is off its stated city. That run returned `reviews: []` despite `maxReviews: 8`, so a third run on `compass~google-maps-reviews-scraper` against the place_id pulled all 12 review texts. No Firecrawl spend: the funnel came down via plain `curl` and the directories via WebFetch.
-
-### Verified locally
-- `npm run build` clean; 38/38 routes 200
-- All 18 area slugs and 7 service slugs present in header, footer, home, and both index pages; all 18 town names also in crawlable home `seo_body` copy
-- **Lead form validation tested end-to-end** against the dev server — the trap the bilskis entry flags. Valid service → passes service + TCPA gates, then `?error=unavailable` (no `LEAD_WEBHOOK_URL` locally, which is correct); a stale bilskis value ("Retaining wall") → `?error=service`; missing consent → `?error=consent`. The two `SERVICES` lists are confirmed byte-identical. **No lead left the machine** — no webhook is configured, so nothing was transmitted and there is no test record to clean up downstream.
-- Canonical, `og:url`, LocalBusiness JSON-LD (5.0/37, hours, geo), FAQPage, per-area `Service` + `BreadcrumbList`, robots.txt and sitemap all reference `https://smile-lawn-care.vercel.app` — set pre-deploy so no URL-rewrite redeploy is needed
-- Mobile (375×812) and desktop (1280) both checked; dev-only captcha warning confirmed absent from the built HTML
-- No `bilski` / `gilroy` / roofing / hardscaping / Wix-CDN leakage anywhere in source or built output
-
-### Still outstanding
-- **Not deployed.** No Vercel project created yet. Before deploying, check for the documented CWD-hijack bug — a stray `.vercel/project.json` at the workspace root pointing at an old project (it was live during the bilskis build)
-- `LEAD_WEBHOOK_URL` env var — the form is wired but has no destination
-- GHL calendar + contact form embeds (placeholder images in place per the brief)
-- GHL reviews widget and Live Chat snippets — NOT SET
-- Captcha site key — honeypot + validation active meanwhile
-- Custom domain — none attached. Note `smilelawns.com` is expired/unresolving, so it is available to reclaim if the client still wants it
-- A pressure-washing job photo
-- Confirm (570) 855-0780 is the intended tracking line; GBP lists (570) 290-5159 as the raw business number
-- Consider whether SSO should be on for this Vercel project — the bilskis entry notes SSO was off there, leaving a publicly indexable vercel.app canonical
-
 ### Rendering fixes — 2026-07-29 (redeploy dpl_3jdQ22VDQBenjpzx9qyd4BUiVfbB)
 
 Operator reported rendering mistakes on the service and service-area pages. Four issues found; three were content, one was a genuine CSS bug.
@@ -189,7 +131,77 @@ images, 0 duplicate hero/About copy, 6/6 distinct area heroes. 25/25 live routes
 off as a transient reading. It was the real bug. Measure at a settled, explicitly-set viewport
 before dismissing a layout anomaly.
 
----
+## smile-lawn-care — 2026-07-29
+
+- **Client:** Smile Lawn Care (legal: Smile Lawn Care & Landscapers), Wilkes-Barre PA
+- **Brief:** duplicate of the `gilroy-roofing` build (same `owl` structure) for the business at https://lawnmowingwilkesbarre.com/ — operator-supplied logo, palette, 7 services and 18 service areas; calendar + contact form to be placeholder images
+- **Template:** `owl`, cloned from `sites/bilskis-lawncare` rather than `sites/gilroy-roofing`. Same structure either way, but bilskis already carries the template bug fixes logged in its entry below (the two `SERVICES` lists, the hardcoded `color: white` on accent fills, the `.form-error` accent tint, the Gilroy copy baked into component defaults). Cloning from Gilroy would have meant re-fixing all of them.
+- **Status:** DEPLOYED 2026-07-29
+- **Live URL:** https://smile-lawn-care.vercel.app
+- **Deployment:** dpl_CGZhur6geeqMEoDuH8AUU1EYZzb6 (Vercel project `smile-lawn-care`, prj_3w4mo5TAnJfnmBJq17eq0Chtf38N, team_pZ4lsW05bOEjG4wgazLzUhRH). Framework preset auto-detected as Astro; Node 24.x
+- **No URL-rewrite redeploy needed:** `astro.config.mjs` `site:` was already set to `https://smile-lawn-care.vercel.app` pre-deploy and the production alias resolved to exactly that, so canonicals/`og:url`/JSON-LD/robots/sitemap were correct on the first deploy. Single deploy, not the two-pass rewrite the skill describes
+- **Deploy gotcha NOT hit this time:** checked all four parent directories for a stray `.vercel/project.json` before deploying — all clean (the bilskis build had to neutralize one at the workspace root). Post-deploy check confirms `.vercel/project.json` landed in `sites/smile-lawn-care/` as project `smile-lawn-care`
+- **NOTE — the production alias is PUBLIC:** `https://smile-lawn-care.vercel.app` returns 200 with no SSO and no `x-robots-tag`. Only the deployment-specific URL (`smile-lawn-care-z6d8acvhl-…`) is SSO-gated (302 → `vercel.com/sso-api`). Same non-standard state as `bilskis-lawncare`, and it differs from the `ssoProtection: all_except_custom_domains` default the vercel-deploy skill documents. The site is therefore publicly indexable with a vercel.app canonical — gate it or attach the real domain before this accrues duplicate-content history
+- **Pages:** 38 prerendered, plus `/book` and `/api/estimate` served by the Vercel render function (both `prerender = false`) — home, about, 7 services + index, 18 service areas + index (nested `/service-area/`), blog + 1 post, contact, book, pricing, our-work, thank-you, privacy, terms, accessibility. 38/38 routes 200 on the dev server; sitemap 39 URLs (38 prerendered + `/book`)
+
+### NOT the same business as bilskis-lawncare
+Worth flagging because the two look identical at a glance: same market, and the **exact same 18-town service area list**. They are different clients — Bilski's is 839 N Main St, Hilldale, (570) 899-6400, 4.9/40; Smile is 147 Abbott St, Wilkes-Barre, (570) 855-0780, 5.0/37. The shared 18-town list is just the standard MLA Wyoming Valley coverage set.
+
+### Palette — this build INVERTS the owl assumption
+Operator-supplied: bg `#ffffff`, secondary bg `#f5cf39`, CTA `#79a832`, with the brief stating the yellow is the "main colour focus" and the header menu colour. In every other owl build `--color-primary` is a **dark** panel colour carrying white text; here it is a **light yellow**, so:
+- `--color-on-primary` is `#1a1a1a` (11.49:1). White on the yellow is **1.51:1** — unusable.
+- `--color-accent` `#79a832` is **fill-only**. As text it is 2.81:1 on white and 1.86:1 on the yellow. Introduced `--color-accent-ink` `#35591f` for every foreground use of the green — 8.08:1 on bg, 7.53:1 on surface, 5.33:1 on the yellow. One token safe on all three backgrounds.
+- Introduced `--color-accent-edge` `#2f4a17` because a green button on a yellow band is 1.86:1, below the 3:1 WCAG 1.4.11 floor for a control boundary.
+- Tile washes on primary-backed sections (`ProcessSteps`, `WhyChooseUs`, `Testimonials`) flipped from `rgba(255,255,255,…)` to `rgba(0,0,0,…)`. White overlays are invisible on yellow.
+- `ClosingCTA` had a latent bug: it sets `color: var(--color-on-primary)` but paints a **dark** scrim when passed a `photo`, so near-black text would land on a dark photo. Added a `.has-photo` branch that flips back to white. No call site passes a photo today; fixed so the prop is not a trap.
+- Header is `--color-primary` with a near-white phone badge — a translucent green wash disappears into the yellow.
+- **Verified:** all 10 token pairs ≥ 4.5:1 via the README script, and a live-DOM audit found **0 failures across 179 text elements** outside the photo-scrim regions (hero + service tiles, which paint white over a dark scrim and were confirmed visually).
+
+### Deliberate scope calls
+- **18 service-area pages, cap raised from 6.** Operator explicitly chose this over the 6-pages-plus-named-in-copy approach that `bilskis-lawncare` took at the same fork. `getStaticPaths` uncapped in both dynamic routes; header areas menu is now two-column (`.submenu.two-col`, 420px, verified to fit at 1280px) and the mobile nav's existing max-height/overflow handles all 18 (scrollHeight 1020 vs clientHeight 714). All 18 towns carry **genuinely differentiated** `local_context` — terrain, housing stock, tree cover, lot size — tied to what each actually changes about the lawn work, rather than 18 interchangeable pages. This is the doorway-page risk CLAUDE.md warns about; mitigated by the copy, not ignored.
+- **7 services, cap raised from 5.** All seven are distinct services the client already sells and already navigates to on their own funnel.
+- **Email omitted from the site config.** `Contact@SmileLawns.com` (decoded from the funnel's Cloudflare email-protection blob) is on a domain with **no A record and no MX record** — the mailbox is dead. A live mailto is worse than none.
+- **No years-in-business claim anywhere.** Nothing verifiable was published. Earliest Google review is 2024-04-20 and the logo hit the GHL CDN in March 2024, but neither establishes a founding year, so the site makes no "since 20XX" claim. Note the regenerated satisfaction badge says "5.0 ★ 37 REVIEWS" where Bilski's said "SINCE 2020".
+- **Pricing page carries no dollar figures** — same reasoning as the bilskis build. No rate card for this client.
+- **Pressure Washing has no photo.** Its grid tile uses the template's `.no-photo` gradient (which reads as deliberate, not broken) and its page hero falls back to the mowing photo. Did not substitute stock: a generic pressure-washing photo on a service tile implies it is their crew's work. It is the one asset gap.
+- **FAQ rewritten from scratch.** The client's live funnel ships the GHL template's **commercial-real-estate-development** boilerplate ("What factors should I consider when selecting a commercial development site?", "our architectural design approach") — three questions with nothing to do with lawn care. Replaced with seven real ones.
+
+### Content provenance
+- **Testimonials, rating, trust badges:** 12 real 5-star Google reviews with attribution, all verbatim. Rating 5.0 / 37 reviews is GBP-verified and feeds `AggregateRating` in the LocalBusiness JSON-LD.
+- **Owner's first name (Eric)** came out of the reviews themselves — used in the about copy and the "Talk to Eric" guarantee CTA. No surname is published anywhere, so none is claimed.
+- **Copy angles** derive from the review corpus: punctuality and communication are what reviewers lead with, ahead of the work itself, so "we turn up on the day we said" is the site's spine rather than a generic quality claim.
+- **Imagery:** 6 real client job photos hotlinked from the GHL/filesafe CDN, each matched to the service it actually depicts, all verified 200 and confirmed loading in-browser. Logo pulled as the original 896×808 RGBA PNG (the `f_webp` CDN variant transcodes to WebP despite the `.png` path).
+- **Reddit local-research was skipped** — no cost incurred and nothing it would have added; the 12-review corpus already gave concrete, attributable copy angles.
+
+### Intake spend: ~$0.012
+Three Apify runs. The first (`lukaskrivka~google-maps-with-contact-details`, "Smile Lawn Care" in "Wilkes-Barre, Pennsylvania") returned **0 places** — the same `outOfLocation` filtering that hit the bilskis build, because the GBP pin sits east of the city. Re-ran against the **Google Maps place URL directly**, which bypasses location filtering entirely and returned the profile — that is the approach to reach for first on any service-area business whose pin is off its stated city. That run returned `reviews: []` despite `maxReviews: 8`, so a third run on `compass~google-maps-reviews-scraper` against the place_id pulled all 12 review texts. No Firecrawl spend: the funnel came down via plain `curl` and the directories via WebFetch.
+
+### Verified LIVE (post-deploy, 2026-07-29)
+- **39/39 sitemap URLs return 200** on the live alias, plus `/book` and `/thank-you` 200 (serverless render function)
+- Live `LocalBusiness` JSON-LD reads name "Smile Lawn Care", phone +15708550780, 5.0/37, 147 Abbott St / Wilkes-Barre / 18705. Canonical and `og:url` both `https://smile-lawn-care.vercel.app/`. robots.txt and sitemap-index reference the same host
+- **All 8 images load from the live origin** — the 6 hotlinked GHL/filesafe CDN photos plus the local logo and badge. No referrer blocking on the CDN
+- **`/api/estimate` live and behaving:** valid service → `?error=unavailable` (correct — no `LEAD_WEBHOOK_URL` set), stale bilskis value "Retaining wall" → `?error=service`. **No lead was transmitted** — with no destination configured the function rejects before any outbound call, so there is nothing to delete downstream. This is the opposite of the gilroy build, where a real test lead reached the Make scenario
+- Dev-only captcha notice confirmed absent from live HTML; no `bilski`/`gilroy` leakage in the live home page
+- Live home page rendered and screenshotted at 1280×800 — yellow header, hero photo + scrim, trust badges, green CTA all correct
+
+### Verified locally (pre-deploy)
+- `npm run build` clean; 38/38 routes 200
+- All 18 area slugs and 7 service slugs present in header, footer, home, and both index pages; all 18 town names also in crawlable home `seo_body` copy
+- **Lead form validation tested end-to-end** against the dev server — the trap the bilskis entry flags. Valid service → passes service + TCPA gates, then `?error=unavailable` (no `LEAD_WEBHOOK_URL` locally, which is correct); a stale bilskis value ("Retaining wall") → `?error=service`; missing consent → `?error=consent`. The two `SERVICES` lists are confirmed byte-identical. **No lead left the machine** — no webhook is configured, so nothing was transmitted and there is no test record to clean up downstream.
+- Canonical, `og:url`, LocalBusiness JSON-LD (5.0/37, hours, geo), FAQPage, per-area `Service` + `BreadcrumbList`, robots.txt and sitemap all reference `https://smile-lawn-care.vercel.app` — set pre-deploy so no URL-rewrite redeploy is needed
+- Mobile (375×812) and desktop (1280) both checked; dev-only captcha warning confirmed absent from the built HTML
+- No `bilski` / `gilroy` / roofing / hardscaping / Wix-CDN leakage anywhere in source or built output
+
+### Still outstanding
+- **`LEAD_WEBHOOK_URL` env var is NOT set — the lead form is live but drops every submission** (`?error=unavailable`). This is the highest-priority item: the site is publicly reachable and currently cannot capture a lead. Set it as an encrypted production env var on the `smile-lawn-care` project, then redeploy
+- **`VERCEL_TOKEN` in `~/Claude Projects/.env` is expired** (`invalidToken` from the v9 projects API). The CLI's own local credentials work, so deploys are fine, but any script that reads that token will fail. Worth rotating
+- GHL calendar + contact form embeds (placeholder images in place per the brief)
+- GHL reviews widget and Live Chat snippets — NOT SET
+- Captcha site key — honeypot + validation active meanwhile
+- Custom domain — none attached. Note `smilelawns.com` is expired/unresolving, so it is available to reclaim if the client still wants it
+- A pressure-washing job photo
+- Confirm (570) 855-0780 is the intended tracking line; GBP lists (570) 290-5159 as the raw business number
+- **Decide on the public vercel.app alias.** Confirmed directly: the alias is 200/public with no `x-robots-tag` while only the deployment URL is SSO-gated. Either gate the alias, add a `noindex` header for the vercel.app host, or attach the real domain — otherwise Google indexes a vercel.app canonical that a later domain move has to compete with. Same open question as `bilskis-lawncare`; worth settling once for both
 
 ## 2026-07-29 — Whitman Lawn Care (`whitman-lawncare`)
 
@@ -298,3 +310,67 @@ domain is attached.
 3. GHL calendar, contact form, chat, and reviews snippets still placeholders.
 4. Client photos are ~500px originals; request high-res.
 5. No GBP exists — social proof is placeholder everywhere.
+
+### 2026-07-29 (later) — service + area page render audit, fixed in the template too
+
+Operator reported rendering mistakes on service and area pages. Four defects, all of
+them template bugs rather than Whitman content, so all four are fixed in
+`astro-templates/owl/` as well as in `sites/whitman-lawncare/`.
+
+**1. `AboutSection` collapsed on mobile — every service page.** The ≤780px media query set
+`grid-template-areas: none` and then reset `grid-area` on `.about-photo` — but the desktop
+rule sets `grid-area: photo` on `.about-figure`. The figure kept pointing at a named area
+that no longer existed, so the browser built implicit columns. Measured at a settled 375px
+viewport: `grid-template-columns: 178.672px 0px 100.328px`, body copy crushed to **179px**,
+image to **100px**. Only bit `photo_position="left"`, which is exactly what service pages
+pass. Fix: reset the same element the area was set on, plus `width:100%; min-width:0` on
+the figure. **Reset grid-area on the element that has it — the img was never a grid item.**
+
+**2. Same photo twice on every service page.** The page passed `hero_photo` to both the hero
+background and the About figure. Added `about_photo` (+ `about_photo_alt`) to the services
+schema; the About figure reads only that, with **no fallback to `hero_photo`** — unset
+renders text-only, which `.no-photo` already handles.
+
+**3. Same paragraph twice on every area page.** `local_context` fed both the hero subheadline
+and the About body. Added `about_body`. The fallback chain deliberately skips
+`local_context` and goes straight to the generic line — falling back to it would just
+restage the duplication the field exists to fix.
+
+**4. `.about-photo` had no `width:100%`.** An `<img>` falls back to intrinsic width, so the
+client's 500px photos sat in a 556px column with a ragged gap. Only visible once real
+(small) client images replaced the wide stock URLs.
+
+**Latent bug found while auditing, fixed before it shipped:** `getStaticPaths` built
+**5** service pages while `Header`/`Footer` linked **6**. Any site with 6+ services would
+ship a nav link to a page that was never generated — a 404 no build error surfaces, because
+slicing a collection is always "valid". Whitman only dodged it because every cap here was
+raised to 10. Fix: `src/lib/limits.ts` exports `SERVICE_LIMIT` / `AREA_LIMIT` and all eleven
+call sites import them, so page-generation can no longer fall behind navigation. Both
+`[slug].astro` routes now `console.warn` and name the dropped slugs when a collection
+exceeds its cap — verified by temporarily adding a 7th area and watching it fire.
+`getStaticPaths` cannot see frontmatter consts but **can** see module imports; that is why
+the constants live in `src/lib/`.
+
+Also relaxed every image field in the schema from `z.string().url()` to `z.string()` so
+local `/img/...` paths validate — serving client photos from `public/` beats hotlinking a
+CMS that can vanish.
+
+**Whitman content filled in behind those fixes:** each of the 6 areas now has its own
+`hero_photo` matched to its local angle (aeration on Wilkes-Barre's compaction page, weed
+control on Dickson City's, ticks on Moosic's) instead of all six sharing
+`default_hero_photo`; distinct `about_body`; and a `landmark_photo`. Five landmarks are
+CC-licensed Wikimedia photos with visible `landmark_credit` attribution. Carbondale has
+none — Commons' only options were a 1940s postcard illustration, an 1870s lithograph, and a
+school with a visibly drought-stressed lawn, which is a poor advert on a lawn-care page — so
+it uses a client photo with alt text that does not claim to depict Carbondale.
+
+**Verification:** all 16 service + area pages measured in-page at 375px and 1280px via
+iframes — zero zero-width grid columns, zero collapsed figures, zero photo/figure width
+mismatches, zero horizontal overflow, zero broken images, 7/7 sections each. Built-HTML
+audit: 0 duplicate hero/About images, 0 duplicate hero/About copy, alt text on every About
+figure, credits on all 5 Wikimedia landmarks.
+
+**Process note:** the first measurement of this bug came back `vw: 0` with everything at
+0px. That reading was real in direction but taken mid-resize; the numbers only became
+trustworthy after explicitly setting the viewport and re-measuring. Set the viewport, then
+measure — and equally, do not dismiss an anomaly just because the first reading looks odd.

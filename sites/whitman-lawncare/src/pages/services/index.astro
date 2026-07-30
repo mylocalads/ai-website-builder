@@ -1,10 +1,11 @@
 ---
+import { SERVICE_LIMIT } from '../../lib/limits';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import ClosingCTA from '../../components/ClosingCTA.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 10);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }];
 ---
 <BaseLayout

@@ -11,10 +11,22 @@ const services = defineCollection({
     long_description: z.string(),
     icon: z.string().optional(),
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
-    hero_photo: z.string().url().optional(),
+    // URL or local path (e.g. /img/foo.jpg). Client photos are better served
+    // from public/ than hotlinked off the client's old CMS, which can vanish.
+    hero_photo: z.string().optional(),
+    // A SECOND photo, distinct from hero_photo, for the AboutSection figure.
+    // The service page used to pass hero_photo to BOTH the hero background and
+    // the About figure, so the same image rendered twice on every service page.
+    // Left unset, the About section renders text-only rather than repeating the
+    // hero — that is the intended fallback, not a bug.
+    about_photo: z.string().optional(),
+    // Describes the about_photo for screen readers. The page previously fell
+    // back to a templated "{title} — {business}" label, which names the service
+    // rather than describing the image. Mirrors landmark_alt on service_areas.
+    about_photo_alt: z.string().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
-      photo: z.string().url(),
+      photo: z.string(),
       alt: z.string(),
     })).default([]),
     sub_services: z.array(z.string()).default([]),
@@ -42,16 +54,24 @@ const service_areas = defineCollection({
       })
       .optional(),
     neighborhoods: z.array(z.string()).default([]),
+    // local_context feeds the HERO subheadline; about_body feeds the
+    // AboutSection further down the page. Both used to read local_context, so
+    // the identical paragraph rendered twice on every service-area page.
+    // When unset the About section falls back to a GENERIC line, never to
+    // local_context — falling back to it would just restage the duplication.
+    about_body: z.string().optional(),
     local_context: z.string().optional(),
-    hero_photo: z.string().url().optional(),
-    landmark_photo: z.string().url().optional(),
+    // URL or local path (e.g. /img/foo.jpg). Client photos are better served
+    // from public/ than hotlinked off the client's old CMS, which can vanish.
+    hero_photo: z.string().optional(),
+    landmark_photo: z.string().optional(),
     landmark_alt: z.string().optional(),
     // CC BY / CC BY-SA sources require visible attribution.
     landmark_credit: z.string().optional(),
     landmark_credit_href: z.string().url().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
-      photo: z.string().url(),
+      photo: z.string(),
       alt: z.string(),
     })).default([]),
   }),
@@ -74,7 +94,9 @@ const blog = defineCollection({
       message: 'publish_date must be ISO yyyy-mm-dd so posts sort correctly',
     }),
     read_time: z.string(),
-    hero_image: z.string().url().optional(),
+    // URL or local path (e.g. /img/foo.jpg). Client photos are better served
+    // from public/ than hotlinked off the client's old CMS, which can vanish.
+    hero_image: z.string().optional(),
     author: z.string().optional(),
     tags: z.array(z.string()).default([]),
   }),
@@ -101,7 +123,7 @@ const site = defineCollection({
       team_members: z.array(z.object({
         name: z.string(),
         role: z.string().optional(),
-        photo: z.string().url(),
+        photo: z.string(),
         bio: z.string().optional(),
       })).default([]),
       tagline: z.string(),
@@ -155,8 +177,8 @@ const site = defineCollection({
         headline: z.string().optional(),
         us_label: z.string().default('US'),
         them_label: z.string().default('THEM'),
-        us_photo: z.string().url().optional(),
-        them_photo: z.string().url().optional(),
+        us_photo: z.string().optional(),
+        them_photo: z.string().optional(),
         rows: z.array(z.object({
           label: z.string(),
           us: z.boolean().default(true),
@@ -166,7 +188,7 @@ const site = defineCollection({
       gallery: z.array(z.object({
         title: z.string().optional(),
         location: z.string().optional(),
-        photo: z.string().url(),
+        photo: z.string(),
         alt: z.string(),
         description: z.string().optional(),
       })).default([]),
@@ -209,7 +231,7 @@ const site = defineCollection({
         subheadline: z.string(),
         cta_text: z.string(),
         cta_href: z.string(),
-        photo: z.string().url().optional(),
+        photo: z.string().optional(),
         video: z.string().url().optional(),
         video_link_text: z.string().optional(),
         video_link_href: z.string().optional(),
@@ -222,7 +244,7 @@ const site = defineCollection({
         quote_card: z.object({
           quote: z.string(),
           author: z.string().optional(),
-          author_photo: z.string().url().optional(),
+          author_photo: z.string().optional(),
           cta_text: z.string(),
           cta_href: z.string(),
           rating: z.number().optional(),
@@ -253,7 +275,7 @@ const site = defineCollection({
           // document, umbrella, calendar, broom, home). An unknown key
           // renders nothing — it is never printed as text.
           icon: z.string().optional(),
-          image: z.string().url().optional(),
+          image: z.string().optional(),
         })).default([]),
         steps_title: z.string().optional(),
         steps_icon: z.string().optional(),   // icon registry key
@@ -329,7 +351,7 @@ const site = defineCollection({
       kind: z.literal('our-work'),
       intro: z.string(),
       projects: z.array(z.object({
-        title: z.string(), location: z.string().optional(), photo: z.string().url(),
+        title: z.string(), location: z.string().optional(), photo: z.string(),
         alt: z.string(), description: z.string().optional(),
       })),
     }),
