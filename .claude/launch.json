@@ -14,6 +14,27 @@
       "runtimeArgs": ["run", "dev", "--prefix", "sites/mylocalads", "--", "--port", "4321"],
       "port": 4321,
       "autoPort": false
+    },
+    {
+      "name": "bilskis-lawncare",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/bilskis-lawncare", "--", "--port", "4331"],
+      "port": 4331,
+      "autoPort": false
+    },
+    {
+      "name": "whitman-lawncare",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/whitman-lawncare", "--", "--port", "4341"],
+      "port": 4341,
+      "autoPort": false
+    },
+    {
+      "name": "smile-lawn-care",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/smile-lawn-care", "--", "--port", "4351"],
+      "port": 4351,
+      "autoPort": false
     }
   ]
 }

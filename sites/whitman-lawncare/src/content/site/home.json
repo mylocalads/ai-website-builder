@@ -1,0 +1,172 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Scranton, PA — Locally Owned & Operated",
+    "headline": "A Thicker, Greener Lawn Without The Guesswork",
+    "subheadline": "Whitman Lawn Care builds a treatment program around your lawn — fertilization, weed and grub control, aeration, and soil correction — tuned to Northeast Pennsylvania soil by a crew that has worked it for over 25 years.",
+    "cta_text": "Get My Free Lawn Analysis",
+    "cta_href": "/book",
+    "video_link_text": "How our programs work",
+    "video_link_href": "/about",
+    "trust_badges": [
+      {
+        "label": "25+ Years",
+        "sublabel": "Treating Northeast PA lawns"
+      },
+      {
+        "label": "Locally Owned",
+        "sublabel": "& operated from Scranton"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Locally owned and operated",
+      "icon": "home"
+    },
+    {
+      "text": "25+ years on Northeast PA lawns",
+      "icon": "award"
+    },
+    {
+      "text": "Every program starts with a soil test",
+      "icon": "clipboard"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Approach",
+    "headline": "We Treat The Soil, Not Just The Grass",
+    "body": "Most lawn problems in this valley are soil problems. Shale-derived ground runs acidic, which locks up the nitrogen and potassium your grass has already been given — so a lawn can be fertilized four times a year and still come back thin and yellow. We test first, correct the pH with lime where it is needed, and only then build the feeding schedule. It is slower to start and it is the reason our lawns hold their color through August.",
+    "cta_text": "Get My Free Lawn Analysis",
+    "cta_href": "/book",
+    "icon": "clipboard"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The Whitman Lawn Program",
+    "intro": "Every property we treat runs on the same method, whether it is a quarter-acre in Green Ridge or a commercial lot off the Casey Highway. Test, correct, feed, protect — in that order.",
+    "blocks": [
+      {
+        "title": "The program follows your lawn",
+        "body": "Grass type, sun exposure, watering habits, and soil pH all change what a lawn needs and when. We assess yours and write the schedule around it rather than applying the same four-step bag to every address on the street.",
+        "icon": "clipboard"
+      },
+      {
+        "title": "Safe around pets and children",
+        "body": "We use labeled rates, post the property, and tell you exactly how long to stay off after each application. If you would rather go fully natural, we run slow-release organic programs instead.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What a season with us looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Early spring",
+        "body": "Crabgrass pre-emergent goes down before soil temps hit 55°F, plus the first feeding."
+      },
+      {
+        "title": "Summer",
+        "body": "Broadleaf weed control, grub prevention ahead of the July hatch, and flea, tick and mosquito treatment on request."
+      },
+      {
+        "title": "Fall",
+        "body": "Core aeration, lime where the soil test calls for it, and the heaviest feeding of the year to build roots over winter."
+      }
+    ],
+    "guarantee": {
+      "title": "We stand behind every application",
+      "body": "If a treatment does not do what we told you it would, call us and we come back out. You are dealing with the people who actually did the work, not a call center — that is the advantage of hiring the company down the road.",
+      "cta_text": "Talk to Dan",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Is Three Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free lawn analysis",
+        "icon": "clipboard",
+        "body": "We walk the property, identify the weeds and any pest pressure, and pull a soil sample."
+      },
+      {
+        "label": "Step Two",
+        "title": "Your custom program",
+        "icon": "document",
+        "body": "You get a written schedule and price — what goes down, when, and why."
+      },
+      {
+        "label": "Step Three",
+        "title": "Seasonal applications",
+        "icon": "calendar",
+        "body": "We show up on schedule, leave a summary of what was applied, and adjust as the lawn responds."
+      }
+    ],
+    "cta_text": "Get My Free Lawn Analysis",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Whitman Lawn Care",
+    "headline": "The Company Down The Road",
+    "body": "Whitman Lawn Care is a locally owned and operated lawn treatment company based in Scranton, serving Lackawanna, Luzerne, and Wyoming counties. We are a dedicated team of lawn care professionals with more than 25 years of experience on Northeast Pennsylvania properties. We believe in partnering with our clients to create lush, healthy lawns that enhance the beauty of your space, and we stand behind every service we provide.",
+    "checklist": [
+      "Locally owned and operated from Scranton",
+      "25+ years treating Northeast Pennsylvania lawns",
+      "Fertilization, weed, grub, and pest programs",
+      "Organic fertilizer options available",
+      "Residential and commercial properties"
+    ],
+    "photo_alt": "A healthy, dense green lawn of the kind we build across Northeast Pennsylvania",
+    "photo_cutout": false,
+    "photo": "/img/organic-fertilizer.jpg",
+    "cta_text": "Get My Free Lawn Analysis",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why Northeast PA Lawns Struggle",
+    "headline": "Lawn Care In Scranton & The Wyoming Valley",
+    "paragraphs": [
+      "Northeast Pennsylvania is a hard place to grow grass. Much of the soil here is shale-derived and runs acidic, which locks up nutrients even on lawns that get fed regularly. The growing season is short, summer brings drought stress on the thin ground over bedrock, and Japanese beetle grubs hatch on schedule every July.",
+      "A generic four-application program does not answer any of that. We soil test, correct pH with lime where the numbers call for it, time the crabgrass pre-emergent to soil temperature rather than the calendar, and put grub control down before the hatch instead of after the damage shows."
+    ],
+    "checklist": [
+      "Soil testing and lime correction for acidic shale ground",
+      "Crabgrass pre-emergent timed to soil temperature",
+      "Grub prevention ahead of the July hatch",
+      "Fall core aeration to break up compaction",
+      "Organic slow-release programs on request"
+    ],
+    "image": "/img/grass-closeup.jpg",
+    "image_alt": "Close-up of dense, healthy turf",
+    "image_position": "left",
+    "cta_text": "Get My Free Lawn Analysis",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "When should I start a lawn program?",
+      "a": "Early spring is ideal because the crabgrass pre-emergent has to go down before soil temperatures reach about 55°F, and once that window closes it is gone for the year. That said, we start lawns in every month of the growing season — we simply begin at whatever point in the schedule makes sense and pick up the missed steps the following spring."
+    },
+    {
+      "q": "Are your treatments safe around pets and children?",
+      "a": "Yes, when the directions are followed. We apply at labeled rates, post the property after each visit, and tell you exactly how long to keep pets and kids off — usually until the application has dried or been watered in. If you would rather avoid conventional products entirely, ask us about our organic fertilizer program."
+    },
+    {
+      "q": "Do you offer organic lawn care?",
+      "a": "We do. Organic fertilizers are derived from natural sources and release nutrients slowly, feeding the soil biology as well as the grass and reducing the risk of runoff or over-fertilization. They take longer to show visible results than synthetic products, so we set expectations up front before starting an organic program."
+    },
+    {
+      "q": "Why do you soil test before quoting a program?",
+      "a": "Because soil composition is constantly changing, and a lawn that looks nutrient-starved is often just too acidic to use the nutrients it already has. Testing tells us your nitrogen, phosphorus, potassium, and pH levels so we can recommend the right amendments instead of guessing — which usually saves money by preventing applications you did not need."
+    },
+    {
+      "q": "How often will you come out?",
+      "a": "A standard program runs five to six visits across the season, spaced roughly six to eight weeks apart from early spring through late fall. Add-on services like core aeration, lime, and flea, tick and mosquito control are scheduled separately at the right time of year for each."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We cover Lackawanna, Luzerne, and Wyoming counties — Scranton, Wilkes-Barre, Clarks Summit, Dickson City, Moosic, Carbondale, and the surrounding towns. If you are not sure whether you fall inside the service area, call (570) 451-3683 and we will tell you straight away."
+    }
+  ]
+}

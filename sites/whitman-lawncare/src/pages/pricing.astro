@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// No published price list for this business, and inventing dollar figures for a
+// client's services is not on. This explains what moves the number instead.
+const priceFactors = [
+  { factor: 'Lawn size', detail: 'Priced per square foot of treatable turf, measured at the free analysis — not per visit.' },
+  { factor: 'Current condition', detail: 'A lawn with heavy weed pressure or an active grub population needs more work in year one than a maintained lawn does.' },
+  { factor: 'Soil test results', detail: 'If the pH is off, lime goes into the program. If it is not, it does not, and you are not billed for it.' },
+  { factor: 'Program length', detail: 'A standard season runs five to six applications. Add-ons like aeration, lime, and tick control are quoted separately.' },
+  { factor: 'Conventional or organic', detail: 'Organic programs cost more per application and take longer to show results. We will tell you honestly whether it is worth it for your lawn.' },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How Whitman Lawn Care prices lawn treatment programs across ${site.address.city}, ${site.address.state}. Free lawn analysis, written quote, no rate card guesswork.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get My Free Lawn Analysis"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your lawn"
+  />
+
+  <section class="price-factors">
+    <div class="container">
+      <h2>What determines your price</h2>
+      <p class="lede">We do not publish a rate card, because a number quoted before anyone has seen the lawn is a guess. Here is what the free analysis actually measures, and how each piece moves the price.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Factor</th><th>How it affects the quote</th></tr>
+          </thead>
+          <tbody>
+            {priceFactors.map((r) => (
+              <tr><td>{r.factor}</td><td>{r.detail}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>No surprises:</strong> you get the full season's schedule and price in writing before anything goes down, and add-on services are always quoted separately rather than folded in.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free lawn analysis</h2>
+        <p class="lede">Pick a time that works — we walk the property, pull a soil sample, and give you a written program and price.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .price-factors { padding: var(--space-5) 0; background: var(--color-surface); }
+  .price-factors h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .price-factors .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .price-factors table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .price-factors th, .price-factors td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .price-factors th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .price-factors tbody tr:last-child td { border-bottom: 0; }
+  .price-factors .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

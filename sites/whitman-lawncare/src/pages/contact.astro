@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import SectionHead from '../components/SectionHead.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+import PlaceholderSlot from '../components/PlaceholderSlot.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const formSnippet = site.crm?.contact_form_snippet;
+const social = site.social ?? {};
+const socials = Object.entries(social).filter(([_, url]) => !!url);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact' }];
+---
+<BaseLayout
+  title={`Contact ${site.business_name}`}
+  description={`Reach ${site.business_name} in ${site.address.city}, ${site.address.state}. Send us a message or call ${site.phone_display}.`}
+  breadcrumbs={crumbs}
+  pagePath="/contact"
+>
+  <section class="contact-page">
+    <div class="container">
+      <SectionHead eyebrow="Get In Touch" heading="Send us a message" />
+      <div class="contact-grid">
+        <div class="form-col">
+          {formSnippet
+            ? <div class="form-wrap"><Fragment set:html={formSnippet} /></div>
+            : <PlaceholderSlot
+                variant="form"
+                height="1391px"
+                label="Contact form goes here"
+                note="Placeholder for the GHL contact form embed. Paste the snippet into crm.contact_form_snippet in src/content/site/config.json and it replaces this block."
+              />}
+        </div>
+        <aside class="info-col">
+          <h3>Additional Info</h3>
+          <p class="phone-large"><a href={`tel:${site.phone}`}>{site.phone_display}</a></p>
+          <div class="row">
+            <strong>Address:</strong>
+            <address>
+              {site.address.street && <>{site.address.street}<br /></>}
+              {site.address.city}, {site.address.state}{site.address.postal ? ` ${site.address.postal}` : ''}
+            </address>
+          </div>
+          {site.email && (
+            <div class="row"><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a></div>
+          )}
+          {site.hours && (
+            <div class="row">
+              <strong>Assistance Hours:</strong>
+              <ul>{Object.entries(site.hours).map(([day, hrs]) => <li><span class="day">{day}</span> — {hrs}</li>)}</ul>
+            </div>
+          )}
+          <div class="row biz-info">
+            <strong>{site.business_name}</strong>
+            {site.legal_name && site.legal_name !== site.business_name && <><br />{site.legal_name}</>}
+          </div>
+          {socials.length > 0 && (
+            <div class="socials">
+              {socials.map(([platform, url]) => (
+                <a href={url} rel="noopener" target="_blank" aria-label={platform} class="social-link">
+                  {platform === 'facebook' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6C16.5 3.6 15.5 3.5 14.4 3.5c-2.2 0-3.7 1.3-3.7 3.8v2.6H8v3.1h2.7V21h2.8z"/></svg>
+                  )}
+                  {platform === 'youtube' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5 3-5 3z"/></svg>
+                  )}
+                  {platform === 'instagram' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4 1 .5.5.7.9 1 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9 0 3.2 0 3.6-.1 4.9-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-1 1.4-.5.5-.9.7-1.4 1-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1-3.2 0-3.6 0-4.9-.1-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-1-.5-.5-.7-.9-1-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9 0-3.2 0-3.6.1-4.9.1-1.2.3-1.8.4-2.2.2-.6.5-1 1-1.4.5-.5.9-.7 1.4-1 .4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 5.4c-2.4 0-4.4 2-4.4 4.4s2 4.4 4.4 4.4 4.4-2 4.4-4.4-2-4.4-4.4-4.4zm0 7.2c-1.5 0-2.8-1.3-2.8-2.8s1.3-2.8 2.8-2.8 2.8 1.3 2.8 2.8-1.3 2.8-2.8 2.8zm5.7-7.4c0 .6-.5 1-1 1s-1-.5-1-1 .5-1 1-1 1 .5 1 1z"/></svg>
+                  )}
+                  {platform === 'yelp' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8L9 3l5 2v10l-5-2 5-5zm4 8l-2 3-4-3 6-1v1zm-6 5l-1-5 5 3-4 2zm-4-3l-3-4 5-1v5H8z"/></svg>
+                  )}
+                  {platform === 'google_maps' && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  )}
+                </a>
+              ))}
+            </div>
+          )}
+        </aside>
+      </div>
+    </div>
+  </section>
+  <ClosingCTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .contact-page { padding: var(--space-4) 0 var(--space-5); }
+  .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); align-items: start; }
+  .form-col { min-width: 0; }
+  .form-wrap iframe { width: 100%; min-height: 1391px; border: 0; }
+  .info-col h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-2); text-transform: capitalize; }
+  .phone-large { font-size: 1.35rem; font-weight: 600; margin: 0 0 var(--space-3); }
+  .phone-large a { text-decoration: none; }
+  .row { margin-bottom: var(--space-2); font-size: 0.95rem; line-height: 1.65; }
+  .row strong { display: block; margin-bottom: 0.25rem; }
+  .row address { font-style: normal; color: var(--color-muted); }
+  .row ul { list-style: none; padding: 0; margin: 0.25rem 0 0; color: var(--color-muted); }
+  .row ul li { padding: 0.1rem 0; }
+  .row ul .day { text-transform: capitalize; color: var(--color-text); font-weight: 500; }
+  .biz-info { margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--color-surface); font-size: 0.95rem; color: var(--color-muted); }
+  .socials { display: flex; gap: var(--space-1); margin-top: var(--space-3); }
+  .social-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: var(--color-accent); color: var(--color-on-accent); transition: transform 0.15s ease, filter 0.15s ease; }
+  .social-link:hover, .social-link:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>

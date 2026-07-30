@@ -1,0 +1,23 @@
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f4f7f2;
+  --color-text: #111a11;
+  --color-muted: #5a6a5a;
+  --color-primary: #0b4801;
+  --color-on-primary: #ffffff;
+  --color-accent: #feb81a;
+  /* White on #feb81a is 2.0:1 and fails AA. Dark green measures 8.9:1. */
+  --color-on-accent: #0b4801;
+  /* The brand yellow as TEXT on a light surface is 1.7:1 — unreadable. This is
+     the same hue darkened until it clears 4.5:1 on both --color-bg and
+     --color-surface. Use it for eyebrows, step labels, ticks, and link text on
+     light sections; keep --color-accent for fills and for text on the dark
+     green band, where the plain yellow has plenty of contrast. */
+  --color-accent-ink: #8f6200;
+  --color-focus: #0057ff;
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

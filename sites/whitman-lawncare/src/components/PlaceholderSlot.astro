@@ -1,0 +1,113 @@
+---
+// Stands in for client-supplied embeds that have not been provided yet (GHL
+// calendar, GHL contact form) and for social proof this business does not have
+// yet. Renders a labelled wireframe at roughly the height of the real widget so
+// the page composition is honest about what will sit there. Every variant is
+// inline SVG plus site tokens — no external requests.
+//
+// Swapping in the real thing is a one-line change at the call site; nothing
+// here is load-bearing.
+export interface Props {
+  variant: 'calendar' | 'form' | 'review';
+  label: string;
+  note?: string;
+  /** CSS height for the wireframe body. Match the real embed. */
+  height?: string;
+}
+const { variant, label, note, height } = Astro.props;
+---
+<div class="ph" data-variant={variant} style={height ? `--ph-h: ${height};` : undefined}>
+  <div class="ph-art" aria-hidden="true">
+    {variant === 'calendar' && (
+      <svg viewBox="0 0 320 240" preserveAspectRatio="xMidYMid meet" role="presentation">
+        <rect x="8" y="8" width="304" height="224" rx="10" class="ph-panel" />
+        <rect x="8" y="8" width="304" height="40" rx="10" class="ph-bar" />
+        <rect x="26" y="24" width="76" height="8" rx="4" class="ph-line" />
+        <rect x="250" y="24" width="44" height="8" rx="4" class="ph-line" />
+        {[0, 1, 2, 3].map((row) =>
+          [0, 1, 2, 3, 4, 5, 6].map((col) => (
+            <rect
+              x={22 + col * 40}
+              y={66 + row * 40}
+              width="30"
+              height="30"
+              rx="6"
+              class={row === 1 && col === 3 ? 'ph-cell ph-cell-on' : 'ph-cell'}
+            />
+          ))
+        )}
+      </svg>
+    )}
+    {variant === 'form' && (
+      <svg viewBox="0 0 320 300" preserveAspectRatio="xMidYMid meet" role="presentation">
+        <rect x="8" y="8" width="304" height="284" rx="10" class="ph-panel" />
+        {[0, 1, 2, 3].map((i) => (
+          <>
+            <rect x="28" y={36 + i * 54} width="72" height="8" rx="4" class="ph-line" />
+            <rect x="28" y={52 + i * 54} width="264" height="30" rx="6" class="ph-cell" />
+          </>
+        ))}
+        <rect x="28" y="252" width="120" height="30" rx="6" class="ph-cell ph-cell-on" />
+      </svg>
+    )}
+    {variant === 'review' && (
+      <svg viewBox="0 0 320 150" preserveAspectRatio="xMidYMid meet" role="presentation">
+        <circle cx="40" cy="40" r="18" class="ph-cell" />
+        {[0, 1, 2, 3, 4].map((i) => (
+          <path
+            class="ph-star"
+            transform={`translate(${72 + i * 22} 32) scale(0.7)`}
+            d="M10 0l3 6.5 7 1-5 5 1.2 7L10 16l-6.2 3.5L5 12.5 0 7.5l7-1z"
+          />
+        ))}
+        <rect x="28" y="78" width="264" height="8" rx="4" class="ph-line" />
+        <rect x="28" y="98" width="240" height="8" rx="4" class="ph-line" />
+        <rect x="28" y="118" width="150" height="8" rx="4" class="ph-line" />
+      </svg>
+    )}
+  </div>
+  <p class="ph-label">{label}</p>
+  {note && <p class="ph-note">{note}</p>}
+</div>
+<style>
+  .ph {
+    --ph-h: 420px;
+    min-height: var(--ph-h);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-4) var(--space-3);
+    border: 2px dashed color-mix(in srgb, var(--color-primary) 35%, transparent);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    text-align: center;
+  }
+  .ph-art { width: 100%; max-width: 340px; }
+  .ph-art svg { width: 100%; height: auto; display: block; }
+
+  .ph-panel { fill: var(--color-bg); stroke: color-mix(in srgb, var(--color-primary) 22%, transparent); stroke-width: 2; }
+  .ph-bar { fill: color-mix(in srgb, var(--color-primary) 12%, transparent); }
+  .ph-line { fill: color-mix(in srgb, var(--color-primary) 26%, transparent); }
+  .ph-cell { fill: color-mix(in srgb, var(--color-primary) 12%, transparent); }
+  .ph-cell-on { fill: var(--color-accent); }
+  .ph-star { fill: var(--color-accent); }
+
+  .ph-label {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+  .ph-note {
+    margin: 0;
+    max-width: 44ch;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--color-muted);
+  }
+</style>

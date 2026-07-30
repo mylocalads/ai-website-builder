@@ -1,0 +1,88 @@
+{
+  "kind": "config",
+  "business_name": "Whitman Lawn Care",
+  "legal_name": "Whitman Lawn Care LLC",
+  "tagline": "Locally Owned and Operated Lawn Care Services",
+  "phone": "+15704513683",
+  "phone_display": "(570) 451-3683",
+  "email": "dan@whitmanlawncare.net",
+  "address": {
+    "city": "Scranton",
+    "state": "PA",
+    "postal": "18505",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.408969,
+    "lng": -75.66241
+  },
+  "hours": {
+    "monday": "8:30 AM – 4:30 PM",
+    "tuesday": "8:30 AM – 4:30 PM",
+    "wednesday": "8:30 AM – 4:30 PM",
+    "thursday": "8:30 AM – 4:30 PM",
+    "friday": "8:30 AM – 4:30 PM"
+  },
+  "site_url": "https://whitman-lawncare.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 25,
+  "social": {
+    "facebook": "https://www.facebook.com/WhitmanLawnCareLLC/"
+  },
+  "logo_url": "/logo-whitman.png",
+  "default_hero_photo": "/img/hero-lawn.jpg",
+  "about_photo": "/img/grass-closeup.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Locally owned and operated",
+      "description": "Dan and his crew live in the same valley you do. We are not a national franchise routing your call to a center three states away."
+    },
+    {
+      "title": "25+ years on Northeast PA lawns",
+      "description": "We have been treating the shale soil, short seasons, and grub pressure specific to this region since the 1990s."
+    },
+    {
+      "title": "A program built for your lawn",
+      "description": "We soil test first. Your grass type, your watering, your soil pH — the program follows the lawn, not a one-size sales sheet."
+    },
+    {
+      "title": "Organic options on request",
+      "description": "If you would rather keep it natural, we run slow-release organic programs that feed the soil biology instead of just the grass."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Lawn treatment",
+    "heading_rest": "programs that work",
+    "subtitle": "Fertilization, weed and pest control, aeration, and soil correction across Lackawanna, Luzerne, and Wyoming counties."
+  }
+}
