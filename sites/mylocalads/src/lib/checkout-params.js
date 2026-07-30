@@ -18,6 +18,10 @@ export class MissingPriceError extends Error {}
 
 const SHIPPING_COUNTRIES = ['US', 'CA'];
 const TOS_URL = 'https://start.mylocalads.co/terms-of-service';
+// Per-session branding, so the account-wide Stripe branding is left alone.
+// Stripe derives the button label colour from the contrast against
+// button_color; there is no separate text-colour parameter.
+const BUTTON_COLOR = '#2f43ff';
 
 export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, cancelUrl } = {}) {
   if (!Array.isArray(itemIds) || itemIds.length === 0) {
@@ -65,6 +69,7 @@ export function buildSessionParams(itemIds, catalog, priceIds, { successUrl, can
     // Required phone number. Stripe marks this field mandatory whenever
     // collection is enabled.
     phone_number_collection: { enabled: true },
+    branding_settings: { button_color: BUTTON_COLOR },
     // Business name. `optional: false` makes it mandatory.
     custom_fields: [
       {

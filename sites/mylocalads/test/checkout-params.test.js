@@ -100,6 +100,11 @@ describe('buildSessionParams', () => {
     expect(msg).toContain('start.mylocalads.co/terms-of-service');
   });
 
+  it('sets the checkout button colour per session', () => {
+    expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).branding_settings)
+      .toEqual({ button_color: '#2f43ff' });
+  });
+
   it('collects a mandatory phone number', () => {
     expect(buildSessionParams(['gbp'], FIXTURE, PRICES, URLS).phone_number_collection)
       .toEqual({ enabled: true });
