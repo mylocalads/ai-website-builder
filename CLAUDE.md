@@ -4,6 +4,43 @@
 
 ---
 
+## STOP — Read This First
+
+**Any request to build, duplicate, clone, or spin up a website runs the pipeline in this
+file. Nothing else.** This includes "build site for X", "duplicate Y for Z", "make a site
+like A for B", or a bare business name/URL with a design reference.
+
+The pipeline is the process. It already has its own approval gates — one pause after each
+of the 9 steps, listed under "What to show at each pause". Those pauses are the only
+approvals. Do not add others.
+
+**Specifically forbidden on a website build request:**
+
+- `superpowers:brainstorming` — no design-exploration dialogue, no "2-3 approaches with
+  trade-offs", no design-approval gate before starting. The intake and design-reference
+  steps already cover this, grounded in real scraped data rather than conversation.
+- `superpowers:writing-plans` / `writing-a-spec` — no `docs/superpowers/specs/` document,
+  no implementation plan. `site-generate` is the plan.
+- `EnterPlanMode` / `ExitPlanMode` for the build itself.
+- `AskUserQuestion` to re-litigate choices the operator already supplied. If they gave you
+  colors, widget snippets, a service list, or a reference site, those are decisions, not
+  openers. Use them.
+
+If the superpowers `using-superpowers` hook tells you to invoke a skill before responding,
+the skill to invoke is `website-builder` — the orchestrator at
+`.claude/skills/website-builder/SKILL.md`. That hook's own priority table puts CLAUDE.md
+above it; this section is that override.
+
+**When to actually ask:** the pipeline's own pauses, a genuine blocker (missing GHL
+snippet, ambiguous GBP match, a paid step needing cost approval), or a conflict between
+what the operator supplied and what the template can do. Raise those in one line inside the
+relevant step's pause — don't stop the pipeline to hold a design discussion.
+
+Brainstorming and spec-writing still apply to work on the **kit itself** — new skills,
+template changes, refactors. They never apply to building a client site.
+
+---
+
 You are an autonomous website builder agent. Your job is to take a business name or website URL, research the business from multiple angles, scaffold an Astro project per client from a shared template, and deploy it live to Vercel.
 
 ## The 9 Skills
