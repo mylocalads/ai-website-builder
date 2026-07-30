@@ -276,3 +276,25 @@ Two layout fixes from measuring rather than looking:
 - The mobile hero is ~4.2:1 tall, so `cover` scales a landscape photo to fit its *height* exactly
   and vertical `background-position` does nothing. Fixed by pre-cropping 30% of sky out of
   `hero-lawn.jpg` (500×305 → 500×214). Keep replacement hero art wide-but-shallow.
+
+**Deployed 2026-07-29:** https://whitman-lawncare.vercel.app — 29 pages, all 19 spot-checked
+routes 200, canonicals and sitemap already pointed at the final URL (site_url was set correctly at
+scaffold time, so the skill's rewrite-and-redeploy step was a no-op). Project linked at
+`sites/whitman-lawncare/.vercel/`, not the workspace root. Live HTML re-scanned for stale roofing
+copy across /, /pricing, /contact, /book, /about — clean. All 12 images plus logo 200.
+
+Note: unlike other MLA client projects, the `*.vercel.app` alias on this one is **public** (200,
+not the usual SSO 302) — the deployment-specific URL is gated but the alias is not. Worth deciding
+deliberately rather than leaving by accident, since it is a duplicate-content surface once a real
+domain is attached.
+
+**Open before this goes to the client:**
+1. `/api/estimate` has no delivery destination — `vercel env ls production` returns empty, so
+   `LEAD_WEBHOOK_URL` (or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`) is unset.
+   The hero, about, and pricing forms submit and fail closed with "Online requests aren't switched
+   on yet — please call us", which is the right degradation but means zero lead capture. Wire this
+   before any traffic.
+2. No captcha (`crm.captcha_snippet` unset) — the honeypot is the only bot defence on that form.
+3. GHL calendar, contact form, chat, and reviews snippets still placeholders.
+4. Client photos are ~500px originals; request high-res.
+5. No GBP exists — social proof is placeholder everywhere.
