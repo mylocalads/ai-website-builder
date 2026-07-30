@@ -1,29 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BottomCTA from '../components/BottomCTA.astro';
+
+// Mirrors contact-us.astro: two-column grid with the copy on the left and the
+// embedded GHL widget on the right, collapsing to one column below 900px.
+//
+// Unlike the contact form, the calendar sits directly on the page background —
+// no elevated card, no border, no surrounding copy.
 ---
 <BaseLayout
   title="Book A Call With Us! | My Local Ads"
   description="Book a free 30-minute call with our team. Learn about your business, discuss lead generation tactics, run numbers with our ROI calculator, and get free Local Falcon GBP scans."
 >
   <section class="section">
-    <div class="container container-narrow text-center">
-      <span class="eyebrow">Booking</span>
-      <h1>Book A Free Call With Our Team!</h1>
-      <p class="lead">Secure your spot now and experience why My Local Ads rolls differently than other agencies.</p>
-      <ul class="perks">
-        <li><span class="check">✓</span> <strong>Learn About Your Business!</strong></li>
-        <li><span class="check">✓</span> <strong>Discuss Lead Generation Tactics!</strong></li>
-        <li><span class="check">✓</span> <strong>Run Numbers With ROI Calculator!</strong></li>
-        <li><span class="check">✓</span> <strong>Free Local Falcon GBP Scans!</strong></li>
-      </ul>
-      <div class="scheduler-frame">
-        <p class="scheduler-note">A 30-minute Google Meet to review your current lead generation performance. We'll look at your ad spend, cost per lead, and conversion rates, then identify the biggest opportunities to improve your results, and what role we could play in that.</p>
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info">
+          <span class="eyebrow">Booking</span>
+          <h1>Book A Free Call With Our Team!</h1>
+          <p class="lead">Secure your spot now and experience why My Local Ads rolls differently than other agencies.</p>
+
+          <ul class="perks">
+            <li><span class="check">✓</span> <strong>Learn About Your Business!</strong></li>
+            <li><span class="check">✓</span> <strong>Discuss Lead Generation Tactics!</strong></li>
+            <li><span class="check">✓</span> <strong>Run Numbers With ROI Calculator!</strong></li>
+            <li><span class="check">✓</span> <strong>Free Local Falcon GBP Scans!</strong></li>
+          </ul>
+
+          <ul class="contact-list">
+            <li><strong>Sales (Phone):</strong> <a href="tel:+18664511915">(866) 451-1915</a></li>
+            <li><strong>Email:</strong> <a href="mailto:support@mylocalads.co">support@mylocalads.co</a></li>
+          </ul>
+
+          <p class="muted">A 30-minute Google Meet to review your lead generation performance — ad spend, cost per lead, conversion rates — and the biggest opportunities to improve.</p>
+        </div>
 
         {/* GHL booking widget — client-supplied snippet, do not modify the src
             or the loader URL. form_embed.js resizes the iframe via postMessage,
             so the min-height below only holds space until that runs. */}
-        <div class="scheduler-embed">
+        <div class="booking-embed">
           <iframe
             src="https://links.mylocalads.info/widget/booking/9YwDoBIAZ2A3kv7pRLTf"
             allow="payment"
@@ -45,26 +60,35 @@ import BottomCTA from '../components/BottomCTA.astro';
 <script src="https://links.mylocalads.info/js/form_embed.js" type="text/javascript" is:inline></script>
 
 <style>
-  .lead { font-size: 1.2rem; color: var(--color-text-muted); max-width: 640px; margin: 0 auto var(--space-3); }
-  .perks { list-style: none; padding: 0; margin: var(--space-3) auto; max-width: 480px; text-align: left; }
+  .booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .lead { font-size: 1.2rem; color: var(--color-text-muted); margin: 0 0 var(--space-3); }
+  .perks { list-style: none; padding: 0; margin: var(--space-3) 0; }
   .perks li { padding: 0.5rem 0; display: flex; gap: 0.75rem; align-items: center; font-size: 1.05rem; }
-  .check { color: var(--color-green); font-weight: 900; }
-  .scheduler-frame {
-    background: var(--color-bg-elev); border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl); padding: var(--space-4);
-    margin-top: var(--space-4); box-shadow: var(--shadow-md);
+  .check { color: var(--color-green); font-weight: 900; flex-shrink: 0; }
+  .contact-list {
+    list-style: none;
+    padding: var(--space-3) 0 0;
+    margin: var(--space-3) 0 0;
+    border-top: 1px solid var(--color-border);
   }
-  .scheduler-note { color: var(--color-text-muted); max-width: 560px; margin: 0 auto var(--space-3); }
-  /* Holds layout space so the page does not jump while the GHL loader sizes
-     the iframe. The widget overrides this height once it initialises. */
-  .scheduler-embed {
+  .contact-list li { padding: 0.4rem 0; font-size: 1.05rem; }
+  .muted { color: var(--color-text-muted); font-size: 0.95rem; margin-top: var(--space-3); }
+
+  /* Bare on the page background — no card, no border. min-height only holds
+     layout space until GHL's loader sizes the iframe. */
+  .booking-embed {
+    background: transparent;
     min-height: 700px;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background: #fff;
   }
-  .scheduler-embed iframe { min-height: 700px; display: block; }
-  @media (max-width: 560px) {
-    .scheduler-embed, .scheduler-embed iframe { min-height: 900px; }
+  .booking-embed iframe { min-height: 700px; display: block; }
+
+  @media (max-width: 900px) {
+    .booking-grid { grid-template-columns: 1fr; }
+    .booking-embed, .booking-embed iframe { min-height: 900px; }
   }
 </style>
