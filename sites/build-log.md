@@ -943,3 +943,20 @@ confirming zero `paypal.com/sdk` references, then restoring.
 **Not verified, and deliberately so:** no real transaction was put through. The button
 renders, the gate behaves, and the order payload is built correctly, but only a live test
 payment proves funds land in the right PayPal account. That is the operator's to run.
+
+**Deployed 2026-07-29:** `/online-payments` live at
+https://whitman-lawncare.vercel.app/online-payments/ — 30 pages, all spot-checked routes
+200, page in the sitemap, 3 nav links (header desktop + mobile, footer). Live HTML verified:
+SDK tag present and inline, client ID byte-identical to `config.json`, zero
+`<script type="module">` on the page, zero console errors.
+
+Validation re-verified **against the deployed page**, not just locally, by instrumenting a
+parallel `paypal.Buttons()` instance: disabled on load; disabled for customer-only, `abc`,
+`0`, `-5`, `125.999`, and a whitespace-only customer number; enabled only at `125.50`.
+
+**Still outstanding — the operator's to do:** no live transaction has been put through, so
+nothing here proves funds land in the intended PayPal account. Run one small real payment
+and confirm it appears in Whitman's PayPal before pointing customers at this page. Also
+still open from the earlier deploy: `/api/estimate` has no delivery destination
+(`vercel env ls production` is empty), so the lead forms capture nothing; and there is no
+captcha on that endpoint.
