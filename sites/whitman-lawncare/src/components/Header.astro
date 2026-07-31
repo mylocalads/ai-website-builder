@@ -29,6 +29,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/online-payments">Pay Online</a></li>
         <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a></li>
       </ul>
     </nav>
@@ -67,6 +68,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
+          <li><a href="/online-payments">Pay Online</a></li>
         </ul>
       </nav>
     </details>

@@ -3,6 +3,7 @@
 | Headley Construction Group | headley-construction-group | 19 | https://headley-construction-group.vercel.app | 2026-07-23 |
 | Bilski's Lawn Care | bilskis-lawncare | 23 | https://bilskis-lawncare.vercel.app | 2026-07-29 |
 | Smile Lawn Care | smile-lawn-care | 38 | https://smile-lawn-care.vercel.app | 2026-07-29 |
+| H4 Roofing & Construction | h4-roofing-construction | 27 | https://h4-roofing-construction.vercel.app | 2026-07-30 |
 
 ## mylocalads (2026-07-25)
 - Source: 1:1 recreation of live https://mylocalads.co (all 9 pages)
@@ -203,6 +204,121 @@ Three Apify runs. The first (`lukaskrivka~google-maps-with-contact-details`, "Sm
 - Confirm (570) 855-0780 is the intended tracking line; GBP lists (570) 290-5159 as the raw business number
 - **Decide on the public vercel.app alias.** Confirmed directly: the alias is 200/public with no `x-robots-tag` while only the deployment URL is SSO-gated. Either gate the alias, add a `noindex` header for the vercel.app host, or attach the real domain — otherwise Google indexes a vercel.app canonical that a later domain move has to compete with. Same open question as `bilskis-lawncare`; worth settling once for both
 
+### Rendering fixes + template back-port — 2026-07-29 (redeploy dpl_9JijvPhfqw8DA3sa3hWTUHQQP5rE)
+
+Operator reported rendering mistakes on the service and service-area pages and asked for the
+fixes to land in `astro-templates/owl` so they stop recurring. Four bugs reproduced on the live
+site, all four present in the template. **Root cause of them reaching production here:** this site
+was cloned from `sites/bilskis-lawncare` at 20:53, and the bilskis session found and fixed the same
+four *after* that — in its own site only. The template was never updated, so the defects were
+copied forward. That is the loop this entry closes.
+
+**1. `AboutSection` collapsed on mobile (CSS BUG).** The `@media (max-width: 780px)` block reset
+`grid-area: auto` on `.about-copy` and **`.about-photo`** — but `.about-photo` is the `<img>`; the
+grid item carrying `grid-area: photo` is `.about-figure`. With `grid-template-areas: none` the
+figure still pointed at a named area that no longer existed and collapsed to its intrinsic width.
+Measured **151×113 on a 375px viewport; now 327×245.** Only bit the `photo_position="left"`
+variant — i.e. every service page. Also added `.about-photo { width: 100% }` at all breakpoints:
+without it a source narrower than the column left a ragged gap on desktop.
+
+**2. Service pages showed the same photo twice** — the page passed `hero_photo` to both the hero
+background and the About figure. Added `about_photo` to the services schema. **No fallback to
+`hero_photo` on purpose:** a service with no second photo renders a text-only About rather than
+repeating the hero. Two of the seven do exactly that.
+
+**3. Area pages rendered the same paragraph twice** — `local_context` fed both the hero subheadline
+and the About body. Added `about_body` (falls back to `local_context`) and wrote 18 distinct
+second paragraphs.
+
+**4. All 18 area pages shared one hero image** — none set `hero_photo`, so every one fell through
+to `site.default_hero_photo`. Each now carries one of the six real client photos, matched to what
+its copy emphasises (snow-blower on Laurel Run's winter-heavy page, overgrowth clearing on the
+wooded Laflin/Larksville pages).
+
+**Landmark images — all 18 areas, none previously.** Sourced from Wikimedia Commons **by category**
+(`Category:<Town>, Pennsylvania`), not full-text search. That mattered: search returned Hudson Yards
+NYC for Hudson PA, a Hilldale shopping mall in Wisconsin, Bonnie-Jill Laflin the person for Laflin,
+and Pringle Bay, South Africa. Every image is now place-verified, and all 18 URLs return 200.
+Mostly borough/municipal buildings, which are unambiguous. Notable calls:
+- **Hudson and Hilldale have no Commons category** — they are unincorporated villages in Plains
+  Township. Both use a Plains Township image with alt text that says so explicitly rather than
+  implying a landmark that does not exist.
+- **Shavertown** likewise uses the Kingston Township municipal building, captioned as such.
+- **`File:Battle of Wyoming Marker.jpg` was NOT used for Wyoming borough** — its own Commons
+  description places it in Exeter. Wyoming uses the former Luzerne Presbyterial Institute, whose
+  description confirms Institute Street, Wyoming. Checking the description caught a miscaption.
+- Attribution renders via the existing `landmark_credit` / `landmark_credit_href` fields (CC BY-SA
+  and CC BY require it; CC0/PD entries are credited anyway).
+
+**Also added `about_photo_alt`** to the services schema. The page previously fell back to a
+templated `"{title} — {business}"` alt, which names the service instead of describing the image.
+
+### Back-ported to `astro-templates/owl` — the point of this round
+Everything above, plus the defects bilskis logged as "worth back-porting" and nobody had:
+- `--color-accent-ink` **added to the template tokens.** The template's own default accent
+  `#c8973f` as *text* measures **2.42:1 on `--color-bg` and 2.64:1 on `--color-surface` — it fails
+  AA out of the box**, and gilroy, bilskis and smile each re-derived this token by hand. Default ink
+  `#8a6420` is 4.91 / 5.35. Swapped the 15 light-background foreground usages across
+  SectionHead, ServicesGridOwl, SignatureSystem, ServiceAreaGrid, AboutSection, AboutOwl, SeoBody,
+  FAQ, EstimateForm, PromiseBand, BlogCards and Header. **Dark-panel sections deliberately keep
+  `--color-accent`** (Testimonials, ProcessSteps, WhyChooseUs, HeroOwl's scrim): the accent clears
+  3.78:1 on `#3f4531` where the ink would drop to 1.86:1. The token comment states that rule.
+- **Gilroy's orange removed from the template.** `Header.astro` still hardcoded
+  `rgba(241,85,55,…)` for the phone badge and the pulse keyframes, and `EstimateForm.astro` for the
+  error banner. The header now derives both from the accent with `color-mix()`, so it follows any
+  client's brand with no hand-editing.
+- **`.form-error` is now a fixed red** (`#be1e1e`) instead of `--color-accent`. On a green- or
+  gold-accent client the error banner read as success.
+- **`color: white` on accent fills** replaced with `var(--color-on-accent)` in `Financing`,
+  `Footer`, `PricingTable` and `contact.astro` — the README forbids this and it breaks every
+  light-accent client.
+- **`services/index.astro` hero fallback.** Its dark gradient is applied inline and only when the
+  client has a `default_hero_photo`, but `color: white` was unconditional — so a client without one
+  got white text on the page background. Now has a fixed dark `background-color`. Deliberately a
+  neutral `#0f1419` rather than `--color-primary`, because a client whose secondary background is
+  light (this one's yellow) would fail there.
+
+Template `npm run build` passes; its fixture service page correctly renders a text-only About now
+that `about_photo` is unset. Build artifacts removed from the template directory afterwards.
+
+### Verification for this round
+- **50 layout checks — 25 service + area pages × 375px and 1280px, via same-origin iframes.**
+  Zero horizontal overflow, zero broken images (`naturalWidth === 0`), zero collapsed About figures,
+  zero About images missing alt text, 7 rendered sections on every page.
+- Desktop `photo-left` confirmed intact: figure at x=57, copy at x=653, both 556px.
+- All 18 landmark URLs 200; live spot-checks confirm image, alt and credit render on the deployed site.
+- 39/39 live routes 200 after redeploy.
+- Built-HTML audit across all 25 pages: no service page repeats its hero as its About photo, no area
+  page repeats its hero paragraph, all 18 areas carry a landmark image and credit, hero photos now
+  spread across all six client images instead of one.
+
+### Note on overlap with the whitman build
+Commit `3e70db7 fix(owl-template,whitman): service/area page render defects` landed the same four
+rendering fixes in the template from the concurrent Whitman session. My edits to
+`AboutSection.astro`, `content/config.ts` and both `[slug].astro` came out byte-identical, so those
+files show no diff — the fix is in either way. The template changes still uncommitted here are the
+*additional* ones nobody had done: `--color-accent-ink`, the Gilroy orange literals in `Header` and
+`EstimateForm`, `color: white` on accent fills, the fixed-red `.form-error`, the
+`services/index.astro` hero fallback, and `about_photo_alt`.
+
+That commit also added **`astro-templates/owl/src/lib/limits.ts`**, which centralises
+`SERVICE_LIMIT` / `AREA_LIMIT` — a better mechanism than the eleven inline `.slice(0, N)` calls,
+and it documents a genuine bug: nav linking more pages than `getStaticPaths` generates, producing
+404s that no build error surfaces. **This site does not use `limits.ts`** — it removed the slices
+inline instead, so page generation and navigation are both uncapped and therefore consistent.
+Verified: a crawl of 42 distinct internal links on the live site returns 200 on every one. Adopting
+`limits.ts` here (with 7/18) would be tidier and is worth doing next time this site is touched, but
+it is a refactor, not a fix.
+
+### Known gap left open
+`Gallery` renders nothing on service and area pages, and that is deliberate. The heading is
+`"{Area} work"` / `"{Service} gallery"`, and with only six client photos — already used as heroes and
+About images — populating it would repeat the same images and, on an area page, imply a photo was
+taken in a town we cannot verify. It stays empty until there are more real job photos. Same reason
+Pressure Washing still has no photo of its own: Commons has no usable residential pressure-washing
+image (only US Navy flight-deck washdowns), and its hero now points at the house-with-driveway shot
+rather than a mower.
+
 ## 2026-07-29 — Whitman Lawn Care (`whitman-lawncare`)
 
 **Brief:** structural duplicate of `gilroy-roofing` (owl template) for Whitman Lawn Care LLC of
@@ -374,3 +490,456 @@ figure, credits on all 5 Wikimedia landmarks.
 0px. That reading was real in direction but taken mid-resize; the numbers only became
 trustworthy after explicitly setting the viewport and re-measuring. Set the viewport, then
 measure — and equally, do not dismiss an anomaly just because the first reading looks odd.
+
+---
+
+## Infinity Roofing & Cleaning — `infinity-roofing` — 2026-07-30
+
+| | |
+|---|---|
+| **Live** | https://infinity-roofing.vercel.app |
+| **Template** | `owl` (design reference: https://gilroy-roofing.vercel.app/) |
+| **Pages** | 27 built + `/book` (SSR) |
+| **Client site** | https://www.ir-ga.com/ |
+| **Spend** | ~$0.04 (Apify $0.0001 + 6 Firecrawl calls) |
+
+**Content:** 7 services (6 client + Solar Installation added by operator), 7 service
+areas, 8 testimonials, 7 FAQs, 1 blog article.
+
+### Caps raised
+`SERVICE_LIMIT` 5→7 and `AREA_LIMIT` 6→7 in `src/lib/limits.ts`, deliberately — the
+operator asked for a page per service and Dallas is the HQ alongside six outlying towns.
+
+### Claims deliberately NOT made
+Three of the client's own claims went unpublished because sources contradict each other
+and nothing could arbitrate:
+
+- **No rating or review count anywhere**, including JSON-LD `aggregateRating`. ir-ga.com
+  says "5.0 / 100+ reviews" on the homepage and "5.0 / 127 reviews" on its reviews page;
+  Directorii shows 4.7 from 27. The GBP lookup returned zero matches, so nothing settles
+  it. Hero trust badges carry "Licensed & Insured" and "500+ Roofs Completed" instead.
+- **No "since YYYY".** ir-ga.com says 2018; Directorii says 2015 and carries reviews dated
+  four years back. Hero eyebrow reads "Serving Dallas & North Georgia".
+- **No warranty term.** Directorii carries two 1-star reviews about warranty
+  non-response and a repair that leaked ~2 months after a $6,000 job with a stated 25-year
+  warranty. Gilroy's "50-Year Warranty" slot was refilled with the insurance-claim angle.
+
+Testimonials are the 8 strongest of 15 real, named, dated Directorii reviews — NOT the 9
+on ir-ga.com, which are self-labelled "Website testimonial" with no platform attribution.
+
+### Template defects found (fixed per-site, should be upstreamed to `astro-templates/owl`)
+
+1. **`ClosingCTA.astro` shipped Gilroy's copy as its default `body`** — "Serving
+   Wilkes-Barre and the Wyoming Valley since 1972", plus a "no payment until the job is
+   finished" promise. Eleven call sites, every page. Any site built from owl since commit
+   5380c60 renders another client's city, region and founding year unless it overrides.
+   **Only caught by grepping the BUILT html, not the source.** Whitman likely has it too.
+2. **Hero scrim assumes the desktop two-column layout.** The 90deg gradient falls to
+   `rgba(15,20,25,0.25)` at full width. Below the 900px breakpoint the grid collapses to
+   one column and the copy spans the full width into that weak end — worst case
+   **1.74:1** over a bright photo. Fixed here with a vertical scrim below 900px
+   (`0.68 → 0.80`), which guarantees **≥6.41:1 against any possible photo**.
+3. `legal` collection is declared in `src/content/config.ts` but never read, so every
+   build logs a spurious glob-loader warning.
+
+### Per-site deviations from the template
+- **`HeroOwl.astro` gained a `ghl` aside mode.** Operator chose "GHL iframe everywhere",
+  so the pasted GHL form replaces the native `EstimateForm` in every hero (home, service,
+  area). The native form remains the fallback when no snippet is pasted. Worth upstreaming
+  as a first-class aside mode.
+- CTA label unified to "Get My Free Inspection!" — the template shipped three variants
+  ("Get My Free Estimate!", "Get Your Free Estimate!", plus the button label).
+
+### Known deltas vs. gilroy-roofing.vercel.app
+Both are deliberate template improvements made after Gilroy deployed, not regressions:
+breadcrumbs are hidden site-wide (e09a329, 440f21b), and the closing CTA was reworked
+(5380c60). Everything else — section order, component set, type treatment — is verbatim.
+Gilroy's tinted-page/white-card relationship is inverted here (white page `#ffffff`,
+tinted card `#fafaf9`) because the operator specified a white background.
+
+### Open items for the client
+- **Real job photos.** Pressure Washing and Gutter Services have **no hero photo** —
+  Pexels' free library for both is European or automotive, and a Mediterranean tile roof on
+  a Georgia gutter page is worse than no photo. Two service pages render text-only until
+  Dan sends real work.
+- **Business hours and geo lat/lng** — absent without GBP. Needed for the `/book` hours
+  block and `LocalBusiness` JSON-LD.
+- **Confirm founding year, review count, and any warranty term** before any of the three
+  goes on the site.
+- **No GBP listing found** for "Infinity Roofing & Cleaning" in Dallas GA. Apify searched
+  the correct coordinates and crawled 58 pages. Worth checking what name the Google
+  listing actually uses — the site claims 127 Google reviews, so one likely exists.
+
+---
+
+## h4-roofing-construction — 2026-07-30
+
+**Brief:** structural duplicate of `gilroy-roofing` (owl template) for H4 Roofing & Construction, LLC
+of Dayton, Ohio. Operator supplied the palette (#c49029 CTA, #ffffff bg, #0a0a0a secondary), seven
+services, and "Dayton + up to 5 surrounding" areas. Calendar and contact form to be a placeholder
+business card.
+
+**Scaffolded from `astro-templates/owl/`, not `sites/gilroy-roofing/`** — same reasoning as the
+Whitman build: Gilroy's `src/` predates the 2026-07-29 service/area render fixes.
+
+### Intake cost: $0.02 total
+
+Nearly the whole intake came from free sources. The BBB profile, the client's own site, and a raw
+`curl` of the HTML supplied the address, phone, email, hours, owners, credentials, socials and the
+full asset list. **The only paid call was one Firecrawl of the Chamber of Commerce profile
+(~$0.02)** to recover real review text after it 403'd `curl`.
+
+Worth repeating on future builds: **try `curl` with a browser UA before reaching for Firecrawl.**
+It returned the full rendered HTML of a GoHighLevel site including the email address that WebFetch
+had masked and all 51 media URLs.
+
+### Operator said "no GBP" — but Google reviews exist
+
+Directed to use BBB as the source of record, which we did. Noting for the record anyway: the five
+testimonials recovered are all labelled "on Google" and carry **dated business responses from July
+2026**, so a Google listing exists and is actively managed. Chamber of Commerce reports 5.0 from
+52 reviews (51 five-star, 1 four-star). **That number is NOT published on the site** — it is
+third-party search metadata, not first-party verified, and the operator agreed to withhold it.
+
+### The logo already existed
+
+The operator asked for a Higgsfield-generated logo believing there was none. There is one: a black
+"H4 ROOFING" wordmark with four-point sparkles, transparent PNG, 676x369 — and it is on H4's
+**physical yard signs and feather flags in a dozen of their own job photos**. Generating a new mark
+would have desynced the site from their real-world signage, and AI image models mangle letterforms.
+
+Operator agreed to reuse it. Three variants produced by deterministic alpha-preserving PIL recolor
+(`logo/`): black (light backgrounds), **#c49029 gold** (the dark header/footer), white (knockout).
+**No AI generation, no credits spent, letterforms untouched.**
+
+### Photography — 40+ real job photos at full resolution
+
+The client's portfolio page yielded 51 images on GoHighLevel's CDN, most at **5712x4284** — the
+opposite of the Whitman problem, where client photos were 500px. Downloaded, contact-sheeted, and
+reviewed visually before assignment.
+
+**Five were identified as stock and excluded**, all by resolution tell: a clay-tile installer
+(612x408), a window installer (526x350), two generic house exteriors, and — caught only on the
+second pass — a dramatic steep-roof shot with orange underlayment and scaffolding at 612x408. That
+one looked like the best action photo on the sheet and was nearly used as the hero. **Check the
+dimensions before falling in love with an image.**
+
+31 images resized into `public/img/` (~11MB). First pass constrained by *width*, which let portrait
+shots reach 2400px on the long edge — re-run constrained by longest side, 13MB → 11.2MB.
+
+Originals kept on disk but **gitignored** (245MB) via a site-level `.gitignore`; every other site's
+`raw/` is a JSON archive under 200KB. They are kept rather than deleted because the CDN hosting them
+is the client's old platform and vanishes when they leave it.
+
+### Reddit was unreachable — three ways
+
+`WebSearch` silently dropped the `site:reddit.com` operator and returned HomeAdvisor pages;
+`old.reddit.com` and `www.reddit.com` both 403 to `curl`; and reddit.com is blocked by browser
+policy. Rather than spend Firecrawl on it, the research was grounded in free local sources, and the
+result is sharper than a generic thread would have been:
+
+- **April 2025: the Dayton BBB publicly warned Miami Valley homeowners about storm chasers** after
+  hail and flooding. One Jamestown homeowner had three uninvited contractors at her door. Their
+  rep, Sheri Sword: storm chasers "leave and you can't get in touch with them again."
+- **Ohio issues no statewide roofing license.** Verification burden falls entirely on the homeowner.
+- **17 confirmed hail reports within 25 miles of Dayton in the trailing 12 months**; 1.75" hail
+  2025-06-28; 74 mph winds 2025-03-30. Montgomery County is among Ohio's top hail-claim counties.
+
+The strategic hinge: H4 is **BBB Accredited A+ — accredited by the same organisation issuing the
+warning** — and CertainTeed ShingleMaster credentialed. In a no-license state those are the only
+checkable credentials that exist, so both are in the hero, not a footer trust bar.
+
+### Contrast re-derived, not inherited
+
+Owl's default accent (#c8973f) is within a degree of hue of H4's #c49029, so `--color-accent-ink`
+landed on the same #8a6420. **That is a measured coincidence, not an inheritance** — noted in
+`tokens.css` so nobody later assumes the token was skipped.
+
+The load-bearing result: **white on #c49029 measures 2.85:1 and fails even WCAG's large-text
+allowance.** `--color-on-accent` is #0a0a0a at 6.95:1, clearing the full 4.5:1 threshold rather than
+the 3:1 exemption. The operator's #0a0a0a maps onto the template's dark bands, where the gold reads
+at 6.95:1 — better than the template default's 3.78:1.
+
+### Four template defects found and fixed in the client site
+
+Per the site-generate rules this skill must not edit `astro-templates/`, so all four are fixed in
+`sites/h4-roofing-construction/` only. **All four should be ported upstream.**
+
+**1. Four pages shipped with no `<h1>`.** `/contact`, `/book`, `/blog` and `/service-area` use
+`SectionHead` as their only page heading and never render a `HeroOwl`; `SectionHead` hardcoded
+`<h2>`. Confirmed in the built output of gilroy, whitman and bilskis (`/contact` h1 count: 0), so it
+is a template defect, not a content mistake. Added an optional `as` prop defaulting to `'h2'`; the
+four page-level heads pass `as="h1"`. `h1, h2` share one CSS rule so the tag choice is structural
+and changes nothing visually.
+
+**2. Area pages published an unverified "licensed" claim.** `service-area/[slug].astro` hardcoded
+"local, licensed service" into the meta description and JSON-LD of every area page, ignoring
+`config.licensed`. `TrustBadges.astro` gates the same word correctly; this route did not. Doubly
+wrong here — the site's own copy explains Ohio issues no roofing licence. Both occurrences now gate
+on `site.licensed`.
+
+**3. Hero trust badges forced 425px of horizontal overflow at 375px.** The `≤560px` rule sets
+`flex-wrap: nowrap` plus `white-space: nowrap`, sized against the label lengths its own comment
+cites ("147 + 202"). H4's longer labels ("CERTAINTEED SHINGLEMASTER" / "Credentialed installer")
+gave the list a **377px min-content**, which propagated through the grid item's default
+`min-width: auto` and stretched the hero's single mobile column to 376.6px inside a 327px content
+box. Overridden to allow wrapping — a two-line badge pair is a presentation preference; a page that
+scrolls sideways on a phone is a defect.
+
+**4. The hero's native `EstimateForm` renders live but cannot deliver.** It posts to
+`/api/estimate`, which needs `LEAD_WEBHOOK_URL` (or the Resend trio) in the Vercel environment —
+the same gap logged against Whitman. Until a destination exists the form accepts a submission and
+returns `?error=unavailable`. Since the operator asked for a placeholder business card anyway,
+`HeroOwl` now falls back to the contact-card snippet whenever `crm.form_action_url` is unset. **It
+reverts itself**: set `form_action_url` (or wire `LEAD_WEBHOOK_URL`) and the native form returns.
+
+### Dead config removed
+
+`us_vs_them` and the site-wide `gallery` were populated, then removed — **neither is rendered by
+owl.** `UsVsThem` is firefly-only, and `/our-work` builds its strips from per-service `gallery`
+frontmatter, not `config.gallery`. Populated keys that do nothing look like configuration and invite
+someone to edit them expecting a result. The photos moved into the service markdown, where they
+render. A `_removed_keys_note` in `config.json` records why.
+
+### Scope decisions
+
+- **`SERVICE_LIMIT` raised 5 → 7** in `src/lib/limits.ts`. The operator's seven are seven distinct
+  trades, not seven near-duplicate roofing pages, so the thin-content risk the cap guards does not
+  apply. `AREA_LIMIT` untouched at 6 (Dayton + 5).
+- **"Roof Inspection" description rewritten.** The operator-supplied text was pressure-washing copy
+  ("Professional house washing, driveway cleaning...") pasted from another business.
+- **Concrete, Flooring and Drywall render text-only.** Zero photo coverage across all 51 images —
+  every one is roofing or roofing-adjacent. The owl service schema handles an unset `about_photo`
+  by design rather than repeating the hero. Copy angles them at post-leak interior work, which is
+  both honest and a genuine cross-sell.
+- Areas chosen as the five nearest the 45440 office: Kettering, Centerville, Beavercreek, Bellbrook,
+  Miamisburg. Dropped from the client's list of 10: Springboro, Huber Heights, Vandalia, Troy.
+
+### Verification
+
+- `npm run build` exits 0. **26 pages.**
+- **All 18 routes return 200**; every page has exactly one `<h1>`; unique titles and meta
+  descriptions throughout; **zero images without alt text**.
+- Measured in-page at **375px and 1280px**: zero horizontal overflow on all 15 checked routes, zero
+  collapsed grid columns, zero broken images.
+- **Zero unverified credential claims** in the built HTML — no "licensed", "insured", "bonded",
+  review count or numeric rating anywhere.
+- NAP consistent across all 26 pages; **(937) 412-0001 is the only phone number in the output.**
+- Leakage sweep clean: no gilroy / whitman / bilskis / firefly / owl-template / Denver / Spokane
+  strings, and **no hotlinks to filesafe.space or leadconnectorhq** — every image is served locally.
+
+### Open before this goes to the client
+
+1. **`years_in_business` conflict.** The client's site claims "15 years of industry experience";
+   BBB records the LLC as founded 2015-06-04 (11 years) and "locally owned since 2024-11-01". Using
+   their own published claim of 15. **Confirm before publishing.**
+2. **No licensed / insured / bonded claim anywhere** — the client's site makes none, so nothing was
+   asserted. In a state with no roofing licence, liability insurance and workers' comp are precisely
+   what homeowners are told to verify. **This is the single highest-value addition available, and it
+   needs the client to confirm coverage.**
+3. **`/api/estimate` has no delivery destination** — see defect 4. Wire `LEAD_WEBHOOK_URL` before
+   any traffic; until then the hero renders the contact card instead of a dead form.
+4. GHL calendar, contact form, chat and reviews snippets are all still placeholders.
+5. **Review count withheld** pending first-party verification of the 5.0 / 52 figure.
+6. Area `landmark_photo` slots use H4's own job photos with alt text that describes the work rather
+   than claiming to depict a city landmark (same approach as Whitman's Carbondale). Real landmark
+   photography would strengthen the local-recognition angle.
+7. **No team photos.** Drew and Trey Harper are named throughout and one review names Trey
+   personally; portraits would convert well.
+8. Sister domain `h4constructionohpa.com` 404s on every path despite being listed on BBB and still
+   indexed — **and the client's own email address is on that dead domain.** Worth raising with them.
+
+### Revision 2 — 2026-07-30 (operator fixes)
+
+1. **Hero aside now renders the GHL BOOKING CALENDAR, not the contact form.** Home, all 7
+   service pages and all 7 area pages. The contact form is confined to `/contact` —
+   verified against the built output: exactly one of 27 html files contains the form
+   snippet. Panel headings moved from estimate wording to booking wording.
+2. **Logo replaced with the client's real mark**, regenerated on a white background via
+   Higgsfield (`nano_banana_pro`, 2 variants, 4 credits) from the logo already in the
+   Higgsfield media library (`754f3006-…`). Variant B was discarded — it rendered heavy
+   black outlines around the gold, an artifact of the source sitting on a black field.
+   Variant A was trimmed of its dead margin and alpha-masked: the header is `#ffffff`
+   but the footer is `--color-surface #fafaf9`, so a hard-white plate would have shown a
+   faint rectangle in the footer. The hand-built `logo-infinity.svg` is deleted.
+   Because the real mark is a STACKED 1:1 lockup rather than the wide lockup the template
+   assumes, header logo max-height went 99px→116px (bar is 149px), mobile 69px→82px, and
+   footer 60px→96px — at the stock sizes the "Of Georgia" tier rendered ~7px tall.
+3. **Pressure Washing and Gutter Services tiles now have photos.** Both were falling back
+   to the `.no-photo` dark gradient. Generated via Higgsfield (2 credits each): a US
+   suburban house wash showing a clean strip against algae-stained siding, and white
+   seamless gutter + downspout against dark asphalt shingles. All 7 service tiles now
+   carry real imagery; zero `.no-photo` tiles remain.
+
+Business name stays **Infinity Roofing & Cleaning** (operator decision) even though the
+logo reads "Infinity Roofing — Of Georgia". Three of the seven services are exterior
+cleaning, so the name carries information the logo does not.
+
+Higgsfield spend this revision: 8 credits (2 tile images + 2 logo variants).
+
+### Deploy + post-deploy QA — 2026-07-30
+
+**Live:** https://h4-roofing-construction.vercel.app (alias returns **200 — public**, like whitman
+and unlike the usual SSO 302; the deployment-specific URL is gated at 302 as normal). 27 URLs in
+the sitemap. `/book` is `prerender = false` by template design (it reads `?error=`), so it is served
+from `_render.func` rather than `dist/client` — not a defect, but it means `find dist/client` will
+undercount by one.
+
+**The first deploy shipped six defects. A post-deploy QA pass caught all six.** Recording them in
+detail because five were inherited template content that the pre-deploy sweep was simply not looking
+for, and the same trap is waiting on every future build.
+
+**1. Another client's city and founding year on 21 pages.** `ClosingCTA.astro`'s default `body` read
+*"Serving Wilkes-Barre and the Wyoming Valley since 1972."* — Whitman's market and founding year,
+baked into a **component default** and therefore rendered on 21 of 27 pages. It also promised *"no
+payment until the job is finished"*, a guarantee H4 has never made.
+
+The pre-deploy leakage sweep missed it because it grepped for client *names* (`gilroy|whitman|
+bilski|firefly`) and not for their *geography*. **The lesson: sweep for prior clients' cities,
+regions, founding years and guarantees, not just their names — and audit component DEFAULT props
+specifically, since a default renders everywhere while appearing in no content file.**
+
+**2. A roofing CTA at the foot of the Concrete, Flooring and Drywall pages** — "Need A New Roof?
+Book Your Inspection Now." Service pages now close on their own trade via a generated
+`Need {title} in {city}?`, with an optional `closing_headline` frontmatter escape hatch (used on
+Roof Inspection, which wanted an article).
+
+**3. `/pricing` published a fabricated price table with wrong units.** The template hardcoded
+"Average roof costs in {city}" — figures not sourced to Dayton but attributed to it by name, and
+internally inconsistent: a column headed **"Per square (100 sq ft)"** carried per-square-FOOT values,
+so "$4–$7" against "$8,000–$14,000 for a 2,000 sq ft home" was off by a factor of ~100. It also
+contradicted the page's own copy, which explains H4 does not quote from the driveway. Removed and
+replaced with prose on what actually drives the price. **Real published ranges must come from the
+client, never from a template default.**
+
+**4. `/pricing` meta description advertised "windows, kitchens, and baths"** — firefly's remodeling
+services. H4 offers none of them.
+
+**5. `/pricing` rendered the contact card twice** — hero aside plus the down-page booking section,
+printing the phone, hours and address twice within a screen. Gated on a real embed
+(`/<iframe|<script/`) rather than on the snippet merely being non-empty, so it self-reverts when a
+genuine GHL calendar is pasted in.
+
+**6. Alt text was wrong on seven images — the most embarrassing find.** Filenames were assigned from
+memory of a contact sheet instead of by re-checking each image, so `work-01` and `work-02` (feather-
+flag and in-progress shots) were captioned as *completed* roof replacements, `work-03` (a flag
+outside a stone-and-siding ranch) as "materials staged on a driveway", and `work-04` (a plain brick
+house) as "pallets of shingles". `/about` was passing `photo_alt={site.business_name}` — the
+company's name rather than any description of the picture. All rewritten against a freshly rendered
+sheet of the actual `public/img/` files. **Caption from the image, never from the filename.**
+
+Two smaller items fixed in the same pass: Kala Ellington's review appeared twice on the home page
+(testimonials *and* the SEO-body pull quote — removed from testimonials, leaving four); and the
+Gutters page used `svc-gutters-about.jpg` as both its About photo and a gallery tile.
+
+### Final verification, run against the LIVE site
+
+- **All 27 routes 200.** Every referenced local asset (28 of them) returns 200 — **zero missing
+  images.**
+- **Zero issues across all 27 pages at 1280px and 375px**: no horizontal overflow, no broken images,
+  no collapsed columns, no images wider than the viewport, no sub-40px tap targets.
+- Exactly **one `<h1>` per page**; no skipped heading levels; unique titles and meta descriptions.
+- **No duplicate paragraphs and no duplicate images within any page.**
+- **Zero** occurrences of prior-client copy, non-H4 services, dollar figures, or unverified
+  licensed / insured / bonded / review-count claims.
+- NAP consistent across every page; **(937) 412-0001 is the only phone number in the output.**
+
+### Operator revisions — 2026-07-30 (post-QA)
+
+Four operator-requested fixes, all live.
+
+**1. Logo reduced 20%.** `.brand-logo` max-height 99px → **79px** desktop, 69px → **55px** mobile. The
+H4 wordmark is wide and short, so at 99px it set the header bar height and left a band of whitespace
+around the nav.
+
+**2. Every icon slot was empty — filled.** `PromiseBar` accepts either plain strings or
+`{text, icon}` objects, and the build had passed **plain strings**, so the three items under the hero
+rendered as bare text with no icon disc. The same omission ran through the rest of the page:
+`promise_band.icon`, `signature_system.steps_icon` and all four `process_steps[].icon` were unset
+too. Assigned from the registry in `src/lib/icons.ts` (`home`, `award`, `document`, `shield`,
+`hammer`, `phone`, `clipboard`). Verified in the built HTML: promise-bar 3 SVGs, process 4,
+signature 3, promise-band 1. **A string in `promise_bar` is silently icon-less — always use the
+object form.**
+
+**3. Concrete, Flooring and Drywall tiles had no image.** Those three services have no `hero_photo`,
+and `ServicesGridOwl` falls back to a `.no-photo` dark gradient — which is why they read as broken
+next to four photographic tiles. The client's 51-image library is 100% roofing, so there was nothing
+real to use.
+
+Generated three images with Higgsfield (`nano_banana_pro`, 4:3) at **2 credits each, 6 total** of
+1,139.67 available. Deliberately constrained to **generic trade imagery with no people, no signage
+and no yard signs** — a staged "finished project" shot would imply it depicts H4's work, and
+no-people also avoids AI hand artifacts and the banned hardhat-team stock trope.
+
+Guardrails on provenance, since this is the first AI imagery on a client site here:
+- Filenames carry an **`ai-` prefix** so provenance is obvious to any future maintainer.
+- Each service markdown carries a comment explaining what the image is and to replace it.
+- Used **only** as the tile/hero background, which is a CSS `background-image` and therefore carries
+  **no alt text** and makes no claim about who did the work.
+- Deliberately **absent from `gallery`**, so they can never surface on `/our-work`, whose intro
+  states every photograph there is work H4 actually completed. Verified: 0 hits on that page.
+
+**4. Hero link relabelled** "Why homeowners pick a local roofer" → **"Why hire H4 Roofing?!"**
+
+**Verified after:** all 7 service tiles carry a background image and all 7 load (`ok: true`); zero
+issues across 13 pages at 1280px and 375px — no overflow, broken images, tiles without a background,
+or empty icon sections.
+
+**Open item added:** the three `ai-*.jpg` images should be replaced with real client photography of
+concrete, flooring and drywall work as soon as H4 supplies any.
+
+### 2026-07-29 (later still) — /online-payments page with PayPal checkout
+
+Added `sites/whitman-lawncare/src/pages/online-payments.astro`, styled to match
+`/contact` (same two-column grid, same `pay-card`/`info-col` treatment, same sidebar
+blocks). Linked from the header (desktop + mobile) and the footer Company column. URL
+matches the client's existing public page, `/online-payments`, so anything already printed
+on an invoice still lands.
+
+**Do not transcribe the client ID from a screenshot.** The operator supplied a DevTools
+screenshot of the PayPal element. The ID rendered there was
+`...Cj0hmh_uMh8diPSNIu6gLBh3...` — the real one scraped from the live page is
+`...Cj0hmhayJEPzbUf2uMh8diPSNIu6gLBh3...`. The screenshot had dropped `ayJEPzbUf2` mid-string.
+Pasting what was visible would have shipped a button that silently failed for every payer.
+Always scrape the live page for the real value.
+
+The PayPal client ID is a **public** identifier — it ships in client-side JS on any site
+with a PayPal button. It lives in `config.json` under `payments.paypal_client_id`. The
+secret half of the credential pair is not in this repo and is not needed for this
+integration.
+
+**Astro gotcha — `is:inline` is load-bearing on both scripts.** Astro bundles bare
+`<script>` tags into deferred ES modules, which breaks the ordering the SDK requires and
+puts the `paypal` global out of scope for the initialiser. Both the SDK tag and the init
+block are `is:inline` so they execute as classic scripts in document order. Verified in the
+built HTML: SDK tag present inline, zero `<script type="module">` on the page.
+
+**Improvements over the client's original button-factory script**, all verified in-browser
+by instrumenting a parallel `paypal.Buttons()` instance and watching `enable`/`disable` fire:
+
+| Input | Original | Now |
+|---|---|---|
+| empty | disabled | disabled |
+| customer only | disabled | disabled |
+| amount `abc` | **enabled** → PayPal rejects, payer sees nothing | disabled |
+| amount `0` | **enabled** → rejected | disabled |
+| amount `-5` | **enabled** → rejected | disabled |
+| amount `125.999` | **enabled** → rejected | disabled |
+| amount `125.50` | enabled | enabled |
+| whitespace-only customer | **enabled** | disabled |
+
+The original validated with `value.length > 0`, so any non-empty string passed the gate and
+failed later inside PayPal with only a `console.log`. Now: a real numeric check
+(`/^\d+(\.\d{1,2})?$/`, value > 0), visible field errors on blur with `aria-invalid`, an
+`onError` handler that tells the payer they were **not** charged and to call, an `onCancel`
+handler, and a success panel quoting the PayPal order ID as a reference. Dropped the
+vestigial invoice-id field — it was permanently hidden on the source page
+(`invoiceidDiv.firstChild.innerHTML.length > 1` against a label containing one space).
+
+Omitting `payments.paypal_client_id` renders a "payments are not switched on" notice and
+emits **no** PayPal SDK script at all — verified by removing the key, rebuilding, and
+confirming zero `paypal.com/sdk` references, then restoring.
+
+**Not verified, and deliberately so:** no real transaction was put through. The button
+renders, the gate behaves, and the order payload is built correctly, but only a live test
+payment proves funds land in the right PayPal account. That is the operator's to run.

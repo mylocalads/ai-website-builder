@@ -208,6 +208,18 @@ const site = defineCollection({
         form_action_url: z.string().url().optional(),
         captcha_snippet: z.string().optional(),
       }).default({ provider: 'ghl' }),
+      // Online payments. The PayPal client ID is a PUBLIC identifier — it ships
+      // in client-side JS on any site with a PayPal button, and is not a secret.
+      // The secret half of the credential pair never appears here or anywhere in
+      // this repo. Omit the whole block and /online-payments renders a "payments
+      // are not set up" notice instead of a broken button.
+      payments: z.object({
+        provider: z.literal('paypal').default('paypal'),
+        paypal_client_id: z.string().optional(),
+        currency: z.string().default('USD'),
+        // PayPal funding sources to switch on, comma-separated (e.g. "venmo").
+        enable_funding: z.string().optional(),
+      }).default({ provider: 'paypal', currency: 'USD' }),
       code_injection: codeInjectionSlots.extend({
         per_page: z.record(codeInjectionSlots).default({}),
       }).default({ per_page: {} }),

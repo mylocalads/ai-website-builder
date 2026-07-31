@@ -76,6 +76,12 @@
   "crm": {
     "provider": "ghl"
   },
+  "payments": {
+    "provider": "paypal",
+    "paypal_client_id": "AVgYJp-g8-JmEnriQL8W9a92Cj0hmhayJEPzbUf2uMh8diPSNIu6gLBh3_ImUgj33d0mi0dBO-XHkq_5",
+    "currency": "USD",
+    "enable_funding": "venmo"
+  },
   "code_injection": {
     "per_page": {}
   },
