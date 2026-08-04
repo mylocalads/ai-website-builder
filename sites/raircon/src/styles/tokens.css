@@ -16,6 +16,16 @@
      override block at the bottom of this file for why this token exists. */
   --color-accent-on-dark: #ff8a8a;
   --color-focus: #0057ff;
+  /* Header band. Operator-chosen brand navy, one shade off --color-primary.
+     The client's header logo is a transparent PNG with a WHITE wordmark — it was
+     drawn for a dark bar, and on the template's default light --color-bg header
+     it rendered as near-invisible white-on-near-white. Everything in the header
+     is re-derived against this value below. */
+  --color-header-bg: #00244a;
+  --color-header-text: #ffffff;
+  --color-header-muted: #c3ccd8;   /* 9.6:1 on the header bg */
+  --color-header-accent: #ff8a8a;  /* 5.6:1 on the header bg — brand red is only 2.4:1 there */
+  --color-header-rule: rgba(255, 255, 255, 0.14);
   --font-display: 'Outfit', 'Montserrat', system-ui, sans-serif;
   --font-body: 'Roboto', system-ui, sans-serif;
   --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
