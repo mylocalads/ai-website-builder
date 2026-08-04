@@ -1,4 +1,9 @@
 import type { APIRoute } from 'astro';
+// The allowlist below and the form's <select> options are the SAME list,
+// imported from one module. Maintaining two copies silently drops every lead
+// that picks an option the endpoint has not been told about; see the header
+// comment in src/lib/services.ts.
+import { ESTIMATE_SERVICE_SET } from '../../lib/services';
 
 // Runs on demand as a serverless function even though the rest of the site is
 // prerendered. Without this the route would be baked to a static file at build
@@ -6,19 +11,6 @@ import type { APIRoute } from 'astro';
 export const prerender = false;
 
 const REQUIRED = ['full_name', 'email', 'phone', 'address', 'service'] as const;
-
-const SERVICES = new Set([
-  'Attic venting',
-  'Gutter installation',
-  'Gutter repair',
-  'Other',
-  'Roof damage repair',
-  'Roof inspection',
-  'Roof installation',
-  'Roof repair',
-  'Skylight installation',
-  'Skylight repair',
-]);
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -124,7 +116,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const missing = REQUIRED.filter((k) => get(k) === '');
   if (missing.length) return fail('missing');
   if (!EMAIL_RE.test(get('email'))) return fail('email');
-  if (!SERVICES.has(get('service'))) return fail('service');
+  if (!ESTIMATE_SERVICE_SET.has(get('service'))) return fail('service');
   // TCPA consent is the legal basis for calling or texting this person. No
   // checkbox, no lead — this is not a field to be lenient about.
   if (!form.get('tcpa_consent')) return fail('consent');

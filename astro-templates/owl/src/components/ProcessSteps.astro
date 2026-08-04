@@ -70,7 +70,8 @@ const steps = data?.steps ?? [];
   .icon svg { width: 1.6rem; height: 1.6rem; }
   .icon.num::before { content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
 
-  .label { margin: 0; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; font-weight: 700; color: var(--color-accent); }
+  /* Accent TEXT on the dark band — see the token comment in tokens.css. */
+  .label { margin: 0; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; font-weight: 700; color: var(--color-accent-on-dark); }
   h3 { font-size: 1.2rem; margin: 0 0 var(--space-1); color: var(--color-on-primary); text-transform: capitalize; position: relative; z-index: 1; }
   .body { margin: 0; color: var(--color-on-primary); opacity: 0.78; line-height: 1.6; font-size: 0.95rem; position: relative; z-index: 1; }
 

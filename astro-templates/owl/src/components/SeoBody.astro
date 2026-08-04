@@ -91,12 +91,12 @@ const initials = review
   .inner.split.image-left .media { order: 1; }
   @media (max-width: 860px) { .inner.split { grid-template-columns: 1fr; } .inner.split.image-left .copy, .inner.split.image-left .media { order: initial; } }
 
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
   h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-3); text-transform: uppercase; letter-spacing: 0.01em; }
   .para { color: var(--color-muted); font-size: 1.05rem; line-height: 1.75; margin: 0 0 var(--space-2); }
   .checklist { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-1) var(--space-3); }
   .checklist li { position: relative; padding-left: 1.9rem; color: var(--color-text); line-height: 1.6; }
-  .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-accent); font-weight: 700; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-accent-ink); font-weight: 700; }
 
   .media { position: relative; }
   .media img { width: 100%; border-radius: var(--radius-lg); aspect-ratio: 4/3; object-fit: cover; display: block; }
@@ -107,7 +107,7 @@ const initials = review
   .avatar.initials { display: inline-flex; align-items: center; justify-content: center; background: var(--color-primary); color: var(--color-on-primary); font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 0.02em; }
   .review .name { margin: 0; font-weight: 700; color: var(--color-text); font-size: 0.95rem; }
   .review .meta { margin: 0.1rem 0 0; display: flex; align-items: center; gap: 0.45rem; font-size: 0.85rem; color: var(--color-muted); }
-  .review .stars { color: var(--color-accent); letter-spacing: 0.08em; }
+  .review .stars { color: var(--color-accent-ink); letter-spacing: 0.08em; }
   .review blockquote { margin: 0; }
   .review blockquote p { margin: 0; font-size: 0.9rem; line-height: 1.55; color: var(--color-text); }
 

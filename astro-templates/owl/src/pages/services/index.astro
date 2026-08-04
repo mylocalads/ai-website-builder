@@ -35,7 +35,13 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/service
   <ClosingCTA />
 </BaseLayout>
 <style>
-  .services-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  /* The dark gradient below is applied inline and ONLY when the client has a
+     default_hero_photo, but `color: white` is unconditional — so without a photo
+     the copy was white on whatever the page background is. This fallback keeps
+     white text legible either way. It is a fixed dark neutral rather than
+     --color-primary on purpose: a client whose secondary background is light
+     (e.g. a yellow brand) would fail here. Matches HeroOwl's scrim colour. */
+  .services-hero { padding: var(--space-5) 0; background-color: #0f1419; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
   .services-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); margin-bottom: var(--space-1); }
   .services-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; }
   .services-index { padding: var(--space-4) 0 var(--space-5); }

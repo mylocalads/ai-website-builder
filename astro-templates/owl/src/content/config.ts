@@ -222,6 +222,36 @@ const site = defineCollection({
         heading_rest: z.string().optional(),
         subtitle: z.string().optional(),
       }).default({ eyebrow: 'Our Services' }),
+      // Native EstimateForm copy and options. `services` feeds BOTH the form's
+      // <select> and the server-side allowlist in pages/api/estimate.ts, which
+      // read it through src/lib/services.ts — see that file for why they must
+      // not be maintained separately. Left empty, the form falls back to a
+      // vertical-neutral list; a real intake should always supply this, because
+      // the options are what the lead record ends up saying the job is.
+      estimate_form: z.object({
+        heading: z.string().optional(),
+        services: z.array(z.string()).default([]),
+      }).default({ services: [] }),
+      // Site-wide default copy for the ClosingCTA band, which appears on eleven
+      // pages. Unset, only a neutral headline and button render — no body. That
+      // is deliberate: the body is where a guarantee ("no payment until you're
+      // satisfied"), a founding year, or a service area gets asserted, and none
+      // of those may be inherited from a template. Pages with a different ask
+      // still override per call site.
+      closing_cta: z.object({
+        headline: z.string().optional(),
+        body: z.string().optional(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+      }).default({}),
+      // Blog section naming. `heading` is the <h2> above the recent-articles
+      // row; `description` is the /blog meta description. Both default to
+      // trade-agnostic copy — "Roofing Advice" on a landscaper's site is the
+      // kind of leftover this exists to prevent.
+      blog_section: z.object({
+        heading: z.string().optional(),
+        description: z.string().optional(),
+      }).default({}),
     }),
     z.object({
       kind: z.literal('home'),
@@ -346,6 +376,23 @@ const site = defineCollection({
         includes: z.array(z.string()), cta_text: z.string(), cta_href: z.string(),
       })),
       notes: z.string().optional(),
+      // Optional cost table on /pricing. Shape is deliberately generic — an
+      // n-column table of strings — because what a client can honestly publish
+      // varies: a roofer may have per-square ranges, a mechanical contractor
+      // may only have the variables that drive a quote. The template ships NO
+      // default rows: an invented rate card is a price the client never agreed
+      // to, so an unset cost_table hides the section entirely.
+      cost_table: z.object({
+        heading: z.string(),
+        lede: z.string().optional(),
+        columns: z.array(z.string()).min(2),
+        rows: z.array(z.array(z.string())).default([]),
+        footnote: z.string().optional(),
+      })
+        .refine((t) => t.rows.every((r) => r.length === t.columns.length), {
+          message: 'every cost_table row must have exactly as many cells as there are columns',
+        })
+        .optional(),
     }),
     z.object({
       kind: z.literal('our-work'),

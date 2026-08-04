@@ -1,4 +1,6 @@
 ---
+import { getEntry } from 'astro:content';
+
 export interface Props {
   headline?: string;
   body?: string;
@@ -6,18 +8,33 @@ export interface Props {
   cta_href?: string;
   photo?: string;
 }
-// Defaults live here rather than at each call site. There are eleven of these
-// across the template, and when every page passed its own strings the copy
-// drifted — three different headlines and two different button labels for the
-// same action. Pages with a genuinely different ask (a phone CTA on /book, the
-// post-submission page) still override.
+// Defaults are resolved here rather than at each call site. There are eleven of
+// these across the template, and when every page passed its own strings the
+// copy drifted — three different headlines and two different button labels for
+// the same action. Pages with a genuinely different ask (a phone CTA on /book,
+// the post-submission page) still override.
+//
+// Precedence: page prop -> the client's `closing_cta` block in site config ->
+// a trade-neutral fallback. The BODY has no fallback on purpose. It is the line
+// that asserts a guarantee, a founding year and a service area, so a template
+// default here is a factual claim inherited by a business it was never written
+// about. Unset, the band renders headline + button and says nothing untrue.
+// A page that wants the headline but not the site-wide body passes body="".
 const {
-  headline = 'Need A New Roof? Book Your Inspection Now.',
-  body = "Free inspection, a written estimate in your hand, and no payment until the job is finished and you're satisfied. Serving Wilkes-Barre and the Wyoming Valley since 1972.",
-  cta_text = 'Get My Free Estimate!',
-  cta_href = '/book',
+  headline: headlineProp,
+  body: bodyProp,
+  cta_text: ctaTextProp,
+  cta_href: ctaHrefProp,
   photo,
 } = Astro.props;
+
+const site = (await getEntry('site', 'config')).data as any;
+const defaults = site.closing_cta ?? {};
+
+const headline = headlineProp ?? defaults.headline ?? 'Ready To Get Started? Book Your Free Estimate.';
+const body = bodyProp ?? defaults.body;
+const cta_text = ctaTextProp ?? defaults.cta_text ?? 'Get My Free Estimate!';
+const cta_href = ctaHrefProp ?? defaults.cta_href ?? '/book';
 ---
 <section
   class="closing-cta"

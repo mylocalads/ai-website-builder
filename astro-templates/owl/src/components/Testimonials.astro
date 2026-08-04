@@ -54,17 +54,19 @@ const [lead, ...rest] = items;
   .section-cta .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; }
 
   .testimonials { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-5) 0; }
-  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-3); text-align: center; }
+  /* Accent TEXT on the dark band, so it reads --color-accent-on-dark rather
+     than the fill colour, which is too dark to clear AA at this size here. */
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-on-dark); margin: 0 0 var(--space-3); text-align: center; }
 
   .lead { margin: 0 auto var(--space-4); max-width: 860px; text-align: center; position: relative; }
-  .mark { display: block; font-family: var(--font-display); font-weight: 700; font-size: 5rem; line-height: 0.6; color: var(--color-accent); opacity: 0.55; margin-bottom: var(--space-2); }
+  .mark { display: block; font-family: var(--font-display); font-weight: 700; font-size: 5rem; line-height: 0.6; color: var(--color-accent-on-dark); opacity: 0.55; margin-bottom: var(--space-2); }
   .lead blockquote { margin: 0; }
   .lead blockquote p { margin: 0; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.25rem, 2.4vw, 1.9rem); line-height: 1.4; color: var(--color-on-primary); }
   .lead figcaption { margin-top: var(--space-3); display: flex; flex-wrap: wrap; gap: 0.5rem 0.9rem; align-items: center; justify-content: center; }
 
   .name { font-weight: 700; color: var(--color-on-primary); }
   .loc { color: var(--color-on-primary); opacity: 0.65; font-size: 0.9rem; }
-  .stars { color: var(--color-accent); letter-spacing: 0.12em; }
+  .stars { color: var(--color-accent-on-dark); letter-spacing: 0.12em; }
 
   .rest { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
   .rest li { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); padding: var(--space-3); }

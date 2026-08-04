@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import GHLFormEmbed from './GHLFormEmbed.astro';
 import EstimateForm from './EstimateForm.astro';
+import { DEFAULT_ESTIMATE_HEADING } from '../lib/services';
 
 export interface Props {
   eyebrow?: string;
@@ -52,6 +53,12 @@ const calendarSnippet = site.crm?.calendar_embed_snippet;
 // One slot, resolved by how directly each option captures a lead. An operator
 // who pasted a calendar or a GHL embed meant it, so those win; otherwise the
 // native form is preferred over the quote card wherever a page asks for it.
+// Resolved once so the aria-label on the panel and the heading inside the form
+// cannot say different things. Same precedence as EstimateForm's own default:
+// page prop, then the client's site-wide heading, then a neutral fallback.
+const formHeading: string =
+  form_heading ?? site.estimate_form?.heading ?? DEFAULT_ESTIMATE_HEADING;
+
 const asideMode = form_embed_url && calendarSnippet
   ? 'calendar'
   : form_embed_url
@@ -116,12 +123,17 @@ const asideMode = form_embed_url && calendarSnippet
     )}
 
     {asideMode === 'native' && (
-      <aside class="panel form-panel" aria-label={form_heading ?? 'Request A Free In-Person Roof Estimate Today!'}>
+      <aside class="panel form-panel" aria-label={formHeading}>
+        {/* Site-wide rating and review count, NOT quote_card's. quote_card
+            carries the star rating of the ONE quoted reviewer, and pairing it
+            with the site-wide review count printed a sentence no source
+            supports: "5.0 rating from 219 reviews" from a single 5-star quote
+            beside a 4.7 average. */}
         <EstimateForm
           compact
-          heading={form_heading ?? 'Request A Free In-Person Roof Estimate Today!'}
-          rating={quote_card?.rating}
-          review_count={quote_card?.review_count}
+          heading={formHeading}
+          rating={site.rating}
+          review_count={site.review_count}
         />
       </aside>
     )}
@@ -175,7 +187,8 @@ const asideMode = form_embed_url && calendarSnippet
   .mark-g { width: 2.1rem; height: 2.1rem; border-radius: 50%; border: 2px solid rgba(255,255,255,0.85); font-size: 1.2rem; }
   .mark-bbb { font-size: 1.15rem; letter-spacing: 0.02em; padding: 0.2rem 0.4rem; border: 2px solid rgba(255,255,255,0.85); border-radius: var(--radius-sm); }
   .badge-copy { display: flex; flex-direction: column; line-height: 1.2; }
-  .badge-copy .stars { color: var(--color-accent); font-size: 0.95rem; letter-spacing: 0.08em; }
+  /* Over the dark photo scrim, so accent-on-dark rather than the fill. */
+  .badge-copy .stars { color: var(--color-accent-on-dark); font-size: 0.95rem; letter-spacing: 0.08em; }
   .badge-label { color: #ffffff; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
   .badge-sub { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
 
@@ -209,5 +222,7 @@ const asideMode = form_embed_url && calendarSnippet
   .quote-card blockquote p { margin: 0; font-size: 1.05rem; color: var(--color-text); }
   .quote-card figcaption { color: var(--color-muted); font-size: 0.9rem; }
   .rating { margin: var(--space-2) 0 0; text-align: center; font-size: 0.9rem; color: var(--color-muted); }
-  .stars { color: var(--color-accent); letter-spacing: 0.1em; margin-right: 0.4rem; }
+  /* These stars are inside .quote-card, which is --color-surface — a LIGHT
+     panel, not the scrim. Ink, not accent-on-dark. */
+  .quote-card .stars { color: var(--color-accent-ink); letter-spacing: 0.1em; margin-right: 0.4rem; }
 </style>

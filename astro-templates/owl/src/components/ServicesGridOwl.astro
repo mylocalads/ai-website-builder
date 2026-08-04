@@ -6,9 +6,12 @@ const site = (await getEntry('site', 'config')).data as any;
 const section = site.services_section ?? { eyebrow: 'Our Services' };
 export interface Props { cta_text?: string; cta_href?: string; }
 const { cta_text, cta_href } = Astro.props;
+// Trade-neutral fallback: the client's own heading_lead/heading_rest is what
+// names the work ("Full-service" + "home remodeling"). A default naming one
+// vertical ships that vertical's wording to every other client.
 const heading = section.heading_lead
   ? `${section.heading_lead} ${section.heading_rest ?? ''}`.trim()
-  : 'Full-service roofing solutions';
+  : 'What we do';
 ---
 <section id="services" class="services" aria-label="Services">
   <div class="container">

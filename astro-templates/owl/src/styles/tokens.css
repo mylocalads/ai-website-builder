@@ -7,6 +7,38 @@
   --color-on-primary: #ffffff;
   --color-accent: #c8973f;
   --color-on-accent: #1a1c17;
+  /* THREE accent tokens, one per job. --color-accent alone cannot do all three:
+     a value that is legible as a fill is rarely legible as text on white AND on
+     the dark bands. Every client re-derives all three from their brand colour —
+     see the button-contrast section of the README for the check to run.
+
+       --color-accent          FILL behind --color-on-accent (buttons, icon
+                               circles, badges). Never used as body text.
+       --color-accent-ink      the accent as TEXT on a LIGHT background
+                               (eyebrows, tick marks, stars, pins, chevrons).
+       --color-accent-on-dark  the accent as TEXT inside the dark
+                               --color-primary bands and over the hero scrim.
+
+     Why ink exists: this template's default #c8973f measures 2.42:1 on
+     --color-bg and 2.64:1 on --color-surface, so as text it fails AA. The
+     darker ink is 4.91:1 / 5.35:1.
+
+     Why accent-on-dark exists: on --color-primary the ink falls to 1.86:1, and
+     the fill gold itself reaches only 3.78:1 — under AA for the 0.75–0.95rem
+     eyebrows, step labels and star rows that live in those bands. This lighter
+     tint of the same gold is 5.03:1. Fills inside those sections keep
+     --color-accent, so the colour the eye reads as "the button colour" is
+     unchanged site-wide.
+
+     For many brands the two sides cannot be reconciled at all, which is the
+     real reason this is a token and not a per-client override. A dark saturated
+     red is the standard case: 6.6:1 against white makes a correct button fill,
+     but it is 2.4:1 on a navy band, and any red light enough to clear 4.5:1 on
+     the navy is too light to carry white button text. That client sets this
+     token and leaves the fill alone — no !important block fighting the
+     components' scoped CSS. */
+  --color-accent-ink: #8a6420;
+  --color-accent-on-dark: #dcb264;
   --color-focus: #0057ff;
   --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;

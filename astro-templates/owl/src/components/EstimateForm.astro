@@ -1,5 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
+import { ESTIMATE_SERVICES, DEFAULT_ESTIMATE_HEADING } from '../lib/services';
 
 export interface Props {
   heading?: string;
@@ -9,9 +10,13 @@ export interface Props {
   rating?: number;
   review_count?: number;
 }
-const { heading = 'Request A Free In-Person Roof Estimate Today!', intro, compact = false, rating, review_count } = Astro.props;
+const { heading: headingProp, intro, compact = false, rating, review_count } = Astro.props;
 
 const site = (await getEntry('site', 'config')).data as any;
+
+// Page prop wins, then the client's own site-wide heading, then a neutral
+// default. Nothing here names a trade — see src/lib/services.ts.
+const heading: string = headingProp ?? site.estimate_form?.heading ?? DEFAULT_ESTIMATE_HEADING;
 
 // Posts to this site's own serverless endpoint by default. An operator can
 // override it (e.g. to post straight at a GHL form URL) via crm.form_action_url.
@@ -46,18 +51,6 @@ const returnTo = Astro.url.pathname || '/book';
 const errorKey = Astro.url.searchParams.get('error');
 const errorMessage = errorKey ? ERRORS[errorKey] ?? ERRORS.invalid : null;
 
-const SERVICES = [
-  'Attic venting',
-  'Gutter installation',
-  'Gutter repair',
-  'Other',
-  'Roof damage repair',
-  'Roof inspection',
-  'Roof installation',
-  'Roof repair',
-  'Skylight installation',
-  'Skylight repair',
-];
 ---
 <div class={`estimate-form ${compact ? 'compact' : ''}`}>
   <h2 class="form-heading">{heading}</h2>
@@ -105,7 +98,7 @@ const SERVICES = [
       <label for="ef-service">Select a service <span aria-hidden="true">*</span></label>
       <select id="ef-service" name="service" required>
         <option value="">Choose one…</option>
-        {SERVICES.map((s) => <option value={s}>{s}</option>)}
+        {ESTIMATE_SERVICES.map((s) => <option value={s}>{s}</option>)}
       </select>
     </div>
 
@@ -146,10 +139,13 @@ const SERVICES = [
   .estimate-form.compact input[type="tel"], .estimate-form.compact select { padding: 0.55rem 0.7rem; }
   .estimate-form.compact .btn { font-size: 1.25rem; padding: 0.8rem 1.5rem; width: 100%; }
   .trust-strip { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: flex-start; margin: 0 0 var(--space-2); font-size: 0.85rem; color: var(--color-muted); }
-  .trust-strip .stars { color: var(--color-accent); letter-spacing: 0.1em; }
+  .trust-strip .stars { color: var(--color-accent-ink); letter-spacing: 0.1em; }
   .form-heading { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.25; margin: 0 0 var(--space-2); }
   .form-intro { color: var(--color-muted); margin: 0 0 var(--space-3); }
-  .form-error { background: rgba(241,85,55,0.10); border-left: 3px solid var(--color-accent); padding: var(--space-2); font-size: 0.92rem; color: var(--color-text); margin: 0 0 var(--space-3); }
+  /* Fixed red, NOT accent-derived. Tinting the error banner with the brand
+     accent means a green- or gold-accent client shows failures in a colour that
+     reads as success. The literal here used to be Gilroy's orange. */
+  .form-error { background: rgba(190,30,30,0.09); border-left: 3px solid #be1e1e; padding: var(--space-2); font-size: 0.92rem; color: var(--color-text); margin: 0 0 var(--space-3); }
 
   form { display: grid; gap: var(--space-2); }
   .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }

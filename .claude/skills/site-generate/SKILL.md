@@ -151,6 +151,12 @@ Header / footer content is driven by `services_section` and address — no separ
 
 - `services_section: { eyebrow: "Our Services", heading_lead?, heading_rest?, subtitle? }` — controls the OurServices home section header. Defaults to `{ eyebrow: "Our Services" }` if the operator has not authored copy; when they have, populate `heading_lead` + `heading_rest` (see Firefly: "Full-service" + "home remodeling").
 
+Vertical-specific copy (owl template — these carry NO trade wording of their own, so populate them or the site ships generic fallbacks):
+
+- `estimate_form: { heading?, services: [] }` — the native estimate form. `heading` is the site-wide form heading (fallback: "Get Your Free Estimate Today!"). `services` is the dropdown of work types, drawn from intake §5 — 6–10 short options in the client's own words, ending with "Other". **This list is also the server-side allowlist in `/api/estimate`** (both read `src/lib/services.ts`), so an option the client's team would not recognise is an option no lead can ever submit under. Empty array falls back to a generic Repair / Installation / Maintenance list.
+- `closing_cta: { headline?, body?, cta_text?, cta_href? }` — the closing CTA band that appears on eleven pages. `body` is where the guarantee, service area and founding year go — write it from intake §6/§8 facts ONLY, and leave it unset rather than inventing one; unset renders headline + button with no body. Never carry another client's body over.
+- `blog_section: { heading?, description? }` — the recent-articles `<h2>` and the `/blog` meta description, in the client's vocabulary (e.g. "HVAC & Building Advice"). Fallback: "Advice & Insights".
+
 Compliance defaults (rarely overridden — only touch on intake §15 override):
 
 - `compliance: { ada: true, gdpr: true, a2p: true }`.
@@ -204,6 +210,7 @@ From intake §1, §3, §5 (hero copy), plus reviews from `business_profile.json`
 - `intro` — one paragraph from intake §14. Firefly's intro is a good tone reference: transparent, anti-corporate, no upsell language.
 - `packages: []` when the operator opts out of tiered pricing (this is the common case — matches Firefly). Otherwise `[{ name, price, unit?, includes: [], cta_text, cta_href }]`.
 - `notes` — omit if blank.
+- `cost_table: { heading, lede?, columns: [], rows: [[]], footnote? }` (owl) — optional table on `/pricing`. Every row must have exactly as many cells as `columns` or the content collection fails to validate. Two honest shapes: published ranges the client stands behind (`["Type", "Per unit", "Typical job"]`), or — when there is no verified rate card, which is the common case — the variables that drive a quote (`["Type of work", "What the quote depends on"]`, as in `sites/raircon`). **Omit the key entirely rather than inventing numbers**: a fabricated range is a price the client has to honour, and the section simply does not render when unset.
 
 ### 8. Write `src/content/site/our-work.json` (kind: "our-work")
 
@@ -293,6 +300,14 @@ Contents:
 ```
 
 Defaults if the intake left fonts blank: `Fraunces` display + `Inter` body. Defaults if palette is missing: match Firefly exactly.
+
+Owl adds `--color-primary` / `--color-on-primary` (the dark bands), `--color-on-accent`, and THREE accent tokens that must each be derived separately from the brand accent — see the token comment in `astro-templates/owl/src/styles/tokens.css` and the button-contrast section of that template's README:
+
+- `--color-accent` — fill behind `--color-on-accent` (buttons, icon circles).
+- `--color-accent-ink` — the accent as TEXT on light backgrounds. Needs 4.5:1 on `--color-bg` and `--color-surface`; usually a darker variant of the accent.
+- `--color-accent-on-dark` — the accent as TEXT inside the dark `--color-primary` bands. Needs 4.5:1 on `--color-primary`; usually a lighter variant.
+
+Derive all three and run the README's contrast script before the build gate. Do NOT ship an `!important` override block in a client tokens.css to fix accent text on the dark bands — that is what `--color-accent-on-dark` is for.
 
 Do NOT modify `BaseLayout.astro` from this skill to add font links. The `@import` at the top of tokens.css is the loading mechanism.
 
