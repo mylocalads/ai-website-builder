@@ -1,0 +1,76 @@
+{
+  "slug": "prezkop-builders",
+  "vertical": "residential remodeling / outdoor living / hardwood flooring",
+  "metro": "Wilkes-Barre – Scranton, PA (Wyoming Valley / NEPA)",
+  "generated_at": "2026-08-03",
+  "method": "Firecrawl web + Reddit search. Reddit thread bodies could not be fetched directly (Firecrawl does not serve reddit.com), so pain points are drawn from search-result summaries plus the client's own four verbatim customer reviews, which are the strongest local signal available.",
+  "pain_points": [
+    {
+      "point": "Contractors ghost after the estimate",
+      "evidence": "r/homeowners 'I was ghosted by four contractors'; r/HomeImprovement 'contractor will come to my house, give a quote and then when I follow up I don't hear back at all'; r/Renovations 'Keep getting ghosted by the contractors'.",
+      "strength": "high"
+    },
+    {
+      "point": "No communication once the job starts — homeowners chase the contractor for updates",
+      "evidence": "Scranton/WB Facebook community post: 'the worst experience with a contractor... No phone calls'. Mirrored positively in three of Prezkop's four reviews, which all praise proactive updates.",
+      "strength": "high"
+    },
+    {
+      "point": "Contractors don't show up on the days they say they will",
+      "evidence": "Recurring in NEPA contractor-recommendation threads; Prezkop's Jim Brogna review calls out 'unlike many home improvement professionals, he was prompt every day'.",
+      "strength": "high"
+    },
+    {
+      "point": "Hard to find anyone who will take small or detail jobs (crawl space doors, window wells, stair treads, a sidewalk)",
+      "evidence": "r/Contractor: 'I get ghosted by service professionals who do not want the work because it's too small'. Prezkop's reviews are almost entirely small-to-mid detail jobs.",
+      "strength": "medium"
+    },
+    {
+      "point": "Old housing stock needs contractors who know pre-war construction",
+      "evidence": "r/Scranton 'Names of Contractors (Old Homes Only)' — homeowners specifically filtering for experience with older homes. Wyoming Valley coal-region housing is heavily pre-1940 with Southern Yellow Pine (heart pine) floors under carpet.",
+      "strength": "medium"
+    },
+    {
+      "point": "Weather derails outdoor projects and nobody re-communicates the schedule",
+      "evidence": "Renee McGuire Dopko review explicitly praises them for staying responsive 'even when Mother Nature was not cooperating' — NEPA outdoor build season is short.",
+      "strength": "medium"
+    }
+  ],
+  "what_customers_value": [
+    "Answering the phone and calling back the same day",
+    "Showing up when they said they would, every day, until it's done",
+    "Being told what's happening without having to ask",
+    "Willingness to take the odd, detailed, non-cookie-cutter job",
+    "Finish-carpentry-level care rather than production-builder speed",
+    "A real written scope and number before work starts"
+  ],
+  "how_this_business_stands_out": [
+    "Custom FINISH contractor — the positioning is detail work, not volume. That's the exact gap the 'nobody will take my small job' complaints describe.",
+    "Every one of the four public reviews independently names communication, punctuality and follow-through. That's an unusually consistent signal.",
+    "Hardwood refinishing is done by Josh and his father — a genuinely differentiated, non-subbed service in a market full of pre-1940 heart pine floors.",
+    "Pre-construction services offered as a distinct product — most local contractors just bid. This is a real differentiator worth its own page.",
+    "PA HIC license PA164836, LLC since April 2021, small named crew of three."
+  ],
+  "copy_angles": [
+    {
+      "angle": "We answer, we show up, and you hear from us",
+      "why": "Directly answers the #1 and #2 pain points, and it's the one claim their own reviews prove four times over."
+    },
+    {
+      "angle": "Custom finish work — the jobs other contractors won't take",
+      "why": "Turns the small-job complaint into their positioning instead of a limitation."
+    },
+    {
+      "angle": "Built for NEPA houses and NEPA weather",
+      "why": "Heart pine floors, coal-region housing stock, freeze-thaw on decks and concrete. Local specificity no franchise can claim."
+    },
+    {
+      "angle": "You'll know the scope and the number before we break ground",
+      "why": "Pre-construction services reframed as anti-surprise-invoice — the fear behind most contractor horror stories."
+    },
+    {
+      "angle": "A three-person crew you'll actually recognize",
+      "why": "Josh, Jake and Jimmy are named and photographed. Counters the anonymous-subcontractor experience."
+    }
+  ]
+}

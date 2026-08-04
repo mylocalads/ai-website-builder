@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+// True only for a genuine third-party embed. While `calendar_embed_snippet`
+// holds the operator's placeholder contact card, this page rendered that card
+// in the hero aside AND again in the booking section below — H4's phone, hours
+// and address printed twice within a screen of each other. An <iframe> or
+// <script> is the tell for a real GHL calendar; a plain <div> card is not.
+// Self-reverting: paste a real calendar in and the booking section returns.
+const hasRealCalendar = Boolean(calendarSnippet && /<iframe|<script/i.test(calendarSnippet));
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// The template shipped a hardcoded "Average roof costs in {city}" table. Removed
+// for three reasons, any one of which would be enough:
+//
+//   1. The figures are not this client's and are not sourced to the Dayton
+//      market, but the heading attributed them to it by name.
+//   2. The units were wrong. The column read "Per square (100 sq ft)" against
+//      values like "$4–$7" — those are per-square-FOOT numbers. At $4–$7 per
+//      square, a 2,000 sq ft roof works out to $80–$140, not the $8,000–$14,000
+//      claimed in the very next column.
+//   3. It contradicted this page's own copy, which explains that H4 does not
+//      quote from the driveway and that a real number needs an inspection.
+//
+// The genuinely useful part — what actually moves the price — is kept below as
+// prose. If the client wants real published ranges later, they should come from
+// the client, not from a template default.
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How roofing, siding, gutter and construction work is priced by ${site.business_name} across ${site.address.city}, ${site.address.state} — and why the estimate comes in writing.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your roof"
+  />
+
+  <section class="roof-cost">
+    <div class="container">
+      <h2>What actually decides the number</h2>
+      <p class="lede">We would rather explain how a roof gets priced than publish a range that turns out to be wrong for your house. Two homes on the same street can quote very differently, and these are the reasons why.</p>
+      <p class="factors"><strong>What drives the price up or down:</strong> the square footage and pitch of the roof, how complex it is — valleys, dormers and chimneys all add labour — whether there are existing layers to tear off, the condition of the decking underneath once we can see it, the material you choose, the state of the gutters and flashing, and permit costs in your municipality.</p>
+      <p class="factors"><strong>The one nobody can quote from the driveway:</strong> what the decking looks like under the old roof. We photograph it, show you, and talk through the cost before anything is replaced — rather than adding it quietly at the end.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {hasRealCalendar && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free on-site estimate</h2>
+        <p class="lede">Pick a time that works — we come out, measure the roof, and give you a written quote on the spot.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .roof-cost { padding: var(--space-5) 0; background: var(--color-surface); }
+  .roof-cost h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .roof-cost .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .roof-cost table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .roof-cost th, .roof-cost td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .roof-cost th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .roof-cost tbody tr:last-child td { border-bottom: 0; }
+  .roof-cost .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

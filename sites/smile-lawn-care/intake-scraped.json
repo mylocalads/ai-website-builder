@@ -1,0 +1,136 @@
+{
+  "kind": "intake-scraped",
+  "scraped_at": "2026-07-29",
+  "brief": "Duplicate of the gilroy-roofing build (owl template) for Smile Lawn Care & Landscapers, Wilkes-Barre PA. Operator-supplied palette, logo, 7 services and 18 service areas.",
+  "sources": {
+    "client_funnel": {
+      "url": "https://lawnmowingwilkesbarre.com/",
+      "note": "MLA-built GoHighLevel funnel, homepage only \u2014 every inner path (services, areas, our-work, pricing, contact, legal) 404s. This is also the website on the client's Google Business Profile.",
+      "status": "scraped"
+    },
+    "client_own_domain": {
+      "url": "https://smilelawns.com/",
+      "note": "DEAD \u2014 no A record, no MX. The funnel's nav links all point here, so none of them resolve. All page copy beyond the home page had to be written fresh.",
+      "status": "unreachable"
+    },
+    "google_business_profile": {
+      "status": "scraped",
+      "rating": 5,
+      "review_count": 37,
+      "reviews_captured": 12
+    },
+    "directories": {
+      "note": "Yelp / Yahoo Local / EZlocal used only for the street address. None published review text.",
+      "status": "partial"
+    }
+  },
+  "business": {
+    "name": "Smile Lawn Care",
+    "legal_name": "Smile Lawn Care & Landscapers",
+    "tagline_source": "Their own funnel H1: 'EXPERT LAWN CARE & LANDSCAPING'",
+    "owner_first_name": "Eric",
+    "phone_display": "(570) 855-0780",
+    "licensed": true,
+    "insured": true,
+    "years_in_business": null,
+    "years_note": "NOT PUBLISHED anywhere verifiable. Earliest Google review is 2024-04-20 and the logo asset was uploaded to the GHL CDN in March 2024. No 'since 20XX' claim appears anywhere on the site \u2014 deliberately."
+  },
+  "brand_tokens": {
+    "operator_supplied": true,
+    "primary_background": "#ffffff",
+    "secondary_background": "#f5cf39",
+    "cta": "#79a832",
+    "derived": {
+      "surface": "#fdf7e3",
+      "accent_ink": "#35591f",
+      "accent_edge": "#2f4a17",
+      "note": "accent_ink/accent_edge derived because #79a832 fails contrast as a text colour on white (2.81:1) and on the yellow (1.86:1)."
+    },
+    "logo": {
+      "url": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/65fbb5b44d7869938cc94451.png",
+      "local": "/logo-smile.png",
+      "note": "Original PNG pulled from the filesafe CDN (896x808 RGBA, transparent). The f_webp CDN variant transcodes to WebP despite the .png path."
+    }
+  },
+  "services": [
+    "Lawn Care Mowing",
+    "Landscape Maintenance",
+    "Mulch Installation",
+    "Property Cleanups",
+    "Pressure Washing",
+    "Fertilizer & Weed Control",
+    "Snow & Ice Removal"
+  ],
+  "service_areas": [
+    "Wilkes-Barre",
+    "Plains",
+    "Pittston",
+    "Edwardsville",
+    "Exeter",
+    "Swoyersville",
+    "Wyoming",
+    "Forty Fort",
+    "Kingston",
+    "Laflin",
+    "Moosic",
+    "Luzerne",
+    "Pringle",
+    "Larksville",
+    "Laurel Run",
+    "Hudson",
+    "Hilldale",
+    "Shavertown"
+  ],
+  "service_areas_note": "All Pennsylvania. 17 in Luzerne County; Moosic is Lackawanna County. Hudson and Hilldale are villages within Plains Township, not boroughs.",
+  "imagery": {
+    "real_client_photos": 6,
+    "photos": [
+      {
+        "file": "65fbb9968fbeae1b685881c3.jpeg",
+        "depicts": "crew member mowing a striped back lawn with a commercial walk-behind",
+        "used_for": "site hero, Lawn Care Mowing tile, our-work"
+      },
+      {
+        "file": "660417d14d7869c36ad19b1d.jpeg",
+        "depicts": "home front with fresh mulch beds, trimmed shrubs, edged lawn",
+        "used_for": "Landscape Maintenance tile, home seo_body, our-work"
+      },
+      {
+        "file": "660418484d7869e0d3d19b75.jpeg",
+        "depicts": "smiley face in yellow mulch on a mulch pile",
+        "used_for": "Mulch Installation tile, our-work"
+      },
+      {
+        "file": "66041894e4236153ae9223d5.jpeg",
+        "depicts": "crew member in branded shirt clearing overgrowth",
+        "used_for": "Property Cleanups tile, home about_block, our-work"
+      },
+      {
+        "file": "660442fd3da37961f62a0953.jpeg",
+        "depicts": "gloved hands holding pulled weeds",
+        "used_for": "Fertilizer & Weed Control tile, our-work"
+      },
+      {
+        "file": "66044241a79bbe8536bc5ee0.jpeg",
+        "depicts": "driveway being cleared with a snow blower",
+        "used_for": "Snow & Ice Removal tile, our-work"
+      }
+    ],
+    "gap": "Pressure Washing has NO client photo. Its grid tile intentionally uses the template's .no-photo gradient and its page hero falls back to the mowing photo. No stock image was substituted \u2014 a generic pressure-washing photo would imply it is their work.",
+    "all_verified_200": true
+  },
+  "needs_client_paste_in": [
+    "GHL booking calendar embed (currently /placeholder-calendar.svg per the brief)",
+    "GHL contact form embed (currently /placeholder-form.svg per the brief)",
+    "GHL reviews widget snippet \u2014 NOT SET",
+    "GHL Live Chat widget snippet \u2014 NOT SET",
+    "Captcha site key (crm.captcha_snippet) \u2014 honeypot + validation active meanwhile",
+    "A pressure-washing job photo"
+  ],
+  "operator_config_outstanding": [
+    "LEAD_WEBHOOK_URL env var on Vercel \u2014 /api/estimate returns ?error=unavailable until set",
+    "Custom domain (site is on the default vercel.app)",
+    "Meta Pixel / GTM via code_injection",
+    "Confirm (570) 855-0780 is the intended tracking number vs the GBP line (570) 290-5159"
+  ]
+}

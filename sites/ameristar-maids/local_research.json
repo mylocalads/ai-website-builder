@@ -1,0 +1,36 @@
+{
+  "slug": "ameristar-maids",
+  "category": "House cleaning service",
+  "location": "Dallas, PA (Back Mountain / Wyoming Valley, Luzerne County)",
+  "threads_analyzed": 26,
+  "method_note": "Reddit blocks both direct fetch and Firecrawl page scraping, so findings are synthesized from indexed thread titles and result snippets across r/housekeeping, r/homeowners, r/workingmoms, r/CleaningTips and city subs. Local NEPA/Luzerne subreddit activity on this category is effectively zero, so the pain-point set is national-category signal, applied to the local market.",
+  "pain_points": [
+    "A different cleaner shows up every visit, so quality swings from great to bad with no accountability — 'We went through a period with a different cleaning technician every time.'",
+    "Quoted one price, billed another. Threads repeatedly describe estimates doubling once the crew is on site, and hourly billing that no one can predict.",
+    "No-shows, late cancellations, and unanswered texts. 'I never know when the cleaner is going to show up' and multi-day response gaps are recurring complaints.",
+    "Quality quietly degrades after the first few visits — the initial clean is thorough, then the scope silently shrinks and nobody says what is actually included.",
+    "Finding any reliable service at all feels impossible. People fall back on asking Facebook and Nextdoor every week because company websites give them nothing to judge."
+  ],
+  "what_customers_value": [
+    "The same person, every single time — consistency is named more often than price.",
+    "A firm, written quote that gets honored, ideally set after someone actually looks at the home.",
+    "A published, itemized scope so the customer knows exactly what does and does not get cleaned.",
+    "Proof it is safe to hand over a house key: background-screened staff, bonded, insured, workers' comp carried by the company.",
+    "Willingness to pay above the cheapest option for genuinely thorough work — several threads are people actively hunting for a higher-end cleaner."
+  ],
+  "business_differentiators": [
+    "'One Maid. Same Maid. Every Time.' is already AmeriStar's stated promise — it is a direct answer to the single loudest complaint in the category, and it is currently buried mid-page on their site.",
+    "Every service tier publishes a line-item checklist (fans, baseboards, cabinet fronts, switch plates, drip pans, sheets changed). That itemization directly answers the 'scope silently shrinks' pain point — no competitor page in the local set does this.",
+    "Free in-home estimate with a custom plan built before any work begins, explicitly 'never a one-size-fits-all approach' — answers the quote-vs-bill complaint.",
+    "Fully bonded and insured with company-provided workers' compensation and a documented screening process for every team member — answers the trust barrier.",
+    "4.9 stars across 171 Google reviews and clients retained 3+ years — answers 'reliable services don't exist here.'",
+    "10+ years in the industry, plus a Cleaning for a Reason partnership donating free cleanings to families in cancer treatment — local credibility no competitor in the Back Mountain set matches."
+  ],
+  "copy_angles": [
+    "Lead the hero with 'One Maid. Same Maid. Every Time.' — it is the category's #1 unmet need and it is a claim AmeriStar already makes and keeps.",
+    "Make the itemized cleaning checklist a real section, not fine print. 'Here is exactly what we clean' is the strongest trust asset they own.",
+    "Frame pricing around the free in-home estimate: we look at your home first, then quote — so the number you are told is the number you pay.",
+    "Run a trust band early: bonded, insured, workers' comp, screened team, 4.9 stars from 171 reviews. This clears the 'stranger in my house' objection before the service pitch.",
+    "Keep the time-back framing from their own voice — 'We specialize in creating free time for busy people' — targeted at working parents in the Back Mountain and Wyoming Valley."
+  ]
+}

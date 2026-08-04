@@ -1,0 +1,53 @@
+---
+export interface Props {
+  data?: {
+    eyebrow?: string;
+    headline: string;
+    body: string;
+    checklist?: string[];
+    photo?: string;
+    photo_alt?: string;
+    photo_cutout?: boolean;
+  };
+  fallback_photo?: string;
+  business_name: string;
+}
+const { data, fallback_photo, business_name } = Astro.props;
+const photo = data?.photo ?? fallback_photo;
+const checklist = data?.checklist ?? [];
+---
+{data && (
+  <section class="about" aria-label={data.headline}>
+    <div class="container inner">
+      <div class="copy">
+        {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
+        <h2>{data.headline}</h2>
+        <p class="body">{data.body}</p>
+        {checklist.length > 0 && (
+          <ul class="checklist">
+            {checklist.map((item) => <li>{item}</li>)}
+          </ul>
+        )}
+      </div>
+      {photo && (
+        <div class={`media ${data.photo_cutout ? "cutout" : ""}`}>
+          <img src={photo} alt={data.photo_alt ?? `The ${business_name} team`} loading="lazy" />
+        </div>
+      )}
+    </div>
+  </section>
+)}
+<style>
+  .about { padding: var(--space-5) 0; }
+  .inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-4); align-items: center; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); }
+  .body { color: var(--color-muted); font-size: 1.05rem; line-height: 1.7; margin: 0 0 var(--space-3); }
+  .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-1); }
+  .checklist li { position: relative; padding-left: 1.9rem; color: var(--color-text); line-height: 1.6; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-accent); font-weight: 700; }
+  .media img { width: 100%; border-radius: var(--radius-lg); }
+  /* Transparent PNG cut-outs get no frame and sit on the baseline. */
+  .media.cutout { align-self: end; }
+  .media.cutout img { border-radius: 0; object-fit: contain; max-height: 30rem; margin-inline: auto; }
+</style>

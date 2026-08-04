@@ -1,0 +1,123 @@
+---
+import { AREA_LIMIT } from '../../lib/limits';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import HeroOwl from '../../components/HeroOwl.astro';
+import PartnerBadges from '../../components/PartnerBadges.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import Gallery from '../../components/Gallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServicesGridOwl from '../../components/ServicesGridOwl.astro';
+import GHLReviewsWidget from '../../components/GHLReviewsWidget.astro';
+import Financing from '../../components/Financing.astro';
+import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
+import FAQ from '../../components/FAQ.astro';
+import ClosingCTA from '../../components/ClosingCTA.astro';
+import GHLChatWidget from '../../components/GHLChatWidget.astro';
+
+export async function getStaticPaths() {
+  // Defined inside getStaticPaths because Astro extracts this function into its
+  // own module at build time and does not carry along frontmatter-level consts.
+  // Module IMPORTS do survive that extraction, which is why AREA_LIMIT can come
+  // from src/lib/limits.ts while these two must stay inline.
+  // Nesting under /service-area/ means a city slug can no longer collide with a
+  // top-level static route, so only the directory index is reserved.
+  const RESERVED_SLUGS = new Set(['index']);
+  const SLUG_PATTERN = /^[a-z0-9-]+-[a-z]{2}$/;
+
+  const areas = (await getCollection('service_areas'))
+    .sort((a, b) => a.data.order - b.data.order);
+
+  // Same reasoning as the services route: an over-cap collection builds green
+  // while silently shipping fewer pages than were authored. Name the casualties.
+  if (areas.length > AREA_LIMIT) {
+    console.warn(
+      `[service_areas] ${areas.length} areas authored but AREA_LIMIT is ${AREA_LIMIT}. ` +
+      `Not building: ${areas.slice(AREA_LIMIT).map((a) => a.slug).join(', ')}. ` +
+      `Raise AREA_LIMIT in src/lib/limits.ts to include them.`
+    );
+  }
+
+  const validated = areas
+    .slice(0, AREA_LIMIT)
+    .filter((a) => {
+      const s = a.slug;
+      if (RESERVED_SLUGS.has(s)) {
+        console.warn(`[service_areas] Skipping "${s}" — reserved slug conflicts with the directory index.`);
+        return false;
+      }
+      if (!SLUG_PATTERN.test(s)) {
+        console.warn(`[service_areas] Skipping "${s}" — must match city-state pattern (e.g. miami-fl).`);
+        return false;
+      }
+      return true;
+    });
+  return validated.map((a) => ({ params: { slug: a.slug }, props: { area: a } }));
+}
+
+const { area } = Astro.props;
+const site = (await getEntry('site', 'config')).data as any;
+const home = await getEntry('site', 'home').catch(() => null);
+const homeData = (home?.data as any) ?? {};
+const homeFaqs = homeData.faqs ?? [];
+
+// The template's default H1 was the full business name plus the full state,
+// which wrapped to six lines on a long name like this client's. The visible
+// H1 now leads with the service and uses the two-letter state; the <title>
+// still carries the brand.
+const stateShort = (area.data.state_abbr ?? area.data.state).toUpperCase();
+const areaH1 = `Industrial Concrete Repair In ${area.data.name}, ${stateShort}`;
+const title = `${areaH1} | ${site.business_name}`;
+const description = `${site.business_name} serves facilities in ${area.data.name}, ${area.data.state} and across ${area.data.neighborhoods.slice(0, 3).join(', ') || 'the surrounding area'} with concrete repair, joint restoration, floor coatings and line marking.`;
+const path = `/service-area/${area.slug}`;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Service Areas', href: '/service-area' },
+  { name: `${area.data.name}, ${area.data.state}`, href: path },
+];
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Industrial Concrete Repair',
+  provider: { '@type': 'LocalBusiness', name: site.business_name },
+  areaServed: { '@type': 'AdministrativeArea', name: `${area.data.name}, ${area.data.state}` },
+  description,
+};
+---
+<BaseLayout title={title} description={description} breadcrumbs={crumbs} jsonLd={[serviceLd]} pagePath={path}>
+  <HeroOwl
+    eyebrow={`${area.data.name}, ${stateShort}`}
+    headline={areaH1}
+    subheadline={area.data.local_context || `Local service across ${area.data.name} and surrounding communities.`}
+    cta_text="Request A Site Assessment"
+    cta_href="/book"
+    photo={area.data.hero_photo ?? site.default_hero_photo}
+    show_form
+    form_heading={`Free site assessment in ${area.data.name}`}
+  />
+  <PartnerBadges />
+  <AboutSection
+    eyebrow={`About ${area.data.name}`}
+    heading={`Working in and around ${area.data.name}`}
+    {/* Deliberately does NOT fall back to local_context: that string is already
+        the hero subheadline a few hundred pixels up, and falling back to it
+        reproduces the duplicate-paragraph bug about_body exists to fix. An area
+        without about_body gets the generic line instead. */}
+    body={area.data.about_body || `${site.business_name} serves facilities in ${area.data.name} and the surrounding area with concrete repair, joint restoration, floor coatings and line marking scheduled around your operation.`}
+    photo={area.data.landmark_photo}
+    photo_alt={area.data.landmark_alt ?? `${area.data.name} landmark`}
+    photo_credit={area.data.landmark_credit}
+    photo_credit_href={area.data.landmark_credit_href}
+    photo_position="right"
+  />
+  <Gallery items={area.data.gallery ?? []} heading={`${area.data.name} work`} />
+  <WhyChooseUs />
+  <ServicesGridOwl />
+  <GHLReviewsWidget />
+  <Financing />
+  <ServiceAreaGrid />
+  <FAQ items={homeFaqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>

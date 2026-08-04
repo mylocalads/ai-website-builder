@@ -1,0 +1,76 @@
+{
+  "slug": "patriot-metal-products",
+  "category": "Industrial custom coating / metal finishing job shop",
+  "location": "Berwick, PA (Central & Northeast Pennsylvania)",
+  "threads_analyzed": 11,
+  "research_depth": "snippet-level",
+  "_method_note": "Reddit blocks both the WebSearch crawler and Firecrawl page scraping, and its public JSON endpoint refused our requests. Findings below are drawn from Firecrawl search-result snippets across 11 relevant threads plus three published metal-finishing vendor-selection guides. Thread bodies and comment trees were NOT read in full. Treat pain points as directionally real but not quote-verified.",
+  "sources": [
+    "https://www.reddit.com/r/ConstructionManagers/comments/1jla957/whats_the_deal_with_powder_coaters/",
+    "https://www.reddit.com/r/Powdercoating/comments/xmtlsc/is_it_normal_for_a_powder_coat_to_chip_off_like/",
+    "https://www.reddit.com/r/Powdercoating/comments/1j4catu/is_it_normal_for_powdercoating_wheels_to_take_a/",
+    "https://www.reddit.com/r/Powdercoating/comments/10tgv8m/what_should_i_expect_to_pay_to_powder_coat_these/",
+    "https://www.reddit.com/r/bikewrench/comments/15a80vf/taking_frames_for_powder_coating_anything_i/",
+    "https://www.reddit.com/r/manufacturing/comments/px6bu2/to_powder_coat_or_liquid_coat_that_is_the_question/",
+    "https://www.reddit.com/r/Welding/comments/1m9f49d/bad_powder_coating_or_bad_welds/",
+    "https://www.reddit.com/r/homeowners/comments/1qdk71c/pro_tip_dont_ask_if_a_quote_price_is_fair_on_any/",
+    "https://www.reddit.com/r/Renovations/comments/17g6rjb/keep_getting_ghosted_by_the_contractors/",
+    "https://monti-inc.com/blog/3-qualities-to-look-for-when-choosing-a-plating-partner/",
+    "https://www.proplating.com/choosing-the-right-metal-finish-a-practical-guide-from-professional-plating-inc/"
+  ],
+  "pain_points": [
+    "Coating failures almost always trace back to surface prep, not the coating itself — chipping and flaking get blamed on the coater, and the recurring diagnosis in r/Powdercoating is 'poor preparation before coating.'",
+    "Buyers get ghosted. A Senior PE in r/ConstructionManagers opened a whole thread on powder coaters not responding, and the pattern repeats across contractor subs: site visits and drop-offs that never turn into a quote or a callback.",
+    "Turnaround is opaque. Shops quote 'end of the week' and buyers have no idea whether that means 4 days or 4 weeks, with no status visibility once parts leave the dock.",
+    "Small runs get refused or deprioritized. Buyers with one frame, a short prototype run, or an odd oversized part struggle to find a shop that will take the job at all.",
+    "Masking and part-specific handling get promised and then botched — 'they assured me that they completely knew how to mask. They didn't.'",
+    "Part size and geometry disqualify most shops silently. Buyers waste calls discovering a shop's oven, rack, or barrel simply won't fit their part, or won't reach into recesses, blind holes, and tubular interiors.",
+    "No documentation. Engineering buyers need certifications and performance data to close out a spec, and most job shops can't produce anything beyond a verbal assurance."
+  ],
+  "what_customers_value": [
+    "A real, documented prep line — cleaning, pretreatment, and blasting done in-house before any coating touches the part.",
+    "Process consistency from automation. Vendor-selection guides single out automated lines as the thing that holds quality at volume.",
+    "Onsite testing and written certification of process and performance criteria, so the buyer can close a spec.",
+    "Volume flexibility in both directions — a single piece and a full truckload handled by the same shop.",
+    "The right process matched to the part: rack vs. barrel, powder vs. dip vs. auto-deposition, sized to the actual geometry and service environment.",
+    "One vendor for the whole chain — strip, blast, coat, cure, assemble, package, ship — instead of coordinating four suppliers and owning the gaps between them.",
+    "Someone who answers the phone and gives a straight schedule."
+  ],
+  "business_differentiators": [
+    "PMP runs a six-stage iron phosphate washer on the powder line and a full finishing chain of blasting, pretreatment, coating, and curing — a direct, verifiable answer to the prep-failure pain point. Source: client's own /services/powder-coating/ and /custom-coating/ pages.",
+    "An onsite state-of-the-art coating laboratory that provides certifications of the processes and performance criteria. This is the documentation gap most job shops cannot fill. Source: client's /about-us-2/ and /services/other-services/ pages.",
+    "Sixteen robotic spray guns that can also be run manually — automated consistency with a manual fallback for odd parts. Source: /services/powder-coating/.",
+    "Explicit volume flexibility: 'we process orders ranging from 1 piece to entire truckloads daily.' Directly answers the small-run refusal pain. Source: /services/powder-coating/.",
+    "Published capacity numbers instead of vague claims — powder line to 22' L x 5' H x 47\" W at 2,000 lb; batch booth and oven to 15' w x 20' l x 6' h; rack plating to 10'; barrel plating for small parts; burn-off from a nickel to 6' x 10' x 4'. Buyers can self-qualify before calling. Source: service pages.",
+    "Five coating processes plus fabrication, assembly, grinding/sanding, burn-off, blasting/wheel abrading, lab testing and transport under one roof — the client's own words: 'AT PMP, INC. WE ARE A TRUE TURNKEY OPERATION.' Answers the multi-vendor coordination pain.",
+    "Autophoretic coats inside, outside, and edges of complex shapes and tubular structures — 'where it wets, it coats' — which is the specific geometry problem that disqualifies line-of-sight processes.",
+    "Own fleet of three trucks (two tractor trailers, one closed van), expedite service available, off I-80. Turns logistics from the buyer's problem into PMP's.",
+    "Incorporated in Berwick in 1986 — roughly 40 years in the same operation, family owned.",
+    "Spec-level capability that gates most competitors out: CARC finishes meeting MIL, OMAH and ANSI specs; RoHS-compliant powder; Autophoretic®/Aquence™ 930™."
+  ],
+  "gaps_no_data": [
+    "No stated lead times or turnaround commitments anywhere on the client's site — the single most-cited buyer pain, and PMP currently says nothing about it. Worth asking the client for a real number to put on the site.",
+    "No ISO 9001 or IATF certification claim found. Vendor-selection guides treat this as a primary filter for engineering buyers. If PMP holds one, it belongs in the header.",
+    "Zero testimonials or named case studies available — GBP returned no review bodies and the client site has none. No social-proof section can be built honestly right now.",
+    "GBP rating is 2.7 across 7 reviews. Suppressed sitewide. This is a live reputation problem the client should be told about; a review-generation push is the fix, not a website change.",
+    "No named customers or industries-served logos, only a generic industry list."
+  ],
+  "copy_angles": [
+    "Lead the hero with capability-qualification, not a slogan. Something in the shape of 'Five coating processes. One dock. Parts to 22 feet.' Buyers in this category are trying to answer 'can you even take my part' in the first five seconds — give them the numbers, not an adjective.",
+    "Make prep the trust story. Because nearly every coating failure gets blamed on prep, a section that walks the six-stage iron phosphate washer and the blast/pretreat/coat/cure chain does more persuasive work than any testimonial would. Turn the client's process into the proof.",
+    "Sell the lab as the differentiator, not a footnote. 'We certify what we coat' — the onsite laboratory issuing process and performance certifications is the single hardest thing for a local competitor to match, and it's currently buried on an 'Other Services' page.",
+    "Put '1 piece to entire truckloads' on the homepage as an explicit invitation. It converts the small-run buyer who has been turned away twice already, and it costs nothing to say because it's already true.",
+    "Build the services grid around part fit — dimensions, weight, rack vs. barrel, geometry — so a buyer self-qualifies before calling. This directly attacks the wasted-calls pain point and makes the inbound leads better.",
+    "Run 'true turnkey' as the closing argument: strip, grind, blast, pretreat, prime, top coat, test, package, and truck it back on our own fleet. Frame it against the alternative of coordinating four vendors and owning the seams.",
+    "Front-load contact everywhere and make the ask concrete ('send us your part drawing and target spec'). Ghosting is the loudest complaint in the category, so responsiveness is a positioning claim — but only recommend the client make it if they'll actually staff it.",
+    "Lean on 1986 and 40 years, and on the I-80 location, in place of the star rating. With a 2.7 GBP rating suppressed, longevity and logistics are the credibility anchors available."
+  ],
+  "_notes": {
+    "generated_at": "2026-08-03",
+    "cost_usd": 0.0,
+    "warnings": [
+      "This is a B2B industrial job shop, not a home-services contractor. Consumer-style trust signals (star ratings, homeowner testimonials, financing) are the wrong register. Buyers are engineers, purchasing agents, and fabricators qualifying a supplier.",
+      "Reddit thread bodies could not be read in full — see _method_note. Findings are snippet-level."
+    ]
+  }
+}

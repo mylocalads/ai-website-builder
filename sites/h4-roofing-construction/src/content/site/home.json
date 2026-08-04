@@ -1,0 +1,181 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Dayton, OH",
+    "headline": "Your Roof, Done By Your Neighbors",
+    "subheadline": "Roof replacement, repair, siding, gutters and more across the Miami Valley — from a family-owned company with a Dayton address you can drive to.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/hero-home.jpg",
+    "video_link_text": "Why hire H4 Roofing?!",
+    "video_link_href": "/about",
+    "trust_badges": [
+      { "mark": "bbb", "label": "BBB Accredited", "sublabel": "A+ Rating" },
+      { "label": "CertainTeed ShingleMaster", "sublabel": "Credentialed installer" }
+    ],
+    "quote_card": {
+      "quote": "Absolute best! Promises and trust are everything to me. Trey followed through on both and the H4 Team provided a roof surely to last.",
+      "author": "Tina Taylor Thomas",
+      "cta_text": "Price My Roof",
+      "cta_href": "/book",
+      "rating": 5
+    }
+  },
+  "promise_bar": [
+    { "text": "Family owned and operated", "icon": "home" },
+    { "text": "CertainTeed ShingleMaster credentialed", "icon": "award" },
+    { "text": "Free written estimates", "icon": "document" }
+  ],
+  "promise_band": {
+    "icon": "shield",
+    "eyebrow": "Company Promise",
+    "headline": "We will still be here next winter",
+    "body": "After every Miami Valley hailstorm, the trucks arrive and the doors get knocked. Most of those crews are gone by the time the leaves turn. We are a family business working out of Dayton, with both owners' names on the door and a Better Business Bureau file you can look up before you ever call us.",
+    "cta_text": "Meet the family behind H4",
+    "cta_href": "/about"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The straight-answer roofing process",
+    "intro": "Ohio does not license roofing contractors, which means the burden of figuring out who is legitimate falls entirely on you. We built our process around removing that guesswork instead of adding to it.",
+    "blocks": [
+      {
+        "title": "Documented inspection",
+        "icon": "document",
+        "body": "We get on the roof, photograph what we find, and show you the pictures. You see the same evidence we do — including the times we tell you the roof has years left in it."
+      },
+      {
+        "title": "Written before signed",
+        "icon": "shield",
+        "body": "Scope, materials and price go in writing before anyone asks for a signature. Take it and compare it. The Better Business Bureau's own advice is to get three written quotes, and we would rather be one of the three than the one pressuring you out of it."
+      }
+    ],
+    "steps_title": "What happens on install day",
+    "steps_icon": "hammer",
+    "steps": [
+      { "title": "We protect the property first", "body": "Landscaping, siding and outdoor spaces get covered before the first shingle comes off. Tear-off is messy work and the mess should stay on the roof and in the dumpster." },
+      { "title": "Tear off, inspect the deck, rebuild", "body": "Old material comes off down to the decking so we can see what is actually underneath. Soft or rotted decking gets replaced — we are not roofing over a problem." },
+      { "title": "Magnet sweep and final walkthrough", "body": "A rolling magnet goes over the yard and driveway for nails, then we walk the property with you before we load up. If something is not right, we would rather hear it now." }
+    ],
+    "guarantee": {
+      "title": "Credentials you can actually check",
+      "body": "In a state with no roofing license, anyone can print a business card. So we carry the credentials that require an outside organization to vouch for us: CertainTeed ShingleMaster status, BBB accreditation with an A+ rating, and OSHA 10 and OSHA 30 certified crews. Verify all three before you call.",
+      "cta_text": "More about our credentials",
+      "cta_href": "/about",
+      "badge_image": "/img/certainteed-shinglemaster.jpg",
+      "badge_alt": "CertainTeed ShingleMaster Credentialed installer badge"
+    }
+  },
+  "process_steps": {
+    "headline": "From first call to final walkthrough",
+    "steps": [
+      { "label": "Step One", "title": "Call or text us", "body": "A real person, Monday through Saturday, 6:00 AM to 8:00 PM.", "icon": "phone" },
+      { "label": "Step Two", "title": "Documented inspection", "body": "We get on the roof and photograph what we find.", "icon": "clipboard" },
+      { "label": "Step Three", "title": "Written estimate", "body": "Scope, materials, price. No pressure to sign it today.", "icon": "document" },
+      { "label": "Step Four", "title": "Install and clean up", "body": "Protect, tear off, rebuild, magnet sweep, walk it together.", "icon": "hammer" }
+    ],
+    "cta_text": "Start with a free inspection",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About H4",
+    "headline": "Family owned, Dayton based, fifteen years on roofs",
+    "body": "At H4 Roofing & Construction, roofing is more than a service — it is a commitment to protecting homes, businesses, and families throughout Dayton, Ohio and the surrounding communities. As a family-owned and operated company with 15 years of industry experience, we have built a reputation for dependable roofing and exterior work backed by quality workmanship, honest communication, and customer-focused service.",
+    "checklist": [
+      "Family owned and operated by Drew and Trey Harper",
+      "Working out of 3347 Witherspoon Drive, Dayton",
+      "OSHA 10 and OSHA 30 certified crews",
+      "Roofing, siding, gutters, concrete, flooring and drywall"
+    ],
+    "photo": "/img/about-crew.jpg",
+    "photo_alt": "An H4 crew laying out long lengths of new gutter stock on the lawn of a Dayton-area home, with the company yard sign in front",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Roofing in the Miami Valley",
+    "headline": "Dayton weather is hard on roofs. Plan for it.",
+    "paragraphs": [
+      "Montgomery County sits among Ohio's most active counties for hail insurance claims, and the numbers back it up: NOAA has logged seventeen confirmed hail reports within twenty-five miles of Dayton in the last twelve months alone, including golf-ball sized stones in June and seventy-four mile-per-hour straight-line winds in March. If you own a home here long enough, wind and hail are not a question of whether but when.",
+      "That weather brings a second problem behind it. In April 2025 the Dayton Better Business Bureau publicly warned Miami Valley homeowners about storm chasers working the neighborhoods after a round of hail and flooding — one homeowner had three uninvited contractors at her door. Their advice was simple: use local contractors, get it in writing, and be suspicious of anyone who will not give you an estimate on paper.",
+      "We install CertainTeed systems because the manufacturer credentials mean something in a state that issues no roofing license of its own, and because a roof specified for Ohio freeze-thaw and hail is a different roof than one thrown on to clear a claim. If your roof took a hit this season, we will get up there, photograph it, and tell you what we actually find."
+    ],
+    "checklist": [
+      "Storm and hail damage inspection with photo documentation",
+      "Full tear-off and deck inspection, never a layover on damaged decking",
+      "CertainTeed ShingleMaster credentialed installation",
+      "Written estimates you can compare against anyone else's"
+    ],
+    "image": "/img/certainteed-landmark-pro.jpg",
+    "image_alt": "CertainTeed Landmark PRO shingle bundles staged on a roof during an H4 Roofing installation",
+    "image_position": "right",
+    "review": {
+      "name": "Kala Ellington",
+      "text": "H4 construction provided top notch customer service and support for my unexpected roofing job, discovered during another remodeling project!!! Thanks to the team at H4",
+      "rating": 5,
+      "source": "Google"
+    },
+    "cta_text": "Get your roof inspected",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Tina Taylor Thomas",
+      "location": "Dayton, OH",
+      "text": "Absolute best! Promises and trust are everything to me. Trey followed through on both and the H4 Team provided a roof surely to last.",
+      "rating": 5
+    },
+    {
+      "name": "Tara R.",
+      "location": "Tipp City, OH",
+      "text": "Great communication and speedy, professional service.",
+      "rating": 5
+    },
+    {
+      "name": "RocknStuff",
+      "location": "Dayton, OH",
+      "text": "Smooth transaction from start to finish! I highly recommend using H4 roofing and construction for your roofing needs. The crew does an excellent job! You will be completely satisfied!",
+      "rating": 5
+    },
+    {
+      "name": "The Ls",
+      "location": "Dayton, OH",
+      "text": "They were very responsive and the repair was completed very quickly.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do roofing contractors need a license in Ohio?",
+      "a": "No — Ohio does not issue a statewide roofing license, though individual cities and counties set their own registration and permit rules. That is exactly why third-party credentials matter here. Ask any roofer you are considering for their manufacturer certification and their BBB file, because those require an outside organization to vouch for them."
+    },
+    {
+      "q": "Someone knocked on my door after the storm. Should I use them?",
+      "a": "Be careful. The Dayton Better Business Bureau warned Miami Valley homeowners about exactly this after the spring 2025 hail and flooding — their representative put it plainly, that storm chasers work an area and then leave and you cannot reach them again. Get any estimate in writing, check for a local address, and never sign the same day someone shows up uninvited."
+    },
+    {
+      "q": "Will my homeowners insurance cover the damage?",
+      "a": "Wind and hail damage is typically covered by a standard homeowners policy, minus your deductible, but most policies require the claim to be filed within one to two years of the storm. We photograph what we find during the inspection so you have documentation of the damage, whether or not you end up filing."
+    },
+    {
+      "q": "How long does a roof replacement take?",
+      "a": "Most Dayton-area residential roofs are a one to two day job once the materials are on site. Steep pitches, multiple layers, or decking that turns out to need replacement can add time, and weather can push a start date. If we expect a job to run long we tell you before we begin, not partway through."
+    },
+    {
+      "q": "Can you just go over the old shingles?",
+      "a": "We do not recommend it and it is not how we work. Roofing over existing shingles hides whatever is happening to the decking underneath, and most manufacturer warranties are worth very little on a layover. We tear off to the deck so we can see what we are building on."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We work throughout the Miami Valley from our Dayton office, including Kettering, Centerville, Beavercreek, Bellbrook and Miamisburg. If you are just outside those, call and ask — we cover more of the region than we have pages for."
+    },
+    {
+      "q": "Do you only do roofing?",
+      "a": "Roofing is the core of the business, but we are a full exterior and construction company. We also handle siding, gutters, concrete, flooring and drywall — which matters when a roof leak has already done damage inside and you would rather not manage three separate contractors."
+    },
+    {
+      "q": "How much will a new roof cost?",
+      "a": "It depends on the square footage, the pitch, the material you choose, and what we find when the old roof comes off. We will not quote a number over the phone that we would have to revise later. You get a written estimate after the inspection, and you are welcome to take it and compare."
+    }
+  ]
+}

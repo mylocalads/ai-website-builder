@@ -1,0 +1,193 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving Northeastern Pennsylvania Since 1993",
+    "headline": "Commercial Roofs Built To Take A NEPA Winter",
+    "subheadline": "Flat and low-slope membrane, architectural metal, sheet metal and emergency leak service for buildings across Luzerne, Lackawanna and Monroe counties. Established 1993 — and an Excalibur Award winner every year since 1994.",
+    "cta_text": "Request A Roof Evaluation",
+    "cta_href": "/book",
+    "photo": "/img/u-hero-flat-roof.jpg",
+    "trust_badges": [
+      {
+        "label": "Excalibur Award",
+        "sublabel": "Every year since 1994"
+      },
+      {
+        "label": "33 Years in NEPA",
+        "sublabel": "Established 1993"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Commercial roofing only",
+      "icon": "home"
+    },
+    {
+      "text": "Excalibur Award since 1994",
+      "icon": "award"
+    },
+    {
+      "text": "Emergency leak service",
+      "icon": "phone"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "When The Roof Is Already Leaking",
+    "headline": "Two Locations, On-Call Technicians",
+    "body": "When water is coming into occupied space, the cost is the disruption, not the patch. That is why we keep on-call service technicians at both the Nanticoke and Dickson City locations. We get on-site quickly, find where the water is actually entering rather than where it is landing, and stop it. Then you get a straight answer about whether that was a repair or the first sign of something bigger.",
+    "cta_text": "Call Nanticoke — (570) 735-7751",
+    "cta_href": "tel:+15707357751",
+    "icon": "phone",
+    "image": "/img/repair.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The Pinnacle Standard",
+    "intro": "Every Pinnacle job runs the same way, whether it is a 200,000 square foot re-roof on a hospital or a single leak at a parapet. The spec is written to the building, the crew is ours, and the warranty is one you can actually call in.",
+    "blocks": [
+      {
+        "title": "A warranty that is still worth something in year fifteen",
+        "body": "Most commercial roof disputes are warranty disputes. Owners find out after a leak that the twenty-year warranty covered the material and not the installation, and that the installer is gone. We are an authorized contractor with manufacturer warranties on every system we install, and we have been in the same market since 1993 to answer the call.",
+        "icon": "shield"
+      },
+      {
+        "title": "Specified to the building, not to the catalogue",
+        "body": "Membrane choice, insulation R-value, fastening pattern and drainage all change with the deck, the occupancy and the exposure. We spec the system to the building in front of us. That is also why we install all types of single-ply rather than selling one product to everybody.",
+        "icon": "document"
+      },
+      {
+        "title": "Sheet metal is half the job",
+        "body": "Flat roofs almost never fail in the middle of the field. They fail at the parapet, the curb, the scupper and the termination. Sheet metal is in our name because we fabricate and install those details ourselves instead of subbing them out.",
+        "icon": "hammer"
+      }
+    ],
+    "steps_title": "What we hand you when the job is done",
+    "steps_icon": "document",
+    "steps": [
+      {
+        "title": "The manufacturer warranty, registered",
+        "body": "Filed and in your name, not sitting in a folder in our office."
+      },
+      {
+        "title": "A maintenance schedule",
+        "body": "What to look at, how often, and what would void the coverage."
+      },
+      {
+        "title": "A named contact at Pinnacle",
+        "body": "So the next call goes to somebody who already knows your roof."
+      }
+    ],
+    "guarantee": {
+      "title": "Excalibur Award winner every year since 1994",
+      "body": "The Excalibur Award goes to the top roofing contractors in the United States — the most prominent and successful of Versico's authorized contractors. Pinnacle has earned one every year for more than thirty years running, along with a Gold Medal Contractor Quality Award. It is the clearest outside evidence there is that the work holds up.",
+      "cta_text": "Talk to Paul Eyerman",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Pinnacle Project Runs",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "We get on the roof",
+        "icon": "clipboard",
+        "body": "A real evaluation — deck, insulation, drainage, flashings and terminations — not a walk around the parking lot."
+      },
+      {
+        "label": "Step Two",
+        "title": "A written scope and system spec",
+        "icon": "document",
+        "body": "Membrane, insulation, details and warranty term, in writing, in a form you can put in front of ownership or a board."
+      },
+      {
+        "label": "Step Three",
+        "title": "Our crew installs it",
+        "icon": "hammer",
+        "body": "Trained technicians on our own payroll, sequenced around your operations rather than the other way round."
+      },
+      {
+        "label": "Step Four",
+        "title": "Warranty registered, maintenance scheduled",
+        "icon": "calendar",
+        "body": "The coverage is filed in your name and the inspection schedule is set before we leave the site."
+      }
+    ],
+    "cta_text": "Request A Roof Evaluation",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Pinnacle Roofing & Sheet Metal",
+    "headline": "Thirty-Three Years On NEPA Roofs",
+    "body": "Paul Eyerman started Pinnacle in 1993. Three decades later the company runs out of two locations — Nanticoke and Dickson City — and the leadership has 100 years of roofing between them. In that time Pinnacle has roofed Geisinger hospitals in Danville, Scranton and Wilkes-Barre, Sanofi Pasteur in Swiftwater, the Tobyhanna Army Depot, Kalahari Resort in the Poconos, Wilkes University, Luzerne County Community College and the Wilkes-Barre/Scranton International Airport, among many others.",
+    "checklist": [
+      "Established 1993 — 33 years in Northeastern Pennsylvania",
+      "Excalibur Award winner every year since 1994",
+      "Commercial, institutional and industrial roofing only",
+      "Two locations: Nanticoke and Dickson City",
+      "Northeastern PA Contractors Association and NRCA members",
+      "Energy Star Savings Program participant"
+    ],
+    "photo": "/img/u-downtown-brick.jpg",
+    "photo_alt": "A historic brick commercial building of the kind we have roofed across Northeastern Pennsylvania since 1993",
+    "photo_cutout": false,
+    "cta_text": "Request A Roof Evaluation",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why NEPA Building Owners Call Us",
+    "headline": "Commercial Roofing In Wilkes-Barre & Scranton",
+    "paragraphs": [
+      "Northeastern Pennsylvania is hard on low-slope roofs. Snow sits on them for weeks, freeze-thaw cycles work at every seam and termination all winter, and ice damming backs water up under flashings that were never detailed for it. Membranes rarely fail in the middle of the field here — they fail at the parapet, the curb and the scupper, which is exactly the work most shingle contractors are not set up to do.",
+      "We install all types of single-ply membrane, architectural metal and composite aluminum panel systems, and we fabricate the sheet metal that ties them together. Every system carries a manufacturer warranty, and we register it in your name. For owners chasing operating cost, we are part of the Energy Star Savings Program and install reflective white systems with the insulation specified to the building.",
+      "Since 1993 we have worked on hospitals, universities, army depots, banks, schools, resorts, supermarkets, manufacturing plants and municipal buildings across Luzerne, Lackawanna and Monroe counties. If you manage a building in Wilkes-Barre, Scranton, Hazleton or the Poconos, there is a good chance you already know a roof we put on."
+    ],
+    "checklist": [
+      "Geisinger Medical Center, Geisinger CMC, Geisinger South and Geisinger Wyoming Valley",
+      "Sanofi Pasteur, Swiftwater and Tobyhanna Army Depot",
+      "Kalahari Resort, Pocono Manor and Shoppes at Montage, Moosic",
+      "Wilkes University, Penn State Worthington and Luzerne County Community College",
+      "Wilkes-Barre/Scranton International Airport and Procter & Gamble, Mehoopany"
+    ],
+    "image": "/img/u-industrial-rooftop.jpg",
+    "image_alt": "Long industrial low-slope roof with rooftop equipment",
+    "image_position": "left",
+    "cta_text": "Request A Roof Evaluation",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "Do you work on houses?",
+      "a": "No. Pinnacle is a commercial roofing contractor. We work on institutional, industrial, retail, municipal and multi-family buildings — hospitals, schools, churches, plants, banks, shopping centres and industrial parks. If you need a shingle roof on a single-family home, we are not the right call."
+    },
+    {
+      "q": "What does the warranty actually cover?",
+      "a": "Every system we install carries a manufacturer warranty, and we register it in your name rather than leaving it in a folder here. We will tell you in writing, before you sign anything, what term you are getting and what it does and does not cover — including where the material warranty ends and workmanship begins. That is the single most common thing owners find out too late."
+    },
+    {
+      "q": "My roof is leaking right now. How fast can you get here?",
+      "a": "Call the closest location — (570) 735-7751 in Nanticoke or (570) 343-7153 in Dickson City. We keep on-call service technicians at both, and emergency service is something we actively offer rather than fit in around new work. Tell us where the water is showing up inside and what is under it."
+    },
+    {
+      "q": "Do I need a full replacement or can this be repaired?",
+      "a": "Often it can be repaired, and we will tell you when that is the honest answer. What decides it is the condition of the insulation and deck underneath, not the look of the membrane on top. We evaluate the roof, tell you what we found, and quote the repair and the replacement so the decision is yours with the numbers in front of you."
+    },
+    {
+      "q": "What is the Excalibur Award?",
+      "a": "It is given to the top roofing contractors in the United States — the most prominent and successful of Versico's authorized contractors. Pinnacle has earned one every year from 1994 to the present, and also holds a Gold Medal Contractor Quality Award."
+    },
+    {
+      "q": "Which areas do you cover?",
+      "a": "Luzerne, Lackawanna and Monroe counties, including Wilkes-Barre, Scranton, Nanticoke, Dickson City, Hazleton and the Poconos. We run two locations to keep response times short across that footprint."
+    },
+    {
+      "q": "Can a new roof reduce our energy costs?",
+      "a": "On a building with a large roof area, yes — often meaningfully. We are part of the Energy Star Savings Program and install reflective white membrane systems with the insulation specified for the building. On a re-roof it is usually the cheapest efficiency upgrade available, because the roof is already open."
+    },
+    {
+      "q": "Do you offer maintenance programs?",
+      "a": "Yes, and we recommend one on every roof we install. Scheduled inspections catch the small details that cause most failures, and the inspection record is often what keeps an extended warranty claim enforceable years later."
+    }
+  ]
+}

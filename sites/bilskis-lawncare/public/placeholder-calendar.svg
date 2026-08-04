@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 700" role="img" aria-label="Placeholder for the booking calendar widget">
+  <rect width="720" height="700" rx="14" fill="#f3f6f0" stroke="#c9d4c0" stroke-width="2" stroke-dasharray="10 8"/>
+  <rect x="48" y="52" width="624" height="86" rx="10" fill="#e4ebde"/>
+  <rect x="76" y="80" width="230" height="14" rx="7" fill="#a9b9a0"/>
+  <rect x="76" y="106" width="150" height="12" rx="6" fill="#c1cdb9"/>
+  <rect x="560" y="86" width="84" height="30" rx="8" fill="#67ac46" opacity="0.35"/>
+  <g fill="#c1cdb9">
+    <rect x="48" y="166" width="80" height="12" rx="6"/>
+    <rect x="160" y="166" width="80" height="12" rx="6"/>
+    <rect x="272" y="166" width="80" height="12" rx="6"/>
+    <rect x="384" y="166" width="80" height="12" rx="6"/>
+    <rect x="496" y="166" width="80" height="12" rx="6"/>
+    <rect x="608" y="166" width="64" height="12" rx="6"/>
+  </g>
+  <g fill="#e4ebde">
+    <rect x="48" y="200" width="80" height="66" rx="8"/><rect x="160" y="200" width="80" height="66" rx="8"/>
+    <rect x="272" y="200" width="80" height="66" rx="8"/><rect x="384" y="200" width="80" height="66" rx="8"/>
+    <rect x="496" y="200" width="80" height="66" rx="8"/><rect x="608" y="200" width="64" height="66" rx="8"/>
+    <rect x="48" y="284" width="80" height="66" rx="8"/><rect x="160" y="284" width="80" height="66" rx="8"/>
+    <rect x="384" y="284" width="80" height="66" rx="8"/>
+    <rect x="496" y="284" width="80" height="66" rx="8"/><rect x="608" y="284" width="64" height="66" rx="8"/>
+    <rect x="48" y="368" width="80" height="66" rx="8"/><rect x="160" y="368" width="80" height="66" rx="8"/>
+    <rect x="272" y="368" width="80" height="66" rx="8"/><rect x="384" y="368" width="80" height="66" rx="8"/>
+    <rect x="496" y="368" width="80" height="66" rx="8"/><rect x="608" y="368" width="64" height="66" rx="8"/>
+  </g>
+  <rect x="272" y="284" width="80" height="66" rx="8" fill="#67ac46" opacity="0.45"/>
+  <g fill="#e4ebde">
+    <rect x="48" y="466" width="180" height="44" rx="8"/>
+    <rect x="248" y="466" width="180" height="44" rx="8"/>
+    <rect x="448" y="466" width="180" height="44" rx="8"/>
+  </g>
+  <text x="360" y="580" text-anchor="middle" font-family="Montserrat, Inter, system-ui, sans-serif" font-size="30" font-weight="700" fill="#3f4a38">Booking Calendar Widget</text>
+  <text x="360" y="618" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="19" fill="#6f7a67">Placeholder — paste the GHL calendar embed here</text>
+</svg>

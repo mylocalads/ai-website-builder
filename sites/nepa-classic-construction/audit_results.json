@@ -1,0 +1,33 @@
+{
+  "slug": "nepa-classic-construction",
+  "url": "https://nepaclassic.com",
+  "screenshot": "screenshots/nepa-classic-construction.png",
+  "captured_at": "2026-08-04",
+  "purpose": "OPERATOR REFERENCE ONLY — never design DNA. The owl template is the sole source of layout and structure.",
+  "stack": "Client-side React SPA (Lovable-generated), Vite bundle, Tailwind + shadcn/ui, no SSR/prerender.",
+  "strengths": [
+    "Strong, disciplined brand palette already in place: deep forest green, warm cream, gold accent, red/green logo.",
+    "Copy is genuinely good and locally specific — real price ranges, NEPA freeze-thaw language, named towns.",
+    "Complete schema.org GeneralContractor JSON-LD with NAP, geo, hours and areaServed.",
+    "Real before/after project photography rather than stock imagery.",
+    "Nine well-written service pages with benefits, four-step process, local examples and FAQs."
+  ],
+  "weaknesses": [
+    "All seven service-area URLs in the sitemap (/contractor-{city}-pa) return 404 on the live site — the sitemap advertises pages that do not exist.",
+    "No server-rendered HTML. Body ships as an empty <div id=\"root\">, so all copy, FAQ answers and service detail are invisible to crawlers that do not execute JS.",
+    "FAQ answers live only in the JS bundle — the accordion content is never in the DOM until clicked, so it cannot be indexed as FAQ content.",
+    "No Google Business Profile and zero reviews anywhere on the site — no social proof at all.",
+    "No street address published; only city/state/ZIP, which weakens local SEO.",
+    "Single-page architecture for everything except services: About, Portfolio, FAQ and Contact are hash anchors, not indexable pages.",
+    "No dedicated contact, about, pricing, gallery or legal pages (no privacy policy, terms or accessibility statement).",
+    "Contact form posts nowhere verifiable — no CRM integration detected.",
+    "No blog or any content surface for long-tail local search."
+  ],
+  "anti_patterns_observed": [
+    "Hash-anchor navigation standing in for real pages",
+    "Client-side-only rendering with no prerender or SSR",
+    "Sitemap entries pointing at 404s",
+    "Content hidden behind un-rendered accordions"
+  ],
+  "_notes": "Screenshot captured at 1280px wide, full page (1280x6980)."
+}

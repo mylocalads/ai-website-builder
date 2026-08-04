@@ -1,0 +1,194 @@
+{
+  "slug": "eastern-residential-solutions",
+  "business_name": "Eastern Residential Solutions",
+  "legal_name": "Eastern Roofing Systems Inc.",
+  "tagline": "Full-service solutions for your home's exterior in Pennsylvania and Maryland",
+  "phone": "+15703828629",
+  "phone_display": "(570) 382-8629",
+  "email": "info@easternresidentialsolutions.com",
+  "address": {
+    "street": "1 Keystone Pl",
+    "city": "Jessup",
+    "state": "PA",
+    "postal": "18434",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "second_location": {
+    "label": "Maryland Office",
+    "street": "1220 Curtain Ave",
+    "city": "Baltimore",
+    "state": "MD",
+    "postal": "21218",
+    "phone_display": "(443) 438-4591",
+    "phone": "+14434384591",
+    "_source": "scraped"
+  },
+  "geo": { "lat": 41.466346, "lng": -75.5587727 },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "rating": 5,
+  "review_count": 31,
+  "category": "Roofing contractor",
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "license_numbers": ["PA HIC# 017000", "MD HIC# 161389"],
+  "social": {
+    "facebook": "https://www.facebook.com/EasternResidentialSolutions",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Eastern%20Residential%20Solutions&query_place_id=ChIJd3wB20vbxIkRw9xYVsf23Ss"
+  },
+  "site_url": "https://www.easternresidentialsolutions.com",
+  "logo_url": "https://static.wixstatic.com/media/e571cf_2f7d0c8fef984a7f97392345fda63870~mv2.png",
+  "default_hero_photo": "https://static.wixstatic.com/media/e571cf_26536b9d9af24ed88a2fc84e93377bad~mv2.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://static.wixstatic.com/media/e571cf_c9c369e9ebe24c098fdc2c21b8700936~mv2.jpg",
+  "brand": {
+    "fonts": {
+      "display": "Oswald",
+      "body": null,
+      "_detected": ["Oswald (heading)", "Playfair Display (body role)", "Lulo Clean (display)"],
+      "_note": "Playfair Display was detected in the body role but is a serif display face; design-reference should prefer the template body default."
+    },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#242222",
+      "accent": "#D90916",
+      "muted": "#2C506E",
+      "surface": "#F5F6F7",
+      "candidates": ["#D90916", "#2C506E", "#242222", "#FFFFFF", "#0000EE"],
+      "_note": "#0000EE is the browser default link blue picked up from unstyled anchors — not a brand color."
+    }
+  },
+  "services": [
+    {
+      "title": "Roof Replacement & Repair",
+      "short_description": "Owens Corning Preferred Contractor installs with the longest warranty available — and options for every budget.",
+      "long_description": "Our dedication to customer service means keeping you informed every step of the way, from quote to completion. Beginning with our one-of-a-kind in-home estimate, Eastern takes the time to ensure each customer knows exactly what they're getting for the money. We offer options for every budget and easy financing for the unexpected. As an Owens Corning Preferred Contractor, Eastern Residential Solutions can provide you with the longest warranty available — giving you the most roof for your money.",
+      "sub_services": ["Full Roof Replacement", "Roof Repair", "Roof Inspections", "Decking & Re-Sheeting", "Skylight Replacement"],
+      "hero_photo": "https://static.wixstatic.com/media/06aa14e580ac457fb0ec42a8cbc3e750.jpg",
+      "about_photo": "https://static.wixstatic.com/media/813b164e6ecd49b0b09f5f9913d34577.jpg",
+      "gallery": [
+        { "photo": "https://static.wixstatic.com/media/e571cf_cf85812653524cbca0a6f9e474b0b8cc~mv2.jpg", "alt": "Completed asphalt shingle roof replacement in Northeastern Pennsylvania" },
+        { "photo": "https://static.wixstatic.com/media/e571cf_3270308a9fc443da98e4a9d99773ef55~mv2.jpg", "alt": "New Owens Corning shingle roof on a residential home" },
+        { "photo": "https://static.wixstatic.com/media/e571cf_25c54112f19041e2a077b2e7414d6641~mv2.jpg", "alt": "Roof replacement crew working on a two-story home" },
+        { "photo": "https://static.wixstatic.com/media/e571cf_4fb5e65ff3af401da5c56aa27932bece~mv2.jpg", "alt": "Finished residential roof with new ridge vent" }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Storm Damage & Insurance Claims",
+      "short_description": "Hail, wind, or tree damage — we work directly with your insurance company so you don't have to.",
+      "long_description": "When it comes to repairs, we work directly with your insurance company, saving you time and frustration. Whether it's hail, wind, or tree damage, we go the distance to ensure the repair is done to your satisfaction. Our project managers help homeowners navigate claims and make sure the correct amount is issued for the damage — we're paid the same regardless of what your insurer pays, so our only job is making sure you get the reimbursement you deserve. Solutions that are built to last, on time and on budget.",
+      "sub_services": ["Hail Damage Repair", "Wind Damage Repair", "Tree Impact Repair", "Insurance Claim Assistance", "Emergency Tarping"],
+      "hero_photo": "https://static.wixstatic.com/media/e571cf_0987ceb45c4a4c079079efc15266addc~mv2.jpg",
+      "about_photo": "https://static.wixstatic.com/media/e571cf_c510d4db3914458589ca4de43e554e55~mv2.jpg",
+      "gallery": [
+        { "photo": "https://static.wixstatic.com/media/e571cf_173ecaf2b378484893cb187119fb3b43~mv2.jpg", "alt": "Roof replaced after hail damage in Dickson City, PA" },
+        { "photo": "https://static.wixstatic.com/media/e571cf_79b451f5ac884e13b06f86032de18922~mv2.jpg", "alt": "Storm damage roof tear-off and replacement" }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Siding Installation",
+      "short_description": "Premium vinyl siding from contemporary to classic — low maintenance, high performance, looks that last.",
+      "long_description": "Eastern offers premium vinyl siding in options from contemporary to classic. Our team will help you find the right look and feel for your home, as well as your budget. Additional services such as window replacement, accessories, soffit, and gutter replacement are also available. The Norandex brand of exterior building products provides a low-maintenance, high-performance exterior with looks that last — the Woodsman Select line is popular for the warm, natural look of rough sawn cedar with all the benefits of vinyl.",
+      "sub_services": ["Vinyl Siding Installation", "Soffit & Fascia", "Siding Accessories", "Window Replacement", "Trim & Wrap"],
+      "hero_photo": "https://static.wixstatic.com/media/e571cf_47430a97d119421eab087040ca6481a9~mv2.jpg",
+      "about_photo": "https://static.wixstatic.com/media/e571cf_1754d281175242a0b9ddd54a64846e92~mv2.jpg",
+      "gallery": [
+        { "photo": "https://static.wixstatic.com/media/e571cf_facfafb0528043069b4a747f2e90e513~mv2.jpg", "alt": "Home exterior with new premium vinyl siding" },
+        { "photo": "https://static.wixstatic.com/media/e571cf_bcc2d186d2244f62becc5e7b53dd7846~mv2.jpg", "alt": "Norandex Woodsman Select siding in a rough sawn cedar look" }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Seamless Gutters",
+      "short_description": "Aluminum seamless gutters formed on-site to your home's exact measurements, in dozens of colors.",
+      "long_description": "Eastern installs seamless gutters made from high-quality aluminum coil for a product that is flexible, durable, and designed to protect your home for years to come. Conveniently assembled and installed all on-site, with a variety of colors designed to blend in or stand out, complementing your home's exterior. Seamless and continuous: uniquely made to the exact measurements of your home without any seams, far less prone to leaking and much more visually appealing than sectional gutters. Exceptionally strong: highly durable materials with a rust-inhibiting primer that offers excellent resistance to dents, rust, and harsh weather, and will not become brittle with age.",
+      "sub_services": ["Seamless Gutter Installation", "Gutter Replacement", "Downspouts", "Gutter Color Matching"],
+      "hero_photo": "https://static.wixstatic.com/media/e571cf_ad342383ebb74d27b328537f84d22290~mv2.jpg",
+      "about_photo": "https://static.wixstatic.com/media/e571cf_2aaa87b63b424e86a026700dba3739de~mv2.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Scranton", "county": "Lackawanna County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "scranton-pa", "_source": "scraped" },
+    { "name": "Clarks Summit", "county": "Lackawanna County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "clarks-summit-pa", "_source": "scraped" },
+    { "name": "Dickson City", "county": "Lackawanna County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "dickson-city-pa", "_source": "scraped" },
+    { "name": "Carbondale", "county": "Lackawanna County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "carbondale-pa", "_source": "scraped" },
+    { "name": "Hawley", "county": "Wayne County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hawley-pa", "_source": "scraped" },
+    { "name": "Baltimore", "county": "Baltimore City", "state": "Maryland", "state_abbr": "md", "slug": "baltimore-md", "_source": "scraped" }
+  ],
+  "service_area_counties": {
+    "pa": ["Lackawanna", "Luzerne", "Wayne", "Pike", "Wyoming", "Monroe", "Susquehanna"],
+    "md": ["Baltimore City", "Allegany", "Anne Arundel", "Baltimore", "Calvert", "Caroline", "Carroll", "Cecil", "Charles", "Frederick", "Dorchester", "Harford", "Garrett", "Howard", "Kent", "Montgomery", "Prince George's", "Queen Anne's"]
+  },
+  "testimonials": [
+    { "name": "Jim B.", "location": "Scranton, PA", "rating": 5, "text": "We had a remarkable experience with Eastern Residential Solutions. Our first meeting was with a company representative who did a complete inspection of our roof and afterward sat down with us to discuss the fees and answer any questions. The crew worked quickly and completed the job in 2 days. They left the job site as clean or cleaner than they found it. Would use Eastern again without hesitation.", "_source": "scraped" },
+    { "name": "Lori T.", "location": "Scranton, PA", "rating": 5, "text": "The customer service provided by Eastern is second to none. From the first day you call for services until the day your project is completed you will feel like you are their only customer. Their project managers have no problem helping you navigate through insurance claims and ensuring you are getting a fair deal. Our roof was complete in one day. Eastern's warranty is so comprehensive that they would be out of business if their work was anything less than perfect. Thank you Eastern for giving us peace of mind and a beautiful roof.", "_source": "scraped" },
+    { "name": "Jo Anne M.", "location": "Dickson City, PA", "rating": 5, "text": "It went excellent. They are the only company who called back when they said they would and started the work when they said they would. I found them to be extremely reliable and well prepared. They showed up, cleaned up, and did everything perfectly. I would highly recommend them to others.", "_source": "scraped" },
+    { "name": "Maureen & Ernie", "location": "Clarks Summit, PA", "rating": 5, "text": "Thank you for doing such a quality job on our roof replacement. Both you and your associates were very efficient, friendly, and did an excellent job on cleaning up. We will not hesitate to recommend your company to all our friends and neighbors. It was our pleasure to work with you from the very beginning through a completed job!", "_source": "scraped" },
+    { "name": "Marisa E.", "location": "Clarks Green, PA", "rating": 5, "text": "It was impeccable as well as the workmanship. They were very very prompt, time conscious, super clean and my yard was left very neat.", "_source": "scraped" },
+    { "name": "Jim B.", "location": "Monroe Township, PA", "rating": 5, "text": "I was very pleased with their service, very efficient and did quality work. They also cleaned up the area, took all the debris away and followed up on any issues that I had.", "_source": "scraped" },
+    { "name": "Kim J.", "location": "Scott Twp., PA", "rating": 5, "text": "We couldn't be more pleased with our roof installation experience. Eastern was professional, extremely responsive, timely, fast, and organized.", "_source": "scraped" },
+    { "name": "Brennan & Brennan", "location": "Carbondale, PA", "rating": 5, "text": "Excellent job done very quickly. From the salesman/job estimator down to the roofers and clean up crews, everyone did a great job.", "_source": "scraped" }
+  ],
+  "team_members": [
+    { "name": "Rob Neubert", "role": "Director", "photo": "https://static.wixstatic.com/media/e571cf_6011b1ee52034c8698ff5f6a039b800b~mv2.jpg", "bio": null, "_source": "scraped" },
+    { "name": "Lester Dreisbach", "role": "General Manager", "photo": "https://static.wixstatic.com/media/702c43_357be0fa4ab24198b394d3f82bc42ef8~mv2.jpg", "bio": null, "_source": "scraped" },
+    { "name": "Eric Pugh", "role": "Lead Project Manager", "photo": "https://static.wixstatic.com/media/e571cf_1c10fc7741e24a62816d1ea14055d662~mv2.jpg", "bio": null, "_source": "scraped" },
+    { "name": "Brian Kavanaugh", "role": "Project Manager", "photo": "https://static.wixstatic.com/media/e571cf_fd7d7793216f421bbb68630f5ad1d983~mv2.jpg", "bio": null, "_source": "scraped" }
+  ],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://static.wixstatic.com/media/e571cf_a103530421d44b8b8484370b3bd910b6~mv2.jpg", "alt": "24 square roof replacement in Scranton, PA", "title": "Scranton Roof Replacement", "location": "Scranton, PA", "description": "24 sq roof replacement completed in one day.", "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_c510d4db3914458589ca4de43e554e55~mv2.jpg", "alt": "Storm damage roof replacement in Clarks Summit, PA", "title": "Clarks Summit Storm Replacement", "location": "Clarks Summit, PA", "description": "31 sq full tear-off and replacement after storm damage, Owens Corning TruDefinition Duration in Colonial Slate.", "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_173ecaf2b378484893cb187119fb3b43~mv2.jpg", "alt": "Hail damage roof replacement in Dickson City, PA", "title": "Dickson City Hail Replacement", "location": "Dickson City, PA", "description": "53 sq tear-off and replacement after hail damage, completed in 2 days.", "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_79b451f5ac884e13b06f86032de18922~mv2.jpg", "alt": "28 square asphalt roof replacement in Clarks Green, PA", "title": "Clarks Green Roof Replacement", "location": "Clarks Green, PA", "description": "28 sq asphalt roof replacement done start to finish in one day, TruDefinition Duration in Onyx Black.", "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_586a3f3505e34b23aa7db682f2ff24b7~mv2.jpg", "alt": "Roof replacement with skylights in Monroe Township, PA", "title": "Monroe Township Re-Sheet & Replace", "location": "Monroe Township, PA", "description": "22 sq replacement with most of the house re-sheeted and 2 skylights replaced, all in 2 days.", "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_76836135c4f947b1b20d5f4feeddf4c6~mv2.jpg", "alt": "Completed exterior project in Northeastern Pennsylvania", "title": null, "location": null, "description": null, "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_aff0a651a0834d6884a92b45efb1a846~mv2.jpg", "alt": "Residential roof replacement project", "title": null, "location": null, "description": null, "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_b3866ab4e0b94e99ab7d398089430c9f~mv2.jpg", "alt": "Home exterior after roof and siding work", "title": null, "location": null, "description": null, "_source": "scraped" },
+    { "photo": "https://static.wixstatic.com/media/e571cf_82af912519fe4ddf99670b861b4ec2ef~mv2.jpg", "alt": "Completed roofing project photo", "title": null, "location": null, "description": null, "_source": "scraped" }
+  ],
+  "partners": [
+    { "name": "Owens Corning Preferred Contractor", "logo_url": "https://static.wixstatic.com/media/e571cf_34c57026de44423fbb9ed6074dbaa6a3~mv2.png", "link_url": "https://www.owenscorning.com/" }
+  ],
+  "about": {
+    "story": "Eastern Residential Solutions is a full-service residential contractor specializing in roof repair and replacement, siding installation, and seamless gutters. Whether it's new construction or an existing home in need of improvement, we have the solution to your home's exterior needs. We are a division of Eastern Roofing Systems Inc., one of the largest and most respected commercial roofing companies on the east coast. Located in Jessup, PA and serving Lackawanna, Luzerne, Wayne, Pike, Wyoming, Monroe, and Susquehanna counties, with a Maryland location serving Baltimore City and seventeen Maryland counties.",
+    "_source": "scraped"
+  },
+  "brand_voice_sample": "Full-service residential solutions, done right. Eastern uses high-quality products backed by leading manufacturers, installed by experts, and covered by the best warranties in the industry.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "Existing site uses a native Wix contact form on /contact; no third-party CRM iframe or chat loader detected. Operator must supply GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_match_count": 1,
+    "gbp_place_id": "ChIJd3wB20vbxIkRw9xYVsf23Ss",
+    "pages_scraped": ["/", "/roofing", "/siding", "/gutter-system-replacement", "/contact", "/reviews", "/project-gallery", "/post/scranton", "/post/what-our-customers-say-2", "/post/roof-replacement", "/post/roof-replacement-in-dickson-city", "/post/what-our-customers-say-3", "/post/manage-your-blog-from-your-live-site"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.28,
+    "warnings": [
+      "GBP lists (570) 382-8629; the client site's footer displays a toll-free (877) 570-3774 whose tel: link still points to 570-382-8629. Using the GBP number as canonical.",
+      "insured/bonded not explicitly stated on the site — defaulted to false. Licensed=true from PA HIC# 017000 and MD HIC# 161389.",
+      "Privacy Policy and Terms of Service on the existing site point to a third-party domain (thebasalygagroup.com); generated site uses the kit's standardized legal pages.",
+      "No FAQ page exists on the client site — faqs[] is empty and will be authored from scraped service copy at site-generate.",
+      "The per-URL raw Firecrawl archive at sites/eastern-residential-solutions/raw/ was deleted during scaffold cleanup. Every extracted field is retained in this file; re-scraping would cost ~$0.26 and yield no new content, so it was not repeated."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "slug": "royal-roofing-systems",
+  "url": "https://royalroofnepa.com/",
+  "screenshot": "screenshots/royal-roofing-systems.png",
+  "captured_at": "2026-08-03",
+  "platform": "WordPress 7.0.2 + Elementor 4.2.1, built by 75 Degrees West",
+  "purpose": "OPERATOR REFERENCE ONLY. Not design DNA. The owl template is the sole source of layout and structure.",
+  "strengths": [
+    "Genuinely strong raw copy. The no-subcontractor line, the anti-storm-chaser framing, and the deck-page voice ('A good deck doesn't come out of a box') are all better than typical contractor boilerplate — worth carrying forward nearly verbatim.",
+    "Complete service coverage with a real page per material (asphalt, slate, metal, flat/rubber) and per trade (roofing, siding, gutters, decks, commercial).",
+    "Concrete trust assets already in hand: 15-year no-leak warranty, lifetime manufacturer warranty, 10-year workmanship warranty, GAF and Owens Corning partner badges, 0% financing, military/first-responder/senior discount.",
+    "Phone is present in the header, footer and every section CTA."
+  ],
+  "weaknesses": [
+    "Three competing H1s stack in the first viewport ('A Better Roof at a Better Price', then 'Trusted By Homeowners...', then 'Pennsylvania's Roofing, Siding, Decking & Gutter Experts'). No single message wins and the heading hierarchy is broken for SEO and screen readers.",
+    "Heading levels are used as sizing, not structure — the page runs h1 → h5 → h6 → h2 in reading order.",
+    "Palette is incoherent: orange #FF8604 primary CTA, blue #0977B8 secondary CTA, and a stray magenta #CC3366 in the CSS. Nothing establishes a single brand accent.",
+    "The whole estimate form, including a 50-state dropdown, is duplicated twice on the home page and twice again on /contact — for a company that serves one metro.",
+    "A third-party live-chat widget (Ngage) and a second phone number in a sticky mobile bar create competing conversion paths and an unmanaged lead source.",
+    "No service-area pages at all. A NEPA roofer with zero city pages is leaving the entire local-SEO surface unbuilt.",
+    "No team page, owner name, or crew photos — the 'we're local, not storm chasers' claim has no faces behind it.",
+    "Elementor page weight: full-page capture is ~6MB of unoptimized JPEG/PNG assets, several served at 2048px."
+  ],
+  "carry_forward": [
+    "Copy: no-subcontractor promise, anti-storm-chaser stance, insurance-claim process, deck material voice, warranty stack, financing, discounts.",
+    "Assets: logo PNG, partner badges (GAF, Owens Corning), project photography.",
+    "Facts: NAP, hours, 15 years in business, 4.8/61 rating."
+  ],
+  "do_not_carry_forward": [
+    "Layout, section rhythm, component styling, button shapes, or any CSS beyond font family and color values.",
+    "The duplicated estimate forms and the 50-state dropdown.",
+    "The Ngage chat widget and the secondary sticky-bar phone number.",
+    "The magenta #CC3366 stray color."
+  ]
+}

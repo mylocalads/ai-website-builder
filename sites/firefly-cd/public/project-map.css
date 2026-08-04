@@ -1,0 +1,291 @@
+/* project-map — global stylesheet.
+ *
+ * This is NOT an Astro <style> block, and that is deliberate. Astro scopes CSS
+ * by stamping data-astro-* onto elements present in the template at build time.
+ * Leaflet builds every one of its elements at runtime — panes, tiles, popups,
+ * controls, markers — so those nodes never receive the scope attribute and a
+ * scoped rule can never match them. Styling Leaflet from a scoped block fails
+ * silently.
+ *
+ * Every rule is namespaced under #project-map / .pm-*, and every colour is a
+ * var(--token, fallback) so this inherits the client's brand on the Astro site
+ * and still looks right on a foreign host page in phase 2.
+ */
+
+#project-map {
+  --pm-accent: var(--color-accent, #00cfd1);
+  --pm-text: var(--color-text, #1a1a1a);
+  --pm-muted: var(--color-muted, #5a6b76);
+  --pm-surface: var(--color-surface, #f2f5f7);
+  --pm-bg: var(--color-bg, #ffffff);
+  --pm-focus: var(--color-focus, #0057ff);
+  --pm-radius: var(--radius-md, 8px);
+  --pm-gap: var(--space-3, 1.5rem);
+  padding: var(--space-5, 4rem) 0;
+}
+
+#project-map .pm-inner {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--space-2, 1rem);
+}
+
+#project-map .pm-head { margin-bottom: var(--pm-gap); }
+
+#project-map .pm-head h2 {
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 700;
+  color: var(--pm-text);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin: 0 0 var(--space-1, 0.5rem);
+}
+
+#project-map .pm-head p {
+  color: var(--pm-muted);
+  max-width: 55rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- Filters -------------------------------------------------------- */
+/* Rendered server-side so the labels are in the HTML for crawlers, but kept
+ * hidden until JS boots. A chip that does nothing is worse than no chip. */
+
+#project-map .pm-filters { margin-bottom: var(--pm-gap); }
+
+#project-map .pm-facet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1, 0.5rem);
+  margin-bottom: var(--space-1, 0.5rem);
+}
+
+#project-map .pm-facet-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pm-muted);
+  min-width: 7.5rem;
+}
+
+#project-map .pm-chip {
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--pm-muted) 35%, transparent);
+  border-radius: 999px;
+  background: var(--pm-bg);
+  color: var(--pm-text);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+#project-map .pm-chip:hover { border-color: var(--pm-accent); }
+
+#project-map .pm-chip[aria-pressed='true'] {
+  background: var(--pm-accent);
+  border-color: var(--pm-accent);
+  color: #0f1419;
+  font-weight: 600;
+}
+
+#project-map .pm-chip:focus-visible,
+#project-map .pm-reset:focus-visible {
+  outline: 3px solid var(--pm-focus);
+  outline-offset: 2px;
+}
+
+#project-map .pm-chip-count { opacity: 0.65; font-variant-numeric: tabular-nums; }
+
+#project-map .pm-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2, 1rem);
+  margin-top: var(--space-2, 1rem);
+  color: var(--pm-muted);
+  font-size: 0.95rem;
+}
+
+#project-map .pm-reset {
+  font: inherit;
+  font-size: 0.9rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--pm-text);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ---- Map + list two-column ------------------------------------------ */
+
+#project-map .pm-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pm-gap);
+  margin-bottom: var(--space-4, 2.5rem);
+}
+
+@media (min-width: 900px) {
+  #project-map .pm-split { grid-template-columns: 22rem 1fr; }
+  /* Map first in source order would hurt no-JS users, so the list stays first
+   * in the DOM and is placed left visually. */
+}
+
+/* Leaflet measures its container at init. An explicit pixel height is required
+ * — aspect-ratio here yields a 0px map often enough to matter. */
+#project-map .pm-mapwrap {
+  height: 320px;
+  border-radius: var(--pm-radius);
+  overflow: hidden;
+  background: var(--pm-surface);
+}
+
+@media (min-width: 900px) {
+  #project-map .pm-mapwrap { height: 480px; }
+}
+
+#project-map .pm-map { height: 100%; width: 100%; }
+
+#project-map .pm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 0.5rem);
+}
+
+@media (min-width: 900px) {
+  #project-map .pm-list {
+    max-height: 480px;
+    overflow-y: auto;
+    padding-right: var(--space-1, 0.5rem);
+  }
+}
+
+#project-map .pm-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-2, 1rem);
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  padding: var(--space-1, 0.5rem);
+  border: 1px solid transparent;
+  border-radius: var(--pm-radius);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+#project-map .pm-row:hover { background: var(--pm-surface); }
+#project-map .pm-row:focus-visible { outline: 3px solid var(--pm-focus); outline-offset: 2px; }
+
+#project-map .pm-row.is-active {
+  background: var(--pm-surface);
+  border-color: var(--pm-accent);
+}
+
+#project-map .pm-row img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm, 4px);
+  display: block;
+}
+
+#project-map .pm-row h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--pm-text);
+}
+
+#project-map .pm-row .pm-meta {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--pm-muted);
+}
+
+/* ---- Photo grid ------------------------------------------------------ */
+
+#project-map .pm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--pm-gap);
+}
+
+#project-map .pm-card { margin: 0; }
+
+#project-map .pm-card img {
+  width: 100%;
+  border-radius: var(--pm-radius);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+#project-map .pm-card h3 {
+  margin: var(--space-1, 0.5rem) 0 0;
+  font-size: 1.1rem;
+  color: var(--pm-text);
+}
+
+#project-map .pm-card .pm-meta {
+  color: var(--pm-muted);
+  font-size: 0.9rem;
+  margin: 0.15rem 0 0;
+}
+
+#project-map .pm-card p.pm-desc {
+  margin: var(--space-1, 0.5rem) 0 0;
+  line-height: 1.6;
+}
+
+#project-map .pm-empty {
+  padding: var(--space-4, 2.5rem) 0;
+  text-align: center;
+  color: var(--pm-muted);
+}
+
+/* ---- Leaflet-created DOM (runtime; unreachable from scoped CSS) ------ */
+
+#project-map .pm-pin { display: block; }
+#project-map .pm-pin svg { display: block; filter: drop-shadow(0 2px 3px rgba(15, 20, 25, 0.4)); }
+
+#project-map .leaflet-popup-content-wrapper { border-radius: var(--pm-radius); }
+#project-map .leaflet-popup-content { margin: 0; width: 15rem !important; }
+
+#project-map .pm-popup img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--pm-radius) var(--pm-radius) 0 0;
+}
+
+#project-map .pm-popup .pm-popup-body { padding: 0.6rem 0.75rem 0.75rem; }
+
+#project-map .pm-popup h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pm-text);
+}
+
+#project-map .pm-popup p {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--pm-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-map .pm-chip,
+  #project-map .pm-row { transition: none; }
+}

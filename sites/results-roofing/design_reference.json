@@ -1,0 +1,100 @@
+{
+  "slug": "results-roofing",
+  "template": "owl",
+  "sources": {
+    "mode": "library+local",
+    "library": "roofing",
+    "urls": [],
+    "note": "No Firecrawl spend. The operator asked for the Gilroy look; sites/gilroy-roofing was built from astro-templates/owl, and the roofing library lists owlroofing.com as a `primary` role entry for that same template. The template source is local and authoritative, so it was read directly (astro-templates/owl/src/styles/tokens.css + the component CSS) instead of paying ~$0.02 to scrape a rendering of it. Brand tokens come from sites/results-roofing/intake-scraped.json.",
+    "structural_reference": "astro-templates/owl/ — fixed home order: hero → promise-bar → services-grid → testimonials → promise-band → signature-system → process-steps → about → seo-body → faq → blog-cards → closing-cta → footer",
+    "palette_reference": "sites/gilroy-roofing/src/styles/tokens.css — cool light bg, dark full-bleed bands, single warm accent. Shape adopted; values re-derived from the client's own brand."
+  },
+  "palette": {
+    "bg": "#f4f6fa",
+    "surface": "#ffffff",
+    "text": "#14181f",
+    "muted": "#5a616e",
+    "primary": "#062a6b",
+    "on_primary": "#ffffff",
+    "accent": "#ba2a22",
+    "on_accent": "#ffffff",
+    "accent_ink": "#ba2a22",
+    "accent_on_dark": "#f4756a",
+    "focus": "#0057ff"
+  },
+  "palette_provenance": {
+    "accent": "#BA2A22 — the client's exact brand red, detected from their primary button fill and logo.",
+    "primary": "#062a6b — the client's brand blue #0047BA, deepened. #0047BA itself is a legitimate band colour (white on it is 8.05:1) but it leaves no headroom for an accent to sit on top; deepening to #062a6b buys 13.54:1 with white and lets a coral accent clear AA.",
+    "accent_on_dark": "#f4756a — a lightened tint of the same brand red, for accent-coloured TEXT on the dark bands. Not a new brand colour; the same hue at a luminance that survives a navy background.",
+    "bg": "#f4f6fa — cool near-white, mirroring gilroy's #f0f2f7 and reading as the blue side of their identity."
+  },
+  "typography": {
+    "display": "Rubik",
+    "body": "Inter",
+    "google_fonts_href": "https://fonts.googleapis.com/css2?family=Rubik:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+    "note": "Rubik is the client's own heading font, detected from their CSS — keeping it preserves brand recognition against their existing collateral. Their body font is Roboto Condensed; it is swapped for Inter because the owl template carries substantially more long-form body copy (SeoBody, service long_description, about story) than their current site, and condensed faces cost measurable readability at that length. Swap --font-body back to 'Roboto Condensed' if strict fidelity is preferred over legibility. Template default was Montserrat/Inter."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "max_width": "1200px",
+  "contrast_audit": {
+    "method": "WCAG 2.1 relative-luminance ratio, computed not estimated.",
+    "verified_pass": [
+      { "pair": "white text on accent #ba2a22 (every button on the site)", "ratio": 6.1 },
+      { "pair": "accent #ba2a22 as text on bg #f4f6fa (eyebrows, ticks, pins)", "ratio": 5.64 },
+      { "pair": "accent #ba2a22 as text on white surface (quote-card stars)", "ratio": 6.1 },
+      { "pair": "white on primary #062a6b (all four dark bands)", "ratio": 13.54 },
+      { "pair": "accent_on_dark #f4756a on primary #062a6b", "ratio": 4.9 }
+    ],
+    "rejected": [
+      { "pair": "brand red on brand blue #0047ba", "ratio": 1.32, "why": "Why --color-primary is not the raw brand blue." },
+      { "pair": "brand red on the deepened navy", "ratio": 2.22, "why": "Why a separate accent_on_dark token exists at all." },
+      { "pair": "brand red on pure black", "ratio": 3.44, "why": "Even a black band cannot rescue it — this red is too dark to be accent text on any dark panel." }
+    ],
+    "client_current_site": [
+      { "pair": "their live primary button: #666666 label on #ba2a22 fill", "ratio": 1.06, "why": "A real failure on resultsroofing.com today. Explicitly not carried over." }
+    ],
+    "gilroy_reference": [
+      { "pair": "gilroy accent #f15537 with white button text", "ratio": 3.45, "why": "The Gilroy build's own buttons fail AA. Its palette SHAPE is the reference, not its values — this build does not reproduce that defect." }
+    ]
+  },
+  "template_change_required": {
+    "what": "Add a --color-accent-on-dark token and point the five accent-as-text-on-dark-panel rules at it.",
+    "why": "astro-templates/owl uses a single --color-accent for two incompatible jobs: button fills (needs to be dark enough for white text) and accent text on --color-primary bands (needs to be light enough to read on navy). The template already solved the mirror-image case by adding --color-accent-ink for light backgrounds; this is the same fix pointed the other way. Gilroy's palette happens to fail in the opposite direction — its orange reads on black but not on white — so the defect has simply changed sides, never been removed.",
+    "call_sites": [
+      "Testimonials.astro:57 .eyebrow (0.9rem/600 — needs 4.5:1)",
+      "Testimonials.astro:67 .stars (needs 4.5:1)",
+      "Testimonials.astro:60 .mark (5rem decorative, large-text threshold)",
+      "ProcessSteps.astro:73 .label (0.75rem/700 — needs 4.5:1)",
+      "WhyChooseUs.astro:33 .tile::before counter (1.5rem/700 — large-text threshold)",
+      "HeroOwl.astro:178 .badge-copy .stars over the dark photo scrim"
+    ],
+    "not_changed": [
+      "HeroOwl.astro:212 .stars in the quote card — sits on --color-surface (white), where the brand red is already 6.1:1. Leave on --color-accent.",
+      "Every .btn, .icon and circular-counter fill — those are FILLS with --color-on-accent text and are correct as-is."
+    ],
+    "scope": "Applied to the site copy at sites/results-roofing/src/components/ during site-generate. NOT written to astro-templates/ — design-reference is forbidden from touching the template, and upstreaming this belongs in its own change once it has shipped once."
+  },
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "a hero half-covered by a 12-field form before any trust is established (the defect on the client's current site)",
+    "a social-proof section that renders empty — testimonials must be baked into the content collection as real text, never loaded from a third-party review widget",
+    "labelling a section 'FAQs' and filling it with blog cards (the client's current home page does this)",
+    "more than one phone number in the rendered site — the client publishes nine",
+    "stacking a chat bubble, an instant-quote widget and a captcha overlay on first paint",
+    "any colour value taken from the client's existing site layout, component styling, or section rhythm — brand hex and font family only"
+  ],
+  "_notes": {
+    "generated_at": "2026-07-31",
+    "cost_usd": 0.0,
+    "anti_pattern_lock_respected": "audit_results.json was read only for the `avoid` list (what to steer away from). No layout, section order, or component styling from resultsroofing.com informs this file."
+  }
+}

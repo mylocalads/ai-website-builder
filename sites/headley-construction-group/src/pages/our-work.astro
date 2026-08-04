@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry, getCollection } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CTA from '../components/CTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const workEntry = await getEntry('site', 'our-work').catch(() => null);
+const intro = (workEntry?.data as any)?.intro ?? `A sample of recent projects from ${site.business_name}.`;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-work' }];
+---
+<BaseLayout
+  title={`Our Work — ${site.business_name}`}
+  description={intro.slice(0, 155)}
+  breadcrumbs={crumbs}
+  pagePath="/our-work"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <section class="ow-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
+    <div class="container">
+      <h1>Our work</h1>
+      <p>{intro}</p>
+    </div>
+  </section>
+
+  {services.map((s) => {
+    const gallery = s.data.gallery ?? [];
+    if (gallery.length === 0) return null;
+    return (
+      <section class="service-gallery" aria-label={`${s.data.title} gallery`}>
+        <div class="container">
+          <h2>{s.data.title}</h2>
+          <div class="strip">
+            {gallery.map((g: any) => (
+              <a href={`/services/${s.slug}`} class="tile">
+                <img src={g.photo} alt={g.alt} loading="lazy" />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <CTA headline="Need concrete or civil work? Get a fast, no-runaround quote." cta_text="Get In Touch Now!" cta_href="/contact" />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .ow-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .ow-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .ow-hero p { color: rgba(255,255,255,0.92); font-size: 1.1rem; max-width: 55rem; line-height: 1.6; }
+  .service-gallery { padding: var(--space-4) 0; border-bottom: 1px solid var(--color-surface); }
+  .service-gallery:last-of-type { border-bottom: 0; }
+  .service-gallery h2 { text-align: left; font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.5rem, 2.5vw, 2.25rem); margin: 0 0 var(--space-3); }
+  .strip { display: grid; grid-template-columns: 1fr; gap: var(--space-2); }
+  @media (min-width: 720px) {
+    .strip { grid-template-columns: repeat(3, 1fr); }
+  }
+  .tile { display: block; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/3; transition: transform 0.2s ease, box-shadow 0.25s ease; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tile:hover, .tile:focus-visible { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(15,20,25,0.15); }
+</style>

@@ -1,0 +1,32 @@
+{
+  "name": "SpringLake Pools & Masonry",
+  "email": "springlakepools@gmail.com",
+  "phone": "+15708554235",
+  "address": "35 Colonial Rd, Dallas, PA 18612",
+  "website": "https://springlakepools.com/",
+  "rating": 5,
+  "reviewCount": 8,
+  "category": "Swimming pool contractor",
+  "categories": [
+    "Swimming pool contractor",
+    "Service establishment",
+    "Pool cleaning service",
+    "Swimming pool repair service"
+  ],
+  "hours": "Mon-Sat 8am-5pm, Sun closed",
+  "slug": "springlake-pools-masonry",
+  "placeId": "ChIJVet0clQ0YoURzxb0fEPVSco",
+  "geo": { "lat": 40.8556259, "lng": -75.689281 },
+  "social": {
+    "facebook": "https://www.facebook.com/springlakepools",
+    "instagram": "https://www.instagram.com/springlakepools"
+  },
+  "reviewsDistribution": { "oneStar": 0, "twoStar": 0, "threeStar": 0, "fourStar": 0, "fiveStar": 8 },
+  "reviewsTags": ["affordability", "communication", "questions", "company"],
+  "reviews": [],
+  "_notes": {
+    "reviews_text_unavailable": "The Apify Google Maps actor returned an empty reviews[] array on two separate runs for this place ID. Rating (5.0) and review count (8) are confirmed; review TEXT could not be retrieved. No testimonials were fabricated. Operator must paste real reviews in, or connect the GHL reviews widget.",
+    "address_source": "Street address came from the client website footer (35 Colonial Rd) — the GBP payload returned null for street/city/state/postal.",
+    "runs": ["EeZ0U0Kg1xc6VhMQO", "hIct1rnSxBb1L01O2"]
+  }
+}

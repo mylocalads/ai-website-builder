@@ -1,0 +1,56 @@
+:root {
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-text: #0b1b33;
+  --color-muted: #4a5568;
+  --color-primary: #002349;
+  --color-on-primary: #ffffff;
+  --color-accent: #bd0101;
+  --color-on-accent: #ffffff;
+  /* The accent as FOREGROUND TEXT on a LIGHT background (eyebrows, tick marks,
+     stars, pins, chevrons). Raircon's brand red already measures 6.63:1 on
+     --color-surface, which clears AA on its own; this marginally darker variant
+     is 7.1:1 on --color-bg and keeps 0.9rem eyebrow text comfortable. */
+  --color-accent-ink: #a50000;
+  /* Accent-coloured TEXT inside the dark --color-primary bands. See the
+     override block at the bottom of this file for why this token exists. */
+  --color-accent-on-dark: #ff8a8a;
+  --color-focus: #0057ff;
+  --font-display: 'Outfit', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Roboto', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}
+
+/* ---------------------------------------------------------------------------
+   Accent-on-dark override — required by this client's brand colour.
+
+   The owl template uses --color-accent for two different jobs: as a FILL behind
+   --color-on-accent text (buttons, icon circles), and as accent-coloured TEXT
+   inside the dark --color-primary bands (Testimonials eyebrow / quote mark /
+   stars, ProcessSteps step labels, and the hero stars over the photo scrim).
+
+   The template's default gold satisfies both. Raircon's brand red cannot. At
+   #bd0101 it measures 6.63:1 against white — correct for a button — but only
+   2.37:1 against the #002349 band, which fails AA outright. No single red
+   satisfies both constraints: clearing 4.5:1 on the navy requires a value light
+   enough that white button text on it drops below 3:1.
+
+   So the dark bands get a lighter red for TEXT ONLY (#ff8a8a is 7.4:1 on
+   #002349). Fills inside those same sections keep --color-accent, so the red the
+   eye reads as "the button colour" stays #bd0101 everywhere on the site.
+
+   !important is deliberate: these components carry Astro-scoped styles whose
+   [data-astro-cid-*] attribute raises their specificity, and load order between
+   a global stylesheet and scoped component CSS is not something this file should
+   be betting on.
+   --------------------------------------------------------------------------- */
+.testimonials .eyebrow,
+.testimonials .mark,
+.testimonials .stars,
+.process .label,
+.hero .stars,
+.hero .badge-copy .stars {
+  color: var(--color-accent-on-dark) !important;
+}

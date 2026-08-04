@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// Capacity figures below are the client's own published line limits, not
+// estimates. A buyer's first question is "will you even take my part", so the
+// table answers fit rather than inventing per-unit prices we cannot stand behind.
+const capacityRows = [
+  { process: 'Powder coating', capacity: '22′ L × 5′ H × 47″ W, to 2,000 lb', suited: 'High-production runs needing a durable decorative and protective finish' },
+  { process: 'Autophoretic (A-coat)', capacity: 'More than a truckload of components per shift', suited: 'Complex ferrous assemblies and tubular structures needing inside-and-out coverage' },
+  { process: 'Zinc plating — rack', capacity: 'Parts up to 10′ long', suited: 'Longer or appearance-sensitive components' },
+  { process: 'Zinc plating — barrel', capacity: 'Small to medium components', suited: 'Fasteners, screws, nuts and bolts in volume' },
+  { process: 'Batch painting', capacity: '15′ W × 20′ L × 6′ H booth and oven', suited: 'Oversized items, low-quantity runs, and CARC / MIL-spec finishes' },
+  { process: 'Burn-off and blast', capacity: 'From the size of a nickel to 6′ × 10′ × 4′', suited: 'Stripping and surface profiling ahead of any coating process' },
+];
+---
+<BaseLayout
+  title={`Quoting & Capacity — ${site.business_name}`}
+  description={`How coating work is quoted at ${site.business_name}, plus published line capacities for powder, autophoretic, zinc, batch and blast in ${site.address.city}, ${site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Quoting & Capacity"
+    headline="Quoting"
+    subheadline={pricing.intro}
+    cta_text="Request a Quote"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Request a Quote"
+  />
+
+  <section class="roof-cost">
+    <div class="container">
+      <h2>What we can physically take</h2>
+      <p class="lede">Coating is quoted per part, so there is no price list to publish — but there is a capacity list, and it answers the question most buyers actually need answered first. These are our published line limits.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Process</th><th>Capacity</th><th>Best suited to</th></tr>
+          </thead>
+          <tbody>
+            {capacityRows.map((r) => (
+              <tr><td>{r.process}</td><td>{r.capacity}</td><td>{r.suited}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>What drives the quote up or down:</strong> the process the part requires, the substrate, how much surface prep is needed before coating, run volume, the finish or performance spec you have to hit, and whether assembly, custom packaging or expedited transport are part of the job.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book a call about your part</h2>
+        <p class="lede">Pick a time that works and we'll walk through the part, the spec and the volume, then come back with a written quote.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .roof-cost { padding: var(--space-5) 0; background: var(--color-surface); }
+  .roof-cost h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .roof-cost .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .roof-cost table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .roof-cost th, .roof-cost td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .roof-cost th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .roof-cost tbody tr:last-child td { border-bottom: 0; }
+  .roof-cost .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

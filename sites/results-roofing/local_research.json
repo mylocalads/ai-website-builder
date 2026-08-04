@@ -1,0 +1,61 @@
+{
+  "slug": "results-roofing",
+  "category": "Roofing contractor",
+  "location": "Dallas-Fort Worth, TX",
+  "threads_analyzed": 9,
+  "method_note": "WebSearch is hard-blocked from reddit.com and Firecrawl refuses the domain outright ('we do not support this site'). Threads were located via Firecrawl web search and fetched directly from old.reddit.com, which returns 200 to a normal browser UA. www.reddit.com returns 403.",
+  "threads": [
+    "r/Dallas — Information: hail storms, insurance companies, and claims",
+    "r/Dallas — PREDATORY ROOFERS?",
+    "r/Dallas — Roofer Recommendations",
+    "r/dfw — Need recommendations for roofer",
+    "r/FortWorth — Is anyone filing claims for roof damage due to last night's hailstorm?",
+    "r/frisco — Question for folks that have had their roof replaced",
+    "r/Dallas — State Farm and my roof",
+    "r/DallasRealEstate — need a roof replacement in dallas, how do i start?",
+    "r/Roofing — Hail Damage in Texas...roofers all day knocking on door"
+  ],
+  "pain_points": [
+    "Door-knocking storm chasers swarm DFW neighborhoods within hours of every hail event. One homeowner had six roofers at the door in a single weekend, another spotted a Utah plate, another caught a salesman who had climbed onto roofs uninvited, and several describe salespeople implying they were sent by the homeowner's insurance company. The reflex answer is now 'never buy from anyone who knocks' — which means an honest roofer's first job is proving they are not that guy.",
+    "Homeowners are terrified of the insurance company, not the roof. Threads are dominated by denials, lowballs and confusion: State Farm offering $700 on a shot roof, an Allstate inspector caught on camera saying a roof was 'hailed out' while the written report said no damage, claims denied as pre-existing or age-related, and near-universal bewilderment about ACV vs RCV, recoverable depreciation, supplements, and who pays what when.",
+    "Nobody tells homeowners about the clock. Texas gives roughly one year from the date of the storm to file, and multiple posters only learned that after missing it — including one who was told in 2017 that the damage 'wasn't enough,' never filed, and is now stuck with an uninsurable roof.",
+    "Filing feels like a trap. Wind/hail deductibles across DFW are being pushed from 1% to 2% to 3% at renewal, carriers are non-renewing on roof condition, and homeowners describe an explicit catch-22: don't file and your roof ages out of coverage forever; file too often and you get dropped.",
+    "Deductible-waiving is offered constantly and almost nobody knows it is illegal in Texas. A commenter had to link the TDI page to explain that the 'we'll eat your deductible' pitch is insurance fraud and a red flag — homeowners read it as generosity, not a warning sign.",
+    "Retail roofers take the insurance check and skip the hard part. One industry commenter called it 'a lazy business model': quote the roof, cash the first check, and never do the in-depth inspection, photo report, adjuster meeting, supplement, or depreciation request — leaving the homeowner underpaid on every other line item of the claim."
+  ],
+  "what_customers_value": [
+    "Locally owned and physically present in DFW. This is the single most repeated filter in every thread — 'if they are not locally owned stay away,' 'I'd prefer to give my business to established companies based in DFW.' A real local address beats every other credential.",
+    "A roofer willing to say you do NOT need a new roof. The most upvoted moment across the corpus is a contractor describing a homeowner he told, after an inspection, that her hail damage did not justify replacement. Honesty on the no is what earns the yes.",
+    "Someone who stands on the roof with the adjuster and supplements what gets missed. Named repeatedly as the thing that separates a claims-competent company from an order-taker: 'Get a good roofing contractor to handle the insurance company. They'll do the inspection and file the claim.'",
+    "Documentation the homeowner can actually hold — dated photos, a written report, a paper trail for the carrier. One reviewer's highlight was a report emailed before the inspector had even left the driveway.",
+    "Warranty backed by something bigger than the contractor. Stated bluntly: 'if a company hasn't been in business as long as the warranty they offer, it doesn't make me feel very confident.'",
+    "Review depth they can sanity-check. Posters explicitly describe reading enough reviews to spot astroturfing — volume and specificity are the trust signal, not a star rating alone.",
+    "Class 4 impact-resistant shingle guidance, quantified. Real numbers get traded in these threads: a $1,500 refund, a 40% rate drop, a $1,000/yr deductible reduction from USAA. Homeowners want the roofer to know this and bring it up."
+  ],
+  "business_differentiators": [
+    "4.9 stars across 1,802 Google reviews (1,769 of them 5-star) — the volume itself answers the astroturf-detection habit these threads describe.",
+    "Nine physical offices including the Carrollton HQ, plus a standalone claims department with its own line (844-227-3484) and address (claims@results-roofing.com). That is structural proof of the exact thing the threads screen for, and evidence they do claim work in-house rather than running the 'lazy business model' commenters describe.",
+    "GAF Master Elite® President's Club certification, held by fewer than 2% of US contractors, directly answers 'will the warranty outlive the company' — the coverage is backed by GAF, not only by the installer.",
+    "Their own published practice is 'being present with your insurance adjuster' and walking the homeowner through the process start to finish — the precise behavior Reddit names as the mark of a claims-competent roofer.",
+    "Google's own review-tag counts corroborate it independently: insurance claim assistance 181 mentions, answering questions 120, thorough inspection 62, insurance adjuster meeting 26.",
+    "A named customer review does the work better than any claim we could write: Chris McCullough — 'walked us through the claim process, fought for coverage that our insurance company didn't want to cover.'",
+    "Free, no-fee, no-obligation inspection with 'no pressure, no upsell' as stated policy — the honest-second-opinion service these threads are actively searching for after a door-knocker rattles them.",
+    "Open 24 hours per GBP, with emergency tarping and storm response — matches the after-hours reality of Texas storm damage."
+  ],
+  "gaps_do_not_fabricate": [
+    "Results Roofing publishes nothing about how it handles deductibles or Texas TDI compliance. Do not imply they never waive deductibles, however well that would land — there is no source for it.",
+    "Insured status is unconfirmed on the site; do not display an 'insured' badge until the operator confirms.",
+    "No founding year or years-in-business figure appears anywhere on the site, so no 'serving DFW since ____' line.",
+    "The site has no Class 4 / impact-resistant shingle or premium-discount content. It is a strong content opportunity but cannot be presented as an existing program.",
+    "No published response-time promise, warranty length, or crew-size figure. Do not invent one."
+  ],
+  "copy_angles": [
+    "Lead the hero with adjuster-side advocacy rather than generic quality. The fear in this market is the insurance company, not the shingle. Something in the register of 'We meet your adjuster on the roof' — then substantiate immediately with 4.9 / 1,802 reviews and GAF Master Elite®, not with adjectives.",
+    "Build an explicit anti-storm-chaser block. Nine offices, a Carrollton street address, a dedicated claims line, 1,802 local reviews, GAF President's Club. Frame it as what to check before you let anyone on your roof — it disqualifies the door-knockers by specification instead of by insult, and every item is verifiable.",
+    "Make 'we'll tell you if you don't need a roof' a headline promise, not fine print. Their free no-obligation inspection is already this; positioned as an honest second opinion after a door-knocker scared you, it converts the most common emotional state in this market.",
+    "Give the insurance-claim process its own section on the home page (the signature-system slot): inspection → photo documentation → we attend the adjuster meeting → supplement what was missed → recoverable depreciation released on completion. Nobody local publishes this, and these threads are full of homeowners begging for exactly it. It is the strongest differentiator they have and it is currently buried inside a service page.",
+    "Use the one-year Texas filing window as real, non-manufactured urgency. It is a true deadline with a true cost — the corpus has people who missed it and are now uninsurable — so it creates the pressure of a countdown without inventing a fake discount.",
+    "Foreground the storm-damage/insurance service ahead of roof replacement in the services grid, despite replacement being the bigger revenue line. Replacement is what they sell; the claim is what the customer is searching for at 11pm after the hail stops.",
+    "Feature the McCullough review verbatim in the SEO-body review slot. 'Fought for coverage that our insurance company didn't want to cover' is the entire value proposition in the customer's own words, and it outperforms anything written in-house."
+  ]
+}

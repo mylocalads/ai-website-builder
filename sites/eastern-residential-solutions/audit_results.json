@@ -1,0 +1,41 @@
+{
+  "slug": "eastern-residential-solutions",
+  "url": "https://www.easternresidentialsolutions.com/",
+  "screenshot": "screenshots/eastern-residential-solutions.png",
+  "captured_at": "2026-08-03",
+  "platform": "Wix",
+  "purpose": "OPERATOR REFERENCE ONLY — never design DNA. The owl template is the sole source of design and structure.",
+  "strengths": [
+    "Genuine trust stack is already assembled: Owens Corning Preferred Contractor, HomeAdvisor Screened & Approved, Angi A rating, BBB A+, Google 5.0 — real, verifiable badges most competitors do not have.",
+    "Three real named testimonials with towns are placed high on the homepage.",
+    "Services are clear and correctly scoped to roofing, siding, gutters.",
+    "The quote form already segments by job type (Roof Repair, Roof Replace, Siding, Gutters, Storm Damage) and captures address — good lead qualification intent.",
+    "Both the PA and MD offices are published with separate phone numbers."
+  ],
+  "weaknesses": [
+    "No above-the-fold value proposition beyond a generic tagline. The hero says what they do, never why to choose them — the callback/reliability angle that their own reviews prove is absent.",
+    "Overlapping icon nav strip collides with its own labels ('AREAS WE SER...' is clipped by the overlapping badge), a layout defect visible at 1280px.",
+    "A stray Pink Panther graphic sits inside the SERVICES header band next to the Owens Corning badge — off-brand and undermines the credibility the badge is there to build.",
+    "Service cards use white body text on a saturated red panel at small size — fails contrast comfort and is hard to read.",
+    "Badge row is horizontally clipped at 1280px; the HomeAdvisor and Google badges are cut off at both edges.",
+    "No dedicated service-area pages. Counties are listed as a run-on paragraph inside the About block, which is unusable for local SEO across two states.",
+    "No individual service detail depth on the homepage; roofing/siding/gutters each get two sentences and a Learn More.",
+    "Privacy Policy and Terms of Service link off-site to thebasalygagroup.com — a third-party domain, not the client's own legal pages.",
+    "Phone inconsistency: the footer displays (877) 570-3774 while the tel: link behind it dials 570-382-8629.",
+    "No accessibility affordances visible (no cookie/consent control, no visible skip nav), and the Wix build ships heavy client-side JS.",
+    "No storm-damage or insurance-claim page despite storm damage being an option in their own quote form and a major theme in their reviews.",
+    "Project gallery exists but is not surfaced with location or job detail on the homepage, so the strongest local proof stays buried."
+  ],
+  "load_notes": "Wix-hosted, image-heavy, full-page height ~4280px at 1280px viewport. Screenshot captured cleanly with no WAF interception.",
+  "additional_data_found": {
+    "maryland_office": {
+      "street": "1220 Curtain Ave",
+      "city": "Baltimore",
+      "state": "MD",
+      "postal": "21218",
+      "phone_display": "(443) 438-4591"
+    },
+    "badges": ["Owens Corning Preferred Contractor", "HomeAdvisor Screened & Approved", "HomeAdvisor Elite Service Award 2020", "Angi A Rating", "BBB A+ Rating", "Google 5.0"],
+    "quote_form_job_types": ["Roof Repair", "Roof Replace", "Siding", "Gutters", "Storm Damage", "Other"]
+  }
+}

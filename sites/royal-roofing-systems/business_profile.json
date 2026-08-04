@@ -1,0 +1,38 @@
+{
+  "name": "Royal Roofing Systems",
+  "email": "office@royalroofnepa.com",
+  "phone": "(570) 550-6578",
+  "phone_gbp_listed": "(570) 258-8866",
+  "address": "20 W Grove St, Edwardsville, PA 18704",
+  "website": "https://royalroofnepa.com/",
+  "rating": 4.8,
+  "reviewCount": 61,
+  "category": "Roofing contractor",
+  "categories": [
+    "Roofing contractor",
+    "Deck builder",
+    "Gutter service",
+    "Siding contractor"
+  ],
+  "hours": "Open 24 hours (GBP); site lists Mon-Fri 8am-6pm, Sat 8am-12pm, emergency and same-day available",
+  "slug": "royal-roofing-systems",
+  "geo": { "lat": 41.2686508, "lng": -75.9104468 },
+  "placeId": "ChIJMVPb96ERJo4RNPWNru2Bq68",
+  "cid": "12658354035490682164",
+  "maps_url": "https://maps.google.com/?cid=12658354035490682164",
+  "social": { "facebook": "https://www.facebook.com/RoyalRoofNEPA" },
+  "reviewsTags": [
+    { "title": "decking", "count": 5 },
+    { "title": "metal roof installation", "count": 4 },
+    { "title": "courteous crew", "count": 4 },
+    { "title": "friendly workers", "count": 4 },
+    { "title": "siding replacement", "count": 3 },
+    { "title": "honest contractors", "count": 3 },
+    { "title": "roof shingling", "count": 2 },
+    { "title": "leaf guard installation", "count": 2 },
+    { "title": "wood replacement", "count": 2 },
+    { "title": "project duration", "count": 2 }
+  ],
+  "reviews": [],
+  "_notes": "Apify actor returned 1 exact match; GBP-listed website matches operator-supplied URL. reviews[] came back empty from the actor — homepage testimonials used instead."
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gilroy-roofing.vercel.app/sitemap-index.xml

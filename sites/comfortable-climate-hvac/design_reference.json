@@ -1,0 +1,59 @@
+{
+  "slug": "comfortable-climate-hvac",
+  "template": "owl",
+  "generated_at": "2026-08-03",
+  "sources": {
+    "brand_tokens": "https://comfortableclimatehvac.com/ (fonts + colors only, via Firecrawl branding extraction)",
+    "structure": "astro-templates/owl — sole source of layout and structure",
+    "library": "reference-libraries/default.json (no hvac vertical exists; owl template is the primary reference)"
+  },
+  "palette": {
+    "bg": "#f5f7fa",
+    "surface": "#ffffff",
+    "text": "#1e2452",
+    "muted": "#5a6280",
+    "primary": "#1e2452",
+    "on_primary": "#ffffff",
+    "accent": "#fadb6e",
+    "on_accent": "#1e2452",
+    "accent_ink": "#8a6a00",
+    "focus": "#0057ff"
+  },
+  "palette_rationale": {
+    "accent": "The client's own primary brand colour, a soft yellow (#FADB6E), detected from their site. Kept as the button/fill accent.",
+    "on_accent": "Navy rather than white. White on #FADB6E measures 1.36:1 and fails even the large-text threshold; the client's own navy measures 10.79:1.",
+    "accent_ink": "#FADB6E as foreground text on a light background is unreadable (1.36:1 on white). This darkened amber measures 5.07:1 on white and 4.72:1 on the page background, passing AA for eyebrows, tick marks, stars and chevrons.",
+    "primary": "The client's navy (#1E2452), used for dark panels. The brand's light blue (#8DD7F7) was rejected as a panel colour — it cannot carry white text.",
+    "muted": "Derived. Not detected on the client's site, which used a pale grey that fails AA against white."
+  },
+  "contrast_audit": {
+    "text_on_bg": 13.69,
+    "text_on_surface": 14.69,
+    "muted_on_bg": 5.6,
+    "muted_on_surface": 6.01,
+    "on_primary_on_primary": 14.69,
+    "on_accent_on_accent": 10.79,
+    "accent_ink_on_bg": 4.72,
+    "accent_on_primary_panel": 10.79,
+    "verdict": "All pairs pass WCAG AA at normal text size."
+  },
+  "typography": {
+    "display": "Montserrat",
+    "body": "Open Sans",
+    "source": "Detected on the client's existing site — heading stack Montserrat, body stack Open Sans. Retained as genuine brand tokens."
+  },
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "anti_patterns": [
+    "No gradient hero backgrounds",
+    "No glass morphism or backdrop-blur panels",
+    "No bento grid section layouts",
+    "No purple / indigo / violet accents",
+    "No rows of outline icons — one icon per section at most",
+    "No stock 'handshake' or 'team pointing at a laptop' photography",
+    "No unsourced volume claims",
+    "No 'Stunning' / 'Seamless' / 'Effortless' section headers",
+    "No randomized section order — owl page composition is fixed",
+    "Client-site layout, component styling, spacing and CSS classes were NOT extracted and are NOT referenced. Fonts, colours and logo only."
+  ]
+}

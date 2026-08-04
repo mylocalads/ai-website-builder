@@ -1,0 +1,38 @@
+{
+  "slug": "comprehensive-pain-specialists",
+  "category": "Pain management physician",
+  "location": "Wilkes-Barre PA",
+  "threads_analyzed": 28,
+  "method_note": "Reddit thread bodies were not directly fetchable (Reddit blocks both WebFetch and Firecrawl). Findings synthesized from search-result titles + indexed comment snippets across r/ChronicPain, r/PainManagement, r/ChronicIllness, r/Fibromyalgia, r/NEPA, and r/Scranton.",
+  "pain_points": [
+    "Chronic pain patients are routinely treated as drug seekers at a first pain-management appointment — the single most repeated complaint across r/ChronicPain and r/PainManagement.",
+    "Wait times to be seen are brutal: patients report 6–14 months from referral to first pain-specialist appointment, and NEPA-specific threads cite 6+ month waits just for primary care.",
+    "Appointments feel rushed and impersonal — patients describe doctors taking phone calls mid-visit, not asking about quality of life, and dismissing pain that is 'out of proportion' to imaging.",
+    "In Northeastern PA specifically, Geisinger's dominance is a recurring grievance: hard to get in, cancelled appointments, layered facility fees on top of specialist fees, and the sense that there is no alternative.",
+    "Patients are frustrated by clinics that either push pills as the only option or refuse to treat at all — very few offer a real middle path of interventional procedures."
+  ],
+  "what_customers_value": [
+    "Being believed and listened to on the first visit — 'they treated me like a person' is the highest praise in every thread.",
+    "A provider who does not immediately resort to pills but has real procedural options — an r/NEPA commenter praised a local pain doctor specifically because he 'didn't immediately resort to putting me on pills.'",
+    "Getting in fast: same-day or same-week appointments, and short in-office wait times.",
+    "Board certification and specific procedural expertise — patients research whether the doctor is actually fellowship-trained in pain medicine.",
+    "Clear insurance answers up front, plus a self-pay path for the uninsured, so the visit isn't derailed by a billing surprise."
+  ],
+  "business_differentiators": [
+    "Comprehensive Pain Specialists explicitly accepts same-day appointments and is actively accepting new patients (stated on their FAQ page) — directly counters the 6–14 month wait that dominates the complaint threads.",
+    "Dr. Youssef Josephson, D.O. is board-certified in Pain Medicine and Physical Medicine & Rehabilitation — the exact credential patients say they look up before booking.",
+    "The practice offers roughly 40 distinct interventional procedures (spinal cord stimulation, radiofrequency ablation, epidural and facet injections, Vertiflex, MILD, Intracept, peripheral nerve stimulation, prolotherapy) — concrete proof of the 'not just pills' approach NEPA patients said they wanted.",
+    "A real patient review reports 'less than a 15-minute wait,' easy appointment changes, easy refills, and a follow-up phone call after every procedure — the operational details patients complain are missing elsewhere.",
+    "It is an independent local practice, not part of the regional hospital system NEPA residents complain about — a positioning advantage, though claims about facility fees should not be made since the practice's billing structure was not verified.",
+    "In network with most insurance plans plus self-pay options for the uninsured, both stated on the client's own site."
+  ],
+  "copy_angles": [
+    "Lead the hero with getting seen fast, not with the condition list: 'Seen this week, not next year.' Same-day appointments are the highest-leverage true claim this practice owns against a market where 6+ month waits are the norm.",
+    "Second message: 'You'll be believed.' Explicitly name that patients arrive after being dismissed elsewhere, and that the first visit starts with finding the pain generator, not judging the patient. This is the emotional core of every thread.",
+    "Feature the procedure breadth as the proof of 'not just prescriptions' — a scannable band of real procedure names (spinal cord stimulation, radiofrequency ablation, epidural injections, Vertiflex, Intracept) does more credibility work than any adjective.",
+    "Put the board-certification credential (Pain Medicine / PM&R) in the hero trust strip and on the About section — patients verify this before calling.",
+    "Use the 15-minute-wait and post-procedure follow-up call review as a pull-quote near the appointment CTA; it answers the 'rushed and forgotten' complaint with a patient's own words.",
+    "Make insurance a top-level section, not a footnote: 'In network with most plans — and a self-pay path if you're uninsured.' Ambiguity here is a documented drop-off point.",
+    "Do NOT surface the 3.2 Google aggregate rating anywhere. Use individually attributed 5-star patient quotes instead."
+  ]
+}

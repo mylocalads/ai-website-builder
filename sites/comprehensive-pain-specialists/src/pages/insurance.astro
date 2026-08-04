@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PartnerBadges from '../components/PartnerBadges.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Insurance', href: '/insurance' }];
+
+// Carrier names come from config.partners so the logo band and this list can
+// never drift apart. Coverage varies by individual plan, which is why this page
+// states network participation and never states what a given patient will owe.
+const carriers = (site.partners ?? []).map((p: any) => p.name);
+---
+<BaseLayout
+  title={`Insurance & Payment — ${site.business_name}`}
+  description={`Comprehensive Pain Specialists is in network with most major insurance plans in ${site.address.city}, ${site.address.state}, and offers self-pay options for uninsured patients.`}
+  breadcrumbs={crumbs}
+  pagePath="/insurance"
+>
+  <HeroOwl
+    eyebrow="Insurance & Payment"
+    headline="In Network With Most Major Plans"
+    subheadline="We are in network with most insurance plans. Coverage still varies by individual policy, so please confirm your eligibility directly with your insurer — or call us and we will help you check before your visit."
+    cta_text="Request an Appointment"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Check your coverage"
+  />
+
+  <PartnerBadges />
+
+  <section class="coverage">
+    <div class="container">
+      <h2>Plans we work with</h2>
+      <p class="lede">These are among the carriers we accept. It is not an exhaustive list, and network participation does not guarantee that a specific plan covers a specific procedure.</p>
+      {carriers.length > 0 && (
+        <ul class="carriers">
+          {carriers.map((name: string) => <li>{name}</li>)}
+        </ul>
+      )}
+      <p class="factors"><strong>Before your first visit:</strong> call your insurer and ask whether {site.business_name} is in network under your specific plan, what your deductible and specialist copay are, and whether a referral or prior authorization is required for pain management. If any of that is unclear, call our office at <a href={`tel:${site.phone}`}>{site.phone_display}</a> and we will walk through it with you.</p>
+    </div>
+  </section>
+
+  <section class="selfpay">
+    <div class="container">
+      <h2>If you do not have insurance</h2>
+      <p>We offer self-pay options for uninsured patients. Pricing depends on what the visit and any procedures involve, so call the office directly at <a href={`tel:${site.phone}`}>{site.phone_display}</a> for specific pricing and payment arrangements. We would rather you know the number before you come in than find out afterward.</p>
+    </div>
+  </section>
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Request an appointment</h2>
+        <p class="lede">Same-day appointments are available and we are currently accepting new patients.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <FAQ items={faqs} cta_text="Request an Appointment" cta_href="/book" />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .coverage { padding: var(--space-5) 0; background: var(--color-surface); }
+  .coverage h2, .selfpay h2, .book h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .coverage .lede, .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .carriers { list-style: none; padding: 0; margin: 0 0 var(--space-3); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-1) var(--space-2); }
+  .carriers li { padding: 0.6rem 0.9rem; background: var(--color-bg); border-radius: var(--radius-md); font-weight: 500; }
+  .coverage .factors { margin-top: var(--space-3); color: var(--color-muted); max-width: 55rem; line-height: 1.7; }
+  .selfpay { padding: var(--space-5) 0; }
+  .selfpay p { color: var(--color-muted); max-width: 55rem; line-height: 1.7; }
+  .book { padding: var(--space-5) 0; background: var(--color-surface); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

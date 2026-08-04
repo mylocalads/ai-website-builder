@@ -1,0 +1,75 @@
+{
+  "slug": "gt-roofing",
+  "template": "owl",
+  "vertical": "roofing",
+  "generated_at": "2026-08-03",
+  "references_used": [
+    {
+      "url": "https://owlroofing.com/",
+      "role": "primary",
+      "why": "Structural source for the owl template \u2014 section order and component shapes only. No Owl brand assets, program names, or copy carried over."
+    },
+    {
+      "url": "https://firefly-cd.vercel.app/",
+      "role": "primary",
+      "why": "MLA canonical roofing reference for tone and fixed section discipline."
+    }
+  ],
+  "brand_source": "Client's own logo mark, sampled pixel-wise (navy #053173, red #b60c16), cross-checked against the live CSS custom properties read from computed styles on https://www.gtroofinghomeimprovements.com/ (--primary hsl(210 100% 20%) = #003366, --accent hsl(0 100% 40%) = #cc0000, --foreground hsl(0 0% 20%), --radius .5rem, font-family DM Sans). The logo values win \u2014 the mark is what actually sits next to these colours on every page. Brand tokens only; no layout, component, or class data extracted.",
+  "palette": {
+    "bg": "#f4f6fa",
+    "surface": "#ffffff",
+    "text": "#16191f",
+    "muted": "#5a616e",
+    "primary": "#053173",
+    "on_primary": "#ffffff",
+    "accent": "#b60c16",
+    "on_accent": "#ffffff",
+    "accent_ink": "#b60c16",
+    "accent_on_dark": "#ff7d70",
+    "focus": "#0057ff"
+  },
+  "contrast_audit": {
+    "white_on_accent": "6.88:1 \u2014 AA pass. --color-on-accent is #ffffff, measured not assumed.",
+    "white_on_primary": "12.40:1 \u2014 AAA pass.",
+    "accent_ink_on_bg": "6.36:1 \u2014 AA pass. Brand red is dark enough to serve as foreground text on light surfaces unchanged, so accent_ink equals accent.",
+    "accent_ink_on_surface": "6.88:1 \u2014 AA pass.",
+    "accent_on_dark_over_primary": "4.97:1 \u2014 AA pass. Raw #b60c16 on navy measures only 1.80:1 and fails, so the dark bands (Testimonials, ProcessSteps, WhyChooseUs, hero scrim) use the #ff7d70 tint of the same brand red. The owl template does not ship this token \u2014 the four components were patched in this client site only, never upstream.",
+    "text_on_bg": "16.27:1 \u2014 AAA pass.",
+    "muted_on_bg": "5.76:1 \u2014 AA pass.",
+    "muted_on_surface": "6.23:1 \u2014 AA pass."
+  },
+  "typography": {
+    "display": "DM Sans",
+    "body": "DM Sans",
+    "source": "Client's own Google Fonts link \u2014 DM Sans wght 400;500;600;700;800. Used for both roles; the 800 weight carries the display role.",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "14px",
+    "source": "Client --radius is .5rem (8px); md matches exactly, sm/lg are the template's proportional steps."
+  },
+  "spacing": [
+    "0.5rem",
+    "1rem",
+    "1.5rem",
+    "2.5rem",
+    "4rem"
+  ],
+  "max_width": "1200px",
+  "anti_patterns": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order \u2014 always use the fixed order from the template",
+    "Owl Roofing brand program names (\"We Give A Hoot\", \"Protect Your Nest System\", \"Get It Right Guarantee\") \u2014 Owl brand assets, never reused",
+    "any \"Licensed, Bonded & Insured\" badge \u2014 G&T has published no such claim and no PA HIC number is on public record"
+  ]
+}

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Hero from '../components/Hero.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import CTA from '../components/CTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How ${site.business_name} quotes commercial and industrial concrete work across ${site.address.city}, ${site.address.state} and South Florida.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <Hero
+    eyebrow="Pricing"
+    headline="Real numbers, once we see the scope"
+    subheadline={pricing.intro}
+    cta_text="Get In Touch Now!"
+    cta_href="/contact"
+  />
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <CTA headline="Need concrete or civil work? Get a fast, no-runaround quote." cta_text="Get In Touch Now!" cta_href="/contact" />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+</style>

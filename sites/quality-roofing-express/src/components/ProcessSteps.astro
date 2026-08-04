@@ -1,0 +1,79 @@
+---
+import { getIcon } from '../lib/icons';
+
+export interface Props {
+  data?: {
+    headline: string;
+    steps?: Array<{ label: string; title: string; body?: string; icon?: string }>;
+    cta_text?: string;
+    cta_href?: string;
+  };
+}
+const { data } = Astro.props;
+const steps = data?.steps ?? [];
+---
+{data && steps.length > 0 && (
+  <section class="process" aria-label={data.headline}>
+    <div class="container">
+      <h2>{data.headline}</h2>
+      <ol class="grid">
+        {steps.map((s) => {
+          const svg = getIcon(s.icon);
+          return (
+            <li class="tile">
+              <div class="tile-top">
+                {svg ? (
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={svg} />
+                  </span>
+                ) : (
+                  <span class="icon num" aria-hidden="true"></span>
+                )}
+                <p class="label">{s.label}</p>
+              </div>
+              <h3>{s.title}</h3>
+              {s.body && <p class="body">{s.body}</p>}
+            </li>
+          );
+        })}
+      </ol>
+      {data.cta_text && data.cta_href && (
+        <div class="cta"><a class="btn" href={data.cta_href}>{data.cta_text}</a></div>
+      )}
+    </div>
+  </section>
+)}
+<style>
+  .process { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-5) 0; }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-on-primary); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-4); text-align: center; text-transform: uppercase; letter-spacing: 0.01em; }
+
+  /* Card tiles rather than bare numbers on a band, so the process carries the
+     same visual weight as the services grid above it. */
+  .grid { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: var(--space-3); }
+  .tile {
+    counter-increment: step; position: relative; overflow: hidden;
+    background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.14);
+    border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3) var(--space-3);
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  }
+  .tile:hover { transform: translateY(-5px); border-color: var(--color-accent); background: rgba(255,255,255,0.085); }
+  /* Oversized ghost numeral watermarks the tile without competing with the copy. */
+  .tile::after {
+    content: counter(step, decimal-leading-zero);
+    position: absolute; top: -0.3em; right: 0.08em;
+    font-family: var(--font-display); font-weight: 800; font-size: 6rem;
+    color: var(--color-on-primary); opacity: 0.07; line-height: 1; pointer-events: none;
+  }
+
+  .tile-top { display: flex; align-items: center; gap: 0.75rem; margin-bottom: var(--space-2); position: relative; z-index: 1; }
+  .icon { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; flex-shrink: 0; border-radius: 50%; background: var(--color-accent); color: var(--color-on-accent); }
+  .icon svg { width: 1.6rem; height: 1.6rem; }
+  .icon.num::before { content: counter(step); font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+
+  .label { margin: 0; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.75rem; font-weight: 700; color: var(--color-accent-on-dark); }
+  h3 { font-size: 1.2rem; margin: 0 0 var(--space-1); color: var(--color-on-primary); text-transform: capitalize; position: relative; z-index: 1; }
+  .body { margin: 0; color: var(--color-on-primary); opacity: 0.78; line-height: 1.6; font-size: 0.95rem; position: relative; z-index: 1; }
+
+  .cta { text-align: center; margin-top: var(--space-4); }
+  .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; }
+</style>

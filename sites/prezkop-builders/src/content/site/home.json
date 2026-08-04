@@ -1,0 +1,209 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving the Wyoming Valley",
+    "headline": "The Contractor Who Actually Calls You Back",
+    "subheadline": "Custom decks, patios and outdoor living. Whole-home remodeling and new construction. Hardwood floors brought back to life. A licensed three-person crew out of Nanticoke, doing finish-grade work across Northeastern PA.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/deck-wood-benches.jpg",
+    "video_link_text": "See what we've built",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "I have never met someone in this business so well mannered, respectful, trustworthy, punctual, loyal — and do AMAZING work.",
+      "author": "Melissa R. — porch and door repairs",
+      "cta_text": "Get My Free Estimate!",
+      "cta_href": "/book"
+    },
+    "trust_badges": [
+      {
+        "label": "PA HIC Licensed",
+        "sublabel": "License PA164836"
+      },
+      {
+        "label": "Licensed & Insured",
+        "sublabel": "Prezkop Builders, LLC"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Free written estimates", "icon": "clipboard" },
+    { "text": "PA licensed & insured", "icon": "shield" },
+    { "text": "Owner on every job", "icon": "home" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "You Will Not Have To Chase Us",
+    "body": "Ask around the valley about contractors and you will hear the same two stories: the one who never called back after the estimate, and the one who disappeared halfway through. That is the bar we decided to clear. You get a real written scope and number before anything starts, you know which days we are coming, and if weather moves the schedule you hear it from us first — not after you have called twice. Every public review this business has says some version of the same thing, and that is not an accident.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Custom Finish Standards",
+    "intro": "Prezkop Builders is a custom finish contractor. That word matters — it is the difference between a deck that is built and a deck that is finished. Here is what it means on your job.",
+    "blocks": [
+      {
+        "title": "Building science before material selection",
+        "body": "Flashing, drainage, ledger attachment, footing depth for our frost line. The parts of the job nobody sees are the parts that decide whether it is still right in fifteen years. We work those out during the design conversation, not while standing in your yard with a saw running.",
+        "icon": "document"
+      },
+      {
+        "title": "The small jobs count as real jobs",
+        "body": "Crawl space doors. Special-order window wells. Four stair treads and a handrail. A sidewalk that has to pitch away from the house properly. These are the calls other contractors let go to voicemail, and they are a large part of why our customers call us back for the big ones.",
+        "icon": "home"
+      }
+    ],
+    "steps_title": "What we do that you should not have to ask for",
+    "steps_icon": "broom",
+    "steps": [
+      {
+        "title": "A written scope, not a napkin number",
+        "body": "You see what is included and what is not before you sign anything."
+      },
+      {
+        "title": "You know which days we're coming",
+        "body": "And you hear from us when weather moves them, before you notice."
+      },
+      {
+        "title": "The site gets cleaned up",
+        "body": "Every day, not just at the end. It is your home while we are in it."
+      }
+    ],
+    "guarantee": {
+      "title": "We are not finished until you say it is right",
+      "body": "No surprise line items and no invoice for work that was never discussed. If something is not right when we walk it together, we come back and make it right. That has been the arrangement since 2021.",
+      "cta_text": "Talk to Josh",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Project Runs",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free consultation & estimate",
+        "icon": "clipboard",
+        "body": "Josh comes out, walks the space with you, and puts a written scope and number in your hand."
+      },
+      {
+        "label": "Step Two",
+        "title": "Design, materials & schedule",
+        "icon": "hammer",
+        "body": "We settle scope, materials and dates before work starts — that is what pre-construction is for."
+      },
+      {
+        "label": "Step Three",
+        "title": "Build, clean up, walk it together",
+        "icon": "broom",
+        "body": "Site cleaned daily, and a final walk with you before we call it done."
+      }
+    ],
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Prezkop Builders",
+    "headline": "A Three-Person Crew Out Of Nanticoke",
+    "body": "Josh Prezkop started this company in April 2021 as a custom finish contractor — hardwood floor refinishing first, then outdoor living, then full remodels and new construction. Five years later it is still Josh, Jake and Jimmy. Nobody gets handed off to a crew they have never met, and the owner who wrote your estimate is the one on your job site.",
+    "checklist": [
+      "PA Home Improvement Contractor license PA164836",
+      "Prezkop Builders, LLC — licensed and insured since 2021",
+      "Outdoor living, remodeling, new construction, hardwood refinishing",
+      "Serving Nanticoke, Wilkes-Barre and the Wyoming Valley",
+      "Free written estimates on every project"
+    ],
+    "photo": "/img/team-group.jpg",
+    "photo_alt": "Josh Prezkop, Jacob Campbell and Jimmy Hans of Prezkop Builders on site",
+    "photo_cutout": false,
+    "cta_text": "Meet the crew",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Why Homeowners Here Call Us",
+    "headline": "Remodeling & Outdoor Living In The Wyoming Valley",
+    "paragraphs": [
+      "The housing stock in this valley is old. Coal-era homes with Southern Yellow Pine floors buried under three layers of carpet, porches that were framed before anyone thought about drainage, and additions from the seventies that were never flashed properly. Working on these houses is not the same as working on a new build, and it is most of what we do.",
+      "Outside, the season is short and the freeze-thaw is hard on everything. Decks, patios and concrete here have to be detailed for it — footings below frost, drainage that actually moves water, and materials chosen for the winter rather than the showroom. That is the part of the job that decides whether you are calling someone back in five years."
+    ],
+    "checklist": [
+      "Custom decks, covered porches, pavilions and pergolas",
+      "Stamped and decorative concrete patios and sidewalks",
+      "Whole-home remodels, additions and new construction",
+      "Hardwood floor refinishing, including heart pine restoration",
+      "Pre-construction scope, budget and material planning"
+    ],
+    "image": "/img/pavilion-ceiling.jpg",
+    "image_alt": "Tongue-and-groove pine pavilion ceiling with exposed rafters and a ceiling fan",
+    "image_position": "left",
+    "review": {
+      "name": "Renee McGuire Dopko",
+      "source": "Sidewalk remodel",
+      "rating": 5,
+      "text": "One of the best experiences we've had working with a contractor! Josh and his coworker Jake were professional, courteous, responsive, and prompt during our whole sidewalk project, even when Mother Nature was not cooperating."
+    },
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Melissa Roberts",
+      "location": "Door repairs & porch remodel",
+      "rating": 5,
+      "text": "I had Josh do 4 crawl space doors as mine were completely falling apart and rotted. He also trimmed out the face of my porch and installed new sturdy window wells that had to be special ordered. It took a while to come in and he kept me up to date the entire time about my order. I have never met someone in this business so well mannered, respectful, trustworthy, punctual, loyal and do AMAZING work. I am very pleased at the work he has done and would recommend him to anyone."
+    },
+    {
+      "name": "Renee McGuire Dopko",
+      "location": "Sidewalk remodel",
+      "rating": 5,
+      "text": "One of the best experiences we've had working with a contractor! Josh and his coworker Jake were professional, courteous, responsive, and prompt during our whole sidewalk project, even when Mother Nature was not cooperating. We are very pleased with how our sidewalks turned out! They are beautiful! Will definitely be calling Josh again for any future projects!"
+    },
+    {
+      "name": "Jim Brogna",
+      "location": "Home remodel",
+      "rating": 5,
+      "text": "I highly recommend Josh for his attention to detail, desire to insure customer is satisfied and (unlike many home improvement professionals) he was prompt every day, worked hard to finish the project and communicated every step and did an amazing job!"
+    },
+    {
+      "name": "Shannon Dixon",
+      "location": "Concrete stamping",
+      "rating": 5,
+      "text": "Josh was very knowledgeable and able to answer all my questions when asking about concrete stamping. Friendly and quick to respond!"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you charge for estimates?",
+      "a": "No. Consultations and written estimates are free. Josh comes out, walks the project with you, and puts a written scope and number in your hand so you know exactly what is and is not included before you commit to anything."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Prezkop Builders, LLC holds Pennsylvania Home Improvement Contractor license PA164836, registered with the Pennsylvania Office of the Attorney General, and carries insurance. We are happy to provide current certificates on request."
+    },
+    {
+      "q": "Will you take small jobs, or only full remodels?",
+      "a": "We take small jobs. A lot of our work starts as four stair treads, a set of crawl space doors, or a section of sidewalk. Custom finish work is the business — the size of the job is not the filter."
+    },
+    {
+      "q": "How long does a deck or patio project take?",
+      "a": "Most residential decks and patios run one to three weeks on site depending on size, footings and whether there is demolition first. Northeastern PA weather is the biggest variable, and we tell you when it moves the schedule rather than letting you find out."
+    },
+    {
+      "q": "Can you refinish old floors, or do they need replacing?",
+      "a": "Most of the time they can be refinished. We handle all traditional hardwood and softwood species including Southern Yellow Pine — the heart pine common in older coal-region homes — plus oak, maple, hickory, poplar, chestnut, cherry and walnut. We can tell you on the consultation whether there is enough thickness left to sand."
+    },
+    {
+      "q": "What does hardwood refinishing actually involve?",
+      "a": "Sanding through three progressively finer grits, hand scraping the edges and corners, a water-pop to open the grain for better stain penetration, an oil-based stain, then usually three to four coats of a high-quality water-based top coat. You choose the sheen. Oil-based finish is available if you prefer it."
+    },
+    {
+      "q": "Do you handle permits?",
+      "a": "Yes, where the municipality requires them. Permitting, scope and material selection are all part of our pre-construction work, which is exactly the stage where problems are cheap to fix instead of expensive."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Nanticoke, Wilkes-Barre, Hunlock Creek, Dallas, Kingston, Mountain Top and the surrounding Wyoming Valley. If you are just outside that, call and ask — the answer is often yes."
+    }
+  ]
+}

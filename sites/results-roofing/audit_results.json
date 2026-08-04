@@ -1,0 +1,30 @@
+{
+  "slug": "results-roofing",
+  "website": "https://resultsroofing.com/",
+  "screenshotPath": "screenshots/results-roofing.png",
+  "captured_at": "2026-07-31",
+  "capture_note": "Playwright's bundled chrome-headless-shell was served a bare 403 page by the site's WAF — it screenshotted cleanly and would have poisoned this audit. scripts/screenshot.js now launches the locally installed Google Chrome and warns on any HTTP >= 400.",
+  "assessment": "A competently built, modern WordPress/Divi site — not a redesign candidate on age or craft. It is a conversion and hierarchy problem: the single strongest asset the business owns (1,802 five-star reviews and a claims department that fights insurers) is either broken on the page or buried three clicks deep, while the hero gives half its width to a 12-field form.",
+  "strengths": [
+    "Genuinely modern build — responsive, HTTPS, real typography (Rubik/Roboto Condensed), consistent brand red and blue, no template smell.",
+    "Real photography of their own crews and jobs throughout, not stock.",
+    "Autoplaying hero video and a clear, high-contrast CALL NOW button above the fold.",
+    "Full NAP for all nine offices in the footer, plus a separate claims department line and email — strong local-trust and E-E-A-T signal.",
+    "GAF Master Elite, Roofs for Troops and American-Owned badges are present and legible.",
+    "Deep content library: six service pages with real long-form copy, a large blog, and hundreds of city landing pages."
+  ],
+  "weaknesses": [
+    "The testimonials section renders EMPTY. A full-width blue band carries the heading 'WHAT OUR CUSTOMERS SAY ABOUT US' and then nothing at all — the Trustindex widget fails to populate on load. A business with 1,802 reviews at 4.9 stars is showing zero of them in its social-proof slot.",
+    "The bottom contact form renders as a blank white rectangle in the same capture — the embed does not load reliably either.",
+    "The hero is half-covered by a 12-field form (name, email, phone, address search, address, city, state, postal, service, market, plus two consent checkboxes) demanded before any trust has been established. It also obscures the hero photo it sits on.",
+    "The insurance-claim advocacy — the single differentiator the market actually searches for, and the thing 181 Google reviews mention — appears nowhere on the home page. It is buried inside /services/emergency-services and /storm-damage.",
+    "The section labeled 'FAQs' on the home page contains blog post cards, not FAQs. The real FAQ content lives on /faqs and never surfaces on the home page.",
+    "Services are presented as six unlabeled photo tiles with captions and no descriptions, no icons, and no ordering logic — replacement, the highest-value job, is fourth.",
+    "Nine different phone numbers appear across the site (header 214-301-5533, GBP 469-270-8037, footer HQ 469-218-8983, storm-damage page 214-505-1442, plus seven regional office lines). Attribution and caller routing are both compromised.",
+    "Three separate third-party overlays compete on load: a LeadConnector chat bubble, a Roofle 'Instant Roof Quote' widget, and Cloudflare Turnstile inside the forms.",
+    "The 'about' page is essentially two office addresses and a paragraph — no story, no team, no founding date, despite a strong CEO narrative sitting unused on two service pages."
+  ],
+  "overall": "Not an old-site rescue — a conversion rebuild. The content and credentials are excellent and the presentation is modern; what's broken is that the proof is invisible (empty testimonial band) and the differentiator is buried (insurance-claim advocacy). The owl template fixes both by structure alone.",
+  "operator_reference_only": true,
+  "_anti_pattern_lock": "This audit and screenshot exist for OPERATOR REFERENCE ONLY. Nothing here — layout, section order, hero composition, component styling — feeds design-reference, tokens.css, or site-generate. The owl template is the sole source of design truth."
+}

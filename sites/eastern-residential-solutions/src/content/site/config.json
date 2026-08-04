@@ -1,0 +1,164 @@
+{
+  "kind": "config",
+  "business_name": "Eastern Residential Solutions",
+  "legal_name": "Eastern Roofing Systems Inc.",
+  "tagline": "Roofing, Siding & Seamless Gutters in NEPA and Maryland",
+  "phone": "+15703828629",
+  "phone_display": "(570) 382-8629",
+  "email": "info@easternresidentialsolutions.com",
+  "address": {
+    "street": "1 Keystone Pl",
+    "city": "Jessup",
+    "state": "PA",
+    "postal": "18434",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.466346, "lng": -75.5587727 },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "site_url": "https://eastern-residential-solutions.vercel.app",
+  "rating": 5,
+  "review_count": 31,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/EasternResidentialSolutions",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Eastern%20Residential%20Solutions&query_place_id=ChIJd3wB20vbxIkRw9xYVsf23Ss"
+  },
+  "logo_url": "/img/logo.png",
+  "default_hero_photo": "/img/hero-home.jpg",
+  "about_photo": "/img/about-team.jpg",
+  "team_members": [
+    { "name": "Rob Neubert", "role": "Director", "photo": "/img/team-rob-neubert.jpg" },
+    { "name": "Lester Dreisbach", "role": "General Manager", "photo": "/img/team-lester-dreisbach.jpg" },
+    { "name": "Eric Pugh", "role": "Lead Project Manager", "photo": "/img/team-eric-pugh.jpg" },
+    { "name": "Brian Kavanaugh", "role": "Project Manager", "photo": "/img/team-brian-kavanaugh.jpg" }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    {
+      "name": "Owens Corning Preferred Contractor",
+      "logo_url": "https://eastern-residential-solutions.vercel.app/img/badge-owens-corning.png",
+      "link_url": "https://www.owenscorning.com/en-us/roofing/contractors"
+    }
+  ],
+  "why_choose_us": [
+    {
+      "title": "We call you back",
+      "description": "The most common complaint homeowners have about roofers is that nobody answers and nobody returns the message. We answer, we quote when we said we would, and we start when we said we would. Our customers say so in their own words."
+    },
+    {
+      "title": "Owens Corning Preferred Contractor",
+      "description": "Manufacturer certification is what backs the longest warranty available on your roof. It is also the credential that outlasts us — coverage tied to Owens Corning rather than to any contractor still being in business in fifteen years."
+    },
+    {
+      "title": "Straight with your insurer",
+      "description": "We document real damage and work directly with your adjuster so the claim reflects what actually happened. We are paid the same regardless of what your insurance pays, which is exactly why we can afford to be honest about it."
+    },
+    {
+      "title": "Your yard, left clean",
+      "description": "Magnet sweep for nails, debris hauled, landscaping intact. Four separate customer reviews mention cleanup without being asked about it, which is the only kind of proof that counts."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "Easy financing for the unexpected",
+    "description": "A roof rarely fails at a convenient moment. We offer financing options alongside every in-home estimate, so the conversation can be about the right repair rather than only the cheapest one. Ask your project manager when we walk the property.",
+    "cta_text": "Ask about financing",
+    "cta_href": "/contact"
+  },
+  "us_vs_them": {
+    "enabled": true,
+    "headline": "Eastern vs. the truck that showed up after the storm",
+    "us_label": "EASTERN",
+    "them_label": "STORM CHASER",
+    "rows": [
+      { "label": "A local address you can drive to", "us": true, "them": false },
+      { "label": "PA HIC# 017000 and MD HIC# 161389", "us": true, "them": false },
+      { "label": "Owens Corning Preferred Contractor", "us": true, "them": false },
+      { "label": "Written, itemized in-home estimate", "us": true, "them": false },
+      { "label": "Walks the roof with your adjuster", "us": true, "them": false },
+      { "label": "Still here in five years for the warranty", "us": true, "them": false },
+      { "label": "Knocks on doors after a hailstorm", "us": false, "them": true },
+      { "label": "Wants the first insurance check signed over", "us": false, "them": true }
+    ]
+  },
+  "gallery": [
+    {
+      "title": "Two-Layer Tear-Off & Replacement",
+      "location": "Scranton, PA",
+      "photo": "/img/project-scranton.jpg",
+      "alt": "Completed roof replacement on a white two-story home in Scranton, Pennsylvania",
+      "description": "A 30-square two-layer tear-off and replacement, finished in two days. Owens Corning TruDefinition Duration in Slatestone Gray."
+    },
+    {
+      "title": "Hail Damage Replacement",
+      "location": "Dickson City, PA",
+      "photo": "/img/project-dickson-city.jpg",
+      "alt": "Brick home in Dickson City, Pennsylvania after a full roof replacement",
+      "description": "A 53-square tear-off and replacement after hail damage, start to finish in two days. TruDefinition Duration in Driftwood."
+    },
+    {
+      "title": "One-Day Roof Replacement",
+      "location": "Clarks Green, PA",
+      "photo": "/img/project-clarks-green.jpg",
+      "alt": "Split-level home in Clarks Green, Pennsylvania with a newly installed asphalt shingle roof",
+      "description": "A 28-square asphalt replacement completed start to finish in a single day. TruDefinition Duration in Onyx Black."
+    },
+    {
+      "title": "Asphalt Shingle Replacement",
+      "location": "Northeastern Pennsylvania",
+      "photo": "/img/project-gallery-4.jpg",
+      "alt": "Brick colonial home with a newly installed asphalt shingle roof",
+      "description": "Full tear-off and replacement on a brick colonial, with new ridge venting throughout."
+    },
+    {
+      "title": "Roof & Exterior Work",
+      "location": "Northeastern Pennsylvania",
+      "photo": "/img/project-gallery-3.jpg",
+      "alt": "Home at dusk after roof and exterior work by Eastern Residential Solutions",
+      "description": "Roofing and exterior work on a hillside home in the Poconos foothills."
+    },
+    {
+      "title": "Premium Vinyl Siding",
+      "location": "Northeastern Pennsylvania",
+      "photo": "/img/siding-about.jpg",
+      "alt": "Two-story home finished in blue premium vinyl siding with stone accents",
+      "description": "Full siding replacement in premium vinyl, with matching soffit, fascia and seamless gutters."
+    },
+    {
+      "title": "Siding, Soffit & Trim",
+      "location": "Northeastern Pennsylvania",
+      "photo": "/img/siding-hero.jpg",
+      "alt": "Tan sided home with white trim after a full exterior replacement",
+      "description": "New siding, trim and accessories on a two-story home, colour-matched end to end."
+    },
+    {
+      "title": "Seamless Aluminum Gutters",
+      "location": "Northeastern Pennsylvania",
+      "photo": "/img/gutters-about.jpg",
+      "alt": "Seamless aluminum gutters and downspout installed on a white brick home",
+      "description": "Seamless gutters formed on site to the exact measurements of the home, with colour-matched downspouts."
+    }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Full-service solutions",
+    "heading_rest": "for your home's exterior",
+    "subtitle": "High-quality products backed by leading manufacturers, installed by experts, and covered by the best warranties in the industry."
+  }
+}

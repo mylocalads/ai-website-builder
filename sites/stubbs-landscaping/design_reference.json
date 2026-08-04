@@ -1,0 +1,58 @@
+{
+  "sources": {
+    "mode": "template-pinned",
+    "library": null,
+    "urls": [],
+    "note": "The operator pinned the Gilroy/Owl template at invocation, so astro-templates/owl/ is the structural source of truth directly (per the reference-library URL-fragility rule) and no reference URLs were Firecrawled — that scrape would have cost ~$0.02/URL without changing the outcome. Brand tokens below are derived from the client's own site: Firecrawl branding extraction on the homepage plus pixel sampling of the logo PNG. No layout, component, or spacing data was taken from the client's site."
+  },
+  "brand_evidence": {
+    "logo_url": "https://stubbslandscaping.com/wp-content/uploads/2024/01/logo.png",
+    "logo_sampled_colors": ["#F08020", "#A8C832", "#8DC63F"],
+    "homepage_css_colors": {
+      "primary": "#CC3366",
+      "secondary": "#69727D",
+      "accent": "#F58022",
+      "background": "#FFFFFF",
+      "link": "#F58022"
+    },
+    "homepage_fonts": ["Roboto (body)", "system-ui stack (headings)"],
+    "note": "#CC3366 is an unused Elementor kit default, not a brand colour — it appears nowhere in the logo or on the rendered page. Discarded. The real brand pair is orange #F58022/#F08020 plus leaf green #8DC63F."
+  },
+  "palette": {
+    "bg": "#f7f5f0",
+    "surface": "#ffffff",
+    "text": "#16201a",
+    "muted": "#566055",
+    "primary": "#223b14",
+    "on_primary": "#ffffff",
+    "accent": "#f58022",
+    "on_accent": "#16201a",
+    "accent_ink": "#af5000",
+    "focus": "#0057ff"
+  },
+  "contrast_checks": {
+    "text_on_bg": "15.3:1 — AAA",
+    "muted_on_bg": "6.0:1 — AA",
+    "accent_ink_on_bg": "4.9:1 — AA (the raw brand orange is only 2.6:1 as text, so it is fill-only)",
+    "on_accent_on_accent": "6.5:1 — AA (dark ink on the orange button, NOT white, which measures 2.6:1)",
+    "on_primary_on_primary": "12.3:1 — AAA",
+    "accent_on_primary": "4.7:1 — AA (orange eyebrows and ticks on the deep-green bands)"
+  },
+  "typography": { "display": "Montserrat", "body": "Inter" },
+  "typography_rationale": "The client's existing site has no brand typeface — headings fall through to a system-ui stack and body is Roboto — so there is no font to honour. Their wordmark is a heavy geometric uppercase; Montserrat is the closest honest mapping and is the owl template default, which keeps the build consistent with the other NEPA site on this template.",
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "avoid": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography — this client owns real project photos, use those",
+    "all-caps condensed display type at body sizes (the failing pattern on their current site)",
+    "raw brand orange used as body or small text — fails AA at 2.6:1 on white; use accent-ink",
+    "white button labels on the orange fill — 2.6:1; use the dark ink",
+    "auto-rotating testimonial carousels that repeat the same reviews",
+    "burying the 5.0 / 26-review rating below the fold"
+  ],
+  "generated_at": "2026-08-03"
+}

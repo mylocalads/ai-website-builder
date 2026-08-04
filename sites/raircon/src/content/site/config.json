@@ -1,0 +1,150 @@
+{
+  "kind": "config",
+  "business_name": "Raircon Corporation",
+  "legal_name": "Raircon Corporation",
+  "tagline": "South Florida HVAC, Refrigeration & Building Services Since 2002",
+  "phone": "+13058854422",
+  "phone_display": "(305) 885-4422",
+  "address": {
+    "street": "1388 SE 9th Ct",
+    "city": "Hialeah",
+    "state": "FL",
+    "postal": "33010",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "geo": {
+    "lat": 25.8111191,
+    "lng": -80.2618791
+  },
+  "hours": {
+    "monday": "7:00 AM - 6:00 PM",
+    "tuesday": "7:00 AM - 6:00 PM",
+    "wednesday": "7:00 AM - 6:00 PM",
+    "thursday": "7:00 AM - 6:00 PM",
+    "friday": "7:00 AM - 6:00 PM",
+    "saturday": "7:00 AM - 6:00 PM",
+    "sunday": "7:00 AM - 6:00 PM"
+  },
+  "site_url": "https://raircon.vercel.app",
+  "rating": 4.7,
+  "review_count": 219,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 24,
+  "social": {
+    "facebook": "https://www.facebook.com/raircon/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Raircon%20Corporation&query_place_id=ChIJtakHa5-82YgRMDAkCyejfBI"
+  },
+  "logo_url": "/logo-raircon.png",
+  "default_hero_photo": "/img/chiller-install.jpg",
+  "about_photo": "/img/fleet-lineup.png",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Expert technicians",
+      "description": "Our certified technicians bring deep expertise across HVAC, refrigeration, plumbing, electrical and building services, so every project is handled to the same standard."
+    },
+    {
+      "title": "Quality and durability",
+      "description": "We select only proven materials and equipment, so every installation, repair and renovation holds up — which means fewer callbacks and lower maintenance costs for you."
+    },
+    {
+      "title": "Cost-effective by design",
+      "description": "We solve the immediate problem and the long-term one. Our recommendations are built around what costs you less over the life of the system, not what bills the most today."
+    },
+    {
+      "title": "Fast and friendly",
+      "description": "Our services are usually needed without delay. A fleet of 35 GPS-tracked trucks is dispatched from our central Hialeah office, so we get to you quickly and keep the disruption short."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Chiller installation",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/chiller-install.jpg",
+      "alt": "Two Raircon technicians rigging a multi-compressor chiller package into place at a commercial property",
+      "description": "Setting a multi-compressor chiller package on a commercial mechanical deck."
+    },
+    {
+      "title": "Service fleet",
+      "location": "Hialeah, FL",
+      "photo": "/img/fleet-lineup.png",
+      "alt": "A row of white Raircon service vans lettered for refrigeration, air conditioning and plumbing",
+      "description": "Part of the 35-truck fleet dispatched daily across Miami-Dade, Broward and Monroe."
+    },
+    {
+      "title": "Lift station pump-out",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/lift-station.jpg",
+      "alt": "Raircon crew performing a lift station pump-out at a commercial property",
+      "description": "Lift station pump-out and cleaning for a commercial property."
+    },
+    {
+      "title": "Pump system installation",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/pump-system.jpg",
+      "alt": "Newly installed water pump system with manifold piping and control panel",
+      "description": "A completed domestic water pump system with new manifold piping."
+    },
+    {
+      "title": "Portofino Tower",
+      "location": "Miami Beach, FL",
+      "photo": "/img/portofino.webp",
+      "alt": "Portofino Tower high-rise in Miami Beach, a Raircon client property",
+      "description": "One of the high-rise properties Raircon has served on Miami Beach."
+    },
+    {
+      "title": "The Shelborne",
+      "location": "Miami Beach, FL",
+      "photo": "/img/shelborne.webp",
+      "alt": "The Shelborne Beach Resort in Miami Beach, a Raircon client property",
+      "description": "The Shelborne Beach Resort — a long-standing Raircon commercial client."
+    },
+    {
+      "title": "Rooftop condensing unit",
+      "location": "Broward County, FL",
+      "photo": "/img/hvac-unit.png",
+      "alt": "Commercial rooftop condensing unit serviced by Raircon",
+      "description": "Commercial condensing unit maintained on a scheduled service agreement."
+    },
+    {
+      "title": "In the field",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/tech.webp",
+      "alt": "A Raircon technician in a company shirt working on mechanical equipment in a utility room",
+      "description": "Diagnostic and repair work in a building utility room."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "HVAC, MEP",
+    "heading_rest": "& construction",
+    "subtitle": "One licensed contractor for air conditioning, refrigeration, plumbing, electrical, mechanical and construction work — residential and commercial, across Miami-Dade, Broward and Monroe."
+  }
+}

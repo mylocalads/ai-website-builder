@@ -1,0 +1,60 @@
+{
+  "kind": "our-work",
+  "intro": "Live warehouses, manufacturing plants and distribution centers across the Mid-Atlantic — joint repair, full-depth restoration, coating systems and certified line marking, sequenced so the rest of the floor kept running.",
+  "projects": [
+    {
+      "title": "Full-depth removal and replacement",
+      "photo": "/img/joint-before.jpg",
+      "alt": "Excavator breaking out failed concrete in a facility yard",
+      "description": "Section loss taken back to sound concrete before placement. Where the slab has genuinely lost load capacity, a flexible repair is the wrong answer and rigid restoration is the right one."
+    },
+    {
+      "title": "Placement and finish",
+      "photo": "/img/joint-after.jpg",
+      "alt": "Crew placing and screeding new concrete from a mixer truck",
+      "description": "The same area rebuilt and finished flush with the surrounding slab so wheel loads transfer across the joint instead of hammering an exposed edge."
+    },
+    {
+      "title": "Aisle restriping — before",
+      "photo": "/img/marking-hero.jpg",
+      "alt": "Warehouse aisle with worn white floor markings before restriping",
+      "description": "Worn markings in a live distribution aisle. Faded traffic lanes become a safety finding long before they become a cosmetic one."
+    },
+    {
+      "title": "Aisle restriping — after",
+      "photo": "/img/marking-after.jpg",
+      "alt": "The same warehouse aisle with fresh yellow line marking",
+      "description": "Traffic lanes, pedestrian routes and work zones reinstated in high-visibility yellow using coatings rated for forklift and pallet-jack traffic."
+    },
+    {
+      "title": "Resin coating over prepared substrate",
+      "photo": "/img/coatings-hero.jpg",
+      "alt": "Technician applying a resin floor coating in a manufacturing bay",
+      "description": "Coating going down after profiling and moisture assessment — the step that decides whether the floor is still bonded in three years."
+    },
+    {
+      "title": "Finished seamless floor",
+      "photo": "/img/coatings-after.jpg",
+      "alt": "Finished seamless industrial floor coating with yellow guard rails",
+      "description": "Seamless, cleanable and chemical-resistant, back under forklift traffic on the agreed window."
+    },
+    {
+      "title": "Coated pedestrian walkway",
+      "photo": "/img/gallery-slab.jpg",
+      "alt": "Blue coated walkway ramp inside a distribution center",
+      "description": "Colour-coded pedestrian route with a slip-resistant finish, separating foot traffic from the forklift lane."
+    },
+    {
+      "title": "Loading dock edge repair",
+      "photo": "/img/gallery-dock.jpg",
+      "alt": "Technician repairing a concrete dock edge at a loading bay",
+      "description": "Impact-damaged dock edges rebuilt one bay at a time so the door rotation never fully stopped."
+    },
+    {
+      "title": "Interior slab repair in a live plant",
+      "photo": "/img/services-2.jpg",
+      "alt": "Technician finishing a concrete repair along a warehouse wall",
+      "description": "Spall and delamination repair worked around racking and production, with the surrounding area handed straight back."
+    }
+  ]
+}

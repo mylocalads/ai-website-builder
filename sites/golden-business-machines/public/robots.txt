@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://golden-business-machines.vercel.app/sitemap-index.xml

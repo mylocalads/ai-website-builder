@@ -1,0 +1,86 @@
+{
+  "kind": "config",
+  "business_name": "Gilroy Roofers",
+  "legal_name": "Gilroy Construction",
+  "tagline": "NEPA's Trusted Roofing Specialist",
+  "phone": "+15708290239",
+  "phone_display": "(570) 829-0239",
+  "email": "gilroyroofing@gmail.com",
+  "address": {
+    "street": "575 Shawnee St",
+    "city": "Wilkes-Barre",
+    "state": "PA",
+    "postal": "18706",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2323094,
+    "lng": -75.9355476
+  },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "site_url": "https://gilroy-roofing.vercel.app",
+  "rating": 4.7,
+  "review_count": 91,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 54,
+  "social": {},
+  "logo_url": "/logo-gilroy.png",
+  "default_hero_photo": "https://gilroyroofers.com/wp-content/uploads/elementor/thumbs/6388050411ddd19a7275c88e-scaled-rlaet0qwhq9ti8th8sgl5u1o6q3wjgympeqcuxk2le.jpeg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Owens Corning Platinum Preferred",
+      "description": "One of the few contractors in NEPA certified to offer a 50-year material and labor warranty."
+    },
+    {
+      "title": "Family owned since 1972",
+      "description": "Three generations in the Wyoming Valley. We are not going anywhere after the storm passes."
+    },
+    {
+      "title": "No payment until you're satisfied",
+      "description": "You do not pay a dollar until the project is 100% complete and you have signed off on it."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Roof Replacement",
+    "heading_rest": "& More",
+    "subtitle": "Residential and commercial work across the Wyoming Valley, backed by a 50-year material and labor warranty."
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Wilkes-Barre & Scranton, PA — Locally Owned Since 1969",
+    "headline": "On Site In Four Hours, Not Four Days",
+    "subheadline": "Golden Business Machines is Northeastern Pennsylvania's Canon dealer and managed IT partner — copiers, printers, wide format, production print, network security and document management, supported by technicians who dispatch from five offices in this valley.",
+    "cta_text": "Get My Free On-Site Consultation",
+    "cta_href": "/book",
+    "video_link_text": "Why businesses here stay with us",
+    "video_link_href": "/about",
+    "photo": "/img/hero-office-mfp.jpg",
+    "trust_badges": [
+      { "label": "4-Hour Response", "sublabel": "On-site guarantee" },
+      { "label": "57 Years", "sublabel": "Locally owned since 1969" },
+      { "label": "Canon Authorized", "sublabel": "Exclusive area dealer" }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Technicians on site in 4 hours or less", "icon": "clock" },
+    { "text": "Five offices across NEPA and Central PA", "icon": "home" },
+    { "text": "Print and IT under one contract", "icon": "shield" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Approach",
+    "headline": "One Company For The Copier And The Network It Runs On",
+    "body": "When the print fleet belongs to one vendor and the network belongs to another, every problem starts with an argument about whose problem it is. GBM does both. The multifunction device, the switch it plugs into, the firewall protecting it and the document workflow coming off it are all our responsibility — so when something stops working, you make one call and it gets fixed.",
+    "cta_text": "Talk to our team",
+    "cta_href": "/contact",
+    "icon": "shield"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Problem Solved — The GBM Service Standard",
+    "intro": "Our motto is two words, and the whole company is built to earn them. Whether you run three devices in one office or a fleet across six buildings, the standard is the same: prevent what we can, respond fast to what we can't, and never hand you off.",
+    "blocks": [
+      {
+        "title": "We monitor before you notice",
+        "body": "Real-time monitoring watches your devices and network for the problems that turn into downtime — toner about to run out, a failing component, a security patch that hasn't landed. Most of what we fix, you never had to report.",
+        "icon": "shield"
+      },
+      {
+        "title": "Your account is decided here",
+        "body": "GBM has been headquartered on Church Street in Kingston since 1969. Pricing, escalation and scheduling are settled by people in this valley, not routed to a regional office that has never seen your building.",
+        "icon": "home"
+      },
+      {
+        "title": "You can see what you spend",
+        "body": "Managed print tracks volume and cost per page across every device on the network. No minimum-page games, no surprise overage math — just the number and where it came from.",
+        "icon": "wallet"
+      }
+    ],
+    "steps_title": "What working with GBM looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Assessment",
+        "body": "We walk your offices, inventory every device, and pull actual print volumes. You find out what your current setup really costs before anyone quotes anything."
+      },
+      {
+        "title": "Right-sizing",
+        "body": "Devices matched to the work each floor actually does, plus the software — uniFLOW, PaperCut, Laserfiche — that turns them into workflow rather than just hardware."
+      },
+      {
+        "title": "Ongoing service",
+        "body": "Automatic toner, preventative maintenance, help desk, and a technician on site within four hours when something needs hands on it."
+      }
+    ],
+    "guarantee": {
+      "title": "Technicians on site in four hours or less, guaranteed",
+      "body": "We know your time is money. That is why we run real-time monitoring to catch printing problems as they happen — before they slow your office down — and why, when a device does need a technician, ours will be at your door in four hours or less.",
+      "cta_text": "Request service",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Takes Three Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free on-site consultation",
+        "icon": "clipboard",
+        "body": "We come to you, inventory what you have, and pull your real print and support volumes."
+      },
+      {
+        "label": "Step Two",
+        "title": "A written proposal",
+        "icon": "document",
+        "body": "Devices, software, service terms and cost per page — in writing, with the assumptions shown."
+      },
+      {
+        "label": "Step Three",
+        "title": "Install and support",
+        "icon": "calendar",
+        "body": "We deliver, install, train your staff, and take over monitoring, supplies and service from day one."
+      }
+    ],
+    "cta_text": "Book my consultation",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Golden Business Machines",
+    "headline": "The Office Technology Company Down The Road",
+    "body": "Founded by Joseph R. Bradley in 1969, GBM is a locally owned business headquartered in Kingston with sales and service offices in Edwardsville, Moosic, Hazleton and Williamsport. We became one of Canon's first authorized dealers in the nation and were among this area's first Microsoft Solutions Providers. Over 45 sales and service professionals now cover Northeastern and Central Pennsylvania — close enough to be at your office the same morning you call.",
+    "checklist": [
+      "Locally owned and headquartered in Kingston since 1969",
+      "Five sales and service locations across NEPA and Central PA",
+      "Exclusive authorized Canon dealer for copiers, presses and wide format",
+      "Authorized HP reseller and service center, Microsoft Certified",
+      "Over 45 sales and service professionals"
+    ],
+    "photo": "/img/office-team.jpg",
+    "photo_alt": "A working office of the kind GBM equips and supports across Northeastern Pennsylvania",
+    "photo_cutout": false,
+    "cta_text": "More about GBM",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Why It Matters Who You Buy From",
+    "headline": "Office Copiers & Managed IT In Wilkes-Barre, Scranton & Northeastern PA",
+    "paragraphs": [
+      "Most complaints about office technology are not about the hardware. They are about what happens after the contract is signed — the rep who stops returning calls, the service ticket that takes days to land, the lease that auto-renews because nobody flagged the notice window, the per-page rate that quietly costs more than the machine.",
+      "GBM has been answering that in the same valley since 1969. Our technicians dispatch from Kingston, Edwardsville, Moosic, Hazleton and Williamsport, which is why we can commit to four hours on site rather than a vague service window. Our managed print reporting shows you volume and cost per page by device, so print spend becomes something you manage. And because we handle the network as well as the print fleet, there is nobody else to call when the two do not agree.",
+      "We serve businesses in Wilkes-Barre, Scranton, Pittston, Kingston, Stroudsburg, Hazleton, Bloomsburg, Lewisburg, Williamsport and the surrounding areas — across healthcare, manufacturing, government, education, legal and non-profit."
+    ],
+    "checklist": [
+      "Canon copiers, MFPs, digital presses and wide format",
+      "Managed IT: monitoring, security, backup and disaster recovery",
+      "Managed print services with real cost-per-page reporting",
+      "Laserfiche document management and workflow automation",
+      "HP computers, servers and network hardware",
+      "Pay-as-you-go or pre-paid IT hours that never expire"
+    ],
+    "image": "/img/office-interior.jpg",
+    "image_alt": "A modern office corridor of the kind GBM supports across Northeastern Pennsylvania",
+    "image_position": "right",
+    "cta_text": "Get my free consultation",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "How fast can a technician get to us?",
+      "a": "Four hours or less. We dispatch from five offices — Kingston, Edwardsville, Moosic, Hazleton and Williamsport — so a technician is normally within an hour's drive of your building rather than being routed in from another region."
+    },
+    {
+      "q": "Do you handle both the copiers and our IT?",
+      "a": "Yes, and that is the point. GBM supplies and services the Canon print fleet and also provides managed IT — workstations, servers, network support, security, backup and disaster recovery. One vendor is responsible for the device and the network it depends on."
+    },
+    {
+      "q": "How does managed print actually save money?",
+      "a": "We meter every device on the network and report volume and cost per page, then right-size the fleet to what each area actually prints. Toner ships automatically, maintenance is preventative rather than reactive, and you get the reporting to see where the spend is going. Some businesses put up to 3% of their annual budget into printing without ever measuring it."
+    },
+    {
+      "q": "What does IT support cost?",
+      "a": "We offer both pay-as-you-go and pre-paid support plans. Pre-paid plans are discounted, tiered by the number of hours purchased, and the hours never expire — when you run out we renew you at the same level or move you up or down as you see fit."
+    },
+    {
+      "q": "Which brands do you carry?",
+      "a": "GBM is an exclusive authorized Canon dealer for color copiers, digital presses, wide format printers and MFPs, and an authorized Hewlett-Packard reseller and service center for computers and servers. We are Microsoft Certified and partner with Laserfiche, uniFLOW, PaperCut, Cisco, EFI and N-able."
+    },
+    {
+      "q": "Do you work with healthcare, government and education?",
+      "a": "Yes. Those are among our core verticals along with manufacturing, legal and non-profit. Document management for HIPAA-sensitive records and government purchasing contracts are both areas we support regularly."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "Wilkes-Barre, Scranton, Kingston, Hazleton, Williamsport, Stroudsburg and the wider Pocono region, plus Pittston, Bloomsburg, Lewisburg and the surrounding Northeastern and Central Pennsylvania communities."
+    }
+  ]
+}

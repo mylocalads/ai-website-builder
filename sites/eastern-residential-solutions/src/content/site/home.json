@@ -1,0 +1,256 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Scranton, PA",
+    "headline": "The roofer who calls back",
+    "subheadline": "Roof replacement and repair, siding, and seamless gutters across Northeastern Pennsylvania and Maryland. Owens Corning Preferred Contractor, 5.0 stars across 31 Google reviews, and a real address in Jessup you can drive to.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/hero-home.jpg",
+    "video_link_text": "How we handle a storm damage claim",
+    "video_link_href": "/services/storm-damage-insurance-claims",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5,
+        "label": "5.0 out of 5",
+        "sublabel": "31 Google reviews"
+      }
+    ],
+    "quote_card": {
+      "quote": "They are the only company who called back when they said they would and started the work when they said they would. I found them to be extremely reliable and well prepared.",
+      "author": "Jo Anne M., Dickson City",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 31
+    }
+  },
+  "promise_bar": [
+    "Free in-home estimate",
+    "Owens Corning Preferred Contractor",
+    "We work directly with your insurer",
+    "Financing available"
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "You will hear back from us",
+    "body": "Ask around Lackawanna County and you will hear the same story about roofers: nobody answers, nobody returns the message, and the estimate never arrives. We built our schedule around not being that company. You get a person, a date, and a written number — and if we cannot help, we say so instead of going quiet.",
+    "cta_text": "Book a free estimate",
+    "cta_href": "/book",
+    "image": "/img/project-clarks-green.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "Storm Damage & Insurance",
+    "headline": "How we handle a storm damage claim",
+    "intro": "Hail, wind, and tree damage are where homeowners lose the most money — and where most contractors stop being useful. Here is exactly what we do, and why each part matters.",
+    "blocks": [
+      {
+        "title": "We document what actually happened",
+        "body": "A full inspection of every slope before anyone disputes anything. Undocumented damage is damage your policy will not pay for, so we photograph it while the date of loss is still clear.",
+        "icon": "document",
+        "image": "/img/project-dickson-city.jpg"
+      },
+      {
+        "title": "We work directly with your insurance company",
+        "body": "This is the part that saves you the time and the frustration. Our project managers deal with the carrier, so you are not the one translating between an adjuster and a roofer.",
+        "icon": "shield",
+        "image": "/img/project-scranton.jpg"
+      },
+      {
+        "title": "We are paid the same either way",
+        "body": "Our fee does not change based on what your insurer pays out. That is precisely why our project managers can push for the reimbursement you are actually owed without it being a sales tactic — a point one of our customers made better than we can.",
+        "icon": "umbrella",
+        "image": "/img/project-gallery-4.jpg"
+      },
+      {
+        "title": "We finish it on time and on budget",
+        "body": "Hail, wind, or tree damage, the repair gets done to your satisfaction with solutions built to last. Most of our storm replacements are complete in one to two days once materials are on site.",
+        "icon": "home",
+        "image": "/img/project-gallery-3.jpg"
+      }
+    ],
+    "steps_title": "What that looks like on your calendar",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Free in-home estimate",
+        "body": "We walk the property, inspect every slope, and sit down with you afterward to go through what we found and what it costs."
+      },
+      {
+        "title": "You file — we hand you the documentation",
+        "body": "You contact your carrier with a photo record and a clear date of loss instead of a guess about when the damage happened."
+      },
+      {
+        "title": "We deal with the adjuster",
+        "body": "Our project managers work directly with your insurance company so the approved scope reflects the damage that is actually there."
+      },
+      {
+        "title": "We build it and clean up behind us",
+        "body": "Tear-off, replacement, and a cleanup pass that takes the debris and the nails with it. Most roofs go up in one to two days."
+      }
+    ],
+    "guarantee": {
+      "title": "Owens Corning Preferred Contractor",
+      "body": "Owens Corning certifies the contractors it will stand behind, and that certification is what lets us offer you the longest roof warranty available. It matters because manufacturer-backed coverage does not depend on any contractor still being in business fifteen years from now — including us.",
+      "cta_text": "See our roofing services",
+      "cta_href": "/services/roof-replacement-repair",
+      "badge_image": "/img/badge-owens-corning.png",
+      "badge_alt": "Owens Corning Preferred Contractor certification badge"
+    }
+  },
+  "process_steps": {
+    "headline": "Four steps, no mystery",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Call or book online",
+        "body": "Reach a person. We answer around the clock, which matters when water is already coming in."
+      },
+      {
+        "label": "Step Two",
+        "title": "One-of-a-kind in-home estimate",
+        "body": "We inspect the property, then sit down with you and go through the findings and the numbers in person."
+      },
+      {
+        "label": "Step Three",
+        "title": "Options for every budget",
+        "body": "Written, itemized, with financing available. You know exactly what you are getting for your money before anything is signed."
+      },
+      {
+        "label": "Step Four",
+        "title": "We install it and clean up",
+        "body": "Our crews tear off, install, and sweep the property before they leave. Most roofs are finished in one to two days."
+      }
+    ],
+    "cta_text": "Start with a free estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Eastern",
+    "headline": "The residential arm of a commercial roofing company",
+    "body": "Eastern Residential Solutions is a division of Eastern Roofing Systems Inc., one of the largest and most respected commercial roofing companies on the east coast. That is not a marketing line — it is why a homeowner in Carbondale gets crews, warranties, and back-office discipline built for far bigger buildings. We work out of 1 Keystone Place in Jessup and out of a second office in Baltimore, and everything we install is something we will still be around to warranty.",
+    "checklist": [
+      "1 Keystone Place, Jessup PA — plus a Maryland office in Baltimore",
+      "PA HIC# 017000 and MD HIC# 161389",
+      "Owens Corning Preferred Contractor",
+      "5.0 stars across 31 Google reviews",
+      "Free in-home estimates with financing available"
+    ],
+    "photo": "/img/about-team.jpg",
+    "photo_alt": "The Eastern Residential Solutions office at 1 Keystone Place in Jessup, Pennsylvania",
+    "cta_text": "Meet the team",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Roofing in NEPA",
+    "headline": "What a Northeastern Pennsylvania roof is up against",
+    "paragraphs": [
+      "Roofs in Lackawanna, Luzerne, Wayne and Pike counties take a specific kind of beating. Freeze-thaw cycling works water into every seam and then widens it overnight. Ice dams build at the eaves on homes with older attic insulation and push meltwater back under the shingles. Summer hail and straight-line wind add their own damage on top, and most of it does not announce itself until there is a stain on a bedroom ceiling.",
+      "The harder problem is usually the claim, not the roof. Homeowners tell the same story: an adjuster who moves fast, an estimate that comes back short, and nobody in their corner who can explain what should have been on it. That is the part we handle directly. Our project managers deal with your carrier, and because our fee is the same regardless of what the policy pays, there is no incentive on our side to inflate anything — only to make sure the real damage is on the paperwork.",
+      "We work across Lackawanna, Luzerne, Wayne, Pike, Wyoming, Monroe and Susquehanna counties from our office in Jessup, and across Baltimore City and seventeen Maryland counties from our Baltimore office. If your roof is showing its age or your neighborhood just took a storm, start with a free in-home estimate — it costs nothing and you get a straight answer either way."
+    ],
+    "checklist": [
+      "Free in-home estimate with options for every budget",
+      "We work directly with your insurance company on storm claims",
+      "Owens Corning Preferred Contractor — the longest warranty available",
+      "Most replacements complete in one to two days",
+      "Roofing, siding, soffit, fascia and seamless gutters from one crew"
+    ],
+    "image": "/img/project-scranton.jpg",
+    "image_alt": "A completed two-layer roof replacement on a home in Scranton, Pennsylvania",
+    "image_position": "right",
+    "review": {
+      "name": "Lori T., Scranton",
+      "text": "Their project managers have no problem helping you navigate through insurance claims and ensuring you are getting a fair deal from your insurance company. They do not have to do this as they are getting paid the same amount regardless of insurance payment.",
+      "rating": 5,
+      "source": "Customer review"
+    },
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Jim B.",
+      "location": "Scranton, PA",
+      "text": "We had a remarkable experience with Eastern Residential Solutions. Our first meeting was with a company representative who did a complete inspection of our roof and afterward sat down with us to discuss the fees and answer any questions. The crew worked quickly and completed the job in 2 days. They left the job site as clean or cleaner than they found it. Would use Eastern again without hesitation.",
+      "rating": 5
+    },
+    {
+      "name": "Lori T.",
+      "location": "Scranton, PA",
+      "text": "The customer service provided by Eastern is second to none. From the first day you call for services until the day your project is completed you will feel like you are their only customer. Their project managers have no problem helping you navigate through insurance claims and ensuring you are getting a fair deal. Our roof was complete in one day. Eastern's warranty is so comprehensive that they would be out of business if their work was anything less than perfect. Thank you Eastern for giving us peace of mind and a beautiful roof.",
+      "rating": 5
+    },
+    {
+      "name": "Jo Anne M.",
+      "location": "Dickson City, PA",
+      "text": "It went excellent. They are the only company who called back when they said they would and started the work when they said they would. I found them to be extremely reliable and well prepared. They showed up, cleaned up, and did everything perfectly. I would highly recommend them to others.",
+      "rating": 5
+    },
+    {
+      "name": "Maureen & Ernie",
+      "location": "Clarks Summit, PA",
+      "text": "Thank you for doing such a quality job on our roof replacement. Both you and your associates were very efficient, friendly, and did an excellent job on cleaning up. We will not hesitate to recommend your company to all our friends and neighbors. It was our pleasure to work with you from the very beginning through a completed job!",
+      "rating": 5
+    },
+    {
+      "name": "Marisa E.",
+      "location": "Clarks Green, PA",
+      "text": "It was impeccable as well as the workmanship. They were very very prompt, time conscious, super clean and my yard was left very neat.",
+      "rating": 5
+    },
+    {
+      "name": "Jim B.",
+      "location": "Monroe Township, PA",
+      "text": "I was very pleased with their service, very efficient and did quality work. They also cleaned up the area, took all the debris away and followed up on any issues that I had.",
+      "rating": 5
+    },
+    {
+      "name": "Kim J.",
+      "location": "Scott Twp., PA",
+      "text": "We couldn't be more pleased with our roof installation experience. Eastern was professional, extremely responsive, timely, fast, and organized.",
+      "rating": 5
+    },
+    {
+      "name": "Brennan & Brennan",
+      "location": "Carbondale, PA",
+      "text": "Excellent job done very quickly. From the salesman/job estimator down to the roofers and clean up crews, everyone did a great job.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does an estimate cost, and am I committing to anything?",
+      "a": "Nothing, and no. Our in-home estimate is free and carries no obligation. We inspect the property, then sit down with you and go through what we found and what each option costs — because we would rather you understand exactly what you are getting for your money than sign something you have not read."
+    },
+    {
+      "q": "Someone knocked on my door after the storm and said I need a new roof. Do I?",
+      "a": "Maybe, and maybe not. After hail or high wind, crews from out of the area work NEPA neighborhoods, and not all of them are careful about what they tell homeowners. Get a second opinion from a company with a local address you can drive to. Ours is 1 Keystone Place in Jessup, and the second opinion is free."
+    },
+    {
+      "q": "Do you handle the insurance claim, or do I?",
+      "a": "You file the claim; we do the heavy lifting after that. We work directly with your insurance company so you are not stuck translating between an adjuster and a roofer. Our fee does not change based on what the policy pays, so our only job in that conversation is making sure the damage that is actually there ends up on the paperwork."
+    },
+    {
+      "q": "How long does a roof replacement take?",
+      "a": "Most of our residential replacements are finished in one to two days once materials are on site. A 28-square roof in Clarks Green went start to finish in a single day; a 53-square hail replacement in Dickson City took two. Steep pitch, multiple layers, or decking that needs re-sheeting can add time, and we tell you up front when we expect that."
+    },
+    {
+      "q": "What warranty comes with the roof?",
+      "a": "We are an Owens Corning Preferred Contractor, which is what allows us to offer the longest warranty available on the materials. That coverage is backed by the manufacturer rather than by us alone, so it does not depend on any contractor still being in business years from now. Your project manager goes through the specific warranty terms with you before work begins."
+    },
+    {
+      "q": "Do you offer financing?",
+      "a": "Yes. A roof rarely fails at a convenient moment, so we offer financing options alongside every estimate and options at more than one price point. Ask your project manager during the in-home visit and we will lay out what is available."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "From Jessup we serve Lackawanna, Luzerne, Wayne, Pike, Wyoming, Monroe and Susquehanna counties. From our Baltimore office we serve Baltimore City plus Allegany, Anne Arundel, Baltimore, Calvert, Caroline, Carroll, Cecil, Charles, Frederick, Dorchester, Harford, Garrett, Howard, Kent, Montgomery, Prince George's and Queen Anne's counties."
+    },
+    {
+      "q": "What will my yard look like when you leave?",
+      "a": "Clean. It is the thing our customers bring up most without being asked — debris hauled, nails swept, landscaping intact. One Scranton homeowner put it as leaving the job site as clean or cleaner than they found it, and that is the standard we hold the crews to."
+    }
+  ]
+}

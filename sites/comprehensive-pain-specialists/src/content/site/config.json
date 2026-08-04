@@ -1,0 +1,96 @@
+{
+  "kind": "config",
+  "business_name": "Comprehensive Pain Specialists",
+  "tagline": "Pain Management in Wilkes-Barre, PA",
+  "phone": "+15702323920",
+  "phone_display": "(570) 232-3920",
+  "address": {
+    "street": "1177 PA-315, Dolphin Plaza",
+    "city": "Wilkes-Barre",
+    "state": "PA",
+    "postal": "18702",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2594909, "lng": -75.8197402 },
+  "hours": {
+    "monday": "8:00 AM – 4:00 PM",
+    "tuesday": "8:00 AM – 4:00 PM",
+    "wednesday": "8:00 AM – 4:00 PM",
+    "thursday": "8:00 AM – 4:00 PM",
+    "friday": "8:00 AM – 4:00 PM"
+  },
+  "site_url": "https://comprehensive-pain-specialists.vercel.app",
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/share/194Gjvo4XJ/",
+    "instagram": "https://www.instagram.com/comprehensive_pain_specialist"
+  },
+  "logo_url": "/logo-cps.png",
+  "default_hero_photo": "/img/hero.jpg",
+  "about_photo": "/img/treat-symptoms.jpg",
+  "team_photo": "/img/team.jpg",
+  "team_members": [
+    {
+      "name": "Youssef Josephson, D.O.",
+      "role": "Board-Certified Pain Management Physician",
+      "photo": "/img/dr-josephson.jpg",
+      "bio": "Known to patients as Dr. Joe. Board-certified in Pain Medicine and Physical Medicine & Rehabilitation, he treats chronic and acute pain including back pain, neck pain, joint pain, nerve pain, arthritis, fibromyalgia, CRPS, and post-surgical pain."
+    },
+    {
+      "name": "Teresa Clark, MSN, CRNP",
+      "role": "Certified Registered Nurse Practitioner",
+      "photo": "/img/teresa-clark.jpg",
+      "bio": "Teresa works with patients between procedures on medication management, follow-up, and the day-to-day work of keeping a pain plan on track."
+    },
+    {
+      "name": "Thomas Haley, D.O.",
+      "role": "Physician",
+      "photo": "/img/thomas-haley.jpg",
+      "bio": "Dr. Haley sees patients across the full range of chronic pain conditions treated at the practice."
+    }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    { "name": "Aetna Better Health", "logo_url": "/img/insurers/aetna.jpg" },
+    { "name": "Cigna", "logo_url": "/img/insurers/cigna.jpg" },
+    { "name": "Humana", "logo_url": "/img/insurers/humana.jpg" },
+    { "name": "UnitedHealthcare", "logo_url": "/img/insurers/unitedhealthcare.jpg" },
+    { "name": "Medicare", "logo_url": "/img/insurers/medicare.jpg" },
+    { "name": "TRICARE", "logo_url": "/img/insurers/tricare.jpg" }
+  ],
+  "why_choose_us": [
+    {
+      "title": "Same-day appointments available",
+      "description": "Most people wait months to get in front of a pain specialist. We accept same-day appointments and we are actively taking new patients — call (570) 232-3920 and ask."
+    },
+    {
+      "title": "A board-certified pain physician",
+      "description": "Dr. Youssef Josephson, D.O. is board-certified in Pain Medicine and Physical Medicine & Rehabilitation. You are seeing a specialist, not a general practice that also treats pain."
+    },
+    {
+      "title": "Procedures, not just prescriptions",
+      "description": "Spinal cord stimulation, radiofrequency ablation, epidural and facet injections, nerve blocks, Vertiflex, Intracept, MILD, prolotherapy — roughly forty interventional options, so the plan fits the diagnosis."
+    },
+    {
+      "title": "You will be listened to",
+      "description": "Every visit starts by finding the actual source of your pain. Patients arrive here after being dismissed elsewhere; that is not how a first appointment goes at this practice."
+    }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": { "enabled": false, "us_label": "US", "them_label": "THEM", "rows": [] },
+  "gallery": [],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Conditions We Treat",
+    "heading_lead": "Interventional care",
+    "heading_rest": "for chronic pain",
+    "subtitle": "Back, neck, joint, and nerve pain — plus the complex conditions other practices send here. Serving Wilkes-Barre and the Wyoming Valley."
+  }
+}

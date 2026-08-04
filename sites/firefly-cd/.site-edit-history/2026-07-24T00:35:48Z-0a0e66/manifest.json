@@ -1,0 +1,21 @@
+{
+  "batch_id": "2026-07-24T00:35:48Z-0a0e66",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "Rewrite about.json#story to weave in mission language and all four company values (People First, Leadership, Excellence/Championship Mindset, Kaizen/Continuous Improvement) without lengthening or losing SEO keywords. Text renders on both home About Firefly and About-page About Us sections.",
+  "diff_spec": [
+    { "op": "SET", "path": "src/content/site/about.json", "field": "story", "value": "Firefly Contractors ＆ Design is a locally owned, family-run remodeling company based in Otis Orchards, Washington, on a mission to revolutionize residential construction by putting people first and delivering excellence on every project. For 15 years we've helped Spokane-area homeowners protect and reinvent their homes — full roof replacements, new siding, and complete kitchen and bathroom remodels — with a licensed, insured, and bonded team that treats your home like our own.\n\nOur championship mindset shapes every decision: straight talk, clean job sites, and craftsmanship you can point at years later. Whether you need storm-damaged shingles replaced or you're ready to reimagine the way your kitchen lives, Firefly leads with thoughtful design, skilled trades, and a commitment to continuous improvement — all backed by a written workmanship warranty and a name your neighbors know." }
+  ],
+  "files_touched": ["src/content/site/about.json"],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_6mL5vrTuGQKeuDq7QjvYdunk7eTc",
+    "url": "https://firefly-7363duqvz-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://firefly-cd.vercel.app",
+    "at": "2026-07-24T00:36:22Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

@@ -1,0 +1,221 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving The Wyoming Valley Since 1972",
+    "headline": "You Don't Pay Until Your Roof Is Done!",
+    "subheadline": "A family-owned Wilkes-Barre roofing company, not a storm-chaser passing through. We quote it, we do it, we clean up after ourselves \u2014 and we don't take a dollar until the job is 100% complete and you're satisfied.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "video_link_text": "What makes Gilroy different?",
+    "video_link_href": "/about",
+    "quote_card": {
+      "quote": "They completed the job in a day and a half, left no mess behind, and charged me exactly what he quoted.",
+      "author": "Sarah \u2014 Google Review",
+      "cta_text": "Get My Free Estimate!",
+      "cta_href": "/book",
+      "rating": 4.7,
+      "review_count": 91
+    },
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.7,
+        "label": "4.7 Rating",
+        "sublabel": "91 Google reviews"
+      },
+      {
+        "mark": "bbb",
+        "label": "A+ Rated",
+        "sublabel": "Better Business Bureau"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Family owned since 1972",
+      "icon": "home"
+    },
+    {
+      "text": "Owens Corning Platinum Preferred",
+      "icon": "award"
+    },
+    {
+      "text": "No payment until you're satisfied",
+      "icon": "wallet"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "Pay When It's Done",
+    "body": "Plenty of roofers want a deposit before a single shingle comes off. We have never worked that way. You get a free estimate, we do the work, we clean up, and you look at it. If you are not satisfied, we are not finished. That has been the arrangement for over fifty years in the Wyoming Valley, and it is the reason most of our work comes from neighbors of people we have already worked for.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Roof Replacement Done Right",
+    "intro": "Every Gilroy job runs the same way, whether it is a full commercial rubber roof or a single storm repair. No surprises, no hidden fees, and no chasing us for answers.",
+    "blocks": [
+      {
+        "title": "We handle the insurance claim",
+        "body": "Storm damage is the part homeowners dread most. We document the damage properly, deal with your adjuster, and keep the claim moving so you are not the one on the phone fighting for coverage.",
+        "icon": "umbrella"
+      },
+      {
+        "title": "50-year material and labor warranty",
+        "body": "As an Owens Corning Platinum Preferred Contractor we can back the work with a 50-year material and labor warranty \u2014 coverage most contractors in the area are not certified to offer.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "Clean-up is part of the job, not an afterthought",
+    "steps": [
+      {
+        "title": "Debris straight to the dumpster",
+        "body": "Tear-off is cleared as we go, not left piled in your driveway."
+      },
+      {
+        "title": "Magnet sweep for nails",
+        "body": "The whole yard and driveway, before we pack up."
+      },
+      {
+        "title": "A final walk with you",
+        "body": "We check the property together before we leave."
+      }
+    ],
+    "guarantee": {
+      "title": "100% satisfaction, or we're not finished",
+      "body": "No hidden fees, no surprises, and no invoice until you have looked at the work and told us you are happy with it. If something is not right, we come back and make it right.",
+      "cta_text": "Talk to Ed",
+      "cta_href": "/contact",
+      "badge_alt": "Gilroy Roofers 100% satisfaction guarantee",
+      "badge_image": "/badge-satisfaction.svg"
+    },
+    "steps_icon": "broom"
+  },
+  "process_steps": {
+    "headline": "Our Roof Replacement Process",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free inspection & estimate",
+        "icon": "clipboard",
+        "body": "We come out, get on the roof, and put a written number in your hand."
+      },
+      {
+        "label": "Step Two",
+        "title": "Installation or repair",
+        "icon": "hammer",
+        "body": "Most residential roofs are finished in a day to a day and a half."
+      },
+      {
+        "label": "Step Three",
+        "title": "Full clean-up, then you pay",
+        "icon": "broom",
+        "body": "Debris cleared, yard swept for nails, and no invoice until you're happy."
+      }
+    ],
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Gilroy Roofers",
+    "headline": "Three Generations Of Roofers",
+    "body": "Ed Gilroy Sr. started this business in 1972. His son Ed Jr. runs it today, and still shows up to do estimates himself. In fifty-four years we have served more than 10,000 customers across the Wyoming Valley, held an A+ rating with the Better Business Bureau, and never asked anyone to pay before the work was finished.",
+    "checklist": [
+      "Family owned and operated since 1972",
+      "A+ rated with the Better Business Bureau",
+      "Owens Corning Platinum Preferred Contractor",
+      "Residential and commercial, insurance work welcome",
+      "Free estimates and all major credit cards accepted"
+    ],
+    "photo_alt": "A shingle-roofed family home of the kind we work on across the Wyoming Valley",
+    "photo_cutout": false,
+    "photo": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1400&q=70",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "headline": "Roof Replacement In Wilkes-Barre",
+    "paragraphs": [
+      "Northeastern Pennsylvania is hard on roofs. Freeze-thaw works at flashing all winter, ice dams back water up under shingles, and summer storms take their turn at the rest.",
+      "We install asphalt and rubber systems specified for those conditions, backed by a 50-year material and labor warranty. Most residential replacements are done in a day to a day and a half."
+    ],
+    "checklist": [
+      "Asphalt and rubber roofing, residential and commercial",
+      "Storm and leak repair with insurance claim handling",
+      "Gutter installation, repair, and attic venting",
+      "Most residential roofs completed in under two days"
+    ],
+    "image": "https://images.unsplash.com/photo-1635424709845-3a85ad5e1f5e?auto=format&fit=crop&w=1400&q=70",
+    "image_alt": "Roofers working on a residential roof",
+    "image_position": "left",
+    "eyebrow": "Why Homeowners Choose Us",
+    "review": {
+      "name": "Tom Z.",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "His timeline was spot on, calling the day before and being here bright and early. Our full rip off and replacement was done by 1:30pm. 3 estimates, and Gilroy was by far the best around."
+    },
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Shawn F.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Ed and his entire team were fantastic to work with. A thorough explanation of what was needed was provided. Ed's team cleaned the job site so well, you would never know roofing just occurred. Ed also personally handled an issue with my insurance company and had it resolved without me having to contact them."
+    },
+    {
+      "name": "Veronica D.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "From the first moment I met Ed Gilroy for an estimate he was very professional and told me the roof would be installed at a certain time and as promised the roof was done at that time and completed in a day and a half. When the job was done they cleaned up and it was as if they weren't there."
+    },
+    {
+      "name": "Tom Z.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "His timeline was spot on, calling the day before and being here bright and early. Our full rip off and replacement was done by 1:30pm. New gutters and lead guards installed shortly after. Very reasonable \u2014 3 estimates, and Gilroy was by far the best around."
+    },
+    {
+      "name": "Crystal Bilby",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "They did my roof quickly and were so neat and clean about it. I have had no problems and I had the roof for 21 years. I will definitely be working with them again for my next roof."
+    },
+    {
+      "name": "Gregory Hrivnak",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Ed and crew did a great job with our new roof. They showed up early and worked late getting the job completed on time. Ed was available to talk or text with any questions. Excellent customer service."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "When do I have to pay?",
+      "a": "Not until the project is 100% complete and you are satisfied with it. We do not take deposits up front. That has been our policy since 1972."
+    },
+    {
+      "q": "How can I tell if my roof needs replacing or just repairs?",
+      "a": "An inspection is the only reliable way to know. We inspect free of charge, give you a detailed report of what we find, and quote both repair and replacement so you can decide with the facts in front of you."
+    },
+    {
+      "q": "Do you work with insurance claims?",
+      "a": "Yes. Insurance work is routine for us. We document the damage to the standard adjusters expect and deal with your insurer directly so you are not the one chasing the claim."
+    },
+    {
+      "q": "What warranty comes with the work?",
+      "a": "As an Owens Corning Platinum Preferred Contractor we back our roofing work with a 50-year material and labor warranty."
+    },
+    {
+      "q": "How long does a roof replacement take?",
+      "a": "Most residential roofs are completed in a day to a day and a half, depending on size and complexity. We tell you up front if we expect yours to take longer."
+    },
+    {
+      "q": "Do you work on commercial buildings?",
+      "a": "Yes. We handle both residential and commercial work, including flat and low-slope rubber roofing systems."
+    }
+  ]
+}

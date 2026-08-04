@@ -1,0 +1,185 @@
+---
+import { getEntry } from 'astro:content';
+
+export interface Props {
+  heading?: string;
+  intro?: string;
+  compact?: boolean;
+  /** Rating shown above the fields so lead capture does not cost all social proof. */
+  rating?: number;
+  review_count?: number;
+}
+const { heading = 'Request A Free In-Person Roof Estimate Today!', intro, compact = false, rating, review_count } = Astro.props;
+
+const site = (await getEntry('site', 'config')).data as any;
+
+// Posts to this site's own serverless endpoint by default. An operator can
+// override it (e.g. to post straight at a GHL form URL) via crm.form_action_url.
+// The endpoint validates, checks the honeypot and consent, verifies the captcha
+// when one is configured, and forwards the lead to whichever destination is set
+// in env — see src/pages/api/estimate.ts.
+const action: string = site.crm?.form_action_url ?? '/api/estimate';
+const captchaSnippet: string | undefined = site.crm?.captcha_snippet;
+const business = site.business_name;
+const phone = site.phone;
+const phoneDisplay = site.phone_display;
+// Operator diagnostics belong in dev only. On a public page a "not configured"
+// notice plus a dead submit button reads as a broken site to a homeowner, so
+// production falls back to a real call-to-action instead of a form that cannot
+// submit anywhere.
+const isDev = import.meta.env.DEV;
+
+// Surfaced after a failed POST, which redirects back with ?error=…
+const ERRORS: Record<string, string> = {
+  missing: 'Please fill in every required field.',
+  email: 'That email address does not look right — please check it.',
+  service: 'Please choose a service from the list.',
+  consent: 'We need your consent before we can call or text you.',
+  captcha: 'The spam check did not pass. Please try again.',
+  delivery: "Something went wrong sending your request. Please call us instead — we don't want to lose it.",
+  unavailable: "Online requests aren't switched on yet. Please call us and we'll get you booked in.",
+  invalid: 'That submission could not be read. Please try again.',
+};
+// Errors bounce back to the page the form was submitted from, so someone who
+// mistypes an email on /about is not dumped onto /book.
+const returnTo = Astro.url.pathname || '/book';
+const errorKey = Astro.url.searchParams.get('error');
+const errorMessage = errorKey ? ERRORS[errorKey] ?? ERRORS.invalid : null;
+
+const SERVICES = [
+  'Attic venting',
+  'Gutter installation',
+  'Gutter repair',
+  'Other',
+  'Roof damage repair',
+  'Roof inspection',
+  'Roof installation',
+  'Roof repair',
+  'Skylight installation',
+  'Skylight repair',
+];
+---
+<div class={`estimate-form ${compact ? 'compact' : ''}`}>
+  <h2 class="form-heading">{heading}</h2>
+  {intro && <p class="form-intro">{intro}</p>}
+
+  {rating && (
+    <p class="trust-strip">
+      <span class="stars" aria-hidden="true">{'★'.repeat(Math.round(rating))}</span>
+      <span>{rating.toFixed(1)} rating{review_count ? ` from ${review_count} reviews` : ''}</span>
+    </p>
+  )}
+
+  {errorMessage && (
+    <p class="form-error" role="alert">{errorMessage}</p>
+  )}
+
+  <form
+    method="post"
+    action={action ?? undefined}
+    novalidate={false}
+    aria-describedby="consent-text"
+  >
+    <div class="row">
+      <label for="ef-name">Full name <span aria-hidden="true">*</span></label>
+      <input id="ef-name" name="full_name" type="text" autocomplete="name" required />
+    </div>
+
+    <div class="two-up">
+      <div class="row">
+        <label for="ef-email">Email <span aria-hidden="true">*</span></label>
+        <input id="ef-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="row">
+        <label for="ef-phone">Phone <span aria-hidden="true">*</span></label>
+        <input id="ef-phone" name="phone" type="tel" autocomplete="tel" required />
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="ef-address">Property address <span aria-hidden="true">*</span></label>
+      <input id="ef-address" name="address" type="text" autocomplete="street-address" required />
+    </div>
+
+    <div class="row">
+      <label for="ef-service">Select a service <span aria-hidden="true">*</span></label>
+      <select id="ef-service" name="service" required>
+        <option value="">Choose one…</option>
+        {SERVICES.map((s) => <option value={s}>{s}</option>)}
+      </select>
+    </div>
+
+    <input type="hidden" name="return_to" value={returnTo} />
+
+    {/* Honeypot: hidden from people, catches naive bots. Not a captcha substitute. */}
+    <div class="hp" aria-hidden="true">
+      <label for="ef-company">Company (leave blank)</label>
+      <input id="ef-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+
+    <div class="consent">
+      <input id="ef-consent" name="tcpa_consent" type="checkbox" required />
+      <label for="ef-consent" id="consent-text">
+        I consent to receive informational and marketing Emails, Text messages, and Calls
+        from {business}. I understand that I can opt-out at any time and that communication
+        frequency may vary.
+      </label>
+    </div>
+
+    {captchaSnippet && <div class="captcha"><Fragment set:html={captchaSnippet} /></div>}
+    {!captchaSnippet && isDev && (
+      <p class="captcha-missing">DEV ONLY — add <code>crm.captcha_snippet</code> to the site config.</p>
+    )}
+
+    <button type="submit" class="btn">Get My Free Estimate</button>
+    <p class="fallback-note">Prefer to talk? Call <a href={`tel:${phone}`}>{phoneDisplay}</a>.</p>
+  </form>
+</div>
+
+<style>
+  .estimate-form { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.12); }
+  .estimate-form.compact { padding: var(--space-3); }
+  .estimate-form.compact .form-heading { font-size: 1.25rem; margin-bottom: var(--space-1); }
+  .estimate-form.compact .form-intro { font-size: 0.9rem; margin-bottom: var(--space-2); }
+  .estimate-form.compact form { gap: 0.6rem; }
+  .estimate-form.compact input[type="text"], .estimate-form.compact input[type="email"],
+  .estimate-form.compact input[type="tel"], .estimate-form.compact select { padding: 0.55rem 0.7rem; }
+  .estimate-form.compact .btn { font-size: 1.25rem; padding: 0.8rem 1.5rem; width: 100%; }
+  .trust-strip { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; justify-content: flex-start; margin: 0 0 var(--space-2); font-size: 0.85rem; color: var(--color-muted); }
+  .trust-strip .stars { color: var(--color-accent-ink); letter-spacing: 0.1em; }
+  .form-heading { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.25; margin: 0 0 var(--space-2); }
+  .form-intro { color: var(--color-muted); margin: 0 0 var(--space-3); }
+  /* Fixed red, NOT accent-derived. Tinting the error banner with the brand
+     accent means a green- or gold-accent client shows failures in a colour that
+     reads as success. The literal here used to be Gilroy's orange. */
+  .form-error { background: rgba(190,30,30,0.09); border-left: 3px solid #be1e1e; padding: var(--space-2); font-size: 0.92rem; color: var(--color-text); margin: 0 0 var(--space-3); }
+
+  form { display: grid; gap: var(--space-2); }
+  .two-up { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+  @media (max-width: 560px) { .two-up { grid-template-columns: 1fr; } }
+
+  .row { display: grid; gap: 0.35rem; }
+  label { font-weight: 600; font-size: 0.92rem; color: var(--color-text); }
+  input[type="text"], input[type="email"], input[type="tel"], select {
+    width: 100%; padding: 0.7rem 0.85rem; font: inherit; color: var(--color-text);
+    background: var(--color-bg); border: 1px solid rgba(0,0,0,0.22); border-radius: var(--radius-sm);
+  }
+  input:focus-visible, select:focus-visible, button:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%); background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 2.5rem; }
+
+  /* Off-screen rather than display:none so bots that skip hidden fields still fill it. */
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  .consent { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; align-items: start; margin-top: var(--space-1); }
+  .consent input { margin-top: 0.2rem; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+  .consent label { font-weight: 400; font-size: 0.78rem; line-height: 1.5; color: var(--color-muted); }
+
+  .captcha { margin-top: var(--space-1); }
+  .captcha-missing { font-size: 0.8rem; color: var(--color-muted); margin: 0; }
+  .fallback { margin-top: var(--space-1); }
+  .fallback .btn { display: inline-block; text-decoration: none; margin: 0; }
+  .fallback-note { color: var(--color-muted); font-size: 0.85rem; margin: var(--space-2) 0 0; line-height: 1.5; }
+
+  .btn { margin-top: var(--space-1); background: var(--color-accent); color: var(--color-on-accent); border: 0; padding: 0.95rem 1.75rem; border-radius: var(--radius-sm); font-family: var(--font-body); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase; cursor: pointer; }
+  .btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+</style>

@@ -1,0 +1,206 @@
+{
+  "slug": "comfortable-climate-hvac",
+  "business_name": "Comfortable Climate HVAC",
+  "legal_name": null,
+  "tagline": "NEPA's Most Trusted Heating, Cooling & Plumbing Company",
+  "phone": "+15703330380",
+  "phone_display": "(570) 333-0380",
+  "email": "joeairheat@gmail.com",
+  "address": {
+    "street": null,
+    "city": "Dallas",
+    "state": "PA",
+    "postal": null,
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 41.277069, "lng": -75.8803045 },
+  "hours": {
+    "monday": "8:00 am – 5:00 pm",
+    "tuesday": "8:00 am – 5:00 pm",
+    "wednesday": "8:00 am – 5:00 pm",
+    "thursday": "8:00 am – 5:00 pm",
+    "friday": "8:00 am – 5:00 pm"
+  },
+  "rating": 5,
+  "review_count": 17,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 25,
+  "license_number": "PA #091633",
+  "social": {
+    "facebook": "https://www.facebook.com/ComfortableClimateHVAC/"
+  },
+  "site_url": "https://comfortableclimatehvac.com/",
+  "logo_url": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/logo.png",
+  "default_hero_photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC_5002.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC_5002.jpg",
+  "owner_cutout_photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC_4977-removebg-1.png",
+  "brand": {
+    "fonts": { "display": "Montserrat", "body": "Open Sans" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#1E2452",
+      "accent": "#FADB6E",
+      "secondary": "#8DD7F7",
+      "muted": null,
+      "surface": null,
+      "candidates": ["#FADB6E", "#8DD7F7", "#1E2452", "#FFFFFF"]
+    }
+  },
+  "credentials": [
+    "Fujitsu \"Elite Contractor\" status for 2024",
+    "Licensed & Insured — PA #091633",
+    "Locally owned and operated"
+  ],
+  "brands_serviced": [
+    "Fujitsu", "Trane", "Carrier", "Lennox", "Rheem", "Ruud", "York", "Bryant",
+    "Goodman", "Janitrol", "American Standard", "Comfortmaker", "Honeywell"
+  ],
+  "services": [
+    {
+      "title": "Heating",
+      "short_description": "Furnace, boiler and heat pump repair, maintenance and replacement for homes and businesses across NEPA.",
+      "long_description": "Everybody deserves a warm, comfortable and safe home. Our heating repair expertise covers all makes, models and types of heaters and furnaces — oil, gas, propane, electric and geothermal. Whether the system is old or new, routine maintenance or a major repair, we handle it. We can even perform a free carbon monoxide check with every heating repair service.",
+      "sub_services": [
+        "Furnace Repair & Replacement",
+        "Boilers — Steam, Hydronic and Condensing",
+        "Heat Pumps",
+        "Baseboard & Radiant Heating",
+        "Thermostat Repair and Replacement",
+        "Emergency No-Heat Service"
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Air Conditioning",
+      "short_description": "Central air, heat pump and mini-split repair, tune-ups and installation — any make, any model.",
+      "long_description": "Our air conditioning technicians can diagnose and repair any type of air conditioning system, any make and any model. We also provide preventative maintenance that prolongs the life of your air conditioner and helps it run more efficiently, and we install high-efficiency replacement systems when a unit has reached the end of its life. We service homes of every size, contemporary and traditional.",
+      "sub_services": [
+        "Air Conditioning Repair",
+        "Precision Tune-Ups and Maintenance",
+        "Central Air Installation",
+        "Multi-Zone Cooling Systems",
+        "High Velocity Units",
+        "Refrigerant Replacement"
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Plumbing",
+      "short_description": "Leaks, burst pipes, water heaters, sump pumps and fixtures — with a 2-year warranty on all repairs.",
+      "long_description": "Our expert plumbers handle everything from routine leaks and drips to pipe, fixture and drain repair. With over 30 years of service experience we have helped thousands of homeowners across Northeastern Pennsylvania. Plumbing emergencies are our specialty, and every repair carries a 2-year warranty.",
+      "sub_services": [
+        "Leaky, Cracked or Frozen Pipes — All Pipe Materials",
+        "Toilet, Sink, Faucet and Fixture Repair",
+        "Sump and Sewage Pump Repair and Replacement",
+        "Well Pumps and Water Tanks",
+        "Garbage Disposals",
+        "2-Year Warranty on All Repairs"
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Ductless Mini-Splits",
+      "short_description": "Fujitsu Elite Contractor for 2024 — ductless heating and cooling for additions, older homes and problem rooms.",
+      "long_description": "Ductless mini-split systems heat and cool rooms that ductwork never reached — additions, converted attics, sunrooms and older homes with no duct runs. Comfortable Climate was awarded Fujitsu \"Elite Contractor\" status for 2024, a recognition of the level of factory training our staff have earned on this equipment and one that allows us to offer an advanced level of support and service on every ductless system we install.",
+      "sub_services": [
+        "Ductless Mini-Split Installation",
+        "Multi-Zone Ductless Systems",
+        "Ductless Heat Pumps",
+        "Mini-Split Repair and Maintenance",
+        "Fujitsu Elite Contractor Support"
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Water Heaters",
+      "short_description": "Electric and gas water heater repair and replacement, usually within a day of your call.",
+      "long_description": "When a water heater goes, it rarely waits for a convenient moment. We repair and replace both electric and gas water heaters, assess your household's actual hot water demand before recommending a size, and register the new unit so its warranty is active from day one.",
+      "sub_services": [
+        "Gas Water Heater Repair and Replacement",
+        "Electric Water Heater Repair and Replacement",
+        "Water Heater Sizing and Assessment",
+        "Warranty Registration"
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Indoor Air Quality",
+      "short_description": "Air cleaners, humidifiers, whole-house filtration and ductwork — for NEPA's dry winters and humid summers.",
+      "long_description": "Comfort is not only temperature. We install and service whole-house air cleaners, humidifiers and dehumidifiers, filtration systems and custom sheet-metal ductwork so the air moving through your home is clean, balanced and properly distributed room to room.",
+      "sub_services": [
+        "Electronic Air Cleaners",
+        "Whole House Filter Systems",
+        "Humidification and Dehumidification",
+        "Custom Sheet Metal Ductwork",
+        "Filter Replacement"
+      ],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Dallas", "state": "PA", "state_abbr": "pa", "slug": "dallas-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Wilkes-Barre", "state": "PA", "state_abbr": "pa", "slug": "wilkes-barre-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Kingston", "state": "PA", "state_abbr": "pa", "slug": "kingston-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Scranton", "state": "PA", "state_abbr": "pa", "slug": "scranton-pa", "county": "Lackawanna County", "_source": "scraped" },
+    { "name": "Clarks Summit", "state": "PA", "state_abbr": "pa", "slug": "clarks-summit-pa", "county": "Lackawanna County", "_source": "scraped" },
+    { "name": "Tunkhannock", "state": "PA", "state_abbr": "pa", "slug": "tunkhannock-pa", "county": "Wyoming County", "_source": "scraped" }
+  ],
+  "service_area_statement": "Located in Dallas, PA, we provide Heating, Cooling, Furnace & Air Conditioning Installation, Repair & Maintenance throughout Luzerne, Lackawanna and Wyoming counties.",
+  "testimonials": [
+    { "name": "Robin", "text": "Patrick and Ryan were so professional and knowledgable. They knew exactly what to do and were honest and efficient. I highly recommend them.", "rating": 5, "date": "2026-05-21", "_source": "scraped" },
+    { "name": "Jonny Benner", "text": "Joe and his team are the best! They fixed my 3 leaking radiators. They were in and out in less than 2 hours, just in time for the cold weather. They are so knowledgeable and efficient.", "rating": 5, "date": "2025-11-14", "_source": "scraped" },
+    { "name": "Gordon R Farris", "text": "Got an immediate response to our problem. Tech was knowledgeable and actually pointed out some issues that needed correction. Final cost was within the estimate range. We will be a repeat customer if the need arises.", "rating": 5, "date": "2024-02-16", "_source": "scraped" },
+    { "name": "Ronald Witkowski", "location": "Centermoreland, PA", "text": "Fair pricing and a forthright, honest man. Hard to find these days in a contractor. Thank you and God bless you.", "rating": 5, "date": "2023-11-10", "_source": "scraped" },
+    { "name": "Michael Stadulis Sr.", "text": "Joe is the BEST for any of your HVAC, heating and air conditioning system needs, and plumbing issues. He won't steer you wrong, and if it doesn't need to be replaced and can be repaired, he will be upfront with you.", "rating": 5, "date": "2023-09-20", "_source": "scraped" },
+    { "name": "Shawn J. Pulver", "text": "I have Joe do all my heating and A/C work on my residence and all my rental properties. Joe gives fair prices and great quality work. I would highly recommend him for all your heating and A/C work.", "rating": 5, "date": "2022-03-17", "_source": "scraped" },
+    { "name": "Jim & Maria", "text": "Joe is extremely talented knowing his trade. After testing a couple aspects of our central air conditioning he sat and explained what the problem was. Three other businesses were wrong in their quick assessment and fix. Joe is dedicated and exemplifies how American workers used to be.", "rating": 5, "date": "2021-08-09", "_source": "scraped" },
+    { "name": "Gene Hopkins", "text": "Can't say enough. This gentleman spent quite a bit of time on the phone and text with me to help me. Really professional and tremendous knowledge of equipment. Highly recommended.", "rating": 5, "date": "2020-07-13", "_source": "scraped" },
+    { "name": "Matthew Bradley", "location": "Dallas, PA", "text": "I had a few wall-mounted air conditioner and heating units installed at my residence in Dallas, PA. Joe and his staff were very polite, cleaned up after themselves and very professional. You can trust these guys to not only do it right but to do it the best way possible. He analyzed the work and gave me a write-up beforehand so I could say yes or no based on the price and work needed.", "rating": 5, "date": "2020-06-01", "_source": "scraped" },
+    { "name": "Charles Motley", "text": "Excellent and prompt service. Joe came and troubleshot our existing system. Provided several options and had us back in heat over what was the coldest week this year in less than two days.", "rating": 5, "date": "2020-02-24", "_source": "scraped" },
+    { "name": "Jimmy", "text": "Joe came out to our house on a Saturday during one of the hottest weeks so far this year. He identified the problem with our A/C units in about 10 minutes and corrected the problem in a total of 30 minutes. Extremely professional and explained what was going on.", "rating": 5, "date": "2019-07-01", "_source": "scraped" },
+    { "name": "Anne", "text": "Joe installed a new water heater one day after we notified him that our old one was leaking. He came to assess our needs within a few hours, ordered the parts, and was here on time the next morning as promised. He took care not to bump our new storm doors and freshly painted walls. He left the basement cleaner than he found it. His estimate was accurate and there were no additional charges or fees. He is very professional, trustworthy, and kind.", "rating": 5, "date": "2018-02-28", "_source": "scraped" },
+    { "name": "Kevin Yurko", "text": "Joe did a great job repairing our heating system. He was prompt, professional and completed the task for a very reasonable price. I will not hesitate to use Joe again and will recommend him to others.", "rating": 5, "date": "2017-11-05", "_source": "scraped" },
+    { "name": "Nicole", "text": "Joe was so responsive to my phone calls to set up a time for thermostat wiring and installation. Extremely knowledgeable and professional! We will be sure to use Comfortable Climate for all of our future HVAC needs.", "rating": 5, "date": "2017-10-28", "_source": "scraped" },
+    { "name": "Joyce Stevens", "text": "Joe is completely on top of his game! He is a true professional. He is prompt, highly knowledgeable, super efficient and very reasonably priced. I will continue to call him and recommend him to friends!", "rating": 5, "date": "2017-10-21", "_source": "scraped" },
+    { "name": "Kelly O'Brien", "text": "Joe was very polite, professional and thorough. He was a great communicator. He answered calls right away and called me back in a timely manner. He completed the job within 24 hours of my first call to him. He seems like a trustworthy guy.", "rating": 5, "date": "2017-10-11", "_source": "scraped" },
+    { "name": "Rick Gazenski", "text": "Joe always has the correct solution and couldn't be more cordial! When he says he will be there, he will be. Comfort is definitely a matter of choice. Thank you Joe!", "rating": 5, "date": "2017-06-07", "_source": "scraped" }
+  ],
+  "team_members": [
+    { "name": "Joe Szczechowicz", "role": "Owner", "photo": null, "bio": null, "_source": "scraped" }
+  ],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02248.jpg", "alt": "Completed HVAC installation by Comfortable Climate", "_source": "scraped" },
+    { "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02250.jpg", "alt": "Mechanical room work by Comfortable Climate", "_source": "scraped" },
+    { "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02253.jpg", "alt": "HVAC equipment installed by Comfortable Climate", "_source": "scraped" },
+    { "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/KIMG0135-2.jpg", "alt": "Ductwork fabricated and installed by Comfortable Climate", "_source": "scraped" },
+    { "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/KIMG0302-2.jpg", "alt": "Heating system installation in a NEPA home", "_source": "scraped" },
+    { "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02249.jpg", "alt": "Finished HVAC work by Comfortable Climate", "_source": "scraped" }
+  ],
+  "brand_voice_sample": "We would like to take this opportunity to thank you for considering us for your HVAC and Plumbing needs. Comfortable Climate is dedicated to providing our customers with the highest level of quality service and craftsmanship at the best value possible.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "No third-party CRM iframes or chat loaders detected. The existing site uses native WordPress/Divi forms with an arithmetic captcha. All GHL widgets remain operator paste-in."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "pages_scraped": ["/", "/about-us", "/heating", "/air-conditioning", "/plumbing", "/service-area", "/qualifications", "/reviews", "/reviews?page=2-6", "/contact-us", "/our-work"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.36,
+    "warnings": [
+      "Tenure is stated inconsistently on the client's site: 'over 25 years' (home + footer), 'over 35 years' (about), 'over 30 years' of plumbing experience (plumbing page). Used the most conservative figure, 25, in years_in_business.",
+      "Hours conflict: the Google listing shows 7am-8pm seven days; the website footer states Monday-Friday 8:00am-5:00pm. Used the website's published hours and surfaced emergency availability separately in copy.",
+      "Rating conflict: Google shows 5.0 from 17 reviews; the on-site review widget shows 4.6 from 26, inflated by spam submissions to an unmoderated form. Used the Google figures.",
+      "The homepage testimonial carousel on the client's existing site contains fabricated placeholder reviews (Michael Doe, Sue Jones, Carolyn Wintner). These were EXCLUDED. All testimonials above are real named reviews from /reviews pages 1-6.",
+      "No street address is published on the site or the Google listing — this is a service-area business. address.street and address.postal remain null.",
+      "brand.colors.muted and surface were not detected on the client's site; design-reference derived them."
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "slug": "prezkop-builders",
+  "business_name": "Prezkop Builders",
+  "legal_name": "Prezkop Builders, LLC",
+  "tagline": "Custom Finish Contractor in the Wyoming Valley",
+  "phone": "+15708140099",
+  "phone_display": "(570) 814-0099",
+  "email": "prezkop.builders@yahoo.com",
+  "address": {
+    "street": "1092 W Main St",
+    "city": "Nanticoke",
+    "state": "PA",
+    "postal": "18634",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2034, "lng": -76.0011 },
+  "hours": {
+    "monday": "7:00am-5:00pm",
+    "tuesday": "7:00am-5:00pm",
+    "wednesday": "7:00am-5:00pm",
+    "thursday": "7:00am-5:00pm",
+    "friday": "7:00am-5:00pm"
+  },
+  "rating": null,
+  "review_count": null,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 5,
+  "social": {
+    "facebook": "https://www.facebook.com/PrezkopBuilders",
+    "instagram": "https://www.instagram.com/prezkopbuildersllc"
+  },
+  "site_url": null,
+  "logo_url": "/img/prezkop-logo.png",
+  "default_hero_photo": "/img/deck-composite-white-rail.jpg",
+  "default_hero_video": null,
+  "about_photo": "/img/team-group.jpg",
+  "brand": {
+    "fonts": { "display": "Raleway", "body": "Roboto" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#3c382d",
+      "accent": "#1b4e73",
+      "muted": "#6b6459",
+      "surface": "#f7f3f5",
+      "candidates": ["#3c6c8c", "#1b4e73", "#3c382d", "#453e3e", "#f7f3f5", "#567261", "#f6f7f8"]
+    }
+  },
+  "services": [
+    {
+      "title": "Outdoor Living",
+      "short_description": "Custom decks, porches, pavilions, pergolas and decorative concrete patios built for Northeastern PA weather.",
+      "long_description": "Whether you're starting from scratch or renovating an outdoor space, we specialize in the building construction aspect of turning your outdoor living idea into a reality. From custom decks and porches to concrete patios (including stamped/decorative), pergolas, pavilions and everything in between, our use of high quality modern building materials, locally sourced wood products, and the creative minds of our team members means almost any custom idea or design can be fabricated into a reality.",
+      "sub_services": ["Custom Decks", "Covered Porches & Pavilions", "Pergolas", "Stamped & Decorative Concrete Patios", "Sidewalks & Hardscape"],
+      "hero_photo": "/img/deck-wood-benches.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped:wayback"
+    },
+    {
+      "title": "Remodeling & New Construction",
+      "short_description": "Whole-home remodels, additions, accessory structures and ground-up new construction.",
+      "long_description": "From whole-home remodeling to repair or rebuild work, and even whole new construction projects, we ensure a thorough consideration of building science during the design and discussion phase, accompanied by a logical use of proper materials and methods. We will revitalize your home in a remodeling situation, or leave you with a new structure that serves its purpose and rises above and beyond expectations.",
+      "sub_services": ["Whole-Home Remodels", "Kitchen & Bath Remodels", "Home Additions", "Accessory Structures", "New Construction"],
+      "hero_photo": "/img/kitchen-remodel.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped:wayback"
+    },
+    {
+      "title": "Hardwood Floor Refinishing",
+      "short_description": "Sanding, staining and finishing traditional hardwood floors — including the heart pine common in the coal region.",
+      "long_description": "Being one of the first specialties that Prezkop Builders ever embarked upon, this service is performed by Josh and his father, whose passion for traditional wood floors and bringing them back to life supersedes the painstaking work. All traditional hardwood (deciduous) and softwood (coniferous) species are available for refinishing, including Southern Yellow Pine ('heart pine', common in older coal mining homes of the area), Poplar, Chestnut, Red Oak, White Oak, Hickory, hard or soft Maple, Cherry and Walnut. All floors receive a tedious refinishing process including sanding through three progressively finer grit patterns, hand scraping, a water-pop to allow better stain penetration, an oil-based stain application, and most often 3-4 coats of an extremely high quality water-based top coat available in multiple sheens.",
+      "sub_services": ["Sand & Refinish", "Stain Matching", "Stair Treads & Handrails", "Heart Pine Restoration", "Water-Pop & Multi-Coat Finishing"],
+      "hero_photo": "/img/floor-refinished-hall.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped:wayback"
+    },
+    {
+      "title": "Pre-Construction Services",
+      "short_description": "Design, scope and budget worked out before the first shovel goes in the ground.",
+      "long_description": "Reducing the headache to the client and essentially shepherding the client and their project to ensure the quality is top-notch and the building process goes smoothly is what pre-construction services provide. This approach unites the builder, client and other applicable professions and sub-contractors to create opportunities for change during the design process as opposed to costly changes during construction. Prezkop Builders is not legally a Design-Build firm and does not identify as such, however these services offer an alternative to the traditional construction bid process. Pre-construction then leads to a formal estimate, with the client having a thorough understanding of scope of work, workmanship standards, and the overall expectation of the construction process from breaking ground to project completion.",
+      "sub_services": ["Scope Development", "Budget & Cost Planning", "Material Selection", "Sub-Contractor Coordination", "Formal Written Estimate"],
+      "hero_photo": "/img/deck-framing.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped:wayback"
+    }
+  ],
+  "service_areas": [
+    { "name": "Nanticoke", "state": "PA", "state_abbr": "pa", "slug": "nanticoke-pa", "_source": "scraped:wayback" },
+    { "name": "Wilkes-Barre", "state": "PA", "state_abbr": "pa", "slug": "wilkes-barre-pa", "_source": "inferred:metro" },
+    { "name": "Hunlock Creek", "state": "PA", "state_abbr": "pa", "slug": "hunlock-creek-pa", "_source": "scraped:wayback" },
+    { "name": "Dallas", "state": "PA", "state_abbr": "pa", "slug": "dallas-pa", "_source": "scraped:wayback" },
+    { "name": "Kingston", "state": "PA", "state_abbr": "pa", "slug": "kingston-pa", "_source": "inferred:metro" },
+    { "name": "Mountain Top", "state": "PA", "state_abbr": "pa", "slug": "mountain-top-pa", "_source": "inferred:metro" }
+  ],
+  "testimonials": [
+    {
+      "name": "Melissa Roberts",
+      "location": "Door repairs & porch remodel",
+      "rating": 5,
+      "text": "I had Josh do 4 crawl space doors as mine were completely falling apart and rotted. He also trimmed out the face of my porch and installed new sturdy window wells that had to be special ordered. It took a while to come in and he kept me up to date the entire time about my order. I have never met someone in this business so well mannered, respectful, trustworthy, punctual, loyal and do AMAZING work. I am very pleased at the work he has done and would recommend him to anyone.",
+      "_source": "scraped:wayback"
+    },
+    {
+      "name": "Renee McGuire Dopko",
+      "location": "Sidewalk remodel",
+      "rating": 5,
+      "text": "One of the best experiences we've had working with a contractor! Josh and his coworker Jake were professional, courteous, responsive, and prompt during our whole sidewalk project, even when Mother Nature was not cooperating. We are very pleased with how our sidewalks turned out! They are beautiful! Will definitely be calling Josh again for any future projects!",
+      "_source": "scraped:wayback"
+    },
+    {
+      "name": "Jim Brogna",
+      "location": "Home remodel",
+      "rating": 5,
+      "text": "I highly recommend Josh for his attention to detail, desire to insure customer is satisfied and (unlike many home improvement professionals) he was prompt every day, worked hard to finish the project and communicated every step and did an amazing job!",
+      "_source": "scraped:wayback"
+    },
+    {
+      "name": "Shannon Dixon",
+      "location": "Concrete stamping",
+      "rating": 5,
+      "text": "Josh was very knowledgeable and able to answer all my questions when asking about concrete stamping. Friendly and quick to respond!",
+      "_source": "scraped:wayback"
+    }
+  ],
+  "team_members": [
+    { "name": "Joshua Prezkop", "role": "Owner", "photo": "/img/team-josh.jpg", "_source": "scraped:wayback" },
+    { "name": "Jacob Campbell", "role": "Site Supervisor", "photo": "/img/team-jake.jpg", "_source": "scraped:wayback" },
+    { "name": "Jimmy Hans", "role": "Carpenter", "photo": "/img/team-jimmy.jpg", "_source": "scraped:wayback" }
+  ],
+  "faqs": [],
+  "gallery": [],
+  "brand_voice_sample": "Prezkop Builders is a licensed custom finish contractor in the Wyoming Valley, Pennsylvania area, specializing in outdoor living spaces and remodeling. From deck and porch remodels and new construction, to full home remodels and floor refinishing, we can do it all. From beginning to end, our level of white-glove renovation services provides the attention, skill and expertise needed to take your project from just another room or space to an exquisite and stylish addition to your home.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "Original site used WPForms, not a CRM embed. Nothing to carry over. Operator must paste GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_detail": "No Google Business Profile found across three Apify runs.",
+    "domain_status": "HIJACKED — prezkopbuilders.com now resolves to an Indonesian online-gambling site ('Bambuhoki88'). The client no longer controls the domain or its content.",
+    "content_recovery": "All business content recovered from Internet Archive snapshots of the original WordPress/Elementor site (last good homepage capture 2025-10-07).",
+    "pages_scraped": ["/", "/about", "/contact", "/outdoor-living-contractors", "/home-remodeling-new-construction-services", "/hardwood-floor-refinishing", "/pre-construction-services", "/recent-projects"],
+    "socials_scraped": [],
+    "images_recovered": 13,
+    "images_note": "Only 13 of ~56 referenced images survive in the Internet Archive. Recovered assets are stored in sites/prezkop-builders/public/img/.",
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.09,
+    "warnings": [
+      "phone mismatch: website footer (570) 814-0099 vs BBB (570) 417-5360 — website number used as primary, operator should confirm which rings",
+      "rating/review_count left null — no GBP, and HomeAdvisor's 5.0 has no verifiable review count"
+    ]
+  }
+}

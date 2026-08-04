@@ -1,0 +1,93 @@
+{
+  "slug": "golden-business-machines",
+  "template": "owl",
+  "generated_at": "2026-08-03",
+  "reference_sources": [
+    {
+      "url": "https://owlroofing.com/",
+      "role": "primary",
+      "via": "reference-libraries — structural authority behind the `owl` template. Section order and component set only; none of Owl's brand program names are used.",
+      "scraped_this_run": false,
+      "reason_not_scraped": "The owl template in astro-templates/owl already encodes this reference. Re-scraping would cost money and add nothing."
+    },
+    {
+      "url": "https://goldenbusiness.com",
+      "role": "brand-tokens-only",
+      "via": "intake-from-web Firecrawl branding extraction",
+      "extracted": ["font families", "color values", "logo URL", "favicon URL"],
+      "not_extracted": ["layout", "section order", "component styles", "spacing", "radii", "shadows", "class names"]
+    }
+  ],
+  "vertical_library": "default",
+  "vertical_library_note": "No office-technology/B2B-IT library exists. `default` supplies the anti-patterns; the owl template supplies structure. Roofing/concrete libraries were deliberately NOT used — their photography and copy direction are home-services specific.",
+  "palette": {
+    "bg": "#FFFFFF",
+    "surface": "#F4F5F7",
+    "text": "#101828",
+    "muted": "#5A6472",
+    "primary": "#1C2733",
+    "on_primary": "#FFFFFF",
+    "accent": "#DF0028",
+    "on_accent": "#FFFFFF",
+    "accent_ink": "#C8001F",
+    "accent_on_dark": "#FF7383",
+    "focus": "#0057FF"
+  },
+  "palette_rationale": {
+    "accent": "The client's own brand red, extracted from their live CSS (#DF0028). Kept exactly — it is the single most recognizable thing about the GBM brand.",
+    "primary": "Deep slate. GBM's existing site already uses a slate CTA band; a near-neutral dark lets the red stay the only saturated color on the page and reads correctly for a B2B audience.",
+    "accent_ink": "Darkened brand red for accent-colored TEXT on light backgrounds. #DF0028 measures 5.04:1 on white and 4.66:1 on the light surface — both pass AA — but #C8001F gives 6.04:1 of headroom across every light tone the template uses.",
+    "accent_on_dark": "The template uses --color-accent as TEXT on --color-primary bands (Testimonials eyebrow/stars, ProcessSteps label, WhyChooseUs counters). #DF0028 measures only 2.89:1 there and fails AA. #FF7383 measures 5.79:1 on #1C2733 while still reading unmistakably as the GBM red. This is the inverse of the template default's problem (its gold fails on LIGHT, GBM's red fails on DARK), so a new token is required and the dark-band components are patched to use it.",
+    "on_accent": "White on #DF0028 is 5.04:1 — passes AA for button labels at any size."
+  },
+  "contrast_checks": {
+    "text_on_bg": "#101828 on #FFFFFF — 17.6:1 (AAA)",
+    "muted_on_bg": "#5A6472 on #FFFFFF — 6.00:1 (AA)",
+    "on_accent_on_accent": "#FFFFFF on #DF0028 — 5.04:1 (AA)",
+    "accent_ink_on_bg": "#C8001F on #FFFFFF — 6.04:1 (AA)",
+    "accent_on_dark_on_primary": "#FF7383 on #1C2733 — 5.79:1 (AA)",
+    "on_primary_on_primary": "#FFFFFF on #1C2733 — 15.1:1 (AAA)"
+  },
+  "typography": {
+    "display": "Poppins",
+    "body": "Open Sans",
+    "source": "Both detected on the client's live site (Poppins headings, Open Sans body). Kept rather than overridden with the template default (Montserrat/Inter) so the rebuild still reads as GBM.",
+    "display_stack": "'Poppins', 'Montserrat', system-ui, sans-serif",
+    "body_stack": "'Open Sans', 'Inter', system-ui, sans-serif",
+    "weights": { "display": [600, 700], "body": [400, 600, 700] }
+  },
+  "spacing": {
+    "note": "Template defaults retained unchanged. No spacing values were taken from the client's site.",
+    "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+    "scale": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+    "max_width": "1200px"
+  },
+  "motion": {
+    "note": "Template defaults only. No motion or animation was extracted from the client's site."
+  },
+  "imagery_direction": [
+    "Real Canon hardware in real offices — GBM's own product photography where available.",
+    "Northeastern PA office/commercial interiors, not generic 'diverse team in a glass boardroom' stock.",
+    "Partner logos (Canon, HP, Microsoft, uniFLOW, PaperCut, Cisco, EFI, N-able) as monochrome trust marks, not decorative color blocks.",
+    "No handshake photos, no cartoon flat-illustration icon sets — the existing site's six red line-art industry icons are exactly what to avoid repeating."
+  ],
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "randomized section order — use the fixed owl order",
+    "section headers reading 'Stunning', 'Beautiful', 'Powerful', 'Seamless', or 'Effortless'",
+    "'Trusted by 10,000+ businesses' claims with no source — GBP shows 4 reviews at 4.0",
+    "red line-art icon grids that compete with the red CTA for attention (carried over from the client's current site)",
+    "home-services framing: financing offers, seasonal/weather hooks, 'protect your home' language",
+    "leading with a product SKU instead of a customer outcome (the current site's hero mistake)"
+  ],
+  "template_deviations": [
+    "Financing section disabled — irrelevant to a B2B office-equipment purchase committee (GBM's leasing is handled through Canon Financial, not a consumer finance widget).",
+    "us_vs_them section disabled — naming competitors is in the avoid list from local research.",
+    "Trust-badge rating chip suppressed on the hero: 4 Google reviews is too thin to display as social proof.",
+    "Dark-band accent text switched from --color-accent to --color-accent-on-dark for AA compliance."
+  ]
+}

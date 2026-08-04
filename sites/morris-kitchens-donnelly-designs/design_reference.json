@@ -1,0 +1,62 @@
+{
+  "slug": "morris-kitchens-donnelly-designs",
+  "template": "owl",
+  "vertical_library": "roofing",
+  "library_note": "There is no kitchen-and-bath reference library yet. The `owl` template reference (https://owlroofing.com/, role: primary) supplies the STRUCTURE — it is trade-agnostic. Brand tokens below come entirely from the client's own Elementor global tokens, not from any reference URL. No Firecrawl spend on reference URLs this run.",
+  "references": [
+    {
+      "url": "https://owlroofing.com/",
+      "role": "primary",
+      "used_for": "fixed section order and component set only — never copy program names or copy"
+    }
+  ],
+  "brand_source": {
+    "fonts": "Google Fonts link on morriskitchensllc.com — Archivo (300, 400)",
+    "colors": "Elementor global tokens in /wp-content/uploads/elementor/css/post-7.css — primary #114261, secondary #FFFFFF, text #000000, accent #9CC233"
+  },
+  "tokens": {
+    "colors": {
+      "bg": "#f4f6f8",
+      "surface": "#ffffff",
+      "text": "#10161c",
+      "muted": "#5a6672",
+      "primary": "#114261",
+      "on_primary": "#ffffff",
+      "accent": "#9cc233",
+      "on_accent": "#10161c",
+      "accent_ink": "#4f6b13",
+      "focus": "#0057ff"
+    },
+    "typography": {
+      "display": "'Archivo', 'Montserrat', system-ui, sans-serif",
+      "body": "'Archivo', system-ui, sans-serif",
+      "google_fonts_href": "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap"
+    },
+    "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+    "space": { "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2.5rem", "5": "4rem" },
+    "max_width": "1200px"
+  },
+  "contrast_check": [
+    { "pair": "text #10161c on bg #f4f6f8", "ratio": "17.2:1", "passes": "AAA" },
+    { "pair": "muted #5a6672 on bg #f4f6f8", "ratio": "5.4:1", "passes": "AA" },
+    { "pair": "accent_ink #4f6b13 on bg #f4f6f8", "ratio": "5.6:1", "passes": "AA" },
+    { "pair": "accent #9cc233 on primary #114261 (dark bands)", "ratio": "5.2:1", "passes": "AA" },
+    { "pair": "on_accent #10161c on accent #9cc233 (buttons)", "ratio": "9.0:1", "passes": "AAA" },
+    { "pair": "on_primary #ffffff on primary #114261", "ratio": "10.6:1", "passes": "AAA" }
+  ],
+  "rationale": "The client's brand is a deep navy (#114261) paired with a lime green (#9CC233) and set in Archivo. Navy becomes --color-primary and drives the dark bands (Testimonials, ProcessSteps, WhyChooseUs, hero scrim); lime becomes --color-accent for fills and buttons. Lime as foreground TEXT on the light background measures only ~1.9:1, so a darkened olive (#4f6b13) is derived for eyebrows, ticks, stars, and chevrons per the owl template's accent-ink rule. The page background moves off pure white to a cool near-white (#f4f6f8) so white surface cards separate — kitchen and bath photography is bright and needs a background that isn't competing with it.",
+  "anti_patterns": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic stock photography — this client has ~45 real project photos, use those",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "any reuse of Owl Roofing program names (\"We Give A Hoot\", \"Protect Your Nest\", \"Get It Right Guarantee\")",
+    "carrying over the client's existing site's slider hero, Elementor layout, or its 'Artisan design team' boilerplate"
+  ],
+  "generated_at": "2026-08-03"
+}

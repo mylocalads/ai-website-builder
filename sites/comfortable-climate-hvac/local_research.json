@@ -1,0 +1,99 @@
+{
+  "slug": "comfortable-climate-hvac",
+  "category": "HVAC contractor",
+  "city": "Dallas, PA",
+  "region": "Luzerne / Lackawanna / Wyoming counties — NEPA, Wyoming Valley & Back Mountain",
+  "threads_analyzed": 0,
+  "_evidence_note": "Reddit thread bodies were NOT obtainable. reddit.com is blocked to this agent's search user agent (the API returns an explicit 400 for the domain) and site:reddit.com queries returned only HomeAdvisor and directory pages. Findings below come from (a) HVAC-complaint reporting that quotes r/hvacadvice and r/homeowners threads secondhand, and (b) the 16 real, named customer reviews published on the client's own /reviews pages, which are genuine local primary voice. Treated as directional, not as a first-hand read of thread comments.",
+  "pain_points": [
+    {
+      "claim": "Homeowners believe HVAC companies push full system replacement when a repair would do, because the replacement is worth more to the contractor.",
+      "evidence": "Widely reported r/hvacadvice pattern: a homeowner posted maintenance quotes of $2,100 and then over $7,000 on a 10-year-old system, calling the second 'absolutely a ripoff'.",
+      "source": "secondhand reporting of Reddit threads"
+    },
+    {
+      "claim": "Parts and refrigerant are marked up to the point where repair is priced deliberately out of reach.",
+      "evidence": "An r/homeowners account of being quoted $300/lb for refrigerant available commercially near $30/lb, with the poster concluding the intent was to force a financed replacement.",
+      "source": "secondhand reporting of Reddit threads"
+    },
+    {
+      "claim": "Diagnoses are wrong or superficial, and homeowners end up paying several companies before anyone identifies the actual fault.",
+      "evidence": "A reviewer writes that 'Three other businesses were wrong in their quick assessment & fix' before Joe sat down and explained the real problem.",
+      "source": "client reviews"
+    },
+    {
+      "claim": "No-heat and no-cool situations are emergencies, and the fear is nobody answers or shows up during the cold snap or heat wave.",
+      "evidence": "Reviews single out response during extremes: 'back in heat over what was the coldest week this year in less than two days'; 'came out on a Saturday during one of the hottest weeks so far'.",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Final invoices exceed the estimate.",
+      "evidence": "Reviewers volunteer the opposite as noteworthy: 'Final cost was within the estimate range'; 'His estimate was accurate and there were no additional charges or fees.'",
+      "source": "client reviews"
+    }
+  ],
+  "what_customers_value": [
+    "An honest call on repair vs. replace, even when replacement pays the contractor more",
+    "The estimate holding — no additional charges or fees at the end",
+    "Someone who answers the phone and comes out fast when the heat or AC is down",
+    "A technician who explains what is actually wrong instead of handing over a number",
+    "Respect for the house — cleaning up, not scuffing doors and walls",
+    "Dealing with the owner directly rather than a rotating cast of dispatched techs"
+  ],
+  "business_differentiators": [
+    "Fujitsu 'Elite Contractor' status for 2024 — a manufacturer-verified ductless credential, published on the client's own site",
+    "5.0 rating from all 17 Google reviews, with zero ratings below five stars",
+    "Owner Joe Szczechowicz is named personally in the majority of the 16 site reviews and does estimates himself",
+    "Reviews independently and repeatedly report that the final cost matched the estimate",
+    "Reviews document same-week and next-morning turnaround during the coldest and hottest weeks of the year",
+    "Licensed and insured, PA registration #091633, printed publicly",
+    "Heating, cooling AND plumbing under one contractor — a water heater, a boiler, and a burst pipe are all one phone call",
+    "25+ years serving the Back Mountain and Wyoming Valley"
+  ],
+  "copy_angles": [
+    {
+      "angle": "If it can be repaired, we'll tell you",
+      "use": "hero headline / signature system",
+      "why": "Directly answers the number-one documented HVAC anxiety — being upsold into a replacement — and the client has a review saying exactly that three other companies got it wrong and Joe explained the real problem."
+    },
+    {
+      "angle": "The estimate is the price",
+      "use": "promise bar + guarantee block",
+      "why": "Two independent reviewers volunteer that the final cost matched the estimate. Concrete, verifiable, and it answers the second-biggest complaint."
+    },
+    {
+      "angle": "You get Joe, not a call center",
+      "use": "about block + hero quote card",
+      "why": "The owner is named in most reviews by first name. That is unusually strong social proof and the structural opposite of a dispatch-model competitor."
+    },
+    {
+      "angle": "Coldest week of the year is when we show up",
+      "use": "process steps / service copy",
+      "why": "Reviews cite restored heat during the coldest week and a Saturday AC call during the hottest — emergency response evidenced by customers, not claimed by the business."
+    },
+    {
+      "angle": "Fujitsu Elite Contractor for ductless",
+      "use": "promise bar + ductless service page",
+      "why": "A manufacturer-awarded credential most NEPA competitors do not hold. It is currently buried mid-homepage; it belongs above the fold."
+    },
+    {
+      "angle": "Heating, cooling and plumbing from one licensed contractor",
+      "use": "services section subtitle",
+      "why": "Most local competitors do one or the other. Reviews show customers using them for radiators, water heaters, AC and boilers interchangeably."
+    }
+  ],
+  "recommended_hero": {
+    "eyebrow": "Dallas, PA — Serving NEPA For Over 25 Years",
+    "headline": "If It Can Be Repaired, We'll Tell You",
+    "support": "Heating, cooling and plumbing from one licensed local contractor. Joe gives you the honest diagnosis and a written estimate — and the estimate is what you pay."
+  },
+  "_sources": {
+    "searches": [
+      "site:reddit.com HVAC contractor recommendations Wilkes-Barre Scranton NEPA",
+      "site:reddit.com HVAC company ripped me off quote furnace replacement complaints",
+      "reddit hvacadvice high pressure sales upsell replace system instead of repair (blocked: 400 on reddit.com)"
+    ],
+    "primary_source": "16 named customer reviews scraped from https://comfortableclimatehvac.com/reviews/ pages 1-6",
+    "retrieved": "2026-08-03"
+  }
+}

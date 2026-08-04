@@ -1,0 +1,213 @@
+---
+import { getEntry } from 'astro:content';
+import GHLFormEmbed from './GHLFormEmbed.astro';
+import EstimateForm from './EstimateForm.astro';
+
+export interface Props {
+  eyebrow?: string;
+  headline: string;
+  subheadline: string;
+  cta_text: string;
+  cta_href: string;
+  photo?: string;
+  video?: string;
+  video_link_text?: string;
+  video_link_href?: string;
+  quote_card?: {
+    quote: string;
+    author?: string;
+    author_photo?: string;
+    cta_text: string;
+    cta_href: string;
+    rating?: number;
+    review_count?: number;
+  };
+  form_embed_url?: string;
+  form_title?: string;
+  /** Render the native estimate form in the aside. */
+  show_form?: boolean;
+  form_heading?: string;
+  /** Third-party proof shown between the sub-copy and the CTA. */
+  trust_badges?: Array<{
+    mark?: 'google' | 'bbb';
+    rating?: number;
+    label: string;
+    sublabel?: string;
+  }>;
+}
+const {
+  eyebrow, headline, subheadline, cta_text, cta_href,
+  photo, video, video_link_text, video_link_href, quote_card,
+  form_embed_url, form_title = 'Book now', show_form = false, form_heading,
+  trust_badges = [],
+} = Astro.props;
+
+const site = (await getEntry('site', 'config')).data as any;
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+
+// The aside column holds exactly one thing. Booking beats lead capture beats
+// social proof: a calendar the operator pasted in takes priority, then a form
+// embed, and only pages that requested neither fall back to the quote card.
+// Service and area pages pass form_embed_url; the home page passes quote_card.
+// One slot, resolved by how directly each option captures a lead. An operator
+// who pasted a calendar or a GHL embed meant it, so those win; otherwise the
+// native form is preferred over the quote card wherever a page asks for it.
+const asideMode = form_embed_url && calendarSnippet
+  ? 'calendar'
+  : form_embed_url
+    ? 'form'
+    : show_form
+      ? 'native'
+      : quote_card
+        ? 'quote'
+        : 'none';
+---
+<section class="hero" aria-label="Introduction">
+  <div
+    class="media"
+    aria-hidden="true"
+    style={photo ? `background-image: url(${photo});` : undefined}
+  >
+    {video && <video src={video} autoplay muted loop playsinline poster={photo}></video>}
+    <span class="scrim"></span>
+  </div>
+
+  <div class={`container inner ${asideMode === "none" || asideMode === "quote" ? "" : "top-aligned"}`}>
+    <div class="copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{headline}</h1>
+      <p class="sub">{subheadline}</p>
+      {trust_badges.length > 0 && (
+        <ul class="trust-badges">
+          {trust_badges.map((b) => (
+            <li>
+              {b.mark === 'google' && <span class="mark mark-g" aria-hidden="true">G</span>}
+              {b.mark === 'bbb' && <span class="mark mark-bbb" aria-hidden="true">BBB</span>}
+              <span class="badge-copy">
+                {b.rating && (
+                  <span class="stars" aria-hidden="true">{'★'.repeat(Math.round(b.rating))}</span>
+                )}
+                <span class="badge-label">{b.label}</span>
+                {b.sublabel && <span class="badge-sub">{b.sublabel}</span>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div class="actions">
+        <a class="btn" href={cta_href}>{cta_text}</a>
+        {video_link_text && video_link_href && (
+          <a class="video-link" href={video_link_href}>{video_link_text}</a>
+        )}
+      </div>
+    </div>
+
+    {asideMode === 'calendar' && (
+      <aside class="panel" aria-label="Book an appointment">
+        <Fragment set:html={calendarSnippet} />
+      </aside>
+    )}
+
+    {asideMode === 'form' && (
+      <aside class="panel" aria-label={form_title}>
+        <GHLFormEmbed embed_url={form_embed_url!} title={form_title} />
+      </aside>
+    )}
+
+    {asideMode === 'native' && (
+      <aside class="panel form-panel" aria-label={form_heading ?? 'Request a Quote'}>
+        <EstimateForm
+          compact
+          heading={form_heading ?? 'Request a Quote'}
+          rating={quote_card?.rating}
+          review_count={quote_card?.review_count}
+        />
+      </aside>
+    )}
+
+    {asideMode === 'quote' && quote_card && (
+      <aside class="quote-card" aria-label="Customer feedback">
+        <figure>
+          {quote_card.author_photo && <img class="avatar" src={quote_card.author_photo} alt="" />}
+          <blockquote><p>{quote_card.quote}</p></blockquote>
+          {quote_card.author && <figcaption>{quote_card.author}</figcaption>}
+        </figure>
+        <a class="btn btn-block" href={quote_card.cta_href}>{quote_card.cta_text}</a>
+        {quote_card.rating && (
+          <p class="rating">
+            <span aria-hidden="true" class="stars">{'★'.repeat(Math.round(quote_card.rating))}</span>
+            <span>
+              {quote_card.rating.toFixed(1)} rating{quote_card.review_count ? ` from ${quote_card.review_count} reviews` : ''}
+            </span>
+          </p>
+        )}
+      </aside>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero { position: relative; isolation: isolate; min-height: clamp(30rem, 70vh, 44rem); display: flex; align-items: center; }
+  .media { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; background-color: var(--color-primary); }
+  .media video { width: 100%; height: 100%; object-fit: cover; }
+  .scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,20,25,0.82) 0%, rgba(15,20,25,0.45) 60%, rgba(15,20,25,0.25) 100%); }
+
+  /* Honor reduced-motion by dropping the video entirely; the poster image is
+     already painted as the .media background, so the hero stays intact. */
+  @media (prefers-reduced-motion: reduce) { .media video { display: none; } }
+
+  .inner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: var(--space-4); align-items: center; padding-top: var(--space-5); padding-bottom: var(--space-5); }
+  /* With a form or calendar in the aside, start-align so the eyebrow sits level
+     with the top of the panel instead of the copy floating centred beside it. */
+  .inner.top-aligned { align-items: start; }
+  @media (max-width: 900px) { .inner.top-aligned { align-items: stretch; } }
+  @media (max-width: 900px) { .inner { grid-template-columns: 1fr; } }
+
+  .copy { color: #ffffff; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; margin: 0 0 var(--space-2); }
+  h1 { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(2.2rem, 5.6vw, 4.2rem); line-height: 1.05; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.005em; }
+  .sub { font-size: clamp(1rem, 1.4vw, 1.15rem); max-width: 46ch; margin: 0 0 var(--space-3); }
+  .trust-badges { list-style: none; margin: 0 0 var(--space-3); padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); }
+  .trust-badges li { display: flex; align-items: center; gap: 0.6rem; }
+  /* Monochrome letterforms, not reproductions of the Google or BBB logos. */
+  .mark { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-display); font-weight: 800; color: #ffffff; line-height: 1; }
+  .mark-g { width: 2.1rem; height: 2.1rem; border-radius: 50%; border: 2px solid rgba(255,255,255,0.85); font-size: 1.2rem; }
+  .mark-bbb { font-size: 1.15rem; letter-spacing: 0.02em; padding: 0.2rem 0.4rem; border: 2px solid rgba(255,255,255,0.85); border-radius: var(--radius-sm); }
+  .badge-copy { display: flex; flex-direction: column; line-height: 1.2; }
+  .badge-copy .stars { color: var(--color-accent); font-size: 0.95rem; letter-spacing: 0.08em; }
+  .badge-label { color: #ffffff; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .badge-sub { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
+
+  /* Below 560px the pair would wrap: 147 + 202 + a 40px gap overflows a 342px
+     container. Tighten the gap and the type so both sit on one row. */
+  @media (max-width: 560px) {
+    .trust-badges { flex-wrap: nowrap; gap: var(--space-2); }
+    .trust-badges li { gap: 0.45rem; min-width: 0; }
+    .mark-g { width: 1.85rem; height: 1.85rem; font-size: 1.05rem; }
+    .mark-bbb { font-size: 0.95rem; padding: 0.15rem 0.3rem; }
+    .badge-copy .stars { font-size: 0.8rem; letter-spacing: 0.04em; }
+    .badge-label { font-size: 0.74rem; letter-spacing: 0.03em; white-space: nowrap; }
+    .badge-sub { font-size: 0.66rem; white-space: nowrap; }
+  }
+
+  .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+  .video-link { color: #ffffff; font-weight: 600; text-decoration: underline; }
+
+  .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,0.18); }
+  .btn-block { display: block; text-align: center; }
+
+  .panel { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); color: var(--color-text); }
+  .panel :global(iframe) { border-radius: var(--radius-sm); }
+  /* The form brings its own surface and shadow, so the wrapper gets out of the way. */
+  .form-panel { padding: 0; background: transparent; box-shadow: none; }
+
+  .quote-card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); }
+  .quote-card figure { margin: 0 0 var(--space-3); display: grid; gap: var(--space-1); justify-items: center; text-align: center; }
+  .avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .quote-card blockquote { margin: 0; }
+  .quote-card blockquote p { margin: 0; font-size: 1.05rem; color: var(--color-text); }
+  .quote-card figcaption { color: var(--color-muted); font-size: 0.9rem; }
+  .rating { margin: var(--space-2) 0 0; text-align: center; font-size: 0.9rem; color: var(--color-muted); }
+  .stars { color: var(--color-accent); letter-spacing: 0.1em; margin-right: 0.4rem; }
+</style>

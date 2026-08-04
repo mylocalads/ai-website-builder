@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://comfortable-climate-hvac.vercel.app/sitemap-index.xml

@@ -1,0 +1,31 @@
+{
+  "slug": "morris-kitchens-donnelly-designs",
+  "url": "https://morriskitchensllc.com/",
+  "screenshot": "screenshots/morris-kitchens-donnelly-designs.png",
+  "captured_at": "2026-08-03",
+  "platform": "WordPress + Hello Elementor theme + Elementor Pro (built 2024 by 75 Degrees West)",
+  "note": "OPERATOR REFERENCE ONLY. Not design DNA. The owl template is the sole source of layout and structure.",
+  "strengths": [
+    "Real project photography — roughly 45 unique in-house job photos in the gallery, not stock.",
+    "Genuine, specific review text naming the designer by name.",
+    "FAQ page publishes concrete lead times and payment terms — unusually transparent for the vertical.",
+    "Clear five-service structure (kitchens, bathrooms, cabinets, countertops, design services) with a real brand roster behind it.",
+    "PA HIC registration number displayed in the footer."
+  ],
+  "weaknesses": [
+    "Phone number is not a persistent sticky CTA; on mobile the header collapses and the call action is easy to miss.",
+    "Bathrooms page carries copy-paste boilerplate from another company — it repeatedly refers to the 'Artisan design team' and 'Artisan's designers'. Live credibility bug.",
+    "No service-area pages at all — zero local SEO surface for Wilkes-Barre, Kingston, Mountain Top, Dallas, Nanticoke.",
+    "The best trust asset (published timelines, 75% deposit terms, since-1995 history) is buried on /faq and /about rather than surfaced on the home page.",
+    "Contact page is effectively empty — just an '## Contact' heading with the global form; no map, no showroom hours block, no directions.",
+    "Heavy image payload: full-resolution unoptimized JPEGs (several 'scaled' originals) hotlinked directly into galleries.",
+    "Third-party accessibility-toolbar plugin bolted on rather than accessible markup.",
+    "Hero is a generic slider with two slides ('Kitchen Remodeling' / 'Bathroom Remodeling') and no value proposition, no rating proof, no CTA above the fold on load.",
+    "Testimonials rendered as H2 headings for the reviewer names — bad heading semantics for SEO and screen readers.",
+    "No blog, no schema-rich local business markup surfaced, thin meta coverage on inner pages."
+  ],
+  "load_issues": [
+    "Numerous multi-megabyte unresized uploads (e.g. *-scaled-1.jpg) served at full size.",
+    "reCAPTCHA v2 plus Elementor Pro plus an accessibility plugin all loading on every page."
+  ]
+}

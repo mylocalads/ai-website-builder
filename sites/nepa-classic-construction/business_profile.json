@@ -1,0 +1,17 @@
+{
+  "name": "NEPA Classic Construction",
+  "email": "info@nepaclassic.com",
+  "phone": "+1-570-479-1318",
+  "address": "Pittston, PA 18640",
+  "website": "https://nepaclassic.com",
+  "rating": null,
+  "reviewCount": null,
+  "category": "General contractor",
+  "hours": "Mon-Sat 7am-7pm",
+  "slug": "nepa-classic-construction",
+  "reviews": [],
+  "_gbp_found": false,
+  "_gbp_note": "Two Apify Google Maps runs (\"NEPA Classic Construction\" / Pittston PA, then \"NEPA Classic\" / Luzerne County PA) returned no matching listing. NAP, hours and category are taken from the client's own site JSON-LD (schema.org GeneralContractor) and footer.",
+  "_apify_runs": ["OpzHRxnxIrGqqjOCU", "aRsfqVzpoWYX4o1VT"],
+  "_generated_at": "2026-08-04"
+}

@@ -1,0 +1,201 @@
+{
+  "slug": "comprehensive-pain-specialists",
+  "business_name": "Comprehensive Pain Specialists",
+  "legal_name": null,
+  "tagline": "Better Pain Management for a Better Quality of Life",
+  "phone": "+15702323920",
+  "phone_display": "(570) 232-3920",
+  "phone_existing_patients": "(570) 270-5700",
+  "email": null,
+  "address": {
+    "street": "1177 PA-315, Dolphin Plaza",
+    "city": "Wilkes-Barre",
+    "state": "PA",
+    "postal": "18702",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 41.2594909, "lng": -75.8197402 },
+  "hours": {
+    "monday": "8:00am - 4:00pm",
+    "tuesday": "8:00am - 4:00pm",
+    "wednesday": "8:00am - 4:00pm",
+    "thursday": "8:00am - 4:00pm",
+    "friday": "8:00am - 4:00pm"
+  },
+  "rating": 3.2,
+  "review_count": 27,
+  "category": "Pain management physician",
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "social": {
+    "google_maps": "https://maps.app.goo.gl/mjR9PkrQXXQSEe6y9",
+    "yelp": "https://www.yelp.com/biz/comprehensive-pain-management-specialists-wilkes-barre-2",
+    "facebook": "https://www.facebook.com/share/194Gjvo4XJ/?mibextid=wwXIfr",
+    "instagram": "https://www.instagram.com/comprehensive_pain_specialist"
+  },
+  "site_url": "https://www.cpmspecialists.com/",
+  "gbp_listed_site_url": "https://comprehensivepaindocs.org/",
+  "logo_url": "https://comprehensivepaindocs.org/wp-content/uploads/2025/07/cropped-logo-cpm-1.png",
+  "favicon_url": "https://comprehensivepaindocs.org/wp-content/uploads/2025/06/cropped-fav-icon-32x32.png",
+  "default_hero_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/12/top-slider-new-desktop-1.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/08/about-us-desktop.jpg",
+  "team_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/09/our-team-desktop-3.jpg",
+  "brand": {
+    "fonts": { "display": "Poppins", "body": "Poppins" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#070E2C",
+      "accent": "#1025A1",
+      "muted": "#28303D",
+      "surface": "#F4F6FB",
+      "candidates": ["#1025A1", "#000A2C", "#070E2C", "#28303D", "#FFFFFF"]
+    }
+  },
+  "services": [
+    {
+      "title": "Back Pain",
+      "short_description": "Targeted diagnosis and treatment for chronic and acute low back pain — from herniated discs to failed back surgery syndrome.",
+      "long_description": "Back pain is the single most common reason patients come to Comprehensive Pain Specialists. Our providers start by identifying the actual pain generator — disc, facet joint, sacroiliac joint, or nerve root — rather than treating symptoms in the dark. From there we build a personalized plan that may include epidural steroid injections, facet joint injections, medial branch blocks, radiofrequency ablation, spinal cord stimulation, or the MILD and Vertiflex procedures for spinal stenosis. The goal is always the same: reduce pain, restore function, and get you back to daily life without unnecessary surgery.",
+      "sub_services": ["Herniated Disc", "Degenerative Disc Disease", "Spinal Stenosis", "Failed Back Surgery Syndrome", "Epidural Steroid Injections", "Radiofrequency Ablation"],
+      "hero_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/12/hom-ser-01-desktop-1-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Neck Pain",
+      "short_description": "Relief for cervical spine pain, whiplash, pinched nerves, and chronic headaches originating in the neck.",
+      "long_description": "Neck pain rarely stays in the neck. It radiates into the shoulders, triggers headaches, and limits how far you can turn your head to drive or work. Our providers evaluate the cervical spine to determine whether the source is a disc, a facet joint, or an irritated nerve, then treat accordingly with cervical epidural steroid injections, cervical facet radiofrequency neurotomy, trigger point injections, or Botox therapy for chronic migraine. Whiplash and post-accident neck pain are treated with the same diagnostic rigor.",
+      "sub_services": ["Whiplash", "Pinched Nerve", "Cervical Epidural Steroid Injection", "Cervical Facet Radiofrequency Neurotomy", "Headaches & Migraines", "Migraine Botox"],
+      "hero_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/12/hom-ser-02-desktop-2-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Joint Pain",
+      "short_description": "Injection-based and interventional care for hip, knee, shoulder, and sacroiliac joint pain — including arthritis.",
+      "long_description": "Arthritis, osteoarthritis, rheumatoid arthritis, rotator cuff tears, and sacroiliac joint dysfunction all present as joint pain but need very different treatment. We use image-guided joint injections, sacroiliac joint steroid injections and fusions, prolotherapy, suprascapular nerve blocks, and tenotomies to target the specific joint that is generating pain. For patients who are not surgical candidates — or who want to avoid surgery — interventional pain management often restores meaningful function without an operating room.",
+      "sub_services": ["Arthritis & Osteoarthritis", "Hip Pain", "Knee Pain", "Shoulder Pain", "Sacroiliac Joint Injections", "Joint Injections"],
+      "hero_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/12/hom-ser-03-desktop-3-min-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Nerve Pain",
+      "short_description": "Care for sciatica, diabetic neuropathy, and neuropathic pain that burns, tingles, or shoots down a limb.",
+      "long_description": "Nerve pain does not respond to the same treatments as muscle or joint pain, which is why so many patients arrive after months of unsuccessful care elsewhere. We treat sciatica, diabetic neuropathy, postherpetic neuralgia, trigeminal neuralgia, phantom limb pain, and complex neuropathic conditions using selective nerve blocks, peripheral nerve stimulation, spinal cord stimulation, stellate ganglion blocks, and intrathecal drug delivery systems. Each plan starts with pinpointing which nerve is involved before anything is injected or implanted.",
+      "sub_services": ["Sciatica", "Diabetic Neuropathy", "Postherpetic Neuralgia", "Trigeminal Neuralgia", "Selective Nerve Block", "Peripheral Nerve Stimulation"],
+      "hero_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/12/hom-ser-04-desktop-2-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Complex Regional Pain Syndrome (CRPS)",
+      "short_description": "Specialist treatment for CRPS and other complex pain conditions that have not responded to standard care.",
+      "long_description": "Complex Regional Pain Syndrome is one of the hardest pain conditions to diagnose and one of the most frequently dismissed. Patients often arrive having been told the pain is out of proportion to the injury — which is exactly the hallmark of CRPS. We treat CRPS, myofascial pain syndrome, fibromyalgia, post-surgical pain, and other complex conditions with sympathetic blocks, spinal cord stimulation, ketamine-sparing multimodal plans, and coordinated rehabilitation. Early intervention matters enormously with CRPS, so we prioritize getting these patients seen.",
+      "sub_services": ["Complex Regional Pain Syndrome", "Fibromyalgia", "Myofascial Pain Syndrome", "Post-Surgical Pain", "Lumbar Sympathetic Block", "Spinal Cord Stimulation"],
+      "hero_photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/12/hom-ser-05-desktop-2.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "local_context": null, "neighborhoods": [], "_source": "scraped" },
+    { "name": "Mountain Top", "state": "Pennsylvania", "state_abbr": "pa", "slug": "mountain-top-pa", "local_context": null, "neighborhoods": [], "_source": "scraped" },
+    { "name": "Pittston", "state": "Pennsylvania", "state_abbr": "pa", "slug": "pittston-pa", "local_context": null, "neighborhoods": [], "_source": "scraped" },
+    { "name": "Dallas", "state": "Pennsylvania", "state_abbr": "pa", "slug": "dallas-pa", "local_context": null, "neighborhoods": [], "_source": "scraped" },
+    { "name": "Plymouth", "state": "Pennsylvania", "state_abbr": "pa", "slug": "plymouth-pa", "local_context": null, "neighborhoods": [], "_source": "scraped" },
+    { "name": "Glen Lyon", "state": "Pennsylvania", "state_abbr": "pa", "slug": "glen-lyon-pa", "local_context": null, "neighborhoods": [], "_source": "scraped" }
+  ],
+  "testimonials": [
+    {
+      "name": "Katie Cuddey",
+      "location": "Wilkes-Barre, PA",
+      "text": "Absolutely love the Dr. that took over the practice. He's very knowledgeable, likeable, and professional. I've been seeing Kerri Orr for a few years and she is the best PA there is! I highly recommend Comprehensive Pain Specialists in Wilkes Barre!",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Nikki Newman",
+      "location": "Wilkes-Barre, PA",
+      "text": "The staff is wonderful very pleasant. It's easy to set up an appointment or change one. There's less than a 15-minute wait. Medication refills can be called in easily. There's always a phone call after a procedure is done. I've never had a problem. Dr and staff are the best in the county.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Jody Butterfield",
+      "location": "Wilkes-Barre, PA",
+      "text": "Dr is excellent I highly recommend him, he has done an excellent job with my back pain.",
+      "rating": 5,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [
+    {
+      "name": "Youssef Josephson, D.O.",
+      "role": "Board-Certified Pain Management Physician (Dr. Joe)",
+      "photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/08/youssef-josephson-desktop.jpg",
+      "bio": "Board-certified in Pain Medicine and Physical Medicine & Rehabilitation. Treats chronic and acute pain including back pain, neck pain, joint pain, nerve pain, arthritis, fibromyalgia, CRPS, and post-surgical pain.",
+      "_source": "scraped"
+    },
+    {
+      "name": "Teresa Clark, MSN, CRNP",
+      "role": "Certified Registered Nurse Practitioner",
+      "photo": "https://comprehensivepaindocs.org/wp-content/uploads/2025/08/teresa-clark-img-desktop.jpg",
+      "bio": null,
+      "_source": "scraped"
+    },
+    {
+      "name": "Thomas Haley, D.O.",
+      "role": "Physician",
+      "photo": "https://comprehensivepaindocs.org/wp-content/uploads/2026/03/thomas-haley-desktop.jpg",
+      "bio": null,
+      "_source": "scraped"
+    }
+  ],
+  "faqs": [
+    { "q": "What days and hours is Comprehensive Pain Specialists open?", "a": "We are open five days a week: Monday through Friday, 8:00 AM to 4:00 PM. We are closed Saturday and Sunday." },
+    { "q": "Where is Comprehensive Pain Specialists located?", "a": "We are located at 1177 PA-315, Dolphin Plaza, Wilkes-Barre, PA 18702." },
+    { "q": "Do you have a board-certified doctor?", "a": "Yes. Dr. Youssef Josephson, D.O. is a board-certified pain management physician in Pain Medicine and Physical Medicine & Rehabilitation." },
+    { "q": "What conditions does Dr. Josephson treat?", "a": "He treats chronic and acute pain including back pain, neck pain, joint pain, nerve pain, arthritis, fibromyalgia, CRPS, and post-surgical pain." },
+    { "q": "What types of treatments are offered?", "a": "Treatments include spinal cord stimulation, facet joint injections, epidural steroid injections, nerve blocks, prolotherapy, trigger point injections, and other personalized pain management procedures." },
+    { "q": "Do you accept insurance?", "a": "We are in network with most insurance plans and accept multiple insurance companies. Please contact your insurance directly to confirm your eligibility, or call us and we will help you check." },
+    { "q": "Do you offer self-pay options for uninsured patients?", "a": "Yes. Contact the clinic directly for specific self-pay pricing and payment arrangements." },
+    { "q": "Do you accept same-day appointments?", "a": "Yes. Contact us or book an appointment online and we will do our best to get you in the same day." },
+    { "q": "Are you accepting new patients?", "a": "Yes, we are currently accepting new patients and building personalized pain care plans. New patients can call (570) 232-3920." },
+    { "q": "What should I bring to my first appointment?", "a": "Bring your completed new patient forms, your medical history, and any relevant imaging or test results. Filling out forms beforehand saves time at check-in." }
+  ],
+  "gallery": [],
+  "brand_voice_sample": "At Comprehensive Pain Specialists, our dedicated team of healthcare professionals is committed to the art of pain management. We focus on diagnosing, managing, and treating chronic pain conditions. All of our specially trained staff understand pain. When you arrive, our receptionists, nurse practitioners, physician assistants and doctors will greet you with a supportive attitude so that your entire experience with us is as positive and comfortable as possible.",
+  "insurance_note": "We are in network with most insurance plans, please contact your insurance directly to confirm your eligibility.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "reviews_widget_url": "https://apps.hipaaserver2.us/reviewsthreefirstoptions/MjY2MDA=",
+    "note": "Client's existing vendor stack is onrevenue.us / hipaaserver2.us (HIPAA-flagged forms + AI chat). These are the CLIENT's current vendor widgets, NOT MLA GHL snippets. Do not copy into crm.* — operator must paste MLA's own GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_query": "Comprehensive Pain Specialists 1177 PA-315 Wilkes-Barre PA 18702",
+    "pages_scraped": ["/", "/about-us", "/our-team", "/contact", "/faqs", "/insurance", "/services"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.15,
+    "warnings": [
+      "Operator-supplied URL https://www.cpmspecialists.com/ serves the same site as the GBP-listed https://comprehensivepaindocs.org/ — canonical content lives on comprehensivepaindocs.org and all asset URLs point there.",
+      "GBP rating is 3.2 (27 reviews). Do NOT surface the aggregate rating as a trust badge; use individual 5-star testimonials instead.",
+      "Vertical is medical (pain management), not home services. Owl template sections built for contractors — Financing, PricingTable, EstimateForm — must be repurposed (Insurance, no pricing page, Appointment Request) or disabled.",
+      "Client site is HIPAA-sensitive. No PHI-collecting form fields beyond name/phone/email/reason-for-visit.",
+      "First GBP query with locationQuery='Wilkes-Barre, PA' returned 0 results; re-ran with full address string (second ~$0.004 charge)."
+    ]
+  }
+}

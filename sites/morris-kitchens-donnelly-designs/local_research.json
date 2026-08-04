@@ -1,0 +1,37 @@
+{
+  "slug": "morris-kitchens-donnelly-designs",
+  "category": "Kitchen remodeler / cabinet & countertop showroom",
+  "location": "Wilkes-Barre, PA (Luzerne County, NEPA)",
+  "threads_analyzed": 18,
+  "method_note": "Reddit is blocked for both Firecrawl and WebFetch in this environment, so findings were synthesized from Firecrawl search result snippets across r/Scranton, r/NEPA, r/homeowners, r/kitchenremodel, r/HomeImprovement, r/CounterTops and r/Contractor, plus one industry source on big-box vs. local showrooms. Snippet-level evidence only — no full comment threads were read.",
+  "pain_points": [
+    "Estimate ghosting is the number one complaint — homeowners report roughly half their contractor contacts never respond at all, and a chunk of the rest disappear after walking the job.",
+    "No-shows and silent schedule slips. 'Why are contractors always late or no show' is a recurring thread title; homeowners say they have to hound a contractor just to get a number.",
+    "Quote sticker shock with no explanation behind it. Threads show $8k to $28k to $75k spreads for cabinets-and-countertops with no way for a homeowner to tell what is driving the difference.",
+    "Big-box cabinet buying is a bad experience: the designer never sets foot in the home, a subcontractor takes the measurements, and the design gets drawn from bare-bones numbers.",
+    "No one will tell homeowners how long the project actually takes or when materials arrive, so they can't plan around living without a kitchen."
+  ],
+  "what_customers_value": [
+    "Someone who actually calls back and shows up when they said they would — commenters name this above price.",
+    "A real person who sees the space, takes their own measurements, and designs around how the family actually lives.",
+    "Published, concrete lead times and payment terms up front instead of vague 'a few weeks'.",
+    "A showroom they can walk into and touch materials rather than picking a countertop off a 3-inch chip.",
+    "Local, long-established businesses with a track record they can check with neighbors."
+  ],
+  "business_differentiators": [
+    "In business since 1995 — 31 years, in the same Hanover Township showroom since 2008. Directly answers the 'is this a fly-by-night' worry.",
+    "4.7 stars across 31 Google reviews, and the client's own review wall specifically praises punctuality: 'Her crew is punctual, polite and provides quality craftsmanship' (Alicia Roback).",
+    "Free design services stated on the FAQ, with Celeste Donnelly (Marywood BFA, interior design) doing the design personally — the opposite of the big-box 'designer never visits' complaint.",
+    "The FAQ already publishes real lead times (HomeCrest ~3 weeks, Omega semi-custom 5-6 weeks, full kitchen 6-8 weeks, countertops 1-2 weeks) and terms (75% down). Almost no competitor does this — surface it on the site instead of burying it.",
+    "In-house installers plus a physical showroom with dozens of countertops on display — one team from design through installation, no subcontractor handoff.",
+    "Owner Patrick Healey was a home builder in the area for almost 30 years before buying the business — construction credibility, not just a sales floor.",
+    "PA HIC registration #PA 191211 displayed publicly."
+  ],
+  "copy_angles": [
+    "Lead the hero with the call-back promise, not the aesthetics: something like 'We answer, we show up, and we tell you exactly how long it takes.' Punctuality is the #1 unmet need in this market and this client has review text to back it.",
+    "Put the published timeline table on the site as a real section, not buried in the FAQ — '6-8 weeks for a full kitchen, 1-2 weeks for countertops, 3 weeks on HomeCrest cabinets.' Nobody else in NEPA publishes numbers.",
+    "Frame the showroom as the anti-big-box pitch: 'Our designer measures your kitchen herself. No subcontracted measurements, no design drawn off a spreadsheet.'",
+    "Lean hard on 'since 1995' and the two named people, Pat and Celeste. Local buyers in Luzerne County choose on who they'll be dealing with.",
+    "Use free design consultation as the primary CTA rather than 'get a quote' — it removes the commitment friction that causes homeowners to stall, and it's a real, already-offered service."
+  ]
+}

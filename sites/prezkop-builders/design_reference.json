@@ -1,0 +1,48 @@
+{
+  "slug": "prezkop-builders",
+  "template": "owl",
+  "generated_at": "2026-08-03",
+  "sources": [
+    {
+      "type": "client_brand_tokens",
+      "origin": "Internet Archive capture of prezkopbuilders.com (2025-10-07) — Astra/Elementor global color palette and Google Fonts links only",
+      "note": "Brand tokens only. No layout, component, spacing or class data extracted. Live domain was NOT used (it is a squatted gambling site)."
+    },
+    {
+      "type": "reference_library",
+      "origin": "reference-libraries/default.json",
+      "note": "No vertical library exists for remodeling/outdoor-living. Default anti-patterns merged."
+    }
+  ],
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f6f4f1",
+    "text": "#2c2822",
+    "muted": "#6b6459",
+    "accent": "#1b4e73",
+    "on_accent": "#ffffff",
+    "focus": "#0057ff",
+    "rationale": "#1b4e73 and #3c6c8c were the client's two Astra global brand blues; the darker of the two is used as the accent because it clears 8.3:1 against white, so white button labels pass WCAG AA comfortably. Surface and text are warmed toward the client's own #3c382d brown rather than a neutral grey, which keeps the wood-and-timber feel of the work without importing the old site's layout."
+  },
+  "typography": {
+    "display": "Raleway",
+    "body": "Roboto",
+    "rationale": "Both were loaded by the client's own site (Raleway for headings, Roboto for body). Kept as-is — they are legitimate brand tokens and both are strong, widely-supported Google Fonts."
+  },
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "motion": "Template default. No custom motion carried over from the client site.",
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "rows of outline icons",
+    "'professionals shaking hands' stock imagery",
+    "unverifiable customer-count claims",
+    "section headers reading 'Stunning' / 'Beautiful' / 'Powerful' / 'Seamless' / 'Effortless'",
+    "randomized section order"
+  ],
+  "imagery_policy": "Real recovered client photography wherever available (13 files from the Internet Archive). Unsplash is used only for the two service pages where no client photo survived, and never for hero, about, team or gallery."
+}

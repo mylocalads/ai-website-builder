@@ -1,0 +1,38 @@
+{
+  "slug": "patriot-metal-products",
+  "url": "http://patriot-mp.com/",
+  "screenshot": "screenshots/patriot-metal-products.png",
+  "captured_at": "2026-08-03",
+  "_purpose": "OPERATOR REFERENCE ONLY. This audit and screenshot are never design DNA. The owl template is the sole source of truth for layout and structure.",
+  "strengths": [
+    "Genuinely strong first-party photography exists: an aerial shot of the actual Berwick plant, a real tractor-trailer, the onsite lab, blast tunnel, and fastener/plating close-ups. This is a real operating facility with real assets to show.",
+    "The service copy underneath is excellent — specific, technical, full of concrete capacity numbers. The raw material for a good site is already written.",
+    "NAP is consistent and prominent: address in the top utility bar, phone and email in the header, full contact block plus hours in the footer.",
+    "Hours are published in the footer as a clean table."
+  ],
+  "weaknesses": [
+    "NO SITE IS SERVING ON HTTPS. http://patriot-mp.com/ has no working TLS — a direct HTTPS fetch fails with a TLS internal error. Browsers mark it 'Not Secure', and it suppresses ranking. This is the single most damaging defect.",
+    "The homepage hero is broken. A Revolution Slider error is printed into the page source ('You have some jquery.js library include that comes after the revolution files js include'), and the rendered hero is a bare stock photo of metal clips with no headline, no value proposition, and no call to action above the fold.",
+    "The services grid renders SIX EMPTY CARDS. Images load but every title and description is blank — the most important section on the page is non-functional.",
+    "Text collides with the background image on the aerial 'Let Patriot Metal Products work for you' band; the paragraph is unreadable where it overlaps the roofline.",
+    "The 'OUR TEAM' section shows placeholder chrome letters D, N, M instead of headshots — leftover theme demo art presented as staff photos.",
+    "Every /team/ detail page carries lorem ipsum body copy and demo names ('JOHN LEADER', 'STEVE CHEMICI', 'MARK TERAN'). These pages are publicly indexable Latin filler.",
+    "'Latest News' shows the default WordPress 'Hello world!' post from May 2018 next to a January 2016 post. The site reads as abandoned.",
+    "Footer reads 'Copyright © 2020 All Rights Reserved | PMC Inc.' — six years stale and the company's own initials are wrong (PMC, not PMP).",
+    "The favicon is hotlinked from the theme vendor's demo server (anpsthemes.com/industrial/demo-8/), not from the client's own domain.",
+    "The only logo asset is a 94x85 px chrome 3D 'PMP' wordmark — unusable at retina sizes and illegible at header scale.",
+    "No conversion path beyond a generic Contact Form 7 form. No quote request, no spec/drawing upload, no capability qualifier, no phone CTA in the hero.",
+    "Zero social proof of any kind — no testimonials, no named customers, no logos, no certifications displayed.",
+    "A 'DOWNLOAD A COMPLETE CATALOG' button on /contact-us/ links to '#' — a dead lead magnet.",
+    "The site's strongest differentiators (onsite certification laboratory, 16 robotic guns, six-stage washer, 1-piece-to-truckload flexibility, own truck fleet) are buried inside an 'Other Services' catch-all page instead of leading.",
+    "Generic industrial WordPress theme (anpsthemes 'Industrial' demo 8), visibly unmodified — the blue palette and section furniture are the demo's, not a brand."
+  ],
+  "technical": {
+    "https": "FAILING — TLS handshake error on https://patriot-mp.com/",
+    "platform": "WordPress + anpsthemes 'Industrial' theme (demo-8) + Revolution Slider",
+    "js_errors_in_page_source": true,
+    "mobile": "Theme is Bootstrap-based and nominally responsive, but the broken hero and empty service cards fail on every viewport.",
+    "last_content_update": "2018 (newest blog post); footer copyright 2020"
+  },
+  "assessment": "A real, capable, 40-year-old manufacturer is being represented by a half-broken 2016 theme demo. The content is not the problem — the service pages are detailed and specific, and the facility photography is authentic. The delivery is the problem: no HTTPS, a broken hero, six empty service cards, lorem ipsum team pages, and stale 2018 content. Nothing about the current site communicates the capacity numbers, the onsite lab, or the turnkey range that actually differentiate this business. The rebuild should carry the existing copy forward almost verbatim, lead with capability qualification, and ship on HTTPS."
+}

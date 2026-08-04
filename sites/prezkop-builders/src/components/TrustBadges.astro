@@ -1,0 +1,20 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const badges = [
+  site.licensed && 'Licensed',
+  site.insured && 'Insured',
+  site.bonded && 'Bonded',
+  site.years_in_business && `${site.years_in_business}+ years serving ${site.address.city}`,
+  site.rating && site.review_count && `${site.rating}★ (${site.review_count} reviews)`,
+].filter(Boolean);
+---
+{badges.length > 0 && (
+  <section class="trust" aria-label="Credentials">
+    <div class="container"><ul>{badges.map((b) => <li>{b}</li>)}</ul></div>
+  </section>
+)}
+<style>
+  .trust { padding: var(--space-2) 0; border-top: 1px solid var(--color-surface); border-bottom: 1px solid var(--color-surface); }
+  ul { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center; font-size: 0.9rem; color: var(--color-muted); }
+</style>

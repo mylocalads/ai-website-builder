@@ -1,0 +1,230 @@
+{
+  "slug": "golden-business-machines",
+  "business_name": "Golden Business Machines",
+  "legal_name": "Golden Business Machines, Inc.",
+  "tagline": "The only Office Technology company you will ever need",
+  "phone": "+18006926217",
+  "phone_display": "1-800-692-6217",
+  "email": null,
+  "address": {
+    "street": "165 Church Street",
+    "city": "Kingston",
+    "state": "PA",
+    "postal": "18704",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2712444, "lng": -75.8791005 },
+  "hours": {
+    "monday": "8:00am-4:30pm",
+    "tuesday": "8:00am-4:30pm",
+    "wednesday": "8:00am-4:30pm",
+    "thursday": "8:00am-4:30pm",
+    "friday": "8:00am-4:30pm"
+  },
+  "rating": 4.0,
+  "review_count": 4,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 57,
+  "founded_year": 1969,
+  "category": "Printing equipment supplier",
+  "gbp_categories": [
+    "Printing equipment supplier",
+    "Computer consultant",
+    "Computer networking service",
+    "Computer support and services",
+    "Copier repair service",
+    "Digital printer",
+    "Office equipment rental service",
+    "Office equipment repair service",
+    "Office equipment supplier",
+    "Printer repair service"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/pages/Golden-Business-Machines-Inc/126424977465619",
+    "linkedin": "https://www.linkedin.com/company/golden-business-machines",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Golden%20Business%20Machines%20Inc&query_place_id=ChIJl3nOUBYaxYkRmFzHwYIKN7Q"
+  },
+  "site_url": "https://goldenbusiness.com",
+  "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/GBM_Master_logo_485CV.png",
+  "logo_url_mark_only": "https://goldenbusiness.com/wp-content/uploads/2021/11/GBM_Master_logo_NO-TEXT__NS_485CV-1.jpg",
+  "favicon_url": "https://goldenbusiness.com/wp-content/uploads/2021/12/cropped-Screenshot_7-32x32.png",
+  "default_hero_photo": null,
+  "default_hero_video": null,
+  "about_photo": null,
+  "brand": {
+    "fonts": { "display": "Poppins", "body": "Open Sans" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#101828",
+      "accent": "#DF0028",
+      "muted": "#5A6472",
+      "surface": "#F5F6F8",
+      "candidates": ["#DF0028", "#DE0029", "#2EA3F2", "#FFFFFF"]
+    },
+    "_source": "firecrawl branding extraction (fonts + color values only)"
+  },
+  "branch_offices": [
+    { "name": "GBM Corporate Office", "street": "165 Church Street", "city": "Kingston", "state": "PA", "postal": "18704", "phone_display": "1-800-692-6217" },
+    { "name": "Service / Warehouse", "street": "565 Main Street", "city": "Edwardsville", "state": "PA", "postal": "18704", "phone_display": "1-800-889-4426" },
+    { "name": "Scranton Office", "street": "4101 Birney Ave", "city": "Moosic", "state": "PA", "postal": "18507", "phone_display": "(570) 342-5600" },
+    { "name": "Williamsport Office", "street": "201 Basin Street Plaza", "city": "Williamsport", "state": "PA", "postal": "17701", "phone_display": "(570) 323-1778" },
+    { "name": "Hazleton Office", "street": "8 West Broad Street", "city": "Hazleton", "state": "PA", "postal": "18201", "phone_display": "(570) 454-8805" }
+  ],
+  "about": {
+    "story": "Golden Business Machines, Inc. (GBM) is the local leader in providing businesses of all sizes with office copiers, printers, software solutions, managed IT services and top-notch service throughout Northeastern and Central Pennsylvania for over 50 years.\n\nFounded by Joseph R. Bradley in 1969, GBM is a locally owned business headquartered in Kingston, PA with branch sales and service offices in Edwardsville, Scranton, Hazleton and Williamsport. This allows us to give you the attention you cannot receive from larger corporations, especially if their headquarters are located elsewhere.\n\nGBM has always been a leader, providing customers with trusted solutions to help their organizations prosper. We became one of Canon's first Authorized Dealers for office equipment in the nation, and were among the area's first Microsoft Solutions Providers. Our partnership with Hewlett Packard began with printers and expanded to include computers and servers. Understanding the marketplace has been the key to over five decades of growth, success and industry leadership. GBM is comprised of over 45 dedicated sales and service professionals with the expertise to provide our clients with the document solutions and products required in today's complex business environment.",
+    "_source": "scraped"
+  },
+  "services": [
+    {
+      "title": "Copiers & Multifunction Printers",
+      "short_description": "Network-ready black & white and color Canon MFPs for offices of every size, paired with the software that turns them into real workflow tools.",
+      "long_description": "Whether you operate a small office or require an enterprise-level approach, GBM offers a network-ready range of black & white and color devices to meet your needs. When combined with the right software, these devices improve workflow efficiencies that lead to reduced costs and minimized waste. As an exclusive authorized Canon dealer, GBM's team of experts provides the solutions your business needs to improve workflow and print smarter both on-premises and in the cloud.",
+      "sub_services": [
+        "Copy, print, scan and fax from one device",
+        "High-quality black & white and business color output",
+        "Finishing: stapling, booklet making, 2/3 hole punch, fold and Z-fold",
+        "Scan-to-email, FTP, network folder and fax distribution",
+        "Advanced device security and accessibility options",
+        "Remote device management, toner and job monitoring"
+      ],
+      "hero_photo": "https://goldenbusiness.com/wp-content/uploads/2021/06/canon-ir-adv-c5540i-40-ppm-color-multifunction-copiers-500x500-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Office Printers & Scanners",
+      "short_description": "The right printer and the right scanner for how your office actually works — matched on speed, volume, security and cost per page.",
+      "long_description": "Your documents are only as good as the device they were first printed on. Not all printers are cut from the same cloth, and making sure you have the right printer for your specific company needs makes a real difference in your ability to turn out affordable, quality documents. On the scanning side, GBM's line covers everything from 130-page-per-minute centralized production scanners down to 15 ppm mobile and distributed scanners — the simplest way to convert paper into electronic documents you can organize, store and share.",
+      "sub_services": [
+        "Color and black & white office printers",
+        "Print quality, speed and volume matching",
+        "Printer security features and software",
+        "Production scanners up to 130 ppm",
+        "Mobile and distributed desktop scanners",
+        "Scan-to-digital document conversion"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Wide Format & Digital Presses",
+      "short_description": "Large-format and production printing in house — from 60-inch graphics work to digital presses running over 100 pages per minute.",
+      "long_description": "Printing isn't limited to a standard sheet of paper. Architecture, engineering, construction, graphic arts and corporate teams all need wide-format output, and GBM offers state-of-the-art large format solutions built for speed, flexibility and quality — three distinct printer lines from 12-color for photography and graphics, to 8-color for production, to 5-color for technical documents, in sizes from 17 to 60 inches. On the production side, a digital press gives your business the competitive advantage of generating high volumes at a fraction of the cost, without hiring a print shop.",
+      "sub_services": [
+        "Graphic arts printers — 12-color pigment ink",
+        "MFP imaging systems for technical documents",
+        "Technical document and general use printers",
+        "Black and white production presses",
+        "Color digital presses",
+        "High-speed output over 100 pages per minute"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Managed IT Services",
+      "short_description": "The manpower of an entire IT department without the cost of in-house staff — monitoring, security, backup and support across Northeastern PA.",
+      "long_description": "IT Services from GBM give your business the manpower of an entire IT department without the need or cost of an in-house IT staff. GBM can provide all of your technical needs from workstations and servers to printers and connected multifunction devices, with call-to-repair services, support contracts and IT project management. We actively monitor your network and devices to identify potential threats, then act quickly to eliminate them before they create downtime — because the best IT security is cyberthreat prevention, not break-fix. Flexible pricing means you can choose pay-as-you-go or pre-paid support plans with tiered hours that never expire.",
+      "sub_services": [
+        "Proactive network and device monitoring",
+        "Network security, firewalls and VPN",
+        "Backup and disaster recovery",
+        "HP computers, servers and installation",
+        "Help desk and on-site repair",
+        "Custom application and database development"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Managed Print & Document Management",
+      "short_description": "Take control of what your office spends on printing, and move the paper it still produces into a searchable digital repository.",
+      "long_description": "Businesses spend more on printing every year — some up to 3% of their annual budget. GBM's Managed Print Services program is a coordinated strategy to manage every aspect of every printing device on your network: consumables, hardware, service, support and device optimization, with frequent tracking of cost per page. Alongside it, document management has evolved into Enterprise Content Management, letting organizations digitize documents and automate document-driven processes so the right people access the right information at the right time.",
+      "sub_services": [
+        "GBM MPS Select program",
+        "Quality toner supplies at reduced cost",
+        "Preventative maintenance and on-site repair",
+        "Instant document capture and secure storage",
+        "Full-text search and retrieval",
+        "Granular document security and digital forms"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "local_context": "Golden Business Machines delivers Wilkes-Barre area businesses the manpower of an entire IT department without the need or cost of in-house IT staff, plus Canon copiers, printers and managed print from the Kingston headquarters minutes away.", "_source": "scraped" },
+    { "name": "Scranton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "scranton-pa", "local_context": "Scranton's trusted provider of office copiers, with a full sales and service office at 4101 Birney Ave in Moosic serving small offices through enterprise print environments.", "_source": "scraped" },
+    { "name": "Kingston", "state": "Pennsylvania", "state_abbr": "pa", "slug": "kingston-pa", "local_context": "GBM has been headquartered at 165 Church Street in Kingston since 1969, with the service and warehouse operation just up the road in Edwardsville.", "_source": "scraped" },
+    { "name": "Hazleton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hazleton-pa", "local_context": "A GBM sales and service office at 8 West Broad Street puts Canon copiers, managed print and IT support inside the Hazleton business community, not three hours away.", "_source": "scraped" },
+    { "name": "Williamsport", "state": "Pennsylvania", "state_abbr": "pa", "slug": "williamsport-pa", "local_context": "GBM's Central Pennsylvania office at 201 Basin Street Plaza covers Williamsport and the surrounding Lycoming County business corridor.", "_source": "scraped" },
+    { "name": "Stroudsburg", "state": "Pennsylvania", "state_abbr": "pa", "slug": "stroudsburg-pa", "local_context": "GBM serves Stroudsburg and the entire Pocono region with office equipment, managed print and Microsoft-certified IT support.", "_source": "scraped" }
+  ],
+  "testimonials": [],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [],
+  "partners": [
+    { "name": "Canon", "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/06/canon.png" },
+    { "name": "Microsoft", "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/11/Microsoft_365_logo.png" },
+    { "name": "uniFLOW", "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/Canon_uniFLOW_300.png" },
+    { "name": "PaperCut", "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/PaperCut-Reseller-Logo-RGB.png" },
+    { "name": "Barracuda", "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/Barracuda.jpeg" },
+    { "name": "N-able", "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/N-Able.png" }
+  ],
+  "partner_narrative": [
+    "Canon U.S.A. — GBM is an exclusive authorized Canon dealer for color copiers, digital presses, wide format printers and MFPs.",
+    "Hewlett-Packard — GBM is an authorized HP Reseller and Service Center for printers, computers and servers.",
+    "Microsoft — GBM was among the area's first Microsoft Solutions Providers and remains Microsoft Certified.",
+    "Laserfiche — enterprise content management software used by more than 28,000 organizations worldwide.",
+    "uniFLOW — print and MFP fleet control, built from components to match the environment.",
+    "Cisco — networking equipment for business infrastructure.",
+    "EFI — Fiery digital print controllers and production print management.",
+    "PaperCut — print management and secure release."
+  ],
+  "brand_voice_sample": "Golden Business Machines (GBM) is a technology services company and exclusive authorized dealer of Canon Color Copiers, Digital Presses, Wide Format Printers and MFPs. We offer a full range of Managed IT Services including hardware, network support, and managed print services. Proudly serving Wilkes-Barre, Scranton, Pittston, Kingston, Stroudsburg, Hazleton, Bloomsburg, Lewisburg, Williamsport and surrounding areas.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "remote_support_url": "https://get.teamviewer.com/dhm4sj3",
+    "accessibility_widget": "cdn.userway.org (UserWay) — client's existing vendor",
+    "note": "Existing site uses WPForms + reCAPTCHA for the contact form and TeamViewer for remote support. None of these are GHL. Operator: paste the MLA GHL widget snippets into intake §12 before site-generate wires the CRM."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_place_id": "ChIJl3nOUBYaxYkRmFzHwYIKN7Q",
+    "pages_scraped": [
+      "/", "/about", "/locations", "/contact", "/copiers-and-printers", "/manage-it-services",
+      "/it-services", "/technology-partners", "/copiers-and-printers/printers",
+      "/copiers-and-printers/scanners", "/copiers-and-printers/digital-presses",
+      "/copiers-and-printers/wide-format", "/manage-it-services/computers",
+      "/manage-it-services/document-management", "/manage-it-services/managed-print-services",
+      "/manage-it-services/network-security", "/manage-it-services/backup-disaster-recovery",
+      "/manage-it-services/proactive-it-support", "/scranton-copier-and-printer-solutions",
+      "/wilkes-barre-proven-it-service-provider"
+    ],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.404,
+    "warnings": [
+      "Vertical mismatch: this is a B2B office-technology / managed-IT dealer, not a home-services contractor. Owl template sections are remapped to office-tech equivalents (no financing, no us-vs-them, no roof/lawn language).",
+      "GBP returned 0 review bodies (reviewsCount=4 but reviews array empty) and the client site publishes no testimonials — testimonials[] is empty rather than fabricated.",
+      "No email address published anywhere on the site or in GBP.",
+      "No team member names or photos published beyond the 1969 founder.",
+      "brand.text (#101828) and brand.muted (#5A6472) are template-neutral defaults; the site's extracted textPrimary was #DE0029 (the brand red used for links), which fails as a body-text color."
+    ]
+  }
+}

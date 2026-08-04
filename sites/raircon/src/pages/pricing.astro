@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// Deliberately NOT a price table. We have no verified published rate card for
+// this client, and inventing one would be worse than saying nothing. These are
+// the honest cost drivers a customer can actually reason about before the
+// on-site diagnosis produces a real number.
+const costFactorRows = [
+  { type: 'Air conditioning & HVAC', drivers: 'System tonnage and efficiency rating, ducted vs. mini-split, condition of existing duct work, roof or ground access, mechanical permit' },
+  { type: 'Commercial refrigeration', drivers: 'Equipment type and capacity, refrigerant, runtime hours, whether the fault is a component failure or an end-of-life system' },
+  { type: 'Plumbing', drivers: 'Line length and depth, access and restoration required, fixture and water heater specification, whether camera inspection finds one fault or a failing run' },
+  { type: 'Electrical', drivers: 'Panel capacity and age, run length, code upgrades triggered by the work, permit and inspection requirements' },
+  { type: 'Construction & remodeling', drivers: 'Scope and phasing, structural changes, finish specification, city permitting, and how much of the mechanical, electrical and plumbing scope is included' },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How Raircon prices HVAC, refrigeration, plumbing, electrical and construction work across ${site.marketing_city ?? site.address.city}, ${site.marketing_state ?? site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get Your Free Estimate Today!"
+  />
+
+  <section class="roof-cost">
+    <div class="container">
+      <h2>What actually drives the price</h2>
+      <p class="lede">We would rather show you the variables than post a number that does not survive contact with your building. Here is what moves a quote up or down in each part of our work — and what the on-site diagnosis is looking at.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Type of work</th><th>What the quote depends on</th></tr>
+          </thead>
+          <tbody>
+            {costFactorRows.map((r) => (
+              <tr><td>{r.type}</td><td>{r.drivers}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>Two things that are always true:</strong> the estimate is free and in writing, and if your existing equipment can be repaired rather than replaced we will tell you so.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free on-site estimate</h2>
+        <p class="lede">Pick a time that works — we come out, diagnose the system properly, and give you a written quote.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .roof-cost { padding: var(--space-5) 0; background: var(--color-surface); }
+  .roof-cost h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .roof-cost .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .roof-cost table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .roof-cost th, .roof-cost td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .roof-cost th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .roof-cost tbody tr:last-child td { border-bottom: 0; }
+  .roof-cost .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diamond-ridge-industrial-services.vercel.app/sitemap-index.xml

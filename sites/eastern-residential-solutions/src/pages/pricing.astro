@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+const roofCostRows = [
+  { type: 'Asphalt Shingle (3-tab or architectural)', per_sq: '$4–$7', avg_2000: '$8,000–$14,000' },
+  { type: 'Metal Roof (standing seam)', per_sq: '$10–$16', avg_2000: '$20,000–$32,000' },
+  { type: 'Cedar Shake', per_sq: '$8–$14', avg_2000: '$16,000–$28,000' },
+  { type: 'Tile', per_sq: '$10–$18', avg_2000: '$20,000–$36,000' },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`Transparent pricing for roofing, siding, windows, kitchens, and baths across ${site.address.city}, ${site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your roof"
+  />
+
+  <section class="roof-cost">
+    <div class="container">
+      <h2>Average roof costs in {site.address.city}, {site.address.state}</h2>
+      <p class="lede">Every job is quoted based on your specific roof, but here's the market range for a typical single-family home. Free on-site estimate is the only way to know your number.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Roof type</th><th>Per square (100 sq ft)</th><th>Typical 2,000 sq ft home</th></tr>
+          </thead>
+          <tbody>
+            {roofCostRows.map((r) => (
+              <tr><td>{r.type}</td><td>{r.per_sq}</td><td>{r.avg_2000}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>What drives the price up or down:</strong> pitch and complexity of the roof, tear-off vs. overlay, permits, gutter and flashing condition, and material choice.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free on-site estimate</h2>
+        <p class="lede">Pick a time that works — we come out, measure the roof, and give you a written quote on the spot.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .roof-cost { padding: var(--space-5) 0; background: var(--color-surface); }
+  .roof-cost h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .roof-cost .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .roof-cost table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .roof-cost th, .roof-cost td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .roof-cost th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .roof-cost tbody tr:last-child td { border-bottom: 0; }
+  .roof-cost .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

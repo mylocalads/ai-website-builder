@@ -1,0 +1,71 @@
+{
+  "slug": "patriot-metal-products",
+  "template": "owl",
+  "sources": {
+    "mode": "library",
+    "library": "roofing",
+    "urls": [],
+    "_scrape_skipped": true,
+    "_scrape_skipped_reason": "The roofing library's primary entries are https://firefly-cd.vercel.app/ and https://owlroofing.com/, and the library's own note_url_fragility field designates the local template directory as the structural source of truth. astro-templates/owl/ is present locally and is the canonical structure for this build, so re-scraping the references would have produced no token this build uses — brand colors from owlroofing.com must never be cloned, and the structure is already in hand. Saved ~$0.04. Palette and typography below are derived from the CLIENT's own detected brand tokens, which is the intended source anyway."
+  },
+  "palette": {
+    "bg": "#f6f6f4",
+    "surface": "#ffffff",
+    "text": "#16181b",
+    "muted": "#5b6169",
+    "primary": "#23282e",
+    "on_primary": "#ffffff",
+    "accent": "#f2a900",
+    "on_accent": "#16181b",
+    "accent_ink": "#8f5e00",
+    "focus": "#0057ff"
+  },
+  "palette_rationale": "Graphite steel base with an industrial amber accent. The accent is refined from #FAB702, the primary brand color Firecrawl detected on the client's own site, nudged to #f2a900 for contrast headroom. The client's existing site is generic-theme blue (#3498DB) which is the WordPress demo's color, not a brand asset — deliberately dropped. Dark bands use #23282e (graphite, reads as machined steel) rather than owl's default olive, which is wrong for an industrial coater. Chrome/silver from the PMP logo is a metallic, not a flat hue, so it is expressed through photography and the graphite base rather than as a token.",
+  "contrast_audit": {
+    "_method": "WCAG 2.1 relative luminance, computed not estimated.",
+    "text_on_bg": 16.44,
+    "text_on_surface": 17.79,
+    "muted_on_bg": 5.78,
+    "on_primary_white_on_primary": 14.85,
+    "accent_on_primary_dark_band": 7.39,
+    "on_accent_text_on_accent_fill": 8.85,
+    "accent_ink_on_bg": 5.15,
+    "accent_ink_on_surface": 5.57,
+    "verdict": "All pairs clear WCAG AA. Raw --color-accent (#f2a900) measures only 1.86:1 on --color-bg and must never be used as body or eyebrow text on a light background — use --color-accent-ink (#8f5e00) there, per the owl template's documented light-bg/dark-panel rule. On the dark #23282e bands the raw accent is correct at 7.39:1."
+  },
+  "typography": {
+    "display": "Montserrat",
+    "body": "Source Sans 3",
+    "_rationale": "Montserrat is BOTH the owl template default and the heading font Firecrawl detected on the client's existing site — a genuine match, kept. The client's body font is PT Sans; Source Sans 3 is its closest well-maintained Google Fonts humanist-sans sibling with a fuller weight range and better small-size rendering for the dense technical spec copy this site carries. Keeping PT Sans is also acceptable if the operator prefers strict fidelity."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "section_styling_hints": [
+    "Lead with capability numbers as typographic elements — part dimensions, weight capacity, gun count. Set them large in Montserrat; they are this business's most persuasive content.",
+    "Dark graphite bands (#23282e) for the process/why-choose sections read as machined steel and suit the vertical.",
+    "Use the client's real facility photography — aerial plant shot, tractor trailer, blast tunnel, onsite lab, fastener close-ups. Never substitute generic industrial stock.",
+    "Spec lists and sub-services should render as dense, scannable bullet columns; the buyer is qualifying, not browsing.",
+    "Amber used sparingly and structurally — CTA fills, rules, eyebrow marks — not as a wash."
+  ],
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic industrial stock photography (hardhat closeup, handshake, sparks-flying welder)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — use the fixed owl order",
+    "the generic theme blue #3498DB from the client's current site — it is the WordPress demo's color, not a brand asset",
+    "star ratings, review counts, or aggregateRating schema — GBP rating is 2.7/7 and is suppressed sitewide",
+    "fabricated testimonials — there are zero real ones available",
+    "placeholder team headshots — the client's existing 'photos' are theme placeholder letters",
+    "consumer home-services register (financing banners, homeowner trust badges, 'family owned since' as the lead) — the buyer here is an engineer or purchasing agent"
+  ],
+  "_notes": {
+    "generated_at": "2026-08-03",
+    "cost_usd": 0.0,
+    "anti_patterns_merged_from": ["reference-libraries/roofing.json", "sites/patriot-metal-products/audit_results.json"]
+  }
+}

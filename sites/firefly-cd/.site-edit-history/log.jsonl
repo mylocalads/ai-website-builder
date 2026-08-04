@@ -1,0 +1,18 @@
+{"batch_id":"2026-07-23T22:01:30Z-543b5d","mode":"edit","slug":"firefly-cd","status":"pending","summary":"team_photo, us_photo, them_photo, 6x service hero_photo","at":"2026-07-23T22:01:30Z"}
+{"batch_id":"2026-07-23T22:01:30Z-543b5d","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"team_photo, us_photo, them_photo, 6x service hero_photo","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-23T22:04:44Z"}
+{"batch_id":"2026-07-23T22:44:01Z-b16dba","mode":"edit","slug":"firefly-cd","status":"pending","summary":"code_injection.head (og:image/twitter:image), team_photo","at":"2026-07-23T22:44:01Z"}
+{"batch_id":"2026-07-23T22:44:01Z-b16dba","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"code_injection.head (og:image/twitter:image), team_photo","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-23T22:44:42Z"}
+{"batch_id":"2026-07-23T22:50:33Z-16d2b5","mode":"edit","slug":"firefly-cd","status":"pending","summary":"team_photo","at":"2026-07-23T22:50:33Z"}
+{"batch_id":"2026-07-23T22:50:33Z-16d2b5","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"team_photo","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-23T22:51:08Z"}
+{"batch_id":"2026-07-23T22:53:53Z-5cd415","mode":"edit","slug":"firefly-cd","status":"pending","summary":"AboutSection .about-photo object-fit: cover -> contain","at":"2026-07-23T22:53:53Z"}
+{"batch_id":"2026-07-23T22:53:53Z-5cd415","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"AboutSection .about-photo object-fit: cover -> contain","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-23T22:54:19Z"}
+{"batch_id":"2026-07-23T23:01:03Z-51e26a","mode":"edit","slug":"firefly-cd","status":"pending","summary":"business_name: & -> ＆ (fullwidth)","at":"2026-07-23T23:01:03Z"}
+{"batch_id":"2026-07-23T23:01:03Z-51e26a","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"business_name: & -> ＆ (fullwidth)","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-23T23:01:39Z"}
+{"batch_id":"2026-07-24T00:35:48Z-0a0e66","mode":"edit","slug":"firefly-cd","status":"pending","summary":"about.story rewrite (mission + values)","at":"2026-07-24T00:35:48Z"}
+{"batch_id":"2026-07-24T00:35:48Z-0a0e66","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"about.story rewrite (mission + values)","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-24T00:36:22Z"}
+{"batch_id":"2026-07-24T00:40:57Z-bb0e89","mode":"edit","slug":"firefly-cd","status":"pending","summary":"code_injection.head: append favicon + apple-touch-icon","at":"2026-07-24T00:40:57Z"}
+{"batch_id":"2026-07-24T00:40:57Z-bb0e89","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"code_injection.head: append favicon + apple-touch-icon","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-24T00:41:38Z"}
+{"batch_id":"2026-07-24T01:20:08Z-81bbe9","mode":"edit","slug":"firefly-cd","status":"pending","summary":"8x home gallery photos + 6 service galleries reshuffled","at":"2026-07-24T01:20:08Z"}
+{"batch_id":"2026-07-24T01:20:08Z-81bbe9","mode":"edit","slug":"firefly-cd","status":"deployed","summary":"8x home gallery photos + 6 service galleries reshuffled","deploy_url":"https://firefly-cd.vercel.app","at":"2026-07-24T01:23:14Z"}
+{"batch_id": "2026-08-03T17:46:34Z-k7n3x1", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "add Kootenai County ID service area; area cap 5->6; 2 self-hosted photos"}
+{"batch_id": "2026-08-03T17:58:07Z-p2m8q4", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "swap Kootenai County hero to kcgov.us aerial CdA photo"}

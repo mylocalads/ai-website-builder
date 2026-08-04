@@ -1,0 +1,91 @@
+{
+  "kind": "config",
+  "business_name": "Bilski's Lawn Care",
+  "legal_name": "Bilski's Lawn Care & Landscaping LLC",
+  "tagline": "Lawn Care & Landscaping Across Luzerne County",
+  "phone": "+15708996400",
+  "phone_display": "(570) 899-6400",
+  "email": "bilskislawncare@gmail.com",
+  "address": {
+    "street": "839 N Main St",
+    "city": "Hilldale",
+    "state": "PA",
+    "postal": "18702",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2918646,
+    "lng": -75.8315169
+  },
+  "hours": {
+    "monday": "8:00 AM – 4:00 PM",
+    "tuesday": "8:00 AM – 4:00 PM",
+    "wednesday": "8:00 AM – 4:00 PM",
+    "thursday": "8:00 AM – 4:00 PM",
+    "friday": "8:00 AM – 4:00 PM",
+    "saturday": "Closed",
+    "sunday": "Closed"
+  },
+  "site_url": "https://bilskis-lawncare.vercel.app",
+  "rating": 4.9,
+  "review_count": 40,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 6,
+  "social": {
+    "facebook": "https://www.facebook.com/p/Bilskis-Lawn-Care-LLC-100063951346391/",
+    "instagram": "https://www.instagram.com/bilskislawncare/"
+  },
+  "logo_url": "/logo-bilskis.png",
+  "default_hero_photo": "https://static.wixstatic.com/media/017a01_ac8cbacb10854aea84158fa49c06ff02~mv2.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "4.9 stars across 40 reviews",
+      "description": "Nearly every review says the same two things — the crew turned up when they said they would, and the yard looked better than expected."
+    },
+    {
+      "title": "A written quote before we start",
+      "description": "You get the number in writing, not a verbal guess that grows once the work is already underway."
+    },
+    {
+      "title": "Lawn, landscape, hardscape and snow",
+      "description": "One local crew for the mowing, the mulch, the patio and the parking lot — you are not juggling four contractors."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl",
+    "calendar_embed_snippet": "<div><img src=\"/placeholder-calendar.svg\" alt=\"Placeholder marking where the booking calendar widget will sit\" style=\"display:block;width:100%;height:auto;border-radius:14px;\" /></div>",
+    "contact_form_snippet": "<div><img src=\"/placeholder-form.svg\" alt=\"Placeholder marking where the contact form will sit\" style=\"display:block;width:100%;height:auto;border-radius:14px;\" /></div>"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Lawn, Landscape",
+    "heading_rest": "& Hardscape",
+    "subtitle": "Residential and commercial work across Luzerne County — weekly mowing, mulch and planting beds, paver patios and retaining walls, and commercial snow removal all winter."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Comprehensive Pain Specialists",
+  "email": null,
+  "phone": "(570) 232-3920",
+  "address": "1177 PA-315, Dolphin Plaza, Wilkes-Barre, PA 18702",
+  "website": "https://comprehensivepaindocs.org/",
+  "rating": 3.2,
+  "reviewCount": 27,
+  "category": "Pain management physician",
+  "hours": "Mon-Fri 8am-4pm, Sat-Sun Closed",
+  "slug": "comprehensive-pain-specialists",
+  "geo": { "lat": 41.2594909, "lng": -75.8197402 },
+  "placeId": "ChIJpcjlCXQbxYkRCWVQUib_Yh4",
+  "mapsUrl": "https://maps.app.goo.gl/mjR9PkrQXXQSEe6y9",
+  "reviews": []
+}

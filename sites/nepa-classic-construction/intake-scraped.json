@@ -1,0 +1,599 @@
+{
+  "slug": "nepa-classic-construction",
+  "business_name": "NEPA Classic Construction",
+  "legal_name": null,
+  "tagline": "General contracting, landscaping & hardscaping across Northeast PA",
+  "phone": "+15704791318",
+  "phone_display": "(570) 479-1318",
+  "email": "info@nepaclassic.com",
+  "address": {
+    "street": null,
+    "city": "Pittston",
+    "state": "PA",
+    "postal": "18640",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": {
+    "lat": 41.3243,
+    "lng": -75.7898
+  },
+  "hours": {
+    "monday": "7am-7pm",
+    "tuesday": "7am-7pm",
+    "wednesday": "7am-7pm",
+    "thursday": "7am-7pm",
+    "friday": "7am-7pm",
+    "saturday": "7am-7pm"
+  },
+  "rating": null,
+  "review_count": null,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 30,
+  "social": {},
+  "site_url": "https://nepaclassic.com",
+  "logo_url": "https://nepaclassic.com/assets/logo-BjbCzadu.png",
+  "default_hero_photo": "https://nepaclassic.com/assets/exterior-after-BxAH8BXS.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://nepaclassic.com/assets/floor-after-bA8dbA4L.jpg",
+  "category": "General contractor",
+  "brand": {
+    "fonts": {
+      "display": "Fraunces",
+      "body": "Geist"
+    },
+    "colors": {
+      "bg": "#faf8f5",
+      "surface": "#ffffff",
+      "text": "#1a1e1b",
+      "muted": "#5c6159",
+      "primary": "#0b3729",
+      "accent": "#c7a257",
+      "logo_red": "#c92121",
+      "logo_green": "#3e9c26",
+      "candidates": [
+        "#0b3729",
+        "#c7a257",
+        "#c92121",
+        "#3e9c26",
+        "#faf8f5",
+        "#1a1e1b",
+        "#ebe8e0",
+        "#616b63"
+      ]
+    }
+  },
+  "stats": [
+    {
+      "number": "30+",
+      "label": "Years Experience"
+    },
+    {
+      "number": "500+",
+      "label": "Projects Completed"
+    },
+    {
+      "number": "100%",
+      "label": "Free Estimates"
+    }
+  ],
+  "about_story": "NEPA Classic Construction offers over 30 years of experience in general construction — interior and exterior — landscaping, hardscaping, and much more. We take pride in every project, treating your home as if it were our own.\n\nServing Scranton, Pittston, Wilkes-Barre, and surrounding communities across Northeastern Pennsylvania, we deliver quality craftsmanship at fair prices. Every project begins with a free estimate — no pressure, no surprises.",
+  "services": [
+    {
+      "title": "General Contracting",
+      "short_description": "As a fully licensed general contractor based in Northeast Pennsylvania, NEPA Classic Construction manages every detail of your residential or commercial build — from permits and design coordination to subcontractors and final walkthrough.",
+      "long_description": "As a fully licensed general contractor based in Northeast Pennsylvania, NEPA Classic Construction manages every detail of your residential or commercial build — from permits and design coordination to subcontractors and final walkthrough. With over 30 years of experience across Wilkes-Barre, Scranton, and Pittston, we deliver on time and on budget.",
+      "benefits": [
+        "Single point of accountability from start to finish",
+        "Trusted local subcontractor network across NEPA",
+        "Transparent estimates and milestone-based scheduling",
+        "Licensed and insured in Pennsylvania"
+      ],
+      "process": [
+        {
+          "title": "Consultation",
+          "desc": "Free on-site visit to scope your project anywhere in Luzerne or Lackawanna County."
+        },
+        {
+          "title": "Estimate",
+          "desc": "Detailed, itemized written estimate within days."
+        },
+        {
+          "title": "Build",
+          "desc": "Daily site management with our experienced crews."
+        },
+        {
+          "title": "Walkthrough",
+          "desc": "Final review and punch list completion."
+        }
+      ],
+      "examples": [
+        "Whole-home builds in Dallas, PA",
+        "Commercial buildouts in Wilkes-Barre",
+        "Additions in Scranton"
+      ],
+      "sub_services": [
+        "New Construction",
+        "Additions",
+        "Commercial Buildouts",
+        "Permitting & Design Coordination",
+        "Project Management"
+      ],
+      "faqs": [
+        {
+          "q": "Do you pull permits?",
+          "a": "Yes — we handle all permitting with local Luzerne and Lackawanna County offices."
+        },
+        {
+          "q": "How long do GC projects take in NEPA?",
+          "a": "Timelines vary — small renovations 2–4 weeks, additions 6–12 weeks, new builds 6–9 months."
+        },
+        {
+          "q": "Whole-home reno timeline?",
+          "a": "Typical full renovations in NEPA run 4–8 months depending on size and scope."
+        },
+        {
+          "q": "Do you handle older home challenges?",
+          "a": "Yes — knob-and-tube, plaster, and outdated plumbing are common in NEPA and we handle them."
+        }
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Interior Construction",
+      "short_description": "Full interior construction and renovation across Northeast Pennsylvania.",
+      "long_description": "Full interior construction and renovation across Northeast Pennsylvania. Kitchens, bathrooms, basements, and complete interior remodels in Wilkes-Barre, Scranton, Pittston, and surrounding NEPA homes.",
+      "benefits": [
+        "Skilled in-house carpentry, drywall, tile, and trim",
+        "Coordinated electrical and plumbing partners",
+        "Clean, dust-controlled job sites",
+        "Detailed schedules with daily updates"
+      ],
+      "process": [
+        {
+          "title": "Design",
+          "desc": "Layout planning and material selection."
+        },
+        {
+          "title": "Demo",
+          "desc": "Careful demolition with site protection."
+        },
+        {
+          "title": "Build",
+          "desc": "Framing, MEP, drywall, and finishes."
+        },
+        {
+          "title": "Finish",
+          "desc": "Trim, paint, and final fixtures."
+        }
+      ],
+      "examples": [
+        "Kitchen remodel in Kingston, PA",
+        "Master bath in Pittston",
+        "Basement finish in Scranton"
+      ],
+      "sub_services": [
+        "Kitchen Remodels",
+        "Bathroom Renovations",
+        "Basement Finishing",
+        "Carpentry, Drywall & Trim",
+        "Tile & Flooring"
+      ],
+      "faqs": [
+        {
+          "q": "Can we live in the home during work?",
+          "a": "Most renovations allow you to stay — we contain work zones and minimize disruption."
+        },
+        {
+          "q": "Average kitchen timeline?",
+          "a": "Typical NEPA kitchen remodels run 4–8 weeks."
+        }
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Exterior Construction",
+      "short_description": "Exterior construction across Northeast Pennsylvania — siding, roofing, decks, porches, and structural exterior repairs built for NEPA's weather.",
+      "long_description": "Exterior construction across Northeast Pennsylvania — siding, roofing, decks, porches, and structural exterior repairs built for NEPA's weather. Serving Wilkes-Barre, Scranton, Pittston, and surrounding communities.",
+      "benefits": [
+        "Weather-resistant materials suited for NEPA",
+        "Proper flashing and water management",
+        "Boosts curb appeal and energy efficiency",
+        "Durable, low-maintenance finishes"
+      ],
+      "process": [
+        {
+          "title": "Inspection",
+          "desc": "Identify rot, water damage, and structural issues."
+        },
+        {
+          "title": "Plan",
+          "desc": "Material selection and timeline."
+        },
+        {
+          "title": "Build",
+          "desc": "Tear-off, repairs, and installation."
+        },
+        {
+          "title": "Cleanup",
+          "desc": "Site restoration and final inspection."
+        }
+      ],
+      "examples": [
+        "Vinyl siding in Plains, PA",
+        "New deck in Dallas",
+        "Wraparound porch rebuild in Scranton"
+      ],
+      "sub_services": [
+        "Siding",
+        "Roofing",
+        "Decks",
+        "Porches",
+        "Structural Exterior Repairs"
+      ],
+      "faqs": [
+        {
+          "q": "When is the best season for exterior work in NEPA?",
+          "a": "Late spring through early fall is ideal, though we work year-round when weather permits."
+        },
+        {
+          "q": "Do you tear off old roofing?",
+          "a": "Yes — full tear-off and inspection of decking is our standard."
+        }
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Hardscaping",
+      "short_description": "Expert hardscaping in Northeast Pennsylvania — patios, walls, walkways, and stonework built to last through PA winters.",
+      "long_description": "Expert hardscaping in Northeast Pennsylvania — patios, walls, walkways, and stonework built to last through PA winters. Our crews serve Wilkes-Barre, Scranton, Pittston, Kingston, and beyond with precision installation and proper base preparation.",
+      "benefits": [
+        "Engineered base preparation for freeze-thaw durability",
+        "Wide selection of pavers, natural stone, and block",
+        "Increases usable outdoor living area",
+        "Boosts resale value across the NEPA market"
+      ],
+      "process": [
+        {
+          "title": "Design",
+          "desc": "Layout, materials, and elevation planning."
+        },
+        {
+          "title": "Excavation",
+          "desc": "Proper depth and base prep."
+        },
+        {
+          "title": "Installation",
+          "desc": "Precision laying, cutting, and edging."
+        },
+        {
+          "title": "Finishing",
+          "desc": "Polymeric sand and sealing."
+        }
+      ],
+      "examples": [
+        "Paver patio in Wilkes-Barre",
+        "Retaining wall in Dallas, PA",
+        "Stone walkway in Scranton"
+      ],
+      "sub_services": [
+        "Paver Patios",
+        "Retaining Walls",
+        "Walkways & Driveways",
+        "Fire Pits & Outdoor Kitchens",
+        "Stone Veneer & Steps"
+      ],
+      "faqs": [
+        {
+          "q": "Will pavers crack in PA winters?",
+          "a": "Properly installed pavers with engineered base last decades through NEPA winters."
+        },
+        {
+          "q": "Pavers vs. concrete?",
+          "a": "Pavers flex with frost heave, are repairable, and outlast poured concrete in our climate."
+        },
+        {
+          "q": "Patio installation cost?",
+          "a": "Most NEPA paver patios run $20–$45 per square foot installed."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "Typical installs are 3–7 days depending on size and features."
+        },
+        {
+          "q": "Do tall walls need engineering?",
+          "a": "Walls over 4 feet typically require engineering and permits in PA — we handle both."
+        },
+        {
+          "q": "What about drainage?",
+          "a": "Every wall we build includes proper gravel backfill and perforated drain pipe."
+        },
+        {
+          "q": "Pavers strong enough for driveways?",
+          "a": "Yes — with proper 8–10 inch compacted base, paver driveways outperform concrete in NEPA."
+        },
+        {
+          "q": "Do you do snow removal damage repair?",
+          "a": "Yes — paver driveways are easily repaired if damaged by plows."
+        }
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Landscaping",
+      "short_description": "Professional landscaping services across Northeast Pennsylvania.",
+      "long_description": "Professional landscaping services across Northeast Pennsylvania. From design to installation, we transform yards in Scranton, Wilkes-Barre, Kingston, and surrounding areas with plantings, grading, sod, and complete outdoor environments built for NEPA's climate.",
+      "benefits": [
+        "Custom landscape design tailored to your property",
+        "Native and climate-appropriate plantings for NEPA",
+        "Proper grading and drainage solutions",
+        "Increases curb appeal and property value"
+      ],
+      "process": [
+        {
+          "title": "Design",
+          "desc": "Site evaluation and concept design."
+        },
+        {
+          "title": "Plant selection",
+          "desc": "Hardy species suited to PA winters."
+        },
+        {
+          "title": "Installation",
+          "desc": "Bed prep, planting, mulching, and finishing."
+        },
+        {
+          "title": "Aftercare",
+          "desc": "Watering and maintenance guidance."
+        }
+      ],
+      "examples": [
+        "Front yard refresh in Pittston",
+        "Full backyard redesign in Scranton",
+        "Commercial landscaping in Wilkes-Barre"
+      ],
+      "sub_services": [
+        "Landscape Design",
+        "Plantings & Beds",
+        "Grading & Drainage",
+        "Sod Installation",
+        "Mulching & Finishing"
+      ],
+      "faqs": [
+        {
+          "q": "Best time to landscape in NEPA?",
+          "a": "Spring (April–June) and early fall (September–October) are ideal in Northeast Pennsylvania."
+        },
+        {
+          "q": "Do you offer maintenance?",
+          "a": "We focus on design and installation; we can recommend trusted local maintenance partners."
+        }
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Pittston",
+      "county": "Luzerne County",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "slug": "pittston-pa",
+      "geo": {
+        "lat": 41.326,
+        "lng": -75.7896
+      },
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Wilkes-Barre",
+      "county": "Luzerne County",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "slug": "wilkes-barre-pa",
+      "geo": {
+        "lat": 41.2459,
+        "lng": -75.8813
+      },
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Scranton",
+      "county": "Lackawanna County",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "slug": "scranton-pa",
+      "geo": {
+        "lat": 41.409,
+        "lng": -75.6624
+      },
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Kingston",
+      "county": "Luzerne County",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "slug": "kingston-pa",
+      "geo": {
+        "lat": 41.2637,
+        "lng": -75.8969
+      },
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Nanticoke",
+      "county": "Luzerne County",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "slug": "nanticoke-pa",
+      "geo": {
+        "lat": 41.2037,
+        "lng": -76.0
+      },
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Dallas",
+      "county": "Luzerne County",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "slug": "dallas-pa",
+      "geo": {
+        "lat": 41.3339,
+        "lng": -75.9635
+      },
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    }
+  ],
+  "testimonials": [],
+  "team_members": [],
+  "faqs": [
+    {
+      "q": "What areas do you serve in Northeast Pennsylvania?",
+      "a": "NEPA Classic Construction proudly serves Wilkes-Barre, Scranton, Pittston, Kingston, Nanticoke, Dallas, Plains, and surrounding communities throughout Luzerne and Lackawanna Counties."
+    },
+    {
+      "q": "Do you offer free estimates?",
+      "a": "Yes — every project starts with a free, no-obligation estimate. Call (570) 479-1318 or fill out our contact form to schedule yours."
+    },
+    {
+      "q": "How much does landscaping cost in Northeast Pennsylvania?",
+      "a": "Landscaping costs vary depending on scope, materials, and site conditions. Most residential projects in NEPA range from $3,000 to $25,000+. We provide a detailed, itemized estimate so you know exactly what you're paying for."
+    },
+    {
+      "q": "How long does a patio installation take?",
+      "a": "A typical paver patio installation in NEPA takes 3–7 days, depending on size, base preparation, and weather. Larger projects with retaining walls or built-in features can take 2–3 weeks."
+    },
+    {
+      "q": "What types of hardscaping do you install?",
+      "a": "We install paver patios, retaining walls, walkways, driveways, fire pits, outdoor kitchens, steps, and stone veneer across Wilkes-Barre, Scranton, Pittston, and the rest of NEPA."
+    },
+    {
+      "q": "Are you licensed and insured in Pennsylvania?",
+      "a": "Yes. NEPA Classic Construction is a fully licensed and insured Pennsylvania contractor with over 30 years of experience."
+    },
+    {
+      "q": "Do you handle interior renovations as well as exterior work?",
+      "a": "Absolutely. We're a full-service general contractor offering interior renovations (kitchens, bathrooms, basements) and exterior construction (siding, roofing, decks, porches) across Northeast Pennsylvania."
+    }
+  ],
+  "gallery": [
+    {
+      "photo": "https://nepaclassic.com/assets/paver-after-Imp1xlCe.jpg",
+      "alt": "Completed paver patio with retaining wall and landscaping",
+      "title": "Paver Patio Installation",
+      "location": null,
+      "description": "Paver patio with retaining wall and landscaping — transforming an outdoor space into a stunning poolside retreat.",
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://nepaclassic.com/assets/paver-before-C-rB0_Rx.jpg",
+      "alt": "Backyard pool area before paver installation",
+      "title": "Paver Patio — Before",
+      "location": null,
+      "description": null,
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://nepaclassic.com/assets/floor-after-bA8dbA4L.jpg",
+      "alt": "Finished living room with hardwood floors and modern furnishings",
+      "title": "Full Interior Renovation",
+      "location": null,
+      "description": "Complete floor-to-ceiling renovation — from exposed joists to a beautifully finished living space.",
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://nepaclassic.com/assets/floor-before-B_4cfJe8.jpg",
+      "alt": "Room with exposed floor joists during renovation",
+      "title": "Interior Renovation — Before",
+      "location": null,
+      "description": null,
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://nepaclassic.com/assets/exterior-after-BxAH8BXS.jpg",
+      "alt": "Renovated exterior with stone walkway, retaining walls, and landscaping",
+      "title": "Exterior Renovation",
+      "location": null,
+      "description": "Complete exterior transformation — stone veneer, paver walkway with retaining walls, fresh landscaping, and pathway lighting.",
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://nepaclassic.com/assets/exterior-before-CxQlO8eQ.jpg",
+      "alt": "House exterior before renovation with worn siding and porch",
+      "title": "Exterior Renovation — Before",
+      "location": null,
+      "description": null,
+      "_source": "scraped"
+    }
+  ],
+  "brand_voice_sample": "We take pride in every project, treating your home as if it were our own. Quality craftsmanship at fair prices. Free estimates — no pressure, no surprises.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "No third-party CRM widgets detected — the current site posts to a self-hosted form. Operator must supply GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_note": "No Google Business Profile listing found for NEPA Classic Construction (2 Apify Google Maps runs: Pittston PA, then Luzerne County PA). Address, hours, geo, licensed/insured and years-in-business come from the client's own site (JSON-LD LocalBusiness block + footer). rating/review_count left null — no review data exists to import.",
+    "pages_scraped": [
+      "/",
+      "/services/general-contracting",
+      "/services/landscaping",
+      "/services/hardscaping",
+      "/services/interior-construction",
+      "/services/exterior-construction",
+      "/services/home-renovations",
+      "/services/patio-installation",
+      "/services/retaining-walls",
+      "/services/walkways-driveways"
+    ],
+    "pages_404": [
+      "/contractor-wilkes-barre-pa",
+      "/contractor-scranton-pa",
+      "/contractor-pittston-pa",
+      "/contractor-kingston-pa",
+      "/contractor-nanticoke-pa",
+      "/contractor-dallas-pa",
+      "/contractor-plains-pa"
+    ],
+    "socials_scraped": [],
+    "warnings": [
+      "Existing site is a client-side React SPA; FAQ answers and per-service copy were unrendered in HTML and were read from the site's own JS data module (real source, not invented).",
+      "All 7 service-area URLs listed in the sitemap return 404 on the live site — no local_context copy exists to import.",
+      "9 services detected; capped to 5 top-level services per pipeline rule. patio-installation, retaining-walls and walkways-driveways folded into Hardscaping sub_services; home-renovations folded into General Contracting.",
+      "7 service areas detected; capped to 6 per owl template limit. Plains, PA dropped (smallest; township).",
+      "No testimonials or reviews exist on the site or on Google — testimonials[] is empty.",
+      "Logo sampled for brand colours: red #c92121 (dominant) + green #3e9c26. Red fails WCAG AA as text on the deep-green panel owl uses, so the client's own declared gold #c7a257 is the accent token and the red stays in the logo mark. See design_reference.json contrast_audit."
+    ],
+    "generated_at": "2026-08-04",
+    "cost_estimate_usd": 0.38,
+    "raw_archive_note": "raw/ holds the load-bearing sources (client JS data module, client CSS, pre-JS HTML shell with the JSON-LD, the GBP dataset, the parsed service data, and the Wikimedia landmark licences) plus a re-fetched homepage.json. The nine per-service Firecrawl markdown files were dropped after parsing — their content lives in raw/service-data-parsed.json and in the generated service markdown. See raw/README.md."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "infinity-roofing",
+  "url": "https://www.ir-ga.com/",
+  "screenshot": "screenshots/infinity-roofing.png",
+  "captured_at": "2026-07-30",
+  "method": "Firecrawl screenshot (browser pane was not compositing frames; Firecrawl used instead)",
+  "_purpose": "OPERATOR REFERENCE ONLY. Per the intake anti-pattern lock, this audit is never design DNA. The owl template + gilroy-roofing.vercel.app reference are the sole sources of layout and styling. Nothing in this file may seed tokens.css or design_reference.json.",
+  "strengths": [
+    "Strong, real hero photograph — a roofer nailing shingles, shot close. More convincing than the generic house-exterior stock most competitors run.",
+    "Value proposition is stated plainly in the hero and is the right one: 'We handle insurance claims so you don't have to.'",
+    "Gold-on-near-black is genuinely distinctive in this vertical, where almost everyone runs blue or red.",
+    "Phone number and a primary CTA are both above the fold, and the phone is in the sticky header.",
+    "Trust row under the CTA (Licensed & Insured / rating / Same Day Response) is the right idea and the right position."
+  ],
+  "weaknesses": [
+    "Rating claims contradict each other across the site — homepage '5.0 / 100+ Reviews', reviews page '5.0 / 127 reviews'. A prospect who notices this loses trust in every other number on the page.",
+    "Three service images are hotlinked from other contractors' websites (premiersouthla.com, powerwashri.com, idahoguttercompany.com). Legal exposure, plus the images break if those sites change.",
+    "Emoji are used as interface icons throughout (envelope, pin, star, shield, lightning, phone). They render inconsistently across platforms and read as unfinished.",
+    "The primary CTA is an address-based 'Instant Estimate' tool. It promises an accurate roof quote 'in under 60 seconds', which is a hard promise to keep and sets up disappointment.",
+    "Testimonials are labelled 'Website testimonial' with no platform attribution — unverifiable, and weaker than the real named third-party reviews that exist elsewhere.",
+    "Service sections are one paragraph each with no dedicated pages, so there is nothing ranking for 'roof repair Kennesaw' or any other service+city term.",
+    "Service areas are listed as flat text under county headings with no pages behind them — same missed-search problem.",
+    "No FAQ content anywhere on the site."
+  ],
+  "what_the_new_site_fixes": [
+    "Seven real service pages and seven service-area pages, each with its own copy — replacing flat text lists.",
+    "Real named, dated third-party reviews replacing unattributed website testimonials.",
+    "No unverified rating or review count printed anywhere.",
+    "Locally hosted imagery only; the three hotlinked competitor images are dropped.",
+    "Inline SVG iconography replacing emoji.",
+    "An FAQ section built around the actual Georgia homeowner worries surfaced in local research."
+  ],
+  "logo_reference": {
+    "note": "Observed in the header of the existing site — used ONLY to rebuild the client's own mark as clean SVG, not as layout inspiration.",
+    "structure": "Rounded-square gold tile containing a dark infinity glyph, set left of a two-line wordmark: 'INFINITY' in large display caps, 'ROOFING & CLEANING' beneath in small letterspaced caps.",
+    "colors": { "tile": "#e1c135", "glyph": "#0a0a0a", "wordmark_on_dark": "#ffffff" }
+  }
+}

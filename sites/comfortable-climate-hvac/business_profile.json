@@ -1,0 +1,22 @@
+{
+  "name": "Comfortable Climate HVAC",
+  "email": "joeairheat@gmail.com",
+  "phone": "(570) 333-0380",
+  "address": "Dallas, PA",
+  "website": "https://comfortableclimatehvac.com/",
+  "rating": 5,
+  "reviewCount": 17,
+  "category": "HVAC contractor",
+  "hours": "Mon-Sun 7am-8pm (Google listing); website states Mon-Fri 8:00am-5:00pm",
+  "slug": "comfortable-climate-hvac",
+  "geo": { "lat": 41.277069, "lng": -75.8803045 },
+  "placeId": "ChIJ8Z4_uLcixYkRsV2z91WSRNA",
+  "reviewsDistribution": { "oneStar": 0, "twoStar": 0, "threeStar": 0, "fourStar": 0, "fiveStar": 17 },
+  "reviews": [],
+  "_notes": {
+    "service_area_business": true,
+    "street_address_hidden": "Google lists this as a service-area business with no public street address; the website states only 'Dallas, PA'.",
+    "reviews_empty_reason": "The lukaskrivka~google-maps-with-contact-details actor returned no review bodies across three runs (searchStringsArray, placeIds, and startUrls forms). Testimonials were sourced instead from the 16 real, named reviews published on the client's own /reviews pages.",
+    "retrieved": "2026-08-03"
+  }
+}

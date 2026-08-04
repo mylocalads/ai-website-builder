@@ -1,0 +1,232 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Wilkes-Barre, PA — Family Owned Since 1995",
+    "headline": "Kitchen & Bathroom Remodeling, Start To Finish",
+    "subheadline": "Morris Kitchens & Donnelly Designs designs, supplies, and installs kitchens, bathrooms, cabinets, and countertops across the Wyoming Valley — from one showroom in Hanover Township, with one team from the first drawing to the last piece of trim.",
+    "cta_text": "Book My Free Design Consultation",
+    "cta_href": "/book",
+    "photo": "/img/hero-kitchen.jpg",
+    "video_link_text": "See how a project runs",
+    "video_link_href": "/about",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.7,
+        "label": "4.7 on Google",
+        "sublabel": "31 reviews"
+      },
+      {
+        "label": "Since 1995",
+        "sublabel": "31 years in the Wyoming Valley"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Free in-showroom design consultation",
+      "icon": "clipboard"
+    },
+    {
+      "text": "In-house installers, not subcontractors",
+      "icon": "hammer"
+    },
+    {
+      "text": "Published lead times before you sign",
+      "icon": "calendar"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Approach",
+    "headline": "We Tell You What It Costs And How Long It Takes",
+    "body": "The most common complaint homeowners have about remodelers is not price — it is silence. Nobody calls back, nobody commits to a date, and nobody explains why one quote is twice another. We do it the other way around. A full kitchen runs six to eight weeks including cabinet delivery. Countertops arrive in one to two weeks. HomeCrest cabinets are a three-week lead time, Omega semi-custom is five to six. Orders take a 75% deposit. Those numbers are published here because you should have them before you walk in, not after.",
+    "cta_text": "Book My Free Design Consultation",
+    "cta_href": "/book",
+    "icon": "clock"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Design, Product, Installation — One Company",
+    "intro": "Most remodels go sideways in the handoffs: the designer never sees the room, the measurer works for someone else, and the installer meets the cabinets on delivery day. We removed the handoffs.",
+    "blocks": [
+      {
+        "title": "Your designer measures your room",
+        "body": "Celeste Donnelly walks your kitchen or bath, takes the measurements herself, and designs around how you actually use the space. Big-box stores are not permitted to send their designers into your home — they subcontract the measuring and hand over bare numbers. That difference shows up on install day.",
+        "icon": "clipboard"
+      },
+      {
+        "title": "We stock what we sell",
+        "body": "Omega, HomeCrest, Mantra, and Century cabinetry alongside granite, quartz, marble, Corian, Cambria, Wilsonart, and Formica surfaces — dozens of them on display in the showroom. You choose from full slabs and full doors, not a three-inch chip.",
+        "icon": "home"
+      },
+      {
+        "title": "Our own crew does the install",
+        "body": "The team that draws your kitchen is the team that installs it. Plumbing, electrical, cabinetry, countertops, trim, and paint are all coordinated by us, and if you already have a contractor we schedule delivery around theirs.",
+        "icon": "hammer"
+      }
+    ],
+    "steps_title": "What a project looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Design",
+        "body": "We tweak the layout until you are genuinely happy with it. Design consultation is free — you only purchase the detailed floor plans if you want them without a contract."
+      },
+      {
+        "title": "Final measure and order",
+        "body": "We re-measure the space to confirm everything fits as drawn, then place the order. HomeCrest runs about three weeks, Omega semi-custom five to six."
+      },
+      {
+        "title": "Demolition and install",
+        "body": "Demo begins just before the products land so your kitchen is not sitting torn out waiting on a truck. Cabinets, countertops, trim, and finish work follow in sequence."
+      }
+    ],
+    "guarantee": {
+      "title": "You deal with the people who did the work",
+      "body": "Pat owns the company and Celeste designed your room. There is no call center between you and them. If something is not right after installation, you call the same showroom you bought it from — the one that has been in the West End Plaza since 2008.",
+      "cta_text": "Talk to us",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Is Three Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free design consultation",
+        "icon": "clipboard",
+        "body": "Come into the showroom or have us out. We look at the space, talk through budget, and show you real doors and real slabs."
+      },
+      {
+        "label": "Step Two",
+        "title": "Your layout and quote",
+        "icon": "document",
+        "body": "You get a design worked around your room and a written price for the cabinetry, surfaces, and installation."
+      },
+      {
+        "label": "Step Three",
+        "title": "Order, deliver, install",
+        "icon": "hammer",
+        "body": "We order, we schedule demo around the delivery, and our own installers finish the job."
+      }
+    ],
+    "cta_text": "Book My Free Design Consultation",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Morris Kitchens & Donnelly Designs",
+    "headline": "Three Decades In The Wyoming Valley",
+    "body": "Morris Kitchens opened in 1995 under local proprietor John Morris, moved from Plymouth to the West End Plaza in Hanover Township in 2008, and passed to Patrick Healey in January 2016 — a Johnson College graduate who had spent nearly thirty years building homes in this area. Celeste Donnelly joined that October with a fine arts degree in interior design from Marywood and twelve years in the local tile trade. Between them, the company designs, supplies, and installs kitchens, bathrooms, and every other space in a house that benefits from a better layout and real storage.",
+    "checklist": [
+      "Serving the Wyoming Valley since 1995",
+      "Showroom at 107 West End Rd, Hanover Township",
+      "Free design services on every project",
+      "In-house installation crew",
+      "Residential and commercial work",
+      "PA Home Improvement Contractor #PA 191211"
+    ],
+    "photo": "/img/showroom.jpg",
+    "photo_alt": "Inside the Morris Kitchens & Donnelly Designs showroom in Hanover Township",
+    "photo_cutout": false,
+    "cta_text": "Book My Free Design Consultation",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Remodeling In Luzerne County",
+    "headline": "Kitchen & Bath Remodeling In Wilkes-Barre And The Wyoming Valley",
+    "paragraphs": [
+      "Most homes in Wilkes-Barre, Kingston, Nanticoke, and the surrounding boroughs were built long before open-plan kitchens, dishwashers, and double vanities were assumptions. That means a remodel here is rarely a straight swap — it is closing a doorway, moving a wall of cabinets, working around old plumbing stacks, and finding storage in a footprint that was never designed to have any. That is exactly the kind of problem a designer who measures the room herself solves and a catalog layout does not.",
+      "We handle the whole thing from one address: layout and selections with Celeste, cabinetry from Omega, HomeCrest, Mantra, and Century, countertops in granite, quartz, marble, solid surface, or laminate, and installation by our own crew. We also work beyond the kitchen and bath — mudrooms, home offices, laundry rooms, closets, and basement wet bars all come out of the same shop.",
+      "If you already have a builder or contractor, we work as their supplier and design partner. Bring us the plans, we handle product selection, measurement, compatibility, delivery scheduling, and billing so nobody is standing around on install day waiting on a box that shipped to the wrong address."
+    ],
+    "checklist": [
+      "Full kitchen remodels, 6–8 weeks including cabinet delivery",
+      "Bathroom remodels from powder rooms to master suites",
+      "Solid wood, made-in-USA cabinetry",
+      "Granite, quartz, marble, solid surface, and laminate tops",
+      "Mudrooms, offices, laundry rooms, closets, and wet bars",
+      "Builder and contractor accounts welcome"
+    ],
+    "image": "/img/countertops.jpg",
+    "image_alt": "Stone countertop installation with a full-height backsplash",
+    "image_position": "left",
+    "cta_text": "Book My Free Design Consultation",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Sonia Jones",
+      "text": "I would HIGHLY recommend Morris Kitchens! They did a fantastic job on our kitchen, and they have great customer service! They maximized the space exceptionally well. The island is 10ft with back-to-back cabinet storage underneath and awesome work.",
+      "rating": 5
+    },
+    {
+      "name": "Alicia Roback",
+      "text": "Celeste is very helpful with layout and design. She goes above and beyond to please her customers. Her crew is punctual, polite and provides quality craftsmanship. They did an amazing job on our bathroom remodel and we couldn't be happier. Thank you for a job well done Morris Kitchens & Donnelly Designs!",
+      "rating": 5
+    },
+    {
+      "name": "Carol Swan",
+      "text": "I just had my kitchen remodeled and at completion the results are amazing! Celeste has many options to choose from and was always courteous and professional with any changes or additions I requested. She was a pleasure to work with and I found the quality and pricing to be good as well!",
+      "rating": 5
+    },
+    {
+      "name": "George Shovlin",
+      "text": "Bought cabinets for a several different kitchens and bathrooms there over the years. Great place to buy, they give great advice and fair prices. Best of all is the service which is second to none, could not ask for more!",
+      "rating": 5
+    },
+    {
+      "name": "Steve Stalter",
+      "text": "We had a great experience with Morris Kitchens & Donnelly Designs, LLC. We had our kitchen remodeled and they were affordable, started and finished on time as well as quality products and work.",
+      "rating": 5
+    },
+    {
+      "name": "Laura G. Carter",
+      "text": "Celeste was incredibly helpful and kind to me and my mother who needed new kitchen cabinets. We wanted to stick with a local business and now we won't go anywhere else for our kitchen & bath cabinet needs. Simply the best!",
+      "rating": 5
+    },
+    {
+      "name": "Melissa Bogart",
+      "text": "Celeste is not only knowledgeable and affordable when it comes to cabinets, her designs are top notch. She can make any kitchen (even the small one) functional, beautiful and affordable.",
+      "rating": 5
+    },
+    {
+      "name": "Jocelyne Melton",
+      "text": "Celeste did an amazing job at consulting and guiding our company as we made decisions on renovations! She knows her trade, cares, and thinks outside the box. Thanks Celeste!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you design the kitchen for us, or is that our job?",
+      "a": "We design it. Celeste handles the layout and selections personally, and design consultation is free — there is no charge to sit down and work out what your space can do. Detailed floor plans are released once a purchase contract is signed, or you can buy the design itself outright if you would rather take it elsewhere."
+    },
+    {
+      "q": "How long will my project take?",
+      "a": "Every project is different, but a full kitchen averages six to eight weeks from order to completion, and that includes cabinet delivery time. Countertops usually arrive one to two weeks after templating. Smaller rooms like a bathroom or laundry area are often finished inside a week once materials are in."
+    },
+    {
+      "q": "How long does it take for cabinets to come in?",
+      "a": "Our HomeCrest line normally runs a three-week lead time, subject to holidays and truck schedules. Our weekly cut-off is Tuesday afternoon; orders ship three weeks later on a Friday and usually arrive the following Monday. The semi-custom and custom Omega line is normally five to six weeks."
+    },
+    {
+      "q": "What is the ordering process and what do you require up front?",
+      "a": "Once the design is final we do a final measure of the space to confirm everything fits as drawn, then place the order. We require a 75% deposit on the cabinets or countertops being ordered, with the balance due on completion."
+    },
+    {
+      "q": "What actually happens during construction?",
+      "a": "First we tweak the design until you are completely happy with it. Then comes the final measure. Products get ordered, and just before they arrive demolition of the space begins — that sequencing keeps you from living in a torn-out kitchen while waiting on a delivery. If you have your own contractor, we coordinate our delivery around their schedule."
+    },
+    {
+      "q": "Which cabinet and countertop brands do you carry?",
+      "a": "We are an authorized dealer for Omega Cabinetry, HomeCrest Cabinetry, Mantra Cabinets, and Century Cabinetry, all solid wood and made in the USA. On surfaces we work in granite, engineered quartz, marble, natural wood, and solid surface and laminate lines including Corian, Cambria, Wilsonart, and Formica."
+    },
+    {
+      "q": "Do you only do kitchens and bathrooms?",
+      "a": "No. Any space that benefits from an efficient layout, real storage, and skilled cabinetry work is in scope — we regularly do mudrooms, home offices, laundry rooms, closets, and basement wet bars. If it takes cabinetry and a countertop, we can build it."
+    },
+    {
+      "q": "Do you work with builders and contractors?",
+      "a": "Yes. Builders, remodelers, and designers are welcome to use our showroom as an extension of their own business. We provide the space, the product, the measurement and compatibility checks, delivery scheduling, and accurate billing so your client sees one coordinated process."
+    }
+  ]
+}

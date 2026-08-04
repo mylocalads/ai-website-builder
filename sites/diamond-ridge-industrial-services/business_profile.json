@@ -1,0 +1,28 @@
+{
+  "name": "Diamond Ridge Industrial Services",
+  "email": "info@diamondridgeindservices.com",
+  "phone": "(570) 479-2620",
+  "address": null,
+  "website": "https://diamondridgeindservices.com/",
+  "rating": 5,
+  "reviewCount": 1,
+  "category": "Construction company",
+  "hours": "Mon-Fri 8am-5pm, Sat-Sun closed",
+  "slug": "diamond-ridge-industrial-services",
+  "geo": { "lat": 41.4042555, "lng": -75.6622274 },
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Diamond%20Ridge%20Industrial%20Services&query_place_id=ChIJNR9g_2Av4IURHM-jGB3CqBg",
+  "place_id": "ChIJNR9g_2Av4IURHM-jGB3CqBg",
+  "reviews": [],
+  "_notes": {
+    "source": "Apify lukaskrivka~google-maps-with-contact-details",
+    "runs": [
+      { "runId": "YE53y9sxcd3dSZegb", "locationQuery": "Archbald, Pennsylvania", "results": 0 },
+      { "runId": "02tcRhfZHa2qng3P8", "locationQuery": "Scranton, Pennsylvania", "results": 1 }
+    ],
+    "address_note": "No street address published on the Google listing — service-area business. Mailing address (PO Box 138, Archbald, PA 18403) taken from the client's /contact page.",
+    "review_note": "GBP reports 1 review with a 5.0 score but returned no review text, so no GBP testimonials were captured. The single site testimonial comes from the client's own homepage.",
+    "confirmed_by": "website URL match with operator-supplied URL",
+    "generated_at": "2026-08-03",
+    "cost_usd": 0.008
+  }
+}

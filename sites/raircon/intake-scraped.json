@@ -1,0 +1,333 @@
+{
+  "slug": "raircon",
+  "business_name": "Raircon Corporation",
+  "legal_name": "Raircon Corporation",
+  "tagline": "Reliable HVAC & Construction Services in Miami-Dade, Broward & Monroe Counties",
+  "phone": "+13058854422",
+  "phone_display": "(305) 885-4422",
+  "email": null,
+  "address": {
+    "street": "1388 SE 9th Ct",
+    "city": "Hialeah",
+    "state": "FL",
+    "postal": "33010",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "geo": { "lat": 25.8111191, "lng": -80.2618791 },
+  "hours": {
+    "monday": "7am-6pm",
+    "tuesday": "7am-6pm",
+    "wednesday": "7am-6pm",
+    "thursday": "7am-6pm",
+    "friday": "7am-6pm",
+    "saturday": "7am-6pm",
+    "sunday": "7am-6pm"
+  },
+  "rating": 4.7,
+  "review_count": 219,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 24,
+  "social": {
+    "facebook": "https://www.facebook.com/raircon/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Raircon%20Corporation&query_place_id=ChIJtakHa5-82YgRMDAkCyejfBI"
+  },
+  "site_url": "https://raircon.com",
+  "logo_url": "https://raircon.com/wp-content/uploads/2024/07/raircon-logo-header.png",
+  "default_hero_photo": "https://raircon.com/wp-content/uploads/2024/07/raircon-tech-2-1.webp",
+  "default_hero_video": null,
+  "about_photo": "https://raircon.com/wp-content/uploads/2024/07/raircon-strong-transp-2-1.webp",
+  "brand": {
+    "fonts": { "display": "Outfit", "body": "Roboto" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#0B1B33",
+      "accent": "#bd0101",
+      "accent_secondary": "#002349",
+      "muted": "#4A5568",
+      "surface": "#EDF2F7",
+      "candidates": [
+        "#226bba",
+        "#002349",
+        "#f7630c",
+        "#f76a0c",
+        "#bd0101",
+        "#1A202C",
+        "#2D3748",
+        "#4A5568",
+        "#EDF2F7",
+        "#F7FAFC",
+        "#ffffff"
+      ]
+    }
+  },
+  "services": [
+    {
+      "title": "Air Conditioning & HVAC",
+      "short_description": "Expert installation, maintenance, and repair of air conditioning and HVAC systems to keep residential and commercial spaces comfortable year-round.",
+      "long_description": "At Raircon we understand that effective cost management in air conditioning doesn't come from choosing the cheapest service, but from investing in solutions that offer enduring value. We focus on long-term, energy-efficient systems that reduce the frequency of repairs and lower your energy bills, and our commitment to quality equipment and skilled installation extends the life of your cooling systems. From the vibrant city centers to the quiet suburban areas, our team ensures your new air conditioning or HVAC system is installed with precision, tailored to your specific environment to maximize efficiency and comfort. Routine maintenance is crucial for the longevity and efficiency of your system, especially in the demanding weather conditions of South Florida — Raircon keeps your equipment in peak condition, ready to handle the intense summer heat without faltering. When unexpected breakdowns occur, our technicians are trained to quickly diagnose and fix all types of AC and HVAC issues, minimizing disruption and restoring your system to full functionality.",
+      "sub_services": [
+        "Rooftop unit installation & maintenance",
+        "Split & mini-split system installation",
+        "Chilled and hot water riser systems",
+        "Smart thermostat & high-efficiency upgrades",
+        "Regular maintenance and tune-ups",
+        "Emergency AC repairs",
+        "Testing & balancing for air and water systems"
+      ],
+      "hero_photo": "https://raircon.com/wp-content/uploads/2024/07/raircon-tech-2-1.webp",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Mechanical & Refrigeration",
+      "short_description": "Full-spectrum mechanical services and commercial refrigeration — pumps, heat exchangers, VRF/VAV systems, chilled water units, and energy management.",
+      "long_description": "Raircon delivers a wide range of mechanical and refrigeration services across South Florida, ensuring your building systems operate efficiently and reliably. Our services are designed to meet the unique needs of both residential and commercial properties, from the installation of complex water pump and domestic pump systems to the integration of energy management and automation control systems. We specialize in Variable Refrigerant Flow (VRF) and Variable Air Volume (VAV) systems, which provide precise climate control and enhance energy efficiency, and our team is adept at installing and servicing ventilation and exhaust fans for optimal air quality. On the refrigeration side, we understand that maintaining optimal temperature is crucial for businesses like restaurants, supermarkets, and industrial facilities — so we combine quality workmanship with advanced technology, including camera inspections and precise leak detection, to keep your systems reliable.",
+      "sub_services": [
+        "Water pumps and domestic pump systems",
+        "Heat exchanger installation & cleaning",
+        "Chilled water units",
+        "VRF and VAV system installation",
+        "Variable frequency drives & automation controls",
+        "Walk-in coolers and freezers",
+        "Camera inspections and leak detection",
+        "Pipe insulation installation and repair"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Plumbing",
+      "short_description": "Comprehensive plumbing from routine repairs and installations to emergency response, grease trap service, sewer cleaning, and system diagnostics.",
+      "long_description": "Situated at the core of Miami-Dade and Broward counties, Raircon stands out as a leader in delivering comprehensive plumbing services. Our team of skilled professionals is well-equipped to handle any plumbing challenge, from routine installations to emergency repairs. We focus on delivering long-term solutions that save you money and prevent recurrent issues, combining quality workmanship with high-quality materials to extend the lifespan of your plumbing infrastructure. We engage in proactive diagnostics and continuous monitoring of your system's performance to anticipate potential problems before they become severe, which allows us to make adjustments or repairs in a timely manner. For commercial kitchens and multi-family properties, our grease trap, septic, and pump-out services help you stay compliant with health and environmental regulations.",
+      "sub_services": [
+        "Sanitary lines, ventilation and stack pipes",
+        "Cold and hot water distribution lines",
+        "Tank and tankless water heaters",
+        "Grease trap and septic maintenance",
+        "Sewer and drain line cleaning / hydro jetting",
+        "Grease interceptor installation",
+        "Septic tank and flooded area pump outs",
+        "Camera inspections and leak detection"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Electrical",
+      "short_description": "Full-spectrum electrical services including system upgrades, new installations, panel upgrades, safety inspections, and energy-efficient solutions.",
+      "long_description": "Raircon is strategically positioned to provide exceptional electrical services throughout Miami-Dade and Broward counties. Our licensed electricians are skilled in handling a variety of electrical needs, from basic wiring to complex installations and repairs, ensuring safety and efficiency across both residential and commercial properties. We deliver electrical services that not only fix immediate issues but also improve the overall electrical safety and efficiency of your property, using high-quality materials and current techniques for durable, reliable infrastructure. Every installation and repair is completed in compliance with the latest electrical codes, giving you peace of mind and avoiding potential legal issues. When unexpected electrical problems occur, our technicians respond quickly to power outages, short circuits, and other urgent issues.",
+      "sub_services": [
+        "Complete electrical system installations",
+        "Electrical panel upgrades",
+        "LED, outdoor, and security lighting",
+        "Electrical inspections and code compliance",
+        "Emergency electrical repairs",
+        "Energy audits",
+        "Solar and energy management systems"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Construction & Remodeling",
+      "short_description": "From ground-up construction and expansions to kitchen, bath, and full-property remodels — managed end to end with permits handled.",
+      "long_description": "Raircon offers top-tier construction and remodeling services across Miami-Dade and Broward counties, executing every project with precision and excellence. Our construction work begins with detailed project management and planning: we coordinate scheduling, budgeting, and resource allocation so the job runs smoothly from initial concept to final completion. Whether you're building from the ground up or expanding an existing structure, we handle all phases — site preparation, foundation work, framing, electrical, plumbing, and final finishes. On remodels, we start with a comprehensive design consultation, working closely with you to understand your goals, preferences, and budget before creating a custom plan. We place significant emphasis on planning the flow of materials, finished goods, sanitation, and waste management so the remodel is efficient and minimizes disruption, and we pull the necessary city permits to comply with local regulations.",
+      "sub_services": [
+        "Project management and planning",
+        "New builds and expansions",
+        "Site preparation and foundation work",
+        "Kitchen and bathroom renovations",
+        "Exterior remodeling and facelifts",
+        "Design consultation",
+        "City permitting"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Miami",
+      "county": "Miami-Dade County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "miami-fl",
+      "local_context": "Serving Miami-Dade County for over 20 years with HVAC, plumbing, electrical, and construction services for homes, condo towers, and commercial buildings.",
+      "neighborhoods": ["Downtown Miami", "Brickell", "Coral Gables", "Doral", "Little Havana"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Hialeah",
+      "county": "Miami-Dade County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "hialeah-fl",
+      "local_context": "Raircon is headquartered in Hialeah, which means the fastest dispatch times in Miami-Dade for air conditioning, refrigeration, and MEP service calls.",
+      "neighborhoods": ["Hialeah Gardens", "Miami Lakes", "Medley", "West Little River"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Miami Beach",
+      "county": "Miami-Dade County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "miami-beach-fl",
+      "local_context": "We have delivered high-value projects on the Beach for two decades, including work at The Shelborne Beach Resort, Portofino Tower, and 5600 Collins.",
+      "neighborhoods": ["South Beach", "Mid-Beach", "North Beach", "North Bay Village"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Fort Lauderdale",
+      "county": "Broward County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "fort-lauderdale-fl",
+      "local_context": "Serving Broward County for over 20 years with commercial and residential HVAC, refrigeration, plumbing, electrical, and construction services.",
+      "neighborhoods": ["Downtown Fort Lauderdale", "Las Olas", "Victoria Park", "Coral Ridge"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Pembroke Pines",
+      "county": "Broward County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "pembroke-pines-fl",
+      "local_context": "Pembroke Pines is one of the prominent Broward locations where Raircon has delivered high-value building projects over the last 20 years.",
+      "neighborhoods": ["Silver Lakes", "Chapel Trail", "Miramar", "Cooper City"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Key West",
+      "county": "Monroe County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "key-west-fl",
+      "local_context": "Serving Monroe County and the Florida Keys for over 20 years, where salt air and year-round heat put unusual strain on cooling and refrigeration equipment.",
+      "neighborhoods": ["Old Town", "New Town", "Stock Island", "Marathon"],
+      "_source": "scraped"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Meliza Hernandez",
+      "location": "Miami, FL",
+      "text": "My air conditioning unit broke in the middle of the night. I called and left a message, and my call was answered within seconds. Absolutely the best customer service I have ever received from an air conditioning company. They arrived the next day on time. They fixed my unit in just 15 minutes. I will definitely recommend Raircon services to all the people I know!",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Carlos Garcia",
+      "location": "Miami, FL",
+      "text": "Phenomenal end-to-end service! From the moment my AC broke down I called the company and the receptionist was very nice and understood the urgency behind my call. The technician visited my house within two hours and seemed very knowledgeable and friendly. After a quick inspection he found what was wrong with my unit and fixed it by end of day. All in all, a great service and a very fair price for the level of professionalism. I highly recommend!",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Marvin Augusto Perez Uria",
+      "location": "Miami, FL",
+      "text": "I used this company years ago, and I called again recently to fix a mistake I made while DIY installing a minisplit unit. The technician that came to my house fixed the leak, tested the system — pressurizing with nitrogen three times — pulled vacuum every time, and charged the system with new refrigerant.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Armando Caballero",
+      "location": "Miami, FL",
+      "text": "I am not usually one to make reviews but Raircon has been a company that has completely blown me away. They not only know how to handle emergency situations regarding your air conditioning, but understand what is customer service. They are always there to help and understand the stress you may be going under regarding your broken air conditioning. 10/10 would definitely recommend to others!",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Nancy Barreto",
+      "location": "Miami, FL",
+      "text": "Great company! Very nice customer service upon calling. My friend recently bought her home in Florida. Due to her busy schedule she asked me to find an AC company as her AC seemed to have gone out in the middle of the night. She needed her AC soon. The AC tech was able to meet with her after she got off work and was able to make magic happen! Great employees and helpful service. Recommend this place!",
+      "rating": 5,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [],
+  "why_choose_us": [
+    {
+      "title": "Expert Technicians",
+      "description": "Our team of certified technicians brings a wealth of expertise in HVAC, plumbing, electrical, and building services, ensuring every project is handled with the highest standards of quality."
+    },
+    {
+      "title": "Quality & Durability",
+      "description": "We select only the finest materials and equipment, ensuring that every installation, repair, and renovation withstands the test of time — requiring fewer repairs and lower maintenance costs."
+    },
+    {
+      "title": "Cost-Effective",
+      "description": "Raircon is dedicated to providing solutions that not only meet your immediate needs but also offer long-term savings. We optimize our services for cost-effectiveness without sacrificing quality."
+    },
+    {
+      "title": "Fast and Friendly",
+      "description": "We understand that our services are often needed without delay. Raircon prides itself on being responsive and accommodating, providing fast and friendly service to minimize any inconvenience."
+    }
+  ],
+  "about_story": "Raircon Corporation was founded in January 2002 in Orlando, Florida with a vision to provide exceptional HVAC services. By 2006, the need for a broader operational base prompted a move of our headquarters to Miami, a vibrant hub that matched our growth ambitions, where we welcomed two additional corporate officers to the team.\n\nOver the last 20 years, Raircon has been at the forefront of delivering high-value projects in prominent locations including Miami Beach, North Bay Village, and Pembroke Pines. Our dedication and commitment to excellence have allowed us to serve esteemed clients such as The Shelborne Beach Resort, Portofino Tower, and 5600 Collins, earning us a reputation for reliability and quality.\n\nIn our commitment to responsiveness and superior customer service, we have equipped our fleet of 35 trucks with GPS. This technology ensures real-time tracking and efficient dispatching from our central office, enabling us to manage every call and client need promptly and effectively.\n\nAt Raircon, we not only aim to meet the immediate needs of our clients but also strive to forge lasting relationships through dependable service and innovative solutions. Our approach has consistently resulted in successful projects and satisfied clients, making us a trusted partner across Miami-Dade, Broward, and Monroe Counties.",
+  "commercial_capabilities": [
+    "Energy Management",
+    "Chiller Installation",
+    "Cooling Tower Install & Repair",
+    "Equipment Selection",
+    "Ventilation Fans",
+    "Walk-In Freezer",
+    "Walk-In Cooler",
+    "Commercial Split Systems",
+    "Water Source Heat Pumps",
+    "Blower Cool Air Handlers"
+  ],
+  "brand_voice_sample": "Raircon Corporation offers comprehensive building services in South FL across Miami-Dade & Broward Counties, including HVAC, refrigeration, plumbing, electrical, & construction. Ensuring high-quality, efficient solutions for both residential and commercial properties.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "No third-party CRM iframe or chat loader detected on /contact-us — the existing form is a native WordPress (Kadence) form. Operator: paste MLA's own GHL snippets during site-generate."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_place_id": "ChIJtakHa5-82YgRMDAkCyejfBI",
+    "pages_scraped": [
+      "/",
+      "/about-us/",
+      "/contact-us/",
+      "/our-services/",
+      "/service-area/",
+      "/our-services/air-conditioning/",
+      "/our-services/hvac/",
+      "/our-services/refrigeration/",
+      "/our-services/plumbing/",
+      "/our-services/electrical/",
+      "/our-services/mechanical/",
+      "/our-services/construction/",
+      "/our-services/remodeling/"
+    ],
+    "socials_scraped": [],
+    "generated_at": "2026-08-04",
+    "cost_estimate_usd": 0.008,
+    "warnings": [
+      "Site returned HTTP 200 to a plain fetch, so all 13 pages were captured with curl — no Firecrawl spend was needed. Only the Apify GBP lookup (~$0.004 x2 runs) was paid.",
+      "First Apify run with query 'Raircon' + 'Miami, FL' returned 0 results; second run with 'Raircon Corporation' + 'Miami-Dade County, Florida' returned the confirmed listing.",
+      "GBP returned 0 review bodies despite reviewsCount=219; the 5 testimonials above are the Google reviews republished on the client's own homepage.",
+      "Client site lists 8 services; owl SERVICE_LIMIT is 5, so services were grouped into 5 pages (AC+HVAC, Mechanical+Refrigeration, Plumbing, Electrical, Construction+Remodeling) with no service dropped.",
+      "Client footer Instagram link points to https://instagram.com (dead placeholder) — omitted from social.",
+      "No email address published anywhere on the site.",
+      "years_in_business derived from an explicit 'founded in January 2002' statement on /about-us plus the site's own '20+ YEARS IN BUSINESS' badge.",
+      "GBP openingHours for Wed/Thu are malformed on Google's side (7 AM to 12 AM / 12 to 6 AM); normalized to the 7am-6pm pattern the rest of the week uses. Site footer also advertises 'Mon-Sun 24/7' for emergencies.",
+      "brand.colors.accent was initially read as the Kadence theme default orange (#f7630c) from CSS custom properties. The rendered screenshot shows the live brand is RED (#bd0101) on NAVY (#002349) — logo swoosh, phone button, all CTAs, and headline highlights are red. Accent corrected to #bd0101 with #002349 as secondary; orange retained in candidates only."
+    ]
+  }
+}

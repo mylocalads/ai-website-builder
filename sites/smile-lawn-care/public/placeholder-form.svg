@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 800" role="img" aria-label="Placeholder for the contact form">
+  <rect width="720" height="800" rx="14" fill="#fdf7e3" stroke="#d8c789" stroke-width="2" stroke-dasharray="10 8"/>
+  <rect x="56" y="56" width="300" height="18" rx="9" fill="#a8964f"/>
+  <rect x="56" y="90" width="420" height="13" rx="6.5" fill="#cbb877"/>
+  <g>
+    <rect x="56" y="146" width="120" height="12" rx="6" fill="#cbb877"/>
+    <rect x="56" y="170" width="608" height="52" rx="8" fill="#f7ebc4"/>
+    <rect x="56" y="246" width="120" height="12" rx="6" fill="#cbb877"/>
+    <rect x="56" y="270" width="608" height="52" rx="8" fill="#f7ebc4"/>
+    <rect x="56" y="346" width="120" height="12" rx="6" fill="#cbb877"/>
+    <rect x="56" y="370" width="608" height="52" rx="8" fill="#f7ebc4"/>
+    <rect x="56" y="446" width="120" height="12" rx="6" fill="#cbb877"/>
+    <rect x="56" y="470" width="608" height="52" rx="8" fill="#f7ebc4"/>
+    <rect x="56" y="546" width="120" height="12" rx="6" fill="#cbb877"/>
+    <rect x="56" y="570" width="608" height="104" rx="8" fill="#f7ebc4"/>
+  </g>
+  <rect x="56" y="698" width="240" height="52" rx="8" fill="#79a832" opacity="0.45"/>
+  <text x="176" y="731" text-anchor="middle" font-family="Montserrat, Inter, system-ui, sans-serif" font-size="19" font-weight="700" fill="#22301a">SUBMIT</text>
+  <text x="664" y="722" text-anchor="end" font-family="Montserrat, Inter, system-ui, sans-serif" font-size="26" font-weight="700" fill="#3d3a24">Contact Form</text>
+  <text x="664" y="748" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="17" fill="#6b6550">Placeholder — paste the GHL form embed here</text>
+</svg>

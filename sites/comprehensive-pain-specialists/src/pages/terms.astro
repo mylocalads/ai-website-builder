@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const site = (await getEntry('site', 'config')).data as any;
+const updated = '2026-07-22';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Terms of Service', href: '/terms' }];
+---
+<BaseLayout
+  title={`Terms of Service — ${site.business_name}`}
+  description={`Terms of Service for ${site.business_name}.`}
+  breadcrumbs={crumbs}
+  pagePath="/terms"
+>
+  <article class="legal container">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: {updated}</p>
+
+    <h2>1. Acceptance</h2>
+    <p>By using this website or engaging {site.business_name} for services, you agree to these Terms.</p>
+
+    <h2>2. Not medical advice</h2>
+    <p>Information on this site is not intended or implied to be a substitute for professional medical advice, diagnosis, or treatment. All content available on or through this site is for general information purposes only. Always seek the advice of your physician or another qualified health provider with any questions you may have regarding a medical condition. <strong>In a life-threatening emergency, call 911 immediately.</strong></p>
+
+    <h2>3. Services and results</h2>
+    <p>{site.business_name} provides the pain management services described on this website. Using this website, submitting a form, or requesting an appointment does not create a physician-patient relationship; that relationship begins only when you are seen and accepted as a patient by one of our providers. For any medical procedure, patients may respond to treatment differently and each patient's results may vary. No outcome is promised or guaranteed.</p>
+
+    <h2>4. Insurance and payment</h2>
+    <p>We participate with many insurance plans, but network participation does not guarantee that your specific plan covers a specific service. You are responsible for verifying your coverage, deductible, copay, and any referral or prior-authorization requirement with your insurer. Self-pay pricing and payment arrangements are available and are quoted directly by the office. Balances not covered by insurance remain the patient's responsibility.</p>
+
+    <h2>5. Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, {site.business_name} disclaims all warranties relating to this website, express or implied, including any warranty of accuracy, completeness, or fitness for a particular purpose. Nothing in this section limits any liability that cannot be limited under applicable law, including liability arising from the provision of medical care.</p>
+
+    <h2>6. Photography notice</h2>
+    <p>Photographs on this website are for illustrative purposes only. The individuals pictured are models unless explicitly identified as a patient, staff member, or employee.</p>
+
+    <h2>7. SMS communications</h2>
+    <p>By submitting your phone number and opting in to SMS, you agree that {site.business_name} may send you transactional and marketing text messages at that number. Message and data rates may apply. Frequency varies. Reply STOP to unsubscribe at any time. Reply HELP for help. Consent is not a condition of purchase. Full mobile carriers are not liable for delayed or undelivered messages.</p>
+
+    <h2>8. Website use</h2>
+    <p>You agree not to misuse the website: no unauthorized access, no attempts to interfere with operation, no scraping without permission, no reverse-engineering.</p>
+
+    <h2>9. Third-party links</h2>
+    <p>The website may contain links to third-party sites. We are not responsible for the content or practices of those sites.</p>
+
+    <h2>10. Intellectual property</h2>
+    <p>All content on this website (text, images, logos, marks) is owned by {site.business_name} or its licensors and is protected by applicable intellectual-property laws. You may not reproduce or distribute without written permission.</p>
+
+    <h2>11. Governing law</h2>
+    <p>These Terms are governed by the laws of the state of {site.address.state}, without regard to conflicts-of-laws principles. Any dispute is subject to the exclusive jurisdiction of the state and federal courts located in {site.address.state}.</p>
+
+    <h2>12. Changes</h2>
+    <p>We may update these Terms from time to time. The "Last updated" date reflects the most recent revision. Continued use of the website after changes constitutes acceptance.</p>
+
+    <h2>13. Contact</h2>
+    <p>Questions about these Terms? Contact {site.business_name} at {site.phone_display}{site.email ? ` or ${site.email}` : ''}.</p>
+  </article>
+</BaseLayout>
+<style>
+  .legal { padding: var(--space-4) 0 var(--space-5); max-width: 800px; }
+  .legal h1 { font-size: clamp(2rem, 4vw, 3rem); }
+  .legal h2 { margin-top: var(--space-4); font-size: 1.35rem; }
+  .legal p, .legal li { font-size: 1.05rem; line-height: 1.65; }
+  .updated { color: var(--color-muted); font-style: italic; }
+</style>

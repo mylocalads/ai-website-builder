@@ -1,0 +1,57 @@
+{
+  "slug": "nepa-classic-construction",
+  "category": "General contractor / hardscaping / landscaping",
+  "location": "Wilkes-Barre, Scranton & Pittston PA (Luzerne + Lackawanna Counties)",
+  "threads_analyzed": 11,
+  "method_note": "Reddit is blocked for both WebSearch/WebFetch and Firecrawl scrape in this environment (403 / unsupported-site), and the in-app browser blocks reddit.com by policy. Findings below are drawn from Firecrawl web-search result snippets, which surface real Reddit post and comment text, plus adjacent NEPA local-group posts. Full comment threads were NOT read — treat volume-based claims as directional.",
+  "threads": [
+    { "title": "Cost of home renovation in NEPA", "sub": "r/Scranton", "url": "https://www.reddit.com/r/Scranton/comments/1cf9xaw/cost_of_home_renovation_in_nepa/" },
+    { "title": "Names of Contractors (Old Homes Only)", "sub": "r/Scranton", "url": "https://www.reddit.com/r/Scranton/comments/1fqlg26/names_of_contractors_old_homes_only/" },
+    { "title": "Best Scranton based general contractor?", "sub": "r/Scranton", "url": "https://www.reddit.com/r/Scranton/comments/1am42hb/best_scranton_based_general_contractor/" },
+    { "title": "Contractor Recommendations?", "sub": "r/Scranton", "url": "https://www.reddit.com/r/Scranton/comments/1cypewc/contractor_recommendations/" },
+    { "title": "Affordable outdoor hardscaping", "sub": "r/NEPA", "url": "https://www.reddit.com/r/NEPA/comments/1o6ksgi/affordable_outdoor_hardscaping/" },
+    { "title": "Landscape Architect Suggestions", "sub": "r/Scranton", "url": "https://www.reddit.com/r/Scranton/comments/1ukt6gb/landscape_architect_suggestions/" },
+    { "title": "Bathroom remodel", "sub": "r/NEPA", "url": "https://www.reddit.com/r/NEPA/comments/1im88jd/bathroom_remodel/" },
+    { "title": "Keep getting ghosted by the contractors", "sub": "r/Renovations", "url": "https://www.reddit.com/r/Renovations/comments/17g6rjb/keep_getting_ghosted_by_the_contractors/" },
+    { "title": "Lots of contractors being difficult or ghosting, is this normal?", "sub": "r/HomeImprovement", "url": "https://www.reddit.com/r/HomeImprovement/comments/1ey2nl2/lots_of_contractors_being_difficult_or_ghosting/" },
+    { "title": "Why are all the contractors so unreliable", "sub": "r/homeowners", "url": "https://www.reddit.com/r/homeowners/comments/zed7k2/why_are_all_the_contractors_so_unreliable/" },
+    { "title": "Contractors constantly trying to rip you off", "sub": "r/homeowners", "url": "https://www.reddit.com/r/homeowners/comments/1dzyt4v/contractors_constantly_trying_to_rip_you_off/" }
+  ],
+  "pain_points": [
+    "Getting ghosted after the walkthrough is the number-one complaint — contractors come out, promise a quote, and never send it. It shows up in NEPA threads and in the general home-improvement subs alike.",
+    "Wild quote spread on the same NEPA job. One r/Scranton commenter was quoted $90–120k by two electrical companies for a second-floor rewire and had it done for $25k — homeowners here assume they are being priced by who they are, not by the work.",
+    "Homeowners can't tell licensed from unlicensed. PA has no statewide GC license, only HICPA registration, so 'licensed and insured' gets claimed by everyone and proves nothing without a number and a certificate.",
+    "NEPA's old housing stock scares crews off. Threads specifically ask for contractors who will touch pre-1940 homes — knob-and-tube, plaster, balloon framing, outdated plumbing — and most quotes come back padded or never arrive.",
+    "Nobody wants the small or mid-size job. Deck extensions, concrete pads, a paver patio in Luzerne County — homeowners report calling down a list and getting no callbacks because the job is 'too small'.",
+    "Freeze-thaw failure is the local quality complaint: patios, walkways and walls that heave, crack or settle within a few winters because the base was never built for NEPA frost depth."
+  ],
+  "what_customers_value": [
+    "An actual written, itemized estimate that arrives when it was promised — reliability of the quote itself is treated as the first quality signal.",
+    "A single accountable point of contact who owns the whole scope instead of the homeowner coordinating five trades.",
+    "Local, long-tenured operators. NEPA threads reward '20 years around here' far more than slick marketing; referrals are the dominant discovery channel.",
+    "Willingness to take on older homes without flinching, and to say plainly what the old-house surprises will cost.",
+    "Real proof of work in recognizable local towns — before/after photos beat star ratings in these threads.",
+    "Honest talk about price ranges up front, so the homeowner can self-select before anyone wastes a visit."
+  ],
+  "business_differentiators": [
+    "30+ years in business and 500+ projects completed (stated on nepaclassic.com) directly answers the 'find someone who's been around' preference that dominates NEPA recommendation threads.",
+    "Free, no-obligation estimate on every project with a 'no pressure, no surprises' promise — aimed straight at the ghosting and quote-spread pain points.",
+    "Fully licensed and insured PA contractor, stated explicitly in the site footer and FAQ — worth surfacing with the registration number once the operator obtains it.",
+    "Genuinely full-scope: general contracting, interior, exterior, hardscaping and landscaping under one roof, which is the 'one accountable contact' homeowners ask for.",
+    "Explicitly handles older-home challenges — the site's own FAQ names knob-and-tube, plaster and outdated plumbing as work they take on. That is exactly the r/Scranton 'Old Homes Only' ask.",
+    "Engineered base prep for freeze-thaw is called out on every hardscaping service — a direct answer to the cracked-patio complaint.",
+    "Published price ranges (paver patios $20–45/sq ft, landscaping $3k–25k+, GC timelines by project type) — rare local transparency, and a strong trust asset.",
+    "GAP: no Google Business Profile and zero public reviews. Every competitor thread resolves into 'who has reviews'. This is the single biggest fixable weakness."
+  ],
+  "copy_angles": [
+    "Lead the hero with the estimate promise, not the services list: a free written estimate that actually shows up. Ghosting is the #1 local pain point and almost nobody markets against it.",
+    "Put '30+ years in NEPA · 500+ projects · Free estimates' in the trust band directly under the hero — tenure is the currency in these threads, and it's the one proof point available while reviews are still at zero.",
+    "Run an 'One contractor, whole project' section: interior, exterior, hardscaping and landscaping under one accountable point of contact. Sell the absence of coordination, not the breadth of the menu.",
+    "Give older NEPA homes their own block. Name knob-and-tube, plaster, and 1920s housing stock explicitly — that phrasing is literally how homeowners search and ask here.",
+    "Make the freeze-thaw base spec a visible selling point on hardscaping pages: excavation depth, compacted base, drainage. It answers the local quality complaint in the language of the complaint.",
+    "Keep the real price ranges on the pricing page rather than hiding behind 'call for quote'. Transparency is the most-praised behavior in these threads and the client already publishes the numbers.",
+    "Show before/after work labeled by town (Wilkes-Barre, Scranton, Pittston, Dallas). Local proof beats generic gallery imagery in every recommendation thread read.",
+    "Do NOT fabricate reviews or ratings anywhere on the site — there are none yet. Lean on tenure, project count, and before/after proof, and flag review collection as the first post-launch task."
+  ],
+  "_generated_at": "2026-08-04"
+}

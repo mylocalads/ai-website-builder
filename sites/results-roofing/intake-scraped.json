@@ -1,0 +1,360 @@
+{
+  "slug": "results-roofing",
+  "business_name": "Results Roofing",
+  "legal_name": null,
+  "tagline": "Your 5-Star Rated Local Roofer",
+  "phone": "+12143015533",
+  "phone_display": "(214) 301-5533",
+  "email": "info@resultsroofing.com",
+  "address": {
+    "street": "2828 E Trinity Mills Rd Ste 212",
+    "city": "Carrollton",
+    "state": "TX",
+    "postal": "75006",
+    "country": "US"
+  },
+  "marketing_city": "Dallas",
+  "marketing_state": "TX",
+  "geo": { "lat": 32.986367, "lng": -96.8521447 },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "rating": 4.9,
+  "review_count": 1802,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "social": {
+    "facebook": "https://www.facebook.com/ResultsRoofing/",
+    "instagram": "https://www.instagram.com/resultsroofing/",
+    "youtube": "https://www.youtube.com/channel/UCjiRfWCOJyrR-DXgsZdoa6g",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Results%20Roofing&query_place_id=ChIJEzx12P7XTYYRgIFO5YhFeNs"
+  },
+  "site_url": "https://resultsroofing.com/",
+  "logo_url": "https://resultsroofing.com/wp-content/uploads/2024/06/Results-Roofing-Logo-on-white-copy.png",
+  "default_hero_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/dsc07088-Edited.png",
+  "default_hero_video": "https://resultsroofing.com/wp-content/uploads/2023/07/1b7a9ce7-457c-4a2e-9457-9968df92aab8.mp4",
+  "about_photo": "https://resultsroofing.com/wp-content/uploads/2023/04/DSCF5553-scaled-1.jpg",
+  "brand": {
+    "fonts": {
+      "display": "Rubik",
+      "body": "Roboto Condensed",
+      "_detected_third": "Mukta"
+    },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#222222",
+      "accent": "#BA2A22",
+      "muted": "#666666",
+      "surface": "#F5F5F5",
+      "candidates": ["#BA2A22", "#0047BA", "#222222", "#FFFFFF", "#2575FC", "#666666"],
+      "_notes": "primary/accent #BA2A22 (brand red, Free Quote button); secondary #0047BA (brand blue); link #2575FC. Firecrawl reported buttonPrimary textColor #666666 on a #BA2A22 fill — that is a 1.4:1 contrast failure on the client's own site and must NOT be carried over. design-reference derives --color-on-accent."
+    }
+  },
+  "credentials": [
+    {
+      "name": "GAF Master Elite® President's Club",
+      "detail": "Fewer than 2% of roofing contractors in the country hold this certification. It unlocks GAF's strongest workmanship and material warranties.",
+      "logo_url": "https://resultsroofing.com/wp-content/uploads/2023/05/NEW-Master-Elite.png",
+      "_source": "scraped"
+    },
+    {
+      "name": "GAF Roofs for Troops",
+      "detail": "Participating contractor in GAF's rebate program for active-duty military, veterans, and retirees.",
+      "logo_url": "https://resultsroofing.com/wp-content/uploads/2023/05/GAF-Roofs-for-Troops.jpg",
+      "_source": "scraped"
+    },
+    {
+      "name": "American-Owned",
+      "detail": "GAF American-Owned contractor badge.",
+      "logo_url": "https://resultsroofing.com/wp-content/uploads/2025/05/NEW-American-Owned-150x150-1.png",
+      "_source": "scraped"
+    }
+  ],
+  "services": [
+    {
+      "title": "Roof Replacement",
+      "short_description": "When repair isn't enough, we replace your roof the right way — with the materials, certifications, and warranties to back it up.",
+      "long_description": "Roofs don't last forever. No matter how well your house was built, storms, trees, and debris shorten a roof's life well below its full 25-year expectancy. In most cases repair is enough; when it no longer is, it's time for a replacement. Our GAF Master Elite® President's Club status means you qualify for warranty coverage most roofers simply cannot offer. We handle the project start to finish, so you don't have to manage a thing.",
+      "sub_services": [
+        "Full tear-off and replacement",
+        "Architectural and impact-resistant shingles",
+        "Metal roofing systems",
+        "Decking and sheathing replacement",
+        "GAF warranty registration"
+      ],
+      "hero_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/RoofReplacement.jpeg",
+      "about_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/10-3-600x400-1.jpg",
+      "gallery": [],
+      "faqs": [
+        {
+          "q": "How can I tell if my roof needs replacing rather than repairing?",
+          "a": "Visible deterioration, neighbors on the same build cycle replacing theirs, repair costs approaching replacement cost, or a roof over 25 years old are all red flags. Have a professional inspect it before you commit — the last thing you want is to replace a roof that didn't need it."
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair",
+      "short_description": "Leaks, missing shingles, or localized damage — diagnosed and fixed fast, without upselling you on work you don't need.",
+      "long_description": "Roof repair is a service most homeowners would rather not think about, but it is critical to the health of the house — and in Texas, extreme weather compromises that health constantly. Whether it's repairing sheathing or installing new shingles, routine repair maintains the integrity of your roof so your home stays protected. Not every problem needs a full replacement. Our repair specialists focus on quality, professionalism, and an honest diagnosis.",
+      "sub_services": [
+        "Leak detection and repair",
+        "Shingle and flashing replacement",
+        "Sheathing repair",
+        "Chimney and vent-pipe resealing",
+        "Gutter and fascia repair"
+      ],
+      "hero_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/RoofRepairPhoto.jpeg",
+      "about_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/InsulatedAttic.jpeg",
+      "gallery": [],
+      "faqs": [
+        {
+          "q": "What does a typical roof inspection involve?",
+          "a": "A routine inspection covers shingle condition, flashing integrity, and gutter function, and identifies any visible signs of damage or wear."
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Storm Damage & Insurance Claims",
+      "short_description": "Hail and wind damage isn't always visible from the ground. We inspect free, then work directly with your adjuster so you get what your policy covers.",
+      "long_description": "Your roof is your home's first line of defense against hail, torrential rain, high winds, scorching sun, and extreme cold. Some storm damage is obvious; most of it requires a closer look, and undetected damage gets expensive fast. One of the reasons we started Results Roofing was watching homeowners get bogged down in insurance jargon with nobody in their corner. We step in and handle the paperwork, do a comprehensive inspection, and are present with your insurance adjuster — our technicians routinely catch damage the insurance teams miss. When a storm causes sudden, serious damage, we also respond on an emergency basis to protect your home immediately while a permanent solution is planned.",
+      "sub_services": [
+        "Free storm damage inspection",
+        "Hail and wind damage assessment",
+        "Insurance claim documentation and adjuster meetings",
+        "Emergency tarping and temporary protection",
+        "Tree and limb impact repair"
+      ],
+      "hero_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/StormDamagePhoto-1.jpeg",
+      "about_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/DamagedShingles.jpeg",
+      "gallery": [],
+      "faqs": [
+        {
+          "q": "What are the common signs of storm damage homeowners should look for?",
+          "a": "Cracked or missing shingles, dents on metal surfaces, water stains on ceilings, and granule buildup in gutters. Also watch for damage with no discernible pattern, black hail hits, dents that feel soft or bruised to the touch, and debris under multiple shingles."
+        },
+        {
+          "q": "What happens if I ignore hail damage?",
+          "a": "Neglecting hail damage repairs can lead to compromised structural integrity, leaks, and further deterioration — which usually means a much larger bill later. It can also close your window to file an insurance claim."
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "New Roof Installation",
+      "short_description": "Building new or starting fresh? We install roofs rated for the Texas climate, every one backed by a GAF warranty.",
+      "long_description": "Homeowners often overlook the roof on a new build, but it is what turns a house into a home — it keeps your family safe from the elements. The roofs we build are more energy-efficient, more durable, and longer-lasting than the industry standard. Every installation includes a free estimate, inspections before and after, licensed and insured crews, and a warranty you can actually use. A more efficient roof saves you money on utilities and reduces your carbon footprint at the same time.",
+      "sub_services": [
+        "New construction roofing",
+        "Energy-efficient roofing systems",
+        "Architectural shingle installation",
+        "Metal roof installation",
+        "Pre- and post-installation inspection"
+      ],
+      "hero_photo": "https://resultsroofing.com/wp-content/uploads/2023/04/319009368_2123997301130310_3790830282529930224_n.jpg",
+      "about_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/1-5-600x400-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Maintenance",
+      "short_description": "The cheapest way to avoid a replacement is catching small problems early. One inspection a year can save you thousands.",
+      "long_description": "Your roof is the part of your house you don't think about until something goes wrong — and the most serious damage sneaks in over time. Built-up leaves, untreated branches, and debris shake shingles loose and weaken the structure. Seasonal storms and scorching summers make regular maintenance essential in Texas, but there is far more to a healthy roof than checking after a storm: moss and mold need to be handled before they spread, chimneys and skylights and vents need clearing, and gutters, soffits, downspouts, and fascia need to stay free of blockages. Our maintenance program keeps your roof in shape year-round and extends its lifespan.",
+      "sub_services": [
+        "Annual roof inspection",
+        "Debris and moss removal",
+        "Gutter and downspout clearing",
+        "Attic ventilation and insulation checks",
+        "Preventive shingle and caulking repair"
+      ],
+      "hero_photo": "https://resultsroofing.com/wp-content/uploads/2023/03/TileRoofMaintenance.jpeg",
+      "about_photo": "https://resultsroofing.com/wp-content/uploads/2023/04/DSCF5564-scaled-1.jpg",
+      "gallery": [],
+      "faqs": [
+        {
+          "q": "How does regular maintenance prolong the life of my roof?",
+          "a": "Cleaning gutters, trimming overhanging branches, inspecting for shingle damage, and addressing minor issues promptly all extend your roof's lifespan. The general rule is a good look every spring."
+        }
+      ],
+      "_source": "scraped"
+    }
+  ],
+  "_services_dropped": [
+    {
+      "title": "Emergency Services",
+      "reason": "owl template caps at 5 services. Folded into 'Storm Damage & Insurance Claims' (emergency tarping, tree damage, 24/7 response) rather than dropped outright. Source page: /services/emergency-services"
+    },
+    {
+      "title": "Paintless Dent Repair",
+      "reason": "Runs on a separate domain (resultspdr.com) and is an auto-body service, not roofing. Out of scope for this site."
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Dallas",
+      "state": "Texas",
+      "state_abbr": "tx",
+      "slug": "dallas-tx",
+      "local_context": "Results Roofing is headquartered in Carrollton and has served Dallas homeowners for years — hail, high winds, and triple-digit summers are what our crews are built for.",
+      "neighborhoods": ["Carrollton", "Plano", "Flower Mound", "Lewisville", "Frisco", "Garland"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Fort Worth",
+      "state": "Texas",
+      "state_abbr": "tx",
+      "slug": "fort-worth-tx",
+      "local_context": "Local Fort Worth crews covering the west side of the Metroplex, from downtown out through Weatherford, Burleson, and Aledo.",
+      "neighborhoods": ["Weatherford", "Burleson", "Aledo", "Crowley", "Haltom City", "North Richland Hills"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Houston",
+      "state": "Texas",
+      "state_abbr": "tx",
+      "slug": "houston-tx",
+      "local_context": "Our Houston office on Fannin serves the greater Houston area, where hurricane wind and Gulf storm damage drive most of the roofing work we do.",
+      "neighborhoods": ["Spring", "Tomball", "League City", "Friendswood", "Bellaire", "Katy"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Austin",
+      "state": "Texas",
+      "state_abbr": "tx",
+      "slug": "austin-tx",
+      "local_context": "Our Austin office on Chevy Chase covers Central Texas, from downtown out to the Hill Country suburbs.",
+      "neighborhoods": ["Round Rock", "Cedar Park", "Georgetown", "Pflugerville", "Leander", "Lakeway"],
+      "_source": "scraped"
+    },
+    {
+      "name": "San Antonio",
+      "state": "Texas",
+      "state_abbr": "tx",
+      "slug": "san-antonio-tx",
+      "local_context": "Our San Antonio team on W Bitters Rd covers Bexar County and the surrounding Hill Country communities.",
+      "neighborhoods": ["New Braunfels", "Schertz", "Boerne", "Live Oak", "Selma", "Universal City"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Atlanta",
+      "state": "Georgia",
+      "state_abbr": "ga",
+      "slug": "atlanta-ga",
+      "local_context": "Our Georgia office in Alpharetta brings the same local crews and GAF Master Elite® standards to metro Atlanta homeowners.",
+      "neighborhoods": ["Alpharetta", "Roswell", "Marietta", "Sandy Springs", "Duluth", "Johns Creek"],
+      "_source": "scraped"
+    }
+  ],
+  "_service_areas_not_paged": [
+    "Raleigh, NC",
+    "Wilmington, NC",
+    "North Myrtle Beach, SC",
+    "Amarillo, TX",
+    "Temple, TX",
+    "College Station, TX"
+  ],
+  "offices": [
+    { "label": "DFW Office (HQ)", "street": "2828 E Trinity Mills Rd Ste 212", "city": "Carrollton", "state": "TX", "postal": "75006", "phone": "469-218-8983" },
+    { "label": "Houston Office", "street": "1201 Fannin Ste. 262", "city": "Houston", "state": "TX", "postal": "77002", "phone": "346-685-2451" },
+    { "label": "San Antonio Office", "street": "2722 W Bitters Rd, Suite 132", "city": "San Antonio", "state": "TX", "postal": "78248", "phone": "(210) 305-8465" },
+    { "label": "College Station Office", "street": "511 University Dr E, Suite 210", "city": "College Station", "state": "TX", "postal": "77840", "phone": "(979) 325-2808" },
+    { "label": "Austin Office", "street": "7600 Chevy Chase, Suite 300", "city": "Austin", "state": "TX", "postal": "78752", "phone": "(512) 643-6128" },
+    { "label": "Atlanta Office", "street": "2300 Lakeview Pkwy Suite 700", "city": "Alpharetta", "state": "GA", "postal": "30009", "phone": "(770) 999-0565" },
+    { "label": "Wilmington, NC Office", "street": "1608 Queen St.", "city": "Wilmington", "state": "NC", "postal": "28401", "phone": "(910) 275-4030" },
+    { "label": "Raleigh, NC Office", "street": "4112 Pleasant Valley Rd, 2nd Floor", "city": "Raleigh", "state": "NC", "postal": "27612", "phone": "(984) 205-6404" },
+    { "label": "North Myrtle Beach, SC Office", "street": "1000 2nd Ave S", "city": "North Myrtle Beach", "state": "SC", "postal": "29582", "phone": "(843) 417-0625" }
+  ],
+  "claims_department": {
+    "phone": "844-227-3484",
+    "email": "claims@results-roofing.com"
+  },
+  "testimonials": [
+    { "name": "Matthew Franklin", "location": null, "text": "Amazing experience. Highly recommend if you need a new roof use these guys. Seamless process from start to finish. Buster was great to work with.", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Kim Fernandez", "location": null, "text": "Cody Clement was phenomenal. He went out to look at both of my clients' homes the very same day I called. My clients were in the process of purchasing and selling, and Cody took the time to explain the entire process to them in a way that made them feel confident and at ease. His honesty and professionalism truly stood out, and I really appreciate how quickly he was able to help. I'll definitely be recommending him again!", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Michael D. Rogers", "location": null, "text": "Linc came out exactly the time and date made, was not only on time, he did a thorough check of my roof, gutters, facia, not only made recommendations for the future but did some repairs that he noticed and was glad to do on the spot! I will use this man/company in the future for any and all necessary repairs & or replacements, I highly recommend!", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Kayla Loschky", "location": null, "text": "Miguel Angel came to our property to check our roof and he was so professional, kind, and explained everything that he saw. We got a report emailed to us before he even left the property! Highly recommend!", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Julie Harris", "location": null, "text": "My representative, Ryan Osterheldt, was knowledgeable, helpful and available anytime I reached out with questions. He and the office staff worked with my insurance carrier and kept me informed from initial inspection to project completion. The roof was completed in a day and they left the yard looking like they had never been here. Very satisfied with how smoothly everything went and how nice my roof looks.", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Jil B.", "location": null, "text": "Highly recommend Results Roofing. Jeremy Turner was awesome to work with. Quick to respond and help us with our roof issue. Very professional, service was great!", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Chris McCullough", "location": null, "text": "Results Roofing went above and beyond! We got hit with a nasty hail storm that did extensive damage to our house and property. RR stepped up and walked us through the claim process, fought for coverage that our insurance company didn't want to cover, and completely knocked it out of the park. I would 100% work with Greg and his team again.", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Ernest Flores", "location": null, "text": "Results Roofing installed a new roof on my house yesterday. They did a great job. Brinson Zandi was very professional and explained the process to me and answered all my questions. I was very pleased with the work and everyone involved.", "rating": 5, "_source": "scraped:google-trustindex" },
+    { "name": "Maria Mutamiri", "location": null, "text": "Brandon Steward was professional, efficient and friendly. Quality experience!", "rating": 5, "_source": "scraped:google-trustindex" }
+  ],
+  "team_members": [
+    {
+      "name": "Dustin Gutkowski",
+      "role": "Founder & CEO",
+      "photo": null,
+      "bio": "Dustin started from humble beginnings in Austin, moved to Dallas, and ran multiple locations in the fitness industry before founding Results Roofing. After dealing with contractors that were less than ethical, he decided to build the roofing company he wished he'd hired.",
+      "_source": "scraped"
+    }
+  ],
+  "faqs": [
+    { "q": "What are the potential consequences of neglecting hail damage repairs?", "a": "Neglecting hail damage repairs can lead to compromised structural integrity, leaks, and further deterioration of your roof, potentially increasing repair costs in the long run." },
+    { "q": "What are the common signs of storm damage that homeowners should look out for?", "a": "Common signs of storm damage include cracked or missing shingles, dents on metal surfaces, water stains on ceilings, and granule buildup in gutters." },
+    { "q": "What does a typical roof inspection involve?", "a": "A routine roof inspection includes checking for shingle condition, flashing integrity, and gutter functionality and identifying visible signs of damage or wear." },
+    { "q": "How can I determine if my roof needs to be replaced?", "a": "Consult a professional roofer to assess the extent of damage, but factors such as age, significant shingle deterioration, and recurrent leaks may indicate the need for a roof replacement." },
+    { "q": "How can regular maintenance prolong the lifespan of my roof?", "a": "Routine maintenance involves cleaning gutters, trimming overhanging branches, inspecting for shingle damage, and addressing minor issues promptly to extend your roof's lifespan." },
+    { "q": "Does a free inspection cost me anything or obligate me to anything?", "a": "No. Our roof inspections are no fee, no obligation. Our team walks your property, assesses the condition of your roof, and gives you an honest answer — no pressure, no upsell." }
+  ],
+  "gallery": [],
+  "about_story": "Results Roofing is a licensed roofing construction company headquartered in Carrollton, Texas, serving Dallas–Fort Worth, Houston, Austin, San Antonio, College Station and Temple, with local teams added in Atlanta, GA and Wilmington and Raleigh, NC. Founder and CEO Dustin Gutkowski started the company after dealing with contractors that were less than ethical — the goal was to build the roofing company he wished he'd been able to hire. That shows up in how we work: we're with you at every step, including standing beside you during the inspection and being present with your insurance adjuster. We're GAF Master Elite® President's Club certified, a distinction fewer than 2% of roofing contractors in the country earn, which unlocks GAF's strongest warranties and holds us to the industry's highest workmanship standard. Backed by 1,500+ verified 5-star reviews, we've built our reputation one roof at a time. We're relational, not transactional.",
+  "brand_voice_sample": "Direct, warm, homeowner-first. Leads with credentials and honesty rather than urgency. Recurring phrases: \"We've got you covered — literally\", \"relational, not transactional\", \"no pressure, no upsell\", \"free inspection, no cost, no obligation\", \"we're with you every step of the way\". Insurance-claim advocacy is the emotional center of the brand.",
+  "copy_signals_from_gbp_review_tags": [
+    { "theme": "roof replacement", "mentions": 411 },
+    { "theme": "insurance claim assistance", "mentions": 181 },
+    { "theme": "answering questions", "mentions": 120 },
+    { "theme": "easy process", "mentions": 104 },
+    { "theme": "personable staff", "mentions": 90 },
+    { "theme": "thorough inspection", "mentions": 62 },
+    { "theme": "hail damage repair", "mentions": 53 },
+    { "theme": "gutter replacement", "mentions": 35 },
+    { "theme": "insurance adjuster meeting", "mentions": 26 },
+    { "theme": "shingle repair", "mentions": 16 }
+  ],
+  "_detected_crm_snippets": {
+    "chat_widget_vendor": "LeadConnector / GoHighLevel (widgets.leadconnectorhq.com chat-widget)",
+    "instant_quote_vendor": "Roofle Roof Quote Pro (app.roofle.com)",
+    "form_vendor": "WPForms + Cloudflare Turnstile",
+    "quote_subdomain": "https://register.resultsroofing.com/",
+    "note": "These are the CLIENT's existing vendors, detected for context only. NOT copied into crm.* — the operator supplies their own GHL snippets during site-generate."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_place_id": "ChIJEzx12P7XTYYRgIFO5YhFeNs",
+    "pages_scraped": [
+      "/",
+      "/services",
+      "/services/roof-replacement",
+      "/services/roof-repair",
+      "/services/new-roof-installation",
+      "/services/roof-maintenance",
+      "/services/emergency-services",
+      "/storm-damage",
+      "/about",
+      "/locations",
+      "/faqs",
+      "/contact"
+    ],
+    "socials_scraped": [],
+    "generated_at": "2026-07-31",
+    "cost_estimate_usd": 0.23,
+    "warnings": [
+      "Client publishes 9 different phone numbers. phone/phone_display use the site-wide header number (214) 301-5533. GBP lists (469) 270-8037; the DFW HQ footer lists 469-218-8983; storm-damage and /about pages list (214) 505-1442. Operator should confirm or supply a tracking number.",
+      "Site markets 10 metros across TX/GA/NC/SC. owl template caps service-area pages at 6; the remaining six markets are listed in _service_areas_not_paged and should be named in footer/service-area copy without their own pages.",
+      "Client's own primary button is #666666 text on a #BA2A22 fill — 1.4:1, a WCAG failure. Do not carry it over; derive --color-on-accent in design-reference.",
+      "insured is set false: the site says 'licensed roofing construction company' in meta, but 'licensed and insured' only appears as generic advice about what to look for in a contractor, not as a claim about Results Roofing. Needs operator confirmation before displaying an insured badge.",
+      "years_in_business is null: no 'since YYYY' or 'N years' statement found on any scraped page.",
+      "Apify returned 0 review bodies despite maxReviews=5, so all 9 testimonials come from the homepage Trustindex Google-review widget rather than the GBP payload."
+    ]
+  }
+}

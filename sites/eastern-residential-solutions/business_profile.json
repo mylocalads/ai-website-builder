@@ -1,0 +1,19 @@
+{
+  "name": "Eastern Residential Solutions",
+  "email": "info@easternresidentialsolutions.com",
+  "phone": "(570) 382-8629",
+  "address": "1 Keystone Pl, Jessup, PA 18434",
+  "website": "http://www.easternresidentialsolutions.com/",
+  "rating": 5,
+  "reviewCount": 31,
+  "category": "Roofing contractor",
+  "hours": "Open 24 hours, 7 days a week",
+  "slug": "eastern-residential-solutions",
+  "geo": {
+    "lat": 41.466346,
+    "lng": -75.5587727
+  },
+  "placeId": "ChIJd3wB20vbxIkRw9xYVsf23Ss",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Eastern%20Residential%20Solutions&query_place_id=ChIJd3wB20vbxIkRw9xYVsf23Ss",
+  "reviews": []
+}

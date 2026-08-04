@@ -1,0 +1,31 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+---
+<section class="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Get in touch</h2>
+      <p><a href={`tel:${site.phone}`}>{site.phone_display}</a></p>
+      {site.email && <p><a href={`mailto:${site.email}`}>{site.email}</a></p>}
+      <address>
+        <strong>{site.business_name}</strong><br />
+        {site.address.street && <>{site.address.street}<br /></>}
+        {site.address.city}, {site.address.state}{site.address.postal ? ` ${site.address.postal}` : ''}
+      </address>
+    </div>
+    {site.hours && (
+      <div>
+        <h3>Hours</h3>
+        <ul>{Object.entries(site.hours).map(([day, hrs]) => <li><strong>{day}:</strong> {hrs}</li>)}</ul>
+      </div>
+    )}
+  </div>
+</section>
+<style>
+  .contact { padding: var(--space-5) 0; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+  address { font-style: normal; margin-top: var(--space-1); }
+  ul { list-style: none; padding: 0; }
+  @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>

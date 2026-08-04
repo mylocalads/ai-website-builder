@@ -1,0 +1,77 @@
+{
+  "kind": "config",
+  "business_name": "H4 Roofing & Construction",
+  "legal_name": "H4 Roofing & Construction, LLC",
+  "tagline": "Dayton roofing from a company with a Dayton address",
+  "phone": "+19374120001",
+  "phone_display": "(937) 412-0001",
+  "email": "info@h4constructionohpa.com",
+  "address": {
+    "street": "3347 Witherspoon Drive",
+    "city": "Dayton",
+    "state": "OH",
+    "postal": "45440",
+    "country": "US"
+  },
+  "marketing_city": "Dayton",
+  "marketing_state": "OH",
+  "geo": { "lat": 39.7983824, "lng": -84.0155381 },
+  "hours": {
+    "monday": "6:00 AM - 8:00 PM",
+    "tuesday": "6:00 AM - 8:00 PM",
+    "wednesday": "6:00 AM - 8:00 PM",
+    "thursday": "6:00 AM - 8:00 PM",
+    "friday": "6:00 AM - 8:00 PM",
+    "saturday": "6:00 AM - 8:00 PM"
+  },
+  "site_url": "https://h4-roofing-construction.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 15,
+  "social": {
+    "facebook": "https://www.facebook.com/p/H4-Construction-LLC-61566317053594/",
+    "instagram": "https://www.instagram.com/h4constructionohpa/",
+    "google_maps": "https://www.google.com/maps/place/H4+Roofing+%26+Construction/@39.7983824,-84.0155381,10z/data=!3m1!4b1!4m6!3m5!1s0x2c98a8bee96baf0b:0xc9d3c03fedaf8818!8m2!3d39.7983824!4d-84.015538!16s%2Fg%2F11lt_mk7wk"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/hero-home.jpg",
+  "about_photo": "/img/about-crew.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "A Dayton address, not a phone number",
+      "description": "We work out of 3347 Witherspoon Drive in Dayton. After the storm crews have moved on to the next county, we are still here — same address, same phone, same two owners."
+    },
+    {
+      "title": "CertainTeed ShingleMaster credentialed",
+      "description": "Ohio issues no statewide roofing license, so manufacturer credentials are one of the few things you can actually verify. ShingleMaster status is earned through CertainTeed and has to be maintained."
+    },
+    {
+      "title": "BBB Accredited with an A+ rating",
+      "description": "The same Better Business Bureau that warns Miami Valley homeowners about storm chasers accredits us. Look us up before you call — that is the point."
+    },
+    {
+      "title": "Written estimates, no pressure to sign",
+      "description": "You get the scope and the number in writing, and time to compare it against anyone else. Anyone who needs a signature today is telling you something."
+    }
+  ],
+  "financing": { "enabled": false },
+  "_removed_keys_note": "us_vs_them and the site-wide gallery are intentionally absent. Neither is rendered by the owl template — UsVsThem is a firefly-only section, and /our-work builds its strips from per-service `gallery` frontmatter, not config.gallery. Populating them here would look like configuration while doing nothing. The photos live in the service markdown instead.",
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": {
+    "provider": "ghl",
+    "calendar_embed_snippet": "<div style=\"background:var(--color-primary);color:var(--color-on-primary);border-radius:var(--radius-lg);padding:2rem;text-align:center;\"><img src=\"/logo.png\" alt=\"H4 Roofing &amp; Construction\" style=\"width:150px;height:auto;margin:0 auto 1.25rem;display:block;\" /><p style=\"margin:0 0 0.35rem;font-family:var(--font-display);font-weight:800;font-size:1.15rem;letter-spacing:0.01em;\">Book Your Free Inspection</p><p style=\"margin:0 0 1.5rem;font-size:0.9rem;color:#c9c9c5;\">Online booking is being switched on. Call or text us and we will get you on the schedule.</p><a href=\"tel:+19374120001\" style=\"display:block;background:var(--color-accent);color:var(--color-on-accent);font-family:var(--font-display);font-weight:800;font-size:1.25rem;text-decoration:none;padding:0.85rem 1rem;border-radius:var(--radius-md);\">(937) 412-0001</a><p style=\"margin:1.25rem 0 0;font-size:0.85rem;line-height:1.7;color:#c9c9c5;\">Mon&ndash;Sat, 6:00 AM &ndash; 8:00 PM<br />3347 Witherspoon Drive, Dayton, OH 45440<br /><a href=\"mailto:info@h4constructionohpa.com\" style=\"color:var(--color-accent);text-decoration:underline;\">info@h4constructionohpa.com</a></p></div>",
+    "contact_form_snippet": "<div style=\"background:var(--color-primary);color:var(--color-on-primary);border-radius:var(--radius-lg);padding:2rem;text-align:center;\"><img src=\"/logo.png\" alt=\"H4 Roofing &amp; Construction\" style=\"width:150px;height:auto;margin:0 auto 1.25rem;display:block;\" /><p style=\"margin:0 0 0.35rem;font-family:var(--font-display);font-weight:800;font-size:1.15rem;letter-spacing:0.01em;\">Get Your Free Written Estimate</p><p style=\"margin:0 0 1.5rem;font-size:0.9rem;color:#c9c9c5;\">The online form is being switched on. Until then, reach us directly &mdash; a real person answers.</p><a href=\"tel:+19374120001\" style=\"display:block;background:var(--color-accent);color:var(--color-on-accent);font-family:var(--font-display);font-weight:800;font-size:1.25rem;text-decoration:none;padding:0.85rem 1rem;border-radius:var(--radius-md);\">(937) 412-0001</a><p style=\"margin:1.25rem 0 0;font-size:0.85rem;line-height:1.7;color:#c9c9c5;\">Mon&ndash;Sat, 6:00 AM &ndash; 8:00 PM<br />3347 Witherspoon Drive, Dayton, OH 45440<br /><a href=\"mailto:info@h4constructionohpa.com\" style=\"color:var(--color-accent);text-decoration:underline;\">info@h4constructionohpa.com</a></p></div>"
+  },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Roofing and exteriors,",
+    "heading_rest": "done by people who live here",
+    "subtitle": "Residential roofing is the core of what we do. We also handle the rest of the exterior — and the interior work that follows once the water is out."
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "slug": "gilroy-roofing",
+  "business_name": "Gilroy Roofers",
+  "legal_name": "Gilroy Construction",
+  "tagline": "NEPA's Trusted Roofing Specialist",
+  "phone": "+15708290239",
+  "phone_display": "(570) 829-0239",
+  "email": "gilroyroofing@gmail.com",
+  "address": {
+    "street": "575 Shawnee St",
+    "city": "Wilkes-Barre",
+    "state": "PA",
+    "postal": "18706",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2323094,
+    "lng": -75.9355476
+  },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "rating": 4.7,
+  "review_count": 91,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 54,
+  "founded": 1972,
+  "social": {},
+  "site_url": null,
+  "logo_url": "https://gilroyroofers.com/wp-content/uploads/2026/03/Screenshot_1.png",
+  "default_hero_photo": "https://gilroyroofers.com/wp-content/uploads/elementor/thumbs/6388050411ddd19a7275c88e-scaled-rlaet0qwhq9ti8th8sgl5u1o6q3wjgympeqcuxk2le.jpeg",
+  "default_hero_video": null,
+  "about_photo": null,
+  "brand": {
+    "operator_supplied": {
+      "background": "#f0f2f7",
+      "primary": "#000000",
+      "cta": "#f15537"
+    },
+    "detected_on_client_site": {
+      "primary": "#CC3366",
+      "secondary": "#F05522",
+      "accent": "#D63637",
+      "background": "#FFFFFF",
+      "text": "#757575",
+      "fonts": [
+        "Poppins",
+        "Roboto"
+      ],
+      "heading_font": "Poppins"
+    },
+    "note": "Operator-supplied palette wins. Their site's secondary #F05522 is within a hair of the supplied CTA #f15537, so the orange is genuinely on-brand."
+  },
+  "credentials": [
+    "10K+ customers served since 1972",
+    "Owens Corning Platinum Preferred Contractor",
+    "A+ rating with the Better Business Bureau",
+    "50-Year Material & Labor Warranty",
+    "Family owned and operated since 1972",
+    "Free estimates; insurance jobs accepted; all major credit cards"
+  ],
+  "differentiators": {
+    "headline_offer": "No payment until the project is 100% complete",
+    "supporting": [
+      "100% Satisfaction Guaranteed",
+      "No hidden fees or surprises",
+      "Residential & commercial"
+    ]
+  },
+  "process_steps": [
+    {
+      "label": "Step One",
+      "title": "Roof inspection & estimate"
+    },
+    {
+      "label": "Step Two",
+      "title": "Insurance claim, if applicable"
+    },
+    {
+      "label": "Step Three",
+      "title": "Installation or repair"
+    },
+    {
+      "label": "Step Four",
+      "title": "Full clean-up"
+    }
+  ],
+  "services": [
+    {
+      "title": "New Roof Installation",
+      "category": "Roofing",
+      "sub_services": [
+        "New Asphalt Roof Construction",
+        "New Rubber Roof Construction",
+        "Roof Replacement"
+      ],
+      "short_description": "Install a brand new roof with fast, reliable, and affordable installation across Wilkes-Barre and NEPA.",
+      "long_description": "Our team provides a thorough inspection and uses high-quality materials to ensure a long-lasting new roof installation, backed by a 50-year material and labor warranty. We also offer maintenance services to extend the life of your new roof."
+    },
+    {
+      "title": "Asphalt Roof Installation",
+      "category": "Roofing",
+      "sub_services": [
+        "Asphalt Roof New Construction",
+        "Asphalt Roof Replacement",
+        "Asphalt Roof Repair"
+      ],
+      "short_description": "Expert asphalt shingle roofing for homes and businesses, using Owens Corning Duration series shingles and more.",
+      "long_description": "We handle any asphalt roof construction or replacement job, big or small. Every project starts with a thorough inspection and a detailed report of our findings, and finishes with a full clean-up and a 50-year material and labor warranty."
+    },
+    {
+      "title": "Rubber Roof Installation",
+      "category": "Roofing",
+      "sub_services": [
+        "Rubber Roof New Construction",
+        "Rubber Roof Replacement",
+        "Rubber Roof Repair"
+      ],
+      "short_description": "Flat and low-slope rubber roofing for residential and commercial properties throughout NEPA.",
+      "long_description": "Rubber roofing is our specialty alongside asphalt. Our experienced crews handle new construction, replacement, and repair, using high-quality materials and finishing with a detailed report and full site clean-up."
+    },
+    {
+      "title": "Roof Repair",
+      "category": "Roof Repair",
+      "sub_services": [
+        "Roof Leak Repairs",
+        "Storm Damage Repairs",
+        "Skylight Repairs"
+      ],
+      "short_description": "Fast, reliable repairs for leaks, storm damage, and wear on both residential and commercial roofs.",
+      "long_description": "Whether it is a leak, storm damage, or a worn section, our team handles repair jobs big and small. We inspect, quote, work with your insurer where a claim applies, complete the repair, and clean up thoroughly."
+    },
+    {
+      "title": "Gutter Installation",
+      "category": "Gutters",
+      "sub_services": [
+        "Gutter Installations",
+        "Gutter Repairs",
+        "Attic Venting"
+      ],
+      "short_description": "Durable gutter installation and repair to move water off your roof and away from your foundation.",
+      "long_description": "We install and repair gutter systems using high-quality materials built to last, and offer maintenance to extend their life. Every job includes a thorough inspection and a detailed report of our findings."
+    }
+  ],
+  "services_dropped": [
+    "Skylight Installation \u2014 6th service; template caps at 5. Skylight repair retained as a sub-service under Roof Repair."
+  ],
+  "service_areas_selected": [
+    {
+      "name": "Nanticoke",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "postal": "18634"
+    },
+    {
+      "name": "Ashley",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "postal": "18706"
+    },
+    {
+      "name": "Larksville",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "postal": "18651"
+    },
+    {
+      "name": "Dallas",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "postal": "18612"
+    },
+    {
+      "name": "Duryea",
+      "state": "Pennsylvania",
+      "state_abbr": "pa",
+      "postal": "18642"
+    }
+  ],
+  "service_areas_all_listed_on_site": [
+    "Ashley",
+    "Dallas",
+    "Duryea",
+    "Harding",
+    "Luzerne",
+    "Nuangola",
+    "Courtdale",
+    "Glen Lyon",
+    "Nanticoke",
+    "Korn Krest",
+    "Larksville",
+    "Shavertown",
+    "Yatesville",
+    "Wapwallopen",
+    "Sweet Valley",
+    "West Wyoming",
+    "Wilkes-Barre",
+    "Hunlock Creek",
+    "Bear Creek Village"
+  ],
+  "testimonials": [
+    {
+      "name": "Shawn F.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Ed and his entire team were fantastic to work with. A thorough explanation of what was needed was provided. Ed's team cleaned the job site so well, you would never know roofing just occurred. Ed also personally handled an issue with my insurance company and had it resolved without me having to contact them."
+    },
+    {
+      "name": "Veronica D.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "From the first moment I met Ed Gilroy for an estimate he was very professional and told me the roof would be installed at a certain time and as promised the roof was done at that time and completed in a day and a half. When the job was done they cleaned up and it was as if they weren't there."
+    },
+    {
+      "name": "Tom Z.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "His timeline was spot on, calling the day before and being here bright and early. Our full rip off and replacement was done by 1:30pm. New gutters and lead guards installed shortly after. Very reasonable \u2014 3 estimates, and Gilroy was by far the best around."
+    },
+    {
+      "name": "Sarah",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Promptly received an estimate from Ed after calling him. We decided on a date to start, and his crew was there when he said they would be. They completed the job in a day and a half, left no mess behind, and charged me exactly what he quoted."
+    },
+    {
+      "name": "Crystal Bilby",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "They did my roof quickly and were so neat and clean about it. I have had no problems and I had the roof for 21 years. I will definitely be working with them again for my next roof."
+    },
+    {
+      "name": "Gregory Hrivnak",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Ed and crew did a great job with our new roof. They showed up early and worked late getting the job completed on time. Ed was available to talk or text with any questions. Excellent customer service."
+    }
+  ],
+  "team_members": [],
+  "key_person": "Ed Gilroy Jr. (second generation; Ed Gilroy Sr. founded the business in 1972)",
+  "faqs": [
+    {
+      "q": "How can I tell if my roof needs to be replaced, or if it just needs repairs?",
+      "a": "A roof inspection is the only reliable way to tell. We inspect, give you a detailed report of what we find, and quote repair and replacement so you can decide with the facts in front of you."
+    },
+    {
+      "q": "Do you work with insurance claims?",
+      "a": "Yes. Insurance work is a routine part of what we do, and we handle the claim process alongside your inspection and estimate."
+    },
+    {
+      "q": "When do I have to pay?",
+      "a": "Not until the project is 100% complete and you are satisfied. That has been our policy for over 50 years."
+    },
+    {
+      "q": "What warranty comes with the work?",
+      "a": "Our roofing work carries a 50-year material and labor warranty as an Owens Corning Platinum Preferred Contractor."
+    },
+    {
+      "q": "How long does a roof replacement take?",
+      "a": "Most residential roofs are completed in a day to a day and a half, depending on size and complexity."
+    }
+  ],
+  "gallery": [],
+  "_needs_operator_input": [
+    "GHL forms/surveys/calendar booking snippet",
+    "GHL reviews widget snippet",
+    "GHL Live Chat widget snippet",
+    "Tracking phone number",
+    "Custom domain (or default to gilroy-roofing.vercel.app)",
+    "Meta Pixel / GTM code injection blocks"
+  ],
+  "_flags": [
+    "HOURS: operator confirmed \u2014 publish Mon-Sun 24/7 exactly as GBP and the website both state.",
+    "CUSTOMER COUNT: operator set 10K+ customers (site claimed 20K+). ~185 jobs/yr over 54 years with subcontracted overflow \u2014 plausible. 20K+ figure excluded.",
+    "NAMES: customer-facing 'Gilroy Roofers'; legal entity 'Gilroy Construction'; GBP currently lists 'Gilroy Roofing'. NAP mismatch between site and GBP \u2014 recommend renaming the GBP listing to match.",
+    "LOGO: operator approved using /wp-content/uploads/2026/03/Screenshot_1.png as-is for now.",
+    "NO SOCIALS found on GBP or the website.",
+    "SERVICE AREAS: 19 listed on site, 5 selected (template cap). Operator-adjustable.",
+    "SERVICES: 6 found, 5 kept. Skylight Installation dropped; skylight repair retained as a sub-service of Roof Repair.",
+    "TEAM: no team page. Only Ed Gilroy named."
+  ],
+  "_sources": {
+    "gbp": "Apify google-maps-with-contact-details, 2026-07-27",
+    "site": [
+      "https://gilroyroofers.com",
+      "+6 service pages"
+    ],
+    "retrieved": "2026-07-27"
+  },
+  "gbp_listed_name": "Gilroy Roofing"
+}

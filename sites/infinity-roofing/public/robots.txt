@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://infinity-roofing.vercel.app/sitemap-index.xml

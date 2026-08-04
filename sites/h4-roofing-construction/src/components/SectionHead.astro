@@ -1,0 +1,36 @@
+---
+// `as` exists because four pages in this template — /contact, /book, /blog and
+// /service-area — use SectionHead as their ONLY page heading and never render a
+// HeroOwl. With SectionHead hardcoded to <h2>, those four shipped with no <h1>
+// at all: an accessibility failure and a wasted SEO signal on the two highest-
+// intent pages on the site. Verified present in the sibling gilroy and whitman
+// builds too, so it is a template defect rather than a content mistake here.
+//
+// Default stays 'h2' so every genuine mid-page section head is unchanged; the
+// four page-level heads opt in with as="h1". Fix belongs upstream in
+// astro-templates/owl/ as well — site-generate must not edit the template, so
+// it is flagged for a separate pass.
+export interface Props {
+  eyebrow?: string;
+  heading: string;
+  subtitle?: string;
+  align?: 'center' | 'left';
+  as?: 'h1' | 'h2';
+}
+const { eyebrow, heading, subtitle, align = 'center', as: Tag = 'h2' } = Astro.props;
+---
+<div class={`section-head ${align}`}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Tag>{heading}</Tag>
+  {subtitle && <p class="subtitle">{subtitle}</p>}
+</div>
+<style>
+  .section-head { max-width: 780px; margin: 0 auto var(--space-3); }
+  .section-head.center { text-align: center; }
+  .section-head.left { text-align: left; margin: 0 0 var(--space-3); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
+  /* h1 and h2 share one rule: the tag is chosen for document structure, not for
+     appearance, so swapping it must not change how the head looks. */
+  h1, h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.01em; }
+  .subtitle { color: var(--color-muted); font-size: 1.05rem; margin: 0; }
+</style>

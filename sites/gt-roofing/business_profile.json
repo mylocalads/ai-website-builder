@@ -1,0 +1,125 @@
+{
+  "title": "G&T Roofing & Home Improvements LLC",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Roofing contractor",
+  "address": "77 Center St, Pittston, PA 18640",
+  "neighborhood": null,
+  "street": "77 Center St",
+  "city": "Pittston",
+  "postalCode": "18640",
+  "state": "Pennsylvania",
+  "countryCode": "US",
+  "website": "https://www.gtroofinghomeimprovements.com/",
+  "phone": "(570) 880-1640",
+  "phoneUnformatted": "+15708801640",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.325926,
+    "lng": -75.7842536
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": "86G8+97 Pittston, Pennsylvania",
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJd20SX60fxYkRI8bVPVzlOx8",
+  "categories": [
+    "Roofing contractor"
+  ],
+  "fid": "0x89c51fad5f126d77:0x1f3be55c3dd5c623",
+  "cid": "2250644623138866723",
+  "reviewsCount": 5,
+  "reviewsDistribution": {
+    "oneStar": 0,
+    "twoStar": 0,
+    "threeStar": 0,
+    "fourStar": 0,
+    "fiveStar": 5
+  },
+  "imagesCount": 26,
+  "imageCategories": [
+    "All",
+    "House",
+    "By owner",
+    "Street View & 360\u00b0"
+  ],
+  "scrapedAt": "2026-08-03T17:50:20.433Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Thursday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Friday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Open 24 hours"
+    }
+  ],
+  "openingHoursBusinessConfirmationText": "Updated by this business 12 weeks ago",
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [],
+  "additionalInfo": {
+    "Accessibility": [
+      {
+        "Wheelchair accessible parking lot": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=G%26T%20Roofing%20%26%20Home%20Improvements%20LLC&query_place_id=ChIJd20SX60fxYkRI8bVPVzlOx8",
+  "searchPageUrl": "https://www.google.com/maps/search/G&T%20Roofing%20&%20Home%20Improvements%20LLC/@41.33653538653885,-75.78002909526288,17z?hl=en",
+  "searchString": "G&T Roofing & Home Improvements LLC",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkZS6TbUVR6K7j6oB3d8heIff36Cb2qE3ztvKYmaiJFsFL4Fr_jEyEgP7pfSKgdVIYDibeS2A3gNY5iIJIn3ogLMaemnfoaZfub96gTEo3J3Nb1AJHKMA0QtlbeN8hhK_XqNGTzTasogAL_=w408-h544-k-no",
+  "kgmid": "/g/11zb3dk852",
+  "emails": [],
+  "phones": [],
+  "phonesUncertain": [],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "gtroofinghomeimprovements.com",
+  "leadsEnrichment": []
+}

@@ -1,0 +1,204 @@
+{
+  "slug": "patriot-metal-products",
+  "business_name": "Patriot Metal Products",
+  "legal_name": "Patriot Metal Products Inc.",
+  "tagline": "Multi-Process Custom Coating in Central Pennsylvania",
+  "phone": "+15707593634",
+  "phone_display": "570-759-3634",
+  "fax_display": "570-759-3635",
+  "email": "info@patriot-mp.com",
+  "hr_email": "HR@patriot-mp.com",
+  "address": {
+    "street": "1005 N. Vine Street",
+    "city": "Berwick",
+    "state": "PA",
+    "postal": "18603",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 41.0587851, "lng": -76.2423583 },
+  "hours": {
+    "monday": "7:30am-4:30pm",
+    "tuesday": "7:30am-4:30pm",
+    "wednesday": "7:30am-4:30pm",
+    "thursday": "7:30am-4:30pm",
+    "friday": "7:30am-4:30pm"
+  },
+  "rating": 2.7,
+  "review_count": 7,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 40,
+  "founded_year": 1986,
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/patriot-metal-products-inc",
+    "facebook": "https://www.facebook.com/227980957951335",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Patriot%20Metal%20Products%20Inc&query_place_id=ChIJc_Eg3xudxYkR8aN0la4tXfg"
+  },
+  "site_url": "http://patriot-mp.com/",
+  "logo_url": "http://patriot-mp.com/wp-content/uploads/2018/07/PMP-Logo-small.png",
+  "default_hero_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Hero-Image-1-or-Letter-A-labeled.jpg",
+  "default_hero_video": null,
+  "about_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Hero-Image-1-or-Letter-A-labeled.jpg",
+  "brand": {
+    "fonts": { "display": "Montserrat", "body": "PT Sans" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": null,
+      "accent": "#FAB702",
+      "muted": "#81929E",
+      "surface": null,
+      "candidates": ["#FAB702", "#3498DB", "#81929E", "#FFFFFF"],
+      "_notes": "Firecrawl branding reported primary #FAB702 (amber), accent/link #3498DB (blue), secondary #81929E (steel grey). It also reported textPrimary as #3498DB, which is a mis-detection (link color sampled as body text) — text is left null for design-reference to resolve. Logo is a chrome/silver 3D 'PMP' wordmark with no usable flat brand hue."
+    }
+  },
+  "services": [
+    {
+      "title": "Autophoretic Coating",
+      "short_description": "Autophoretic® auto-deposition delivers enhanced corrosion performance for demanding applications such as vehicle frames and chassis components. This epoxy-acrylic urethane coating has excellent thermal stability, top-coatability, and flexibility.",
+      "long_description": "“A-coat” as it is commonly called, is a waterborne process that depends on chemical reactions with ferrous surfaces to achieve deposition. This process can fully coat all heat resistant assembled parts, sub-assemblies, and assemblies of ferrous metals without coating the non-ferrous components. “Where it wets, it coats” is a familiar attribute of this autodeposition coating process. The process uniformly coats inside, outside, and edges of complex shapes and tubular structures, increasing corrosion resistance on the most corrosion prone part locations. PMP Inc. currently offers the Autophoretic®/Aquence™ 930™ coating, the latest technology offered in autophoretic coating. For ferrous applications, this coating meets all industry standards and requirements, and meets or exceeds the specs for traditional coating methods. This coating is available in black, but is an excellent primer for top-coating with powder or wet paint for different color requirements. The process is streamlined and can coat more than a truckload of components per shift.",
+      "sub_services": [
+        "Heat stability and impact resistance",
+        "Good cyclic corrosion protection",
+        "Scratch and mar resistance",
+        "Uniform gloss and uniform coating thickness",
+        "Coating of composite assemblies",
+        "Inside and outside part protection",
+        "Low VOC, no HAPS"
+      ],
+      "hero_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_A.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Powder Coating",
+      "short_description": "A decorative, protective finish for a wide range of industrial and consumer products, delivering outstanding corrosion resistance on a 16-gun robotic line.",
+      "long_description": "The process involves electrically charged powder particles, a mixture of finely ground pigment and resin, that is sprayed onto the surface of a product that has been electrically grounded. The charged particles adhere to the grounded surfaces until heated and fused into a smooth coating in a curing oven. The result is a uniform, durable, high-quality finish that meets government specifications for performance and durability. The powder coating line at PMP can accommodate components up to 22 feet long x 5 feet high x 47 inches wide, with a weight capacity of up to 2000 pounds. Our line includes a six-stage iron phosphate washer assuring clean parts and excellent powder adhesion. The spray booth is equipped with 16 robotic spray guns that can also be operated manually if required. This line is best suited for small parts requiring high production, but we process orders ranging from 1 piece to entire truckloads daily. PMP has invested in a powder re-claim unit that contributes to higher efficiency, green technology, and a lower customer cost. Powder coating is RoHS compliant.",
+      "sub_services": ["Primers", "Topcoat", "Zinc rich", "High temperature", "Low temperature", "Custom color matching"],
+      "hero_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_C-iStock1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Zinc Plating",
+      "short_description": "A fully submerged coating process that chemically converts the surface so zinc bonds to it — available through rack or barrel processing.",
+      "long_description": "Zinc plating is a fully submerged coating process, beginning with an acid and/or caustic cleaning followed by a conversion coating of zinc. The process converts, or changes, the surface chemically, allowing the zinc to be bonded to the surface. At PMP Inc., our zinc plate coating is available through RACK or BARREL processing. Rack plating accommodates parts up to 10 feet long on the rack system. Barrel plating is best suited for small to medium size components. We offer clear and yellow chromate zinc coating. Zinc provides corrosion resistance and is cosmetically pleasing. At PMP, our zinc plating operation processes automotive parts, screws, nuts, bolts, component parts, and full assemblies for an array of different industries.",
+      "sub_services": ["Rack plating up to 10 feet", "Barrel plating for small to medium parts", "Clear chromate", "Yellow chromate"],
+      "hero_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_D1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Batch Painting",
+      "short_description": "An alternative coating method for oversized or low-quantity items that don't suit automated application — in a room-sized 15' w x 20' l x 6' h booth and oven.",
+      "long_description": "Batch painting enables PMP to provide customers with an alternative method of coating application for those items that don't suit the automated application, such as large over-sized items or individual and low-quantity runs. Large items can be coated using powder or wet paint. Our room-sized spray booth and oven can process parts as large as 15 feet wide x 20 feet long x 6 feet high, and parts up to 15 feet long can be accommodated in the batch booth system. Typical batch work includes individual motorcycle frames, sprint car frames, automotive parts, tractor trailer parts, combines for the agricultural industry, and government components requiring CARC (high temp, high chemical resistance) finishes that meet MIL, OMAH, and ANSI specifications. These specialty coatings are always applied in the batch process. PMP offers a wide range of coating colors, or we can custom match your specific color needs.",
+      "sub_services": ["Long pipes", "Tanks", "Fences", "Utility trailers", "Car frames", "Stairs & railing", "Metal cabinets", "CARC / MIL-spec finishes"],
+      "hero_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_E1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Custom Coating",
+      "short_description": "Retail, commercial and industrial metal refinishing — from motorcycle frames and hubcaps to patio furniture and utility trailers.",
+      "long_description": "Patriot Metal Products can accommodate all of your retail, commercial and industrial metal refinishing needs. Whether it is to customize your items, such as hubcaps and motorcycle frames, or to recycle and reuse those things that just need a facelift such as your patio furniture, PMP can provide you with a fresh metal finish. Even your old utility trailer can be powder coated to look brand new. A variety of powder coatings are available in a wide range of colors, or we can custom match your specific color needs. We offer a full service metal finishing process including blasting, pretreatment, coating, and curing. As a green company, we value the restoration process so you can recycle and reuse your valuable metal items.",
+      "sub_services": ["Automotive components", "Motorsports parts (chassis, bumpers)", "Snowplow blades", "Agricultural equipment", "Metal indoor/outdoor furniture", "Wrought iron fencing, gates, lawn ornamentation", "Commercial railing and safety guards"],
+      "hero_photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_B.jpeg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "_services_dropped": [
+    {
+      "title": "Other Services",
+      "reason": "Catch-all page, not a discrete service. Its contents (metal fabrication, assembly, grinding & sanding, burn off, blasting & wheel abrading, dip coating, testing/laboratory, transportation) are captured in `capabilities` below and surfaced as a turnkey-capabilities section rather than a sixth thin service page. Template cap is 5 services.",
+      "source_url": "http://patriot-mp.com/services/other-services/"
+    }
+  ],
+  "capabilities": [
+    { "title": "Metal Fabrication", "body": "PMP can be the sole source for your metal fabrication and coatings needs." },
+    { "title": "Assembly", "body": "If component parts require coating prior to assembly, we re-assemble components in customer-required configurations, including custom packaging and electrical component assembly." },
+    { "title": "Grinding & Sanding", "body": "A fully manual process, with capability from rough sanding to commercial grade grinding." },
+    { "title": "Burn Off", "body": "Parts as small as a nickel or as large as 6' d x 10' w x 4' w. PMP has 3 different sized burn-off ovens." },
+    { "title": "Blasting & Wheel Abrading", "body": "Surface profiles from smooth to coarse, with various media shot available. Automated and manual blasting processes, including room-sized blast." },
+    { "title": "Dip Coating", "body": "Using submersion, all exposed surfaces are coated with an average film build of 1 to 2 dry mils. An air-cured process used primarily as a primer application. Added in 2004 as a cost-effective process for large quantities." },
+    { "title": "Testing & Laboratory", "body": "An onsite state-of-the-art coating laboratory with various testing capabilities. We provide certifications of the processes and the performance criteria for varied customers and applications." },
+    { "title": "Transportation", "body": "Our location is easily accessible to the interstate system for ease of trucking. We run a fleet of three trucks — two tractor trailers and one straight side closed van. Expedite services are available when necessary." }
+  ],
+  "industries_served": ["Automotive", "Metal", "Furniture", "Agricultural equipment", "Fasteners", "Appliances", "Motorsports", "Government / defense"],
+  "service_areas": [
+    { "name": "Berwick", "state": "Pennsylvania", "state_abbr": "pa", "slug": "berwick-pa", "county": "Columbia County", "_source": "gbp" },
+    { "name": "Bloomsburg", "state": "Pennsylvania", "state_abbr": "pa", "slug": "bloomsburg-pa", "county": "Columbia County", "_source": "inferred" },
+    { "name": "Danville", "state": "Pennsylvania", "state_abbr": "pa", "slug": "danville-pa", "county": "Montour County", "_source": "inferred" },
+    { "name": "Hazleton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hazleton-pa", "county": "Luzerne County", "_source": "inferred" },
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "county": "Luzerne County", "_source": "inferred" },
+    { "name": "Williamsport", "state": "Pennsylvania", "state_abbr": "pa", "slug": "williamsport-pa", "county": "Lycoming County", "_source": "inferred" }
+  ],
+  "testimonials": [],
+  "team_members": [
+    { "name": "Duane Koch", "role": "President", "photo": null, "bio": null, "_source": "scraped" },
+    { "name": "Nicole Merrigan", "role": "Executive Assistant", "photo": null, "bio": null, "_source": "scraped" },
+    { "name": "Max Sitler", "role": "Production Manager", "photo": null, "bio": null, "_source": "scraped" }
+  ],
+  "_team_photo_note": "The three /team/ image URLs (Home_Q-Duane, Home_R-Nicole, Home_S-Max) are NOT headshots. The site-audit screenshot shows they render as placeholder chrome letters 'D', 'N', 'M' — the WordPress theme's stand-in art. All three photos are therefore null. site-generate must render the team as a text-only roster or omit it; do not hotlink these images.",
+  "careers": {
+    "open_positions": ["Powder Coating Technician", "Lab Assistant", "Cleaning Technician", "Administrative Assistant"],
+    "apply_email": "HR@patriot-mp.com",
+    "_source": "scraped"
+  },
+  "about": {
+    "story": "PMP Inc. is a multiple process custom coater, offering cost effective solutions for a variety of industries, including automotive, metal, furniture, agricultural equipment, fasteners, appliances, and many more. Our highly qualified and experienced staff is dedicated to serve the needs of our customers. Each year we look to continued growth while maintaining the confidence and needs of those customers.\n\nWith experience spanning over 30 years, PMP has provided their customers with the quality and service they demand and deserve. Over the years the company has expanded its coating capacity from powder coating and zinc plating to now include the latest Autophoretic (auto-deposition) process.\n\nAutophoretic, or A-coat as it is commonly called, is approved by the automotive, agricultural equipment and furniture industries. The process is streamlined and can coat more than a truckload of components per shift. This ensures the quick turnaround our customers require.\n\nSixteen robotic spray guns assist manual spray operations in our powder coating process. A drive-in batch spray room and curing process was added to accommodate specialized and larger items. All our processes at Patriot Metal Products Inc. are supported with a state of the art coating laboratory.\n\nWe understand the value of customer relationships and work hard to ensure that trust with an ongoing commitment. PMP is proud to use green technology where available, and is always taking great strides to further their environmentally friendly practices.",
+    "_source": "scraped"
+  },
+  "history": [
+    { "year": "1986", "title": "Humble beginnings", "body": "Patriot Metal Products is established and incorporated in Berwick, PA." },
+    { "year": "2004", "title": "Dip coating process", "body": "Patriot Metal Products adds dip coating, a cost-effective coating process for large quantities of product." },
+    { "year": "Today", "title": "Family owned, trustworthy", "body": "We understand the value of customer relationships and work hard to ensure that trust with an ongoing commitment." }
+  ],
+  "faqs": [],
+  "gallery": [
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Home_D-722x368.jpg", "alt": "Batch painting of oversized metal components in a room-sized spray booth" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Home_G-722x368.jpg", "alt": "Custom assembly of coated component parts" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Home_E-Back-Up-722x368.jpg", "alt": "Dip coating line submerging metal parts" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Lab-Testing-722x368.jpg", "alt": "Onsite coating laboratory running performance and certification testing" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/DSC_0661-722x368.jpg", "alt": "Burn off, blast and wheelabrating surface preparation" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/Home_I-722x368.jpg", "alt": "Patriot Metal Products tractor trailer fleet for customer transportation" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_A.jpg", "alt": "Autophoretic coating before and after comparison" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_C-iStock1.jpg", "alt": "Powder coating of metal parts in an automated booth" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_D1.jpg", "alt": "Barrel plating with yellow chromate" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_E1.jpg", "alt": "Batch painting of large items" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_B.jpeg", "alt": "Custom coating of refinished metal items" },
+    { "photo": "http://patriot-mp.com/wp-content/uploads/2020/08/ServicesTab_F1.jpg", "alt": "Metal fabrication work at Patriot Metal Products" }
+  ],
+  "brand_voice_sample": "PMP Inc. is a multiple process custom coater, offering cost effective solutions for a variety of industries. AT PMP, INC. WE ARE A TRUE TURNKEY OPERATION, providing services starting with burn-off, grinding, sanding, wheel abrading, pre-treatment, prime and top coat (including Autophoretic, Powder and Zinc Coatings), analytical testing, package and transporting final quality products to our customers.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "No CRM/chat/third-party form embeds detected. The existing /contact-us page uses a plain Contact Form 7 WordPress form. Operator must supply GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_matches": 1,
+    "pages_scraped": ["/", "/about-us-2/", "/services/", "/contact-us/", "/career/", "/services/autophoretic-coating/", "/custom-coating/", "/services/powder-coating/", "/services/zinc-plate/", "/services/batch-painting/", "/services/other-services/", "/team/duane-koch/", "/team/nicole/", "/team/max-sitler/"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.28,
+    "warnings": [
+      "RATING SUPPRESSED: GBP rating is 2.7 over 7 reviews. Do not render a Google rating badge, star row, review-count chip, or aggregateRating JSON-LD on the generated site.",
+      "NO TESTIMONIALS: GBP returned zero review bodies and the client site has none. testimonials[] is intentionally empty; site-generate must omit the testimonials section rather than invent quotes.",
+      "TEAM BIOS DISCARDED: all three /team/ pages carry lorem ipsum placeholder bios and placeholder names ('JOHN LEADER', 'STEVE CHEMICI', 'MARK TERAN') left over from the WordPress theme demo. Only real names, roles, and photos were kept; bio is null for all three.",
+      "SERVICE AREAS PARTLY INFERRED: only Berwick is confirmed by GBP. The other five are nearby Central/Northeast PA industrial markets, justified by the client's own claims of interstate access off I-80 and a three-truck fleet, but they are marked _source: inferred and should be reviewed by the operator.",
+      "HOURS CONFLICT: GBP says 8AM-5PM, the client's site footer says 7:30am-4:30pm. Site footer used.",
+      "years_in_business derived from the client's own stated founding year of 1986 (about page company-history timeline), not inferred from GBP.",
+      "licensed/insured/bonded all left false — no badge or footer disclosure found on the client's site.",
+      "LOGO QUALITY: the only logo asset is a 94x85 px chrome 3D 'PMP' wordmark. Too small for retina header use; operator should request a vector or high-res original from the client.",
+      "Hero photo and all gallery/service photos are hotlinked from the client's WordPress uploads. site-generate should mirror them into public/img/ so the site survives the old CMS going away."
+    ]
+  }
+}

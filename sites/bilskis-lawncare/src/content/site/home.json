@@ -1,0 +1,231 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving Luzerne County Since 2020",
+    "headline": "We Show Up When We Say We Will",
+    "subheadline": "A local Luzerne County crew for mowing, mulch, patios and retaining walls — plus commercial snow removal all winter. You get a written quote before we start, and a yard your neighbours notice when we're done.",
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book",
+    "video_link_text": "See our recent work",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "Quick estimate lower than 3 other quotes. Started job quickly and worked through an all day off/on rain to get it done.",
+      "author": "Ron F. — Google Review",
+      "cta_text": "Get My Free Quote!",
+      "cta_href": "/book",
+      "rating": 4.9,
+      "review_count": 40
+    },
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.9,
+        "label": "4.9 Rating",
+        "sublabel": "40 Google reviews"
+      },
+      {
+        "label": "Licensed & Insured",
+        "sublabel": "Residential & commercial"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Locally owned since 2020",
+      "icon": "home"
+    },
+    {
+      "text": "Free written quotes",
+      "icon": "clipboard"
+    },
+    {
+      "text": "One crew, all four seasons",
+      "icon": "calendar"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "You Get The Number In Writing",
+    "body": "The most common complaint about lawn and landscape work around here is not the price — it is the contractor who quotes verbally, starts late, and hands over a bigger invoice than anybody discussed. We do the opposite. We come out, look at the property, and send you the scope and the price in writing. If we say Tuesday, we are there Tuesday. If the weather turns, we tell you rather than going quiet. That is why most of our work now comes from neighbours of people we have already worked for.",
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Straight Answers, Then Straight To Work",
+    "intro": "Whether it is a weekly mow, a paver patio, or a season of plowing a commercial lot, every Bilski's job runs the same way — quoted in writing, scheduled properly, and cleaned up before we leave.",
+    "blocks": [
+      {
+        "title": "We solve the drainage, not just the surface",
+        "body": "A lot of yard problems in this area are water problems. We install underground downspout extensions, drains, and graded beds so the erosion actually stops — instead of re-seeding the same washed-out patch every spring.",
+        "icon": "umbrella"
+      },
+      {
+        "title": "Residential and commercial, same standard",
+        "body": "We maintain private properties and commercial accounts side by side, including full-winter snow and ice coverage for parking lots and sidewalks. The crew, the equipment and the response time are the same either way.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "Clean-up is part of the job, not an afterthought",
+    "steps": [
+      {
+        "title": "Beds edged and defined",
+        "body": "Crisp edges cut in before the mulch goes down, not scuffed in afterwards."
+      },
+      {
+        "title": "Clippings and debris hauled out",
+        "body": "Nothing left bagged at the kerb for you to deal with."
+      },
+      {
+        "title": "Hard surfaces blown clean",
+        "body": "Drive, walks and patio cleared before we load the trailer."
+      }
+    ],
+    "guarantee": {
+      "title": "If it isn't right, we come back",
+      "body": "We would rather return and fix something than have you living with work you are not happy with. Tell us what is off and we will put it right — that is how a business built on neighbourhood referrals has to operate.",
+      "cta_text": "Talk to Ryan",
+      "cta_href": "/contact",
+      "badge_alt": "Bilski's Lawn Care 100% satisfaction guarantee",
+      "badge_image": "/badge-satisfaction.svg"
+    },
+    "steps_icon": "broom"
+  },
+  "process_steps": {
+    "headline": "How A Bilski's Job Runs",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free quote, in writing",
+        "icon": "clipboard",
+        "body": "We walk the property, talk through options, and send the scope and price in writing."
+      },
+      {
+        "label": "Step Two",
+        "title": "Scheduled and started",
+        "icon": "hammer",
+        "body": "You get a date and we keep it. Most residential projects run days, not weeks."
+      },
+      {
+        "label": "Step Three",
+        "title": "Cleaned up and walked with you",
+        "icon": "broom",
+        "body": "Debris hauled, surfaces blown clean, and a final look at the work together."
+      }
+    ],
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Bilski's Lawn Care",
+    "headline": "Started In 2020, Grown By Referral",
+    "body": "Bilski's Lawn Care started in the summer of 2020, in the middle of the Covid shutdowns, with a simple goal — give Luzerne County a landscaping company that answers the phone and does what it said it would. Ryan and the crew began with mowing and mulch installs. Six seasons later we are building paver patios and retaining walls, solving drainage problems, and holding commercial snow contracts through the winter — with a 4.9-star rating across 40 reviews to show for it.",
+    "checklist": [
+      "Locally owned and operated in Luzerne County since 2020",
+      "4.9 stars across 40 Google reviews",
+      "Licensed and insured, residential and commercial",
+      "Lawn care, landscaping, hardscaping and drainage work",
+      "Commercial snow and ice management all winter"
+    ],
+    "photo_alt": "A large home with freshly mulched planting beds and trimmed shrubs, maintained by Bilski's Lawn Care",
+    "photo_cutout": false,
+    "photo": "https://static.wixstatic.com/media/017a01_66f5c4f5dd404b3380790c690e3af61e~mv2.jpg",
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "headline": "Lawn Care & Landscaping In Wilkes-Barre",
+    "paragraphs": [
+      "Northeastern Pennsylvania is a demanding place to keep a property. Heavy spring rain washes out beds and undermines walls, the summer runs humid enough to push weeds through mulch in weeks, autumn drops leaves faster than most homeowners can keep up with, and winter arrives with the ice and plow work that closes commercial lots.",
+      "We work that whole calendar — weekly and bi-weekly mowing, hedge trimming, spring and autumn clean-ups, mulch and planting-bed installs, paver patios and segmental retaining walls, drainage and downspout work, and commercial snow and ice management from the first storm to the last.",
+      "Bilski's serves Wilkes-Barre, Kingston, Plains, Hanover, Wyoming, Pittston, Ashley, Luzerne, Mountain Top, Nanticoke, Exeter, White Haven, Alden, Laurel Run, Scranton, Plymouth, Bear Creek and Freeland. If you are near one of those and not sure whether we reach you, call and ask — the answer is usually yes."
+    ],
+    "checklist": [
+      "Weekly mowing, trimming and seasonal clean-ups",
+      "Mulch installs, planting beds and hedge trimming",
+      "Paver patios, retaining walls and drainage solutions",
+      "Commercial snow removal for lots and sidewalks"
+    ],
+    "image": "https://static.wixstatic.com/media/017a01_df6122451c694776900286c150681b01~mv2.jpg",
+    "image_alt": "A curved segmental block retaining wall built by Bilski's Lawn Care alongside a stone bed",
+    "image_position": "left",
+    "eyebrow": "Why Neighbours Choose Us",
+    "review": {
+      "name": "C D.",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "My yard looks great, even my neighbors commented. These people worked so hard picking weeds, edging, and mulching. I would recommend them to anyone."
+    },
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Ron F.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Excellent company to deal with. Quick estimate lower than 3 other quotes. Started job quickly and worked through an all day off/on rain to get it done. Installed (2) downspout extensions underground to remedy erosion issues in our backyard. Finished job quickly, returned our yard to the best possible condition then laid down seed and straw. Friendly, courteous service. Will definitely use Bilski's again."
+    },
+    {
+      "name": "C D.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "My yard looks great, even my neighbors commented. These people worked so hard picking weeds, edging, and mulching. I would recommend them to anyone."
+    },
+    {
+      "name": "Yvonne K.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Ryan installed a new garden wall at my home. His work was great! He paid attention to detail."
+    },
+    {
+      "name": "Thomas H.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Ryan is Very Professional, reliable, and does quality work! Highly Recommend!"
+    },
+    {
+      "name": "Sam F.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Outstanding work. Went above and beyond what I asked for. Highly recommend."
+    },
+    {
+      "name": "Mike S.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Guys were fast and did a great job! I will definitely use them again."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get a quote?",
+      "a": "Call (570) 899-6400 or send a message through the site. We come out, look at the property, and send you the scope and price in writing — free, and with no obligation."
+    },
+    {
+      "q": "Do you do one-off jobs or only seasonal contracts?",
+      "a": "Both. Plenty of customers book us for a single spring clean-up, a mulch install, or one patio. Others are on weekly or bi-weekly mowing for the whole season. Either is fine."
+    },
+    {
+      "q": "How often will you mow my lawn?",
+      "a": "Weekly is standard through the growing season, with bi-weekly available on slower-growing properties. We agree the schedule up front so you know which day to expect us."
+    },
+    {
+      "q": "Can you fix a drainage or erosion problem?",
+      "a": "Yes, and it is a good part of what we do. Underground downspout extensions, drains, re-grading and bed correction — we sort out where the water is actually going rather than re-seeding the same damage every year."
+    },
+    {
+      "q": "Do you build patios and retaining walls?",
+      "a": "Yes. Paver patios, walkways and segmental block retaining walls, including the base preparation and drainage behind the wall that decides whether it stays straight."
+    },
+    {
+      "q": "Do you take commercial snow removal accounts?",
+      "a": "Yes. We plow and treat commercial parking lots and clear sidewalks through the winter. Get in touch before the season to lock in coverage."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "Wilkes-Barre, Kingston, Plains, Hanover, Wyoming, Pittston, Ashley, Luzerne, Mountain Top, Nanticoke, Exeter, White Haven, Alden, Laurel Run, Scranton, Plymouth, Bear Creek and Freeland. If you are just outside that list, call and ask."
+    }
+  ]
+}

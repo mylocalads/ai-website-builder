@@ -1,0 +1,164 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving Warehouses Across The Mid-Atlantic",
+    "headline": "Stop Paying For The Same Repair Twice",
+    "subheadline": "Rigid concrete patches crack again the moment the slab moves, and every forklift wheel makes the joint worse. Our Fibrecrete-G repairs flex with the floor, cure in under an hour, and go in cold — so the aisle reopens the same shift and stays fixed.",
+    "cta_text": "Request A Site Assessment",
+    "cta_href": "/book",
+    "photo": "/img/coatings-after.jpg",
+    "video_link_text": "Why traditional repairs fail",
+    "video_link_href": "/services/fibrecrete-g",
+    "quote_card": {
+      "quote": "It is a huge cost savings versus other concrete installations. This product has an amazing set up time — you could drive on this product within an hour.",
+      "author": "Mike Shemonski — Maintenance Manager, Pennsylvania",
+      "cta_text": "Request A Site Assessment",
+      "cta_href": "/book"
+    }
+  },
+  "promise_bar": [
+    { "text": "Back on the floor in under an hour", "icon": "clock" },
+    { "text": "Installs at low temperatures, year-round", "icon": "shield" },
+    { "text": "Women-owned, Mid-Atlantic based", "icon": "award" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "The Repair Outlasts The Traffic",
+    "body": "Most industrial floor repairs are sold on price per square foot and judged on how they look the day the crew leaves. We would rather be judged on the winter after. Fibrecrete-G is a polymer-modified, fiberglass-reinforced system that flexes with expansion, contraction and heavy wheel loads instead of fighting them, which is why it does not unseat and re-crack the way rigid cementitious patching does. If a rigid repair is genuinely the right call for your slab, we will tell you that too — traditional concrete repair is one of our five services, not a fallback.",
+    "cta_text": "See how Fibrecrete-G works",
+    "cta_href": "/services/fibrecrete-g",
+    "icon": "shield"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Preventative Maintenance, Not Emergency Patching",
+    "intro": "Every project runs the same way, whether it is one failed joint in a dock aisle or a full coating system across a distribution center. We work around your operation, not through it.",
+    "blocks": [
+      {
+        "title": "We diagnose before we quote",
+        "body": "Joint edge, slab surface, full-depth section loss and subgrade voids all look similar from ten feet away and need completely different repairs. We walk the floor and name the actual failure mode before anyone talks about price.",
+        "icon": "document"
+      },
+      {
+        "title": "Surface prep is the product",
+        "body": "The large majority of coating failures trace back to substrate preparation, not to the coating. Profiling, moisture assessment and contamination removal are scoped as their own line, not absorbed into an install rate.",
+        "icon": "shield"
+      },
+      {
+        "title": "Cold storage is a specialism, not an exception",
+        "body": "Freezer floors, cold storage, food distribution, dairy, laboratory and pharmaceutical warehouses need chemistry that cures and holds at temperature and survives aggressive cleaning protocols. We repair them cold rather than asking you to thaw a room.",
+        "icon": "umbrella"
+      }
+    ],
+    "steps_title": "We schedule around your operation",
+    "steps_icon": "calendar",
+    "steps": [
+      { "title": "One aisle at a time", "body": "Work is sequenced so the rest of the floor keeps running." },
+      { "title": "Nights and shutdowns", "body": "If the bay cannot come out of rotation, we work the window that it can." },
+      { "title": "Return to service in hours", "body": "Fibrecrete-G is back under forklift traffic in an hour or less." }
+    ],
+    "guarantee": {
+      "title": "A written scope before a single tool comes out",
+      "body": "You get the failure mode we identified, the system we would specify, the area or linear footage covered, the operating window we need, and the return-to-service time — in writing, before the work is booked. No surprises mid-shutdown.",
+      "cta_text": "Request A Site Assessment",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Floor Project Runs",
+    "steps": [
+      { "label": "Step One", "title": "On-site assessment", "icon": "clipboard", "body": "We walk the floor with your maintenance lead and identify what is actually failing." },
+      { "label": "Step Two", "title": "Written scope", "icon": "document", "body": "System, coverage, operating window and return-to-service time, in writing." },
+      { "label": "Step Three", "title": "Scheduled around production", "icon": "calendar", "body": "Sequenced by aisle, shift or shutdown so the rest of the facility keeps moving." },
+      { "label": "Step Four", "title": "Back in service", "icon": "hammer", "body": "Repairs under traffic in an hour; coatings and markings on the agreed window." }
+    ],
+    "cta_text": "Request A Site Assessment",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Diamond Ridge",
+    "headline": "A Smarter Alternative To Traditional Concrete Repair",
+    "body": "Diamond Ridge Industrial Services is a women-owned industrial services company based in Northeastern Pennsylvania, working across Pennsylvania, New York, New Jersey, Delaware, Maryland and West Virginia. Traditional concrete repair was not built for today's industrial demands — rigid, cement-based fixes are expensive, disruptive, and prone to cracking, which means repeat repairs, extended downtime and rising maintenance costs. We built the business around preventative maintenance instead: solutions that reduce disruption, extend surface life, and protect the long-term investment in the slab.",
+    "checklist": [
+      "Women-owned industrial services company",
+      "Warehouses, manufacturing, cold storage, logistics and commercial facilities",
+      "Fibrecrete-G, joint repair, floor coatings, traditional repair and line marking",
+      "Serving PA, NY, NJ, DE, MD and WV",
+      "Trusted by McLane, Amcor, Berry Global and Lowe's"
+    ],
+    "photo": "/img/about-crew.jpg",
+    "photo_alt": "The Diamond Ridge Industrial Services crew on site",
+    "photo_cutout": false,
+    "cta_text": "More about us",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Why Facility Managers Call Us",
+    "headline": "Industrial Concrete Repair In The Mid-Atlantic",
+    "paragraphs": [
+      "A distribution floor in Northeastern Pennsylvania takes freeze-thaw at the dock doors, temperature swings through the slab, and thousands of loaded wheel passes a day across every construction joint. Once a joint arris breaks, each pass enlarges the defect — which is why the same twenty feet of aisle gets patched year after year.",
+      "We repair the failure rather than the symptom. Joints get rebuilt and sealed, spalled and delaminated surfaces get restored, rocking slabs get stabilized from below, and coatings go down over a substrate that has actually been profiled and tested. Where a flexible system is the right answer we specify Fibrecrete-G; where rigid load-bearing restoration is the right answer we say so."
+    ],
+    "checklist": [
+      "Joint repair, sealing and caulking in live traffic aisles",
+      "Spall, delamination and full-depth section repair",
+      "Slab stabilization for curl, deflection and rocking panels",
+      "Epoxy, polyaspartic and chemical-resistant coating systems",
+      "Freezer and cold storage floor repair at temperature",
+      "OSHA-oriented traffic lane and work zone line marking"
+    ],
+    "image": "/img/services-2.jpg",
+    "image_alt": "Technician finishing a concrete repair along a warehouse wall",
+    "image_position": "left",
+    "review": {
+      "name": "Mike Shemonski",
+      "source": "Maintenance Manager, Pennsylvania",
+      "rating": 5,
+      "text": "I have used this product for the last 2 years at my facility. Love the product, it is durable, reliable. It is a huge cost savings versus other concrete installations. Diamond Ridge was a pleasure to work with."
+    },
+    "cta_text": "Request A Site Assessment",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Mike Shemonski",
+      "location": "Maintenance Manager, Pennsylvania",
+      "rating": 5,
+      "text": "I have used this product for the last 2 years at my facility. Love the product, it is durable, reliable. It is a huge cost savings versus other concrete installations. Diamond Ridge was a pleasure to work with. They do everything you ask and go above and beyond. This product has an amazing set up time. You could drive on this product within an hour. I highly recommend using Diamond Ridge Industrial Services and their product and look forward to doing more business in the future!"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How soon can we drive on the repair?",
+      "a": "Fibrecrete-G cures in one hour or less, so forklifts and pallet jacks are back over the repair within the same shift. Traditional concrete repair and coating systems have longer cure windows, and we give you the specific return-to-service time in the written scope before the work is booked."
+    },
+    {
+      "q": "Can you work while the facility is running?",
+      "a": "Yes. Most of our work is sequenced aisle by aisle, or scheduled into a night shift or a planned shutdown. We agree the operating window during the assessment so the rest of the floor keeps moving."
+    },
+    {
+      "q": "Why did our last concrete patch fail so quickly?",
+      "a": "Usually because it was rigid. A cement-based patch cannot flex, so as the slab expands, contracts and deflects under load, the repair cracks or unseats at the bond line. Fibrecrete-G is polymer-modified and fiberglass-reinforced specifically so it moves with the slab instead of against it."
+    },
+    {
+      "q": "Do you repair freezer and cold storage floors?",
+      "a": "Yes, and it is a specialism rather than an exception. We use cold-temperature repair systems engineered for thermal shock, heavy loads and aggressive cleaning protocols in food distribution centers, dairies, laboratories and pharmaceutical warehouses — no need to thaw the room."
+    },
+    {
+      "q": "Can you install in winter?",
+      "a": "Yes. Fibrecrete-G cures at low temperatures, so Northeast winters are not a reason to defer a repair into spring while the defect keeps growing."
+    },
+    {
+      "q": "Our epoxy floor peeled. Was that the coating's fault?",
+      "a": "Almost always it is the preparation, not the product. The large majority of industrial coating failures trace back to substrate preparation — no proper mechanical profile, or a moisture or contamination problem nobody tested for. We scope prep as its own line item and assess moisture before specifying a system."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Pennsylvania, New York, New Jersey, Delaware, Maryland and West Virginia, out of a base in Archbald, Pennsylvania. If your facility sits in that footprint, call (570) 862-9399 or request an assessment."
+    },
+    {
+      "q": "Are you a certified diverse supplier?",
+      "a": "Diamond Ridge is a women-owned industrial services company, which is generally the qualifying structure for national-account supplier diversity programs. Contact us for the documentation your procurement team needs."
+    }
+  ]
+}

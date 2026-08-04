@@ -1,0 +1,158 @@
+{
+  "slug": "infinity-roofing",
+  "business_name": "Infinity Roofing & Cleaning",
+  "legal_name": null,
+  "tagline": "Roofing & Exterior Cleaning Experts in Dallas, GA",
+  "phone": "+16789925088",
+  "phone_display": "(678) 992-5088",
+  "email": "dan@ir-ga.com",
+  "address": {
+    "street": "294 Fieldcrest Dr",
+    "city": "Dallas",
+    "state": "GA",
+    "postal": "30132",
+    "country": "US"
+  },
+  "marketing_city": "Dallas",
+  "marketing_state": "GA",
+  "geo": null,
+  "hours": null,
+  "rating": null,
+  "review_count": null,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": null,
+  "social": {},
+  "site_url": "https://www.ir-ga.com",
+  "logo_url": null,
+  "default_hero_photo": "https://images.pexels.com/photos/5264825/pexels-photo-5264825.jpeg",
+  "default_hero_video": null,
+  "about_photo": null,
+  "brand": {
+    "fonts": { "display": null, "body": null },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#0a0a0a",
+      "accent": "#e1c135",
+      "muted": null,
+      "surface": null,
+      "candidates": ["#e1c135", "#ffffff", "#0a0a0a", "#d4af37", "#f4d03f"],
+      "_source": "operator"
+    }
+  },
+  "services": [
+    {
+      "title": "Residential Roofing",
+      "short_description": "Complete roofing solutions including inspections, repairs, and full replacements with premium materials.",
+      "sub_services": ["Roof Inspections", "Roof Repair", "Full Roof Replacement", "Shingle Roofing"],
+      "hero_photo": "https://images.pexels.com/photos/33404981/pexels-photo-33404981.jpeg",
+      "_source": "operator"
+    },
+    {
+      "title": "Storm Damage Roof Repair",
+      "short_description": "Fast emergency response with expert insurance claim assistance. We maximize your settlement.",
+      "sub_services": ["Emergency Tarping", "Hail Damage Repair", "Wind Damage Repair", "Insurance Claim Assistance"],
+      "hero_photo": null,
+      "_source": "operator"
+    },
+    {
+      "title": "Commercial Roofing",
+      "short_description": "Professional commercial solutions for businesses, property managers, and HOAs across North Georgia.",
+      "sub_services": ["Flat Roof Systems", "Property Manager Service", "HOA Roofing"],
+      "hero_photo": "https://images.pexels.com/photos/8853474/pexels-photo-8853474.jpeg",
+      "_source": "operator"
+    },
+    {
+      "title": "Solar Installation",
+      "short_description": "Solar panel installation integrated with your roof, planned around the roof's condition and remaining life.",
+      "sub_services": ["Solar Panel Installation", "Roof-Integrated Solar", "Solar-Ready Roof Replacement"],
+      "hero_photo": null,
+      "_source": "operator+directorii"
+    },
+    {
+      "title": "Pressure Washing",
+      "short_description": "Professional house washing, driveway cleaning, and exterior surface restoration services.",
+      "sub_services": ["House Washing", "Driveway Cleaning", "Patio & Deck Cleaning"],
+      "hero_photo": null,
+      "_source": "operator"
+    },
+    {
+      "title": "Soft Wash Roof Cleaning",
+      "short_description": "Safe, effective cleaning that removes algae, moss, and black streaks without damaging shingles.",
+      "sub_services": ["Algae & Moss Removal", "Black Streak Removal", "Low-Pressure Roof Wash"],
+      "hero_photo": "https://images.pexels.com/photos/5691622/pexels-photo-5691622.jpeg",
+      "_source": "operator"
+    },
+    {
+      "title": "Gutter Services",
+      "short_description": "Complete gutter cleaning, repair, and replacement to protect your home from water damage.",
+      "sub_services": ["Gutter Cleaning", "Gutter Repair", "Gutter Replacement"],
+      "hero_photo": null,
+      "_source": "operator"
+    }
+  ],
+  "service_areas": [
+    { "name": "Dallas", "state": "GA", "state_abbr": "ga", "slug": "dallas-ga", "county": "Paulding County", "_source": "operator" },
+    { "name": "Marietta", "state": "GA", "state_abbr": "ga", "slug": "marietta-ga", "county": "Cobb County", "_source": "operator" },
+    { "name": "Kennesaw", "state": "GA", "state_abbr": "ga", "slug": "kennesaw-ga", "county": "Cobb County", "_source": "operator" },
+    { "name": "Douglasville", "state": "GA", "state_abbr": "ga", "slug": "douglasville-ga", "county": "Douglas County", "_source": "operator" },
+    { "name": "Acworth", "state": "GA", "state_abbr": "ga", "slug": "acworth-ga", "county": "Cobb County", "_source": "operator" },
+    { "name": "Smyrna", "state": "GA", "state_abbr": "ga", "slug": "smyrna-ga", "county": "Cobb County", "_source": "operator" },
+    { "name": "Roswell", "state": "GA", "state_abbr": "ga", "slug": "roswell-ga", "county": "Fulton County", "_source": "operator" }
+  ],
+  "testimonials": [
+    { "name": "Andrew Thurston", "location": null, "text": "These guys did a great job fixing a leak around my fireplace chimney and some loose shingles. Would definitely call them again.", "rating": 5, "date": "3 days ago", "_source": "directorii" },
+    { "name": "Tiffany Garmon", "location": null, "text": "100/10 will always recommend Dan! When I saw the completed pressure wash, I literally sighed of enjoyment with how it looks!", "rating": 5, "date": "3 weeks ago", "_source": "directorii" },
+    { "name": "Tim Gerber", "location": null, "text": "From their professionalism to the quality of work, this company is outstanding! Others in the past have killed my grass and flowers.", "rating": 5, "date": "10 months ago", "_source": "directorii" },
+    { "name": "Darlene Mangram", "location": null, "text": "I had my new roof put on Monday. They did an excellent job. They worked all day nonstop. And they cleaned up all the mess. I am very pleased.", "rating": 5, "date": "1 year ago", "_source": "directorii" },
+    { "name": "Madison Leigh", "location": null, "text": "Infinity Roofing was amazing from start to finish. Super professional, showed up on time, and walked me through everything. My new roof looks so good.", "rating": 5, "date": "1 year ago", "_source": "directorii" },
+    { "name": "Ashley Ledford", "location": null, "text": "Dan was really great! I called regarding a gutter clean and pressure wash for my house, driveway, and back patio and he was able to come out the next day to quote.", "rating": 5, "date": "1 year ago", "_source": "directorii" },
+    { "name": "BreakOut Bob", "location": null, "text": "Dan gave us an excellent initial consultation when we needed to replace our roof. He explained the process and gave us several different options.", "rating": 5, "date": "2 years ago", "_source": "directorii" },
+    { "name": "Andrew Clark", "location": null, "text": "Dan put a new shingle roof on my house. He was very professional, friendly, and his crew got it done very quickly. He gave me a great price.", "rating": 5, "date": "2 years ago", "_source": "directorii" },
+    { "name": "Matthew Herbert", "location": null, "text": "By far the best in service, consultation and product. If I was able to leave more stars I would! I have referred them to at least 9 others.", "rating": 5, "date": "2 years ago", "_source": "directorii" },
+    { "name": "Jessee Scott", "location": null, "text": "Dan did an amazing job on my roof. Always on time and communicative. I highly recommend this roofing company.", "rating": 5, "date": "2 years ago", "_source": "directorii" },
+    { "name": "Jordan Scragg", "location": null, "text": "Just had roof redone, replaced all wood and reshingled. Tremendous job, would recommend. Very knowledgeable and professional. After the job, complete clean up.", "rating": 5, "date": "4 years ago", "_source": "directorii" },
+    { "name": "James Scott", "location": null, "text": "Got a few other estimates, but Dan was the most professional and the only one to show up on time.", "rating": 5, "date": "4 years ago", "_source": "directorii" },
+    { "name": "Patrick Jones", "location": null, "text": "Got my roof done very fast and they did everything that was promised. Couldn't ask for more in getting a new roof. Highly recommend.", "rating": 5, "date": "4 years ago", "_source": "directorii" },
+    { "name": "Jacob Murphy", "location": null, "text": "Very clean and thorough job, was very happy with the end result. Any questions or concerns I had were answered and taken care of.", "rating": 5, "date": "4 years ago", "_source": "directorii" },
+    { "name": "Tomily Bourgoing", "location": null, "text": "Quality work and reliable. Dan with Infinity Roofing really took care of us with utmost professionalism. Highly recommend them for any of your roofing needs.", "rating": 5, "date": "4 years ago", "_source": "directorii" }
+  ],
+  "team_members": [
+    { "name": "Dan", "role": "Owner", "photo": null, "bio": null, "_source": "directorii+site" },
+    { "name": "Adam", "role": null, "photo": null, "bio": null, "_source": "directorii" }
+  ],
+  "faqs": [],
+  "gallery": [],
+  "brand_voice_sample": "At Infinity Roofing GA, we provide comprehensive roofing and exterior cleaning services to homeowners and businesses throughout North Georgia. Based in Dallas, GA, we've been protecting homes with honest work, fair pricing, and results that last. We specialize in insurance restoration roofing and handle all communication with your insurance company, from the initial inspection to the final settlement.",
+  "_detected_crm_snippets": {
+    "note": "Not used. Operator supplied GHL calendar + contact-form snippets directly; see _notes.operator_supplied."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_result": "0 places. Apify searched the correct coordinates (33.91, -84.85 = Dallas GA), crawled 58 search pages, saw 232 listings, matched none for 'Infinity Roofing & Cleaning'. Operator elected not to retry; no GBP data in this intake.",
+    "pages_scraped": ["https://www.ir-ga.com/", "https://www.ir-ga.com/reviews/", "https://directorii.com/us/ga/dallas/infinty-roofing-and-exterior-cleaning-reviews-13488/"],
+    "socials_scraped": [],
+    "generated_at": "2026-07-30",
+    "cost_estimate_usd": 0.0001,
+    "scrape_method": "WebFetch + browser (free). No Firecrawl spend this run.",
+    "operator_supplied": [
+      "brand colors (#e1c135 cta, #ffffff primary bg, #0a0a0a secondary bg)",
+      "GHL calendar booking snippet",
+      "GHL contact form snippet",
+      "7 services (6 from client site + Solar Installation added by operator)",
+      "7 service areas",
+      "template: owl",
+      "design reference: https://gilroy-roofing.vercel.app/"
+    ],
+    "warnings": [
+      "FOUNDED YEAR CONFLICT — ir-ga.com says 'protecting homes since 2018'; Directorii says 'locally owned and operated since 2015'. Directorii also carries reviews dated 4 years ago, consistent with 2015+. years_in_business left null pending client confirmation.",
+      "RATING CONFLICT — ir-ga.com homepage says '5.0 Star Rating / 100+ Reviews'; its /reviews page says '5.0 stars based on 127 reviews'; Directorii shows 4.7 from 27 reviews. No GBP match to arbitrate. rating and review_count left null — do not print an unverified number in the hero trust badge.",
+      "TESTIMONIAL PROVENANCE — the 9 testimonials on ir-ga.com/reviews are labelled 'Website testimonial', not tied to a verifiable platform. This intake uses the 15 five-star Directorii reviews instead: real, named, dated, and third-party. The ir-ga.com nine are NOT carried forward.",
+      "NEGATIVE REVIEWS EXIST — Directorii carries two 1-star reviews (warranty non-response; a repair leaking again ~2 months after a $6,000 job with a stated 25-year warranty). Not for the site, but relevant to any warranty language we publish. Recommend the site makes no specific warranty-term claim without Dan confirming it.",
+      "geo and hours unavailable without GBP — needed for LocalBusiness JSON-LD and the /book page hours block. Operator paste-in.",
+      "Client site hotlinks 3 images from other contractors' sites (premiersouthla.com, powerwashri.com, idahoguttercompany.com). Dropped per operator. Pexels-sourced images only.",
+      "Client site footer lists Solar Installation; Directorii confirms a Solar service category. Included as the 7th service per operator."
+    ]
+  }
+}

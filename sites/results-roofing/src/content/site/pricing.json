@@ -1,0 +1,46 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a price per square, and you should be skeptical of any roofer who does — two houses on the same street can differ by thousands once you account for pitch, layers, decking condition, and whether the job is going through an insurance claim. What we will do is inspect the roof for free, photograph what we find, and put a written scope in your hands before you owe anything. Here is how a roof actually gets priced, so you can read any estimate — ours or anyone else's — and know what you are looking at.",
+  "packages": [
+    {
+      "name": "Through an insurance claim",
+      "price": "Your deductible",
+      "includes": [
+        "Most storm and hail work is paid by your carrier, not by you",
+        "Your out-of-pocket cost is generally the deductible, plus any upgrade you choose beyond policy scope",
+        "Texas law prohibits a contractor from paying, waiving or absorbing any part of your deductible",
+        "We attend the adjuster meeting and file supplements when the scope comes back short",
+        "We certify completion to the carrier so recoverable depreciation is released"
+      ],
+      "cta_text": "Start with a free inspection",
+      "cta_href": "/book"
+    },
+    {
+      "name": "Replacement out of pocket",
+      "price": "Per square",
+      "includes": [
+        "Priced by the square (100 sq ft), adjusted for pitch and access",
+        "Texas code caps a roof at two shingle layers — a third means full tear-off is the only legal option",
+        "Decking replacement quoted per sheet up front, so rot found mid-job is not a surprise",
+        "Architectural, Class 4 impact-resistant, and metal all price differently",
+        "Class 4 costs more up front and many Texas carriers discount premiums for it — worth asking your agent"
+      ],
+      "cta_text": "Get a written scope",
+      "cta_href": "/book"
+    },
+    {
+      "name": "Repair and maintenance",
+      "price": "Per job",
+      "includes": [
+        "Not every problem needs a replacement, and we will say so",
+        "Leak diagnosis, shingle and flashing replacement, sheathing repair",
+        "Flashing and penetration detail work is hand labor — the wrong place to buy cheap",
+        "Annual maintenance inspections to catch small issues before they become claims",
+        "Emergency tarping available around the clock"
+      ],
+      "cta_text": "Book a repair visit",
+      "cta_href": "/book"
+    }
+  ],
+  "notes": "Every inspection is free, carries no obligation, and ends in a straight answer — including when that answer is that your roof does not need work yet."
+}

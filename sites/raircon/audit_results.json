@@ -1,0 +1,41 @@
+{
+  "slug": "raircon",
+  "url": "https://raircon.com/",
+  "screenshot": "screenshots/raircon.png",
+  "captured_at": "2026-08-04",
+  "platform": "WordPress + Kadence theme",
+  "purpose": "OPERATOR REFERENCE ONLY. This audit is not design DNA and must never seed design-reference or tokens.css. The owl template is the sole source of design truth.",
+  "strengths": [
+    "Clear, benefit-led H1 that names all three counties served — good local SEO instinct.",
+    "Above-the-fold quote form with a service dropdown; the primary conversion path is visible without scrolling.",
+    "Trust badges (Locally Owned / 20+ Years in Business / Licensed & Insured) sit right under the hero.",
+    "Real, non-stock photography of the actual truck fleet and technicians — genuinely valuable brand asset most competitors lack.",
+    "Deep, well-written service pages with real technical specificity (VRF/VAV, testing & balancing, grease interceptors) rather than thin filler.",
+    "Consistent phone number placement in a sticky red header button."
+  ],
+  "weaknesses": [
+    "CRITICAL CONTENT DEFECT: the 'Building and Maintenance Services in Miami-Dade & Broward County' section opens with 'We provide expert sprinkler repair services throughout Broward, FL, ensuring your lawn sprinkler system functions efficiently year-round.' This is copy left over from a lawn-sprinkler template and has nothing to do with Raircon. It sits in the highest-value body slot on the homepage.",
+    "Large blank white void roughly mid-page where the Google reviews block should render — the reviews section fails to paint, leaving several hundred pixels of empty space between the services block and the fleet photo.",
+    "Zero social proof surfaced above the fold. 4.7 stars across 219 Google reviews is the company's single strongest asset and it appears nowhere in the hero.",
+    "The 20+ years claim is stale — the company was founded in January 2002, so it is 24 years, and the copyright still reads 2024.",
+    "No dedicated per-city pages. Service coverage is expressed as three county map images in the footer, which captures none of the 'HVAC near me in {city}' search demand.",
+    "Instagram icon in the footer links to https://instagram.com — a dead placeholder.",
+    "No email address published anywhere on the site; phone is the only contact channel besides the form.",
+    "Service pages are wall-of-text with no imagery below the hero, no pricing signal, and no repeated CTA between sections.",
+    "No FAQ content anywhere, despite an emergency-service business where 'how fast can you get here' and 'do you pull permits' are the obvious questions.",
+    "No mention of permits, certificates of insurance, or HOA/condo board process — the exact friction points Miami-Dade high-rise owners face.",
+    "Eight top-level services in the nav with a deep dropdown; the taxonomy is flat and dilutes the AC/HVAC core the business is actually known for."
+  ],
+  "load_and_technical": {
+    "http_status": 200,
+    "renders_without_js": true,
+    "notes": "Page returns full server-rendered HTML to a plain fetch. Homepage weight is heavy (~2.3 MB screenshot at 1280x4500) with uncompressed PNG map images in the footer. No blocking issues observed."
+  },
+  "conversion_gaps": [
+    "Star rating and review count absent from the hero.",
+    "No urgency or response-time promise despite reviews specifically praising sub-2-hour arrival.",
+    "No city-level landing pages to capture local search.",
+    "No secondary CTA (call vs. form) differentiation for emergency traffic.",
+    "Reviews section broken, so the strongest proof on the page never displays."
+  ]
+}

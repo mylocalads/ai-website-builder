@@ -1,0 +1,32 @@
+{
+  "slug": "gt-roofing",
+  "url": "https://www.gtroofinghomeimprovements.com/",
+  "screenshot": "screenshots/gt-roofing.png",
+  "audited_at": "2026-08-03",
+  "purpose": "OPERATOR REFERENCE ONLY. Never used as design DNA — the owl template is the sole source of design and structure.",
+  "platform": "Hostinger Horizons (Vite + React SPA, Tailwind, framer-motion)",
+  "strengths": [
+    "Strong, human hero line — 'No job is too small' is a real differentiator and should survive into the rebuild.",
+    "Owner names and both direct phone numbers are surfaced in the hero, header, and footer. Rare and valuable trust signal.",
+    "Clear brand colors already established: navy #003366 primary, red #cc0000 CTA, DM Sans throughout.",
+    "Real project photography exists (9 categorized portfolio images) plus four manufacturer logos (GAF, Owens Corning, CertainTeed, IKO)."
+  ],
+  "weaknesses": [
+    "CRITICAL SEO: <title> is empty in the served HTML and all content renders client-side only. There is no server-rendered text for crawlers — every page ships the same blank shell. The site is effectively invisible to search.",
+    "No per-service pages and no service-area pages. Eight services are listed as cards on one /services page with no individual URLs to rank.",
+    "Hero is a flat navy block with no photography — the strongest asset (real project photos) is buried on /portfolio.",
+    "Home page shows no services grid, no testimonials, and no gallery. A visitor must navigate away to see any proof of work.",
+    "No FAQ section anywhere, no structured data, no sitemap, no local business schema.",
+    "No credential display of any kind — no PA HIC registration, license, insurance, bonding, or written warranty statement.",
+    "Contact is phone/email only. No booking calendar, no lead form capture beyond a basic estimate page, no chat.",
+    "Client's own GA4 (G-4P5P2053KW) and Google Ads (AW-18177232427) tags are installed — ad traffic is already running to a site that cannot convert well."
+  ],
+  "load_notes": "Homepage HTML is 6.4 KB with an empty <title>; a 548 KB JS bundle carries 100% of the content. First paint depends entirely on that bundle parsing.",
+  "recommended_actions": [
+    "Rebuild static-rendered on the owl template so every page ships crawlable HTML with real titles and meta descriptions.",
+    "Promote real project photography into the hero and home services grid.",
+    "Split the eight services into individual ranking pages and add per-city service-area pages for Scranton, Wilkes-Barre, Pittston, Hazleton, Stroudsburg, and Carbondale.",
+    "Keep the navy/red brand palette and DM Sans — they are already correct and recognizable.",
+    "Carry the client's existing GA4 + Google Ads IDs into code_injection.head so the running ad campaigns keep converting."
+  ]
+}

@@ -1,0 +1,26 @@
+node_modules
+dist
+.astro
+.vercel
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Full-resolution originals pulled from the client's GoHighLevel CDN — 51 files,
+# ~245MB, mostly 5712x4284. Every image the site actually serves has already
+# been resized into public/img/ (~11MB total), which IS tracked.
+#
+# Kept on disk rather than deleted: assets.cdn.filesafe.space is the client's old
+# platform and disappears the day they leave it, so this is the only full-res
+# archive of their job photography. Ignored rather than committed because 245MB
+# of source images does not belong in the repo — every other site's raw/ folder
+# is a JSON archive under 200KB.
+#
+# If this working copy is ever cleaned, re-download from raw/all-media.txt.
+raw/photos/
+raw/contact-sheet.jpg
+raw/sheet-numbered.jpg
+
+# Raw HTML captures — large and regenerable.
+raw/*.html

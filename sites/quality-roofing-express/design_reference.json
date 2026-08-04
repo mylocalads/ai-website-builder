@@ -1,0 +1,93 @@
+{
+  "slug": "quality-roofing-express",
+  "template": "owl",
+  "sources": {
+    "mode": "library+local",
+    "library": "roofing",
+    "urls": [],
+    "note": "No Firecrawl spend on reference URLs. reference-libraries/roofing.json lists owlroofing.com as a `role: primary` entry, and that site's structure is already encoded in astro-templates/owl/ — which is local, authoritative and free to read. Brand tokens come from sites/quality-roofing-express/intake-scraped.json, detected from the client's own CSS custom properties and logo.",
+    "structural_reference": "astro-templates/owl/ — fixed home order: hero → promise-bar → services-grid → testimonials → promise-band → signature-system → process-steps → about → seo-body → faq → blog-cards → closing-cta → footer",
+    "palette_reference": "astro-templates/owl/src/styles/tokens.css — warm light bg, dark full-bleed bands, one saturated accent. Shape adopted; every value re-derived from Quality Roofing Express's own brand."
+  },
+  "palette": {
+    "bg": "#f5f4f2",
+    "surface": "#ffffff",
+    "text": "#14161a",
+    "muted": "#5c5f66",
+    "primary": "#1e2229",
+    "on_primary": "#ffffff",
+    "accent": "#cf1b1b",
+    "on_accent": "#ffffff",
+    "accent_ink": "#cf1b1b",
+    "accent_on_dark": "#f2685f",
+    "focus": "#0057ff"
+  },
+  "palette_provenance": {
+    "accent": "#cf1b1b — the client's exact brand red, read from the --global_main_color custom property on their homepage and confirmed by the <meta name=theme-color> value and the red roof in their logo. Unchanged.",
+    "accent_ink": "#cf1b1b — the same value. This red is dark enough (relative luminance 0.113) to work as foreground TEXT on light surfaces without being darkened: 4.99:1 on --color-bg and 5.49:1 on --color-surface. Both clear AA, so unlike the template default there is no separate ink variant.",
+    "accent_on_dark": "#f2685f — a lightened tint of the same brand red, for accent-coloured TEXT on the dark bands. The brand red itself measures only 2.91:1 on --color-primary and fails. Not a new brand colour; the same hue at a luminance that survives a charcoal background.",
+    "primary": "#1e2229 — a deepened form of the client's own secondary grey #444950. Their existing site already uses pure black for its hero and third background, so a near-black band is on-brand; #1e2229 keeps a trace of that cool grey rather than going flat black, and gives white 15.96:1.",
+    "bg": "#f5f4f2 — warm off-white, drawn from the warm neutrals already in their palette (#e3e2de inside-modules fill, #ffdbc5 footer). Red reads warmer and less clinical against it than against a cool grey.",
+    "muted": "#5c5f66 — their #444950 lightened just enough to read as secondary text while holding 5.82:1 on the bg."
+  },
+  "typography": {
+    "display": "Playfair Display",
+    "body": "Open Sans",
+    "google_fonts_href": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap",
+    "note": "Both fonts are the client's own, detected from their CSS custom properties: --font_slogan is Playfair Display and --global_font / --font_logo / --font_menu are Open Sans. Keeping both preserves recognition against the client's existing signage and truck lettering. Playfair is a high-contrast didone serif — it is used for display sizes only (600/700/800), never body copy, which is where its thin hairlines would cost legibility. Template default was Montserrat/Inter; Raleway also appears on the client's site as --font_second_slogan and is deliberately dropped rather than carried as a third family."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "max_width": "1200px",
+  "contrast_audit": {
+    "method": "WCAG 2.1 relative-luminance ratio, computed not estimated.",
+    "verified_pass": [
+      { "pair": "white text on accent #cf1b1b (every button on the site)", "ratio": 5.49 },
+      { "pair": "accent #cf1b1b as text on bg #f5f4f2 (eyebrows, ticks, pins)", "ratio": 4.99 },
+      { "pair": "accent #cf1b1b as text on white surface (quote-card stars)", "ratio": 5.49 },
+      { "pair": "white on primary #1e2229 (all dark bands)", "ratio": 15.96 },
+      { "pair": "accent_on_dark #f2685f on primary #1e2229", "ratio": 5.26 },
+      { "pair": "text #14161a on bg #f5f4f2", "ratio": 16.48 },
+      { "pair": "muted #5c5f66 on bg #f5f4f2", "ratio": 5.82 }
+    ],
+    "rejected": [
+      { "pair": "accent #cf1b1b as text on primary #1e2229", "ratio": 2.91, "why": "Why a separate accent_on_dark token exists. The template ships --color-accent for both button fills and accent text on the dark bands; this brand red can only do the first job." },
+      { "pair": "black text on accent #cf1b1b", "ratio": 3.83, "why": "Why --color-on-accent is white, not the template's default #1a1c17." }
+    ],
+    "client_current_site": [
+      { "pair": "their footer: #000000 text on #ffdbc5 peach fill", "ratio": 16.6, "why": "Passes, but the peach is the only warm-pastel surface on an otherwise red-and-black site and reads as an accident of the SITE123 theme. Not carried over." }
+    ]
+  },
+  "template_change_required": {
+    "what": "Add a --color-accent-on-dark token and repoint the accent-as-text-on-dark-panel rules at it.",
+    "why": "astro-templates/owl uses a single --color-accent for two incompatible jobs: button fills (must be dark enough for white label text) and accent text on --color-primary bands (must be light enough to read on charcoal). Quality Roofing Express's brand red does the first at 5.49:1 and fails the second at 2.91:1. The template already solved the mirror-image case with --color-accent-ink for light backgrounds; this is that same fix pointed the other way.",
+    "call_sites": [
+      "Testimonials.astro:57 .eyebrow (0.9rem/600 — needs 4.5:1)",
+      "Testimonials.astro:60 .mark (5rem decorative, large-text threshold)",
+      "Testimonials.astro:67 .stars",
+      "ProcessSteps.astro:73 .label (0.75rem/700 — needs 4.5:1)",
+      "WhyChooseUs.astro:33 .tile::before counter (1.5rem/700 — large-text threshold)",
+      "HeroOwl.astro:178 .badge-copy .stars over the dark photo scrim"
+    ],
+    "not_changed": [
+      "HeroOwl.astro:212 .stars in the quote card — sits on --color-surface (white), where the brand red is already 5.49:1. Stays on --color-accent.",
+      "Every .btn, .icon and circular-counter fill — those are FILLS paired with --color-on-accent and are correct as-is.",
+      "Header.astro:120-122 the call-button pulse — a box-shadow colour-mix, not text. Stays on --color-accent."
+    ],
+    "scope": "Applied to the site copy at sites/quality-roofing-express/src/components/ during site-generate. NOT written to astro-templates/ — design-reference is forbidden from touching the template."
+  },
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "reproducing Owl Roofing's branded program names ('We Give A Hoot', 'Protect Your Nest System', 'Get It Right Guarantee') — the SignatureSystem block must carry this client's own language",
+    "reproducing the client's existing SITE123 layout — the single-page scroll, the reveal-on-scroll opacity animations, and the peach footer are all explicitly not carried over"
+  ],
+  "_generated_at": "2026-08-03"
+}

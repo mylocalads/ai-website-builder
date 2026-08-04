@@ -1,0 +1,42 @@
+{
+  "slug": "pinnacle-roofing-sheet-metal",
+  "category": "Commercial roofing contractor",
+  "location": "Nanticoke / Wilkes-Barre / Scranton, Northeastern Pennsylvania",
+  "threads_analyzed": 14,
+  "search_notes": "WebSearch would not honor the site:reddit.com operator for this vertical+metro; Reddit signal was gathered via Firecrawl search over r/Roofing, r/HomeImprovement and regional PA subs, supplemented by commercial-roofing buyer guides. NEPA-specific Reddit threads on COMMERCIAL roofing are thin — most local threads are residential ice-dam/snow-load discussions. Pain points below skew toward the commercial/facility-owner buyer where sourced, and are marked when the signal was residential-only.",
+  "pain_points": [
+    "Warranty is the #1 complaint thread: owners find out after a leak that the '20-year warranty' was the MANUFACTURER's material warranty and covers nothing about the installer's workmanship — and the installing contractor has gone out of business or stops returning calls.",
+    "Contractors who mainly do shingles bid commercial flat/low-slope work they have never installed. Single-ply membrane (EPDM/TPO), flashing details, and drainage get done wrong, and the building owner eats a leak that shows up one or two winters later.",
+    "Storm-chasers and out-of-area outfits show up after a hail or wind event, promise an easy insurance claim, install fast with cheap material, and are gone before the failures appear — no local references, no one to call.",
+    "Nobody answers on an active leak. Building owners describe chasing a roofer for weeks while water keeps coming into occupied space, and the disruption to tenants/operations costs more than the repair.",
+    "Reactive-only relationships: no maintenance program, no inspection record, so the roof reaches failure with no documentation — which then also weakens any warranty claim. (Signal partly residential.)",
+    "In NEPA specifically, snow load, freeze-thaw cycling and ice damming are the recurring local failure driver — regional threads consistently point to poor detailing and insulation as the root cause, not the membrane itself."
+  ],
+  "what_customers_value": [
+    "A contractor who has been in the same place long enough to still be there when the warranty is called — longevity in the local market is treated as the real warranty.",
+    "Manufacturer authorization/certification, because that's what makes an extended system warranty issuable and enforceable in the first place.",
+    "Named, verifiable local projects on buildings the buyer recognizes — hospitals, schools, plants, municipal buildings — over generic 'satisfied customers' claims.",
+    "Fast emergency response on an active leak, with a real technician dispatched, not a callback queue.",
+    "Preventative maintenance and documented inspections that extend roof life and preserve the warranty rather than waiting for failure.",
+    "Straight answers on the system spec — which membrane, which insulation R-value, which warranty term and what it actually covers."
+  ],
+  "business_differentiators": [
+    "Established 1993 — 33 years in the same Northeastern PA market, with a 5.0 Google rating. Directly answers the 'will they still exist when the warranty is called' fear.",
+    "Winner of the Excalibur Award every year from 1994 to present — an award given to Versico's top authorized contractors, framed as the 'Top 60 Roofing Contractors in the United States.' This is authorization + third-party validation, not a self-claim.",
+    "Commercial specialist, not a shingle crew moonlighting on flat roofs: the published capability list is single-ply membranes, flat roofing, architectural metal roofing, composite aluminum panels, and sheet metal work.",
+    "A verifiable client roster of exactly the buildings this buyer recognizes — Geisinger (Medical Center, CMC, South, Wyoming Valley), Sanofi Pasteur, Tobyhanna Army Depot, Kalahari Resort, Wilkes University, Penn State Worthington, Luzerne County Community College, Proctor & Gamble, Wilkes-Barre/Scranton International Airport, and dozens more.",
+    "Emergency service is explicitly offered, with on-call service technicians and two staffed locations (Nanticoke and Dickson City) covering Luzerne, Lackawanna and Monroe counties.",
+    "Preventative maintenance, roof system maintenance, roof inspections, and extended warranty service coverage are named services — this is the maintenance-program answer to the reactive-only pain point.",
+    "Manufacturer warranties on the products used, plus Energy Star White Roofing Systems and energy-efficient insulation for owners chasing operating cost.",
+    "Deep bench: President Paul J. Eyerman Jr. (35 years), VP of Operations Jerome F. Devlin (30 years), Dickson City Superintendent John Racht (35+ years). Members of the NEPA Contractors Association, the National Roofing Contractors Association, and the Wilkes-Barre, Scranton and Hazleton Chambers of Commerce."
+  ],
+  "copy_angles": [
+    "Lead the hero with longevity + jurisdiction: 'Commercial roofing for Northeastern Pennsylvania since 1993.' It answers the single biggest commercial-buyer fear (contractor won't be around for the warranty) in the first line.",
+    "Make the Excalibur Award the primary trust proof, not a footnote — 'Excalibur Award winner every year since 1994' is concrete, dated, third-party, and unusual enough to be memorable. Pair it with the Versico authorization so the reader understands it also means the warranty is issuable.",
+    "Use the real client roster as the social-proof section in place of testimonials. Geisinger, Sanofi Pasteur, Tobyhanna Army Depot, Kalahari Resort, Wilkes University — a NEPA facility manager knows every one of those buildings. This is far stronger than three Google reviews.",
+    "Give emergency leak response its own prominent band with both phone numbers. 'Active leak? Two NEPA locations, on-call technicians.' The 'nobody answers on an active leak' complaint is the highest-intent moment this buyer ever has.",
+    "Sell preventative maintenance as its own service, not an afterthought — position it as protecting both the building and the warranty. That reframes the relationship from one-time capital project to ongoing program, which is also the higher-margin book.",
+    "Speak to the NEPA weather explicitly: snow load, freeze-thaw and ice damming on low-slope roofs. Local specificity beats generic roofing copy and signals the contractor has installed through 30+ regional winters.",
+    "Keep the audience commercial throughout — churches, schools, hospitals, industrial parks, retail and municipal. Do not soften into residential homeowner language; the client's own site is explicit that this is commercial work."
+  ]
+}

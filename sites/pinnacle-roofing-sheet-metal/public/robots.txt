@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pinnacle-roofing-sheet-metal.vercel.app/sitemap-index.xml

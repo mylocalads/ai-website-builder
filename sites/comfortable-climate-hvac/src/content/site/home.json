@@ -1,0 +1,260 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Dallas, PA — Serving NEPA For Over 25 Years",
+    "headline": "If It Can Be Repaired, We'll Tell You",
+    "subheadline": "Heating, cooling and plumbing from one licensed local contractor. Joe gives you the honest diagnosis and a written estimate — and the estimate is what you pay.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/hero-crew.jpg",
+    "video_link_text": "What makes Comfortable Climate different?",
+    "video_link_href": "/about",
+    "quote_card": {
+      "quote": "He won't steer you wrong, and if it doesn't need to be replaced and can be repaired, he will be upfront with you.",
+      "author": "Michael Stadulis Sr. — Customer Review",
+      "cta_text": "Get Your Free Estimate!",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 17
+    },
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5,
+        "label": "5.0 Rating",
+        "sublabel": "17 Google reviews"
+      },
+      {
+        "label": "Fujitsu Elite Contractor",
+        "sublabel": "Awarded for 2024"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Fujitsu Elite Contractor for 2024", "icon": "award" },
+    { "text": "Repair first, replace only when warranted", "icon": "shield" },
+    { "text": "The estimate is the price", "icon": "wallet" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "The Honest Diagnosis First",
+    "body": "The most expensive thing in this trade is a contractor who quotes a replacement when a repair would have done. We work the other way around. We test the system, we tell you what is actually wrong, and if it can be fixed we say so — even though the replacement would have been worth more to us. One customer wrote that three other businesses got the assessment wrong before we sat down and explained the real problem. That is the whole business in one sentence.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Comfort, Diagnosed Properly",
+    "intro": "Every Comfortable Climate job runs the same way, whether it is a no-heat call at 6am in January or a full ductless installation. You get the diagnosis, the number, and the work — in that order.",
+    "blocks": [
+      {
+        "title": "A written estimate before we start",
+        "body": "We analyze the work and put the scope and the price in your hand so you can say yes or no based on what it actually costs. Customers have written that the final cost was within the estimate and there were no additional charges or fees at the end.",
+        "icon": "document"
+      },
+      {
+        "title": "Factory-trained on what we install",
+        "body": "Comfortable Climate was awarded Fujitsu \"Elite Contractor\" status for 2024. It reflects the level of training our staff have earned on that equipment, and it means an advanced level of support and service on every ductless system we put in.",
+        "icon": "award"
+      },
+      {
+        "title": "A free carbon monoxide check with every heating repair",
+        "body": "Combustion equipment gets checked whether or not that is what you called us about. It takes a few minutes and it is not an upsell — it is part of the visit.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "We work in your house like it's ours",
+    "steps_icon": "broom",
+    "steps": [
+      {
+        "title": "Nothing gets scuffed on the way in",
+        "body": "A customer specifically noted we took care not to bump new storm doors and freshly painted walls while carrying a water heater down narrow basement steps."
+      },
+      {
+        "title": "The old equipment goes with us",
+        "body": "Removal and disposal are part of the job, handled with the same care as the install."
+      },
+      {
+        "title": "We leave it cleaner than we found it",
+        "body": "That is not a slogan — it is a direct quote from a customer describing their basement after a water heater replacement."
+      }
+    ],
+    "guarantee": {
+      "title": "Licensed, insured, and standing behind it",
+      "body": "Pennsylvania registration PA #091633, carried and current. Plumbing repairs come with a 2-year warranty, and we register new equipment so the manufacturer's warranty is active from day one rather than sitting unclaimed in a drawer.",
+      "cta_text": "Talk to Joe",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Service Call Goes",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Call and we come out",
+        "icon": "phone",
+        "body": "Free estimates. Customers have written about same-week response during the coldest week of the year and a Saturday call during the hottest."
+      },
+      {
+        "label": "Step Two",
+        "title": "We diagnose and explain it",
+        "icon": "clipboard",
+        "body": "You get told what is actually wrong, in plain terms, and whether a repair or a replacement is the right call."
+      },
+      {
+        "label": "Step Three",
+        "title": "You approve the number",
+        "icon": "document",
+        "body": "A written scope and price before any work starts. No surprises added at the end."
+      },
+      {
+        "label": "Step Four",
+        "title": "We do the work and clean up",
+        "icon": "hammer",
+        "body": "Equipment installed, old unit removed, warranty registered, and the space left the way we found it."
+      }
+    ],
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Comfortable Climate",
+    "headline": "Let Our Family Serve Your Family",
+    "body": "For over 25 years Comfortable Climate has provided comfort, peace of mind and healthy environments for residential and commercial customers across Northeastern Pennsylvania. Owner Joe Szczechowicz still does the estimates himself — which is why so many of our reviews name him personally rather than a company. By installing, maintaining and servicing HVAC and plumbing systems we offer warmth, relief from the heat, clean fresh air and a reliable water supply.",
+    "checklist": [
+      "Locally owned and operated in Dallas, PA",
+      "Fujitsu Elite Contractor for 2024",
+      "Licensed and insured — PA #091633",
+      "Heating, air conditioning and plumbing under one contractor",
+      "Residential and commercial, free estimates"
+    ],
+    "photo": "/owner-joe.png",
+    "photo_alt": "Joe Szczechowicz, owner of Comfortable Climate HVAC",
+    "photo_cutout": true,
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why NEPA Homeowners Call Us",
+    "headline": "Heating & Air Conditioning In The Back Mountain",
+    "paragraphs": [
+      "Northeastern Pennsylvania asks a lot of a heating system. The Back Mountain sits higher and colder than the valley floor, so furnaces and boilers up here run harder and longer than the same equipment does in Wilkes-Barre — and then summer humidity hands the job straight to the air conditioning.",
+      "We service every make and model, oil, gas, propane, electric and geothermal, and we are factory-trained on Fujitsu ductless equipment for the additions, converted attics and older homes where ductwork was never run. If a system can be repaired we repair it. If it genuinely needs replacing, you get the sizing and the reasoning before you get the price."
+    ],
+    "checklist": [
+      "Furnaces, boilers, heat pumps and ductless mini-splits",
+      "Central air repair, tune-ups and replacement",
+      "Plumbing repairs with a 2-year warranty",
+      "Free carbon monoxide check with every heating repair",
+      "Serving Luzerne, Lackawanna and Wyoming counties"
+    ],
+    "image": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/KIMG0302-2.jpg",
+    "image_alt": "Heating equipment and duct connections installed by Comfortable Climate",
+    "image_position": "left",
+    "review": {
+      "name": "Charles Motley",
+      "source": "Customer Review",
+      "rating": 5,
+      "text": "Excellent and prompt service. Joe came and troubleshot our existing system. Provided several options and had us back in heat over what was the coldest week this year in less than two days."
+    },
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Anne",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Joe installed a new water heater one day after we notified him that our old one was leaking. He came to assess our needs within a few hours, ordered the parts, and was here on time the next morning as promised. He took care not to bump our new storm doors and freshly painted walls. He left the basement cleaner than he found it. His estimate was accurate and there were no additional charges or fees. He is very professional, trustworthy, and kind."
+    },
+    {
+      "name": "Jim & Maria",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Joe is extremely talented knowing his trade. After testing a couple aspects of our central air conditioning he sat and explained what the problem was. Three other businesses were wrong in their quick assessment and fix. Joe is dedicated and exemplifies how American workers used to be."
+    },
+    {
+      "name": "Jonny Benner",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Joe and his team are the best! They fixed my 3 leaking radiators. They were in and out in less than 2 hours, just in time for the cold weather. They are so knowledgeable and efficient."
+    },
+    {
+      "name": "Matthew Bradley",
+      "location": "Dallas, PA",
+      "rating": 5,
+      "text": "I had a few wall-mounted air conditioner and heating units installed at my residence in Dallas, PA. Joe and his staff were very polite, cleaned up after themselves and very professional. He analyzed the work and gave me a write-up beforehand so I could say yes or no based on the price and work needed."
+    },
+    {
+      "name": "Gordon R Farris",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Got an immediate response to our problem. Tech was knowledgeable and actually pointed out some issues that needed correction. Final cost was within the estimate range. We will be a repeat customer if the need arises."
+    },
+    {
+      "name": "Jimmy",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Joe came out to our house on a Saturday during one of the hottest weeks so far this year. He identified the problem with our A/C units in about 10 minutes and corrected the problem in a total of 30 minutes. Extremely professional and explained what was going on."
+    },
+    {
+      "name": "Shawn J. Pulver",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "I have Joe do all my heating and A/C work on my residence and all my rental properties. Joe gives fair prices and great quality work. I would highly recommend him for all your heating and A/C work."
+    },
+    {
+      "name": "Ronald Witkowski",
+      "location": "Centermoreland, PA",
+      "rating": 5,
+      "text": "Fair pricing and a forthright, honest man. Hard to find these days in a contractor. Thank you and God bless you."
+    },
+    {
+      "name": "Kelly O'Brien",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Joe was very polite, professional and thorough. He was a great communicator. He answered calls right away and called me back in a timely manner. He completed the job within 24 hours of my first call to him. He seems like a trustworthy guy."
+    },
+    {
+      "name": "Robin",
+      "location": "Customer Review",
+      "rating": 5,
+      "text": "Patrick and Ryan were so professional and knowledgable. They knew exactly what to do and were honest and efficient. I highly recommend them."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do I need a new system, or can mine be repaired?",
+      "a": "In most cases it can be repaired, and we will tell you when that is true even though a replacement is worth more to us. We test the system, explain what is actually failing, and quote the repair. We only recommend replacement when the cost of the repair stops making sense against the age and condition of the equipment."
+    },
+    {
+      "q": "Are estimates free, and will the final bill match?",
+      "a": "Estimates are free. You get a written scope and a price before any work begins, and that is what you pay. Customers have written specifically that the final cost was within the estimate range and there were no additional charges or fees."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We are based in Dallas, PA and work throughout Luzerne, Lackawanna and Wyoming counties — including Wilkes-Barre, Kingston, Scranton, Clarks Summit and Tunkhannock, plus the Back Mountain towns around us."
+    },
+    {
+      "q": "Do you handle emergencies?",
+      "a": "Yes. No heat in January and no cooling in July are not things that wait for an appointment slot. Call (570) 333-0380. Customers have written about being back in heat inside two days during the coldest week of the year, and about a Saturday air conditioning call during the hottest."
+    },
+    {
+      "q": "What brands do you service and install?",
+      "a": "We service every make and model. We install and maintain Fujitsu, Trane, Carrier, Lennox, Rheem, Ruud, York, Bryant, Goodman, American Standard, Comfortmaker and Honeywell equipment, among others. We hold Fujitsu Elite Contractor status for 2024 on their ductless line."
+    },
+    {
+      "q": "Do you do plumbing as well as HVAC?",
+      "a": "Yes, and it is the same phone call. Water heaters, burst and frozen pipes, sump and sewage pumps, well pumps, fixtures and drains. All plumbing repairs carry a 2-year warranty."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Comfortable Climate is licensed and insured in Pennsylvania under registration PA #091633."
+    },
+    {
+      "q": "What is a ductless mini-split, and do I need one?",
+      "a": "A mini-split heats and cools a room without ductwork, using a small indoor head connected to an outdoor unit. They are the right answer for additions, converted attics, sunrooms and older homes where running ducts is impractical or expensive. We are factory-trained on Fujitsu ductless systems and can tell you quickly whether one fits your situation."
+    }
+  ]
+}

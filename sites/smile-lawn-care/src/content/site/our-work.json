@@ -1,0 +1,48 @@
+{
+  "kind": "our-work",
+  "intro": "A sample of recent work around Wilkes-Barre and the surrounding boroughs — weekly mowing, bed and mulch work, overgrowth clearing, weed control and winter snow clearing.",
+  "projects": [
+    {
+      "title": "Weekly lawn mowing",
+      "location": "Wilkes-Barre, PA",
+      "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/65fbb9968fbeae1b685881c3.jpeg",
+      "alt": "A Smile Lawn Care crew member mowing a large striped back lawn with a commercial walk-behind mower",
+      "description": "Weekly mow on a residential back lawn with a commercial walk-behind, cut at a consistent height so the stripe stays even and the turf recovers between visits."
+    },
+    {
+      "title": "Mulch installation & bed maintenance",
+      "location": "Wilkes-Barre, PA",
+      "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/660417d14d7869c36ad19b1d.jpeg",
+      "alt": "The front of a home with freshly mulched foundation beds, trimmed shrubs, hostas and a cleanly edged lawn",
+      "description": "Beds re-cut and edged, shrubs trimmed back into shape, and fresh dark mulch laid around the foundation planting and the front walk."
+    },
+    {
+      "title": "Fresh mulch, delivered and spread",
+      "location": "Wilkes-Barre, PA",
+      "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/660418484d7869e0d3d19b75.jpeg",
+      "alt": "A smiley face drawn in yellow mulch on top of a pile of fresh dark mulch",
+      "description": "A load of mulch on site ready to go out. Customers keep telling us the mulch quality is the part they notice most, so we do not cut corners on it."
+    },
+    {
+      "title": "Overgrowth & property clean-up",
+      "location": "Wilkes-Barre, PA",
+      "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/66041894e4236153ae9223d5.jpeg",
+      "alt": "A Smile Lawn Care crew member in a company shirt cutting back heavy overgrowth along a property line",
+      "description": "Heavy growth along a property line cut back and hauled off, re-establishing the boundary and the usable edge of the yard."
+    },
+    {
+      "title": "Weed control & bed clearing",
+      "location": "Wilkes-Barre, PA",
+      "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/660442fd3da37961f62a0953.jpeg",
+      "alt": "Gloved hands in a Smile Lawn Care shirt holding a handful of weeds pulled from a stone bed",
+      "description": "Weeds pulled out of a stone bed by hand rather than just sprayed and left standing — the difference shows a week later."
+    },
+    {
+      "title": "Snow blowing & ice control",
+      "location": "Wilkes-Barre, PA",
+      "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/66044241a79bbe8536bc5ee0.jpeg",
+      "alt": "A residential driveway being cleared with a two-stage snow blower after a heavy snowfall",
+      "description": "Driveway and walks cleared down to the surface after an overnight storm, then treated so they do not glaze over again."
+    }
+  ]
+}

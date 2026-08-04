@@ -1,0 +1,60 @@
+{
+  "sources": {
+    "mode": "combo",
+    "library": null,
+    "template": "owl",
+    "urls": [],
+    "structural_source": "astro-templates/owl/ (read directly from the repo — the owl template IS the structural source of truth; per the reference-library fragility note, the template directory supersedes scraping owlroofing.com, so no Firecrawl spend was incurred here)",
+    "brand_token_source": "sites/comprehensive-pain-specialists/intake-scraped.json (Firecrawl branding extraction from the client homepage)",
+    "note": "No medical/pain-management vertical exists in reference-libraries/. The roofing and concrete libraries are structurally relevant (owl/firefly) but their earth-tone and cyan palettes are wrong for a clinic, so the palette is derived entirely from the client's own brand blues."
+  },
+  "palette": {
+    "bg": "#F5F7FB",
+    "surface": "#FFFFFF",
+    "text": "#0B142E",
+    "muted": "#4C5670",
+    "primary": "#0A1330",
+    "on_primary": "#FFFFFF",
+    "accent": "#2E5BFF",
+    "on_accent": "#FFFFFF",
+    "accent_ink": "#1025A1",
+    "focus": "#E67E00"
+  },
+  "contrast_check": {
+    "text_on_bg": "16.96:1 (AAA)",
+    "muted_on_bg": "6.72:1 (AA)",
+    "accent_ink_on_bg": "10.86:1 (AAA) — accent used as TEXT on light backgrounds",
+    "on_accent_on_accent": "5.13:1 (AA) — white button label on #2E5BFF",
+    "accent_on_primary": "3.55:1 — accent as a non-text mark on the dark navy band, matching the template's light-bg-uses-ink / dark-panel-uses-accent rule",
+    "derivation": "Client's brand blue #1025A1 is too dark to read on the dark navy panels the owl template uses for Testimonials / ProcessSteps / WhyChooseUs (1.56:1). It is therefore kept as accent-ink for text on light backgrounds, and a lighter sibling #2E5BFF carries the fill/CTA role."
+  },
+  "typography": {
+    "display": "Poppins",
+    "body": "Inter",
+    "note": "Poppins is the client's actual brand font (detected on the live site) and is kept for headings. Body copy moves to Inter — the client's current site sets body text at 12px in Poppins, which is a readability defect for an older patient demographic. Inter at 16px+ fixes it without abandoning the brand voice."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "section_styling_hints": [
+    "Dark navy full-bleed bands (#0A1330) for Testimonials, ProcessSteps, and WhyChooseUs — echoes the client's existing navy identity without copying their layout",
+    "Insurance carrier logos rendered as a light, uncluttered PartnerBadges band — the single highest-value trust asset the client already owns",
+    "Real clinical/patient photography only, sourced from the client's own site",
+    "Generous line-height and 16px+ body copy throughout for an older patient demographic"
+  ],
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic medical stock photography (smiling doctor with clipboard, stethoscope on desk, handshake)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "90-item mega-menu navigation — the client's current nav is the #1 usability defect found in the audit",
+    "duplicated desktop/mobile content blocks in the same DOM (client's current site does this on every section)",
+    "stacking dark navy panels back-to-back with no light section between them",
+    "body copy below 16px",
+    "surfacing the 3.2 Google aggregate rating anywhere on the site",
+    "'You cannot copy content of this website, your IP is being recorded' style visitor-hostile notices",
+    "claiming outcomes, cure rates, or 'best in the area' — this is a medical practice and every claim must trace to something the client actually published",
+    "collecting any PHI in a web form beyond name, phone, email, and reason for visit"
+  ]
+}

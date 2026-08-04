@@ -1,0 +1,36 @@
+{
+  "name": "Prezkop Builders",
+  "legal_name": "Prezkop Builders, LLC",
+  "email": "prezkop.builders@yahoo.com",
+  "phone": "+15708140099",
+  "phone_alt": "+15704175360",
+  "address": "1092 W Main St, Nanticoke, PA 18634",
+  "website": null,
+  "rating": null,
+  "reviewCount": null,
+  "category": "General contractor / Remodel contractor / Hardwood floor contractor",
+  "hours": "Mon-Fri 7:00am-5:00pm",
+  "slug": "prezkop-builders",
+  "reviews": [],
+  "_source_notes": {
+    "gbp_status": "NOT FOUND",
+    "gbp_detail": "Three Apify Google Maps runs (Nanticoke PA, Wilkes-Barre PA, and an unfiltered 'Prezkop Builders Nanticoke PA' query) returned zero matching places. Prezkop Builders has no discoverable Google Business Profile. Competitors in the same searches (Champion Builders, Pennco Contracting) returned normally, so the actor and token are working — the listing genuinely is not there.",
+    "nap_sources": {
+      "address": "BBB business profile (bbb.org/us/pa/nanticoke/profile/hardwood-floor-contractors/prezkop-builders-llc-0241-236064587) and HBA of NEPA 2024/2025 Buyers Guide",
+      "phone": "+15708140099 from the client's own website footer (last live snapshot 2025-10-07); +15704175360 is the number on file with the BBB",
+      "email": "client website footer",
+      "hours": "HomeAdvisor listing (Mon-Fri 7:00 AM - 5:00 PM)",
+      "category": "BBB business categories"
+    },
+    "credentials": {
+      "pa_hic_license": "PA164836",
+      "issued_by": "Office of the Attorney General - PA",
+      "entity": "Limited Liability Company",
+      "business_started": "2021-04-01",
+      "incorporated": "2021-04-19",
+      "owner": "Joshua Prezkop",
+      "bbb_accredited": false
+    },
+    "rating_note": "No Google rating exists (no GBP). HomeAdvisor shows 5.0 overall. Left null rather than importing a third-party score the site cannot substantiate with a review count."
+  }
+}

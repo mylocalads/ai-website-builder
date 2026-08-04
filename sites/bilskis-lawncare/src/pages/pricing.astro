@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// No dollar figures here on purpose. We do not have this client's rate card, and
+// a made-up range on a public page is worse than no range at all — it sets an
+// expectation the quote then has to argue with. What we can publish honestly is
+// exactly what each job is measured on, so the eventual number makes sense.
+const priceBasisRows = [
+  {
+    service: 'Lawn maintenance',
+    basis: 'Lot size, how much trimming and edging the property needs, and whether you want weekly or bi-weekly visits',
+  },
+  {
+    service: 'Mulch & planting beds',
+    basis: 'Bed square footage, mulch depth, and how much weeding and re-edging the beds need before it goes down',
+  },
+  {
+    service: 'Spring & autumn clean-ups',
+    basis: 'Property size, leaf and debris volume, and how far behind the growth has got',
+  },
+  {
+    service: 'Paver patios & walkways',
+    basis: 'Finished square footage, paver choice, excavation depth, and how easily equipment can reach the area',
+  },
+  {
+    service: 'Retaining walls',
+    basis: 'Wall length and height, the base and drainage work required behind it, and how much soil has to be moved',
+  },
+  {
+    service: 'Commercial snow removal',
+    basis: 'Lot size, sidewalk length, the snow depth that triggers a visit, and whether salting is included',
+  },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How ${site.business_name} prices lawn care, landscaping, hardscaping and commercial snow removal across ${site.marketing_city ?? site.address.city}, ${site.marketing_state ?? site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get My Free Quote!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your property"
+  />
+
+  <section class="price-basis">
+    <div class="container">
+      <h2>What we price each job on</h2>
+      <p class="lede">
+        We do not publish a flat rate, because a flat rate would be wrong for most properties.
+        Here is exactly what we measure instead — so when the written quote arrives, you can see
+        where the number came from.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Service</th><th>What the price is based on</th></tr>
+          </thead>
+          <tbody>
+            {priceBasisRows.map((r) => (
+              <tr><td>{r.service}</td><td>{r.basis}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors">
+        <strong>What moves a quote up or down:</strong> access for equipment and trailers, slope,
+        how overgrown the property has become, drainage that has to be corrected before the visible
+        work can start, and how far out of our normal route you are.
+      </p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free on-site quote</h2>
+        <p class="lede">Pick a time that works — we come out, walk the property with you, and send a written quote.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .price-basis { padding: var(--space-5) 0; background: var(--color-surface); }
+  .price-basis h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .price-basis .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .price-basis table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .price-basis th, .price-basis td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .price-basis th { background: var(--color-text); color: #ffffff; font-family: var(--font-display); font-weight: 600; }
+  .price-basis td:first-child { font-weight: 600; white-space: nowrap; }
+  .price-basis tbody tr:last-child td { border-bottom: 0; }
+  .price-basis .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap { max-width: 720px; }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

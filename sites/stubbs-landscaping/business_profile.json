@@ -1,0 +1,37 @@
+{
+  "name": "Stubbs Landscaping LLC",
+  "email": "StubbsLandscaping13@gmail.com",
+  "phone": "(570) 760-6813",
+  "address": "24 Yeager Rd, Mountain Top, PA 18707",
+  "website": "https://stubbslandscaping.com/",
+  "rating": 5,
+  "reviewCount": 26,
+  "category": "Landscaper",
+  "hours": "Mon-Fri 8am-5pm, Sat 8am-2pm",
+  "slug": "stubbs-landscaping",
+  "geo": { "lat": 41.142396, "lng": -75.910905 },
+  "placeId": "ChIJe2ZBMJ70ta8RBjfIe362N7I",
+  "cid": "12841933516829112070",
+  "reviewsDistribution": { "oneStar": 0, "twoStar": 0, "threeStar": 0, "fourStar": 1, "fiveStar": 25 },
+  "reviewsTags": [
+    { "title": "paver patio restoration", "count": 2 },
+    { "title": "mulching", "count": 3 },
+    { "title": "professional communication", "count": 3 },
+    { "title": "promptness", "count": 2 },
+    { "title": "meticulousness", "count": 2 },
+    { "title": "satisfaction", "count": 2 },
+    { "title": "planting", "count": 2 },
+    { "title": "job", "count": 5 },
+    { "title": "lawn", "count": 3 }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100063716613263",
+    "instagram": "https://www.instagram.com/stubbslandscaping/"
+  },
+  "reviews": [],
+  "_notes": {
+    "address_source": "website footer + contact page (GBP listing has no street address — service-area business)",
+    "reviews_note": "Apify returned no review bodies for this listing; testimonial text was taken from the client's own Client Reviews section instead and tagged _source: scraped",
+    "scraped_at": "2026-08-03"
+  }
+}

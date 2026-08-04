@@ -1,0 +1,59 @@
+{
+  "slug": "raircon",
+  "name": "Raircon Corporation",
+  "address": "1388 SE 9th Ct, Hialeah, FL 33010",
+  "street": "1388 SE 9th Ct",
+  "city": "Hialeah",
+  "state": "FL",
+  "postal_code": "33010",
+  "country": "US",
+  "phone": "(305) 885-4422",
+  "phone_e164": "+13058854422",
+  "email": null,
+  "website": "https://raircon.com",
+  "rating": 4.7,
+  "review_count": 219,
+  "category": "Air conditioning contractor",
+  "categories": [
+    "Air conditioning contractor"
+  ],
+  "geo": {
+    "lat": 25.8111191,
+    "lng": -80.2618791
+  },
+  "place_id": "ChIJtakHa5-82YgRMDAkCyejfBI",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Raircon%20Corporation&query_place_id=ChIJtakHa5-82YgRMDAkCyejfBI",
+  "opening_hours": [
+    {
+      "day": "Monday",
+      "hours": "7\u202fAM to 6\u202fPM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7\u202fAM to 6\u202fPM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7\u202fAM to 12\u202fAM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "12 to 6\u202fAM, 7\u202fAM to 6\u202fPM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7\u202fAM to 6\u202fPM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "7\u202fAM to 6\u202fPM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "7\u202fAM to 6\u202fPM"
+    }
+  ],
+  "reviews": [],
+  "source": "apify:lukaskrivka~google-maps-with-contact-details",
+  "retrieved_at": "2026-08-04"
+}

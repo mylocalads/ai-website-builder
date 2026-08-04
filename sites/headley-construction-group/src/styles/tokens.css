@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600..900&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #171717;
+  --color-muted: #aeadb1;
+  --color-accent: #063f2c;
+  --color-surface: #f4f4f5;
+  --color-focus: #0057ff;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

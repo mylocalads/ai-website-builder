@@ -1,0 +1,36 @@
+{
+  "slug": "stubbs-landscaping",
+  "category": "Landscaper / Hardscape Contractor",
+  "location": "Mountain Top, Luzerne County PA (NEPA)",
+  "threads_analyzed": 30,
+  "method_note": "Reddit blocks both Firecrawl and WebFetch at the domain level, so thread bodies could not be read directly. Findings were synthesized from ~30 Reddit search-result snippets (r/landscaping, r/NEPA, r/Scranton, r/homeowners, r/HomeImprovement, r/pools, r/LandscapeArchitecture) plus local NEPA contractor listings. Confidence is high on themes that recurred across many independent threads, lower on any single-thread detail.",
+  "pain_points": [
+    "Getting ghosted after an estimate is the single loudest complaint — homeowners describe contacting 5-6 landscapers, having several no-show, and never getting a callback or a written number from the ones who did show.",
+    "Paver patios failing within a few seasons because of skipped base prep — inadequate sub-base, no compaction, no drainage slope, missing edge restraints. Every 'my patio is sinking' thread traces back to what happened before the pavers went down.",
+    "Homeowners can't picture the finished result from a verbal pitch or a hand sketch, so they stall on committing to a five-figure project or pick the wrong layout and regret it.",
+    "Lowball quotes that win the job and then cut corners — homeowners describe being undercut-priced into a bad install and paying twice.",
+    "Crews that leave a mess, rut the lawn, or behave unprofessionally on the property, with no one taking responsibility for the disruption to neighbors."
+  ],
+  "what_customers_value": [
+    "A company that answers the phone, returns calls, and actually sends the quote it promised — cited more often than price in every recommendation thread.",
+    "Being shown the base build-up and drainage plan, not just the finish material — homeowners who have been burned once ask about it explicitly.",
+    "Seeing the design before the dig: 3D renderings and walkthrough videos are repeatedly described as what made a homeowner comfortable spending the money.",
+    "One contractor who can do the patio, the plantings, the lighting, and the pool instead of the homeowner coordinating four trades.",
+    "Crews that show up in branded trucks and uniforms, clean the site daily, and leave the property better than they found it."
+  ],
+  "business_differentiators": [
+    "5.0 Google rating across 26 reviews with zero ratings below four stars — Google's own review tags for this listing include 'professional communication' and 'promptness', the exact two things NEPA homeowners say they can't find.",
+    "Stubbs offers full 3D renderings and walkthrough videos before construction starts, stated on their About page — directly answers the 'I can't picture it' hesitation.",
+    "Owner Justin Rinehimer founded the company in 2010, holds a horticulture degree from Penn College, and runs nine full-time employees with 30+ years of combined crew experience — a real, verifiable credential set rather than a generic 'family owned' claim.",
+    "Their Outdoor Living page already commits in writing to transparent pricing, branded trucks and attire, a smoke-free property policy, a clean-site checklist, and handling neighbor concerns — a written conduct standard most competitors never publish.",
+    "Genuinely full-service across hardscape, landscape, custom decks, plunge/Soake pools, and lawn health, so one contractor covers a whole backyard project."
+  ],
+  "copy_angles": [
+    "Lead the hero with the design-first promise — see the backyard in 3D before anyone digs. It is the strongest differentiator and it defuses the biggest reason homeowners stall.",
+    "Make responsiveness an explicit, visible promise near the top of the page (we answer, we show up, you get the quote). Ghosting is the #1 local complaint and Google's own review tags already back Stubbs up on it.",
+    "Build a 'what's under your patio' section around base prep, compaction, and drainage. Every sinking-patio horror story is a prep story, and explaining it positions Stubbs against the lowball installer.",
+    "Foreground the published conduct standard — branded trucks, clean-site checklist, smoke-free property, neighbor courtesy — as a concrete trust signal rather than an adjective.",
+    "Sell the whole backyard, not a service list: patio + plantings + lighting + plunge pool from one crew, so the homeowner isn't coordinating four contractors."
+  ],
+  "generated_at": "2026-08-03"
+}

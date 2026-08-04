@@ -1,0 +1,181 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Berwick, PA — Coating Since 1986",
+    "headline": "Five Coating Processes. One Dock. Parts Up To 22 Feet.",
+    "subheadline": "Patriot Metal Products is a multi-process custom coater in Central Pennsylvania. Autophoretic, powder, zinc plating, batch paint and dip coating — plus blasting, burn-off, fabrication, assembly and an onsite certification lab. From one piece to entire truckloads.",
+    "cta_text": "Request a Quote",
+    "cta_href": "/book",
+    "photo": "/img/plant-entrance.jpg",
+    "video_link_text": "See our full capability list",
+    "video_link_href": "/services",
+    "quote_card": {
+      "quote": "We are a true turnkey operation — burn-off, grinding, sanding, wheel abrading, pre-treatment, prime and top coat, analytical testing, packaging, and transport back to you on our own fleet.",
+      "author": "Patriot Metal Products",
+      "cta_text": "Send Us Your Part Specs",
+      "cta_href": "/book"
+    }
+  },
+  "promise_bar": [
+    { "text": "Coating in Berwick since 1986", "icon": "home" },
+    { "text": "Onsite certification laboratory", "icon": "document" },
+    { "text": "1 piece to full truckloads", "icon": "clipboard" }
+  ],
+  "promise_band": {
+    "eyebrow": "Why It Matters",
+    "headline": "Coating Failures Start At Prep",
+    "body": "Chipping, flaking and early corrosion almost never trace back to the coating itself — they trace back to what happened to the part before the coating went on. Our powder line runs behind a six-stage iron phosphate washer, and every process here is fed by in-house blasting, burn-off and pretreatment. We control the whole chain, which means when we tell you a finish will hold, we are not depending on someone else's prep to make that true.",
+    "cta_text": "Talk To Us About Your Part",
+    "cta_href": "/book",
+    "icon": "shield"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "A True Turnkey Operation",
+    "intro": "Most coating jobs get split across three or four vendors — one to strip, one to blast, one to coat, someone else to assemble and ship. Every handoff is a place for the schedule to slip and for accountability to get vague. We do all of it here.",
+    "blocks": [
+      {
+        "title": "We certify what we coat",
+        "body": "All of our processes are supported by a state-of-the-art onsite coating laboratory. We provide certifications of the processes and the performance criteria for varied customers and applications — so when your spec needs documentation to close out, you get paperwork rather than a verbal assurance.",
+        "icon": "document"
+      },
+      {
+        "title": "Automated consistency, manual when it matters",
+        "body": "Sixteen robotic spray guns run our powder line and can also be operated manually when a part calls for it. Rack or barrel on the zinc side. A room-sized batch booth for anything the automated line will not take. The process gets matched to the part, not the other way around.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What we can physically take",
+    "steps_icon": "clipboard",
+    "steps": [
+      {
+        "title": "Powder line",
+        "body": "Components to 22' long x 5' high x 47\" wide, up to 2,000 lb, behind a six-stage iron phosphate washer."
+      },
+      {
+        "title": "Batch booth and oven",
+        "body": "Room-sized — parts as large as 15' w x 20' l x 6' h, coated in powder or wet paint."
+      },
+      {
+        "title": "Zinc plating",
+        "body": "Rack plating to 10 feet; barrel plating for small to medium components. Clear and yellow chromate."
+      },
+      {
+        "title": "Burn-off and blast",
+        "body": "Parts from the size of a nickel to 6' x 10' x 4'. Three burn-off ovens and room-sized blast."
+      }
+    ],
+    "guarantee": {
+      "title": "Send us the part, not just the part number",
+      "body": "Geometry, substrate, volume and service environment all change the right answer. Send us your drawing and your target spec and we will tell you which of our processes fits — or tell you honestly if none of them do.",
+      "cta_text": "Request a Quote",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Job Runs Through Our Plant",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Spec review and quote",
+        "icon": "clipboard",
+        "body": "You send the part details and target performance. We match the process to the geometry, substrate and service environment."
+      },
+      {
+        "label": "Step Two",
+        "title": "Strip, blast and pretreat",
+        "icon": "hammer",
+        "body": "Burn-off, grinding, sanding, wheel abrading and pretreatment — all in-house, because prep is where finishes are won or lost."
+      },
+      {
+        "label": "Step Three",
+        "title": "Coat, cure and certify",
+        "icon": "shield",
+        "body": "Autophoretic, powder, zinc, batch or dip — then lab testing and written certification of process and performance."
+      },
+      {
+        "label": "Step Four",
+        "title": "Assemble, package and ship",
+        "icon": "home",
+        "body": "Re-assembly to your configuration, custom packaging, and delivery on our own fleet. Expedite available."
+      }
+    ],
+    "cta_text": "Request a Quote",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Patriot Metal Products",
+    "headline": "Forty Years On The Same Ground In Berwick",
+    "body": "Patriot Metal Products was established and incorporated in Berwick, Pennsylvania in 1986. What began as powder coating and zinc plating has grown into five coating processes, an onsite laboratory, a fabrication and assembly operation, and a truck fleet — while staying family owned. We are a multiple-process custom coater serving automotive, agricultural equipment, furniture, fastener, appliance and government customers, and we are proud to use green technology where available.",
+    "checklist": [
+      "Incorporated in Berwick, PA in 1986 — family owned",
+      "Autophoretic®/Aquence™ 930™, powder, zinc, batch paint and dip coating",
+      "Onsite laboratory issuing process and performance certifications",
+      "CARC finishes meeting MIL, OMAH and ANSI specifications",
+      "RoHS-compliant powder with a powder re-claim unit for lower cost",
+      "Orders from a single piece to entire truckloads, daily"
+    ],
+    "photo": "/img/plant-entrance.jpg",
+    "photo_alt": "The Patriot Metal Products plant entrance at 1005 N. Vine Street in Berwick, Pennsylvania",
+    "photo_cutout": false,
+    "cta_text": "Read Our Story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Choosing A Coating Partner",
+    "headline": "Industrial Metal Coating In Central Pennsylvania",
+    "paragraphs": [
+      "Picking a coater usually comes down to four questions: will the process reach every surface of the part, will it survive the environment the part lives in, can the shop physically fit the part, and can they prove what they did. Most job shops can answer one or two of those.",
+      "Autophoretic coating answers the first — where it wets, it coats, which means the inside of tubular structures, blind recesses and edges get the same film as the flat faces. Powder, zinc and batch paint cover the rest of the range, and our published line capacities let you check fit before you pick up the phone. The onsite lab answers the fourth.",
+      "We sit on N. Vine Street in Berwick with direct access to Interstate 80, and we run our own trucks. For manufacturers across Columbia, Montour, Luzerne and Lycoming counties, that means parts move on our schedule rather than a freight broker's."
+    ],
+    "checklist": [
+      "Powder line to 22' x 5' x 47\", 2,000 lb capacity",
+      "Batch booth and oven to 15' w x 20' l x 6' h",
+      "Rack plating to 10 feet, barrel plating for small parts",
+      "Burn-off from the size of a nickel to 6' x 10' x 4'",
+      "Onsite laboratory certifications on process and performance",
+      "Custom color matching across powder, batch and dip"
+    ],
+    "image": "/img/powder-coating.jpg",
+    "image_alt": "Metal parts moving through the automated powder coating booth at Patriot Metal Products",
+    "image_position": "left",
+    "cta_text": "Request a Quote",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "What is the smallest job you will take?",
+      "a": "One piece. We process orders ranging from a single part to entire truckloads daily. Prototype runs, one-off restorations and short batches all get quoted — we are not a minimum-order shop."
+    },
+    {
+      "q": "How big a part can you actually handle?",
+      "a": "Our powder line takes components up to 22 feet long by 5 feet high by 47 inches wide, at up to 2,000 pounds. The room-sized batch booth and oven handle parts as large as 15 feet wide by 20 feet long by 6 feet high. Zinc rack plating accommodates parts up to 10 feet."
+    },
+    {
+      "q": "Which coating process is right for my part?",
+      "a": "It depends on geometry, substrate, volume and the environment the part will live in. Autophoretic is the answer for complex shapes and tubular structures that need coverage inside and out. Powder suits high-production runs needing a durable decorative finish. Zinc plating fits fasteners and small hardware. Batch painting handles oversized or low-quantity items. Send us your drawing and target spec and we will tell you which fits."
+    },
+    {
+      "q": "Can you provide documentation for our spec?",
+      "a": "Yes. All of our processes are supported by an onsite state-of-the-art coating laboratory, and we provide certifications of the processes and the performance criteria for varied customers and applications."
+    },
+    {
+      "q": "Do you handle military or government specifications?",
+      "a": "Yes. CARC finishes — high temperature, high chemical resistance — meeting MIL, OMAH and ANSI specifications are applied through our batch process."
+    },
+    {
+      "q": "Can you match a specific color?",
+      "a": "Yes. We offer a wide range of colors across powder, batch and dip coating, or we can custom match your specific color requirement."
+    },
+    {
+      "q": "Do you do anything besides coating?",
+      "a": "We are a true turnkey operation: burn-off, grinding and sanding, wheel abrading and blasting, pretreatment, prime and top coat, metal fabrication, component and electrical assembly, analytical testing, custom packaging, and transport on our own fleet."
+    },
+    {
+      "q": "Do you deliver?",
+      "a": "We run three trucks — two tractor trailers and one straight-side closed van — from our location just off Interstate 80. Custom packaging to your specification is readily available and expedite services can be arranged when necessary."
+    }
+  ]
+}

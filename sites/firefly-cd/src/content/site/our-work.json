@@ -1,0 +1,150 @@
+{
+  "kind": "our-work",
+  "intro": "Firefly Contractors & Design is a local, family-run team that treats every project like it's on our own street. We take pride in the craftsmanship you see below — no cutting corners, no upcharging you like the big private-equity outfits, and no farming your job out to a stranger. With 200+ home service projects completed across the Spokane region, we've earned the trust of homeowners one clean job site and one honest quote at a time.",
+  "projects": [],
+  "project_map": {
+    "enabled": true,
+    "heading": "Where we work",
+    "projects": [
+      {
+        "id": "spokane-wa-2026-03-01",
+        "city": "Spokane",
+        "state": "WA",
+        "completed": "2026-03",
+        "project_type": "Roofing",
+        "products_used": [
+          "GAF Timberline HDZ",
+          "Ice & water shield"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/blob-8ba1b7d.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:960",
+            "alt": "Completed shingle roof replacement in Spokane"
+          }
+        ],
+        "precision": "street",
+        "lat": 47.6588706,
+        "lng": -117.4224898,
+        "description": "Full tear-off and replacement after hail damage."
+      },
+      {
+        "id": "spokane-valley-wa-2026-02-01",
+        "city": "Spokane Valley",
+        "state": "WA",
+        "completed": "2026-02",
+        "project_type": "Siding",
+        "products_used": [
+          "James Hardie fiber cement"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/IMG_3251.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true",
+            "alt": "New fiber cement siding in Spokane Valley"
+          }
+        ],
+        "precision": "street",
+        "lat": 47.6800867,
+        "lng": -117.223744,
+        "description": "Full siding wrap with new trim and soffit."
+      },
+      {
+        "id": "liberty-lake-wa-2026-01-01",
+        "city": "Liberty Lake",
+        "state": "WA",
+        "completed": "2026-01",
+        "project_type": "Roofing",
+        "products_used": [
+          "GAF Timberline HDZ"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/blob-f8bc2fd.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:720",
+            "alt": "Roof replacement in Liberty Lake"
+          }
+        ],
+        "precision": "street",
+        "lat": 47.6717241,
+        "lng": -117.1032997,
+        "description": "Architectural shingle re-roof with ridge vent."
+      },
+      {
+        "id": "spokane-wa-2025-12-01",
+        "city": "Spokane",
+        "state": "WA",
+        "completed": "2025-12",
+        "project_type": "Windows",
+        "products_used": [
+          "Andersen 100 Series"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-26%20at%202.09.18%E2%80%AFPM.png/:/cr=t:11.67%25,l:0%25,w:100%25,h:76.66%25/rs=w:365,h:365,cg:true",
+            "alt": "New windows installed in Spokane"
+          }
+        ],
+        "precision": "street",
+        "lat": 47.6709997,
+        "lng": -117.3496651,
+        "description": "Whole-home window replacement."
+      },
+      {
+        "id": "otis-orchards-wa-2025-11-01",
+        "city": "Otis Orchards",
+        "state": "WA",
+        "completed": "2025-11",
+        "project_type": "Siding",
+        "products_used": [
+          "LP SmartSide"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-23%20at%206.11.10%E2%80%AFPM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true",
+            "alt": "New siding in Otis Orchards"
+          }
+        ],
+        "precision": "city",
+        "lat": 47.7004973,
+        "lng": -117.1116784,
+        "description": "Siding replacement with upgraded house wrap."
+      },
+      {
+        "id": "post-falls-id-2025-10-01",
+        "city": "Post Falls",
+        "state": "ID",
+        "completed": "2025-10",
+        "project_type": "Roofing",
+        "products_used": [
+          "GAF Timberline HDZ"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-20%20161443.png/:/cr=t:0%25,l:19.88%25,w:60.23%25,h:99.99%25/rs=w:365,h:365,cg:true",
+            "alt": "Roof replacement in Post Falls"
+          }
+        ],
+        "precision": "city",
+        "lat": 47.7110106,
+        "lng": -116.9480877,
+        "description": "Deliberately unresolvable address to exercise geocode fallback tiers."
+      },
+      {
+        "id": "zzzqqxxville-wa-2025-09-01",
+        "city": "Zzzqqxxville",
+        "state": "WA",
+        "completed": "2025-09",
+        "project_type": "Flooring",
+        "products_used": [
+          "LVP"
+        ],
+        "photos": [
+          {
+            "url": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.20.43%E2%80%AFPM.png/:/cr=t:0.09%25,l:0%25,w:100%25,h:99.82%25/rs=w:365,h:365,cg:true",
+            "alt": "Hardwood floor installation"
+          }
+        ],
+        "precision": "street",
+        "description": "Row with an unresolvable city to exercise the no-coordinates path."
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Wilkes-Barre · Scranton · Pittston — Locally Owned",
+    "headline": "The Free Estimate You Will Actually Get Back",
+    "subheadline": "NEPA Classic Construction has spent over 30 years building, renovating, and landscaping across Northeast Pennsylvania. Interior, exterior, hardscaping, landscaping — one contractor, one point of accountability, and an itemized written estimate when we said we would send it.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/exterior-reno-after.jpg",
+    "video_link_text": "See how we work",
+    "video_link_href": "/about",
+    "trust_badges": [
+      {
+        "label": "30+ Years",
+        "sublabel": "Building across Northeast PA"
+      },
+      {
+        "label": "500+ Projects",
+        "sublabel": "Luzerne & Lackawanna Counties"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Free, no-obligation written estimates",
+      "icon": "clipboard"
+    },
+    {
+      "text": "30+ years across Northeast Pennsylvania",
+      "icon": "award"
+    },
+    {
+      "text": "Licensed & insured PA contractor",
+      "icon": "shield"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We Send The Estimate. Every Time.",
+    "body": "Ask anyone in the Wyoming Valley about hiring a contractor and you will hear the same story: someone came out, walked the job, said they would send a number, and was never heard from again. It is the single most common complaint about this trade in Northeast Pennsylvania. We built our process around not being that company. You get a free on-site visit, a detailed itemized estimate in writing within days, and a straight answer about what it costs and how long it takes — whether you hire us or not.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "icon": "document"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The NEPA Classic Standard",
+    "intro": "The same method runs every job we take, from a paver walkway in Pittston to a whole-home renovation in Scranton. Scope it honestly, price it in writing, build it once.",
+    "blocks": [
+      {
+        "title": "One accountable point of contact",
+        "body": "General contracting, interior work, exterior work, hardscaping and landscaping all run through the same office. You are not chasing a mason, a landscaper and a carpenter who each blame the other. One number to call, one company responsible for the finish.",
+        "icon": "handshake"
+      },
+      {
+        "title": "Built for a Northeast PA winter",
+        "body": "Freeze-thaw is what destroys work around here. Patios and walls get engineered base preparation and real drainage, exteriors get proper flashing and water management, and older homes get the plaster and knob-and-tube surprises handled instead of hidden.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What working with us looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Free on-site consultation",
+        "body": "We come out anywhere in Luzerne or Lackawanna County, walk the project with you, and scope it properly before quoting anything."
+      },
+      {
+        "title": "Detailed written estimate",
+        "body": "An itemized estimate arrives within days — materials, labor, timeline. No lump-sum mystery number."
+      },
+      {
+        "title": "Daily site management",
+        "body": "Our own experienced crews run the job, with permitting handled through the local county offices."
+      },
+      {
+        "title": "Final walkthrough",
+        "body": "We walk the finished work with you and close out the punch list before we call it done."
+      }
+    ],
+    "guarantee": {
+      "title": "Free estimates. Always.",
+      "body": "Every project we quote starts with a free, no-obligation estimate — no deposit to get a number, no pressure at the kitchen table, and no charge if you decide to go another direction. Call and you get the people who will actually be doing the work.",
+      "cta_text": "Call (570) 479-1318",
+      "cta_href": "tel:+15704791318"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Is Four Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Consultation",
+        "icon": "phone",
+        "body": "A free on-site visit to scope your project anywhere in Luzerne or Lackawanna County."
+      },
+      {
+        "label": "Step Two",
+        "title": "Estimate",
+        "icon": "document",
+        "body": "A detailed, itemized written estimate within days — not weeks, and not never."
+      },
+      {
+        "label": "Step Three",
+        "title": "Build",
+        "icon": "hammer",
+        "body": "Daily site management with our own experienced crews, permits handled by us."
+      },
+      {
+        "label": "Step Four",
+        "title": "Walkthrough",
+        "icon": "clipboard",
+        "body": "A final review together and full punch-list completion before we hand it back."
+      }
+    ],
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About NEPA Classic Construction",
+    "headline": "Building With Creativity",
+    "body": "NEPA Classic Construction offers over 30 years of experience in general construction — interior and exterior — landscaping, hardscaping, and much more. We take pride in every project, treating your home as if it were our own. Serving Scranton, Pittston, Wilkes-Barre, and surrounding communities across Northeastern Pennsylvania, we deliver quality craftsmanship at fair prices. Every project begins with a free estimate — no pressure, no surprises.",
+    "checklist": [
+      "Over 30 years of experience in Northeast Pennsylvania",
+      "500+ completed projects across Luzerne & Lackawanna Counties",
+      "Licensed and insured Pennsylvania contractor",
+      "Residential and commercial work",
+      "Free, no-obligation estimates on every project"
+    ],
+    "photo": "/img/interior-reno-after.jpg",
+    "photo_alt": "A finished living room renovation by NEPA Classic Construction, hardwood floors and new trim",
+    "photo_cutout": false,
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why NEPA Projects Fail",
+    "headline": "Contracting In Wilkes-Barre, Scranton & The Wyoming Valley",
+    "paragraphs": [
+      "Northeast Pennsylvania is hard on buildings. Frost depth here pushes past three feet, so a patio, walkway or retaining wall set on a thin or poorly drained base will heave and crack inside a few seasons no matter how good the pavers looked on day one. The fix is not a better stone — it is excavation to the right depth, a compacted gravel base, drainage behind every wall, and edge restraint that actually holds.",
+      "The housing stock is the other half of the problem. Much of Wilkes-Barre, Scranton and Pittston was built before 1940, which means plaster and lath, balloon framing, knob-and-tube wiring, and plumbing that predates anyone currently working on it. Plenty of contractors quote these homes as if they were new construction, then discover the truth mid-demo and come back asking for more money. We open walls expecting to find it, and we say so in the estimate.",
+      "That is also why we run interior, exterior, hardscaping and landscaping out of one office. A renovation in this region rarely stays in one trade — a kitchen turns into an electrical job, a siding replacement turns into structural repair, a patio turns into a grading and drainage project. Having one contractor accountable for all of it is the difference between a project that finishes and one that stalls between subcontractors."
+    ],
+    "checklist": [
+      "Engineered base preparation for freeze-thaw durability",
+      "Proper flashing and water management on exterior work",
+      "Knob-and-tube, plaster and outdated plumbing handled, not hidden",
+      "Permitting through Luzerne and Lackawanna County offices",
+      "Transparent, itemized estimates with real price ranges"
+    ],
+    "image": "/img/paver-patio-after.jpg",
+    "image_alt": "Paver patio and retaining wall built on an engineered base for Northeast Pennsylvania freeze-thaw",
+    "image_position": "right",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "What areas do you serve in Northeast Pennsylvania?",
+      "a": "NEPA Classic Construction proudly serves Wilkes-Barre, Scranton, Pittston, Kingston, Nanticoke, Dallas, Plains, and surrounding communities throughout Luzerne and Lackawanna Counties."
+    },
+    {
+      "q": "Do you offer free estimates?",
+      "a": "Yes — every project starts with a free, no-obligation estimate. Call (570) 479-1318 or fill out our contact form to schedule yours, and you will get an itemized written estimate back within days."
+    },
+    {
+      "q": "How much does landscaping cost in Northeast Pennsylvania?",
+      "a": "Landscaping costs vary depending on scope, materials, and site conditions. Most residential projects in NEPA range from $3,000 to $25,000+. We provide a detailed, itemized estimate so you know exactly what you are paying for."
+    },
+    {
+      "q": "How long does a patio installation take?",
+      "a": "A typical paver patio installation in NEPA takes 3–7 days, depending on size, base preparation, and weather. Larger projects with retaining walls or built-in features can take 2–3 weeks."
+    },
+    {
+      "q": "What types of hardscaping do you install?",
+      "a": "We install paver patios, retaining walls, walkways, driveways, fire pits, outdoor kitchens, steps, and stone veneer across Wilkes-Barre, Scranton, Pittston, and the rest of NEPA."
+    },
+    {
+      "q": "Are you licensed and insured in Pennsylvania?",
+      "a": "Yes. NEPA Classic Construction is a fully licensed and insured Pennsylvania contractor with over 30 years of experience."
+    },
+    {
+      "q": "Do you handle interior renovations as well as exterior work?",
+      "a": "Absolutely. We are a full-service general contractor offering interior renovations (kitchens, bathrooms, basements) and exterior construction (siding, roofing, decks, porches) across Northeast Pennsylvania."
+    },
+    {
+      "q": "How quickly can you start a project?",
+      "a": "Most projects in NEPA can begin within 2–6 weeks of estimate approval, depending on scope and season. Exterior and hardscape work is weather-dependent; interior work runs year-round."
+    }
+  ]
+}

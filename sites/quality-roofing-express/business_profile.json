@@ -1,0 +1,48 @@
+{
+  "name": "Quality Roofing Express",
+  "email": "Qualityroofingexpress@gmail.com",
+  "phone": "(570) 614-3914",
+  "address": "614 N Rebecca Ave, Scranton, PA 18504",
+  "website": "https://www.qualityroofingexpress.org/",
+  "rating": 4.6,
+  "reviewCount": 74,
+  "category": "Roofing contractor",
+  "hours": "Mon-Fri 7am-7pm, Sat 8am-7pm, Sun 9am-12pm",
+  "slug": "quality-roofing-express",
+  "placeId": "ChIJT3NpTdXZxIkRXrlxdqrgXIk",
+  "cid": "9898033103789734238",
+  "geo": { "lat": 41.4210921, "lng": -75.6801342 },
+  "categories": ["Roofing contractor", "Repair service"],
+  "social": {
+    "facebook": "https://www.facebook.com/qualityroofingexpress"
+  },
+  "reviews": [
+    {
+      "text": "The crew was professional, prompt, clean and skilled. We are so happy we went with Quality Roof Express and will be calling for other jobs in the future!! Thank you for putting a new roof over our heads!",
+      "author": "Ali Wilson",
+      "rating": 5
+    },
+    {
+      "text": "They were quick to get me an estimate, and kept in contact with me throughout the process. On time with great quality work and customer service. Definitely recommend.",
+      "author": "Carolene",
+      "rating": 5
+    },
+    {
+      "text": "I highly recommend Quality Roofing Express for anyone in need of a new roof. Osman and his crew did an excellent job. They all work together so well. Roof was done so quickly, the price was great and clean up was unbelievable, you would not have even known they were here. Thank you for a great job",
+      "author": "Barb",
+      "rating": 5
+    },
+    {
+      "text": "I have personally had Osman and his team do three roofs for me and they are currently working on a roof for my son. From the moment I met Osman 5 years ago to the present, he has been the consummate professional. The quality of work and the attention to detail are second to none.",
+      "author": "Tom Belinsky",
+      "rating": 5
+    },
+    {
+      "text": "My new roof looks great. Very fair price and excellent workmanship. Friendly staff. My new roof was on in one day. Highly recommend.",
+      "author": "jeffrey cerato",
+      "rating": 5
+    }
+  ],
+  "_source": "apify:lukaskrivka~google-maps-with-contact-details + compass~google-maps-reviews-scraper",
+  "_scraped_at": "2026-08-03"
+}

@@ -1,0 +1,88 @@
+{
+  "kind": "config",
+  "business_name": "Smile Lawn Care",
+  "legal_name": "Smile Lawn Care & Landscapers",
+  "tagline": "Expert Lawn Care & Landscaping",
+  "phone": "+15708550780",
+  "phone_display": "(570) 855-0780",
+  "address": {
+    "street": "147 Abbott St",
+    "city": "Wilkes-Barre",
+    "state": "PA",
+    "postal": "18705",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2903285,
+    "lng": -75.831913
+  },
+  "hours": {
+    "monday": "9:00 AM – 6:00 PM",
+    "tuesday": "9:00 AM – 6:00 PM",
+    "wednesday": "9:00 AM – 6:00 PM",
+    "thursday": "9:00 AM – 6:00 PM",
+    "friday": "9:00 AM – 6:00 PM",
+    "saturday": "9:00 AM – 6:00 PM",
+    "sunday": "Closed"
+  },
+  "site_url": "https://smile-lawn-care.vercel.app",
+  "rating": 5,
+  "review_count": 37,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/SmileLawnCareWilkesBarre/"
+  },
+  "logo_url": "/logo-smile.png",
+  "default_hero_photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/65fbb9968fbeae1b685881c3.jpeg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "We show up on the day we said",
+      "description": "The one thing customers mention most in our reviews. You get a scheduled day, we arrive on it, and you hear from us if anything changes."
+    },
+    {
+      "title": "Free on-site estimate, priced before we start",
+      "description": "We walk the property, measure it, and put the number in writing. No obligation to book, and no price that moves after the work is finished."
+    },
+    {
+      "title": "We treat the property like it's ours",
+      "description": "Beds edged, clippings cleared, property lines respected, gates shut behind us. Reviewers keep noting the small extras we handle without being asked."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl",
+    "calendar_embed_snippet": "<div><img src=\"/placeholder-calendar.svg\" alt=\"Placeholder marking where the booking calendar widget will sit\" style=\"display:block;width:100%;height:auto;border-radius:14px;\" /></div>",
+    "contact_form_snippet": "<div><img src=\"/placeholder-form.svg\" alt=\"Placeholder marking where the contact form will sit\" style=\"display:block;width:100%;height:auto;border-radius:14px;\" /></div>"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Lawn Care",
+    "heading_rest": "& Landscaping",
+    "subtitle": "Weekly mowing, seasonal clean-ups, mulch, weed control and winter plowing — one crew for the whole property, all year."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "config",
+  "business_name": "Headley Construction Group",
+  "tagline": "South Florida Civil Construction & Concrete Contractor",
+  "logo_url": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62c17ddf29341f4d8b9170.png",
+  "default_hero_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7cf9f8312dc70ddb3.jpeg",
+  "about_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a72e0540011f6ef25b.jpeg",
+  "team_members": [],
+  "phone": "+13056131490",
+  "phone_display": "(305) 613-1490",
+  "email": "Chris@headleycg.com",
+  "address": {
+    "street": "12976 SW 132nd Ave",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33186",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "site_url": "https://headleycg.com",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 10,
+  "social": {},
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "icon": "🏗️",
+      "title": "Family-Owned, 10+ Years",
+      "description": "Founded and run by brothers Chris and Thomas Headley — the same people you meet on day one are the people running the job."
+    },
+    {
+      "icon": "🚚",
+      "title": "Our Own Volumetric Concrete Trucks",
+      "description": "Two on-demand concrete mixers means fresh mix on-site, custom PSI, and no minimum-load waste — for our jobs and yours."
+    },
+    {
+      "icon": "🛣️",
+      "title": "Public + Private Track Record",
+      "description": "Miami-Dade County bus stops, Starbucks, McDonald's — plus municipalities, developers, and commercial partners across South Florida."
+    },
+    {
+      "icon": "📅",
+      "title": "On Time & On Budget",
+      "description": "Reputation built on delivering projects on schedule and within the number we quoted — no surprises, no runaround."
+    }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": {
+    "enabled": true,
+    "headline": "Why Headley & not the other guys",
+    "us_label": "HEADLEY",
+    "them_label": "OTHERS",
+    "us_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4afcf9f8312dc70de0b.jpeg",
+    "them_photo": "https://edensstructural.com/wp-content/uploads/2023/12/what-are-the-safety-hazards-of-cracked-uneven-concrete-01.jpeg",
+    "rows": [
+      { "label": "Self-Performed Concrete Work", "us": true, "them": false },
+      { "label": "Own Volumetric Concrete Trucks", "us": true, "them": false },
+      { "label": "Public + Commercial Experience", "us": true, "them": false },
+      { "label": "Owner On Every Project", "us": true, "them": false },
+      { "label": "On-Time, On-Budget Delivery", "us": true, "them": false },
+      { "label": "Family-Owned Accountability", "us": true, "them": false }
+    ]
+  },
+  "gallery": [
+    { "title": "Commercial concrete pour", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7cf9f8312dc70ddb3.jpeg", "alt": "Commercial concrete project — South Florida" },
+    { "title": "Site work in progress", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a72e0540011f6ef25b.jpeg", "alt": "Civil site work in progress" },
+    { "title": "Parking lot pour", "location": "Miami-Dade, FL", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f7d31b0eb453b0ee.jpeg", "alt": "Commercial parking lot concrete pour" },
+    { "title": "Formwork and rebar", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f9c6f6a920d0cb9c.jpeg", "alt": "Concrete formwork with reinforcing steel" },
+    { "title": "Sidewalks and curbs", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f7d31b0eb453b0f3.jpeg", "alt": "Sidewalk and curb concrete work" },
+    { "title": "Industrial slab", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7b86ae4203402ec23.jpeg", "alt": "Heavy industrial concrete slab" },
+    { "title": "Finishing crew at work", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4af23b7828d3562fc27.jpeg", "alt": "Concrete finishing crew" },
+    { "title": "Finished concrete surface", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4afcf9f8312dc70de0b.jpeg", "alt": "Finished commercial concrete surface" },
+    { "title": "Volumetric concrete truck", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4b2b86ae4203402ecb3.jpeg", "alt": "Headley volumetric concrete truck on site" },
+    { "title": "On-demand concrete delivery", "location": "South Florida", "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4b4f7d31b0eb453b1a6.jpeg", "alt": "Volumetric concrete delivery in progress" }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "South Florida",
+    "heading_rest": "concrete & civil construction"
+  }
+}

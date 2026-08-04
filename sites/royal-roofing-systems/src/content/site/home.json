@@ -1,0 +1,190 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Wilkes-Barre, PA",
+    "headline": "The Crew On Your Roof Works For Us",
+    "subheadline": "Most roofing companies sell you the job and then subcontract it out to whoever is available. We don't. When you call us about your roof, we are the roofers. Roofing, siding, gutters and decks across Northeastern Pennsylvania.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/hero-home.jpg",
+    "video_link_text": "Storm damage? Start here",
+    "video_link_href": "/services/storm-damage-repair",
+    "trust_badges": [
+      { "mark": "google", "rating": 4.8, "label": "4.8 on Google", "sublabel": "61 reviews" },
+      { "label": "15 years in the Wyoming Valley", "sublabel": "Locally owned and operated" },
+      { "label": "15-year no-leak warranty", "sublabel": "Plus lifetime materials" }
+    ],
+    "quote_card": {
+      "quote": "Next day went above and beyond to inspect my roof. My roof is not accessible but they made it work.",
+      "author": "George Stroney",
+      "cta_text": "Price My Roof",
+      "cta_href": "/book",
+      "rating": 4.8,
+      "review_count": 61
+    }
+  },
+  "promise_bar": [
+    "Never subcontracted",
+    "Same-day free inspection",
+    "24/7 emergency repair",
+    "Insurance claims handled"
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We do not subcontract out",
+    "body": "It is the sentence homeowners in the Wyoming Valley repeat back to us most, because it is the thing that goes wrong most often. Somebody quotes a GAF system and a crew nobody has met installs the wrong underlayment. When you hire Royal Roofing, the people on your roof are Royal Roofing. The person who wrote your estimate is the person answerable for the work.",
+    "cta_text": "More about us",
+    "cta_href": "/about",
+    "image": "/img/residential-roofing.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "A roof handled start to finish by one company",
+    "intro": "Fifteen years of doing this in Northeastern Pennsylvania taught us where projects go wrong: the estimate that never arrives, the crew nobody vouches for, and the insurance claim that stalls out. Here is how we close each of those gaps.",
+    "blocks": [
+      {
+        "title": "The estimate arrives the same day",
+        "body": "A certified contractor inspects the roof, photographs what they find, and generates the estimate that day. You get the damage explained and the options priced before anyone asks you to sign anything.",
+        "icon": "document"
+      },
+      {
+        "title": "We work the insurance claim with you",
+        "body": "We attend the adjuster appointment so they see the same damage we documented, help get the right roofing squares and materials approved, and follow up with the carrier until there is a decision. All you pay is your deductible.",
+        "icon": "umbrella"
+      },
+      {
+        "title": "Our own crews, on every job",
+        "body": "No subcontractors. The materials on your roof are the materials on your estimate, and the workmanship is ours to stand behind for ten years.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What a storm call looks like",
+    "steps_icon": "home",
+    "steps": [
+      { "title": "Free inspection first", "body": "Roof damage is hard to spot from the ground and water spreads through the underlayment and deck long before it shows up on your ceiling. We look before we quote — and we will tell you when the roof still has years left in it." },
+      { "title": "An estimate broken down line by line", "body": "Tear-off, underlayment, ventilation, disposal. You see what each piece costs so you can compare our number to anyone else's honestly." },
+      { "title": "We meet the adjuster", "body": "We know the software and the resources carriers use. Catering to their process is what turns a stalled claim into an approved scope." },
+      { "title": "Installation and cleanup", "body": "Our crew, our materials, our warranty. We finish the property the way we found it, minus the old roof." }
+    ],
+    "guarantee": {
+      "title": "The 15-year no-leak warranty",
+      "body": "Your roof is protected by a 15-year no-leak warranty on top of the lifetime manufacturer warranty on materials and our 10-year workmanship warranty. If there is a problem at all, we respond and we fix it. We are a local company — you know where to find us.",
+      "cta_text": "Ask us about it",
+      "cta_href": "/contact",
+      "badge_image": "/img/asphalt-shingle.webp",
+      "badge_alt": "Asphalt shingle roof covered by the Royal Roofing no-leak warranty"
+    }
+  },
+  "process_steps": {
+    "headline": "Four steps from first call to finished roof",
+    "steps": [
+      { "label": "Step One", "title": "Call or request an estimate", "body": "Reach us at (570) 550-6578 or send the form. Emergency and same-day service is available." },
+      { "label": "Step Two", "title": "Free on-site inspection", "body": "A trained roofing specialist reviews the condition of your roof and photographs what they find." },
+      { "label": "Step Three", "title": "Review your options", "body": "A written, itemized estimate presented in a no-pressure consultative approach — including what insurance should cover." },
+      { "label": "Step Four", "title": "We install it", "body": "Our own crew, GAF and Owens Corning materials, and a three-warranty stack behind the finished job." }
+    ],
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Royal Roofing",
+    "headline": "Fifteen years of roofs in the Wyoming Valley",
+    "body": "Royal Roofing Systems is a locally owned and operated company based in Edwardsville, working across Northeastern Pennsylvania. We install and repair flat and pitched residential and commercial roofing — asphalt shingle, copper, slate and metal — and we handle the rest of the exterior too: siding, seamless gutters and custom decks. Homeowners, property managers, realtors and commercial building owners all call us, and the reason is usually the same one: we do what we said we would do, on the day we said we would do it.",
+    "checklist": [
+      "Locally owned and operated since 2011",
+      "4.8 stars across 61 Google reviews",
+      "Licensed, bonded and fully insured",
+      "5% off for military, first responders and seniors on jobs over $1,500"
+    ],
+    "photo": "/img/residential-roofing.jpg",
+    "photo_alt": "Royal Roofing crew replacing a residential roof in Northeastern Pennsylvania",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Roofing in Northeastern Pennsylvania",
+    "headline": "What actually drives the number on your roof estimate",
+    "paragraphs": [
+      "Homeowners here get quotes that range from ten to twenty thousand dollars on what looks like the same roof, and nobody explains the gap. Five things move the number: how many roofing squares you have (a square is 100 square feet), the pitch of the roof, the condition of the decking underneath the old shingles, the material you choose, and whether the job goes through insurance or retail. We break all five out on the estimate so you can compare our bid to anyone else's line for line.",
+      "Material is the biggest lever. Asphalt shingle is the most common and most affordable option on Northeast PA houses — a 3-tab roof lasts 15 to 20 years and architectural shingles 20 to 25. Metal runs more up front but lasts 50 years or better, carries the best fire rating of any roofing material, and weighs less than most alternatives, which takes load off the structure. Slate is its own conversation: the Wyoming Valley is full of pre-war houses wearing original slate, and we have installed hundreds of slate roofs in this area rather than talking owners into tearing them off.",
+      "Storm damage changes the math again. If wind, hail or a tree took out enough of the surface, your homeowner's policy may cover most of the replacement minus your deductible. That is worth getting right, which is why we attend the adjuster appointment instead of handing you a claim form. And it is worth being careful about who you let on the roof first — the crews that appear in a neighborhood the week after a storm and vanish before spring are not the ones who will honor a warranty."
+    ],
+    "checklist": [
+      "Free inspection before any estimate — including when the answer is 'not yet'",
+      "Itemized written pricing, not a number over the phone",
+      "0% financing available on qualifying projects",
+      "Lifetime manufacturer, 10-year workmanship, and 15-year no-leak warranties"
+    ],
+    "image": "/img/roof-replacement.jpg",
+    "image_alt": "Asphalt shingle roof replacement on a Northeastern Pennsylvania home",
+    "image_position": "right",
+    "review": {
+      "name": "Jason Scott",
+      "text": "Royal Roofing was fast and friendly tearing off the old roof, repairing what was necessary and installing the new roof. They even came back and installed a new cupola that we bought for the roof of the garage.",
+      "rating": 5,
+      "source": "Google"
+    },
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Jason Scott",
+      "location": "Google review",
+      "text": "Royal Roofing was fast and friendly tearing off the old roof, repairing what was necessary and installing the new roof. They even came back and installed a new cupola that we bought for the roof of the garage.",
+      "rating": 5
+    },
+    {
+      "name": "Chris Mitchell",
+      "location": "Google review",
+      "text": "Very well. Excellent job. Job was completed in timely fashion. Would recommend this company for roofing work to anyone who needs a roof.",
+      "rating": 5
+    },
+    {
+      "name": "George Stroney",
+      "location": "Google review",
+      "text": "Next day went above and beyond to inspect my roof. My roof is not accessible but they made it work. Appreciated their due diligence.",
+      "rating": 5
+    },
+    {
+      "name": "David Nolan",
+      "location": "Google review",
+      "text": "The roof inspector arrived on time. He inspected the roof and took pictures of the roof to share with me.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you subcontract the work out?",
+      "a": "No. When you call us about your roof, we are the roofers. Every crew on your property is a Royal Roofing crew, which is why we can put a 10-year workmanship warranty in writing and mean it."
+    },
+    {
+      "q": "How fast can I get an estimate?",
+      "a": "Same day. A certified contractor inspects the roof, photographs the damage, and generates a written estimate that day. For active leaks, residential repair service is available 24 hours a day, 7 days a week."
+    },
+    {
+      "q": "What does a new roof cost?",
+      "a": "It depends on the number of roofing squares, the pitch, the condition of the decking under the old shingles, the material, and whether the job runs through insurance or retail. We will not quote a number over the phone — you get an itemized written estimate after an inspection, and the inspection is free."
+    },
+    {
+      "q": "Will my homeowner's insurance cover storm damage?",
+      "a": "Often, minus your deductible, if the damage covers enough of the roof. We attend the adjuster appointment so they see the same damage we documented, help get the correct squares and materials approved, and follow up with your carrier until there is a decision."
+    },
+    {
+      "q": "What warranties do you offer?",
+      "a": "Three. A lifetime manufacturer warranty on materials, a 10-year workmanship warranty on the installation, and a 15-year no-leak warranty on the roof itself. All of it is in writing before work begins."
+    },
+    {
+      "q": "Do you offer financing?",
+      "a": "Yes. We have short-term and long-term plans with flexible terms and competitive APRs, including 0% financing on qualifying roofing, siding, gutter and deck projects. Military, first responders and seniors also get 5% off any full roof or gutter installation or repair over $1,500."
+    },
+    {
+      "q": "Do you work on slate and older homes?",
+      "a": "Yes, and it is one of the reasons people call us. Northeastern Pennsylvania has a lot of pre-war housing stock wearing original slate. We have installed hundreds of slate roofs in this area and will tell you honestly whether yours should be repaired or replaced."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We work throughout Northeastern Pennsylvania from our Edwardsville shop, including Wilkes-Barre, Kingston, Scranton, Dallas and Hazleton. If you are nearby and not on that list, call us — we probably cover you."
+    }
+  ]
+}

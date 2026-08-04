@@ -1,0 +1,156 @@
+---
+export interface Props {
+  data?: {
+    eyebrow?: string;
+    headline: string;
+    intro?: string;
+    blocks?: Array<{ title: string; body: string; icon?: string; image?: string }>;
+    steps_title?: string;
+    steps_icon?: string;
+    steps?: Array<{ title: string; body: string }>;
+    guarantee?: {
+      title: string;
+      body: string;
+      cta_text?: string;
+      cta_href?: string;
+      badge_image?: string;
+      badge_alt?: string;
+    };
+  };
+}
+const { data } = Astro.props;
+const blocks = data?.blocks ?? [];
+const steps = data?.steps ?? [];
+
+import { getIcon } from '../lib/icons';
+const hasIcon = (k?: string) => getIcon(k) !== null;
+---
+{data && (
+  <section class="signature" aria-label={data.headline}>
+    <div class="container">
+      <div class="head">
+        {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
+        <h2>{data.headline}</h2>
+        {data.intro && <p class="intro">{data.intro}</p>}
+      </div>
+
+      <div class="cards">
+        {blocks[0] && (
+          <article class="card">
+            {blocks[0].image
+              ? <img class="card-img" src={blocks[0].image} alt="" loading="lazy" />
+              : hasIcon(blocks[0].icon) && (
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(blocks[0].icon)!} />
+                  </span>
+                )}
+            <h3>{blocks[0].title}</h3>
+            <p>{blocks[0].body}</p>
+          </article>
+        )}
+
+        {steps.length > 0 && (
+          <article class="card steps-card">
+            {hasIcon(data.steps_icon) && (
+              <span class="icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(data.steps_icon)!} />
+              </span>
+            )}
+            {data.steps_title && <h3 class="steps-title">{data.steps_title}</h3>}
+            <ol>
+              {steps.map((s) => (
+                <li>
+                  <h4>{s.title}</h4>
+                  <p>{s.body}</p>
+                </li>
+              ))}
+            </ol>
+          </article>
+        )}
+
+        {blocks[1] && (
+          <article class="card">
+            {blocks[1].image
+              ? <img class="card-img" src={blocks[1].image} alt="" loading="lazy" />
+              : hasIcon(blocks[1].icon) && (
+                  <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(blocks[1].icon)!} />
+                  </span>
+                )}
+            <h3>{blocks[1].title}</h3>
+            <p>{blocks[1].body}</p>
+          </article>
+        )}
+      </div>
+
+      {blocks.length > 2 && (
+        <div class="cards extra">
+          {blocks.slice(2).map((b) => (
+            <article class="card">
+              {b.image
+                ? <img class="card-img" src={b.image} alt="" loading="lazy" />
+                : hasIcon(b.icon) && (
+                    <span class="icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon(b.icon)!} />
+                    </span>
+                  )}
+              <h3>{b.title}</h3>
+              <p>{b.body}</p>
+            </article>
+          ))}
+        </div>
+      )}
+
+      {data.guarantee && (
+        <div class={`guarantee ${data.guarantee.badge_image ? 'has-badge' : ''}`}>
+          {data.guarantee.badge_image && (
+            <img class="badge" src={data.guarantee.badge_image} alt={data.guarantee.badge_alt ?? ''} loading="lazy" />
+          )}
+          <div class="guarantee-copy">
+            <h3>{data.guarantee.title}</h3>
+            <p>{data.guarantee.body}</p>
+            {data.guarantee.cta_text && data.guarantee.cta_href && (
+              <a class="btn" href={data.guarantee.cta_href}>{data.guarantee.cta_text}</a>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+)}
+<style>
+  .signature { padding: var(--space-5) 0; }
+  .head { max-width: 820px; margin: 0 auto var(--space-4); text-align: center; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.01em; }
+  .intro { color: var(--color-muted); font-size: 1.05rem; line-height: 1.7; margin: 0; }
+
+  /* Three-up: explainer card, numbered steps, explainer card. */
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--space-3); align-items: start; }
+  .cards.extra { margin-top: var(--space-3); }
+  .card { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); box-shadow: 0 8px 22px rgba(15,20,25,0.08); height: 100%; }
+  .card h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 var(--space-2); color: var(--color-text); text-transform: capitalize; }
+  .card p { margin: 0; color: var(--color-muted); line-height: 1.7; }
+  .card-img { width: 100%; border-radius: var(--radius-md); aspect-ratio: 16/10; object-fit: cover; margin-bottom: var(--space-3); }
+
+  .icon { display: inline-flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; border-radius: 50%; background: var(--color-accent); color: var(--color-on-accent); margin-bottom: var(--space-3); }
+  .icon svg { width: 1.9rem; height: 1.9rem; }
+
+  .steps-card { background: var(--color-bg); border: 1px solid rgba(0,0,0,0.10); }
+  .steps-title { font-size: 1.35rem; margin: 0 0 var(--space-3); }
+  .steps-card ol { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+  .steps-card li { counter-increment: step; display: grid; grid-template-columns: 2rem 1fr; gap: 0.85rem; align-items: start; }
+  .steps-card li::before { content: counter(step); display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--color-accent); color: var(--color-on-accent); font-family: var(--font-display); font-weight: 700; font-size: 1rem; }
+  /* The ::before counter occupies column 1; both h4 and p must be pinned to
+     column 2 or auto-placement drops the <p> into the 2rem counter column. */
+  .steps-card h4 { grid-column: 2; font-size: 1.02rem; margin: 0.15rem 0 0.25rem; color: var(--color-text); text-transform: capitalize; }
+  .steps-card p { grid-column: 2; font-size: 0.95rem; line-height: 1.6; }
+
+  .guarantee { margin-top: var(--space-4); background: var(--color-primary); color: var(--color-on-primary); border-radius: var(--radius-lg); padding: var(--space-4); }
+  .guarantee.has-badge { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: var(--space-4); align-items: center; }
+  @media (max-width: 720px) { .guarantee.has-badge { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+  .badge { width: 100%; max-width: 220px; height: auto; }
+  .guarantee h3 { font-family: var(--font-display); font-size: clamp(1.4rem, 2.6vw, 2rem); margin: 0 0 var(--space-2); color: var(--color-on-primary); text-transform: capitalize; }
+  .guarantee p { margin: 0 0 var(--space-3); line-height: 1.7; }
+  .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; text-decoration: none; text-transform: uppercase; }
+</style>

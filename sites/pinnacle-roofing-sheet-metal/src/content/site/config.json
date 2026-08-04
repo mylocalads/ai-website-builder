@@ -1,0 +1,147 @@
+{
+  "kind": "config",
+  "business_name": "Pinnacle Roofing & Sheet Metal",
+  "legal_name": "Pinnacle Roofing & Sheet Metal, Inc.",
+  "tagline": "Commercial Roofing for Northeastern Pennsylvania Since 1993",
+  "phone": "+15707357751",
+  "phone_display": "(570) 735-7751",
+  "email": "pinnroof@aol.com",
+  "address": {
+    "street": "100 Hay Street",
+    "city": "Nanticoke",
+    "state": "PA",
+    "postal": "18634",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2005496,
+    "lng": -76.0115444
+  },
+  "hours": {
+    "monday": "6:00am - 5:00pm",
+    "tuesday": "6:00am - 5:00pm",
+    "wednesday": "6:00am - 5:00pm",
+    "thursday": "6:00am - 5:00pm",
+    "friday": "6:00am - 5:00pm"
+  },
+  "site_url": "https://pinnacle-roofing-sheet-metal.vercel.app",
+  "rating": 5,
+  "review_count": 3,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 33,
+  "social": {
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pinnacle%20Roofing%20%26%20Sheet%20Metal%2C%20Inc.&query_place_id=ChIJSYsJpegNxYkRLbkogpFFRu8"
+  },
+  "logo_url": "/img/logo.png",
+  "default_hero_photo": "/img/u-hero-flat-roof.jpg",
+  "about_photo": "/img/u-downtown-brick.jpg",
+  "team_members": [
+    {
+      "name": "Paul J. Eyerman, Jr.",
+      "role": "President",
+      "photo": "/img/team-paul-eyerman.jpg",
+      "bio": "President of the company, with 35 years in the roofing industry. Paul is the person most Pinnacle customers deal with directly on a project."
+    },
+    {
+      "name": "Jerome F. Devlin",
+      "role": "Vice President of Operations",
+      "photo": "/img/team-jerome-devlin.jpg",
+      "bio": "Vice President of Operations, with 30 years in the roofing industry."
+    },
+    {
+      "name": "John Racht",
+      "role": "Superintendent of Operations — Dickson City",
+      "photo": "/img/team-john-racht.jpg",
+      "bio": "Growth in commercial construction around Scranton is what made the Dickson City satellite office necessary. With over 35 years in the roofing industry, John runs operations out of that facility."
+    },
+    {
+      "name": "Mariann Eyerman",
+      "role": "Company Secretary & Office Manager",
+      "photo": "/img/team-mariann-eyerman.jpg",
+      "bio": "Mariann handles accounting, bookkeeping and the financial side of every Pinnacle project."
+    }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Excalibur Award every year since 1994",
+      "description": "The Excalibur is given to the top roofing contractors in the United States — Versico's most prominent authorized contractors. Pinnacle has earned one every single year since 1994."
+    },
+    {
+      "title": "Commercial only — not a shingle crew",
+      "description": "Flat and low-slope membrane, architectural metal and sheet metal is the whole business, not a sideline picked up between residential jobs."
+    },
+    {
+      "title": "In NEPA since 1993",
+      "description": "Thirty-three years in the same market, from two staffed locations. When a warranty gets called in year twelve, we are still here to answer it."
+    },
+    {
+      "title": "The buildings you already know",
+      "description": "Geisinger, Sanofi Pasteur, Tobyhanna Army Depot, Kalahari Resort, Wilkes University, Luzerne County Community College and the Wilkes-Barre/Scranton airport are all Pinnacle roofs."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Commercial re-roof, Nanticoke",
+      "photo": "/img/hero-commercial-roof.jpg",
+      "alt": "Completed low-slope commercial roof on a Nanticoke-area building"
+    },
+    {
+      "title": "Membrane field and rooftop penetrations",
+      "photo": "/img/band-crew.jpg",
+      "alt": "Single-ply membrane roof field with mechanical curbs and penetrations"
+    },
+    {
+      "title": "Dickson City project",
+      "photo": "/img/dickson-city.jpg",
+      "alt": "Commercial roofing project completed out of the Dickson City location"
+    },
+    {
+      "title": "Roofing systems and products",
+      "photo": "/img/products.jpg",
+      "alt": "Commercial roofing system components installed by Pinnacle Roofing & Sheet Metal"
+    },
+    {
+      "title": "Award-winning work",
+      "photo": "/img/awards-banner.jpg",
+      "alt": "Commercial roof completed by Pinnacle Roofing & Sheet Metal, an Excalibur Award winner"
+    },
+    {
+      "title": "Three decades across NEPA",
+      "photo": "/img/experience.jpg",
+      "alt": "Commercial roof installed by Pinnacle Roofing & Sheet Metal in Northeastern Pennsylvania"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Commercial roofing",
+    "heading_rest": "for NEPA buildings",
+    "subtitle": "Flat and low-slope membrane, architectural metal, sheet metal, emergency leak service and preventative maintenance — across Luzerne, Lackawanna and Monroe counties."
+  }
+}

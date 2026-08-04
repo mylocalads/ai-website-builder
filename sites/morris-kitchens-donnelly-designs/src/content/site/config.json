@@ -1,0 +1,167 @@
+{
+  "kind": "config",
+  "business_name": "Morris Kitchens & Donnelly Designs",
+  "legal_name": "Morris Kitchens & Donnelly Designs, LLC",
+  "tagline": "Kitchen & Bathroom Remodeling in Wilkes-Barre, PA",
+  "phone": "+15708256956",
+  "phone_display": "(570) 825-6956",
+  "email": "morriskitchensllc@gmail.com",
+  "address": {
+    "street": "107 West End Rd",
+    "city": "Hanover Township",
+    "state": "PA",
+    "postal": "18706",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2344363,
+    "lng": -75.9243557
+  },
+  "hours": {
+    "monday": "9:00 AM – 5:00 PM",
+    "tuesday": "9:00 AM – 5:00 PM",
+    "wednesday": "9:00 AM – 5:00 PM",
+    "thursday": "9:00 AM – 5:00 PM",
+    "friday": "9:00 AM – 5:00 PM",
+    "saturday": "By appointment"
+  },
+  "site_url": "https://morris-kitchens-donnelly-designs.vercel.app",
+  "rating": 4.7,
+  "review_count": 31,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 31,
+  "social": {
+    "facebook": "https://www.facebook.com/Morriskitchensdd",
+    "instagram": "https://www.instagram.com/morriskitchens/"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/hero-kitchen.jpg",
+  "about_photo": "/img/showroom.jpg",
+  "team_members": [
+    {
+      "name": "Patrick Healey",
+      "role": "Owner",
+      "photo": "/img/design-services.jpg",
+      "bio": "Pat graduated from Johnson College and spent almost 30 years as a home builder in the area before purchasing Morris Kitchens in January 2016. That construction background is why our installations are handled in-house."
+    },
+    {
+      "name": "Celeste Donnelly",
+      "role": "Designer",
+      "photo": "/img/custom-cabinets-2.jpg",
+      "bio": "Celeste joined Morris Kitchens in October 2016. She holds a bachelor's of fine arts in interior design from Marywood University, and worked at a kitchen design center and then a local tile store for twelve years before that. She measures and designs every project herself."
+    }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "In business since 1995",
+      "description": "Thirty-one years in the Wyoming Valley, and in the same West End Plaza showroom since 2008. You can drive to us."
+    },
+    {
+      "title": "Your designer measures your room",
+      "description": "Celeste walks your space and takes the measurements herself. No subcontracted measuring, no design drawn off someone else's numbers."
+    },
+    {
+      "title": "In-house installers",
+      "description": "The same company that designs your kitchen orders it and installs it. One point of contact from the first drawing to the last piece of trim."
+    },
+    {
+      "title": "Timelines we put in writing",
+      "description": "Six to eight weeks for a full kitchen, one to two weeks for countertops, three weeks on HomeCrest cabinets. We publish the numbers before you sign anything."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Full kitchen remodel",
+      "photo": "/img/kitchen-remodeling.jpg",
+      "alt": "Completed kitchen remodel with custom cabinetry and stone countertops"
+    },
+    {
+      "title": "Kitchen eat-bar",
+      "photo": "/img/kitchen-remodeling-2.jpg",
+      "alt": "Kitchen island with seating and an overhang eat-bar countertop"
+    },
+    {
+      "title": "Bathroom remodel",
+      "photo": "/img/bathroom-remodeling.jpg",
+      "alt": "Remodeled bathroom with tiled shower and a new vanity"
+    },
+    {
+      "title": "Vanity and tile work",
+      "photo": "/img/bathroom-remodeling-2.jpg",
+      "alt": "Bathroom vanity with tile surround and updated fixtures"
+    },
+    {
+      "title": "Custom cabinetry",
+      "photo": "/img/custom-cabinets.jpg",
+      "alt": "Custom solid wood kitchen cabinetry installed floor to ceiling"
+    },
+    {
+      "title": "Cabinet installation",
+      "photo": "/img/custom-cabinets-2.jpg",
+      "alt": "Newly installed kitchen cabinets with hardware fitted"
+    },
+    {
+      "title": "Stone countertops",
+      "photo": "/img/countertops.jpg",
+      "alt": "Stone countertop installation with a full-height backsplash"
+    },
+    {
+      "title": "Quartz counter and island",
+      "photo": "/img/countertops-2.jpg",
+      "alt": "Quartz countertop on a kitchen island"
+    },
+    {
+      "title": "Beam and cabinetry detail",
+      "photo": "/img/design-services.jpg",
+      "alt": "Exposed beam ceiling detail over custom cabinetry"
+    },
+    {
+      "title": "Kitchen project",
+      "photo": "/img/project-01.jpg",
+      "alt": "Completed kitchen with wood cabinetry and stone counters"
+    },
+    {
+      "title": "Kitchen project",
+      "photo": "/img/project-04.jpg",
+      "alt": "Kitchen remodel with painted cabinetry and a tile backsplash"
+    },
+    {
+      "title": "Bath and cabinetry project",
+      "photo": "/img/project-09.jpg",
+      "alt": "Bathroom cabinetry and countertop installation"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Kitchens, baths,",
+    "heading_rest": "cabinets and countertops",
+    "subtitle": "Design, product, and installation from one Hanover Township showroom serving Wilkes-Barre and the Wyoming Valley."
+  }
+}

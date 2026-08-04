@@ -1,0 +1,46 @@
+{
+  "slug": "springlake-pools-masonry",
+  "template": "owl",
+  "vertical": "default",
+  "source": "Brand tokens auto-detected from springlakepools.com via Firecrawl's branding extractor (fonts + colour values only). No reference URLs were scraped — reference-libraries/default.json carries no entries, so the owl template supplies all structure. Client site contributed brand tokens only, never layout.",
+  "typography": {
+    "display": "Cormorant",
+    "body": "Karla",
+    "detected_from": "client site CSS — heading stack ['Cormorant','sans-serif'], body stack ['Karla','sans-serif']"
+  },
+  "palette": {
+    "bg": "#f5f8f9",
+    "surface": "#ffffff",
+    "text": "#0f2a43",
+    "muted": "#5b6b7a",
+    "primary": "#0f2a43",
+    "on_primary": "#ffffff",
+    "accent": "#2cb1bc",
+    "on_accent": "#06232e",
+    "accent_ink": "#10707a",
+    "focus": "#0057ff",
+    "candidates": ["#0F2A43", "#133453", "#2CB1BC", "#FFFFFF", "#102A43"]
+  },
+  "contrast_checks": {
+    "text_on_bg": "13.4:1 — AAA",
+    "muted_on_bg": "5.1:1 — AA",
+    "on_accent_on_accent": "6.0:1 — AA (button labels are DARK, not white; #2cb1bc measures only 2.6:1 against white)",
+    "accent_ink_on_bg": "5.3:1 — AA (accent used as foreground text on light backgrounds)",
+    "accent_on_primary": "5.5:1 — AA (accent stays as-is on dark panels)"
+  },
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "motion": "Template defaults only — no bespoke motion authored.",
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "rows of outline icons",
+    "section headers reading Stunning / Beautiful / Powerful / Seamless / Effortless",
+    "randomized section order",
+    "white button labels on the teal accent (fails AA at 2.6:1)"
+  ],
+  "generated_at": "2026-08-03"
+}

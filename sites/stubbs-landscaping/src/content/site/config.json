@@ -1,0 +1,162 @@
+{
+  "kind": "config",
+  "business_name": "Stubbs Landscaping",
+  "legal_name": "Stubbs Landscaping, LLC",
+  "tagline": "Full Service Landscaping & Hardscape Contractor",
+  "phone": "+15707606813",
+  "phone_display": "(570) 760-6813",
+  "email": "StubbsLandscaping13@gmail.com",
+  "address": {
+    "street": "24 Yeager Rd",
+    "city": "Mountain Top",
+    "state": "PA",
+    "postal": "18707",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 41.142396,
+    "lng": -75.910905
+  },
+  "hours": {
+    "monday": "8:00 AM – 5:00 PM",
+    "tuesday": "8:00 AM – 5:00 PM",
+    "wednesday": "8:00 AM – 5:00 PM",
+    "thursday": "8:00 AM – 5:00 PM",
+    "friday": "8:00 AM – 5:00 PM",
+    "saturday": "8:00 AM – 1:00 PM"
+  },
+  "site_url": "https://stubbs-landscaping.vercel.app",
+  "rating": 5,
+  "review_count": 26,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 16,
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100063716613263",
+    "instagram": "https://www.instagram.com/stubbslandscaping/"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/hero-patio.jpg",
+  "about_photo": "/img/crew-landscape-lighting.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "You see it in 3D before we dig",
+      "description": "Every design comes with full 3D renderings and walkthrough videos. You get a feel for the look and the flow of the space before a single machine shows up, so you are not making a five-figure decision off a sketch."
+    },
+    {
+      "title": "We answer, and we show up",
+      "description": "The most common complaint about this trade in Northeast PA is the contractor who takes the measurements and is never heard from again. Our Google reviews call out communication and promptness by name — that is not an accident."
+    },
+    {
+      "title": "Built on a base that holds",
+      "description": "Patios do not fail at the surface, they fail underneath. We do the excavation, sub-base, compaction, and drainage properly, which is why our paver work is still level years later."
+    },
+    {
+      "title": "Nine full-time employees, not subs",
+      "description": "The crew on your property works for Justin. Branded trucks and attire, a clean-site checklist every day, a smoke-free policy on your property, and we handle any concerns your neighbours raise while we are there."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Timber Pavilion & Paver Patio",
+      "location": "Mountain Top, PA",
+      "photo": "/img/gallery-pavilion.jpg",
+      "alt": "Covered timber pavilion with a ceiling fan over a paver patio",
+      "description": "A full-height pavilion tied into the patio grade so the roofline and the paver field read as one structure."
+    },
+    {
+      "title": "Outdoor Living Room",
+      "location": "Luzerne County, PA",
+      "photo": "/img/gallery-outdoor-room.jpg",
+      "alt": "Outdoor living room with a fire feature under a timber pavilion",
+      "description": "Seating, fire feature, and lighting laid out as a room rather than furniture dropped onto a slab."
+    },
+    {
+      "title": "Paver Patio & Seating Wall",
+      "location": "Back Mountain, PA",
+      "photo": "/img/gallery-seating-wall.jpg",
+      "alt": "Paver patio with a seating wall and a planted border",
+      "description": "A seating wall doing double duty as a grade transition and as permanent seating for a crowd."
+    },
+    {
+      "title": "Pool Surround",
+      "location": "Mountain Top, PA",
+      "photo": "/img/gallery-pool-surround.jpg",
+      "alt": "Backyard pool with a full paver surround and planted border",
+      "description": "Full paver surround with the coping, drainage, and planting beds designed together."
+    },
+    {
+      "title": "Multi-Level Patio",
+      "location": "Luzerne County, PA",
+      "photo": "/img/gallery-multilevel-patio.jpg",
+      "alt": "Multi-level paver patio with steps between terraces",
+      "description": "A sloped yard terraced into two usable levels instead of one awkward one."
+    },
+    {
+      "title": "Fire Pit & Seating Area",
+      "location": "Wright Township, PA",
+      "photo": "/img/gallery-fire-pit.jpg",
+      "alt": "Circular stone fire pit set into a paver seating area",
+      "description": "Built-in fire pit with the surrounding paver field sized for chairs on every side."
+    },
+    {
+      "title": "Landscape Installation",
+      "location": "Luzerne County, PA",
+      "photo": "/img/gallery-planting.jpg",
+      "alt": "New landscape installation with mulched beds and fresh plantings",
+      "description": "Bed preparation, planting, and mulch on a property that had nothing but lawn to the foundation."
+    },
+    {
+      "title": "Natural Stone Retaining Wall",
+      "location": "Mountain Top, PA",
+      "photo": "/img/gallery-stone-wall.jpg",
+      "alt": "Natural stone retaining wall with tiered planting above it",
+      "description": "A wall holding real grade, with the drainage behind it doing the work you never see."
+    },
+    {
+      "title": "Front Entry Walkway",
+      "location": "Luzerne County, PA",
+      "photo": "/img/gallery-entry-walkway.jpg",
+      "alt": "Front entry walkway with stone steps and landscape lighting",
+      "description": "Entry steps, walkway, and low-voltage lighting rebuilt as one approach to the front door."
+    },
+    {
+      "title": "Patio & Retaining Wall",
+      "location": "Mountain Top, PA",
+      "photo": "/img/hero-patio.jpg",
+      "alt": "Paver patio and retaining wall project backing onto woods",
+      "description": "Patio, wall, and stair run cut into a wooded lot without losing the tree line."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "One crew for",
+    "heading_rest": "the whole backyard",
+    "subtitle": "Hardscaping, landscaping, outdoor living, custom decks, plunge pools, and lawn health across Mountain Top and Luzerne County — designed together and built by the same team."
+  }
+}

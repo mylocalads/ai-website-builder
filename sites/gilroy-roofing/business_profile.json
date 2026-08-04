@@ -1,0 +1,28 @@
+{
+  "name": "Gilroy Roofing",
+  "email": "gilroyroofing@gmail.com",
+  "phone": "(570) 829-0239",
+  "website": "https://gilroyroofers.com/",
+  "address": "575 Shawnee St, Wilkes-Barre, PA 18706",
+  "geo": {
+    "lat": 41.2323094,
+    "lng": -75.9355476
+  },
+  "rating": 4.7,
+  "reviewCount": 91,
+  "category": "Roofing contractor",
+  "hours_gbp": {
+    "Monday": "Open 24 hours",
+    "Tuesday": "Open 24 hours",
+    "Wednesday": "Open 24 hours",
+    "Thursday": "Open 24 hours",
+    "Friday": "Open 24 hours",
+    "Saturday": "Open 24 hours",
+    "Sunday": "Open 24 hours"
+  },
+  "hours_note": "GBP reports 'Open 24 hours' all 7 days. Operator directed that real hours be sourced from gilroyroofers.com instead; do not publish 24/7.",
+  "reviews": [],
+  "reviews_note": "Apify returned reviewsCount/rating but no review text. Testimonials must come from the site scrape or a GHL reviews widget.",
+  "source": "Apify lukaskrivka~google-maps-with-contact-details",
+  "retrieved": "2026-07-27"
+}

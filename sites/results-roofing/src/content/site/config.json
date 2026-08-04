@@ -1,0 +1,142 @@
+{
+  "kind": "config",
+  "business_name": "Results Roofing",
+  "tagline": "GAF Master Elite Roofing & Insurance Claim Specialists",
+  "phone": "+12143015533",
+  "phone_display": "(214) 301-5533",
+  "email": "info@resultsroofing.com",
+  "address": {
+    "street": "2828 E Trinity Mills Rd Ste 212",
+    "city": "Carrollton",
+    "state": "TX",
+    "postal": "75006",
+    "country": "US"
+  },
+  "marketing_city": "Dallas",
+  "marketing_state": "TX",
+  "geo": {
+    "lat": 32.986367,
+    "lng": -96.8521447
+  },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "site_url": "https://results-roofing-seven.vercel.app",
+  "rating": 4.9,
+  "review_count": 1802,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/ResultsRoofing/",
+    "instagram": "https://www.instagram.com/resultsroofing/",
+    "youtube": "https://www.youtube.com/channel/UCjiRfWCOJyrR-DXgsZdoa6g"
+  },
+  "logo_url": "/img/logo-results-roofing.png",
+  "default_hero_photo": "/img/roof-replacement.jpg",
+  "about_photo": "/img/inspection-ladder.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "GAF Master Elite® President's Club",
+      "description": "Fewer than 2% of roofing contractors in the country hold this certification. It is what unlocks GAF's strongest material and workmanship warranties — coverage backed by the manufacturer, not only by us."
+    },
+    {
+      "title": "We stand with you at the adjuster meeting",
+      "description": "Our inspector is on the roof when your insurance adjuster is. We document what we find, put it in writing, and supplement anything the estimate misses. 181 of our Google reviews mention insurance claim help by name."
+    },
+    {
+      "title": "Nine offices, none of them a truck from out of state",
+      "description": "Carrollton, Houston, San Antonio, Austin, College Station, Atlanta, Wilmington, Raleigh and North Myrtle Beach. After the storm passes, we are still at the same address."
+    },
+    {
+      "title": "4.9 stars across 1,802 reviews",
+      "description": "1,769 of them are five stars. Read enough and the same crew names keep coming up — Cody, Linc, Ryan, Brinson. That is what a team that stays looks like."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "photo": "/img/tarp-on-roof.jpg",
+      "alt": "Aerial view of a Dallas-area home with an emergency tarp secured over storm-damaged roof sections",
+      "title": "Emergency tarp after a hailstorm",
+      "location": "Dallas, TX"
+    },
+    {
+      "photo": "/img/roof-replacement.jpg",
+      "alt": "Two Results Roofing crew members tearing off old shingles down to the decking",
+      "title": "Full tear-off replacement",
+      "location": "Carrollton, TX"
+    },
+    {
+      "photo": "/img/new-installation.jpg",
+      "alt": "Results Roofing crew installing a new shingle roof at dusk",
+      "title": "New roof installation",
+      "location": "Fort Worth, TX"
+    },
+    {
+      "photo": "/img/storm-damage.jpg",
+      "alt": "Roof face with widespread shingle loss after a severe wind and hail storm",
+      "title": "Wind and hail damage assessment",
+      "location": "Houston, TX"
+    },
+    {
+      "photo": "/img/damaged-shingles.jpg",
+      "alt": "Close view of curled and lifted asphalt shingles on a residential roof",
+      "title": "Curled shingles flagged on inspection",
+      "location": "Austin, TX"
+    },
+    {
+      "photo": "/img/technician.jpg",
+      "alt": "Results Roofing technician working on an asphalt shingle roof",
+      "title": "Repair in progress",
+      "location": "San Antonio, TX"
+    },
+    {
+      "photo": "/img/maintenance-crew.jpg",
+      "alt": "Results Roofing technician climbing a ladder to inspect a brick home's roofline",
+      "title": "Annual maintenance inspection",
+      "location": "Plano, TX"
+    },
+    {
+      "photo": "/img/inspection-ladder.jpg",
+      "alt": "Roofing inspector setting a ladder against a home for a free roof inspection",
+      "title": "Free no-obligation inspection",
+      "location": "Flower Mound, TX"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Roofing built for",
+    "heading_rest": "Texas storm country",
+    "subtitle": "Storm and hail damage, replacement, repair, new installation and maintenance — across DFW, Houston, Austin, San Antonio and Atlanta."
+  }
+}

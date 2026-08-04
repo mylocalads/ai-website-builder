@@ -1,0 +1,200 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Wilkes-Barre, PA — Accepting New Patients",
+    "headline": "Seen This Week, Not Next Year",
+    "subheadline": "Comprehensive Pain Specialists treats back, neck, joint, and nerve pain with roughly forty interventional procedures — led by a board-certified pain physician, in network with most insurance plans, with same-day appointments available.",
+    "cta_text": "Request an Appointment",
+    "cta_href": "/book",
+    "photo": "/img/hero.jpg",
+    "video_link_text": "Meet our providers",
+    "video_link_href": "/about",
+    "trust_badges": [
+      { "label": "Board-Certified", "sublabel": "Pain Medicine & PM&R" },
+      { "label": "Same-Day Appointments", "sublabel": "New patients welcome" }
+    ],
+    "quote_card": {
+      "quote": "The staff is wonderful, very pleasant. It's easy to set up an appointment or change one. There's less than a 15-minute wait.",
+      "author": "Nikki Newman",
+      "cta_text": "Request an Appointment",
+      "cta_href": "/book"
+    }
+  },
+  "promise_bar": [
+    { "text": "Same-day appointments available", "icon": "calendar" },
+    { "text": "Board-certified pain physician", "icon": "award" },
+    { "text": "In network with most insurance plans", "icon": "shield" }
+  ],
+  "promise_band": {
+    "eyebrow": "How We Start",
+    "headline": "First We Find The Pain, Then We Treat It",
+    "body": "Most patients arrive here having already been told the imaging looks fine, or that the pain is out of proportion to what a scan shows. That is not a diagnosis — it is a dead end. A first visit at Comprehensive Pain Specialists is spent identifying the actual pain generator: a disc, a facet joint, the sacroiliac joint, a nerve root, or something outside the spine entirely. Everything after that follows from what we find, which is why two patients with the same complaint often leave with two different plans.",
+    "cta_text": "Request an Appointment",
+    "cta_href": "/book",
+    "icon": "clipboard"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Interventional Pain Management",
+    "intro": "This is a specialty practice, not a general clinic that also handles pain. The work is diagnostic first and procedural second, with medication as one tool among many rather than the whole plan.",
+    "blocks": [
+      {
+        "title": "Roughly forty procedures, not one protocol",
+        "body": "Spinal cord stimulation, radiofrequency ablation, epidural and facet joint injections, medial branch blocks, sacroiliac injections and fusions, peripheral nerve stimulation, Vertiflex, Intracept, MILD, Disc FX, prolotherapy, trigger point injections, Botox for chronic migraine. The breadth exists so the treatment can match the diagnosis instead of the other way around.",
+        "icon": "shield"
+      },
+      {
+        "title": "Alternatives to surgery, and help after it",
+        "body": "Many patients come to us to avoid an operation; others come because they already had one and the pain came back. Failed back surgery syndrome and post-surgical pain are among the conditions we treat most often, and they are treated as their own diagnoses rather than as a failure to be managed.",
+        "icon": "umbrella"
+      }
+    ],
+    "steps_title": "What your first visit looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Before you arrive",
+        "body": "Fill out the new patient forms ahead of time and gather any imaging, test results, and your medication list. It keeps the visit focused on your pain rather than on paperwork."
+      },
+      {
+        "title": "The consultation",
+        "body": "A full history and exam to locate the source of the pain. You will be asked what the pain actually stops you from doing — driving, sleeping, lifting a grandchild — because that is what treatment is measured against."
+      },
+      {
+        "title": "Your plan",
+        "body": "A written plan with the specific diagnosis, the procedures or treatments recommended, and what to expect from each. If a procedure is scheduled, you are told what it involves before you agree to it."
+      }
+    ],
+    "guarantee": {
+      "title": "You are treated as a patient, not a risk to be managed",
+      "body": "Being questioned rather than believed is the most common experience chronic pain patients report, and it is the reason many of them stop seeking care at all. That is not how a visit here goes. If you are in pain, you are here to be evaluated and treated.",
+      "cta_text": "Talk to our office",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Is Three Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Call or request an appointment",
+        "icon": "calendar",
+        "body": "New patients call (570) 232-3920 or send a request online. Same-day appointments are available."
+      },
+      {
+        "label": "Step Two",
+        "title": "Check your coverage",
+        "icon": "document",
+        "body": "We are in network with most plans, including Aetna, Cigna, Humana, UnitedHealthcare, Medicare, and TRICARE. Self-pay options are available if you are uninsured."
+      },
+      {
+        "label": "Step Three",
+        "title": "Come in for your evaluation",
+        "icon": "clipboard",
+        "body": "Bring your forms, imaging, and medication list. You leave with a diagnosis and a written plan."
+      }
+    ],
+    "cta_text": "Request an Appointment",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Comprehensive Pain Specialists",
+    "headline": "A Pain Practice In The Wyoming Valley",
+    "body": "Comprehensive Pain Specialists is an independent pain management practice at Dolphin Plaza on PA-315 in Wilkes-Barre, serving patients from Wilkes-Barre, Mountain Top, Pittston, Dallas, Plymouth, Glen Lyon, and the surrounding Wyoming Valley. Our providers focus on diagnosing, managing, and treating chronic pain conditions — and on the part of that work that gets skipped elsewhere, which is finding out what is actually generating the pain. Every member of the staff, from the front desk through the nurse practitioners and physicians, works with people whose pain has already been dismissed somewhere else.",
+    "checklist": [
+      "Board-certified in Pain Medicine and Physical Medicine & Rehabilitation",
+      "Same-day appointments and new patients welcome",
+      "Roughly forty interventional procedures offered in-practice",
+      "In network with most major insurance plans",
+      "Self-pay options for uninsured patients"
+    ],
+    "photo": "/img/treat-symptoms.jpg",
+    "photo_alt": "A provider at Comprehensive Pain Specialists talking with a patient",
+    "photo_cutout": false,
+    "cta_text": "Meet our providers",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Pain Management In Northeast PA",
+    "headline": "Chronic Pain Care In Wilkes-Barre & The Wyoming Valley",
+    "paragraphs": [
+      "Getting in front of a pain specialist in Northeastern Pennsylvania is its own ordeal. Patients routinely describe waiting six months or longer for a referral appointment, then arriving to a visit that runs fifteen minutes and ends with a prescription and a follow-up six weeks out. The distance between a referral and actual treatment is where most people give up.",
+      "Comprehensive Pain Specialists is an independent practice built to shorten that distance. Same-day appointments are available, new patients are being accepted, and the practice offers roughly forty interventional procedures in-house — so a patient who needs a radiofrequency ablation, a spinal cord stimulator trial, or a series of epidural injections is not sent somewhere else to get it.",
+      "We treat back pain, neck pain, joint pain, nerve pain, sciatica, arthritis, fibromyalgia, spinal stenosis, herniated and bulging discs, whiplash, work and sports injuries, post-surgical pain, failed back surgery syndrome, and complex regional pain syndrome, for patients across Wilkes-Barre, Mountain Top, Pittston, Dallas, Plymouth, and Glen Lyon."
+    ],
+    "checklist": [
+      "Same-day appointments and active new patient scheduling",
+      "Board-certified pain physician on staff",
+      "Interventional procedures performed in-practice",
+      "In network with most major insurance plans",
+      "Self-pay options for uninsured patients"
+    ],
+    "image": "/img/partner-in-relief.jpg",
+    "image_alt": "A provider examining a patient's neck at Comprehensive Pain Specialists",
+    "image_position": "left",
+    "cta_text": "Request an Appointment",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Katie Cuddey",
+      "location": "Wilkes-Barre, PA",
+      "text": "Absolutely love the Dr. that took over the practice. He's very knowledgeable, likeable, and professional. I've been seeing Kerri Orr for a few years and she is the best PA there is! I highly recommend Comprehensive Pain Specialists in Wilkes Barre!",
+      "rating": 5
+    },
+    {
+      "name": "Nikki Newman",
+      "location": "Wilkes-Barre, PA",
+      "text": "The staff is wonderful very pleasant. It's easy to set up an appointment or change one. There's less than a 15-minute wait. Medication refills can be called in easily. There's always a phone call after a procedure is done. I've never had a problem. Dr and staff are the best in the county.",
+      "rating": 5
+    },
+    {
+      "name": "Jody Butterfield",
+      "location": "Wilkes-Barre, PA",
+      "text": "Dr is excellent I highly recommend him, he has done an excellent job with my back pain.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are you accepting new patients?",
+      "a": "Yes. We are actively accepting new patients and building personalized pain care plans. New patients should call (570) 232-3920; existing patients can reach the office at (570) 270-5700."
+    },
+    {
+      "q": "How long is the wait for an appointment?",
+      "a": "Same-day appointments are available. Contact us or send an appointment request and we will do our best to get you in quickly rather than putting you on a months-long list."
+    },
+    {
+      "q": "Do you accept insurance?",
+      "a": "We are in network with most major insurance plans, including Aetna, Cigna, Humana, UnitedHealthcare, Medicare, and TRICARE. Coverage varies by plan, so please confirm your specific eligibility with your insurer, or call the office and we will help you check."
+    },
+    {
+      "q": "What if I do not have insurance?",
+      "a": "We offer self-pay options for uninsured patients. Call the office directly for pricing and payment arrangements before your visit so there are no surprises."
+    },
+    {
+      "q": "What should I bring to my first appointment?",
+      "a": "Bring your completed new patient forms, your medical history, a current medication list, and any relevant imaging or test results. Filling the forms out beforehand keeps the visit focused on your pain instead of on paperwork."
+    },
+    {
+      "q": "Do you have a board-certified doctor?",
+      "a": "Yes. Dr. Youssef Josephson, D.O. is board-certified in Pain Medicine and Physical Medicine & Rehabilitation."
+    },
+    {
+      "q": "What conditions do you treat?",
+      "a": "Back pain, neck pain, joint pain, nerve pain, sciatica, arthritis and osteoarthritis, fibromyalgia, spinal stenosis, herniated and bulging discs, whiplash and car accident injuries, work and sports injuries, post-surgical pain, failed back surgery syndrome, and complex regional pain syndrome, among others."
+    },
+    {
+      "q": "What treatments do you offer besides medication?",
+      "a": "Spinal cord stimulation, radiofrequency ablation, epidural steroid injections, facet joint injections, medial branch blocks, sacroiliac joint injections, peripheral nerve stimulation, Vertiflex, Intracept, the MILD procedure, prolotherapy, trigger point injections, and Botox therapy for chronic migraine, among roughly forty procedures in total."
+    },
+    {
+      "q": "Where are you located and what are your hours?",
+      "a": "We are at 1177 PA-315, Dolphin Plaza, Wilkes-Barre, PA 18702, open Monday through Friday from 8:00 AM to 4:00 PM and closed Saturday and Sunday."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "Patients come to us from Wilkes-Barre, Mountain Top, Pittston, Dallas, Plymouth, Glen Lyon, and throughout the Wyoming Valley."
+    }
+  ]
+}

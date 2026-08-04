@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const updated = '2026-07-22';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Terms of Service', href: '/terms' }];
+---
+<BaseLayout
+  title={`Terms of Service — ${site.business_name}`}
+  description={`Terms of Service for ${site.business_name}.`}
+  breadcrumbs={crumbs}
+  pagePath="/terms"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <article class="legal container">
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: {updated}</p>
+
+    <h2>1. Acceptance</h2>
+    <p>By using this website or engaging {site.business_name} for services, you agree to these Terms.</p>
+
+    <h2>2. Services</h2>
+    <p>{site.business_name} provides the services described on this website. Scope, pricing, timing, and warranty terms are set out in the written agreement or estimate for each project. Website content is informational and does not create a contract until a written estimate or agreement is signed.</p>
+
+    <h2>3. Payment</h2>
+    <p>Payment terms are specified in each project's estimate or invoice. Late payments may accrue interest at the maximum rate permitted by law.</p>
+
+    <h2>4. Warranty and limitation of liability</h2>
+    <p>Written project warranties are set out in the project agreement. To the maximum extent permitted by law, {site.business_name} disclaims all other warranties, express or implied. Our aggregate liability is limited to the amount paid for the specific service giving rise to the claim.</p>
+
+    <h2>5. SMS communications</h2>
+    <p>By submitting your phone number and opting in to SMS, you agree that {site.business_name} may send you transactional and marketing text messages at that number. Message and data rates may apply. Frequency varies. Reply STOP to unsubscribe at any time. Reply HELP for help. Consent is not a condition of purchase. Full mobile carriers are not liable for delayed or undelivered messages.</p>
+
+    <h2>6. Website use</h2>
+    <p>You agree not to misuse the website: no unauthorized access, no attempts to interfere with operation, no scraping without permission, no reverse-engineering.</p>
+
+    <h2>7. Third-party links</h2>
+    <p>The website may contain links to third-party sites. We are not responsible for the content or practices of those sites.</p>
+
+    <h2>8. Intellectual property</h2>
+    <p>All content on this website (text, images, logos, marks) is owned by {site.business_name} or its licensors and is protected by applicable intellectual-property laws. You may not reproduce or distribute without written permission.</p>
+
+    <h2>9. Governing law</h2>
+    <p>These Terms are governed by the laws of the state of {site.address.state}, without regard to conflicts-of-laws principles. Any dispute is subject to the exclusive jurisdiction of the state and federal courts located in {site.address.state}.</p>
+
+    <h2>10. Changes</h2>
+    <p>We may update these Terms from time to time. The "Last updated" date reflects the most recent revision. Continued use of the website after changes constitutes acceptance.</p>
+
+    <h2>11. Contact</h2>
+    <p>Questions about these Terms? Contact {site.business_name} at {site.phone_display}{site.email ? ` or ${site.email}` : ''}.</p>
+  </article>
+</BaseLayout>
+<style>
+  .legal { padding: var(--space-4) 0 var(--space-5); max-width: 800px; }
+  .legal h1 { font-size: clamp(2rem, 4vw, 3rem); }
+  .legal h2 { margin-top: var(--space-4); font-size: 1.35rem; }
+  .legal p, .legal li { font-size: 1.05rem; line-height: 1.65; }
+  .updated { color: var(--color-muted); font-style: italic; }
+</style>

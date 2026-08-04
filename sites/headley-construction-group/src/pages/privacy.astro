@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const updated = '2026-07-22';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Privacy Policy', href: '/privacy' }];
+---
+<BaseLayout
+  title={`Privacy Policy — ${site.business_name}`}
+  description={`Privacy Policy for ${site.business_name}.`}
+  breadcrumbs={crumbs}
+  pagePath="/privacy"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <article class="legal container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: {updated}</p>
+
+    <h2>Who we are</h2>
+    <p>{site.business_name} ("we", "us", "our") operates this website at {site.site_url}.</p>
+
+    <h2>What data we collect</h2>
+    <ul>
+      <li>Contact information you submit via forms (name, email, phone, address, message)</li>
+      <li>Cookies used for essential site functionality and, with your consent, analytics</li>
+      <li>Automatically collected: IP address, browser type, pages visited (aggregated)</li>
+    </ul>
+
+    <h2>How we use it</h2>
+    <ul>
+      <li>To respond to inquiries and provide services</li>
+      <li>To improve the site and understand traffic patterns</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+    <p>We do not sell personal data. We share data only with service providers required to deliver our services (e.g. our CRM, our lead-generation partner) under confidentiality agreements.</p>
+
+    <h2>Your rights (EEA / UK / CCPA)</h2>
+    <p>You have the right to access, correct, or delete your personal data. Contact us at {site.email ?? site.phone_display} to exercise these rights.</p>
+
+    <h2>Cookies</h2>
+    <p>We use essential cookies to operate the site. Analytics and marketing cookies load only if you accept them via the cookie banner.</p>
+
+    <h2>SMS communications</h2>
+    <p>By opting into SMS from {site.business_name}, you agree to receive text messages at the phone number you provide. Message and data rates may apply. Reply STOP to unsubscribe. Frequency varies. See our <a href="/terms">Terms of Service</a> for full SMS terms.</p>
+
+    <h2>Data retention</h2>
+    <p>We retain form submissions for 24 months unless a longer period is required by law or contract.</p>
+
+    <h2>Contact</h2>
+    <p>{site.business_name}, {site.address.street ? `${site.address.street}, ` : ''}{site.address.city}, {site.address.state}{site.address.postal ? ` ${site.address.postal}` : ''}, {site.phone_display}{site.email ? `, ${site.email}` : ''}.</p>
+  </article>
+</BaseLayout>
+<style>
+  .legal { padding: var(--space-4) 0 var(--space-5); max-width: 800px; }
+  .legal h1 { font-size: clamp(2rem, 4vw, 3rem); }
+  .legal h2 { margin-top: var(--space-4); font-size: 1.5rem; }
+  .legal p, .legal li { font-size: 1.05rem; line-height: 1.65; }
+  .legal ul { padding-left: 1.5rem; }
+  .updated { color: var(--color-muted); font-style: italic; }
+</style>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://results-roofing-seven.vercel.app/sitemap-index.xml

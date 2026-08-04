@@ -1,0 +1,223 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Wilkes-Barre & The Wyoming Valley",
+    "headline": "Expert Lawn Care & Landscaping",
+    "subheadline": "Weekly mowing, mulch, clean-ups, weed control and winter plowing across Wilkes-Barre and the surrounding boroughs. Free on-site estimate, a written price before we start, and a crew that turns up on the day it said it would.",
+    "cta_text": "Get Free Estimate",
+    "cta_href": "/book",
+    "video_link_text": "See the work we've done",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "They arrived on the agreed day. Mulch was of the highest quality. Every area was picture perfect.",
+      "author": "Suzanne M. — Google Review",
+      "cta_text": "Get Free Estimate",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 37
+    },
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5,
+        "label": "5.0 Rating",
+        "sublabel": "37 Google reviews"
+      },
+      {
+        "label": "Licensed & Insured",
+        "sublabel": "Residential & commercial"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Free on-site estimates", "icon": "clipboard" },
+    { "text": "We show up on the scheduled day", "icon": "clock" },
+    { "text": "Year-round: mowing through snow removal", "icon": "calendar" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We Turn Up On The Day We Said",
+    "body": "Read our reviews and you will notice people rarely lead with the mowing. They lead with the fact that we came when we said we would. That is the part most lawn services get wrong, and it is the part we build the whole schedule around. You get a day, you get a heads-up if the weather moves it, and you get a crew that finishes the property before it leaves.",
+    "cta_text": "Get Free Estimate",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "One Crew For The Whole Property",
+    "intro": "Most customers start with mowing and end up handing us the rest — the beds, the mulch, the fall leaves, the driveway in January. It is the same crew and the same schedule either way, so nothing falls between two contractors.",
+    "blocks": [
+      {
+        "title": "Priced from a walk of your property",
+        "body": "We do not quote lawns off a satellite photo. We come out, look at the slope, the trees, the bed edges and the gate widths, and price the actual property. The number you get is the number you pay.",
+        "icon": "clipboard"
+      },
+      {
+        "title": "Commercial equipment, maintained",
+        "body": "Walk-behind and stand-on mowers kept sharp, so the grass is cut rather than torn and the stripe is even. Sharp blades are the difference between a lawn that recovers by Thursday and one that browns at the tips.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "The property gets left tidy, every visit",
+    "steps": [
+      {
+        "title": "Edges and trim lines cut",
+        "body": "Beds, walkways and fence lines, not just the open lawn."
+      },
+      {
+        "title": "Clippings and debris cleared",
+        "body": "Blown off the walks and driveway before we load up."
+      },
+      {
+        "title": "Gates shut, lines respected",
+        "body": "We stay on your property and leave it closed up behind us."
+      }
+    ],
+    "guarantee": {
+      "title": "If it's not right, we come back",
+      "body": "Tell us within a couple of days of the visit and we return and fix it. We would rather make a second trip than have you looking at something that bothers you every time you pull in the driveway.",
+      "cta_text": "Talk to Eric",
+      "cta_href": "/contact",
+      "badge_alt": "Smile Lawn Care 100% satisfaction guarantee",
+      "badge_image": "/badge-satisfaction.svg"
+    },
+    "steps_icon": "broom"
+  },
+  "process_steps": {
+    "headline": "How To Get Started",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free on-site estimate",
+        "icon": "clipboard",
+        "body": "Tell us the address and what you want handled. We walk the property and put a price in writing."
+      },
+      {
+        "label": "Step Two",
+        "title": "Pick your schedule",
+        "icon": "calendar",
+        "body": "Weekly or bi-weekly mowing, a one-off clean-up, or a full-season plan that carries into snow season."
+      },
+      {
+        "label": "Step Three",
+        "title": "We show up and finish",
+        "icon": "broom",
+        "body": "Cut, trimmed, edged and blown off. You get the same crew on the same day each visit."
+      }
+    ],
+    "cta_text": "Get Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Smile Lawn Care",
+    "headline": "A Local Crew, Not A Franchise",
+    "body": "Smile Lawn Care is Eric's company, and Eric is usually the one who comes out to do your estimate. We work Wilkes-Barre and the boroughs around it — close enough that we are not driving an hour to reach you, and close enough that our reputation here is the only marketing that has ever mattered. Thirty-seven Google reviews, every one of them five stars.",
+    "checklist": [
+      "Licensed and insured, residential and commercial",
+      "Rated 5.0 across 37 Google reviews",
+      "Free on-site estimates with the price in writing",
+      "Weekly and bi-weekly mowing schedules",
+      "Year-round: spring clean-up through winter plowing"
+    ],
+    "photo_alt": "A Smile Lawn Care crew member in a company shirt clearing overgrowth along a property line",
+    "photo_cutout": false,
+    "photo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/66041894e4236153ae9223d5.jpeg",
+    "cta_text": "Get Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "headline": "Lawn Care In Wilkes-Barre, PA",
+    "paragraphs": [
+      "Lawns in the Wyoming Valley have a short, hard season. Growth comes on fast and wet in May, stalls out in the July heat, and then the mature maples and oaks that make these neighbourhoods pleasant drop a leaf load heavy enough to smother turf if it sits through November.",
+      "That is why we schedule the whole year rather than just the mowing months: bed clean-up and mulch in spring, a mowing and trim cycle that holds height through the summer stress, leaf clearing in the fall, and plowing and salt once the driveway freezes over.",
+      "We cover Wilkes-Barre, Plains, Pittston, Edwardsville, Exeter, Swoyersville, Wyoming, Forty Fort, Kingston, Laflin, Moosic, Luzerne, Pringle, Larksville, Laurel Run, Hudson, Hilldale and Shavertown."
+    ],
+    "checklist": [
+      "Weekly and bi-weekly mowing, trimming and edging",
+      "Mulch installation and bed maintenance",
+      "Spring and fall property clean-ups",
+      "Fertilizer, weed control and pressure washing",
+      "Snow plowing, snow blowing and ice control"
+    ],
+    "image": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/TvFfENsil25oo5mNhvn8/media/660417d14d7869c36ad19b1d.jpeg",
+    "image_alt": "A Wilkes-Barre home with freshly mulched beds, trimmed shrubs and a cleanly edged front lawn",
+    "image_position": "left",
+    "eyebrow": "Why Neighbours Call Us",
+    "review": {
+      "name": "Laura Z.",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "Eric provided a thorough estimate after reviewing my property. When he and his team arrived, they were prompt in getting started and their work was excellent."
+    },
+    "cta_text": "Get Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Louis Ferriero",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Eric and his team came on time and efficiently got rid of all our leaves and disposed of them. Very professional and reasonably priced. We highly recommend Smile Lawn Care for all your lawn and landscaping needs."
+    },
+    {
+      "name": "Laura Z.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Eric provided a thorough estimate after reviewing my property. When he and his team arrived, they were prompt in getting started and their work was excellent. Not only did they carry out what was written in the estimate but they did little extras (pulling weeds on my walkway, mulching a tree that was not in the estimate). I would highly recommend them."
+    },
+    {
+      "name": "Shani Jessamy",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Great service very much pleased! Perfect work my yard looks great. I'm very particular about my yard and how I want it done. I didn't have to tell them a thing. They came got it done quickly and professionally."
+    },
+    {
+      "name": "Katie Marie Smith",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Smile Lawn Care not only did a fantastic clean up but they showed up exactly when they said they would and kept me updated every step of the way. I highly recommend!"
+    },
+    {
+      "name": "Steven Kotch",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Super friendly crew. They did great work on hedges that had to be severely lowered, and even did extra yard waste removal for a low price."
+    },
+    {
+      "name": "Angelo Parente",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Every thing was done at the highest quality. True professionals and everything looks very nice and clean. Wouldn't hesitate to work with Smile Lawn care again."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much does lawn mowing cost?",
+      "a": "It depends on the size of the lot, how much trimming and edging it needs, and how steep it is. That is why the estimate is free and done on site — we look at the actual property and give you a written price rather than a range you cannot plan around."
+    },
+    {
+      "q": "Do you mow weekly or every other week?",
+      "a": "Both. Weekly is the right call for most lawns from May through June when growth is fastest, and plenty of properties move to bi-weekly through the summer. We will tell you honestly which one your lawn needs."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "Wilkes-Barre, Plains, Pittston, Edwardsville, Exeter, Swoyersville, Wyoming, Forty Fort, Kingston, Laflin, Moosic, Luzerne, Pringle, Larksville, Laurel Run, Hudson, Hilldale and Shavertown. If you are just outside that list, call and ask — we will tell you straight whether we can service you properly."
+    },
+    {
+      "q": "Do you handle snow in the winter?",
+      "a": "Yes. Snow plowing, snow blowing and ice control, for the same properties we mow in the summer. Booking your snow service before the first storm is worth doing — routes fill up once it is already snowing."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes, both. We are happy to provide proof of insurance before any work starts, which matters if you are a landlord, a property manager or a commercial site."
+    },
+    {
+      "q": "Do I need to be home when you come?",
+      "a": "No. Most of our customers are at work when we service the property. We just need access — an unlocked gate or a code — and we shut everything behind us when we leave."
+    },
+    {
+      "q": "What if I am not happy with the visit?",
+      "a": "Tell us within a couple of days and we come back and put it right. We would rather make a second trip than leave you looking at something that bothers you."
+    }
+  ]
+}

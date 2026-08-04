@@ -1,0 +1,91 @@
+{
+  "kind": "config",
+  "business_name": "G&T Roofing & Home Improvements",
+  "legal_name": "G&T Roofing & Home Improvements LLC",
+  "tagline": "Northeast PA Roofing & Home Improvements",
+  "phone": "+15708801640",
+  "phone_display": "(570) 880-1640",
+  "email": "gtroofinghomeimprovements@gmail.com",
+  "address": {
+    "street": "77 Center St",
+    "city": "Pittston",
+    "state": "PA",
+    "postal": "18640",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.325926, "lng": -75.7842536 },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "site_url": "https://gt-roofing-five.vercel.app",
+  "rating": 5,
+  "review_count": 5,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 2,
+  "social": {
+    "facebook": "https://www.facebook.com/p/GT-Roofing-Home-Improvements-LLC-61589025003849/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=G%26T%20Roofing%20%26%20Home%20Improvements%20LLC&query_place_id=ChIJd20SX60fxYkRI8bVPVzlOx8"
+  },
+  "logo_url": "/img/logo-gt-roofing.png",
+  "default_hero_photo": "/img/roof-replacement.jpg",
+  "about_photo": "/img/siding-renovation.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    { "name": "GAF", "logo_url": "https://gt-roofing-five.vercel.app/img/partner-gaf.jpg" },
+    { "name": "Owens Corning", "logo_url": "https://gt-roofing-five.vercel.app/img/partner-owens-corning.jpg" },
+    { "name": "CertainTeed", "logo_url": "https://gt-roofing-five.vercel.app/img/partner-certainteed.jpg" },
+    { "name": "IKO", "logo_url": "https://gt-roofing-five.vercel.app/img/partner-iko.jpg" }
+  ],
+  "why_choose_us": [
+    {
+      "title": "You call the owners, not a call center",
+      "description": "Alex answers (570) 880-1640 and Luis answers (570) 453-8725. The people who quote your job are the people who show up to do it, and they are the people you reach if something needs attention afterward."
+    },
+    {
+      "title": "We are actually from here",
+      "description": "Our shop is at 77 Center St in Pittston — you can look it up, drive past it, and find us again next spring. After a big storm, a lot of the crews knocking on doors in Luzerne and Lackawanna County are from out of state. We are not."
+    },
+    {
+      "title": "No job is too small",
+      "description": "A dozen missing shingles, one leaking valley, a section of gutter pulling away from the fascia. Plenty of larger outfits will not quote work that small. We will, and we price it the same way we price a full replacement."
+    },
+    {
+      "title": "100% guaranteed best prices",
+      "description": "We stand behind our commitment to the most competitive pricing in Northeast Pennsylvania, including a price match on comparable services. Every estimate is free and yours to take to another contractor if you want to."
+    }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": { "enabled": false, "us_label": "US", "them_label": "THEM", "rows": [] },
+  "gallery": [
+    { "title": "Complete Roof Replacement", "photo": "/img/roof-replacement.jpg", "alt": "Completed roof replacement with architectural shingles", "description": "Full tear-off and replacement with architectural shingles" },
+    { "title": "Seamless Gutter Installation", "photo": "/img/seamless-gutters.jpg", "alt": "Seamless gutters installed with leaf guard protection", "description": "Custom-fitted gutters with leaf guard protection" },
+    { "title": "Siding Renovation", "photo": "/img/siding-renovation.jpg", "alt": "House exterior after complete siding replacement", "description": "Complete siding replacement with improved insulation" },
+    { "title": "Chimney Repair", "photo": "/img/chimney-repair.jpg", "alt": "Repaired and waterproofed chimney", "description": "Structural repair and waterproofing" },
+    { "title": "Skylight Installation", "photo": "/img/skylight-installation.jpg", "alt": "Skylight installed with proper flashing and sealing", "description": "Professional skylight installation with proper flashing and sealing" },
+    { "title": "Soffit & Fascia Upgrade", "photo": "/img/soffit-fascia.jpg", "alt": "New soffit and fascia with improved ventilation", "description": "New soffit and fascia with improved ventilation" },
+    { "title": "Flat Roof Installation", "photo": "/img/flat-roof-epdm.jpg", "alt": "EPDM flat roof system on a commercial building", "description": "Durable EPDM flat roof system for commercial property" },
+    { "title": "Exterior Painting", "photo": "/img/exterior-painting.jpg", "alt": "Home exterior after a full repaint", "description": "Complete exterior refresh with premium paint" },
+    { "title": "Roof Repair", "photo": "/img/roof-repair.jpg", "alt": "Roof leak repair and preventive maintenance work", "description": "Leak repair and preventive maintenance" }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Roofing and exteriors for",
+    "heading_rest": "Northeast Pennsylvania",
+    "subtitle": "Roof replacement, repair, seamless gutters, siding, chimney work, skylights and painting — from Scranton and Wilkes-Barre down through Hazleton and out to the Poconos."
+  }
+}

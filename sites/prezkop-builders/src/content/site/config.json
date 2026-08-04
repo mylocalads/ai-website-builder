@@ -1,0 +1,167 @@
+{
+  "kind": "config",
+  "business_name": "Prezkop Builders",
+  "legal_name": "Prezkop Builders, LLC",
+  "tagline": "Custom Finish Contractor in the Wyoming Valley",
+  "phone": "+15708140099",
+  "phone_display": "(570) 814-0099",
+  "email": "prezkop.builders@yahoo.com",
+  "address": {
+    "street": "1092 W Main St",
+    "city": "Nanticoke",
+    "state": "PA",
+    "postal": "18634",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2034,
+    "lng": -76.0011
+  },
+  "hours": {
+    "monday": "7:00am - 5:00pm",
+    "tuesday": "7:00am - 5:00pm",
+    "wednesday": "7:00am - 5:00pm",
+    "thursday": "7:00am - 5:00pm",
+    "friday": "7:00am - 5:00pm"
+  },
+  "site_url": "https://prezkop-builders.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 5,
+  "social": {
+    "facebook": "https://www.facebook.com/PrezkopBuilders",
+    "instagram": "https://www.instagram.com/prezkopbuildersllc"
+  },
+  "logo_url": "/img/prezkop-logo.png",
+  "default_hero_photo": "/img/deck-wood-benches.jpg",
+  "about_photo": "/img/team-group.jpg",
+  "team_photo": "/img/team-group.jpg",
+  "team_members": [
+    {
+      "name": "Joshua Prezkop",
+      "role": "Owner",
+      "photo": "/img/team-josh.jpg",
+      "bio": "Started Prezkop Builders in 2021 after coming up through residential construction and finish carpentry. Josh runs every estimate himself and is on site for the detail work — including the hardwood refinishing he still does alongside his father."
+    },
+    {
+      "name": "Jacob Campbell",
+      "role": "Site Supervisor",
+      "photo": "/img/team-jake.jpg",
+      "bio": "Runs the day-to-day on outdoor living and remodeling jobs, keeps the schedule honest, and is usually the one customers hear from when the weather moves a deck build."
+    },
+    {
+      "name": "Jimmy Hans",
+      "role": "Carpenter",
+      "photo": "/img/team-jimmy.jpg",
+      "bio": "Framing through finish. Decks, porches, trim, and the small structural repairs most contractors would rather not quote."
+    }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "You hear from us — every day",
+      "description": "The most common complaint about contractors in this valley is silence. Our customers say the opposite, in writing: prompt every day, kept up to date the entire time, quick to respond."
+    },
+    {
+      "title": "Custom finish, not production work",
+      "description": "We are a custom finish contractor. Crawl space doors, special-order window wells, stair treads, a sidewalk that has to sit right — the detail jobs other outfits pass on are the ones we built this business around."
+    },
+    {
+      "title": "PA licensed and insured",
+      "description": "PA Home Improvement Contractor license PA164836, registered with the Pennsylvania Office of the Attorney General. Prezkop Builders, LLC since April 2021."
+    },
+    {
+      "title": "A crew of three you'll recognize",
+      "description": "Josh, Jake and Jimmy. Nobody gets handed off to a crew you've never met, and the owner is on site — not just on the estimate."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Pressure-treated deck with built-in benches",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/deck-wood-benches.jpg",
+      "alt": "Large pressure-treated deck with railings and built-in perimeter benches behind a brick ranch home",
+      "description": "A multi-level pressure-treated deck with railings and bench seating wrapping the perimeter."
+    },
+    {
+      "title": "Composite deck and vinyl rail",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/deck-composite-white-rail.jpg",
+      "alt": "Composite deck with white vinyl railings and steps down to a concrete walk",
+      "description": "Low-maintenance composite decking with white vinyl rail and a stepped landing onto the existing concrete."
+    },
+    {
+      "title": "Covered pavilion ceiling",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/pavilion-ceiling.jpg",
+      "alt": "Tongue-and-groove pine pavilion ceiling with exposed rafters, recessed lighting and a ceiling fan",
+      "description": "Tongue-and-groove pine ceiling with exposed rafters, recessed cans and a fan — an outdoor room, not just a roof."
+    },
+    {
+      "title": "Kitchen remodel",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/kitchen-remodel.jpg",
+      "alt": "Remodeled kitchen with grey shaker cabinets, granite counters, farmhouse sink and hardwood floor",
+      "description": "Grey cabinetry, granite counters, a farmhouse sink, and refinished hardwood running through."
+    },
+    {
+      "title": "Refinished red oak",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/floor-refinished-hall.jpg",
+      "alt": "Freshly refinished red oak hallway floor reflecting light from the front entry",
+      "description": "Red oak sanded through three grits, water-popped, stained and top-coated."
+    },
+    {
+      "title": "Stair treads and handrail",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/stair-treads-handrail.jpg",
+      "alt": "Refinished oak stair treads with a newly installed wall-mounted handrail",
+      "description": "Treads brought back and a new handrail set — the kind of small finish job most contractors won't take."
+    },
+    {
+      "title": "Deck framing over an existing pad",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/deck-framing.jpg",
+      "alt": "Pressure-treated deck framing with joists and posts built over an existing concrete patio",
+      "description": "Framing squared and set over an existing patio slab before decking goes down."
+    },
+    {
+      "title": "Entry door replacement",
+      "location": "Wyoming Valley, PA",
+      "photo": "/img/entry-door-install.jpg",
+      "alt": "New entry door with sidelights and transom being installed in a brick home",
+      "description": "Full entry unit with sidelights and transom, set and trimmed."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Outdoor living,",
+    "heading_rest": "remodeling & floors",
+    "subtitle": "Custom finish work across the Wyoming Valley — decks and patios, whole-home remodels, and hardwood floors brought back to life."
+  }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://comprehensive-pain-specialists.vercel.app/sitemap-index.xml

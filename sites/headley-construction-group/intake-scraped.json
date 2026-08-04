@@ -1,0 +1,139 @@
+{
+  "slug": "headley-construction-group",
+  "business_name": "Headley Construction Group",
+  "legal_name": null,
+  "tagline": "South Florida Civil Construction & Concrete Contractor",
+  "phone": "+13056131490",
+  "phone_display": "(305) 613-1490",
+  "email": "Chris@headleycg.com",
+  "address": {
+    "street": "12976 SW 132nd Ave",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33186",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "geo": null,
+  "hours": null,
+  "rating": null,
+  "review_count": null,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 10,
+  "social": {},
+  "site_url": "https://headley-construction-group.vercel.app",
+  "logo_url": null,
+  "default_hero_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7cf9f8312dc70ddb3.jpeg",
+  "default_hero_video": null,
+  "about_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a72e0540011f6ef25b.jpeg",
+  "brand": {
+    "fonts": { "display": "Fraunces", "body": "Inter" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#171717",
+      "accent": "#E85D2F",
+      "muted": "#5B6673",
+      "surface": "#F4EFE8",
+      "candidates": ["#E85D2F", "#171717", "#F4EFE8", "#5B6673"]
+    }
+  },
+  "services": [
+    {
+      "title": "Commercial Concrete",
+      "short_description": "Full-scope commercial concrete for parking lots, driveways, sidewalks, curbs, drainage, and corporate site work across South Florida.",
+      "long_description": "Headley Construction Group builds commercial concrete projects for property owners, developers, and national brands throughout South and Central Florida. From parking lots and driveways to curbs, gutters, sidewalks, drainage, catch basin repairs, roads, and complete site work for apartments, condominium communities, banks, and office or restaurant buildings — we self-perform the work with our own crews and our own volumetric concrete trucks. Our project list includes Miami-Dade County bus stops and site work for Starbucks and McDonald's locations.",
+      "sub_services": [
+        "Parking Lots",
+        "Driveways",
+        "Drainage",
+        "Approaches / Aprons",
+        "Sidewalks",
+        "Curbs & Gutters",
+        "Roads",
+        "Catch Basin Repairs",
+        "Concrete Footings",
+        "Apartments & Condominium Communities",
+        "Banks, Offices & Restaurants",
+        "Corporate Entrance Ways"
+      ],
+      "hero_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f7d31b0eb453b0ee.jpeg",
+      "gallery": [
+        { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f9c6f6a920d0cb9c.jpeg", "alt": "Commercial concrete parking lot pour" },
+        { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f7d31b0eb453b0f3.jpeg", "alt": "Sidewalk and curb formwork" }
+      ],
+      "_source": "operator"
+    },
+    {
+      "title": "Industrial Concrete",
+      "short_description": "Heavy-duty industrial concrete for floors, foundations, machine pits, truck wells, and structural block work.",
+      "long_description": "For manufacturers, warehouses, distribution centers, and industrial developers across South Florida, Headley Construction Group pours the heavy-duty concrete assets that keep facilities running. That includes reinforced industrial floors, machine pits, truck wells, structural foundations, and brick or block work — engineered to spec, poured to schedule, and finished to hold up under real industrial loads.",
+      "sub_services": [
+        "Industrial Floors",
+        "Foundations",
+        "Machine Pits",
+        "Truck Wells",
+        "Bricks & Blocks"
+      ],
+      "hero_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7b86ae4203402ec23.jpeg",
+      "gallery": [
+        { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4af23b7828d3562fc27.jpeg", "alt": "Industrial slab pour in progress" },
+        { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4afcf9f8312dc70de0b.jpeg", "alt": "Heavy industrial concrete work" }
+      ],
+      "_source": "operator"
+    },
+    {
+      "title": "Volumetric Concrete",
+      "short_description": "On-demand, freshly-mixed concrete delivered from our own volumetric trucks — no minimum, no waste.",
+      "long_description": "Headley Construction Group operates two volumetric concrete trucks, which means we mix concrete on-site to your exact specification — for our own projects and for outside contractors, businesses, and homeowners throughout the region. You get fresh concrete on demand, only the yardage you actually use, and no long wait for a batch plant. Whether you need a few yards for a footing repair or a full-day pour, we roll up ready to mix.",
+      "sub_services": [
+        "On-site fresh mix",
+        "Custom PSI on demand",
+        "No-minimum small pours",
+        "Contractor supply",
+        "Homeowner supply",
+        "Emergency / same-day availability"
+      ],
+      "hero_photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4b2b86ae4203402ecb3.jpeg",
+      "gallery": [
+        { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4b4f7d31b0eb453b1a6.jpeg", "alt": "Volumetric concrete truck at job site" }
+      ],
+      "_source": "operator"
+    }
+  ],
+  "service_areas": [
+    { "name": "Miami", "state": "FL", "state_abbr": "fl", "slug": "miami-fl", "_source": "operator" },
+    { "name": "Fort Lauderdale", "state": "FL", "state_abbr": "fl", "slug": "fort-lauderdale-fl", "_source": "operator" },
+    { "name": "West Palm Beach", "state": "FL", "state_abbr": "fl", "slug": "west-palm-beach-fl", "_source": "operator" },
+    { "name": "Naples", "state": "FL", "state_abbr": "fl", "slug": "naples-fl", "_source": "operator" },
+    { "name": "Fort Myers", "state": "FL", "state_abbr": "fl", "slug": "fort-myers-fl", "_source": "operator" }
+  ],
+  "testimonials": [],
+  "team_members": [
+    { "name": "Christopher Headley", "role": "Co-Founder", "email": "Chris@headleycg.com", "phone": "(305) 613-1490" },
+    { "name": "Thomas Headley", "role": "Co-Founder", "email": "Thomas@headleycg.com", "phone": "(305) 498-2327" }
+  ],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7cf9f8312dc70ddb3.jpeg", "alt": "Commercial concrete project — South Florida" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a72e0540011f6ef25b.jpeg", "alt": "Site work in progress" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f7d31b0eb453b0ee.jpeg", "alt": "Parking lot pour" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f9c6f6a920d0cb9c.jpeg", "alt": "Formwork and rebar layout" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7f7d31b0eb453b0f3.jpeg", "alt": "Sidewalk and curb pour" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7b86ae4203402ec23.jpeg", "alt": "Industrial concrete slab" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4af23b7828d3562fc27.jpeg", "alt": "Concrete pour with finishing crew" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4afcf9f8312dc70de0b.jpeg", "alt": "Finished concrete surface" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4b2b86ae4203402ecb3.jpeg", "alt": "Volumetric concrete truck on site" },
+    { "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4b4f7d31b0eb453b1a6.jpeg", "alt": "Concrete delivery in progress" }
+  ],
+  "_notes": {
+    "source": "operator input (2026-07-23)",
+    "no_website": true,
+    "website_placeholder_url": "https://headleycg.com",
+    "no_crm_widgets": "Client has no GHL booking widget, reviews widget, or web forms. All CTAs route to /contact (call/email).",
+    "notable_clients_mentioned": ["Miami-Dade County bus stops", "Starbucks", "McDonald's"],
+    "secondary_contact": { "name": "Thomas Headley", "email": "Thomas@headleycg.com", "phone": "(305) 498-2327" }
+  }
+}

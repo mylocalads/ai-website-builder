@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nepa-classic-construction.vercel.app/sitemap-index.xml

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://prezkop-builders.vercel.app/sitemap-index.xml

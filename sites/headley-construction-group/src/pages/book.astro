@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CTA from '../components/CTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Get a Quote', href: '/book' }];
+---
+<BaseLayout
+  title={`Get a Quote — ${site.business_name}`}
+  description={`Contact ${site.business_name} sales in ${site.address.city}, ${site.address.state}. Call or email — a team member will get back to you quickly with a real number.`}
+  breadcrumbs={crumbs}
+  pagePath="/book"
+>
+  <div class="container"><Breadcrumbs items={crumbs} /></div>
+  <section class="book-page">
+    <div class="container">
+      <SectionHead eyebrow="Contact Sales" heading="Get a fast, no-runaround quote" />
+      <div class="sales-grid">
+        <article class="sales-card">
+          <h3>Chris Headley</h3>
+          <p class="role">Co-Founder</p>
+          <p class="phone-large"><a href="tel:+13056131490">(305) 613-1490</a></p>
+          <p class="email"><a href="mailto:Chris@headleycg.com">Chris@headleycg.com</a></p>
+        </article>
+        <article class="sales-card">
+          <h3>Thomas Headley</h3>
+          <p class="role">Co-Founder</p>
+          <p class="phone-large"><a href="tel:+13054982327">(305) 498-2327</a></p>
+          <p class="email"><a href="mailto:Thomas@headleycg.com">Thomas@headleycg.com</a></p>
+        </article>
+      </div>
+      <div class="sales-note">
+        <p>
+          Send us the scope, address, and any drawings — we&rsquo;ll come back quickly with a written quote you can build a budget around. No forms, no runaround: call or email one of the owners directly.
+        </p>
+        <p class="office">
+          <strong>Office:</strong>
+          {site.address.street && <>{site.address.street}, </>}
+          {site.address.city}, {site.address.state}{site.address.postal ? ` ${site.address.postal}` : ''}
+        </p>
+      </div>
+    </div>
+  </section>
+  <CTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .book-page { padding: var(--space-4) 0 var(--space-5); }
+  .sales-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); margin-top: var(--space-3); }
+  .sales-card { padding: var(--space-4); background: var(--color-surface); border-radius: var(--radius-md); text-align: center; }
+  .sales-card h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 0 0 var(--space-1); line-height: 1.2; }
+  .sales-card .role { color: var(--color-muted); margin: 0 0 var(--space-2); font-size: 0.95rem; }
+  .phone-large { font-size: 1.5rem; font-weight: 600; margin: 0 0 var(--space-1); }
+  .phone-large a { text-decoration: none; color: var(--color-accent); }
+  .email { margin: 0; }
+  .email a { color: var(--color-text); text-decoration: none; border-bottom: 1px solid var(--color-muted); }
+  .email a:hover { color: var(--color-accent); border-color: var(--color-accent); }
+  .sales-note { text-align: center; max-width: 42rem; margin: var(--space-4) auto 0; color: var(--color-muted); line-height: 1.65; }
+  .sales-note .office { margin-top: var(--space-2); }
+  .sales-note .office strong { color: var(--color-text); }
+</style>

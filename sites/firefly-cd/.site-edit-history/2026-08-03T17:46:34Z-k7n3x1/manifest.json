@@ -1,0 +1,75 @@
+{
+  "batch_id": "2026-08-03T17:46:34Z-k7n3x1",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "add a service page (structured as the other service pages) for Kootenay County as we also serve that location; create the local context + use landmark / google photos",
+  "diff_spec": [
+    {
+      "op": "CREATE",
+      "path": "src/content/service_areas/kootenai-county-id.md",
+      "note": "service-AREA page; 'Kootenay'->'Kootenai' (ID) confirmed with operator"
+    },
+    {
+      "op": "SET",
+      "path": "src/pages/[area].astro",
+      "field": "getStaticPaths.slice",
+      "value": ".slice(0, 6)",
+      "note": "area cap 5->6, operator-approved; OUT of normal site-edit scope"
+    },
+    {
+      "op": "SET",
+      "path": "src/pages/service-areas/index.astro",
+      "field": "slice",
+      "value": ".slice(0, 6)",
+      "note": "OUT of normal site-edit scope"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/Header.astro",
+      "field": "slice",
+      "value": ".slice(0, 6)"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/Footer.astro",
+      "field": "slice",
+      "value": ".slice(0, 6)"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/ServiceAreaGrid.astro",
+      "field": "slice",
+      "value": ".slice(0, 6)"
+    },
+    {
+      "op": "CREATE",
+      "path": "public/images/kootenai-county-hero.jpg",
+      "note": "CC0 (Unsplash via Wikimedia Commons), 1600x900 q75"
+    },
+    {
+      "op": "CREATE",
+      "path": "public/images/kootenai-county-landmark.jpg",
+      "note": "Public domain (Wikimedia Commons), 1200x900 q75"
+    }
+  ],
+  "files_touched": [
+    "src/content/service_areas/kootenai-county-id.md",
+    "src/pages/[area].astro",
+    "src/pages/service-areas/index.astro",
+    "src/components/Header.astro",
+    "src/components/Footer.astro",
+    "src/components/ServiceAreaGrid.astro",
+    "public/images/kootenai-county-hero.jpg",
+    "public/images/kootenai-county-landmark.jpg"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_33gX3MzYGZGpH9hXAD1bCHBnXMVj",
+    "canonical_url": "https://fireflycd.com",
+    "page_count": 23
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

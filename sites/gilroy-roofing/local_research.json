@@ -1,0 +1,89 @@
+{
+  "slug": "gilroy-roofing",
+  "category": "Roofing contractor",
+  "city": "Wilkes-Barre, PA",
+  "region": "Wyoming Valley / NEPA",
+  "_evidence_note": "Reddit thread bodies were NOT obtainable: reddit.com blocks both the WebSearch user agent and Firecrawl. Findings below come from (a) Reddit/forum search-result TITLES, which evidence the questions homeowners ask, and (b) the 12 real customer reviews scraped from the client's own site, which are local primary voice. Treated as directional, not as a read of thread comments.",
+  "pain_points": [
+    {
+      "claim": "Homeowners fear storm-chaser outfits that appear after weather events, push an insurance claim, and disappear.",
+      "evidence": "Recurring thread titles: 'What is the risk in using a stormchasing roofing company?', 'Are Storm Damage Experts people a scam?', 'Is this roofer trying to rope me into an insurance scam?'",
+      "source": "search-result titles"
+    },
+    {
+      "claim": "Fear of paying up front and being left with unfinished or shoddy work.",
+      "evidence": "Reviewers repeatedly single out that Gilroy took no payment until they were satisfied \u2014 praised as unusual.",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Contractors who don't show when promised, or whose timeline slips.",
+      "evidence": "Multiple reviews explicitly praise showing up early and hitting the stated date \u2014 implying the opposite is the norm locally.",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Debris and nails left behind after the job.",
+      "evidence": "Cleanup is the single most-mentioned positive across the review corpus \u2014 'you would never know roofing just occurred'.",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Being left to fight the insurance company alone.",
+      "evidence": "A reviewer notes Ed 'personally handled an issue with my insurance company and had it resolved without me having to contact them'.",
+      "source": "client reviews"
+    }
+  ],
+  "what_customers_value": [
+    "A quote that is honored exactly \u2014 'charged me exactly what he quoted'",
+    "Speed: full tear-off and replacement finished in one to one-and-a-half days",
+    "Site left spotless, no nails or debris",
+    "A named, reachable owner who answers calls and texts",
+    "Deep local roots and generational continuity",
+    "Not paying until the work is done and accepted"
+  ],
+  "business_differentiators": [
+    "Family owned in the Wyoming Valley since 1972 \u2014 the structural opposite of a storm-chaser",
+    "No payment until the project is 100% complete",
+    "Owens Corning Platinum Preferred with a 50-year material and labor warranty",
+    "BBB A+ rating",
+    "Handles insurance claims on the homeowner's behalf",
+    "Second-generation owner, Ed Gilroy Jr., personally on estimates"
+  ],
+  "copy_angles": [
+    {
+      "angle": "Local since 1972 vs. here-after-the-storm",
+      "use": "hero eyebrow + about",
+      "why": "Directly answers the top anxiety surfaced in search titles. Their 54 years is the proof, not a slogan."
+    },
+    {
+      "angle": "You don't pay until it's done",
+      "use": "hero headline / signature system",
+      "why": "Their own strongest, most repeated differentiator and the one reviewers single out. Ownable, concrete, verifiable."
+    },
+    {
+      "angle": "We leave it like we were never here",
+      "use": "signature system cleanup block",
+      "why": "Cleanup is the most-praised item across the entire review corpus."
+    },
+    {
+      "angle": "We deal with your insurer, you don't",
+      "use": "process step two + service copy",
+      "why": "Turns the scariest part of a storm claim into a service they perform."
+    },
+    {
+      "angle": "Done in a day and a half",
+      "use": "promise bar / process",
+      "why": "Repeated independently by several reviewers; concrete and checkable."
+    }
+  ],
+  "recommended_hero": {
+    "eyebrow": "Serving the Wyoming Valley Since 1972",
+    "headline": "You Don't Pay Until It's Done",
+    "support": "Third-generation Wilkes-Barre roofers. We quote it, we do it, we clean up after ourselves \u2014 and we don't take a dollar until you're satisfied."
+  },
+  "_sources": {
+    "searches": [
+      "reddit roofer recommendations Wilkes-Barre Scranton NEPA",
+      "reddit roofing contractor Pennsylvania storm chaser insurance scam complaints"
+    ],
+    "retrieved": "2026-07-27"
+  }
+}

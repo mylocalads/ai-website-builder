@@ -1,0 +1,48 @@
+{
+  "slug": "h4-roofing-construction",
+  "category": "Roofing Contractor",
+  "location": "Dayton, OH (Miami Valley)",
+  "threads_analyzed": 0,
+  "method_note": "Reddit was unreachable this run — WebSearch silently dropped the site:reddit.com operator, old.reddit.com and www.reddit.com both 403 to curl, and reddit.com is blocked by browser policy. Rather than spend Firecrawl budget on it, the research was grounded in free local sources: a Dayton BBB storm-chaser warning covered by WHIO-TV, NOAA hail/wind report counts for the Dayton area, and Ohio contractor-licensing law. The result is more locally specific than a generic Reddit thread would have been.",
+  "sources": [
+    "WHIO-TV / Yahoo News, 2025-04-08 — Dayton BBB warns of storm-chaser contractors after Miami Valley hail and flooding; quotes Sheri Sword, Dayton BBB",
+    "NOAA storm reports aggregated for Dayton OH — 17 confirmed hail reports within 25 miles in the trailing 12 months; 1.75\" golf-ball hail 2025-06-28; 74 mph straight-line winds 2025-03-30",
+    "Ohio contractor licensing references — Ohio issues NO statewide roofing license; requirements fall to city/county registration"
+  ],
+  "pain_points": [
+    "Storm chasers swarm the Miami Valley after every hail event. One Jamestown homeowner had three uninvited contractors at her door after a single storm; the Dayton BBB's own representative said they 'are here in town and as soon as everything's done, they leave and you can't get in touch with them again.'",
+    "Ohio issues no statewide roofing license, so there is no single credential a homeowner can look up. The entire burden of verifying a roofer is legitimate falls on the homeowner, which is exactly the gap door-knockers exploit.",
+    "Insurance-claim roofing invites material substitution — homeowners report contractors installing cheaper shingles than what the claim specified, and roofing over old shingles, which voids most manufacturer warranties.",
+    "Out-of-town crews have no local accountability. When a roof leaks two winters later there is no address to visit and no phone number that still answers.",
+    "Homeowners are told to collect three written estimates but are pressured to sign on the spot while the storm damage is fresh and the adjuster is still in play."
+  ],
+  "what_customers_value": [
+    "A verifiable local address in the Miami Valley — someone who will still be there next season.",
+    "Third-party credentials that can actually be checked, since the state provides none: BBB accreditation, manufacturer certification, OSHA training.",
+    "Written estimates with no pressure to sign immediately.",
+    "Named, reachable owners rather than an anonymous sales rep who rotates out.",
+    "Visible proof of finished local work — real roofs on real streets they recognize, not stock photography."
+  ],
+  "business_differentiators": [
+    "BBB Accredited with an A+ rating (accredited 2026-06-28). This is unusually strong here: the Dayton BBB is the very organization publicly warning Miami Valley homeowners about storm chasers, so H4 holding its accreditation answers the warning at its source.",
+    "CertainTeed ShingleMaster credentialed — a manufacturer certification that carries real weight in a state that issues no roofing license of its own.",
+    "A physical Dayton address at 3347 Witherspoon Drive, 45440, plus a Miami Valley service footprint — the direct opposite of the out-of-town crew that disappears.",
+    "Family owned and operated with both co-owners named publicly (Drew Harper and Trey L. Harper). One five-star reviewer names Trey personally: 'Promises and trust are everything to me. Trey followed through on both.'",
+    "40+ documented job photos of completed Dayton-area roofs, most with an H4 yard sign in frame on identifiable local streets — verifiable local work, not stock imagery.",
+    "OSHA 10 and OSHA 30 certified crews.",
+    "Open Monday through Saturday, 6:00 AM to 8:00 PM — reachable outside the workday, which matters when a homeowner is racing an insurance filing deadline."
+  ],
+  "gaps": [
+    "The client's website makes NO licensed / insured / bonded claim anywhere. In a state with no roofing license, liability insurance and workers' comp are the two things homeowners are explicitly told to verify — and H4 currently says nothing. This is the single highest-value addition the client could make. Left as false in intake rather than guessed; needs the client to confirm coverage before it goes on the site.",
+    "No written warranty terms found on the client site. 'Strong warranty on materials and workmanship' is named as a top homeowner protection, and a CertainTeed ShingleMaster is eligible to offer extended manufacturer warranties — worth asking the client what they actually offer.",
+    "No insurance-claim assistance described on the client's own site, though a third-party directory description says they provide it. Given that hail claims drive this market, this is an underexploited service."
+  ],
+  "copy_angles": [
+    "Lead the hero with local permanence over sales language. Something in the register of 'Dayton's roof, done by Dayton's roofers' — the address, not the pitch. Every competing message in this market after a storm comes from a stranger at the door, so the differentiator is being findable.",
+    "Put the BBB A+ accreditation and the CertainTeed ShingleMaster badge high on the page, above the fold or immediately below it — not buried in a footer trust bar. In a no-license state these are the only checkable credentials that exist, and the BBB one directly rebuts the storm-chaser warning the Dayton BBB itself issued.",
+    "Write a storm-damage section that names the actual weather: 17 hail reports within 25 miles of Dayton in the last twelve months, golf-ball hail in June, 74 mph winds in March. Specific local weather beats generic 'storm damage experts' and earns the insurance-claim conversation.",
+    "Name the owners on the site. Drew and Trey Harper, with faces if the client will supply photos. The review that says 'Trey followed through' is worth more than any adjective, and anonymity is precisely what homeowners distrust here.",
+    "Build the gallery from the real job photos with yard signs visible. A Kettering homeowner recognizing the ranch two streets over is stronger proof than any claim, and H4 has 40+ of these at full resolution.",
+    "Use 'free written estimate, no pressure' as the CTA framing rather than 'free inspection.' The BBB's advice is literally to get it in writing and be suspicious of anyone who won't — matching that language turns their warning into H4's offer."
+  ]
+}

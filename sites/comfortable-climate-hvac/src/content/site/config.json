@@ -1,0 +1,119 @@
+{
+  "kind": "config",
+  "business_name": "Comfortable Climate HVAC",
+  "tagline": "NEPA's Most Trusted Heating, Cooling & Plumbing Company",
+  "phone": "+15703330380",
+  "phone_display": "(570) 333-0380",
+  "email": "joeairheat@gmail.com",
+  "address": {
+    "city": "Dallas",
+    "state": "PA",
+    "country": "US"
+  },
+  "marketing_city": "Dallas",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.277069,
+    "lng": -75.8803045
+  },
+  "hours": {
+    "monday": "8:00 am – 5:00 pm",
+    "tuesday": "8:00 am – 5:00 pm",
+    "wednesday": "8:00 am – 5:00 pm",
+    "thursday": "8:00 am – 5:00 pm",
+    "friday": "8:00 am – 5:00 pm"
+  },
+  "site_url": "https://comfortable-climate-hvac.vercel.app",
+  "rating": 5,
+  "review_count": 17,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 25,
+  "social": {
+    "facebook": "https://www.facebook.com/ComfortableClimateHVAC/"
+  },
+  "logo_url": "/logo-comfortable-climate.png",
+  "default_hero_photo": "/hero-crew.jpg",
+  "about_photo": "/owner-joe.png",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Fujitsu Elite Contractor, 2024",
+      "description": "Awarded for the level of factory training our staff hold on ductless equipment — a credential most contractors in NEPA are not certified to carry."
+    },
+    {
+      "title": "Repair first, replace only when it's warranted",
+      "description": "If your system can be fixed, we tell you so, even though a replacement is worth more to us. One customer wrote that three other companies got the diagnosis wrong before we did."
+    },
+    {
+      "title": "The estimate is the price",
+      "description": "You get a written scope and a number before we start. Customers have written that the final cost was within the estimate and there were no additional charges or fees."
+    },
+    {
+      "title": "Heating, cooling and plumbing, one contractor",
+      "description": "A boiler, a mini-split and a leaking water heater are one phone call, not three. Licensed and insured in Pennsylvania, PA #091633."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02248.jpg",
+      "alt": "Heating system installed by Comfortable Climate in a Back Mountain home",
+      "title": "Heating system installation"
+    },
+    {
+      "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02250.jpg",
+      "alt": "Mechanical room piping and equipment completed by Comfortable Climate",
+      "title": "Mechanical room build"
+    },
+    {
+      "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02253.jpg",
+      "alt": "HVAC equipment set and commissioned by Comfortable Climate",
+      "title": "Equipment set and commissioned"
+    },
+    {
+      "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/KIMG0135-2.jpg",
+      "alt": "Custom sheet metal ductwork fabricated and installed by Comfortable Climate",
+      "title": "Custom sheet metal ductwork"
+    },
+    {
+      "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/KIMG0302-2.jpg",
+      "alt": "Furnace and duct connection work in a Luzerne County home",
+      "title": "Furnace and duct connections"
+    },
+    {
+      "photo": "https://comfortableclimatehvac.com/wp-content/uploads/2020/06/DSC02249.jpg",
+      "alt": "Finished heating and cooling installation by Comfortable Climate",
+      "title": "Finished installation"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Heating, cooling",
+    "heading_rest": "& plumbing",
+    "subtitle": "Residential and commercial work across Luzerne, Lackawanna and Wyoming counties — from one licensed local contractor."
+  }
+}

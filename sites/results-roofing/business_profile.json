@@ -1,0 +1,87 @@
+{
+  "name": "Results Roofing",
+  "email": "info@resultsroofing.com",
+  "phone": "(469) 270-8037",
+  "address": "2828 E Trinity Mls Rd Ste 212, Carrollton, TX 75006",
+  "website": "https://resultsroofing.com/",
+  "rating": 4.9,
+  "reviewCount": 1802,
+  "category": "Roofing contractor",
+  "hours": "Open 24 hours, 7 days",
+  "slug": "results-roofing",
+  "reviews": [],
+  "_extra": {
+    "street": "2828 E Trinity Mls Rd Ste 212",
+    "city": "Carrollton",
+    "state": "TX",
+    "postal": "75006",
+    "country": "US",
+    "geo": {
+      "lat": 32.986367,
+      "lng": -96.8521447
+    },
+    "phones_all": [
+      "2145051442"
+    ],
+    "emails_all": [
+      "info@resultsroofing.com",
+      "claims@results-roofing.com"
+    ],
+    "facebook": "https://www.facebook.com/ResultsRoofing",
+    "instagram": "https://www.instagram.com/resultsroofing",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Results%20Roofing&query_place_id=ChIJEzx12P7XTYYRgIFO5YhFeNs",
+    "place_id": "ChIJEzx12P7XTYYRgIFO5YhFeNs",
+    "cid": "15814466545776492928",
+    "reviews_distribution": {
+      "oneStar": 24,
+      "twoStar": 2,
+      "threeStar": 0,
+      "fourStar": 7,
+      "fiveStar": 1769
+    },
+    "review_tags": [
+      {
+        "title": "thorough inspection",
+        "count": 62
+      },
+      {
+        "title": "insurance claim assistance",
+        "count": 181
+      },
+      {
+        "title": "personable staff",
+        "count": 90
+      },
+      {
+        "title": "roof replacement",
+        "count": 411
+      },
+      {
+        "title": "easy process",
+        "count": 104
+      },
+      {
+        "title": "hail damage repair",
+        "count": 53
+      },
+      {
+        "title": "gutter replacement",
+        "count": 35
+      },
+      {
+        "title": "shingle repair",
+        "count": 16
+      },
+      {
+        "title": "insurance adjuster meeting",
+        "count": 26
+      },
+      {
+        "title": "answering questions",
+        "count": 120
+      }
+    ],
+    "website_raw": "https://resultsroofing.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb&utm_content=carrollton",
+    "note": "Apify returned 0 review bodies on this run despite maxReviews=5; testimonials must come from the site scrape."
+  }
+}

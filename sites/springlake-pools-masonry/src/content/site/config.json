@@ -1,0 +1,138 @@
+{
+  "kind": "config",
+  "business_name": "SpringLake Pools & Masonry",
+  "tagline": "Building Luxury. Designing Dreams.",
+  "phone": "+15708554235",
+  "phone_display": "(570) 855-4235",
+  "email": "springlakepools@gmail.com",
+  "address": {
+    "street": "35 Colonial Rd",
+    "city": "Dallas",
+    "state": "PA",
+    "postal": "18612",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 40.8556259,
+    "lng": -75.689281
+  },
+  "hours": {
+    "monday": "8am-5pm",
+    "tuesday": "8am-5pm",
+    "wednesday": "8am-5pm",
+    "thursday": "8am-5pm",
+    "friday": "8am-5pm",
+    "saturday": "8am-5pm"
+  },
+  "site_url": "https://springlake-pools-masonry.vercel.app",
+  "rating": 5,
+  "review_count": 8,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/springlakepools",
+    "instagram": "https://www.instagram.com/springlakepools"
+  },
+  "logo_url": "/img/logo-springlake.png",
+  "default_hero_photo": "/img/g-2781642.jpg",
+  "about_photo": "/img/about-springlake.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Gunite built for Pennsylvania winters",
+      "description": "Spray-applied concrete makes the strongest shell available, and it is the only method we trust against a climate that swings from 90°F to -10°F."
+    },
+    {
+      "title": "Masonry is in-house, not subcontracted",
+      "description": "Coping, decks, retaining walls, fire pits and outdoor kitchens come from the same crew that builds the pool — so the hardscape actually meets the water the way the drawing said it would."
+    },
+    {
+      "title": "We build it, then we take care of it",
+      "description": "Construction, renovation, repair, and weekly and seasonal service are all ours. There is nobody else to point at when something needs attention in year six."
+    },
+    {
+      "title": "Local crews who know the ground",
+      "description": "Rocky ledge near Bear Creek, clay in Back Mountain, hillside lots in Dallas Township. We plan excavation around what is actually under your yard."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "photo": "/img/g-img_2204.jpg",
+      "alt": "Custom concrete pool with an integrated spa and natural rockwork",
+      "title": "Pool with integrated spa",
+      "location": "Back Mountain, PA"
+    },
+    {
+      "photo": "/img/g-img_2208.jpg",
+      "alt": "Freeform pool with a raised spa and paver decking",
+      "title": "Pool and raised spa",
+      "location": "Dallas, PA"
+    },
+    {
+      "photo": "/img/g-5009240.jpg",
+      "alt": "Crystal clear pool set into a flagstone patio",
+      "title": "Pool and flagstone patio",
+      "location": "Luzerne County, PA"
+    },
+    {
+      "photo": "/img/g-1683.jpg",
+      "alt": "Boulder waterfall built into the edge of a concrete pool",
+      "title": "Rock waterfall",
+      "location": "Northeastern PA"
+    },
+    {
+      "photo": "/img/g-img_4132.jpg",
+      "alt": "Concrete pool with an integrated spa and full deck surround",
+      "title": "Pool, spa and deck",
+      "location": "Back Mountain, PA"
+    },
+    {
+      "photo": "/img/g-2067402.jpg",
+      "alt": "Backyard concrete pool alongside the house with paver coping",
+      "title": "Backyard concrete pool",
+      "location": "Wyoming Valley, PA"
+    },
+    {
+      "photo": "/img/g-8592636.jpg",
+      "alt": "Pool with paver patio and planted borders",
+      "title": "Paver patio and plantings",
+      "location": "Lackawanna County, PA"
+    },
+    {
+      "photo": "/img/g-4146307.jpg",
+      "alt": "Flagstone patio and planters surrounding a custom pool",
+      "title": "Flagstone hardscape",
+      "location": "Northeastern PA"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Custom concrete pools",
+    "heading_rest": "and everything around them",
+    "subtitle": "Build, renovation, repair, seasonal service and masonry — all in-house, across Luzerne and Lackawanna counties."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "efafbc4cb5f8ea553eedfe2f814ce7de783a3fd56185769e8d1460ab7beab41d": {
+    "lat": 47.6588706,
+    "lng": -117.4224898,
+    "precision": "street",
+    "resolved_at": "2026-07-27T16:40:31.472Z"
+  },
+  "00efea7f6c3dbeedf069bd99416bd7964b9ce8a47a8b77bab68a666e9042b72e": {
+    "lat": 47.6800867,
+    "lng": -117.223744,
+    "precision": "street",
+    "resolved_at": "2026-07-27T16:40:32.814Z"
+  },
+  "e711bc35b2367f4ef35f72cc13bc24c9dfd5f01cfd5ff0b75a7d777fa3ba55ed": {
+    "lat": 47.6717241,
+    "lng": -117.1032997,
+    "precision": "street",
+    "resolved_at": "2026-07-27T16:40:34.274Z"
+  },
+  "eaf7ef972ecff0f56bd5074065d82dd0bcfa7c867ff480d779f7e35b022581b4": {
+    "lat": 47.6709997,
+    "lng": -117.3496651,
+    "precision": "street",
+    "resolved_at": "2026-07-27T16:40:35.680Z"
+  },
+  "f4197c8c1d061c0b478f4c762d0419577a8e1ad3b006c1ede66937337f33a755": {
+    "lat": 47.7004973,
+    "lng": -117.1116784,
+    "precision": "city",
+    "resolved_at": "2026-07-27T16:40:40.575Z"
+  },
+  "25a3f28759c9c0927cc282f5054c25fc6ea9fe57c7a500566decdeec02189763": {
+    "lat": 47.7110106,
+    "lng": -116.9480877,
+    "precision": "city",
+    "resolved_at": "2026-07-27T16:40:44.624Z"
+  },
+  "8d7d5a7c0ca54f097188dac32f74cecb4146a3da5eb553e5a18205ec6df9860c": {
+    "lat": null,
+    "lng": null,
+    "precision": null,
+    "resolved_at": "2026-07-27T16:41:06.197Z"
+  }
+}

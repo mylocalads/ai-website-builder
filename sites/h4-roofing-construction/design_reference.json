@@ -1,0 +1,83 @@
+{
+  "slug": "h4-roofing-construction",
+  "vertical": "roofing",
+  "template": "owl",
+  "reference_basis": {
+    "primary": "astro-templates/owl/ — the Gilroy Roofers structure the operator pointed at (https://gilroy-roofing.vercel.app/). Scaffolded from the TEMPLATE, not from sites/gilroy-roofing/, because the template carries the service/area render fixes that Gilroy's src/ predates (see build-log 2026-07-29).",
+    "library": "reference-libraries/roofing.json",
+    "no_urls_scraped": "No Firecrawl spend on reference URLs — the template IS the reference and it is local. The client's own site contributed brand/business context only, never layout.",
+    "client_site_role": "brand + business context only. Their site is a stock GoHighLevel template; zero layout, component, or CSS structure taken from it."
+  },
+  "palette": {
+    "_derivation": "Operator supplied three values: CTA #c49029, primary background #ffffff, secondary background #0a0a0a. Every remaining token was re-derived and contrast-verified against those three rather than inherited from the owl defaults, per the instruction in astro-templates/owl/src/styles/tokens.css and the button-contrast section of the owl README.",
+    "--color-bg": "#ffffff",
+    "--color-surface": "#f6f5f2",
+    "--color-text": "#0a0a0a",
+    "--color-muted": "#5a5a58",
+    "--color-primary": "#0a0a0a",
+    "--color-on-primary": "#ffffff",
+    "--color-accent": "#c49029",
+    "--color-on-accent": "#0a0a0a",
+    "--color-accent-ink": "#8a6420",
+    "--color-focus": "#0057ff"
+  },
+  "contrast_audit": {
+    "text/bg (#0a0a0a on #ffffff)": "19.80 PASS AA",
+    "muted/bg (#5a5a58 on #ffffff)": "6.91 PASS AA",
+    "on-primary/primary (#ffffff on #0a0a0a)": "19.80 PASS AA",
+    "on-accent/accent (#0a0a0a on #c49029)": "6.95 PASS AA (full 4.5 threshold, not just the 3:1 large-text allowance)",
+    "accent-ink/bg (#8a6420 on #ffffff)": "5.35 PASS AA",
+    "accent-ink/surface (#8a6420 on #f6f5f2)": "4.91 PASS AA",
+    "text/surface (#0a0a0a on #f6f5f2)": "18.16 PASS AA",
+    "muted/surface (#5a5a58 on #f6f5f2)": "6.34 PASS AA",
+    "accent-as-text on dark band (#c49029 on #0a0a0a)": "6.95 — comfortably clears the 3:1 the template needs on dark panels, and well above the owl default's 3.78",
+    "_notes": [
+      "White on #c49029 measures 2.85:1 and FAILS even the large-text allowance — that is why --color-on-accent is near-black. Never hardcode `white` on an accent fill in this build.",
+      "--color-accent-ink is unchanged from the owl default #8a6420. That is a verified coincidence, not an inheritance: H4's gold sits at hue ~39deg, within a degree of the template default, so the same darkened ink is the correct derivation and it measures 5.35:1 on this client's white background.",
+      "--color-surface had to move off #ffffff. The owl default pairs a warm off-white page (#f7f5f0) with white cards; with the operator's white page, cards need the inverse — a faint warm neutral (#f6f5f2) so surfaces read as distinct without introducing a second brand colour."
+    ]
+  },
+  "typography": {
+    "--font-display": "'Montserrat', 'Inter', system-ui, sans-serif",
+    "--font-body": "'Inter', system-ui, sans-serif",
+    "_derivation": "Template defaults retained. The client's site loads Inter, Roboto and Poppins — those are GoHighLevel scaffold defaults, not a brand typeface choice, so there is no client font worth honouring. Montserrat's geometric slab-adjacent weight also sits closer to the H4 logo's condensed grotesque letterforms than a serif display would."
+  },
+  "spacing_radius_motion": {
+    "_note": "Inherited from the owl template unchanged. Spacing scale, radii, and max-width are template concerns, never client-derived.",
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "14px",
+    "--space-1..5": "0.5rem / 1rem / 1.5rem / 2.5rem / 4rem",
+    "--max-width": "1200px"
+  },
+  "logo": {
+    "decision": "Use the client's EXISTING mark. Higgsfield generation was declined by the operator after the mark was found — it already appears on H4's physical yard signs and feather flags across a dozen job photos, and regenerating it would desync the site from their real-world signage.",
+    "source": "https://assets.cdn.filesafe.space/MUYbyveg1sZgSkK6xdPk/media/6a3ac76aee187be68959d8a4.png (676x369, true alpha)",
+    "variants": [
+      { "file": "logo/h4-logo-black.png", "use": "light backgrounds — original, unmodified" },
+      { "file": "logo/h4-logo-gold.png", "use": "#c49029 on the #0a0a0a header/footer — ties the mark to the CTA colour" },
+      { "file": "logo/h4-logo-white.png", "use": "knockout over dark photo scrims where gold would compete with the accent CTA" }
+    ],
+    "method": "Deterministic alpha-preserving recolor via PIL. No AI generation, no credits spent, letterforms untouched."
+  },
+  "imagery": {
+    "policy": "Client photography only. 40+ authentic Dayton-area job photos at 5712x4284 are available — there is no reason to touch stock here.",
+    "serve_from": "public/img/ — downloaded and resized locally, never hotlinked. The originals sit on GoHighLevel's CDN (assets.cdn.filesafe.space), which vanishes the moment the client leaves that platform.",
+    "stock_excluded": "5 low-resolution images on the client's current site were identified as stock (clay-tile installer, window installer, generic house exteriors) and are excluded.",
+    "gap": "Concrete, Flooring and Drywall have zero photo coverage. Per operator decision these render text-only; the owl service schema handles an unset about_photo by design rather than falling back to the hero."
+  },
+  "anti_patterns": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real, verified number",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — the owl fixed order is mandatory",
+    "Owl Roofing's own programme names ('We Give A Hoot', 'Protect Your Nest System', 'Get It Right Guarantee') — brand assets of the reference site, never to appear in a generated site",
+    "hardcoding `white` as a button label — fails at 2.85:1 on this client's accent",
+    "publishing a numeric review count or a licensed/insured/bonded claim — neither is first-party verified for this client"
+  ]
+}

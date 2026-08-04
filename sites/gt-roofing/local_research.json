@@ -1,0 +1,47 @@
+{
+  "slug": "gt-roofing",
+  "category": "Roofing contractor",
+  "location": "Scranton / Wilkes-Barre, Northeast PA",
+  "threads_analyzed": 0,
+  "research_note": "Reddit returned no usable NEPA-specific roofing threads — r/Scranton and r/nepa have thin contractor-recommendation activity, and reddit.com is not directly crawlable by the search tool in this session. Findings below are grounded in Pennsylvania-specific contractor-consumer sources (PA Office of Attorney General HIC program, PA roofing-scam advisories) plus the client's own verified review text on Thumbtack. Every differentiator traces to real data in business_profile.json or intake-scraped.json — none are inferred from Reddit.",
+  "sources": [
+    "https://www.attorneygeneral.gov/businesses-and-organizations/home-improvement-contractor-registration/",
+    "https://hicsearch.attorneygeneral.gov/",
+    "https://rightdealconstruction.com/blog/avoid-roofing-scams-pa",
+    "https://www.thumbtack.com/pa/pittston/roofing/gt-roofing-home-improvements-llc/service/579128575116148745"
+  ],
+  "pain_points": [
+    "Out-of-state 'storm chaser' crews canvass NEPA neighborhoods after hail and wind events, collect the insurance settlement, and disappear before the workmanship matches the contract.",
+    "High-pressure 'today-only' pricing and demands for 50%+ cash upfront before any work begins — the single most-cited red flag in Pennsylvania roofing-scam advisories.",
+    "Verbal-only warranties. Homeowners discover after the fact that there is no written workmanship warranty separate from the shingle manufacturer's material warranty.",
+    "Contractors who no-show or move a scheduled date without calling. This is the exact complaint in G&T's own one critical Thumbtack review — it is the standard the market judges small crews on.",
+    "Quotes that vary by thousands between contractors for the same scope, with no line-item explanation, leaving homeowners unable to tell premium work from padding."
+  ],
+  "what_customers_value": [
+    "A local crew with a real physical address in the county — verifiable, still there next year, reachable by phone.",
+    "Reaching the owner directly instead of a call center or a commissioned salesperson.",
+    "Same-day or next-day response on active leaks, which in NEPA's freeze-thaw winters is the difference between a patch and a deck replacement.",
+    "Named premium materials (GAF, Owens Corning, CertainTeed, IKO) rather than an unspecified 'quality shingle'.",
+    "Full cleanup and property respect at the end of the job — mentioned unprompted in G&T's own reviews.",
+    "Free, no-obligation estimates with transparent pricing and no pressure to sign on the spot."
+  ],
+  "business_differentiators": [
+    "Two owners answer their own phones directly — Alex at (570) 880-1640 and Luis at (570) 453-8725. This is the literal opposite of the storm-chaser call-center model and is published on the client's own site.",
+    "Physical address at 77 Center St, Pittston, PA 18640 with a verified Google Business Profile — a homeowner can confirm they are local, which storm chasers cannot offer.",
+    "5.0 Google rating across 5 ratings; 4.3 on Thumbtack across 4 reviews, with the owner background-check verified. Small numbers, but real and independently checkable.",
+    "Google Business Profile lists open 24 hours — supports the emergency-leak-response angle that NEPA winters demand.",
+    "Uses GAF, Owens Corning, CertainTeed and IKO materials — named brands, stated on the client's own site.",
+    "'No job is too small' and free estimates are the client's own published positioning, and it fills a real market gap: most storm-chaser and large-outfit competitors will not quote a small repair.",
+    "GAP — no PA HIC registration number, license, insurance, or bonding claim appears anywhere on the client's existing site or in any public source. This is the single highest-value missing asset. PA requires HIC registration for any home-improvement work over $500, and homeowners are actively told to verify it. Operator must collect the HIC number from the client before any credential badge goes on the new site.",
+    "GAP — no written workmanship warranty is stated anywhere. Competitors that publish a 2-year written workmanship warranty win on this directly."
+  ],
+  "copy_angles": [
+    "Lead the hero with owner-direct access, not a generic quality claim: the owners' names and numbers are the proof point that separates them from storm chasers. 'Call Alex or Luis directly' beats 'Quality You Can Trust'.",
+    "Make 'local, with an address in Luzerne County' an explicit trust signal in the hero and footer — it is the direct answer to the #1 Pennsylvania roofing pain point.",
+    "Use 'No job is too small' as a standalone promise-bar item. It is the client's own line and it captures the small-repair demand that larger competitors decline to quote.",
+    "Emphasize same-day / 24-hour leak response, grounded in the GBP 'Open 24 hours' listing — NEPA freeze-thaw makes an untreated leak expensive fast.",
+    "Name the manufacturers (GAF, Owens Corning, CertainTeed, IKO) in a partner badge strip rather than saying 'premium materials' — specificity is the trust mechanism.",
+    "Frame the free estimate as no-pressure and no-obligation, explicitly contrasting with today-only pricing, without naming competitors.",
+    "Do NOT write any 'Licensed, Bonded & Insured' badge copy until the operator supplies the PA HIC number. Leave the credential slot empty rather than asserting it — this is a live FDUTPA/consumer-protection exposure in PA and the client has never claimed it themselves."
+  ]
+}

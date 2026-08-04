@@ -1,0 +1,201 @@
+{
+  "slug": "quality-roofing-express",
+  "business_name": "Quality Roofing Express",
+  "legal_name": null,
+  "tagline": "For Your Roofing and Siding",
+  "phone": "+15706143914",
+  "phone_display": "(570) 614-3914",
+  "email": "Qualityroofingexpress@gmail.com",
+  "address": {
+    "street": "614 N Rebecca Ave",
+    "city": "Scranton",
+    "state": "PA",
+    "postal": "18504",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 41.4210921, "lng": -75.6801342 },
+  "hours": {
+    "monday": "7am-7pm",
+    "tuesday": "7am-7pm",
+    "wednesday": "7am-7pm",
+    "thursday": "7am-7pm",
+    "friday": "7am-7pm",
+    "saturday": "8am-7pm",
+    "sunday": "9am-12pm"
+  },
+  "rating": 4.6,
+  "review_count": 74,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "category": "Roofing contractor",
+  "social": {
+    "facebook": "https://www.facebook.com/qualityroofingexpress",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Quality%20Roofing%20Express&query_place_id=ChIJT3NpTdXZxIkRXrlxdqrgXIk"
+  },
+  "site_url": "https://www.qualityroofingexpress.org/",
+  "logo_url": "https://images.cdn-files-a.com/uploads/2670849/800_filter_nobg_60ae705e274c5.png",
+  "default_hero_photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81b65bb121.jpg",
+  "default_hero_video": null,
+  "about_photo": null,
+  "brand": {
+    "fonts": { "display": "Playfair Display", "body": "Open Sans" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#000000",
+      "accent": "#cf1b1b",
+      "muted": "#444950",
+      "surface": "#ebedf0",
+      "candidates": ["#cf1b1b", "#b62727", "#444950", "#ebedf0", "#e3e2de", "#ffdbc5", "#000000", "#ffffff"],
+      "_source": "CSS custom properties --global_main_color / --inside_modules_color* on the client homepage, plus <meta name=theme-color>"
+    }
+  },
+  "services": [
+    {
+      "title": "Asphalt Shingles",
+      "short_description": null,
+      "long_description": "Providing best Quality Shingle from Owens Corning",
+      "sub_services": ["3 Tab Shingles", "Architectural Shingle", "Slate Like Shingle"],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb25bde77e1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Slate Roof",
+      "short_description": null,
+      "long_description": "Professional slate installation and slate-like shingles.",
+      "sub_services": ["Professional Slate Installation", "Slate Like Shingles"],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2889cd971.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Metal Roofs",
+      "short_description": null,
+      "long_description": "Professional metal roof installation. We provide the best materials for your home improvement needs.",
+      "sub_services": ["Professional Metal Roof Installation"],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb293cd9427.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "EPDM Rubber Roofs",
+      "short_description": null,
+      "long_description": "Commercial & residential. Always providing best quality materials.",
+      "sub_services": [],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2b0f9108f.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Torch Down Rubber Roofs",
+      "short_description": null,
+      "long_description": "Commercial & residential. Always providing best quality materials.",
+      "sub_services": [],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2ba37ae9f.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Peel Stick Rubber Roofs",
+      "short_description": null,
+      "long_description": "Commercial & residential. Always providing best quality materials.",
+      "sub_services": [],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2bd6d0092.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "TPO Rubber Roofs",
+      "short_description": null,
+      "long_description": "Commercial & residential. Always providing best quality materials.",
+      "sub_services": [],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2c120aeca.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Chimney Flashing",
+      "short_description": null,
+      "long_description": "Commercial & residential. Satisfying our customers' requests, always providing best quality materials.",
+      "sub_services": [],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2c6f0aa87.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Skylights",
+      "short_description": null,
+      "long_description": "Commercial & residential. Satisfying our customers' requests, always providing best quality materials.",
+      "sub_services": [],
+      "hero_photo": "https://images.cdn-files-a.com/uploads/2670849/800_5dcb2cd0f18b9.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [],
+  "testimonials": [
+    { "name": "Ali Wilson", "location": null, "text": "The crew was professional, prompt, clean and skilled. We are so happy we went with Quality Roof Express and will be calling for other jobs in the future!! Thank you for putting a new roof over our heads!", "rating": 5, "_source": "gbp" },
+    { "name": "Carolene", "location": null, "text": "They were quick to get me an estimate, and kept in contact with me throughout the process. On time with great quality work and customer service. Definitely recommend.", "rating": 5, "_source": "gbp" },
+    { "name": "Barb", "location": null, "text": "I highly recommend Quality Roofing Express for anyone in need of a new roof. Osman and his crew did an excellent job. They all work together so well. Roof was done so quickly, the price was great and clean up was unbelievable, you would not have even known they were here. Thank you for a great job", "rating": 5, "_source": "gbp" },
+    { "name": "Tom Belinsky", "location": null, "text": "I have personally had Osman and his team do three roofs for me and they are currently working on a roof for my son. From the moment I met Osman 5 years ago to the present, he has been the consummate professional. The quality of work and the attention to detail are second to none. He personally manages every job.", "rating": 5, "_source": "gbp" },
+    { "name": "Michael Stout", "location": null, "text": "Replaced existing roof. Very pleasant to work with and did good work. Update: roof still holding up well.", "rating": 5, "_source": "gbp" },
+    { "name": "Lawrence Rosetti", "location": null, "text": "The work on my roof was professionally done in a timely fashion. The workers were great and cleaned up nicely after completing the job.", "rating": 5, "_source": "gbp" },
+    { "name": "Tayla Clements", "location": null, "text": "Fast response times, excellent work, and great job cleaning up afterwards. Very satisfied customer.", "rating": 5, "_source": "gbp" },
+    { "name": "Lisa Conley", "location": null, "text": "Such a great company!! Very professional. We couldn't be happier. Just had them do another part of our roof and once again they were awesome!", "rating": 5, "_source": "gbp" },
+    { "name": "jeffrey cerato", "location": null, "text": "My new roof looks great. Very fair price and excellent workmanship. Friendly staff. My new roof was on in one day. Highly recommend.", "rating": 5, "_source": "gbp" }
+  ],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81b65bb121.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81bc69c473.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81bc72d112.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81bc86b1a8.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81bca3b185.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81bca45560.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81ead10532.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" },
+    { "photo": "https://images.cdn-files-a.com/uploads/2670849/2000_5dd81ead3c9fb.jpg", "alt": "Completed residential roof by Quality Roofing Express", "_source": "scraped" }
+  ],
+  "partners_detected": [
+    { "name": "Owens Corning", "note": "Named in the asphalt shingle service copy on the client homepage — shingle supplier, not a verified certification tier." },
+    { "name": "Angie's List", "logo_url": "https://images.cdn-files-a.com/uploads/2670849/400_6046b0ba33895.png", "note": "\"Guaranteed by Angie's List\" badge displayed on the client homepage." },
+    { "name": "Loc8NearMe", "logo_url": "https://images.cdn-files-a.com/uploads/2670849/400_filter_nobg_654276b2d59f9.png", "note": "\"Loc8NearMe Recommends\" badge displayed on the client homepage." }
+  ],
+  "about_story": "We are an Independent Family Owned business, stemming from a small local town, connecting with our community and surrounding areas to provide QUALITY work. We take pride in treating each home as if it was our own. As homeowners ourselves we know the importance of protecting our homes from any weather damage. Memories made in a Home is a treasure we vow to protect with you.",
+  "brand_voice_sample": "For your Roofing and Siding. Independent, family owned. We take pride in treating each home as if it was our own. Winter weather doesn't stop us — call us today for your free estimate.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The existing site is a SITE123 build; its booking form and reviews module are SITE123-native, not GHL. Nothing here is reusable — operator must paste MLA's own GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_match": "1 of 2 hits — matched on operator-supplied website URL https://www.qualityroofingexpress.org/",
+    "pages_scraped": ["/"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.012,
+    "warnings": [
+      "Client site is a single-page SITE123 build — there are no inner pages to scrape. All services, gallery, about and booking live on '/'.",
+      "GBP reviews were not returned by the maps actor; a separate reviews scrape (compass~google-maps-reviews-scraper) supplied 12 reviews, of which 10 have usable text.",
+      "licensed/insured/bonded left FALSE — no badge or footer disclosure found on the client site. Do not claim these without operator confirmation.",
+      "years_in_business left null — no 'Since YYYY' statement on the site. A 2024 review references knowing the owner '5 years ago', which is anecdotal, not a claim to publish.",
+      "Owner first name appears as 'Osman' across multiple Google reviews; 'osman avila' is a reviewer account name. Treated as first-name-only in copy.",
+      "One 1-star review (Dec 2024) alleges a siding rippling dispute the owner attributed to the manufacturer. Siding is deliberately NOT built out as a service page — the site leads with roofing.",
+      "Brand accent #cf1b1b is a mid-dark red: white text on it measures 5.30:1 (AA pass). As TEXT on white it measures 5.30:1, so it doubles as accent-ink without darkening."
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Dallas, PA — Building Luxury. Designing Dreams.",
+    "headline": "Custom Concrete Pools Built For Pennsylvania Winters",
+    "subheadline": "Gunite pools, integrated spas, renovations, repairs and seasonal service — designed around the ground under your yard and a climate that swings from 90°F to -10°F. Local crews across Luzerne and Lackawanna counties.",
+    "cta_text": "Get My Free Consultation!",
+    "cta_href": "/book",
+    "photo": "/img/g-2781642.jpg",
+    "video_link_text": "See our recent projects",
+    "video_link_href": "/our-work",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5,
+        "label": "5.0 Rating",
+        "sublabel": "8 Google reviews"
+      },
+      {
+        "label": "Licensed PA Contractor",
+        "sublabel": "Pools & masonry, in-house"
+      }
+    ]
+  },
+  "promise_bar": [
+    {
+      "text": "Gunite and masonry in-house",
+      "icon": "hammer"
+    },
+    {
+      "text": "Licensed NEPA pool contractor",
+      "icon": "shield"
+    },
+    {
+      "text": "Free on-site design consultation",
+      "icon": "clipboard"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "One Company, Start To Finish",
+    "body": "The crew that excavates your yard is the crew that shoots the gunite, sets the coping, lays the deck, and comes back in April to open the pool. Nothing gets handed to a subcontractor and nothing gets blamed on one. When something needs attention in year six, you call the same number you called in year one, and you get the people who built it.",
+    "cta_text": "Talk to us",
+    "cta_href": "/contact",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Build",
+    "headline": "From Design Consult To Champagne Toast",
+    "intro": "Every SpringLake pool runs the same way. You get a plan drawn around your actual backyard, a crew that stays on the job, and clear communication from the first measurement to the final walkthrough.",
+    "blocks": [
+      {
+        "title": "Designed around your yard, not a catalogue",
+        "body": "We measure slopes, check sight lines from the house, and plan around existing landscaping and utility lines. Infinity edges, sun ledges, benches, grottos, acrylic walls and integrated spas are all on the table — 3D CAD design and hundreds of tile samples let you see it before we dig.",
+        "icon": "document"
+      },
+      {
+        "title": "Gunite, because of the winters",
+        "body": "Spray-applied concrete creates the strongest shell available and takes any shape a lot demands — curving around mature oaks, fitting a narrow Back Mountain lot, or stepping down a slope near Lake Silkworth. We have gunite pools still sound after 20+ Pennsylvania winters.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What the build actually looks like",
+    "steps_icon": "hammer",
+    "steps": [
+      {
+        "title": "Excavation planned around real soil",
+        "body": "Rocky ledge near Bear Creek, clay through Back Mountain, hillside lots in Dallas Township — the dig plan changes with the ground."
+      },
+      {
+        "title": "Shell, plumbing and equipment",
+        "body": "Gunite shell, plumbing set below frost line, and pumps, heaters, filters and automation sized for the pool we drew."
+      },
+      {
+        "title": "Masonry, finish and walkthrough",
+        "body": "Coping, decking, walls and water features by our own masons, then a walk of the whole property together before we leave."
+      }
+    ],
+    "guarantee": {
+      "title": "Details are the whole job",
+      "body": "Lighting, textures, colour palettes, the efficient use of space. From your first design consult to the champagne toast at completion, we communicate clearly, interface often, and dedicate our time to the details — because that is what you are actually paying for.",
+      "cta_text": "Start your design",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "How To Get Started",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free on-site consultation",
+        "icon": "phone",
+        "body": "We come to the property, talk through what you want, and take real measurements."
+      },
+      {
+        "label": "Step Two",
+        "title": "Design and detailed estimate",
+        "icon": "document",
+        "body": "A design drawn to your yard and a written estimate that explains the options."
+      },
+      {
+        "label": "Step Three",
+        "title": "Build and masonry",
+        "icon": "hammer",
+        "body": "Excavation, gunite, equipment, coping, decking and hardscape — one crew, one schedule."
+      },
+      {
+        "label": "Step Four",
+        "title": "Opening, service and support",
+        "icon": "calendar",
+        "body": "Weekly maintenance, seasonal opening and closing, and repairs for as long as you own the pool."
+      }
+    ],
+    "cta_text": "Get My Free Consultation!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About SpringLake Pools & Masonry",
+    "headline": "A Local Builder Who Actually Lives Here",
+    "body": "We are a family-owned company building custom concrete pools and spas across the Back Mountain and the Wyoming Valley. We are not a corporation running jobs out of another county. Our kids go to Dallas School District, we shop at Gerrity's, and we know which streets flood during the spring melt and which neighbourhoods have the trickiest utility lines. That is the difference you feel when the excavator shows up.",
+    "checklist": [
+      "Family owned, working out of Dallas, PA",
+      "Licensed swimming pool contractor serving NEPA",
+      "Concrete and gunite specialists — designed for freeze-thaw",
+      "Masonry, hardscape and outdoor living done in-house",
+      "Build, renovate, repair and service all under one roof",
+      "Free on-site design consultation and written estimate"
+    ],
+    "photo": "/img/about-springlake.jpg",
+    "photo_alt": "SpringLake Pools crew constructing a custom concrete pool",
+    "photo_cutout": false,
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Why Homeowners Choose Us",
+    "headline": "Custom Concrete Pools In Dallas, PA",
+    "paragraphs": [
+      "Northeastern Pennsylvania is hard on pools. Freeze-thaw cycles crack plaster and work at coping until water gets behind the shell. Rocky ledge and clay make excavation a design problem, not a formality. A pool built to a generic national spec does not survive that the way one engineered for it does.",
+      "We build gunite shells that handle the swing from 90°F summers to -10°F winters, set plumbing below frost level, and finish with masonry from our own crew. Then we stay — renovations, resurfacing, leak detection, weekly maintenance, and the seasonal opening and closing that is the single best protection against a spring repair bill."
+    ],
+    "checklist": [
+      "Gunite and concrete pool construction, plus integrated spas",
+      "Renovation, replastering, tile, coping and full remodels",
+      "Leak detection, resurfacing and emergency repair",
+      "Weekly maintenance, chemical balancing and water testing",
+      "Seasonal opening, closing and winterization",
+      "Masonry: waterfalls, pavers, retaining walls, fire pits, outdoor kitchens"
+    ],
+    "image": "/img/construction.jpg",
+    "image_alt": "Gunite pool shell under construction",
+    "image_position": "left",
+    "cta_text": "Get My Free Consultation!",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "Why concrete or gunite instead of fiberglass or vinyl?",
+      "a": "Gunite is spray-applied concrete, which produces the strongest shell available and can take any shape your lot demands — curving around mature trees, fitting a narrow lot, or stepping down a slope. In this climate that strength matters, and we have gunite pools still sound after more than twenty Pennsylvania winters."
+    },
+    {
+      "q": "What does the free consultation include?",
+      "a": "We come to your property, walk the yard, talk through what you want, and take real measurements — slopes, sight lines from the house, existing landscaping, utility lines. Most consultations run one to two hours because we measure everything and explain the options rather than handing you a number over the phone."
+    },
+    {
+      "q": "Do you handle the masonry and hardscape, or is that a separate contractor?",
+      "a": "We handle it. Coping, pool decks, pavers, stone walls, retaining structures, fire pits, water features and complete outdoor kitchens are done by our own crew. That is why the hardscape and the pool meet the way the design drawing said they would."
+    },
+    {
+      "q": "Can you renovate a pool you did not build?",
+      "a": "Yes. Replastering, waterline tile, coping, sandblasting, patio and deck resurfacing, depth changes, added spas and water features, tanning ledges and travertine pavers are all standard renovation work for us. Our plaster options carry lifetime warranties and can be brought back to new colour without the demolition most pool plaster requires."
+    },
+    {
+      "q": "Do you offer weekly service and seasonal opening and closing?",
+      "a": "Yes. Openings usually start in April depending on weather — covers off and stored, equipment restarted, chemistry balanced, swim-ready inside a week. Closings drain lines below frost level, add antifreeze where needed and install winter covers, which is what prevents expensive freeze damage. Weekly maintenance, chemical balancing and professional water testing are available in between."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "Dallas, Shavertown, Trucksville, Back Mountain, Harveys Lake, Bear Creek and Mountain Top across Luzerne County, plus Wilkes-Barre, Clarks Summit, Scranton, Pittston and Waverly in and around Lackawanna County. Our crews also work out toward Sweet Valley, Tunkhannock and the Poconos."
+    },
+    {
+      "q": "What should I do first if my pool is leaking?",
+      "a": "Call us. Leak detection needs electronic listening equipment and pressure testing to find failures in the shell, plumbing lines or equipment — most of them turn up at pipe joints or where plumbing enters the pool. Guessing at it usually costs more than diagnosing it properly, and we offer emergency repair when a pool fails mid-season."
+    }
+  ]
+}

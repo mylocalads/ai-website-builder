@@ -1,0 +1,336 @@
+import { defineCollection, z } from 'astro:content';
+
+const services = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    title_highlight: z.string().optional(),
+    category: z.string().optional(),
+    seo_h1: z.string().optional(),
+    short_description: z.string(),
+    long_description: z.string(),
+    icon: z.string().optional(),
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    hero_photo: z.string().url().optional(),
+    order: z.number().default(0),
+    gallery: z.array(z.object({
+      photo: z.string().url(),
+      alt: z.string(),
+    })).default([]),
+    sub_services: z.array(z.string()).default([]),
+    about_heading: z.string().optional(),
+  }),
+});
+
+// Owl: service_areas entries resolve at `/service-area/{filename-slug}` via
+// `src/pages/service-area/[slug].astro`. The filename MUST match the pattern
+// `city-state.md` with a two-letter lowercase state (e.g. `denver-co.md`,
+// `miami-fl.md`) — the schema has no `slug` field and Astro derives the entry
+// slug from the filename. Because the route is nested, city slugs can no longer
+// collide with top-level static routes; only `index` is reserved, enforced in
+// getStaticPaths.
+const service_areas = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    county: z.string().optional(),
+    state: z.string(),
+    state_abbr: z.string()
+      .length(2)
+      .refine((v) => /^[a-z]{2}$/.test(v), {
+        message: 'state_abbr must be two lowercase letters (e.g. "co", "fl") to match the filename slug convention',
+      })
+      .optional(),
+    neighborhoods: z.array(z.string()).default([]),
+    local_context: z.string().optional(),
+    hero_photo: z.string().url().optional(),
+    landmark_photo: z.string().url().optional(),
+    landmark_alt: z.string().optional(),
+    order: z.number().default(0),
+    gallery: z.array(z.object({
+      photo: z.string().url(),
+      alt: z.string(),
+    })).default([]),
+  }),
+});
+
+const legal = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    updated: z.string(),
+  }),
+});
+
+const blog = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    publish_date: z.string().refine((v) => /^\d{4}-\d{2}-\d{2}$/.test(v), {
+      message: 'publish_date must be ISO yyyy-mm-dd so posts sort correctly',
+    }),
+    read_time: z.string(),
+    hero_image: z.string().url().optional(),
+    author: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+  }),
+});
+
+const codeInjectionSlots = z.object({
+  head: z.string().optional(),
+  body_start: z.string().optional(),
+  body_end: z.string().optional(),
+});
+
+const site = defineCollection({
+  type: 'data',
+  schema: z.discriminatedUnion('kind', [
+    z.object({
+      kind: z.literal('config'),
+      business_name: z.string(),
+      legal_name: z.string().optional(),
+      logo_url: z.string().optional(),            // URL or local path, e.g. /logo.png
+      default_hero_photo: z.string().optional(),  // URL or local path
+      default_hero_video: z.string().url().optional(),
+      about_photo: z.string().optional(),         // URL or local path
+      team_photo: z.string().optional(),          // URL or local path
+      team_members: z.array(z.object({
+        name: z.string(),
+        role: z.string().optional(),
+        photo: z.string().url(),
+        bio: z.string().optional(),
+      })).default([]),
+      tagline: z.string(),
+      phone: z.string(),
+      phone_display: z.string(),
+      email: z.string().email().optional(),
+      address: z.object({
+        street: z.string().optional(),
+        city: z.string(),
+        state: z.string(),
+        postal: z.string().optional(),
+        country: z.string().default('US'),
+      }),
+      marketing_city: z.string().optional(),
+      marketing_state: z.string().optional(),
+      geo: z.object({ lat: z.number(), lng: z.number() }).optional(),
+      hours: z.record(z.string()).optional(),
+      site_url: z.string().url(),
+      rating: z.number().optional(),
+      review_count: z.number().optional(),
+      licensed: z.boolean().default(false),
+      insured: z.boolean().default(false),
+      bonded: z.boolean().default(false),
+      years_in_business: z.number().optional(),
+      social: z.record(z.string().url()).default({}),
+      reference_urls: z.array(z.string().url()).default([]),
+      // DEPRECATED (v2.2): section order is fixed per page type; this field is no longer read.
+      section_rhythm: z.array(z.string()).default([]),
+      partners: z.array(z.object({
+        name: z.string(),
+        logo_url: z.string().url(),
+        link_url: z.string().url().optional(),
+      })).default([]),
+      why_choose_us: z.array(z.object({
+        // Optional and unused by the owl template: WhyChooseUs renders a
+        // typographic tile grid with no icon slot. Kept for firefly parity.
+        icon: z.string().optional(),
+        title: z.string(),
+        description: z.string(),
+      })).default([]),
+      financing: z.object({
+        enabled: z.boolean().default(false),
+        headline: z.string().optional(),
+        description: z.string().optional(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+        logo_url: z.string().url().optional(),
+      }).default({ enabled: false }),
+      us_vs_them: z.object({
+        enabled: z.boolean().default(false),
+        headline: z.string().optional(),
+        us_label: z.string().default('US'),
+        them_label: z.string().default('THEM'),
+        us_photo: z.string().url().optional(),
+        them_photo: z.string().url().optional(),
+        rows: z.array(z.object({
+          label: z.string(),
+          us: z.boolean().default(true),
+          them: z.boolean().default(false),
+        })).default([]),
+      }).default({ enabled: false, us_label: 'US', them_label: 'THEM', rows: [] }),
+      gallery: z.array(z.object({
+        title: z.string().optional(),
+        location: z.string().optional(),
+        photo: z.string().url(),
+        alt: z.string(),
+        description: z.string().optional(),
+      })).default([]),
+      compliance: z.object({
+        ada: z.boolean().default(true),
+        gdpr: z.boolean().default(true),
+        a2p: z.boolean().default(true),
+      }).default({ ada: true, gdpr: true, a2p: true }),
+      crm: z.object({
+        provider: z.literal('ghl').default('ghl'),
+        chat_widget_snippet: z.string().optional(),
+        contact_form_embed_url: z.string().url().optional(),
+        estimate_form_embed_url: z.string().url().optional(),
+        reviews_widget_snippet: z.string().optional(),
+        call_tracking_snippet: z.string().optional(),
+        call_tracking_number: z.string().optional(),
+        calendar_embed_snippet: z.string().optional(),
+        contact_form_snippet: z.string().optional(),
+        // Native EstimateForm: operator-supplied POST endpoint and captcha
+        // markup. Never synthesize either — an unset action renders the
+        // form disabled rather than silently dropping submissions.
+        form_action_url: z.string().url().optional(),
+        captcha_snippet: z.string().optional(),
+      }).default({ provider: 'ghl' }),
+      code_injection: codeInjectionSlots.extend({
+        per_page: z.record(codeInjectionSlots).default({}),
+      }).default({ per_page: {} }),
+      services_section: z.object({
+        eyebrow: z.string().default('Our Services'),
+        heading_lead: z.string().optional(),
+        heading_rest: z.string().optional(),
+        subtitle: z.string().optional(),
+      }).default({ eyebrow: 'Our Services' }),
+    }),
+    z.object({
+      kind: z.literal('home'),
+      hero: z.object({
+        eyebrow: z.string().optional(),
+        headline: z.string(),
+        subheadline: z.string(),
+        cta_text: z.string(),
+        cta_href: z.string(),
+        photo: z.string().url().optional(),
+        video: z.string().url().optional(),
+        video_link_text: z.string().optional(),
+        video_link_href: z.string().optional(),
+        trust_badges: z.array(z.object({
+          mark: z.enum(['google', 'bbb']).optional(),
+          rating: z.number().optional(),
+          label: z.string(),
+          sublabel: z.string().optional(),
+        })).default([]),
+        quote_card: z.object({
+          quote: z.string(),
+          author: z.string().optional(),
+          author_photo: z.string().url().optional(),
+          cta_text: z.string(),
+          cta_href: z.string(),
+          rating: z.number().optional(),
+          review_count: z.number().optional(),
+        }).optional(),
+      }),
+      promise_bar: z.array(z.union([
+        z.string(),
+        z.object({ text: z.string(), icon: z.string().optional() }),
+      ])).default([]),
+      promise_band: z.object({
+        eyebrow: z.string().optional(),
+        headline: z.string(),
+        body: z.string(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+        icon: z.string().optional(),
+        image: z.string().optional(),
+      }).optional(),
+      signature_system: z.object({
+        eyebrow: z.string().optional(),
+        headline: z.string(),
+        intro: z.string().optional(),
+        blocks: z.array(z.object({
+          title: z.string(),
+          body: z.string(),
+          // `icon` is a KEY into the component's icon registry (shield,
+          // document, umbrella, calendar, broom, home). An unknown key
+          // renders nothing — it is never printed as text.
+          icon: z.string().optional(),
+          image: z.string().url().optional(),
+        })).default([]),
+        steps_title: z.string().optional(),
+        steps_icon: z.string().optional(),   // icon registry key
+        steps: z.array(z.object({ title: z.string(), body: z.string() })).default([]),
+        guarantee: z.object({
+          title: z.string(),
+          body: z.string(),
+          cta_text: z.string().optional(),
+          cta_href: z.string().optional(),
+          badge_image: z.string().optional(),   // URL or local path e.g. /badge.svg
+          badge_alt: z.string().optional(),
+        }).optional(),
+      }).optional(),
+      process_steps: z.object({
+        headline: z.string(),
+        steps: z.array(z.object({
+          label: z.string(),
+          title: z.string(),
+          body: z.string().optional(),
+          icon: z.string().optional(),
+        })).default([]),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+      }).optional(),
+      about_block: z.object({
+        eyebrow: z.string().optional(),
+        headline: z.string(),
+        body: z.string(),
+        checklist: z.array(z.string()).default([]),
+        photo: z.string().optional(),        // URL or local path
+        photo_alt: z.string().optional(),
+        // Set true for a transparent PNG cut-out (e.g. the owner). Drops the
+        // rounded frame and bottom-aligns so the subject stands on the baseline
+        // instead of floating in a rounded box.
+        photo_cutout: z.boolean().default(false),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+      }).optional(),
+      seo_body: z.object({
+        eyebrow: z.string().optional(),
+        headline: z.string(),
+        paragraphs: z.array(z.string()).default([]),
+        checklist: z.array(z.string()).default([]),
+        image: z.string().optional(),
+        image_alt: z.string().optional(),
+        image_position: z.enum(['left', 'right']).optional(),
+        review: z.object({
+          name: z.string(),
+          text: z.string(),
+          rating: z.number().optional(),
+          source: z.string().optional(),
+          avatar: z.string().optional(),
+        }).optional(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+      }).optional(),
+      testimonials: z.array(z.object({
+        name: z.string(), location: z.string().optional(), text: z.string(), rating: z.number().optional(),
+      })).default([]),
+      faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    }),
+    z.object({ kind: z.literal('about'), story: z.string() }),
+    z.object({
+      kind: z.literal('pricing'),
+      intro: z.string(),
+      packages: z.array(z.object({
+        name: z.string(), price: z.string(), unit: z.string().optional(),
+        includes: z.array(z.string()), cta_text: z.string(), cta_href: z.string(),
+      })),
+      notes: z.string().optional(),
+    }),
+    z.object({
+      kind: z.literal('our-work'),
+      intro: z.string(),
+      projects: z.array(z.object({
+        title: z.string(), location: z.string().optional(), photo: z.string().url(),
+        alt: z.string(), description: z.string().optional(),
+      })),
+    }),
+  ]),
+});
+
+export const collections = { services, service_areas, legal, site, blog };

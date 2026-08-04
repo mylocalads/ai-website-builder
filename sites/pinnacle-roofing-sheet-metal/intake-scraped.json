@@ -1,0 +1,223 @@
+{
+  "slug": "pinnacle-roofing-sheet-metal",
+  "business_name": "Pinnacle Roofing & Sheet Metal",
+  "legal_name": "Pinnacle Roofing & Sheet Metal, Inc.",
+  "tagline": "We are the Pinnacle of the Roofing Industry",
+  "phone": "+15707357751",
+  "phone_display": "(570) 735-7751",
+  "phone_secondary": "+15703437153",
+  "phone_secondary_display": "(570) 343-7153",
+  "fax": "(570) 735-1571",
+  "email": "pinnroof@aol.com",
+  "address": {
+    "street": "100 Hay Street",
+    "city": "Nanticoke",
+    "state": "PA",
+    "postal": "18634",
+    "country": "US"
+  },
+  "second_location": {
+    "street": "Colliery Road",
+    "city": "Dickson City",
+    "state": "PA",
+    "postal": "18519",
+    "phone_display": "(570) 343-7153",
+    "_source": "scraped"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2005496, "lng": -76.0115444 },
+  "hours": {
+    "monday": "6:00am-5:00pm",
+    "tuesday": "6:00am-5:00pm",
+    "wednesday": "6:00am-5:00pm",
+    "thursday": "6:00am-5:00pm",
+    "friday": "6:00am-5:00pm"
+  },
+  "rating": 5,
+  "review_count": 3,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 33,
+  "established_year": 1993,
+  "social": {
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Pinnacle%20Roofing%20%26%20Sheet%20Metal%2C%20Inc.&query_place_id=ChIJSYsJpegNxYkRLbkogpFFRu8"
+  },
+  "site_url": "https://www.pinnacleroofingpa.com",
+  "logo_url": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12139828-1920w.png",
+  "default_hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/0-a83e-592be23a95b3-542w.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/11717457+%281%29-1920w.jpg",
+  "brand": {
+    "fonts": { "display": null, "body": "Source Sans Pro" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#F30E1E",
+      "accent": "#F30E1E",
+      "muted": null,
+      "surface": "#FFFFFF",
+      "primary": "#03779C",
+      "secondary": "#FAE231",
+      "candidates": ["#03779C", "#FAE231", "#F30E1E", "#FFFFFF"]
+    }
+  },
+  "credentials": {
+    "awards": [
+      "Excalibur Award — awarded to the \"Top 60 Roofing Contractors in the United States\" — earned every year from 1994 to the present. Given to Versico's most prominent and successful authorized contractors.",
+      "Gold Medal Contractor Quality Award"
+    ],
+    "associations": [
+      "Northeastern Pennsylvania Contractors Association",
+      "National Roofing Contractors Association",
+      "Wilkes-Barre Chamber of Commerce",
+      "Scranton Chamber of Commerce",
+      "Hazleton Chamber of Commerce"
+    ],
+    "programs": ["Energy Star Savings Program"],
+    "_source": "scraped"
+  },
+  "notable_clients": [
+    { "city": "Avoca", "names": ["Wilkes-Barre / Scranton International Airport"] },
+    { "city": "Bloomsburg", "names": ["Bloomsburg University"] },
+    { "city": "Carbondale", "names": ["NBT Bank", "Community Bank"] },
+    { "city": "Dallas", "names": ["Dallas Area School District", "Offset Printery", "Payne Printery", "Turkey Hill Store"] },
+    { "city": "Danville", "names": ["Geisinger Medical Center"] },
+    { "city": "Dickson City", "names": ["Community Bank"] },
+    { "city": "Dunmore", "names": ["DeNaples Auto Parts", "Dunmore Cemetery Office", "R. R. Donnelley & Sons", "Maid Rite Steaks"] },
+    { "city": "Edwardsville", "names": ["Dan Flood Towers", "R & H Manufacturing", "Temple Apartments", "West Side Mall"] },
+    { "city": "Freeland", "names": ["Citterio USA"] },
+    { "city": "Hanover Township", "names": ["Core Mark", "Daltech, Inc.", "Hanover Mall", "Nardone Brothers Baking Company", "Wyoming Valley Country Club", "Wyoming Valley Sanitary Authority"] },
+    { "city": "Hazleton", "names": ["Berger Family Dealership", "Inteplast", "PP&L Service Center", "Rowlands Innovative Fluid Solutions", "Valley Country Club", "Vita-Line"] },
+    { "city": "Kingston", "names": ["Dan Flood Towers", "Fidelity Bank", "Rosewood Realty"] },
+    { "city": "Lebanon", "names": ["Veterans Hospital"] },
+    { "city": "Mehoopany", "names": ["Procter & Gamble"] },
+    { "city": "Moosic", "names": ["Shoppes at Montage"] },
+    { "city": "Mountaintop", "names": ["CertainTeed Corporation", "Geisinger Clinic"] },
+    { "city": "Nanticoke", "names": ["Luzerne County Community College"] },
+    { "city": "Old Forge", "names": ["Golden Technology"] },
+    { "city": "Pittston", "names": ["Falcone Beverage", "Pittston Dispatch", "Rite Aid Pharmacy"] },
+    { "city": "Pocono Manor", "names": ["Kalahari Resort"] },
+    { "city": "Scranton", "names": ["Community Bank", "Geisinger CMC Hospital", "Houghton Chemical", "Keyser Oak Shopping Center", "Northeast Eye Institute", "Penn State Worthington Campus", "The Commonwealth Medical College"] },
+    { "city": "Sweet Valley", "names": ["Mountain Fresh Supermarket"] },
+    { "city": "Swiftwater", "names": ["Sanofi Pasteur"] },
+    { "city": "Tobyhanna", "names": ["Tobyhanna Army Depot"] },
+    { "city": "Wilkes-Barre", "names": ["American Red Cross", "Bloomsburg Metal", "Community Bank", "Geisinger South", "Geisinger Wyoming Valley Hospital", "Park Avenue Towers", "Schiel's Market", "Turkey Hill Store", "Veterans Hospital", "Wilkes University"] }
+  ],
+  "services": [
+    {
+      "title": "Commercial Flat Roofing",
+      "short_description": "Single-ply membrane systems installed on low-slope commercial roofs across Northeastern PA.",
+      "long_description": "Flat and low-slope roofs are what we do. We install all types of single-ply membrane, spec the insulation to the building rather than to a catalog page, and detail the flashings, curbs and terminations that are where flat roofs actually fail. Every system we install carries a manufacturer warranty.",
+      "sub_services": ["Flat roofing installation", "All types of single-ply membrane", "Waterproofing", "Energy-efficient roof insulation", "Manufacturer-warrantied systems"],
+      "hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/11716272-1920w.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Commercial Roof Replacement & New Construction",
+      "short_description": "Full tear-off and re-roofing, plus new-construction roofing for institutional, industrial and retail buildings.",
+      "long_description": "From new construction to complete re-roofing, we handle the whole scope — tear-off, deck evaluation, insulation, membrane, and all the sheet metal that goes with it. We have installed on hospitals, universities, plants, schools and municipal buildings across Luzerne, Lackawanna and Monroe counties since 1993.",
+      "sub_services": ["New construction roofing", "Full roof replacement", "Re-roofing", "Top-quality installations", "Deck and insulation evaluation"],
+      "hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12139962-1920w.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair & Emergency Leak Service",
+      "short_description": "On-call technicians from two Northeastern PA locations for active leaks and storm damage.",
+      "long_description": "When a roof is leaking into occupied space, the cost is the disruption, not the patch. We keep on-call service technicians at both our Nanticoke and Dickson City locations so we can get on-site quickly, find the actual source, and stop the water — then give you a straight answer about whether it is a repair or the start of a bigger problem.",
+      "sub_services": ["Emergency leak response", "Roof system maintenance and repair", "Large-scale repairs", "Storm damage repair", "On-call service technicians"],
+      "hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12406285_230x150-1920w.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Preventative Maintenance & Roof Inspections",
+      "short_description": "Scheduled inspections and maintenance that extend roof life and keep the warranty intact.",
+      "long_description": "Most commercial roofs do not fail from one dramatic event — they fail from small, unaddressed details over several winters, and the warranty claim gets denied because nobody documented anything. A scheduled maintenance and inspection program fixes both problems: it catches the details early and it builds the record that keeps your extended warranty coverage enforceable.",
+      "sub_services": ["Preventative maintenance programs", "Roof inspections", "Roof system maintenance", "Extended warranty service coverage", "Documented inspection records"],
+      "hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12406286_230x150-1920w.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Architectural Metal & Sheet Metal",
+      "short_description": "Architectural metal roofing, composite aluminum panels and custom sheet metal fabrication.",
+      "long_description": "Sheet metal is in our name because it is half the job. We install architectural metal roofing and composite aluminum panel systems, and we fabricate the copings, counterflashings, gutters, scuppers and custom trim that make a commercial roof watertight where the membrane ends.",
+      "sub_services": ["Architectural metal roofing", "Composite aluminum panels", "Custom sheet metal fabrication", "Copings, counterflashing and trim", "Gutters and scuppers"],
+      "hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12406342-1920w.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Energy Star White Roofing Systems",
+      "short_description": "Reflective white membrane and high-R insulation that cut cooling load on large roof areas.",
+      "long_description": "We are part of the Energy Star Savings Program. On buildings with big roof areas, a reflective white membrane paired with properly specified insulation measurably cuts the cooling load — and on a re-roof it is usually the cheapest efficiency upgrade available to the building, because the roof is already open.",
+      "sub_services": ["Energy Star White Roofing Systems", "Energy-efficient roof insulation", "Reflective single-ply membrane", "Roof insulation upgrades"],
+      "hero_photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12406284_240x150-1920w.png",
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Wilkes-Barre", "county": "Luzerne County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "_source": "scraped" },
+    { "name": "Scranton", "county": "Lackawanna County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "scranton-pa", "_source": "scraped" },
+    { "name": "Nanticoke", "county": "Luzerne County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "nanticoke-pa", "_source": "scraped" },
+    { "name": "Dickson City", "county": "Lackawanna County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "dickson-city-pa", "_source": "scraped" },
+    { "name": "Hazleton", "county": "Luzerne County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hazleton-pa", "_source": "scraped" },
+    { "name": "Stroudsburg", "county": "Monroe County", "state": "Pennsylvania", "state_abbr": "pa", "slug": "stroudsburg-pa", "_source": "scraped" }
+  ],
+  "testimonials": [],
+  "team_members": [
+    {
+      "name": "Paul J. Eyerman, Jr.",
+      "role": "President",
+      "photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/11715380+%281%29-1920w.jpg",
+      "bio": "President of the company with 35 years of experience in the roofing industry.",
+      "_source": "scraped"
+    },
+    {
+      "name": "Jerome F. Devlin",
+      "role": "Vice President of Operations",
+      "photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/11715377+%281%29-1920w.jpg",
+      "bio": "Vice President of Operations with 30 years of experience in the roofing industry.",
+      "_source": "scraped"
+    },
+    {
+      "name": "John Racht",
+      "role": "Superintendent of Operations, Dickson City",
+      "photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/11715378+%281%29-1920w.jpg",
+      "bio": "An increase in roofing construction in the Scranton area made a satellite office in Dickson City necessary. With over 35 years of experience in the roofing industry, John Racht is the Superintendent of Operations at the Dickson City facility.",
+      "_source": "scraped"
+    },
+    {
+      "name": "Mariann Eyerman",
+      "role": "Company Secretary & Office Manager",
+      "photo": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12255054_200x190+%281%29-1920w.jpg",
+      "bio": "Mariann is the Company Secretary and Office Manager. Her responsibilities include accounting, bookkeeping, and all financial needs for Pinnacle Roofing & Sheet Metal, Inc.",
+      "_source": "scraped"
+    }
+  ],
+  "faqs": [],
+  "gallery": [],
+  "about": {
+    "story": "Established in 1993, Pinnacle Roofing & Sheet Metal, Inc. has spent more than three decades putting commercial roofs on Northeastern Pennsylvania's hospitals, universities, plants, schools, banks and municipal buildings. The company takes pride in professionalism — you get the best possible craftsmanship and customer service when you work with us. From two locations, Nanticoke and Dickson City, we serve Luzerne, Lackawanna and Monroe counties.",
+    "_source": "scraped"
+  },
+  "brand_voice_sample": "We are the Pinnacle of the Roofing Industry. Established in 1993, Pinnacle Roofing & Sheet Metal, Inc. has trained and experienced technicians ready to install a sturdy, leak-proof roof on your building. Don't settle for just any roofer. Choose a roofing contractor who has a proven history of excellence.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The existing site uses Hibu's built-in form widget on the two location pages, not a client-owned CRM. Nothing here is reusable — GHL snippets must be pasted in by the operator."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_place_id": "ChIJSYsJpegNxYkRLbkogpFFRu8",
+    "pages_scraped": ["/", "/products/4108043", "/services/4108099", "/about-us/4108103", "/awards/4108100", "/experience-and-affiliations/4108102", "/nanticoke/4108045", "/dickson-city/4108235"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.18,
+    "warnings": [
+      "GBP returned no review bodies (only 3 reviews total, and the Apify run was aborted early because the broad statewide locationQuery caused it to over-crawl). testimonials[] is intentionally EMPTY rather than fabricated.",
+      "The client site displays no 'Licensed & Insured' badge or footer disclosure, so licensed/insured/bonded are all false. Operator should confirm and set them.",
+      "/contact on the existing site returns a 404 page; the working contact forms live on the two location pages.",
+      "The old homepage says 'With 23 years' experience' while also claiming 'Established in 1993'. The stale number was NOT carried forward — years_in_business is derived from the 1993 establishment date (33 years as of 2026).",
+      "Stroudsburg was added as the Monroe County service-area representative: the site names Monroe County and Pocono Manor (Kalahari Resort) but no Monroe city page existed. Flagged for operator confirmation."
+    ]
+  }
+}

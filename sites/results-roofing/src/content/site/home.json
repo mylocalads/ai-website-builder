@@ -1,0 +1,253 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Dallas, TX",
+    "headline": "We meet your adjuster on the roof",
+    "subheadline": "Most roofers hand you an estimate and cash the first insurance check. We inspect, document, stand with your adjuster, and supplement what the estimate missed — then build the roof. GAF Master Elite® President's Club, 4.9 stars across 1,802 reviews.",
+    "cta_text": "Get My Free Inspection",
+    "cta_href": "/book",
+    "photo": "/img/roof-replacement.jpg",
+    "video_link_text": "How we handle an insurance claim",
+    "video_link_href": "/services/storm-damage-insurance-claims",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.9,
+        "label": "4.9 out of 5",
+        "sublabel": "1,802 Google reviews"
+      }
+    ],
+    "quote_card": {
+      "quote": "Results Roofing stepped up and walked us through the claim process, fought for coverage that our insurance company didn't want to cover, and completely knocked it out of the park.",
+      "author": "Chris McCullough",
+      "cta_text": "Get My Free Inspection",
+      "cta_href": "/book",
+      "rating": 4.9,
+      "review_count": 1802
+    }
+  },
+  "promise_bar": [
+    "Free, no-obligation inspection",
+    "We attend the adjuster meeting",
+    "GAF Master Elite® — top 2%",
+    "Emergency response, 24/7"
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We will tell you if you don't need a roof",
+    "body": "After every Texas hailstorm, someone knocks on your door and tells you your roof is finished. Sometimes they are right. Often they are not. Our inspection is free, carries no obligation, and ends in a straight answer either way — including \"this roof has years left in it, here is what to watch.\" We would rather be the company you call in three years than the one that sold you a roof you did not need.",
+    "cta_text": "Book a free inspection",
+    "cta_href": "/book",
+    "image": "/img/inspection-ladder.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "Insurance Claims",
+    "headline": "How we handle your insurance claim",
+    "intro": "The roof is the easy part. The claim is where homeowners lose money — and where most roofers stop working. Here is exactly what we do, and why each step matters.",
+    "blocks": [
+      {
+        "title": "We document before anyone disputes",
+        "body": "A full photo report of every slope, plus the collateral evidence most inspections skip — gutters, window screens, fascia, AC fins, fence. Hail does not only hit roofs, and undocumented damage is damage your policy will not pay for.",
+        "icon": "document",
+        "image": "/img/damaged-shingles.jpg"
+      },
+      {
+        "title": "We are there when the adjuster is",
+        "body": "Adjusters work fast and they miss things. Our inspector walks the roof alongside yours, points out what we found, and gets it into the record on the spot instead of arguing about it a month later.",
+        "icon": "shield",
+        "image": "/img/storm-damage.jpg"
+      },
+      {
+        "title": "We supplement what the estimate missed",
+        "body": "If the scope comes back short — missing line items, wrong shingle grade, no code upgrades — we file the supplement with the documentation to support it. This is the step that separates a claim handled properly from a claim simply accepted.",
+        "icon": "umbrella",
+        "image": "/img/roof-replacement.jpg"
+      },
+      {
+        "title": "We close it out so your depreciation is released",
+        "body": "Most policies hold back recoverable depreciation until the work is certified complete. We send the completion paperwork to your carrier so that final check actually reaches you, instead of sitting unclaimed.",
+        "icon": "home",
+        "image": "/img/new-installation.jpg"
+      }
+    ],
+    "steps_title": "What that looks like on your calendar",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Free inspection, usually within a day or two",
+        "body": "We walk the property, photograph everything, and tell you honestly whether you have a claim worth filing."
+      },
+      {
+        "title": "You file — we hand you the evidence",
+        "body": "You contact your carrier. You go in with a photo report and a clear date of loss instead of a guess."
+      },
+      {
+        "title": "We meet your adjuster on site",
+        "body": "Our inspector is on the roof with theirs. Anything they miss gets raised while everyone is still standing on it."
+      },
+      {
+        "title": "Build, then close the claim out",
+        "body": "Crews install the roof, then we certify completion to the carrier so your held-back depreciation is released."
+      }
+    ],
+    "guarantee": {
+      "title": "GAF Master Elite® President's Club",
+      "body": "Fewer than 2% of roofing contractors in the United States carry this certification, and GAF reviews it every year. It is what allows us to offer GAF's strongest material and workmanship warranties — coverage backed by the manufacturer, so it does not depend on any contractor still being in business years from now.",
+      "cta_text": "See our services",
+      "cta_href": "/services",
+      "badge_image": "/img/badge-gaf-master-elite.png",
+      "badge_alt": "GAF Master Elite certified residential roofing contractor badge"
+    }
+  },
+  "process_steps": {
+    "headline": "Four steps, no mystery",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Call or book online",
+        "body": "Reach a person, not a queue. We are reachable around the clock for storm emergencies."
+      },
+      {
+        "label": "Step Two",
+        "title": "Free roof inspection",
+        "body": "A full walk of the property with a photo report emailed to you — often before we leave."
+      },
+      {
+        "label": "Step Three",
+        "title": "A straight answer, in writing",
+        "body": "Claim, repair, or nothing at all — with the photos that back it up."
+      },
+      {
+        "label": "Step Four",
+        "title": "We build it and close it out",
+        "body": "Install, clean up, and file the completion paperwork with your carrier."
+      }
+    ],
+    "cta_text": "Start with a free inspection",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Results Roofing",
+    "headline": "Started by a homeowner who got burned by a contractor",
+    "body": "Dustin Gutkowski came up in Austin, moved to Dallas, and ran fitness locations before he ever touched roofing. What put him in this business was dealing with contractors who were less than ethical — so he built the company he wished he had been able to hire. That is still the operating principle. We are relational, not transactional, and we are with you at every step, including standing beside you when the insurance adjuster shows up.",
+    "checklist": [
+      "Headquartered in Carrollton, with nine offices across TX, GA, NC and SC",
+      "A dedicated claims department with its own line: (844) 227-3484",
+      "GAF Master Elite® President's Club — fewer than 2% of contractors",
+      "4.9 stars across 1,802 Google reviews",
+      "Free inspections with no fee, no obligation and no upsell"
+    ],
+    "photo": "/img/inspection-ladder.jpg",
+    "photo_alt": "A Results Roofing inspector setting a ladder against a home for a free roof inspection",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Roofing in DFW",
+    "headline": "The roofer to call after the hail stops",
+    "paragraphs": [
+      "Texas roofs take a beating 365 days a year. Hail with razor edges, straight-line winds, ice that wedges into existing cracks and widens them, and a sun that ages shingles faster than the warranty assumes. Some of that damage announces itself. Most of it does not — and undetected storm damage is what turns a covered claim into a leak you end up paying for yourself.",
+      "The hard part is rarely the roof. It is the claim. Homeowners across DFW describe the same experience: an adjuster who moves fast and misses damage, an estimate that comes back short, confusion about actual cash value versus replacement cost, and nobody in their corner who can explain recoverable depreciation. That gap is the reason Results Roofing exists — and it is why 181 of our Google reviews mention insurance claim help specifically.",
+      "We serve Dallas, Fort Worth, Houston, Austin, San Antonio and Atlanta, with additional offices in College Station, Wilmington, Raleigh and North Myrtle Beach. Every one is a real address with local crews. If your neighborhood was hit, start with a free inspection — it costs nothing, obligates you to nothing, and you will get a straight answer about whether filing is worth it at all."
+    ],
+    "checklist": [
+      "Free inspection with a photo report, no fee and no obligation",
+      "We attend the insurance adjuster meeting with you",
+      "Supplements filed when the carrier's scope comes back short",
+      "Emergency tarping and around-the-clock storm response",
+      "GAF material and workmanship warranties in writing"
+    ],
+    "image": "/img/tarp-on-roof.jpg",
+    "image_alt": "Aerial view of a Texas home with an emergency tarp over storm-damaged roof sections",
+    "image_position": "right",
+    "review": {
+      "name": "Julie Harris",
+      "text": "He and the office staff worked with my insurance carrier and kept me informed from initial inspection to project completion. The roof was completed in a day and they left the yard looking like they had never been here.",
+      "rating": 5,
+      "source": "Google"
+    },
+    "cta_text": "Book my free inspection",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Chris McCullough",
+      "text": "Results Roofing went above and beyond! We got hit with a nasty hail storm that did extensive damage to our house and property. RR stepped up and walked us through the claim process, fought for coverage that our insurance company didn't want to cover, and completely knocked it out of the park. I would 100% work with Greg and his team again.",
+      "rating": 5
+    },
+    {
+      "name": "Julie Harris",
+      "text": "My representative, Ryan Osterheldt, was knowledgeable, helpful and available anytime I reached out with questions. He and the office staff worked with my insurance carrier and kept me informed from initial inspection to project completion. The roof was completed in a day and they left the yard looking like they had never been here. Very satisfied with how smoothly everything went and how nice my roof looks.",
+      "rating": 5
+    },
+    {
+      "name": "Michael D. Rogers",
+      "text": "Linc came out exactly the time and date made, was not only on time, he did a thorough check of my roof, gutters, facia, not only made recommendations for the future but did some repairs that he noticed and was glad to do on the spot! I will use this man and company in the future for any and all necessary repairs or replacements. I highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Kayla Loschky",
+      "text": "Miguel Angel came to our property to check our roof and he was so professional, kind, and explained everything that he saw. We got a report emailed to us before he even left the property! Highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Kim Fernandez",
+      "text": "Cody Clement was phenomenal. He went out to look at both of my clients' homes the very same day I called. My clients were in the process of purchasing and selling, and Cody took the time to explain the entire process to them in a way that made them feel confident and at ease. His honesty and professionalism truly stood out.",
+      "rating": 5
+    },
+    {
+      "name": "Matthew Franklin",
+      "text": "Amazing experience. Highly recommend if you need a new roof, use these guys. Seamless process from start to finish. Buster was great to work with.",
+      "rating": 5
+    },
+    {
+      "name": "Ernest Flores",
+      "text": "Results Roofing installed a new roof on my house yesterday. They did a great job. Brinson Zandi was very professional and explained the process to me and answered all my questions. I was very pleased with the work and everyone involved.",
+      "rating": 5
+    },
+    {
+      "name": "Jil B.",
+      "text": "Highly recommend Results Roofing. Jeremy Turner was awesome to work with. Quick to respond and help us with our roof issue. Very professional, service was great!",
+      "rating": 5
+    },
+    {
+      "name": "Maria Mutamiri",
+      "text": "Brandon Steward was professional, efficient and friendly. Quality experience!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "A roofer knocked on my door and said I need a new roof. Do I?",
+      "a": "Maybe, and maybe not. After a hailstorm, crews from all over the country work Texas neighborhoods, and not all of them are careful about what they tell you. Get a second opinion from a company with a local address you can drive to. Our inspection is free and carries no obligation — if your roof has years left in it, we will tell you that and show you the photos."
+    },
+    {
+      "q": "How long do I have to file a hail or wind claim?",
+      "a": "Less time than most people assume. Texas homeowners policies generally require you to report a loss promptly, and many set an outside limit of roughly a year from the date of the storm — but the exact window is set by your policy, so read yours or ask your agent. The practical risk is different: wait long enough and the carrier can argue the damage is old or pre-existing. If your area was hit, get it inspected and documented while the date of loss is still clear."
+    },
+    {
+      "q": "A contractor offered to cover my deductible. Is that allowed?",
+      "a": "No. Texas law prohibits a contractor from paying, rebating, waiving, or absorbing any part of your insurance deductible, and the Texas Department of Insurance publishes guidance saying so. It is a red flag rather than a favor — if someone offers it, it is worth asking what else they are willing to misrepresent to your carrier."
+    },
+    {
+      "q": "What is the difference between ACV and RCV on my claim?",
+      "a": "Actual cash value is what your roof is worth today, after depreciation for age. Replacement cost value is what it costs to put a new one on. On an RCV policy the carrier typically issues the ACV amount first, minus your deductible, and holds back the depreciation until the work is certified complete. That final payment is called recoverable depreciation, and we file the completion paperwork so it actually gets released."
+    },
+    {
+      "q": "Will filing a claim raise my premium or get me dropped?",
+      "a": "We are roofers, not your agent, so ask them about your specific policy — but two things are broadly true in this market. Premiums and wind/hail deductibles have been climbing across DFW whether or not you file. And letting a roof age out without ever filing carries its own cost: carriers increasingly decline coverage on older roofs, which can leave you paying for a full replacement out of pocket."
+    },
+    {
+      "q": "Do you actually attend the adjuster meeting?",
+      "a": "Yes, and it is the part of our process we would point to first. Our inspector is on the roof while your adjuster is, so anything missed gets raised on the spot rather than disputed weeks later. If the approved scope still comes back short, we file a supplement with the photo documentation to support it."
+    },
+    {
+      "q": "What does an inspection cost, and am I committing to anything?",
+      "a": "Nothing, and no. No fee, no obligation, no pressure. We walk your property, photograph every slope plus the collateral areas adjusters often skip — gutters, screens, fascia, AC fins — and email you the report. What you do with it is entirely your call."
+    },
+    {
+      "q": "My roof is leaking right now. How fast can you get here?",
+      "a": "Call (214) 301-5533. We handle emergencies around the clock and will tarp to stop active water intrusion while a permanent repair is scheduled. Tree and limb impact, major leaks, and wind or hail damage are all things we respond to on an emergency basis."
+    }
+  ]
+}

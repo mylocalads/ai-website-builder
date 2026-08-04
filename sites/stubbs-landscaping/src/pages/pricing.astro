@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// What actually moves the number on an outdoor project here. Deliberately not a
+// price table: on sloped Mountain Top and Back Mountain lots the base and grade
+// work decide the cost far more than the surface material, so a per-square-foot
+// figure would be misleading in exactly the cases where it matters most.
+const costFactors = [
+  {
+    factor: 'Grade and elevation change',
+    detail: 'A flat, open lot is a very different job from a sloped one. Most patios on the mountain need a retaining wall and a stair run before a single paver is set.',
+  },
+  {
+    factor: 'Excavation and base depth',
+    detail: 'How much material comes out and how much stone goes back in. This is the largest hidden cost on any hardscape job — and the first thing a cheap bid removes.',
+  },
+  {
+    factor: 'Drainage',
+    detail: 'Where water goes once the grade changes. Correcting an existing drainage problem before building is cheaper than rebuilding over one.',
+  },
+  {
+    factor: 'Machine access',
+    detail: 'A backyard reachable by machine costs less to build than one where everything is moved by hand through a narrow side yard.',
+  },
+  {
+    factor: 'Material selection',
+    detail: 'Paver, natural stone, composite decking, and tile all sit in different ranges — but this usually matters less to the total than the four items above.',
+  },
+  {
+    factor: 'Scope and phasing',
+    detail: 'A patio, a wall, lighting, planting, and a plunge pool cost less designed and built together than added one at a time over several years.',
+  },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How landscaping, hardscaping, deck, and plunge pool projects are priced across ${site.address.city}, ${site.address.state} — and what actually moves the number.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your project"
+  />
+
+  <section class="roof-cost">
+    <div class="container">
+      <h2>What decides the price in {site.address.city}, {site.address.state}</h2>
+      <p class="lede">We do not publish a square-foot rate, because on these lots the number is set by what is under the project rather than by what you walk on. These are the six things that actually move it.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>What we look at</th><th>Why it changes the number</th></tr>
+          </thead>
+          <tbody>
+            {costFactors.map((r) => (
+              <tr><td>{r.factor}</td><td>{r.detail}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>The short version:</strong> two estimates for what sounds like the same patio can be thousands apart, and the difference is almost always excavation depth, base material, and drainage — the parts you never see once it is finished.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free on-site estimate</h2>
+        <p class="lede">Pick a time that works — we come out, take grades and measurements, and follow up with 3D renderings and a written estimate.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .roof-cost { padding: var(--space-5) 0; background: var(--color-surface); }
+  .roof-cost h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .roof-cost .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .roof-cost table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .roof-cost th, .roof-cost td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .roof-cost th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .roof-cost tbody tr:last-child td { border-bottom: 0; }
+  .roof-cost .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

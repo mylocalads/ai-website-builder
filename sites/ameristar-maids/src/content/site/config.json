@@ -1,0 +1,121 @@
+{
+  "kind": "config",
+  "business_name": "AmeriStar Maids",
+  "tagline": "House Cleaning & Maid Service in the Back Mountain",
+  "phone": "+15703101057",
+  "phone_display": "(570) 310-1057",
+  "email": "info@ameristarmaids.com",
+  "address": {
+    "street": "1100 Twin Stacks Dr #1202",
+    "city": "Dallas",
+    "state": "PA",
+    "postal": "18612",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 41.3397287,
+    "lng": -75.9760242
+  },
+  "hours": {
+    "monday": "8:30 AM – 4:30 PM",
+    "tuesday": "8:30 AM – 4:30 PM",
+    "wednesday": "8:30 AM – 4:30 PM",
+    "thursday": "8:30 AM – 4:30 PM",
+    "friday": "8:30 AM – 4:30 PM"
+  },
+  "site_url": "https://ameristar-maids.vercel.app",
+  "rating": 4.9,
+  "review_count": 171,
+  "licensed": false,
+  "insured": true,
+  "bonded": true,
+  "social": {
+    "facebook": "https://www.facebook.com/AmeriStarMaids/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=AmeriStar%20Maids&query_place_id=ChIJm38tI3QXxYkRK1NLLzVxnLM"
+  },
+  "logo_url": "/logo-ameristar.png",
+  "default_hero_photo": "/img/hero-cleaning.jpg",
+  "about_photo": "/img/crew-at-work.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "One maid. Same maid. Every time.",
+      "description": "You are not assigned whoever happens to be free that week. The same cleaner learns your home, your preferences, and the corners you actually care about — and comes back to it."
+    },
+    {
+      "title": "Bonded, insured, and screened",
+      "description": "Every team member goes through a thorough screening before they set foot in a home, and we carry company-provided workers' compensation on all of them. You are covered, and so are they."
+    },
+    {
+      "title": "A published list, not a vague promise",
+      "description": "Every service tier has a written, line-by-line checklist — down to switch plates, drip pans, and baseboards. You know exactly what is included before we start."
+    },
+    {
+      "title": "Free in-home estimate first",
+      "description": "We look at your home, then quote it. No hourly guessing, no one-size-fits-all package, and no number that changes once the crew is standing in your kitchen."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "photo": "/img/hero-cleaning.jpg",
+      "alt": "AmeriStar Maids cleaner spraying and wiping down a bathroom surface"
+    },
+    {
+      "photo": "/img/deluxe-clean.jpg",
+      "alt": "Hand-detailing a shower during a Top-to-Bottom Deluxe Cleaning"
+    },
+    {
+      "photo": "/img/recurring-clean.jpg",
+      "alt": "Dusting a mantel during a recurring cleaning visit"
+    },
+    {
+      "photo": "/img/crew-at-work.jpg",
+      "alt": "An AmeriStar Maids cleaner working in a Luzerne County home"
+    },
+    {
+      "photo": "/img/clean-living-room.jpg",
+      "alt": "A bright, freshly cleaned living room after an AmeriStar Maids visit"
+    },
+    {
+      "photo": "/img/team-cleaning.jpg",
+      "alt": "The AmeriStar Maids team on site in the Back Mountain"
+    },
+    {
+      "photo": "/img/residential-cleaning.jpg",
+      "alt": "Residential cleaning underway in a Pennsylvania home"
+    },
+    {
+      "photo": "/img/best-cleaning-service.jpg",
+      "alt": "Detail cleaning of a kitchen surface"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "House cleaning",
+    "heading_rest": "built around your home",
+    "subtitle": "Deluxe deep cleans, recurring service, one-time visits, and move-in/move-out cleaning across the Back Mountain, the Wyoming Valley, and Mountain Top."
+  }
+}

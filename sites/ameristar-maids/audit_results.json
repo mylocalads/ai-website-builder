@@ -1,0 +1,25 @@
+{
+  "slug": "ameristar-maids",
+  "website": "https://ameristarmaids.com/",
+  "screenshotPath": "screenshots/ameristar-maids.png",
+  "assessment": "A WordPress/Astra + Elementor build carrying genuinely strong content inside a weak, low-contrast presentation. The hero headline is set in a thin script face over a busy bathroom photo and clips off the right edge; several sections (testimonial carousel, blog grid) render as large empty white voids because they depend on JavaScript that never settles.",
+  "strengths": [
+    "Content depth is excellent — every service tier has a real, itemized cleaning checklist",
+    "Contact info, phone, and address are visible in the header, footer, and a sticky call bar",
+    "Genuine on-site photography of the actual crew, not stock imagery",
+    "Real named testimonials and a Cleaning for a Reason charity partnership are both present",
+    "Accessibility toolbar plugin is installed"
+  ],
+  "weaknesses": [
+    "Hero headline in a thin script face over a photo — clipped on the right and hard to read at any size",
+    "Large blank vertical gaps where the testimonial carousel and blog cards fail to render",
+    "Light-blue body text on white throughout fails contrast; most copy sits well under a comfortable reading size",
+    "No visible star rating, review count, or bonded/insured badge above the fold despite a 4.9 across 171 reviews",
+    "'One Maid. Same Maid. Every Time.' — the single strongest differentiator — is buried mid-page in small type",
+    "Service areas appear only as one sentence of body text; no service-area pages exist for local search",
+    "/services/ returns a 404; the mega-menu links straight to individual service pages",
+    "Heavy plugin stack (Elementor, WooCommerce, Stripe, mega-menu, sticky elements, accessibility toolbar, honeypot, OTP) with a large page payload and slow settle",
+    "An OTP 'security verification' puzzle renders in the page markup ahead of the actual content"
+  ],
+  "overall": "Strong candidate for redesign — best-in-class content buried under a slow, low-contrast Elementor theme that hides every differentiator the business actually has."
+}

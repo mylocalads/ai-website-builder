@@ -1,0 +1,221 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Dallas, PA — Serving the Back Mountain & Wyoming Valley",
+    "headline": "One Maid. Same Maid. Every Time.",
+    "subheadline": "AmeriStar Maids is a bonded and insured house cleaning service in Dallas, PA. You get the same cleaner on every visit, a written checklist of exactly what gets cleaned, and a price set from a free in-home estimate — not guessed by the hour.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "photo": "/img/hero-cleaning.jpg",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.9,
+        "label": "4.9 on Google",
+        "sublabel": "From 171 reviews"
+      },
+      {
+        "label": "Bonded & Insured",
+        "sublabel": "Workers' comp on every cleaner"
+      }
+    ],
+    "quote_card": {
+      "quote": "I had Jenn come clean my home for the first time today. She was prompt, very kind, and did an absolutely amazing job cleaning my home. They care about what they do and it shows.",
+      "author": "John Clawson",
+      "rating": 4.9,
+      "review_count": 171,
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book"
+    }
+  },
+  "promise_bar": [
+    {
+      "text": "The same cleaner every visit",
+      "icon": "home"
+    },
+    {
+      "text": "Bonded, insured, and screened",
+      "icon": "shield"
+    },
+    {
+      "text": "Free in-home estimate before we quote",
+      "icon": "clipboard"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "What Makes Us Different",
+    "headline": "You Get The Same Cleaner, Not Whoever Is Free",
+    "body": "The most common complaint people have about cleaning services is that a different person shows up every visit, so the quality swings and nobody owns the result. We run the opposite way. Your home is assigned to one cleaner who learns it — where the good glasses live, which room the dog is shut in, the bathroom that actually needs the attention — and that same person comes back. It is why clients stay with us three years and longer.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "icon": "home"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The AmeriStar Maids Advantage",
+    "intro": "Worry-free service is something you can count on time and time again. At AmeriStar Maids we settle for nothing less — and the way we get there is the same in every home we clean.",
+    "blocks": [
+      {
+        "title": "A team you can hand a key to",
+        "body": "We have carefully assembled a team of dependable housekeepers. Every member is fully bonded and insured, carries company-provided workers' compensation, and has gone through a thorough screening process to confirm they are qualified, trustworthy, and hardworking.",
+        "icon": "shield"
+      },
+      {
+        "title": "The scope is written down",
+        "body": "Every tier we offer comes with a published, line-by-line list — ceiling fans, blinds and lock ledges, baseboards, cabinet fronts, switch plates, stovetop drip pans, sheets changed, floors vacuumed and mopped. You are never guessing what you paid for.",
+        "icon": "document"
+      },
+      {
+        "title": "Cross-contamination stops at the door",
+        "body": "Every team member is trained on how to avoid moving germs between homes and between rooms. We disinfect our vehicles and equipment down to the vacuums, and we use environmentally friendly products throughout your home.",
+        "icon": "broom"
+      }
+    ],
+    "steps_title": "What working with us looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Start with a Top-to-Bottom Deluxe",
+        "body": "Every new recurring client begins with our signature hand-detailed deep clean. It brings the home to a level we can maintain efficiently from then on."
+      },
+      {
+        "title": "Pick your rhythm",
+        "body": "Weekly, bi-weekly, or monthly. We will tell you honestly which one fits your household rather than selling you the largest plan."
+      },
+      {
+        "title": "Same cleaner, same standard",
+        "body": "From then on your assigned cleaner maintains the home on schedule, working from the checklist you agreed to at the estimate."
+      }
+    ],
+    "guarantee": {
+      "title": "We are not the cheapest, and we do not pretend to be",
+      "body": "We understand you have options when it comes to house cleaning, and that is exactly why we strive to raise the bar. While we may not be the cheapest in town, our results speak for themselves — many of our clients have been with us three years and longer.",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Takes Three Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free in-home estimate",
+        "icon": "clipboard",
+        "body": "We come to you, walk the home, and talk through what matters to you before anyone quotes a number."
+      },
+      {
+        "label": "Step Two",
+        "title": "Your custom cleaning plan",
+        "icon": "document",
+        "body": "You get a written scope and price. Skip the guest room, add the playroom — we build the plan around your home, never one-size-fits-all."
+      },
+      {
+        "label": "Step Three",
+        "title": "Your cleaner, on schedule",
+        "icon": "calendar",
+        "body": "The same assigned cleaner arrives on the agreed schedule and works the checklist. You come home to it done."
+      }
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About AmeriStar Maids",
+    "headline": "We Specialize In Creating Free Time For Busy People",
+    "body": "We love providing joy and freedom to our clients. Having a trusted house cleaner committed to your home liberates your time and takes the stress out of the week — we take the dreaded chore list off your hands and hand back hours you can spend with your family instead of your vacuum. Based in Dallas, PA, we have spent over ten years in this industry serving homes across the Back Mountain, the Wyoming Valley, Mountain Top, and the surrounding communities of Luzerne County.",
+    "checklist": [
+      "10+ years in the house cleaning industry",
+      "4.9 stars across 171 Google reviews",
+      "Bonded, insured, and workers' comp covered",
+      "Environmentally friendly cleaning products",
+      "Proud partner of Cleaning for a Reason"
+    ],
+    "photo": "/img/crew-at-work.jpg",
+    "photo_alt": "An AmeriStar Maids cleaner detailing a home in Luzerne County",
+    "photo_cutout": false,
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Serving Luzerne County",
+    "headline": "House Cleaning In The Back Mountain & Wyoming Valley",
+    "paragraphs": [
+      "House cleaning is an unavoidable part of owning a home and one of the hardest things to fit into a working week. Maintaining a clean home should not have to be sacrificed to a busy schedule — that is the gap AmeriStar Maids fills for households across Dallas, Shavertown, Kingston, Wilkes-Barre, Mountain Top, and Harveys Lake.",
+      "We are a total-home cleaning solution combining reliable, dedicated service with advanced cleaning tools and technologies. Our service starts before any dusting or vacuuming takes place: it begins with a free in-home estimate so we can build a plan around your home. If we need to avoid an area, we will. If you want special attention paid to another, we can do that too. We address every concern and expectation before we lift a finger, so we know what you want and you understand what we provide."
+    ],
+    "checklist": [
+      "Recurring weekly, bi-weekly, and monthly service",
+      "Top-to-Bottom Deluxe hand-detailed deep cleaning",
+      "One-time cleans for guests, holidays, and spring resets",
+      "Move-in and move-out cleaning",
+      "Apartments, vacation rentals, and post-construction"
+    ],
+    "image": "/img/clean-living-room.jpg",
+    "image_alt": "A bright, freshly cleaned living room in a Back Mountain home",
+    "image_position": "left",
+    "review": {
+      "name": "Duane Sprau",
+      "text": "We love working with AmeriStar — they are courteous, professional, and trustworthy. We are so grateful that they make life a little easier by helping to keep our home perfectly clean.",
+      "rating": 5,
+      "source": "Google"
+    },
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "John Clawson",
+      "text": "I had Jenn come clean my home for the first time today. She was prompt, very kind, and did an absolutely amazing job cleaning my home. They care about what they do and it shows. Highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Duane Sprau",
+      "text": "We love working with AmeriStar — they are courteous, professional, and trustworthy. We are so grateful that they make life a little easier by helping to keep our home perfectly clean.",
+      "rating": 5
+    },
+    {
+      "name": "M. Sheileen Godwin",
+      "text": "I received a quick response, an immediate inspection and quote. It was a large top to bottom cleaning project. I would call them again in a heartbeat and highly recommend. They did a great job.",
+      "rating": 5
+    },
+    {
+      "name": "Melissa Sprau",
+      "text": "It was amazing to come home to an absolutely sparkling home. The gals were professional and friendly, and I can tell they take great care in what they do. Highly recommend!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do I get the same cleaner every time?",
+      "a": "Yes. One maid, same maid, every time is the core of how we run. Your home is assigned to a cleaner who learns it and returns to it, rather than being handed to whoever is available that day. It is the single biggest reason clients stay with us for years."
+    },
+    {
+      "q": "Which service should I start with?",
+      "a": "We recommend that every new recurring client starts with our signature Top-to-Bottom Deluxe Cleaning. It brings the home to a standard we can then maintain easily and efficiently on a regular schedule. A General Cleaning is only recommended if you have had a professional cleaning within the last four weeks."
+    },
+    {
+      "q": "How do you price a cleaning?",
+      "a": "With a free in-home estimate. We visit, look at the actual home, talk through what matters to you, and then build a custom plan and price around it. We never take a one-size-fits-all approach, and the number you are given at the estimate is the number the work is based on."
+    },
+    {
+      "q": "Are your cleaners bonded and insured?",
+      "a": "Yes. Every team member is fully bonded and insured and carries company-provided workers' compensation. Each has also been through a thorough screening process to make sure they are qualified, trustworthy, and hardworking before they ever enter a client's home."
+    },
+    {
+      "q": "Do I need to clean before you arrive?",
+      "a": "Not clean — just picked up. We ask that the home be somewhat in order so we can get to the surfaces that actually need our attention. The more clutter that is put away, the more of your time goes into real cleaning rather than tidying."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We proudly serve the Back Mountain, the Wyoming Valley, Mountain Top, and the surrounding communities throughout Luzerne County — including Dallas, Shavertown, Kingston, Wilkes-Barre, and Harveys Lake. If you are not sure whether you fall inside the service area, call (570) 310-1057 and we will tell you straight away."
+    },
+    {
+      "q": "Is there anything you will not clean?",
+      "a": "We do not climb higher than a two-step ladder, so anything above that — most chandeliers and vaulted-ceiling fans — is dusted with an extension duster rather than cleaned by hand. We also cannot move furniture, and we cannot guarantee results on heavily built-up mini-blinds, which may need ultrasonic cleaning we can arrange on request."
+    },
+    {
+      "q": "Do you offer gift cards?",
+      "a": "Yes. AmeriStar Maids e-gift cards can be used toward any of our services — recurring cleaning, a one-time deep or general clean, or a move-in/move-out clean — in any amount you choose, with space for a personal message. They expire one year from purchase and are non-refundable."
+    }
+  ]
+}

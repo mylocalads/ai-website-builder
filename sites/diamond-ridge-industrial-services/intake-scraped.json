@@ -1,0 +1,211 @@
+{
+  "slug": "diamond-ridge-industrial-services",
+  "business_name": "Diamond Ridge Industrial Services",
+  "legal_name": null,
+  "tagline": "Industry-Leading Concrete Solutions & Preventative Maintenance",
+  "phone": "+15708629399",
+  "phone_display": "(570) 862-9399",
+  "phone_secondary_display": "(570) 479-2620",
+  "email": "info@diamondridgeindservices.com",
+  "address": {
+    "street": "PO Box 138",
+    "city": "Archbald",
+    "state": "PA",
+    "postal": "18403",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.4042555, "lng": -75.6622274 },
+  "hours": {
+    "monday": "8am-5pm",
+    "tuesday": "8am-5pm",
+    "wednesday": "8am-5pm",
+    "thursday": "8am-5pm",
+    "friday": "8am-5pm"
+  },
+  "rating": 5,
+  "review_count": 1,
+  "category": "Construction company",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "women_owned": true,
+  "social": {
+    "facebook": "https://www.facebook.com/diamondridgeIndServices/",
+    "instagram": "https://www.instagram.com/diamondridgeindservices/"
+  },
+  "site_url": "https://diamondridgeindservices.com/",
+  "logo_url": "https://diamondridgeindservices.com/wp-content/uploads/2025/12/Site-Icon-and-Horizontal-Logo-1-1.png.webp",
+  "logo_url_white": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/white_logo.png?resize=1080%2C572&ssl=1",
+  "default_hero_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8427.jpg?resize=1080%2C1440&ssl=1",
+  "default_hero_video": null,
+  "about_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_1277-e1766086322821.jpg?resize=1080%2C561&ssl=1",
+  "brand": {
+    "fonts": { "display": "Bank Gothic", "body": "Red Hat Display" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#333333",
+      "accent": "#2098D1",
+      "muted": null,
+      "surface": "#FFFFFF",
+      "candidates": ["#144E9D", "#2EA3F2", "#2098D1", "#FFFFFF", "#333333"]
+    },
+    "logo_is_monochrome": true,
+    "logo_note": "Both the horizontal logo and the footer logo sample as pure white/near-white with no chromatic brand ink. Brand colour therefore comes from CSS custom properties only (#144E9D primary)."
+  },
+  "services": [
+    {
+      "title": "Fibrecrete-G Concrete Alternative",
+      "short_description": "Breakthrough concrete reinforcement that outperforms traditional patching and repair — engineered for extreme impact, abrasion, and durability.",
+      "long_description": "Fibrecrete-G is a high-performance concrete repair solution engineered to restore damaged loading docks, pavements, and industrial concrete surfaces. It effectively repairs corner breaks, spalls, and both transverse and longitudinal cracks without the failures commonly associated with traditional cementitious repairs. Formulated with polymer-modified resins, fiberglass reinforcement, mineral fillers, and high-quality aggregate, Fibrecrete-G delivers a balance of flexibility and strength. Unlike rigid concrete repairs that are prone to cracking, it flexes with concrete movement, allowing it to withstand heavy traffic loads, temperature fluctuations, and seasonal expansion and contraction. Designed for fast return to service, Fibrecrete-G cures in one hour or less and can be installed year-round, even in low-temperature conditions.",
+      "sub_services": [
+        "Cures in one hour or less for rapid return to service",
+        "Cures at low temperatures for year-round installation",
+        "Resistant to water intrusion and harmful contaminants",
+        "Flexes with concrete movement without cracking or unseating",
+        "More economical than panel or full concrete replacement",
+        "Topping stone finish adds UV protection and improved traction",
+        "Meets all ASTM requirements"
+      ],
+      "hero_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8419-1.jpg?resize=1080%2C1440&ssl=1",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Concrete Joint Repair & Protection",
+      "short_description": "Precision restoration that prevents spalling, edge and joint failure, and surface breakdown — increasing uptime and reducing trip hazards.",
+      "long_description": "Commercial and industrial concrete floor repair designed to keep a facility safe, compliant, and fully operational. From warehouses and manufacturing plants to cold storage and freezer environments, the work is built to withstand heavy traffic, extreme temperatures, and demanding workloads. Concrete joints are often the first point of failure in industrial floors; professional joint repair, sealing, and caulking prevent further damage, reduce maintenance costs, and protect material-handling equipment from unnecessary wear.",
+      "sub_services": [
+        "Concrete joint repair, sealing & caulking",
+        "Concrete floor repair & resurfacing",
+        "Surface breakdown & delamination repair",
+        "Concrete slab stabilization",
+        "Freezer & cold storage floor repair"
+      ],
+      "hero_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/warehouse3-e1767623396766.png?resize=1024%2C800&ssl=1",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Industrial Floor Coatings",
+      "short_description": "High-performance resin and epoxy systems that protect against chemicals, abrasion, and wear in warehouses, manufacturing, and logistics facilities.",
+      "long_description": "Durable industrial floor coating systems designed to withstand heavy traffic, chemical exposure, and daily operational wear. These coatings create seamless, high-strength surfaces that improve safety and cleanliness and extend the life of concrete floors in demanding environments. Engineered for performance and longevity, the resin and epoxy systems deliver resistance to impact, abrasion, moisture, and harsh chemicals — ideal for facilities supporting forklifts, pallet jacks, machinery, and continuous foot traffic.",
+      "sub_services": [
+        "Epoxy floor coatings",
+        "Polyaspartic & resin systems",
+        "Chemical-resistant coatings",
+        "Abrasion-resistant surfaces",
+        "Slip-resistant & safety coatings"
+      ],
+      "hero_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8433-1.jpg?resize=1080%2C1440&ssl=1",
+      "gallery": [
+        { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8446.jpg?resize=1080%2C1440&ssl=1", "alt": "Industrial floor after coating installation" }
+      ],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Traditional Concrete Repair",
+      "short_description": "Expert concrete remediation and structural patching to restore integrity and extend the life of damaged industrial surfaces.",
+      "long_description": "Traditional concrete repair solutions for industrial, commercial, and municipal facilities experiencing structural damage, surface deterioration, or localized failure. These repairs restore the strength, functionality, and safety of concrete slabs, pavements, and structural elements while extending overall service life. Best suited to areas where concrete has experienced significant deterioration, impact damage, or loss of section requiring rigid, load-bearing restoration.",
+      "sub_services": [
+        "Structural patching & partial-depth repairs",
+        "Spall & surface restoration",
+        "Crack repair",
+        "Edge & corner repairs",
+        "Surface preparation & finishing"
+      ],
+      "hero_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_5051.jpg?resize=1080%2C810&ssl=1",
+      "gallery": [
+        { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8283.jpg?resize=1080%2C843&ssl=1", "alt": "Deteriorated industrial concrete before repair" },
+        { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8285.jpg?resize=1080%2C728&ssl=1", "alt": "The same slab section after traditional concrete repair" }
+      ],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Floor Line Marking",
+      "short_description": "Certified floor marking that improves operational flow, safety compliance, and visual clarity in busy industrial spaces.",
+      "long_description": "Professional floor marking solutions designed to enhance safety, organization, and efficiency in industrial, commercial, and logistics environments. Clear, durable markings guide traffic, define work zones, and support compliance with safety standards in fast-paced facilities. Markings are applied using high-performance coatings engineered to withstand heavy foot traffic, forklifts, pallet jacks, and routine cleaning.",
+      "sub_services": [
+        "Traffic lanes & aisle markings",
+        "Safety & compliance markings",
+        "Work zones & equipment areas",
+        "Custom layouts & color coding",
+        "Durable, long-lasting materials"
+      ],
+      "hero_photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2026/01/IMG_8727.jpg?resize=1080%2C1402&ssl=1",
+      "gallery": [
+        { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2026/01/IMG_8728.jpg?resize=1080%2C1386&ssl=1", "alt": "Freshly applied floor line marking in a warehouse aisle" }
+      ],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas_stated": ["Pennsylvania", "New York", "New Jersey", "Delaware", "Maryland", "West Virginia"],
+  "service_areas": [
+    { "name": "Scranton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "scranton-pa", "_source": "derived" },
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "_source": "derived" },
+    { "name": "Hazleton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hazleton-pa", "_source": "derived" },
+    { "name": "Allentown", "state": "Pennsylvania", "state_abbr": "pa", "slug": "allentown-pa", "_source": "derived" },
+    { "name": "Binghamton", "state": "New York", "state_abbr": "ny", "slug": "binghamton-ny", "_source": "derived" },
+    { "name": "Newark", "state": "New Jersey", "state_abbr": "nj", "slug": "newark-nj", "_source": "derived" }
+  ],
+  "testimonials": [
+    {
+      "name": "Mike Shemonski",
+      "location": "Maintenance Manager, Pennsylvania",
+      "text": "I have used this product for the last 2 years at my facility. Love the product, it is durable, reliable. It is a huge cost savings versus other concrete installations. Diamond Ridge was a pleasure to work with. They do everything you ask and go above and beyond. This product has an amazing set up time. You could drive on this product within an hour. I highly recommend using Diamond Ridge Industrial Services and their product and look forward to doing more business in the future!",
+      "rating": 5,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [],
+  "faqs": [],
+  "partners": [
+    { "name": "McLane", "logo_url": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/McClane.png?fit=368%2C137&ssl=1" },
+    { "name": "Amcor", "logo_url": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/amcor-logo.jpeg?fit=376%2C134&ssl=1" },
+    { "name": "Diamond H", "logo_url": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/diamond-h-logo.png?fit=251%2C201&ssl=1" },
+    { "name": "Berry Global", "logo_url": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/Berry-Logo_CMYK.webp?fit=900%2C550&ssl=1" },
+    { "name": "Lowe's", "logo_url": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2026/05/Lowes.png?fit=2000%2C985&ssl=1" }
+  ],
+  "gallery": [
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8427-1.jpg?resize=1080%2C1440&ssl=1", "alt": "Fibrecrete-G repair placed in an industrial slab", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8283.jpg?resize=1080%2C843&ssl=1", "alt": "Spalled joint edge before repair", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8285.jpg?resize=1080%2C728&ssl=1", "alt": "The same joint after restoration", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_8446.jpg?resize=1080%2C1440&ssl=1", "alt": "Industrial floor coating applied in a warehouse bay", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2026/01/IMG_8727.jpg?resize=1080%2C1402&ssl=1", "alt": "Warehouse floor before line marking", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2026/01/IMG_8728.jpg?resize=1080%2C1386&ssl=1", "alt": "Warehouse floor after certified line marking", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_5051.jpg?resize=1080%2C810&ssl=1", "alt": "Traditional concrete repair in progress on an industrial slab", "title": null, "location": null },
+    { "photo": "https://i0.wp.com/diamondridgeindservices.com/wp-content/uploads/2025/12/IMG_1277-e1766086322821.jpg?resize=1080%2C561&ssl=1", "alt": "Diamond Ridge crew working on a facility floor", "title": null, "location": null }
+  ],
+  "brand_voice_sample": "Traditional concrete repair methods are outdated, expensive, and disruptive — often requiring significant downtime that impacts your bottom line. Worse yet, these fixes rarely last, as stiffness and cracking return quickly under industrial wear. At Diamond Ridge Industrial Services, we offer a better solution.",
+  "about_story": "Diamond Ridge Industrial Services is a women-owned industrial services company based in the Mid-Atlantic region, delivering advanced concrete and surface protection solutions for facilities that can't afford failure. The work centres on preventative maintenance strategies that reduce disruption, extend surface life, and protect long-term investments. The flagship service, Fibrecrete-G, is engineered to outperform traditional concrete by combining flexibility and strength to handle heavy traffic, structural movement, and extreme temperature changes without cracking or separating like rigid repairs.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The client's /contact page uses a native Divi form (no third-party iframe or chat loader detected). Operator: paste MLA's own GHL widgets into config.crm before launch."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_match_basis": "Google Maps listing website (https://diamondridgeindservices.com/) matches the operator-supplied URL exactly. Single result, Construction company, 5.0 (1 review).",
+    "gbp_address_listed": false,
+    "pages_scraped": ["/", "/about", "/services", "/contact", "/gallery", "/fibrecrete-g", "/concrete-joint-repair-protection", "/industrial-floor-coatings", "/traditional-concrete-repair", "/floor-line-marking"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.23,
+    "warnings": [
+      "First Apify lookup (locationQuery: Archbald, Pennsylvania) returned 0 results; a second lookup with locationQuery: Scranton, Pennsylvania returned the match. Two GBP lookups billed (~$0.008 total).",
+      "GBP listing carries no street address (service-area business). Street address taken from the client's /contact page: PO Box 138, Archbald, PA 18403.",
+      "Site displays two phone numbers; /contact lists the second as (570) 479-2629 while the global footer and GBP both list (570) 479-2620. Footer/GBP value used.",
+      "licensed / insured / bonded left false — no badge or footer disclosure found on the client site.",
+      "Detected heading font 'Bank Gothic' is a proprietary non-web font with no Google Fonts equivalent; design-reference substitutes the detected body font (Red Hat Display) for display use.",
+      "Client site returned HTTP 403 to the Playwright screenshotter; site-audit capture came from Firecrawl instead.",
+      "service_areas are DERIVED, not scraped. The client states coverage of PA, NY, NJ, DE, MD and WV but names no cities; six metros inside that stated footprint were selected for area pages."
+    ]
+  }
+}

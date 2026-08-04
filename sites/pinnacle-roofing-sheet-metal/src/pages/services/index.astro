@@ -1,0 +1,52 @@
+---
+import { SERVICE_LIMIT } from '../../lib/limits';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry, getCollection } from 'astro:content';
+import ClosingCTA from '../../components/ClosingCTA.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }];
+---
+<BaseLayout
+  title={`Services — ${site.business_name}`}
+  description={`Full range of services from ${site.business_name} across ${site.address.city}, ${site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/services"
+>
+  <section class="services-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
+    <div class="container">
+      <h1>Services</h1>
+      <p>What we do for building owners and facility managers across Luzerne, Lackawanna and Monroe counties.</p>
+    </div>
+  </section>
+  <section class="services-index">
+    <div class="container">
+      <div class="grid">
+        {services.map((s) => (
+          <a href={`/services/${s.slug}`} class="card">
+            <h2>{s.data.title}</h2>
+            <p>{s.data.short_description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+  <ClosingCTA />
+</BaseLayout>
+<style>
+  /* The dark gradient below is applied inline and ONLY when the client has a
+     default_hero_photo, but `color: white` is unconditional — so without a photo
+     the copy was white on whatever the page background is. This fallback keeps
+     white text legible either way. It is a fixed dark neutral rather than
+     --color-primary on purpose: a client whose secondary background is light
+     (e.g. a yellow brand) would fail here. Matches HeroOwl's scrim colour. */
+  .services-hero { padding: var(--space-5) 0; background-color: #0f1419; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .services-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); margin-bottom: var(--space-1); }
+  .services-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; }
+  .services-index { padding: var(--space-4) 0 var(--space-5); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
+  .card { display: block; padding: var(--space-3); background: var(--color-surface); border-radius: var(--radius-md); text-decoration: none; }
+  .card h2 { margin: 0 0 var(--space-1); font-size: 1.25rem; }
+  .card p { color: var(--color-muted); margin: 0; }
+</style>

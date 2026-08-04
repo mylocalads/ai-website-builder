@@ -1,0 +1,34 @@
+{
+  "kind": "our-work",
+  "intro": "A sample of recent work across Luzerne County — weekly maintenance, planting beds, hardscaping and winter snow contracts.",
+  "projects": [
+    {
+      "title": "Weekly lawn maintenance",
+      "location": "Luzerne County, PA",
+      "photo": "https://static.wixstatic.com/media/017a01_ac8cbacb10854aea84158fa49c06ff02~mv2.jpg",
+      "alt": "A large striped back lawn freshly mowed, with a crew member trimming near the treeline",
+      "description": "Weekly mow, trim and blow-down on a residential property. Clippings hauled out and the drive blown clean before the crew leaves."
+    },
+    {
+      "title": "Mulch installation & bed definition",
+      "location": "Luzerne County, PA",
+      "photo": "https://static.wixstatic.com/media/017a01_66f5c4f5dd404b3380790c690e3af61e~mv2.jpg",
+      "alt": "Front of a large home with freshly mulched beds, trimmed shrubs and a young ornamental tree",
+      "description": "Beds edged and re-cut, shrubs trimmed back, and fresh mulch laid around the foundation planting and specimen tree."
+    },
+    {
+      "title": "Segmental block retaining wall",
+      "location": "Luzerne County, PA",
+      "photo": "https://static.wixstatic.com/media/017a01_df6122451c694776900286c150681b01~mv2.jpg",
+      "alt": "A curved segmental block retaining wall holding back a raised stone bed beside a house",
+      "description": "Curved block wall built on a compacted base with drainage behind it, holding back a re-graded bed on a sloping side yard."
+    },
+    {
+      "title": "Commercial snow removal",
+      "location": "Luzerne County, PA",
+      "photo": "https://static.wixstatic.com/media/017a01_2341e48c4df84942be545757f8e3b2df~mv2.jpg",
+      "alt": "A Bilski's plow truck clearing a snow-covered commercial parking lot",
+      "description": "Overnight plowing on a commercial parking lot so the site is open and safe to walk before customers arrive."
+    }
+  ]
+}

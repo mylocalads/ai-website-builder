@@ -1,0 +1,15 @@
+{
+  "name": "AmeriStar Maids",
+  "email": "info@ameristarmaids.com",
+  "phone": "(570) 310-1057",
+  "address": "1100 Twin Stacks Dr Ste. 1202, Dallas, PA 18612",
+  "website": "https://www.ameristarmaids.com/",
+  "rating": 4.9,
+  "reviewCount": 171,
+  "category": "House cleaning service",
+  "hours": "Mon-Fri 8:30am-4:30pm, Sat-Sun Closed",
+  "slug": "ameristar-maids",
+  "geo": { "lat": 41.3397287, "lng": -75.9760242 },
+  "google_maps_url": "https://www.google.com/maps/search/?api=1&query=AmeriStar%20Maids&query_place_id=ChIJm38tI3QXxYkRK1NLLzVxnLM",
+  "reviews": []
+}

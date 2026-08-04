@@ -1,0 +1,45 @@
+---
+export interface Props {
+  headline?: string;
+  body?: string;
+  cta_text?: string;
+  cta_href?: string;
+  photo?: string;
+}
+// Defaults live here rather than at each call site. There are eleven of these
+// across the template, and when every page passed its own strings the copy
+// drifted — three different headlines and two different button labels for the
+// same action. Pages with a genuinely different ask (a phone CTA on /book, the
+// post-submission page) still override.
+const {
+  headline = 'Need A New Roof? Book Your Inspection Now.',
+  // Was Gilroy's copy verbatim — "no payment until the job is finished and
+  // you're satisfied. Serving Wilkes-Barre and the Wyoming Valley since 1972."
+  // Eleven call sites take this default, so it shipped on every page of this
+  // site with another client's city, another client's founding year, and a
+  // payment-terms promise Results Roofing has never made. Upstream bug: the
+  // same literal is still in astro-templates/owl/src/components/ClosingCTA.astro.
+  body = 'Free, no-obligation inspection with a full photo report — and a straight answer either way. If your roof does not need work, we will tell you that. Serving DFW, Houston, Austin, San Antonio and Atlanta.',
+  cta_text = 'Get My Free Estimate!',
+  cta_href = '/book',
+  photo,
+} = Astro.props;
+---
+<section
+  class="closing-cta"
+  aria-label={headline}
+  style={photo ? `background-image: linear-gradient(rgba(15,20,25,0.72), rgba(15,20,25,0.72)), url(${photo});` : undefined}
+>
+  <div class="container inner">
+    <h2>{headline}</h2>
+    {body && <p class="body">{body}</p>}
+    <a class="btn" href={cta_href}>{cta_text}</a>
+  </div>
+</section>
+<style>
+  .closing-cta { background-color: var(--color-primary); background-size: cover; background-position: center; color: var(--color-on-primary); padding: var(--space-5) 0; }
+  .inner { text-align: center; display: grid; gap: var(--space-3); justify-items: center; }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-on-primary); font-size: clamp(1.85rem, 4.2vw, 3.25rem); line-height: 1.1; margin: 0; text-transform: uppercase; letter-spacing: 0.01em; max-width: 20ch; }
+  .body { margin: 0; max-width: 60ch; color: var(--color-on-primary); opacity: 0.82; font-size: 1.05rem; line-height: 1.7; }
+  .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 1rem 2.25rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-decoration: none; box-shadow: 0 4px 14px rgba(0,0,0,0.22); text-transform: uppercase; }
+</style>

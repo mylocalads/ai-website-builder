@@ -1,0 +1,108 @@
+---
+import { SERVICE_LIMIT } from '../../lib/limits';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+import HeroOwl from '../../components/HeroOwl.astro';
+import PartnerBadges from '../../components/PartnerBadges.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import Gallery from '../../components/Gallery.astro';
+import WhyChooseUs from '../../components/WhyChooseUs.astro';
+import ServicesGridOwl from '../../components/ServicesGridOwl.astro';
+import GHLReviewsWidget from '../../components/GHLReviewsWidget.astro';
+import Financing from '../../components/Financing.astro';
+import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
+import FAQ from '../../components/FAQ.astro';
+import ClosingCTA from '../../components/ClosingCTA.astro';
+import GHLChatWidget from '../../components/GHLChatWidget.astro';
+
+export async function getStaticPaths() {
+  const services = (await getCollection('services'))
+    .sort((a, b) => a.data.order - b.data.order);
+
+  // Say what got dropped. Slicing a collection is always "valid", so a site with
+  // more services than SERVICE_LIMIT builds green while quietly shipping fewer
+  // pages than the content author wrote — and the nav, which uses the same
+  // constant, would link only as far as the pages that exist. Announce it.
+  if (services.length > SERVICE_LIMIT) {
+    console.warn(
+      `[services] ${services.length} services authored but SERVICE_LIMIT is ${SERVICE_LIMIT}. ` +
+      `Not building: ${services.slice(SERVICE_LIMIT).map((s) => s.slug).join(', ')}. ` +
+      `Raise SERVICE_LIMIT in src/lib/limits.ts to include them.`
+    );
+  }
+
+  return services
+    .slice(0, SERVICE_LIMIT)
+    .map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
+}
+
+const { service } = Astro.props;
+const site = (await getEntry('site', 'config')).data as any;
+
+const heroFormUrl = site.crm?.estimate_form_embed_url ?? site.crm?.contact_form_embed_url;
+const marketCity = site.marketing_city ?? site.address.city;
+const marketState = site.marketing_state ?? site.address.state;
+
+const title = `${service.data.title} in ${marketCity}, ${marketState} | ${site.business_name}`;
+const description = service.data.short_description;
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: service.data.title, href: `/services/${service.slug}` },
+];
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: service.data.title,
+  provider: { '@type': 'LocalBusiness', name: site.business_name },
+  areaServed: { '@type': 'AdministrativeArea', name: `${site.address.city}, ${site.address.state}` },
+  description: service.data.long_description,
+};
+
+const faqLd = service.data.faqs.length > 0 ? {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: service.data.faqs.map((f: any) => ({
+    '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+} : null;
+---
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={crumbs}
+  jsonLd={faqLd ? [serviceLd, faqLd] : [serviceLd]}
+  pagePath={`/services/${service.slug}`}
+>
+  <HeroOwl
+    eyebrow={`${marketCity}, ${marketState}`}
+    headline={service.data.seo_h1 ?? `${service.data.title} in ${marketCity}, ${marketState}`}
+    subheadline={service.data.short_description}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={service.data.hero_photo ?? site.default_hero_photo}
+    form_embed_url={heroFormUrl}
+    form_title={`${service.data.title} estimate`}
+    show_form
+    form_heading={`Free ${service.data.title} Estimate`}
+  />
+  <PartnerBadges />
+  <AboutSection
+    eyebrow="Our Service"
+    heading={service.data.about_heading ?? `About our ${service.data.title.toLowerCase()} services`}
+    body={service.data.long_description}
+    photo={service.data.about_photo}
+    photo_alt={service.data.about_photo_alt ?? `${service.data.title} — ${site.business_name}`}
+    photo_position="left"
+    bullets={service.data.sub_services ?? []}
+  />
+  <Gallery items={service.data.gallery ?? []} heading={`${service.data.title} gallery`} />
+  <WhyChooseUs />
+  <ServicesGridOwl />
+  <GHLReviewsWidget />
+  <Financing />
+  <ServiceAreaGrid />
+  <FAQ items={service.data.faqs ?? []} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>

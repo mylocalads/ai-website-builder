@@ -1,0 +1,54 @@
+{
+  "slug": "quality-roofing-express",
+  "category": "Roofing contractor",
+  "location": "Scranton PA (Lackawanna / Luzerne, NEPA)",
+  "threads_analyzed": 24,
+  "method_note": "Reddit blocks both direct JSON fetch and Firecrawl page scraping, so thread bodies could not be read in full. Findings are drawn from Firecrawl search result snippets across r/Scranton, r/Roofing, r/HomeImprovement, r/homeowners, r/Pennsylvania, r/Construction and r/Contractor, cross-checked against the PA Attorney General's HICPA page. Anything not directly supported by a snippet is excluded.",
+  "pain_points": [
+    "Contractors ghost homeowners after the estimate. This is the single most repeated complaint across r/HomeImprovement, r/homeowners and r/Contractor — people describe having to 'hound' roofers for a number, and multiple threads report roofers who visited the property, scoped the job, and never called back.",
+    "Deposit risk. r/Roofing threads are full of homeowners asked for 50% up front, then left waiting — 'Roofer stalling after down payment', 'Roofer took off with money'. Commenters treat a large up-front deposit as a red flag in its own right.",
+    "Nails and debris left behind. The loudest post-job complaint by far: 100–265+ nails recovered from yards and driveways, shingle scrap hidden under bushes, no dumpster on site. Homeowners specifically look for crews that magnet-sweep the property.",
+    "There is no meaningful way to verify a PA roofer. Pennsylvania issues no state contractor license — only HICPA registration, which as the state itself describes it confirms insurance and identifies the registrant but does not certify workmanship. The AG's lookup database has been offline for extended stretches, so homeowners fall back entirely on word of mouth.",
+    "Winter is when NEPA homeowners actually need a roofer and can't get one. Ice dam threads across northeastern subs describe melt-refreeze leaks, interior water damage, and emergency removal quoted at $450/hour to $1,200 per visit — usually after a homeowner has already called several companies that don't work in the cold."
+  ],
+  "what_customers_value": [
+    "A written estimate that itemizes labor, materials and payment terms, delivered quickly rather than extracted over three follow-up calls.",
+    "Little or no money up front — 'this is the only company that didn't require a deposit at all' reads as the highest praise in r/Roofing deposit threads.",
+    "Cleanup treated as part of the job: dumpster on site, magnet sweep, a walk of the property before the crew leaves.",
+    "Speed on site. A tear-off and reroof finished in a day or two is repeatedly cited as the thing that turned a customer into a referrer.",
+    "A named local person who is reachable and keeps showing up — in the absence of state licensing, repeat business and neighbor referrals are the only credential NEPA homeowners actually trust."
+  ],
+  "business_differentiators": [
+    "Cleanup is the pain point Quality Roofing Express's own reviews answer most directly. Barb: 'clean up was unbelievable, you would not have even known they were here.' Lawrence Rosetti: 'cleaned up nicely after completing the job.' Tayla Clements: 'great job cleaning up afterwards.' Three independent Google reviewers naming the same thing is real evidence, not a claim.",
+    "Speed is the second pattern in the reviews. Jeffrey Cerato: 'My new roof was on in one day.' Barb: 'Roof was done so quickly.' Carolene: 'quick to get me an estimate, and kept in contact with me throughout.' Tayla Clements: 'Fast response times.' That maps onto both the ghosting complaint and the one-day-install expectation.",
+    "The owner, Osman, is named personally in multiple reviews, and Tom Belinsky reports three roofs done for him over five years with a fourth underway for his son. Repeat business from a named owner is exactly the substitute credential homeowners fall back on where PA offers no license to check.",
+    "Open seven days — 7am–7pm Monday through Friday, 8am–7pm Saturday, 9am–12pm Sunday per Google Business Profile. That is a direct answer to the reachability complaint.",
+    "The existing site already says 'Winter weather doesn't stop us,' and the business runs a full flat-and-rubber menu — EPDM, TPO, torch-down, peel-and-stick — alongside asphalt, metal and slate. Scranton's older housing stock and small commercial buildings need exactly that mix, and winter availability is the seasonal wedge nobody else in the market advertises."
+  ],
+  "copy_angles": [
+    "Lead the hero with cleanup and speed, in the customers' own words. 'The roof goes on. The mess doesn't stay.' Then back it immediately with the Barb quote — it is stronger than any claim we could write.",
+    "Make 'Winter weather doesn't stop us' a real section, not a banner. NEPA homeowners hit ice dams and melt-refreeze leaks in January and find nobody answering. Put availability and the seven-day hours next to it.",
+    "Name Osman. In a state with no roofing license, an owner who shows up on the job and has customers on their third and fourth roof is the credential. Use the Tom Belinsky review verbatim in the about/SEO section.",
+    "Address the deposit fear head-on in the FAQs — what the payment schedule is, what the free estimate covers, and that the estimate is written. Don't invent terms; ask the operator to confirm the deposit policy before publishing that answer.",
+    "Give flat and rubber roofing its own service page rather than burying four separate membrane types on the home page. Scranton row homes, porches and small commercial buildings are the flat-roof market, and no competitor in the metro is targeting it specifically."
+  ],
+  "gaps_flagged": [
+    "Licensed / insured / bonded is claimed nowhere on the client's existing site and could not be verified. Given that HICPA registration is precisely what PA homeowners are told to check, this is the single highest-value trust field to collect from the client — but it must not be published until confirmed.",
+    "Deposit and payment-schedule policy is unknown. The FAQ answer covering it is written conservatively and should be reviewed by the operator before launch.",
+    "One 1-star Google review (Dec 2024) describes a siding job that rippled and a warranty dispute the owner attributed to the manufacturer. Siding is intentionally not built out as a service page."
+  ],
+  "sources": [
+    "https://www.reddit.com/r/Scranton/comments/1h19x1d/roofing/",
+    "https://www.reddit.com/r/HomeImprovement/comments/j56bkd/is_it_common_to_not_hear_back_from_contractors/",
+    "https://www.reddit.com/r/homeowners/comments/14n0ob0/does_anyone_else_literally_have_to_hound/",
+    "https://www.reddit.com/r/Roofing/comments/1tbdq6v/roofer_stalling_after_down_payment/",
+    "https://www.reddit.com/r/Roofing/comments/1drbkwl/no_deposit_required/",
+    "https://www.reddit.com/r/Roofing/comments/14zjjmv/how_much_clean_up_to_expect_after_a_residential/",
+    "https://www.reddit.com/r/HomeImprovement/comments/9e4dys/how_much_debris_nails_and_such_is_acceptable_to/",
+    "https://www.reddit.com/r/Pennsylvania/comments/1oxbh9x/home_improvement_contractor_registration_how_can/",
+    "https://www.attorneygeneral.gov/businesses-and-organizations/home-improvement-contractor-registration/",
+    "https://www.reddit.com/r/Roofing/comments/1qqprk1/ice_dam_removal_costs/",
+    "https://www.reddit.com/r/HomeMaintenance/comments/1r0l7hr/ice_dams_cause_a_lot_of_panic_every_winter_heres/"
+  ],
+  "_generated_at": "2026-08-03"
+}

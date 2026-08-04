@@ -1,0 +1,286 @@
+{
+  "slug": "ameristar-maids",
+  "business_name": "AmeriStar Maids",
+  "legal_name": null,
+  "tagline": "Easy Cleaning For Busy People",
+  "phone": "+15703101057",
+  "phone_display": "(570) 310-1057",
+  "email": "info@ameristarmaids.com",
+  "address": {
+    "street": "1100 Twin Stacks Dr #1202",
+    "city": "Dallas",
+    "state": "PA",
+    "postal": "18612",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": {
+    "lat": 41.3397287,
+    "lng": -75.9760242
+  },
+  "hours": {
+    "monday": "8:30am-4:30pm",
+    "tuesday": "8:30am-4:30pm",
+    "wednesday": "8:30am-4:30pm",
+    "thursday": "8:30am-4:30pm",
+    "friday": "8:30am-4:30pm"
+  },
+  "rating": 4.9,
+  "review_count": 171,
+  "licensed": false,
+  "insured": true,
+  "bonded": true,
+  "years_in_business": null,
+  "social": {
+    "facebook": "https://www.facebook.com/AmeriStarMaids/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=AmeriStar%20Maids&query_place_id=ChIJm38tI3QXxYkRK1NLLzVxnLM"
+  },
+  "site_url": "https://ameristarmaids.com",
+  "logo_url": "https://ameristarmaids.com/wp-content/uploads/2023/11/AmeriStar-Maids-Logo-300x109.png",
+  "default_hero_photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/Maid-Spraying_Wiping-1024x682.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://ameristarmaids.com/wp-content/uploads/2023/11/AmeriStar-Maids-Cleaning-and-Dusting-Services-PA-1024x682.jpg",
+  "brand": {
+    "fonts": {
+      "display": "Poppins",
+      "body": "Lato"
+    },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#101218",
+      "accent": "#148dbd",
+      "muted": "#4B4F58",
+      "surface": "#F4FCFF",
+      "candidates": [
+        "#148dbd",
+        "#2aa1d0",
+        "#188dbf",
+        "#101218",
+        "#4B4F58",
+        "#F6F7F8",
+        "#F3F5F5",
+        "#effdff",
+        "#f4fcff",
+        "#d8f7ff",
+        "#cef1ff",
+        "#ffffff"
+      ]
+    }
+  },
+  "services": [
+    {
+      "title": "Top-to-Bottom Deluxe Cleaning",
+      "short_description": "Our signature hand-detailed deep clean — the recommended starting point for every new recurring client and the right call before a special occasion or spring reset.",
+      "long_description": "We recommend that all recurring customers start with our signature Top to Bottom Deluxe Cleaning. It brings your home to the level where we can easily and efficiently maintain our standard of cleanliness. Our Top to Bottom Deluxe Cleaning is also a great option when getting ready for a special occasion, spring cleaning, or when you just haven't had the time to keep up. It includes every general cleaning item, cleaned by hand with a detailed emphasis and focus on build-up, plus cabinet fronts, doors and door frames, light switch plates, hand-washed blinds, baseboards, and ceiling fan blades within two-step ladder reach.",
+      "sub_services": [
+        "All cabinet fronts hand washed or wiped",
+        "Doors, door frames and light switch plates hand washed",
+        "Tub, shower and tiles double scrubbed for buildup",
+        "Blinds, moldings, windowsills and lock ledges hand washed",
+        "Baseboards and ceiling fan blades hand washed within two-step reach",
+        "Vacant homes: drawers, shelves and inside cabinets wiped"
+      ],
+      "hero_photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/Maid-Cleaning-3-682x1024.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Recurring Cleaning Service",
+      "short_description": "Weekly, bi-weekly or monthly service with the same maid every visit, so you always open the door to a fresh house.",
+      "long_description": "A recurring clean is the best way to keep your home always looking its best. Choose from weekly, bi-weekly or monthly service — we can help you decide which best fits your family's needs. To establish recurring service, an initial one-time deep cleaning is performed to get your home to the level where we can easily and efficiently maintain our standard of cleanliness. After the initial cleaning we continue to regularly clean your home for as long as you like. Our environmentally friendly cleaning services clean your house on the surface and deep down as well, and our attention to detail is what homeowners love about our service.",
+      "sub_services": [
+        "Weekly service",
+        "Bi-weekly service",
+        "Monthly service",
+        "Kitchen, bathrooms, bedrooms and living areas",
+        "Same maid every visit"
+      ],
+      "hero_photo": "https://ameristarmaids.com/wp-content/uploads/2023/11/AmeriStar-Maids-Cleaning-and-Dusting-Services-PA-1024x682.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "General House Cleaning",
+      "short_description": "Maintenance cleaning for homes that have had a professional clean within the last four weeks — available weekly, bi-weekly, monthly or one-time.",
+      "long_description": "A general cleaning is recommended if you have had a professional cleaning within the last four weeks. Our general house cleaning services are available for weekly, bi-weekly, monthly or one-time cleanings. We are a total home cleaning solution that combines reliable, dedicated service with the most advanced cleaning tools and technologies. Maintenance cleanings cover ceiling fans and light fixtures, cobwebs, blinds and windowsills, moldings and baseboards, all sinks scrubbed and disinfected, tub and shower tiles, wastebaskets emptied and relined, stairs, furniture dusted and polished, appliance exteriors, stovetop and drip pans, counters and backsplashes, mirrors, bathroom fixtures sanitized, beds made with one set of sheets changed, and floors vacuumed and mopped.",
+      "sub_services": [
+        "Kitchen counters, backsplashes and appliance exteriors",
+        "All sinks scrubbed and disinfected",
+        "Tub, shower and tiles scrubbed",
+        "Dusting: fans, fixtures, blinds, moldings, baseboards, furniture",
+        "Beds made with one set of sheets changed",
+        "Floors vacuumed and mopped"
+      ],
+      "hero_photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/AmeriStar-Maids-Home-Cleaning-Services-in-PA-300x200.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "One-Time Cleaning",
+      "short_description": "Guests coming? Moving in or out? Hosting a party? Skip the hassle and let our seasoned professionals handle the whole house in one visit.",
+      "long_description": "We offer two types of one-time cleans at AmeriStar Maids — our signature Top to Bottom Deluxe Clean and a General Clean. It is our job to help you choose the right level of service for your needs. If you are having guests over, moving in or out, or preparing your home for a party, skip the hassle of tidying up and save precious time. Our seasoned professionals can do it all, and a free estimate costs you nothing.",
+      "sub_services": [
+        "Top-to-Bottom Deluxe one-time clean",
+        "General one-time clean",
+        "Pre-party and holiday prep",
+        "Spring cleaning",
+        "Free in-home estimate"
+      ],
+      "hero_photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/ameristar-maids-cleaning-services-300x236.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Move-In & Move-Out Cleaning",
+      "short_description": "Residential cleaning for homes, apartments, vacation rentals and post-construction projects — including move-ins and move-outs.",
+      "long_description": "Home is where the heart is. It is also where everyday dirt and grime lie. AmeriStar Maids is a total-home cleaning solution that combines reliable, dedicated service with the most advanced cleaning tools and technologies. We provide residential cleaning for homes, apartments, move-ins and move-outs, vacation rentals, and post-construction projects. Our house cleaning service starts before any dusting or vacuuming takes place — it begins with a free in-home estimate so we can build a custom cleaning plan around your home. We never take a one-size-fits-all approach.",
+      "sub_services": [
+        "Move-in and move-out cleans",
+        "Apartments and condos",
+        "Vacation rental turnovers",
+        "Post-construction cleanup",
+        "Custom plan built from a free in-home estimate"
+      ],
+      "hero_photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/AmeriStar-Maids-Residentials-Cleaning-Services-in-PA-300x200.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas_raw": "Proudly serving Back Mountain, Wyoming Valley, Mountain Top and surrounding communities throughout Luzerne County.",
+  "service_areas": [],
+  "testimonials": [
+    {
+      "name": "John Clawson",
+      "location": null,
+      "text": "I had Jenn come clean my home for the first time today. She was prompt, very kind, & did an absolutely amazing job cleaning my home. They care about what they do and it shows. Highly recommend!!",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Duane Sprau",
+      "location": null,
+      "text": "We love working with Ameristar - they are courteous, professional, and trustworthy. We are so grateful that they make life a little easier by helping to keep our home perfectly clean.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "M Sheileen Godwin",
+      "location": null,
+      "text": "I received a quick response, an immediate inspection and quote. It was a large top to bottom cleaning project. I would call them again in a heartbeat and highly recommend. They did a great job.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Melissa Sprau",
+      "location": null,
+      "text": "It was amazing to come home to an absolutely sparkling home. The gals were professional and friendly, and I can tell they take great care in what they do. Highly recommend!",
+      "rating": 5,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [
+    {
+      "photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/Maid-Spraying_Wiping-1024x682.jpg",
+      "alt": "AmeriStar Maids cleaner spraying and wiping a surface",
+      "title": null,
+      "location": null
+    },
+    {
+      "photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/Maid-Cleaning-3-682x1024.jpg",
+      "alt": "AmeriStar Maids cleaner detailing a bathroom",
+      "title": null,
+      "location": null
+    },
+    {
+      "photo": "https://ameristarmaids.com/wp-content/uploads/2023/11/AmeriStar-Maids-Cleaning-and-Dusting-Services-PA-1024x682.jpg",
+      "alt": "AmeriStar Maids dusting service in a Pennsylvania home",
+      "title": null,
+      "location": null
+    },
+    {
+      "photo": "https://ameristarmaids.com/wp-content/uploads/2023/11/AmeriStar-Maids-Cleaning-Best-Maids-Service-PA-683x1024.jpg",
+      "alt": "AmeriStar Maids cleaner at work in a Pennsylvania home",
+      "title": null,
+      "location": null
+    },
+    {
+      "photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/last-picture-1024x682.jpg",
+      "alt": "Clean, bright living space after an AmeriStar Maids visit",
+      "title": null,
+      "location": null
+    },
+    {
+      "photo": "https://ameristarmaids.com/wp-content/uploads/2023/12/AmeriStar-Maids-Residentials-Cleaning-Services-in-PA-300x200.jpg",
+      "alt": "Residential cleaning service in Pennsylvania",
+      "title": null,
+      "location": null
+    }
+  ],
+  "offers": {
+    "referral": "Receive $15-$25 off your next cleaning when you refer a friend.",
+    "gift_cards": "E-gift cards for recurring, one-time deep or general, and move in/out cleaning. Expire in one year, non-refundable."
+  },
+  "differentiators": [
+    "One Maid. Same Maid. Every Time.",
+    "Fully bonded and insured, with company-provided workers' compensation",
+    "Every team member screened for qualification and trustworthiness",
+    "Environmentally friendly products",
+    "Free in-home estimate and custom cleaning plan — never one-size-fits-all",
+    "Training on cross-contamination; vehicles and equipment disinfected",
+    "10+ years in the industry",
+    "Partner of Cleaning for a Reason — free home cleanings for cancer patients"
+  ],
+  "brand_voice_sample": "We love providing joy and freedom to all our amazing clients! Having a trusted house cleaner committed to your home will liberate your time and alleviate your stress. We Specialize in Creating Free Time for Busy People!",
+  "blog_posts": [
+    {
+      "title": "The Ultimate Guide to Cleaning and Sanitizing Your Kitchen",
+      "publish_date": "2026-05-06",
+      "description": "Your kitchen might look clean at a glance, but behind the shine, it can easily become one of the most bacteria-prone areas in your home.",
+      "url": "https://ameristarmaids.com/the-ultimate-guide-to-cleaning-and-sanitizing-your-kitchen/"
+    },
+    {
+      "title": "The Hidden Dangers of Mold and Bacteria in Your Home",
+      "publish_date": "2026-05-06",
+      "description": "Most homes look clean on the surface, but what you cannot see can often pose the biggest risk.",
+      "url": "https://ameristarmaids.com/the-hidden-dangers-of-mold-and-bacteria-in-your-home/"
+    }
+  ],
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "Existing site uses WPForms + a mystickyelements call bar + WooCommerce/Stripe for gift cards, and carries the CLIENT's own Meta Pixel (id 742989059457566, via PixelYourSite). None of these are MLA's GHL widgets or MLA's pixel — operator must paste MLA's own GHL snippets into intake §12 and MLA's tracking into §13. Do not copy the client's existing pixel ID."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "pages_scraped": [
+      "/",
+      "/general-house-cleaning/",
+      "/one-time-residential-cleaning-services/",
+      "/regular-cleaning-service/",
+      "/residential-cleaning-services/",
+      "/top-to-bottom-deluxe-cleaning/",
+      "/specials/",
+      "/request-a-quote/",
+      "/gift-cards/",
+      "/the-ultimate-guide-to-cleaning-and-sanitizing-your-kitchen/",
+      "/the-hidden-dangers-of-mold-and-bacteria-in-your-home/"
+    ],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.004,
+    "warnings": [
+      "All page content was retrieved free via direct HTTP fetch; Firecrawl was not needed, so the run cost is GBP lookup only.",
+      "Apify returned 0 review bodies despite maxReviews=5; testimonials come from the client's own website instead.",
+      "/services/ returns 404 on the live site — the mega-menu links straight to individual service pages.",
+      "Site names service REGIONS (Back Mountain, Wyoming Valley, Mountain Top, Luzerne County) rather than individual towns; service_areas were derived at the design-reference/site-generate stage from those named regions."
+    ]
+  }
+}

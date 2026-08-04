@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eastern-residential-solutions.vercel.app/sitemap-index.xml

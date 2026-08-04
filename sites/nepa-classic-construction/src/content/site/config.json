@@ -1,0 +1,129 @@
+{
+  "kind": "config",
+  "business_name": "NEPA Classic Construction",
+  "tagline": "General Contracting, Landscaping & Hardscaping Across Northeast PA",
+  "phone": "+15704791318",
+  "phone_display": "(570) 479-1318",
+  "email": "info@nepaclassic.com",
+  "address": {
+    "city": "Pittston",
+    "state": "PA",
+    "postal": "18640",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.3243,
+    "lng": -75.7898
+  },
+  "hours": {
+    "monday": "7:00 AM – 7:00 PM",
+    "tuesday": "7:00 AM – 7:00 PM",
+    "wednesday": "7:00 AM – 7:00 PM",
+    "thursday": "7:00 AM – 7:00 PM",
+    "friday": "7:00 AM – 7:00 PM",
+    "saturday": "7:00 AM – 7:00 PM"
+  },
+  "site_url": "https://nepa-classic-construction.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 30,
+  "social": {},
+  "logo_url": "/logo-nepa-classic.png",
+  "default_hero_photo": "/img/exterior-reno-after.jpg",
+  "about_photo": "/img/interior-reno-after.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "You get the estimate you were promised",
+      "description": "Every project starts with a free, no-obligation walkthrough and an itemized written estimate. No pressure, no surprises, and no waiting three weeks for a number that never arrives."
+    },
+    {
+      "title": "30+ years, 500+ projects in this valley",
+      "description": "We have been building across Luzerne and Lackawanna Counties for over three decades. We know the housing stock, the inspectors, and what a NEPA winter does to work that was rushed."
+    },
+    {
+      "title": "One contractor for the whole job",
+      "description": "Interior, exterior, hardscaping and landscaping run through the same office. You are not coordinating five trades and hoping they talk to each other — that is our job."
+    },
+    {
+      "title": "Licensed and insured in Pennsylvania",
+      "description": "We are a fully licensed and insured Pennsylvania contractor, and we handle permitting with the local Luzerne and Lackawanna County offices ourselves."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Paver Patio & Retaining Wall",
+      "location": "Poolside, Luzerne County",
+      "photo": "/img/paver-patio-after.jpg",
+      "alt": "Completed paver patio with retaining wall and fresh landscaping around a backyard pool",
+      "description": "Paver patio with retaining wall and landscaping — an unfinished pool surround turned into a usable outdoor room."
+    },
+    {
+      "title": "Paver Patio — Before",
+      "location": "Poolside, Luzerne County",
+      "photo": "/img/paver-patio-before.jpg",
+      "alt": "Bare backyard pool area before paver patio installation",
+      "description": "The same yard at the start: bare grade, no drainage plan, nothing to walk on."
+    },
+    {
+      "title": "Full Interior Renovation",
+      "location": "Northeast Pennsylvania",
+      "photo": "/img/interior-reno-after.jpg",
+      "alt": "Finished living room with new hardwood floors, trim and modern furnishings",
+      "description": "Complete floor-to-ceiling renovation — from exposed joists to a finished living space."
+    },
+    {
+      "title": "Interior Renovation — Before",
+      "location": "Northeast Pennsylvania",
+      "photo": "/img/interior-reno-before.jpg",
+      "alt": "Room stripped to exposed floor joists during renovation",
+      "description": "Down to the joists. This is what a real gut renovation looks like halfway through."
+    },
+    {
+      "title": "Exterior Transformation",
+      "location": "Northeast Pennsylvania",
+      "photo": "/img/exterior-reno-after.jpg",
+      "alt": "Renovated home exterior with stone veneer, paver walkway, retaining walls and new landscaping",
+      "description": "Stone veneer, paver walkway with retaining walls, fresh landscaping and pathway lighting."
+    },
+    {
+      "title": "Exterior Transformation — Before",
+      "location": "Northeast Pennsylvania",
+      "photo": "/img/exterior-reno-before.jpg",
+      "alt": "Home exterior before renovation showing worn siding and a dated porch",
+      "description": "Worn siding, a tired porch, and no defined approach to the front door."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "One contractor",
+    "heading_rest": "for the whole project",
+    "subtitle": "General contracting, interior and exterior construction, hardscaping and landscaping across Wilkes-Barre, Scranton, Pittston and the rest of Northeast Pennsylvania."
+  }
+}

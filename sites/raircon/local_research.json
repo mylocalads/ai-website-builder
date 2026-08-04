@@ -1,0 +1,39 @@
+{
+  "slug": "raircon",
+  "category": "Air conditioning contractor / HVAC + MEP",
+  "location": "Miami-Dade, Broward & Monroe Counties, FL",
+  "threads_analyzed": 15,
+  "research_method": "Firecrawl web search across r/Miami, r/SouthFlorida, r/hvacadvice, r/HVAC, r/homeowners, r/HomeImprovement. Reddit comment bodies could NOT be read directly — reddit.com is blocked to the WebSearch/WebFetch user agent, returns 403 to the public .json API, and is unsupported by Firecrawl scrape. Findings below are synthesized from thread titles and search-result snippets (which include verbatim OP text), not from full comment threads. Treat as directional.",
+  "pain_points": [
+    "Deep distrust of South Florida home-services contractors as a baseline. The most-cited r/Miami thread on the topic opens with 'Miami is full of scammers and people in the home services industry looking to rip you off in a moment's notice' — locals ask each other for personal referrals because they do not trust directories or review counts.",
+    "Replace-don't-repair upselling with high-pressure discount stacking. Repeated threads describe calling for a tune-up and receiving a $13,000 quote, or a $20,000 full-system quote on a small townhouse with '$2,000 off if you install tomorrow.' Miami homeowners report legitimate 3.5-ton replacement quotes in the $5,000-$9,000 range, so the gap is obvious and infuriating.",
+    "Contractors who ghost — no-show after the estimate, or disappear mid-job leaving exposed plumbing and no timeline. This is the single most common complaint pattern across the contractor subreddits.",
+    "Unpermitted work. Miami-Dade requires a mechanical permit for any HVAC replacement (roughly $150-$500, including the HVHZ wind-load review surcharge) and contractors routinely skip it — which voids equipment warranties and disqualifies the homeowner from utility rebates. Condo and HOA boards add another layer: contracts, permits, security deposits, and a certificate of insurance before a tech can even enter the building.",
+    "Humidity and mold from badly sized or badly ducted systems — the distinctly South Florida failure mode. Homeowners sit at 55-75% indoor relative humidity after a new install, find black staining at the vents, and are told the unit is oversized or the duct work is wrong. The cheap install becomes a mold remediation bill."
+  ],
+  "what_customers_value": [
+    "One contractor they can call again — a known, repeatedly-recommended name rather than whoever ranks first in search.",
+    "The phone actually being answered, and a truck arriving same-day or next-day. An AC failure in Miami heat is treated as an emergency, not a scheduling item.",
+    "Honest diagnosis: repairing what is repairable, and not being walked into a full system replacement on the first visit.",
+    "Verifiable licensing and insurance, permits actually pulled, and a certificate of insurance available on request — table stakes for anyone in a condo or association-governed building.",
+    "Correct sizing, duct work, and post-install testing so the house is actually dehumidified — not just cold."
+  ],
+  "business_differentiators": [
+    "4.7 stars across 219 Google reviews — a volume track record that answers the 'how do I know who's real' problem directly. Most local competitors have a fraction of that review count.",
+    "Founded January 2002; 24 years in business, 20+ of them serving Miami-Dade and Broward. Longevity is the exact signal r/Miami users say they look for.",
+    "A fleet of 35 GPS-tracked trucks dispatched from a central Hialeah office — a concrete mechanism behind fast response, not a slogan. Being headquartered in Hialeah puts them centrally in Miami-Dade.",
+    "Published reviews independently evidence the speed claim: a call 'answered within seconds' at night, a technician on site 'within two hours,' a unit repaired in 15 minutes. Speed can be shown rather than asserted.",
+    "Licensed and insured with in-house mechanical, electrical, plumbing AND construction capability — so they can pull their own permits and satisfy HOA/board paperwork rather than subcontracting it out. Commercial references include The Shelborne Beach Resort, Portofino Tower, and 5600 Collins.",
+    "Testing and balancing of air and water conditioning systems is an explicitly listed service. This is the direct technical answer to the Miami humidity/oversizing pain point and almost no residential AC competitor in the market leads with it.",
+    "Single contractor across HVAC, refrigeration, plumbing, electrical, mechanical, construction and remodeling — eliminates the handoff between trades where mid-project ghosting usually happens."
+  ],
+  "copy_angles": [
+    "Lead the hero with answered-and-dispatched, not with 'quality service.' The number one local complaint is scammers and no-shows; Raircon's own reviews evidence a call answered within seconds and a tech on site within two hours. Make speed the promise and the review the proof.",
+    "Put hard trust proof high on the page — 4.7 stars / 219 reviews, since 2002, 35 GPS-tracked trucks, licensed and insured — instead of generic adjectives. Every one of these is verifiable and each maps to a stated Reddit anxiety.",
+    "Run an anti-upsell angle: 'We fix what can be fixed.' Position honest diagnosis explicitly against the tune-up-turned-$13,000-quote pattern. This is the highest-emotion pain point in the research and no competitor in the market owns it.",
+    "Sell testing and balancing as the humidity answer. Frame it as: if your house is cold and still sticky, the system was sized or ducted wrong — and we are one of the few contractors here who test and balance rather than just swap the box. Strong differentiator, uniquely South Florida.",
+    "Use the condo and commercial credentials as a distinct trust block — named buildings, permits pulled in-house, COI on request. It speaks directly to the HOA/board approval friction that is specific to Miami-Dade high-rise living, and it also qualifies commercial leads.",
+    "Emphasize one contractor, every trade — MEP plus construction and remodeling under one license. Directly addresses the mid-project ghosting and trade-handoff horror stories."
+  ],
+  "generated_at": "2026-08-04"
+}

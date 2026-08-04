@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://patriot-metal-products.vercel.app/sitemap-index.xml

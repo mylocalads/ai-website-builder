@@ -1,0 +1,31 @@
+{
+  "slug": "golden-business-machines",
+  "url": "https://goldenbusiness.com",
+  "screenshot": "screenshots/golden-business-machines.png",
+  "audited_at": "2026-08-03",
+  "platform": "WordPress + Divi (credited to '75 Degrees West' in the footer)",
+  "purpose": "OPERATOR REFERENCE ONLY. Per the pipeline's anti-pattern lock, nothing observed here seeds design tokens, layout, or section order for the generated site. The owl template is the sole design authority.",
+  "strengths": [
+    "Strong, unmistakable brand mark and a committed single-accent red (#DF0028) used consistently.",
+    "Technology Partners strip (Canon, Microsoft 365, N-able, EFI, Cisco) is real, verifiable trust equity.",
+    "Industry segmentation (Healthcare, Manufacturing, Government, Education, Legal, Non Profit) is genuinely useful B2B qualification.",
+    "The four value blocks near the footer contain the site's best copy — including the 4-hour on-site guarantee.",
+    "Footer lists all five office addresses with phone numbers.",
+    "UserWay accessibility widget and TrustedSite badge present."
+  ],
+  "weaknesses": [
+    "The single strongest selling point on the whole site — 'technicians will be on-site in 4 hours or less, guaranteed' — is in small grey body text at the very bottom of the page, below six industry icons.",
+    "Hero is a product announcement ('Introducing the Canon imagePROGRAF TZ-Series Wide Format MFP'), not a customer-outcome message. No hero CTA button.",
+    "Copyright reads 2021; several pages carry stale 'over 40 years' copy while /about says over 50.",
+    "No testimonials, case studies, or named customers anywhere on the site.",
+    "No pricing or lease-transparency content of any kind, in a market whose #1 complaint is opaque lease pricing.",
+    "Service pages are thin and inconsistent — /manage-it-services renders essentially empty; several pages show literal 'Z' characters where an icon font failed.",
+    "Every page ends with a stray bare 'reCAPTCHA' string.",
+    "Duplicate/orphan pages left published: /test, /test-2, /home-draft-final.",
+    "Six red line-art industry icons compete visually with the red logo and red CTA buttons; the accent loses its job as a call-to-action signal.",
+    "Local SEO is thin: only two geo pages (Scranton copiers, Wilkes-Barre IT), no page for Kingston, Hazleton, Williamsport or Stroudsburg despite offices in most of them."
+  ],
+  "before_after_story": "Today the site opens with a product SKU and closes with the guarantee. The rebuild opens with the guarantee — on site in four hours, locally owned since 1969, five offices across NEPA — and treats the Canon hardware as proof, not as the headline. It also gives each office city a real service-area page instead of leaving four of five locations invisible to local search.",
+  "design_dna_extracted": false,
+  "brand_tokens_taken": ["accent color #DF0028", "font families Poppins / Open Sans", "logo and favicon URLs"]
+}

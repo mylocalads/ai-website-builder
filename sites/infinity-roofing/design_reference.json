@@ -1,0 +1,103 @@
+{
+  "slug": "infinity-roofing",
+  "template": "owl",
+  "vertical": "roofing",
+  "references": [
+    {
+      "url": "https://gilroy-roofing.vercel.app/",
+      "role": "primary",
+      "source": "operator-supplied",
+      "notes": "Operator's explicit style target. This is an `owl` build, so the template itself is the authoritative source of structure — read from astro-templates/owl/ rather than scraped. Section order, component set, and type treatment are cloned verbatim; only brand tokens and copy change.",
+      "verified_live": true
+    },
+    {
+      "url": "https://owlroofing.com/",
+      "role": "secondary",
+      "source": "reference-libraries/roofing.json",
+      "notes": "Original reference behind the owl template. Consulted for lineage only; gilroy supersedes it as the concrete target."
+    }
+  ],
+  "known_drift_from_reference": [
+    "astro-templates/owl/ has advanced past the gilroy-roofing deployment. Two visible deltas: (1) the visual breadcrumb trail is now hidden site-wide (commits e09a329, 440f21b), where gilroy still renders it on inner pages; (2) the closing CTA was reworked and its copy moved into the component (commit 5380c60). Both are deliberate template improvements, not regressions.",
+    "sites/gilroy-roofing/src is a STALE SNAPSHOT and must not be used as the build source. It predates the brand-token generalisation (its Header hardcodes rgba(241,85,55,...) — Gilroy's orange), the --color-accent-ink token, and src/lib/limits.ts. Building from it would reintroduce all three.",
+    "ACTION: after the build, diff the rendered result against gilroy-roofing.vercel.app section by section and report any delta beyond these two known items."
+  ],
+  "palette": {
+    "_derivation": "Operator supplied three colors: #e1c135 (CTA), #ffffff (primary bg), #0a0a0a (secondary bg). Everything else is derived and contrast-verified against WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large text and UI).",
+    "--color-bg": {
+      "value": "#ffffff",
+      "source": "operator",
+      "role": "page background"
+    },
+    "--color-surface": {
+      "value": "#fafaf9",
+      "source": "derived",
+      "role": "cards, form panel, FAQ rows",
+      "note": "Operator specified #ffffff for the background. Gilroy inverts this — tinted bg (#f0f2f7) with white cards. Pure white on pure white would erase every card edge, so the tint moves to the card instead. Delta is small but sufficient; a hairline border backs it up."
+    },
+    "--color-text": { "value": "#0a0a0a", "source": "operator", "contrast_on_bg": 19.8 },
+    "--color-muted": { "value": "#55565b", "source": "derived", "contrast_on_bg": 7.32, "contrast_on_surface": 7.01 },
+    "--color-primary": {
+      "value": "#0a0a0a",
+      "source": "operator",
+      "role": "dark panels — Testimonials, ProcessSteps, WhyChooseUs, Footer",
+      "note": "Maps to gilroy's --color-primary: #000000. Same structural role."
+    },
+    "--color-on-primary": { "value": "#ffffff", "contrast_on_primary": 19.8 },
+    "--color-accent": {
+      "value": "#e1c135",
+      "source": "operator",
+      "role": "FILL only — button backgrounds, dark-panel accents, icon fills",
+      "contrast_as_text_on_bg": 1.77,
+      "warning": "1.77:1 as text on white. FAILS AA badly. Never use --color-accent as foreground text on a light background. Use --color-accent-ink."
+    },
+    "--color-on-accent": { "value": "#0a0a0a", "contrast_on_accent": 11.2, "role": "ink on gold buttons" },
+    "--color-accent-ink": {
+      "value": "#7d6410",
+      "source": "derived",
+      "role": "the accent as FOREGROUND TEXT on light backgrounds — eyebrows, tick marks, stars, pins, chevrons, phone links",
+      "contrast_on_bg": 5.67,
+      "contrast_on_surface": 5.43,
+      "note": "Template default is #8a6420 (derived from owl's #c8973f). Re-derived here from the client's #e1c135 per the template README's per-client rule. Dark panels keep --color-accent (11.2:1 on #0a0a0a); light backgrounds use this ink."
+    },
+    "--color-focus": { "value": "#0057ff", "source": "template default", "role": "focus ring" }
+  },
+  "typography": {
+    "--font-display": "'Montserrat', 'Inter', system-ui, sans-serif",
+    "--font-body": "'Inter', system-ui, sans-serif",
+    "source": "identical to gilroy-roofing — unchanged for style fidelity",
+    "note": "intake-scraped.json detected no fonts on the client site (brand.fonts null), so the reference's fonts carry through rather than being overridden."
+  },
+  "spacing_radius": {
+    "note": "Inherited verbatim from the owl template. Identical to gilroy.",
+    "--radius-sm": "4px", "--radius-md": "8px", "--radius-lg": "14px",
+    "--space-1": "0.5rem", "--space-2": "1rem", "--space-3": "1.5rem", "--space-4": "2.5rem", "--space-5": "4rem",
+    "--max-width": "1200px"
+  },
+  "section_order_home": [
+    "hero (photo bg + eyebrow + headline + subhead + trust badges + CTA, form aside)",
+    "promise bar (3 items)",
+    "services grid",
+    "testimonials (dark panel)",
+    "promise band",
+    "signature system",
+    "process steps (dark panel)",
+    "about",
+    "seo body (why choose + floating review card)",
+    "faq",
+    "blog cards",
+    "closing CTA"
+  ],
+  "anti_patterns": [
+    "Never use --color-accent (#e1c135) as text on a light background — 1.77:1.",
+    "No emoji as interface icons. The client's existing site does this; the template uses inline SVG from src/lib/icons.ts.",
+    "No hotlinked third-party images. All imagery served from public/img/.",
+    "No unverified rating or review count in the hero trust badges, above the form, or in JSON-LD aggregateRating. Rating and review_count are null in intake and must stay out of the build.",
+    "No specific warranty term anywhere. Two 1-star reviews concern warranty non-response; publishing a term Dan has not confirmed creates a real liability.",
+    "No 'since YYYY' claim — founding year is contested (2015 vs 2018) and unresolved.",
+    "No randomised or reshuffled section order. Fixed per v2.2 amendment E.",
+    "Never synthesize GHL loader URLs or widget IDs — operator paste-in only.",
+    "Do not copy layout, component styling, or section rhythm from ir-ga.com. The template is the sole source of design."
+  ],
+  "generated_at": "2026-07-30"
+}

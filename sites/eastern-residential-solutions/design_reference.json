@@ -1,0 +1,61 @@
+{
+  "slug": "eastern-residential-solutions",
+  "template": "owl",
+  "sources": {
+    "mode": "library",
+    "library": "roofing",
+    "urls": ["https://owlroofing.com/", "https://firefly-cd.vercel.app/"],
+    "scraped": false,
+    "scrape_note": "Both primary roofing-library references are already codified in-repo: owlroofing.com is the reference behind astro-templates/owl (section order, dark bands, signature system, numbered process) and firefly-cd.vercel.app behind astro-templates/firefly. Per the library's note_url_fragility guidance, the template directory was used as the structural source of truth instead of re-scraping. Saved ~$0.04 of Firecrawl spend with no loss of fidelity.",
+    "brand_tokens_from": "sites/eastern-residential-solutions/intake-scraped.json (Firecrawl branding extraction of the client homepage)"
+  },
+  "palette": {
+    "bg": "#F5F6F8",
+    "surface": "#FFFFFF",
+    "text": "#171C22",
+    "muted": "#576069",
+    "primary": "#0A1622",
+    "on_primary": "#FFFFFF",
+    "accent": "#D90916",
+    "on_accent": "#FFFFFF",
+    "accent_ink": "#B00711",
+    "focus": "#0057FF"
+  },
+  "palette_rationale": {
+    "accent": "#D90916 is the client's authentic brand red, detected from their primary CTA button. Kept verbatim — it is the color on their logo, their Get Quote button, and their service cards.",
+    "primary": "#0A1622 is their navy #2C506E driven down to a deep navy-black so it works as the template's dark band. At #2C506E the brand red measured 1.61:1 against it and was unreadable; at #0A1622 it clears 3.48:1, which beats the owl template's own default accent-on-primary ratio of 3.77:1's neighborhood and passes the 3:1 non-text / large-text threshold the dark-band eyebrows and star rows need.",
+    "accent_ink": "#B00711 is the red darkened for use as foreground text on the light background (eyebrows, tick marks, stars, chevrons), measuring 6.78:1 on --color-bg.",
+    "bg": "Cool neutral off-white rather than owl's default warm #f7f5f0 — a warm cream fights a red-and-navy brand.",
+    "rejected": "#0000EE was detected in the client's CSS but is the browser default link blue on unstyled anchors, not a brand color. Discarded."
+  },
+  "typography": {
+    "display": "Oswald",
+    "body": "Inter",
+    "rationale": "Oswald is the client's actual heading typeface, detected on their live site — condensed, industrial, and a good match for a roofing brand, so it carries brand continuity into the rebuild. Their detected body-role face, Playfair Display, is a serif display type unsuited to running body copy and was rejected in favor of the owl template default, Inter."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "max_width": "1200px",
+  "section_styling_hints": [
+    "Fixed owl section order — hero with full-bleed photo and floating quote card, promise bar, services grid with category labels and sub-service lists, testimonials on the dark band, promise band, signature system, 4-step numbered process on a dark band, about with checklist, long-form SEO body with a second checklist, FAQ, recent articles, closing CTA.",
+    "Squared corners lean into the brand: the client's own buttons are pill-shaped but their logo and badge lockups are hard-edged; the owl 4px/8px radius scale is retained rather than adopting the pill.",
+    "Real project photography from the client's own portfolio throughout — no stock. Every gallery image is a documented NEPA job."
+  ],
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "cartoon or licensed-character mascots — the current site places a Pink Panther graphic beside the Owens Corning badge, which undercuts the credential",
+    "white body text on saturated red panels at small sizes — the current site's service cards do this and it is uncomfortable to read",
+    "overlapping nav badge/label strips that clip their own text, as on the current homepage icon row",
+    "run-on county lists as a substitute for real service-area pages",
+    "off-site third-party legal pages — the current site points Privacy and Terms at thebasalygagroup.com"
+  ],
+  "generated_at": "2026-08-03"
+}

@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+const leadTimeRows = [
+  { type: 'HomeCrest cabinetry', lead: 'About 3 weeks', note: 'Tuesday afternoon cut-off, ships Friday three weeks out' },
+  { type: 'Omega semi-custom & custom cabinetry', lead: '5–6 weeks', note: 'Door style and finish drive the range' },
+  { type: 'Countertops', lead: '1–2 weeks', note: 'Measured from templating, not from order date' },
+  { type: 'Full kitchen, start to finish', lead: '6–8 weeks', note: 'Includes cabinet delivery time' },
+  { type: 'Bathroom or laundry area', lead: 'About 1 week', note: 'Once materials are on site' },
+];
+---
+<BaseLayout
+  title={`Pricing & Lead Times — ${site.business_name}`}
+  description={`Lead times, deposit terms, and how we price kitchen and bathroom remodels across ${site.marketing_city ?? site.address.city}, ${site.marketing_state ?? site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Pricing & Lead Times"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Book My Free Design Consultation"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your room"
+  />
+
+  <section class="lead-times">
+    <div class="container">
+      <h2>Lead times we commit to</h2>
+      <p class="lede">Price depends on the cabinet line, the door style, the surface, and how much of the room is moving — so we quote your room rather than publish a package. What we can publish is how long each part takes, and these are the numbers we work to.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>What you're ordering</th><th>Lead time</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            {leadTimeRows.map((r) => (
+              <tr><td>{r.type}</td><td>{r.lead}</td><td>{r.note}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>Terms:</strong> a 75% deposit is required on cabinets or countertops being ordered, with the balance due on completion. Design consultation is free; detailed floor plans are released once a purchase contract is signed, or you can buy the design outright.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free design consultation</h2>
+        <p class="lede">Pick a time that works — we look at the room, show you real doors and slabs, and price what you actually have.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .lead-times { padding: var(--space-5) 0; background: var(--color-surface); }
+  .lead-times h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .lead-times .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .lead-times table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .lead-times th, .lead-times td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .lead-times th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .lead-times tbody tr:last-child td { border-bottom: 0; }
+  .lead-times .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

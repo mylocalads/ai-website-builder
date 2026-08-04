@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://royal-roofing-systems.vercel.app/sitemap-index.xml

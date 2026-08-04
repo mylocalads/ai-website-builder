@@ -1,0 +1,167 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Scranton, PA",
+    "headline": "No job is too small",
+    "subheadline": "Roof replacement, repairs, seamless gutters, siding and chimney work across Northeast Pennsylvania — from a two-owner shop in Pittston where Alex and Luis answer their own phones. Free estimates, and a straight price you can take to another contractor.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "photo": "/img/roof-replacement.jpg",
+    "trust_badges": [
+      { "mark": "google", "rating": 5, "label": "5.0 out of 5", "sublabel": "on Google" }
+    ],
+    "quote_card": {
+      "quote": "Alex and his team did an amazing job. They provided the best and most cost efficient option when replacing our siding.",
+      "author": "Tanis R.",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 5
+    }
+  },
+  "promise_bar": [
+    { "text": "Free, no-obligation estimates", "icon": "clipboard" },
+    { "text": "Reach the owners directly", "icon": "phone" },
+    { "text": "No job is too small", "icon": "hammer" },
+    { "text": "100% guaranteed best prices", "icon": "wallet" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "100% guaranteed best prices",
+    "body": "We stand behind our commitment to the most competitive pricing in Northeast Pennsylvania, and we will match a comparable quote. That works because we are two owners and a small crew, not a sales organization — there is no commissioned closer marking up your job, and no pressure to sign tonight. Every estimate is free, laid out in plain terms, and yours to take to another contractor if you want a second opinion.",
+    "cta_text": "Get a free estimate",
+    "cta_href": "/book",
+    "image": "/img/siding-renovation.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "What you actually get when you hire us",
+    "intro": "Northeast PA homeowners have heard every version of the roofing pitch, usually from someone who showed up uninvited after a storm. Here is what is different about working with a local two-owner shop, and why each piece matters.",
+    "blocks": [
+      {
+        "title": "You talk to the owner, start to finish",
+        "body": "Alex at (570) 880-1640 and Luis at (570) 453-8725. The person who walks your roof and writes your estimate is the person running the crew on install day, and the person who picks up if you call six months later. Nothing gets handed off to a salesperson who disappears once the contract is signed.",
+        "icon": "phone",
+        "image": "/img/roof-repair.jpg"
+      },
+      {
+        "title": "A real address in Luzerne County",
+        "body": "77 Center St, Pittston. Look it up before you hire anyone. After every major storm, Pennsylvania homeowners get door-knocked by out-of-state crews who collect the insurance settlement and leave. The single best protection is hiring someone whose shop you can drive to.",
+        "icon": "home",
+        "image": "/img/chimney-repair.jpg"
+      },
+      {
+        "title": "Materials we will name out loud",
+        "body": "GAF, Owens Corning, CertainTeed and IKO. Not \"premium shingles\" — the actual manufacturers, so you can look up the product line and the warranty terms yourself. Specifying the material is how you compare two quotes honestly.",
+        "icon": "shield",
+        "image": "/img/flat-roof-epdm.jpg"
+      },
+      {
+        "title": "The small jobs nobody else will quote",
+        "body": "A leaking valley. Six shingles off after a windy night. A run of gutter pulling away from the fascia. These are the calls larger outfits screen out because they are not worth mobilizing for. They are exactly the calls that keep a small roof problem from becoming a deck replacement.",
+        "icon": "hammer",
+        "image": "/img/seamless-gutters.jpg"
+      }
+    ],
+    "steps_title": "Where the money usually goes wrong",
+    "steps_icon": "wallet",
+    "steps": [
+      { "title": "Cash up front", "body": "A contractor who wants half the job in cash before materials are ordered is a contractor you may not see again. Pennsylvania consumer-protection guidance flags this as a leading roofing-scam signal." },
+      { "title": "Today-only pricing", "body": "A price that expires if you do not sign within the hour is a sales tactic, not a business practice. A real estimate is still good next week." },
+      { "title": "A verbal warranty", "body": "Ask for the workmanship terms in writing, separate from the manufacturer's material warranty. If a contractor will not put it on paper, that tells you what it is worth." },
+      { "title": "No PA registration", "body": "Pennsylvania requires anyone doing home-improvement work over $500 to register with the Office of Attorney General. The database is public and searchable in about thirty seconds. Do it for every quote you get." }
+    ]
+  },
+  "process_steps": {
+    "headline": "Four steps, no mystery",
+    "steps": [
+      { "label": "Step One", "title": "Call Alex or Luis", "body": "Reach an owner directly, not a queue. Our Google listing is set to 24 hours because leaks do not wait for business hours." },
+      { "label": "Step Two", "title": "Free on-site estimate", "body": "We come out, look at the actual roof, and tell you what we see — including when the answer is that it can wait." },
+      { "label": "Step Three", "title": "A written price", "body": "Itemized, no obligation, and yours to compare against anyone else's quote." },
+      { "label": "Step Four", "title": "We do the work and clean up", "body": "Our crew finishes the job and clears the property. Cleanup comes up unprompted in our reviews for a reason." }
+    ],
+    "cta_text": "Start with a free estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About G&T Roofing",
+    "headline": "Two owners, one crew, and a shop in Pittston",
+    "body": "G&T Roofing & Home Improvements is led by Alex and Luis, who built the business on three things: honest pricing, expert craftsmanship, and answering the phone. We believe quality roofing should be accessible to everyone, which is why no job is too small for us and why every estimate is free. Your home is your largest investment, and we approach a six-shingle repair with the same care as a full replacement.",
+    "checklist": [
+      "Based at 77 Center St, Pittston, PA — serving all of Northeast Pennsylvania",
+      "Both owners reachable directly: Alex (570) 880-1640, Luis (570) 453-8725",
+      "5.0 stars on Google; 4.3 on Thumbtack with the owner background-check verified",
+      "GAF, Owens Corning, CertainTeed and IKO materials",
+      "Free estimates, no obligation, and a price match on comparable work"
+    ],
+    "photo": "/img/siding-renovation.jpg",
+    "photo_alt": "A Northeast Pennsylvania home after G&T Roofing completed a full siding replacement",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Roofing in Northeast PA",
+    "headline": "What a NEPA winter does to a roof",
+    "paragraphs": [
+      "Northeast Pennsylvania is hard on roofs in a specific way, and it is not mainly the snow load. It is the freeze-thaw cycle. Daytime sun melts snow on the upper roof, the meltwater runs down to the cold overhang, and it refreezes into an ice dam at the eave. Water then backs up under the shingles — which are designed to shed water downhill, not to hold it — and finds its way into the decking, the insulation, and eventually the ceiling below. By the time a stain shows up on your drywall in February, the damage upstairs has usually been developing for weeks.",
+      "That is why gutters, soffit and fascia are not side jobs here; they are part of the roof system. Clogged or undersized gutters give meltwater nowhere to go. Blocked soffit vents trap warm attic air against the roof deck and make the melt-refreeze cycle worse. Getting the drainage and the ventilation right is often what decides whether a roof reaches its rated life or falls a decade short of it.",
+      "We work across Scranton, Wilkes-Barre, Pittston, Hazleton, Carbondale and out to Stroudsburg and the Poconos. If you have a stain on a ceiling, a valley that keeps leaking, or a roof you simply have not had eyes on in years, the estimate is free and nothing is attached to it. Sometimes the honest answer is that you have several seasons left — and that is worth knowing too."
+    ],
+    "checklist": [
+      "Ice dam and leak repair, including the drainage and ventilation causes behind it",
+      "Full tear-off and replacement with GAF, Owens Corning, CertainTeed or IKO materials",
+      "Seamless gutters with leaf guards, sized for the roof they are draining",
+      "Soffit and fascia replacement to restore attic ventilation",
+      "EPDM flat roof systems for porches, additions and commercial buildings"
+    ],
+    "image": "/img/roof-repair.jpg",
+    "image_alt": "Roof leak repair and preventive maintenance work on a Northeast Pennsylvania home",
+    "image_position": "right",
+    "cta_text": "Get a free estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    { "name": "Tanis R.", "location": "Thumbtack review", "text": "Alex and his team did an amazing job. They provided the best and most cost efficient option when replacing our siding.", "rating": 5 },
+    { "name": "Anthony E.", "location": "Thumbtack review", "text": "GT roofing was a excellent and efficient company to hire, they were fast and came the same day.", "rating": 5 },
+    { "name": "Daniel K.", "location": "Thumbtack review", "text": "They did a great job replacing and installing my siding. Overall they did a great job and cleaned everything after installing.", "rating": 5 },
+    { "name": "Maria Santos", "location": "Scranton, PA", "text": "Alex and his team did an outstanding job on our roof replacement. The price was fair, the work was completed on time, and they cleaned up everything perfectly. Highly recommend.", "rating": 5 },
+    { "name": "Robert Chen", "location": "Wilkes-Barre, PA", "text": "We had an emergency leak and Luis responded immediately. He fixed the problem quickly and the price was very reasonable. Great service from start to finish.", "rating": 5 },
+    { "name": "Jennifer Kowalski", "location": "Hazleton, PA", "text": "G&T Roofing installed new gutters and leaf guards on our home. The quality of work is excellent and we have not had any issues with clogged gutters since. Very professional team.", "rating": 5 },
+    { "name": "Michael Patel", "location": "Pittston, PA", "text": "The team was professional, efficient, and respectful of our property. They completed our chimney repair ahead of schedule and the workmanship is top-notch.", "rating": 5 },
+    { "name": "Sarah Thompson", "location": "Carbondale, PA", "text": "After getting several quotes, G&T had the best price without compromising on quality. Our new roof looks great and we feel confident it will last for years.", "rating": 5 }
+  ],
+  "faqs": [
+    {
+      "q": "How much does a new roof cost in Northeast PA?",
+      "a": "It depends on the square footage, the pitch, how many layers have to come off, and the shingle line you choose. That is why we do not publish a number — a price quoted without seeing the roof is a guess. The estimate is free, itemized, and carries no obligation, and we will match a comparable quote from another contractor."
+    },
+    {
+      "q": "Do you really take small jobs?",
+      "a": "Yes. Six shingles off after a windstorm, one leaking valley, a section of gutter pulling loose — those are exactly the calls we take. Larger outfits often decline work that small because it is not worth mobilizing a crew for. Catching it early is usually the difference between a repair and a deck replacement."
+    },
+    {
+      "q": "How fast can you come out for a leak?",
+      "a": "Our Google listing is set to 24 hours because water damage does not wait. Call Alex at (570) 880-1640 or Luis at (570) 453-8725 and you will reach an owner, not an answering service. Same-day response comes up by name in our reviews."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "All of Northeast Pennsylvania and the surrounding area. We work regularly in Scranton, Wilkes-Barre, Pittston, Hazleton, Carbondale and Stroudsburg, and we are based at 77 Center St in Pittston. If you are nearby and not sure whether you are in range, call and ask."
+    },
+    {
+      "q": "What shingles and materials do you use?",
+      "a": "GAF, Owens Corning, CertainTeed and IKO. We name the manufacturer on the estimate rather than writing \"premium materials\" so you can look up the product line and its warranty terms yourself, and so you can compare our quote against another one honestly."
+    },
+    {
+      "q": "How do I avoid a roofing scam after a storm?",
+      "a": "Be wary of anyone who knocks on your door uninvited, wants a large cash deposit before materials are ordered, or offers a price that expires today. Ask for the workmanship warranty in writing, separate from the manufacturer's material warranty. And verify registration — Pennsylvania requires anyone doing home-improvement work over $500 to register with the Office of Attorney General, and the database is publicly searchable."
+    },
+    {
+      "q": "Why do my gutters matter to my roof?",
+      "a": "In this climate, a great deal. Meltwater from the upper roof refreezes at the cold eave and forms an ice dam, and water then backs up under shingles that were only ever designed to shed it downhill. Clogged or undersized gutters and blocked soffit vents both make that worse, which is why we treat gutters, soffit and fascia as part of the roof system rather than as add-ons."
+    },
+    {
+      "q": "Do you do work besides roofing?",
+      "a": "Yes. Siding installation and repair, soffit and fascia, seamless gutters with leaf guards, chimney repair and repointing, skylight installation and repair, EPDM flat roofs, and interior and exterior painting. It is in the name — roofing and home improvements."
+    }
+  ]
+}

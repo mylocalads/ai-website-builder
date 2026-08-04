@@ -1,0 +1,241 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Miami, FL",
+    "headline": "Your Call Gets Answered. A Truck Gets Dispatched.",
+    "subheadline": "Air conditioning, refrigeration, plumbing, electrical, mechanical and construction — one licensed South Florida contractor since 2002, running 35 GPS-tracked trucks across Miami-Dade, Broward and Monroe.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/chiller-install.jpg",
+    "video_link_text": "24 years in South Florida — here's how we work",
+    "video_link_href": "/about",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.7,
+        "label": "4.7 on Google",
+        "sublabel": "219 reviews"
+      },
+      {
+        "label": "Licensed & insured",
+        "sublabel": "Residential & commercial"
+      }
+    ],
+    "quote_card": {
+      "quote": "My air conditioning unit broke in the middle of the night. I called and left a message, and my call was answered within seconds.",
+      "author": "Meliza Hernandez",
+      "author_photo": "/img/review-meliza.png",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 219
+    }
+  },
+  "promise_bar": [
+    { "text": "Licensed & insured since 2002", "icon": "shield" },
+    { "text": "35 GPS-tracked trucks", "icon": "clock" },
+    { "text": "Residential & commercial", "icon": "home" },
+    { "text": "We pull our own permits", "icon": "clipboard" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We fix what can be fixed",
+    "body": "The fastest way to make money in this trade is to tell every customer they need a whole new system. That is not how we have stayed in business for 24 years. Our technicians diagnose the actual fault, tell you plainly whether it is a repair or a replacement, and put the reasoning in writing. If your equipment has life left in it, we say so.",
+    "cta_text": "See how we work",
+    "cta_href": "/about",
+    "icon": "shield"
+  },
+  "signature_system": {
+    "eyebrow": "The Raircon Standard",
+    "headline": "Built around long-term value, not the cheapest visit",
+    "intro": "Effective cost management does not come from choosing the cheapest service. It comes from investing in solutions that keep working. Everything below is how we hold that line on residential and commercial jobs alike.",
+    "blocks": [
+      {
+        "title": "Diagnose before we quote",
+        "body": "Camera inspections, acoustic and thermal leak detection, and proper system testing come before any recommendation. We find the real fault instead of guessing at it, which is what keeps repair bills honest.",
+        "icon": "clipboard"
+      },
+      {
+        "title": "Size and balance it properly",
+        "body": "An oversized unit cools a South Florida house fast and leaves it damp. We test and balance air and water systems so humidity actually comes down — not just the thermostat reading.",
+        "icon": "shield"
+      },
+      {
+        "title": "Permits and paperwork handled",
+        "body": "Mechanical permits, code compliance and certificates of insurance for condo and HOA boards are part of the job, not an extra you chase us for. We are licensed across mechanical, electrical, plumbing and construction, so we pull our own.",
+        "icon": "document"
+      },
+      {
+        "title": "One contractor, every trade",
+        "body": "HVAC, refrigeration, plumbing, electrical, mechanical, construction and remodeling under one roof. No handoffs between subs, no gap where a project stalls because two trades are waiting on each other.",
+        "icon": "handshake"
+      }
+    ],
+    "steps_title": "How a service call runs",
+    "steps_icon": "phone",
+    "steps": [
+      {
+        "title": "You reach a person",
+        "body": "Calls are answered at our central Hialeah office, not routed to voicemail. We capture what is wrong and how urgent it is."
+      },
+      {
+        "title": "Dispatch picks the closest truck",
+        "body": "All 35 trucks carry GPS, so dispatch sends whoever is nearest and best equipped for your equipment rather than whoever is next on a list."
+      },
+      {
+        "title": "Diagnosis in writing",
+        "body": "The technician tests the system, explains what failed and why, and gives you the repair-or-replace call with the reasoning behind it."
+      },
+      {
+        "title": "The work gets finished",
+        "body": "Parts, permits and follow-up are coordinated from the same office. You are not chasing three different companies to close out one job."
+      }
+    ],
+    "guarantee": {
+      "title": "Licensed, insured, and here in 2032",
+      "body": "We opened in January 2002 and have operated out of Miami since 2006. Certificates of insurance and license numbers are available on request, and when you call back in five years the same company will pick up.",
+      "cta_text": "About Raircon",
+      "cta_href": "/about"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting service is four steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Tell us what's wrong",
+        "body": "Call (305) 885-4422 or send the form. Describe the symptom — we will tell you if it sounds like an emergency.",
+        "icon": "phone"
+      },
+      {
+        "label": "Step Two",
+        "title": "A tech is dispatched",
+        "body": "Dispatch routes the nearest qualified truck from our Hialeah office to your address.",
+        "icon": "clock"
+      },
+      {
+        "label": "Step Three",
+        "title": "Diagnosis and free quote",
+        "body": "You get the actual fault, the repair-or-replace recommendation, and a written price before anything starts.",
+        "icon": "clipboard"
+      },
+      {
+        "label": "Step Four",
+        "title": "We do the work",
+        "body": "Permits pulled where required, equipment tested and balanced, and the site left clean.",
+        "icon": "hammer"
+      }
+    ],
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Raircon",
+    "headline": "24 years, 35 trucks, one South Florida contractor",
+    "body": "Raircon Corporation was founded in January 2002 and moved its headquarters to Miami in 2006. Since then we have delivered high-value work in Miami Beach, North Bay Village and Pembroke Pines, for clients including The Shelborne Beach Resort, Portofino Tower and 5600 Collins. Every truck in our fleet carries GPS so dispatch can route the right technician from our central office instead of guessing who is closest.",
+    "checklist": [
+      "Founded January 2002 — 24 years in business",
+      "35 GPS-tracked service trucks",
+      "4.7 stars across 219 Google reviews",
+      "Licensed in mechanical, electrical, plumbing and construction",
+      "High-rise and resort commercial experience"
+    ],
+    "photo": "/img/fleet-lineup.png",
+    "photo_alt": "A row of white Raircon service vans lettered for refrigeration, air conditioning and plumbing",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "South Florida Specifics",
+    "headline": "Cold is easy. Dry is the hard part.",
+    "paragraphs": [
+      "Most air conditioning complaints in Miami-Dade and Broward are not really about temperature. The thermostat reads 74 and the house still feels sticky, the vents start showing dark staining, and a duct cleaning company gets called before anyone questions the equipment. Nine times out of ten the system is oversized or the duct work was never balanced, so it short-cycles: it hits the set point fast, shuts off before it has pulled meaningful moisture out of the air, and leaves you sitting at 55 to 60 percent indoor humidity.",
+      "That is why testing and balancing is a standing part of our work rather than an upsell. We measure air and water flow across the system, correct what is out of specification, and verify the result — which is the difference between a house that is cold and a house that is comfortable. It also matters for what it prevents: sustained high indoor humidity is what turns a cheap installation into a mold remediation bill.",
+      "The same discipline applies on the commercial side. Restaurants, supermarkets, resorts and high-rise properties depend on precise temperature control, and their equipment runs far harder than residential gear in this climate. We install and maintain chillers, cooling towers, VRF and VAV systems, walk-in coolers and freezers, and water-source heat pumps, and we handle the mechanical permits and certificates of insurance that condo and HOA boards require before anyone sets foot on the property."
+    ],
+    "checklist": [
+      "Testing and balancing of air and water systems",
+      "Correct equipment sizing, not just equipment swapping",
+      "Camera inspection and acoustic leak detection",
+      "Mechanical permits pulled in-house",
+      "COIs available for condo and HOA boards"
+    ],
+    "image": "/img/tech.webp",
+    "image_alt": "A Raircon technician working on mechanical equipment in a building utility room",
+    "image_position": "right",
+    "review": {
+      "name": "Carlos Garcia",
+      "text": "The technician visited my house within two hours and seemed very knowledgeable and friendly. After a quick inspection he found what was wrong with my unit and fixed it by end of day. A great service and a very fair price for the level of professionalism.",
+      "rating": 5,
+      "source": "Google"
+    },
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Meliza Hernandez",
+      "location": "Miami, FL",
+      "text": "My air conditioning unit broke in the middle of the night. I called and left a message, and my call was answered within seconds. Absolutely the best customer service I have ever received from an air conditioning company. They arrived the next day on time. They fixed my unit in just 15 minutes. I will definitely recommend Raircon services to all the people I know!",
+      "rating": 5
+    },
+    {
+      "name": "Carlos Garcia",
+      "location": "Miami, FL",
+      "text": "Phenomenal end-to-end service! From the moment my AC broke down I called the company and the receptionist was very nice and understood the urgency behind my call. The technician visited my house within two hours and seemed very knowledgeable and friendly. After a quick inspection he found what was wrong with my unit and fixed it by end of day. All in all, a great service and a very fair price for the level of professionalism. I highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Armando Caballero",
+      "location": "Miami, FL",
+      "text": "I am not usually one to make reviews but Raircon has been a company that has completely blown me away. They not only know how to handle emergency situations regarding your air conditioning, but understand what is customer service. They are always there to help and understand the stress you may be going under regarding your broken air conditioning. 10/10 would definitely recommend to others!",
+      "rating": 5
+    },
+    {
+      "name": "Marvin Augusto Perez Uria",
+      "location": "Miami, FL",
+      "text": "I used this company years ago, and I called again recently to fix a mistake I made while DIY installing a minisplit unit. The technician that came to my house fixed the leak, tested the system — pressurizing with nitrogen three times — pulled vacuum every time, and charged the system with new refrigerant.",
+      "rating": 5
+    },
+    {
+      "name": "Nancy Barreto",
+      "location": "Miami, FL",
+      "text": "Great company! Very nice customer service upon calling. My friend recently bought her home in Florida. Due to her busy schedule she asked me to find an AC company as her AC seemed to have gone out in the middle of the night. She needed her AC soon. The AC tech was able to meet with her after she got off work and was able to make magic happen! Great employees and helpful service. Recommend this place!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast can you get someone out to me?",
+      "a": "It depends on the day and how urgent the fault is, but speed is the reason we run 35 GPS-tracked trucks out of a central Hialeah office — dispatch sends the nearest qualified technician rather than working down a list. Our published reviews describe calls answered within seconds at night and technicians on site within two hours. Tell us the symptom when you call and we will tell you honestly where you sit in the queue."
+    },
+    {
+      "q": "Do I actually need a new system, or can mine be repaired?",
+      "a": "That is exactly what the diagnosis is for. Our technicians test the system, identify the specific failed component, and tell you plainly whether a repair makes sense or whether you are throwing money at equipment that is finished. If your unit has life left in it, we will say so — we would rather do the repair now and the replacement when it is genuinely due."
+    },
+    {
+      "q": "Do you pull permits?",
+      "a": "Yes. Miami-Dade and Broward require a mechanical permit for HVAC replacements, and unpermitted work voids equipment warranties and can disqualify you from utility rebates. We are licensed across mechanical, electrical, plumbing and construction, so we pull our own permits rather than leaving it to you or to a sub."
+    },
+    {
+      "q": "Can you work in my condo building?",
+      "a": "Yes. We have worked high-rise and resort properties on Miami Beach for two decades, including The Shelborne Beach Resort, Portofino Tower and 5600 Collins. We can provide certificates of insurance, license numbers and permit documentation for your association or building management before we schedule."
+    },
+    {
+      "q": "My house is cold but still feels humid. What's going on?",
+      "a": "Usually the system is oversized or the duct work was never balanced. It reaches the set temperature quickly and shuts off before it has removed enough moisture, which leaves you at 55 to 60 percent indoor humidity and eventually causes staining or mold at the vents. We test and balance air and water systems to correct it, which is a different job from simply replacing the unit."
+    },
+    {
+      "q": "Do you handle commercial refrigeration?",
+      "a": "Yes — it is a core part of what we do. We install and maintain chillers, cooling towers, walk-in coolers and freezers, VRF and VAV systems, heat exchangers and water-source heat pumps for restaurants, supermarkets, resorts and industrial facilities, including camera inspection and leak detection."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Miami-Dade, Broward and Monroe Counties. Our office is in Hialeah, which puts us centrally in Miami-Dade, and we have served Broward and the Keys for over 20 years."
+    },
+    {
+      "q": "Is the estimate free?",
+      "a": "Yes. Quotes are free for residential and commercial work. Call (305) 885-4422 or send the form and we will get you scheduled."
+    }
+  ]
+}

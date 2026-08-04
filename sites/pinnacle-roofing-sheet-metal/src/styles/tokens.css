@@ -1,0 +1,33 @@
+:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-text: #101c22;
+  --color-muted: #566670;
+  --color-primary: #0a2a38;
+  --color-on-primary: #ffffff;
+  --color-accent: #f4d01c;
+  --color-on-accent: #0a2a38;
+  /* The accent as FOREGROUND TEXT on a LIGHT background (eyebrows, tick marks,
+     stars, pins, chevrons). --color-accent is a FILL colour: this client's
+     brand yellow measures 1.3:1 on --color-bg, so using it as text fails AA.
+     This ink is the client's brand teal (#03779C, darkened one step) and
+     measures 5.7:1 on --color-bg and 6.3:1 on --color-surface.
+
+     Sections backed by --color-primary (Testimonials, ProcessSteps,
+     WhyChooseUs) and the dark photo scrim in HeroOwl deliberately KEEP
+     --color-accent — the yellow clears 9.9:1 on the deep teal-navy panel,
+     where this ink would fall to 1.7:1. Per-client rule: light background ->
+     ink, dark panel -> accent.
+
+     Both colours trace to the Pinnacle logo: teal mountain, yellow sun. The
+     third logo colour (red #F30E1E) is deliberately NOT a token — the old site
+     used it as a full-page background, which is the single worst trait of the
+     design this replaces. */
+  --color-accent-ink: #04688a;
+  --color-focus: #0057ff;
+  --font-display: 'Montserrat', 'Source Sans 3', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

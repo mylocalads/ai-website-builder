@@ -1,0 +1,101 @@
+{
+  "source": "Apify lukaskrivka~google-maps-with-contact-details (place URL) + compass~google-maps-reviews-scraper",
+  "scraped_at": "2026-07-29",
+  "title": "Smile Lawn Care & Landscapers",
+  "categoryName": "Landscaper",
+  "address_note": "GBP hides the street address (service-area business). 147 Abbott St, Wilkes-Barre PA 18705 comes from public directory listings (Yelp / Yahoo Local / EZlocal).",
+  "street": "147 Abbott St",
+  "city": "Wilkes-Barre",
+  "state": "PA",
+  "postalCode": "18705",
+  "phone_gbp": "(570) 290-5159",
+  "phone_displayed_on_client_funnel": "(570) 855-0780",
+  "phone_note": "Site uses (570) 855-0780 \u2014 the number on the client's own MLA-built funnel, i.e. the tracking line. GBP lists (570) 290-5159 as the raw business line.",
+  "website": "http://lawnmowingwilkesbarre.com/",
+  "totalScore": 5,
+  "reviewsCount": 37,
+  "placeId": "ChIJJ24Ss9MJuwURjlQQoQys_28",
+  "location": {
+    "lat": 41.2903285,
+    "lng": -75.831913
+  },
+  "owner_first_name": "Eric",
+  "owner_note": "Named in multiple Google reviews; no surname published.",
+  "hours_note": "Mon-Sat 9:00 AM - 6:00 PM, Sun closed \u2014 per the client's own funnel. GBP returned no openingHours; Yahoo Local claims 'Open 24 hours' (unreliable).",
+  "email_note": "Contact@SmileLawns.com (decoded from the funnel's Cloudflare email protection). smilelawns.com has NO A record and NO MX record, so this mailbox is dead. Deliberately omitted from the site config.",
+  "licensed_insured": true,
+  "reviews": [
+    {
+      "name": "Louis Ferriero",
+      "stars": 5,
+      "published": "2025-11-24",
+      "text": "Eric and his team came on time and efficiently got rid of all our leaves and disposed of them. Very professional and reasonably priced. We highly recommend Smile Lawn Care for all your lawn and landscaping needs."
+    },
+    {
+      "name": "Laura Z",
+      "stars": 5,
+      "published": "2024-06-30",
+      "text": "Eric and his team were very professional.  Eric provided a thorough estimate after reviewing my property. When he and his team arrived, they were prompt in getting started and their work was excellent. Not only did they carry out what was written in the estimate but they did little extras (pulling weeds on my walkway, mulching a tree that was not in the estimate). I would highly recommend them."
+    },
+    {
+      "name": "Steven Kotch",
+      "stars": 5,
+      "published": "2024-06-18",
+      "text": "Super friendly crew. They did great work on hedges that had to be severely lowered, and even did extra yard waste removal for a low price."
+    },
+    {
+      "name": "Joe Noland",
+      "stars": 5,
+      "published": "2024-05-28",
+      "text": "Waste no time! Call this guy first!  Excellent service and quick. Will work with customers on billing. Prompt and reliable! You'll thank yourself for calling him."
+    },
+    {
+      "name": "Shani Jessamy",
+      "stars": 5,
+      "published": "2024-05-08",
+      "text": "Great service very much pleased! Perfect work my yard looks great. . I\u2019m very particular about my yard and how I want it done. I didn\u2019t  have to tell them a thing. They came got it done quickly and professionally. If you\u2019re looking for great affordable service check them out."
+    },
+    {
+      "name": "Samuel Clayton",
+      "stars": 5,
+      "published": "2024-05-05",
+      "text": "Great service. Easy to work with; good communication. Respected property and got job done in timely manner. Would use again"
+    },
+    {
+      "name": "Suzanne MacNeely",
+      "stars": 5,
+      "published": "2024-05-03",
+      "text": "I would highly recommend Smiley Lawn Service.  They arrived on the agreed day. Mulch was of the highest quality. Every area was picture perfect."
+    },
+    {
+      "name": "Leo Hennigan III",
+      "stars": 5,
+      "published": "2024-05-02",
+      "text": "Easy to communicate with and respectful of property lines."
+    },
+    {
+      "name": "Patrick Taylor",
+      "stars": 5,
+      "published": "2024-05-01",
+      "text": "IF YOUR LOOKING FOR A PROFESSIONAL LAWN CARE SERVICE PROVIDER THAT SHOWS UP WHEN SCHEDULED DOES PROFESSIONAL WORK WITH NEWER COMMERCIAL EQUIPMENT  FOR VERY COMPETITIVE PRICING THEN THIS IS THE COMPANY TO LOOK INTO. WE HAD OUR FIRST CUT TODAY AND IT WAS MAGNIFICENT! WE ARE DEFINITELY STAYING WITH THIS COMPANY FOR ALL OUR LAWN CARE NEEDS. I WAS REALLY IMPRESSED WITH THE WAY OUR PROPERTY LOOKED AFTER THEY WERE DONE."
+    },
+    {
+      "name": "Katie Marie Smith",
+      "stars": 5,
+      "published": "2024-04-29",
+      "text": "Smile Lawn Care not only did a fantastic clean up but they showed up exactly when they said they would and kept me updated every step of the way. I highly recommend!"
+    },
+    {
+      "name": "Brian Cowley",
+      "stars": 5,
+      "published": "2024-04-27",
+      "text": "The team at Smile lawn care is awesome! Very prompt and professional and have done a great job for us!"
+    },
+    {
+      "name": "Angelo Parente",
+      "stars": 5,
+      "published": "2024-04-20",
+      "text": "Every thing was done at the highest quality. True professionals and everything looks very nice and clean. Wouldn\u2019t hesitate to work with Smile Lawn care again."
+    }
+  ]
+}

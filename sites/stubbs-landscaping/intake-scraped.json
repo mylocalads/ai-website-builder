@@ -1,0 +1,319 @@
+{
+  "slug": "stubbs-landscaping",
+  "business_name": "Stubbs Landscaping",
+  "legal_name": "Stubbs Landscaping, LLC",
+  "tagline": "Full Service Landscaping & Hardscape Contractor",
+  "phone": "+15707606813",
+  "phone_display": "(570) 760-6813",
+  "email": "StubbsLandscaping13@gmail.com",
+  "address": {
+    "street": "24 Yeager Rd",
+    "city": "Mountain Top",
+    "state": "PA",
+    "postal": "18707",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": {
+    "lat": 41.142396,
+    "lng": -75.910905
+  },
+  "hours": {
+    "monday": "8am-5pm",
+    "tuesday": "8am-5pm",
+    "wednesday": "8am-5pm",
+    "thursday": "8am-5pm",
+    "friday": "8am-5pm",
+    "saturday": "8am-1pm"
+  },
+  "rating": 5,
+  "review_count": 26,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 16,
+  "founded_year": 2010,
+  "employees": 9,
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100063716613263",
+    "instagram": "https://www.instagram.com/stubbslandscaping/"
+  },
+  "site_url": "https://stubbslandscaping.com/",
+  "logo_url": "https://stubbslandscaping.com/wp-content/uploads/2024/01/logo.png",
+  "default_hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Rongone-4-1.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Employee-5.jpg",
+  "brand": {
+    "fonts": {
+      "display": null,
+      "body": "Roboto"
+    },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": null,
+      "accent": "#F58022",
+      "muted": "#69727D",
+      "surface": null,
+      "candidates": [
+        "#F58022",
+        "#F08020",
+        "#8DC63F",
+        "#A8C832",
+        "#69727D",
+        "#CC3366"
+      ]
+    }
+  },
+  "services": [
+    {
+      "title": "Hardscaping",
+      "category": "Built to last",
+      "short_description": "Paver patios, walkways, retaining walls, steps, and fire pits built on a base that holds.",
+      "long_description": "Hardscape is the foundation of any landscape project and the part that fails first when it is rushed. We install paver patios, walkways, stairs, retaining and sitting walls, paver driveways, pool surrounds, fire pits, and outdoor kitchen bases, and we do the excavation, sub-base, and compaction that keeps them level years later. We help you choose the right material for the job, then install it correctly.",
+      "sub_services": [
+        "Paver Patios & Walkways",
+        "Retaining & Sitting Walls",
+        "Steps & Stairs",
+        "Paver Driveways",
+        "Fire Pits & Pool Surrounds",
+        "Hardscape Repair & Restoration"
+      ],
+      "hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Patio-2.jpg",
+      "gallery": [
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/02/Wall-1.jpg",
+          "alt": "Segmental retaining wall with capstone"
+        },
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Entrance.jpg",
+          "alt": "Paver walkway and entry steps"
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Landscaping",
+      "category": "Precision crafted",
+      "short_description": "Design, planting, mulching, sod, drainage, and seasonal maintenance for the whole property.",
+      "long_description": "Our landscape work covers design plans, bed preparation, planting of trees, shrubs, and flowers, mulching, sod installation, drainage solutions, and outdoor lighting, plus ongoing maintenance: mowing, trimming, edging, pruning, fertilization, irrigation startups and blowouts, and spring and fall cleanups. Every maintenance program starts with an assessment of your yard, beds, and lawn rather than a fixed package.",
+      "sub_services": [
+        "Landscape Design & Installation",
+        "Planting, Trees & Shrubs",
+        "Mulching & Bed Preparation",
+        "Sod Installation",
+        "Drainage Solutions",
+        "Seasonal Cleanups & Maintenance"
+      ],
+      "hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/landing.jpg",
+      "gallery": [
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/02/Landscape-Mulching2.jpg",
+          "alt": "Freshly mulched planting bed with new shrubs"
+        },
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/02/Sod-Installation2.jpg",
+          "alt": "Rolls of sod being laid for a new lawn"
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Outdoor Living",
+      "category": "Let your imagination soar",
+      "short_description": "Outdoor kitchens, built-in grills, fire features, pergolas, and lighting designed as one space.",
+      "long_description": "We design and build complete outdoor living areas: paver patios, built-in grills and full outdoor kitchens, fire pits and fireplaces, pergolas, seating and retaining walls, walkways, water features, privacy plantings, and landscape lighting. The point is one coherent space rather than a patio with things added to it later, using materials that hold up through Northeastern Pennsylvania winters.",
+      "sub_services": [
+        "Outdoor Kitchens & Built-In Grills",
+        "Fire Pits & Fireplaces",
+        "Pergolas & Pavilions",
+        "Seating & Retaining Walls",
+        "Landscape Lighting",
+        "Water Features"
+      ],
+      "hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2024/02/Outdoor-Living-Bar-Build.jpg",
+      "gallery": [
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Fire-Pit-2.jpg",
+          "alt": "Built-in stone fire pit with paver seating area"
+        },
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Lighting.jpg",
+          "alt": "Landscape lighting along a paver walkway at dusk"
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Custom Decks",
+      "category": "Custom built",
+      "short_description": "Composite and wood decks with permits pulled, 3D renderings, and warrantied workmanship.",
+      "long_description": "We build custom decks in composite and wood, working with TimberTech, Azek, Fiberon, and TREX decking and RDI, vinyl, aluminum, and steel railing systems backed by manufacturer warranties we help you register. Every deck starts with 2D and 3D renderings, we pull the permits ourselves, and you get documentation on every component. Cascading stairs, split levels, built-in benches, privacy screening, pergolas, and lighting are all on the table.",
+      "sub_services": [
+        "Composite Decks",
+        "Wood Decks",
+        "Railing Systems",
+        "Cascading Stairs & Split Levels",
+        "Built-In Benches & Privacy Screening",
+        "Permits & 3D Renderings"
+      ],
+      "hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2026/02/IMG_4590.jpg",
+      "gallery": [
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2026/02/IMG_4593.jpg",
+          "alt": "Composite deck with railing overlooking a wooded yard"
+        },
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2026/02/IMG_6634.jpg",
+          "alt": "Custom deck stairs and landing"
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Plunge Pools",
+      "category": "Designed for relaxation",
+      "short_description": "Precast plunge and Soake pools sized for real backyards, installed and integrated.",
+      "long_description": "Plunge and Soake pools are shallower and smaller than a traditional pool, which makes them fit lots where a full pool never would, and they use about 90% less water. We install precast concrete shells above ground, semi-inground, or fully inground in sizes from a 4'x4' cold plunge up to 8'x20', with tile, bench, step, and cover options, then integrate the surround into the patio and planting so it reads as one design.",
+      "sub_services": [
+        "Soake Pools",
+        "Bayto Pools",
+        "Cold Plunge Pools",
+        "Precast Concrete Plunge Pools",
+        "Pool Patios & Surrounds",
+        "Safety Covers"
+      ],
+      "hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2025/02/Plunge-Piool-Builder.jpeg",
+      "gallery": [
+        {
+          "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Pool-Scape-1.jpg",
+          "alt": "Pool with paver surround and landscaped border"
+        }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Lawn Health",
+      "category": "Rooted in results",
+      "short_description": "Aeration, dethatching, overseeding, and top dressing that fix the soil instead of the symptom.",
+      "long_description": "Most lawns in Luzerne County do not struggle because the homeowner is not trying. They struggle because the soil is compacted, thatch is blocking water, or the root zone is too thin. We aerate to open tight ground, dethatch when a dead layer is trapping water and seed, overseed to rebuild density in the spots that fade every summer, and top dress to improve the soil without tearing the lawn up. We assess first \u2014 not every lawn needs every service.",
+      "sub_services": [
+        "Core Aeration",
+        "Dethatching",
+        "Overseeding",
+        "Top Dressing",
+        "Soil Improvement",
+        "Lawn Renovation"
+      ],
+      "hero_photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Employee-3.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas_note": "The client's site names no explicit service-area list \u2014 it says 'Northeastern Pennsylvania' and 'Luzerne County' throughout. Areas below were derived from that stated region plus the HQ location, not scraped verbatim.",
+  "testimonials": [
+    {
+      "name": "Kaitlyn Kowalek",
+      "text": "Thank you Stubbs for our beautiful patio that we can't wait to enjoy with our family and friends! Justin was great to work with and listened to every detail we wanted and made sure it was exactly as we expected. Best of all he and staff heavily entertained our 3 year old! Thanks again!",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "John Welch",
+      "text": "Highly recommend Stubbs Landscaping! Communication was great getting my project scheduled. The crew did a fantastic job grading, soil prepping, and seeding. Very professional from start to finish",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Vicky Sherratt-Serhan",
+      "text": "Justin and his team just completed a patio for me. They were professional and pleasant. I love how the patio turned out and can't wait to enjoy it. Highly recommend!!",
+      "rating": 5,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [],
+  "gallery": [
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/02/Stubbs-House-1.jpg",
+      "alt": "Covered pavilion with ceiling fan over a paver patio"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Stubbs-2.jpg",
+      "alt": "Outdoor living room with fire feature under a timber pavilion"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/02/Roche-Patio.jpg",
+      "alt": "Paver patio with seating wall and planted border"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Pool-Scape-1.jpg",
+      "alt": "Backyard pool with full paver surround"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Patio-1.jpg",
+      "alt": "Multi-level paver patio with steps"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Fire-Pit-2.jpg",
+      "alt": "Circular stone fire pit with paver seating area"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Loni-Job-1.jpg",
+      "alt": "New landscape installation with mulched beds and plantings"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/wall-2.jpg",
+      "alt": "Natural stone retaining wall with tiered planting"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Enterance-2.jpg",
+      "alt": "Front entry walkway with stone steps and landscape lighting"
+    },
+    {
+      "photo": "https://stubbslandscaping.com/wp-content/uploads/2024/01/Rongone-4-1.jpg",
+      "alt": "Paver patio and retaining wall project with wooded backdrop"
+    }
+  ],
+  "brand_voice_sample": "Plain, direct, non-salesy. Short declarative sentences, willing to say 'not every yard needs this'. Explains the mechanism (compacted soil, trapped thatch) rather than listing adjectives.",
+  "credentials_detected": [
+    "Founded 2010 by Justin Rinehimer",
+    "Penn College horticulture degree",
+    "Nine full-time employees",
+    "30+ years combined crew experience",
+    "Full 3D renderings and walkthrough videos before construction",
+    "Manufacturer warranties on decking (TimberTech / Azek / Fiberon / TREX)",
+    "Warranties on workmanship and structural items",
+    "Pulls permits on behalf of the customer",
+    "Published conduct standard: branded trucks and attire, clean-site checklist, smoke-free property, neighbor courtesy"
+  ],
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The /contact page uses WPForms with reCAPTCHA \u2014 a WordPress plugin, not a CRM embed. Nothing to carry over. All GHL widgets remain operator paste-in."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_had_no_street_address": true,
+    "pages_scraped": [
+      "/",
+      "/about",
+      "/contact",
+      "/hardscape-services",
+      "/landscape-services",
+      "/outdoor-living",
+      "/custom-deck-builder",
+      "/lawn-health-services",
+      "/plunge-pools",
+      "/landscape-and-hardscape-gallery"
+    ],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.23,
+    "warnings": [
+      "Apify returned no review bodies for this GBP listing, so testimonials came from the client's own published Client Reviews section instead of Google.",
+      "licensed / insured / bonded left false \u2014 the site displays no badge or footer disclosure for any of the three. Operator should confirm with the client before flipping.",
+      "Full-size originals were recovered from /wp-content/uploads/ rather than Elementor thumbnails; the lawn-health stock image (iStock-172200365) had no recoverable original and was replaced with an owned crew photo.",
+      "Employee-5.jpg was initially read as a photo of owner Justin Rinehimer. It is not identified as him anywhere \u2014 the client's site uses it in the 'Interested in Being Part of Our Team?' careers section, so it is an unnamed crew member. The attribution was removed; team_members is empty and the image is captioned as a crew member. No verified photo of Justin exists in the scraped set \u2014 operator should request one."
+    ]
+  }
+}

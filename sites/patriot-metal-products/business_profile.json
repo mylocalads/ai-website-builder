@@ -1,0 +1,29 @@
+{
+  "name": "Patriot Metal Products Inc",
+  "email": "info@patriot-mp.com",
+  "phone": "(570) 759-3634",
+  "address": "1005 N Vine St, Berwick, PA 18603",
+  "website": "http://www.patriot-mp.com/",
+  "rating": 2.7,
+  "reviewCount": 7,
+  "category": "Sheet metal contractor",
+  "hours": "Mon-Fri 8am-5pm, Sat-Sun Closed",
+  "slug": "patriot-metal-products",
+  "geo": { "lat": 41.0587851, "lng": -76.2423583 },
+  "place_id": "ChIJc_Eg3xudxYkR8aN0la4tXfg",
+  "reviews": [],
+  "_notes": {
+    "source": "Apify lukaskrivka~google-maps-with-contact-details",
+    "run_id": "oAj6A1wOfYNUW6TiG",
+    "dataset_id": "qZ3jftmHUDxgM0KoG",
+    "fetched_at": "2026-08-03",
+    "cost_usd": 0.004,
+    "matches_returned": 1,
+    "warnings": [
+      "GBP rating is 2.7 across only 7 reviews. Rating and review_count are deliberately NOT surfaced on the generated site — no Google rating badge, no aggregateRating schema, no review-count trust chip.",
+      "GBP reviews array came back empty, so there are zero real testimonials available. The generated site ships with no testimonials section rather than fabricated quotes.",
+      "GBP lists hours as 8AM-5PM; the client's own website footer lists 7:30am-4:30pm. Website hours were used downstream as the business's own published operating hours.",
+      "GBP category is 'Sheet metal contractor', which understates the business. It is a multi-process custom industrial coater (autophoretic, powder, zinc plating, batch paint, dip coat)."
+    ]
+  }
+}

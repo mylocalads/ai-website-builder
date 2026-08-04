@@ -1,0 +1,137 @@
+{
+  "kind": "config",
+  "business_name": "Patriot Metal Products",
+  "legal_name": "Patriot Metal Products Inc.",
+  "tagline": "Multi-Process Custom Coating in Central Pennsylvania",
+  "phone": "+15707593634",
+  "phone_display": "570-759-3634",
+  "email": "info@patriot-mp.com",
+  "address": {
+    "street": "1005 N. Vine Street",
+    "city": "Berwick",
+    "state": "PA",
+    "postal": "18603",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 41.0587851,
+    "lng": -76.2423583
+  },
+  "hours": {
+    "monday": "7:30am - 4:30pm",
+    "tuesday": "7:30am - 4:30pm",
+    "wednesday": "7:30am - 4:30pm",
+    "thursday": "7:30am - 4:30pm",
+    "friday": "7:30am - 4:30pm"
+  },
+  "site_url": "https://patriot-metal-products.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 40,
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/patriot-metal-products-inc",
+    "facebook": "https://www.facebook.com/227980957951335"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/plant-entrance.jpg",
+  "about_photo": "/img/plant-entrance.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Five coating processes under one roof",
+      "description": "Autophoretic, powder, zinc plating, batch paint and dip coating — plus fabrication, assembly, burn-off, blasting and lab testing. One vendor instead of four, and no seams between them for you to own."
+    },
+    {
+      "title": "An onsite coating laboratory",
+      "description": "We run our own state-of-the-art lab and issue certifications of the process and the performance criteria. When your spec needs documentation, you get paperwork, not a verbal assurance."
+    },
+    {
+      "title": "One piece to entire truckloads",
+      "description": "We process orders ranging from a single part to full truckloads daily. Prototype runs and short batches get quoted, not turned away."
+    },
+    {
+      "title": "Our own fleet, off Interstate 80",
+      "description": "Three trucks — two tractor trailers and one straight-side closed van — plus custom packaging and expedite service when a line is waiting on parts."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Autophoretic coating",
+      "photo": "/img/autophoretic.jpg",
+      "alt": "Autophoretic coated components shown before and after processing",
+      "description": "A-coat reaches inside, outside and the edges of complex shapes and tubular structures."
+    },
+    {
+      "title": "Powder coating line",
+      "photo": "/img/powder-coating.jpg",
+      "alt": "Metal parts moving through an automated powder coating booth",
+      "description": "Sixteen robotic spray guns behind a six-stage iron phosphate washer."
+    },
+    {
+      "title": "Barrel plating",
+      "photo": "/img/zinc-plating.jpg",
+      "alt": "Zinc barrel plating with yellow chromate finish on fasteners",
+      "description": "Clear and yellow chromate zinc, rack or barrel."
+    },
+    {
+      "title": "Batch spray booth",
+      "photo": "/img/batch-booth.jpg",
+      "alt": "Oversized metal components being batch painted in a room-sized spray booth",
+      "description": "Room-sized booth and oven processing parts to 15' w x 20' l x 6' h."
+    },
+    {
+      "title": "Onsite laboratory",
+      "photo": "/img/lab-testing.jpg",
+      "alt": "Coating laboratory glassware during performance and certification testing",
+      "description": "Process and performance certifications issued in-house."
+    },
+    {
+      "title": "Blast and burn-off",
+      "photo": "/img/blast-tunnel.jpg",
+      "alt": "Room-sized blast tunnel used for surface profiling",
+      "description": "Surface profiles from smooth to coarse, automated or manual."
+    },
+    {
+      "title": "Assembly and packaging",
+      "photo": "/img/assembly.jpg",
+      "alt": "Coated component parts being reassembled to customer configuration",
+      "description": "Components re-assembled and packaged to your specification."
+    },
+    {
+      "title": "Our fleet",
+      "photo": "/img/fleet.jpg",
+      "alt": "Patriot Metal Products tractor trailer used for customer deliveries",
+      "description": "Two tractor trailers and a straight-side closed van, expedite available."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What we do",
+    "heading_lead": "Five coating processes,",
+    "heading_rest": "one dock",
+    "subtitle": "Autophoretic, powder, zinc, batch paint and custom finishing — matched to your part's geometry, substrate, volume and service environment."
+  }
+}

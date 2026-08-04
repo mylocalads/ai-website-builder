@@ -1,0 +1,174 @@
+{
+  "slug": "royal-roofing-systems",
+  "business_name": "Royal Roofing Systems",
+  "legal_name": "Royal Roofing Systems, LLC",
+  "tagline": "A Better Roof at a Better Price",
+  "phone": "+15705506578",
+  "phone_display": "(570) 550-6578",
+  "email": "office@royalroofnepa.com",
+  "address": {
+    "street": "20 W Grove St",
+    "city": "Edwardsville",
+    "state": "PA",
+    "postal": "18704",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2686508, "lng": -75.9104468 },
+  "hours": {
+    "monday": "8am-6pm",
+    "tuesday": "8am-6pm",
+    "wednesday": "8am-6pm",
+    "thursday": "8am-6pm",
+    "friday": "8am-6pm",
+    "saturday": "8am-12pm"
+  },
+  "rating": 4.8,
+  "review_count": 61,
+  "licensed": true,
+  "insured": true,
+  "bonded": true,
+  "years_in_business": 15,
+  "social": {
+    "facebook": "https://www.facebook.com/RoyalRoofNEPA",
+    "google_maps": "https://maps.google.com/?cid=12658354035490682164"
+  },
+  "site_url": "https://royalroofnepa.com",
+  "logo_url": "https://royalroofnepa.com/wp-content/uploads/2024/02/logo__1_-removebg-preview.png",
+  "logo_url_alt": "https://royalroofnepa.com/wp-content/uploads/2024/02/royal-55-1-2048x1189-1-1024x595.png",
+  "favicon_url": "https://royalroofnepa.com/wp-content/uploads/2024/02/cropped-fav-2-32x32.png",
+  "default_hero_photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/residential-roofer.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/commercal.jpg",
+  "brand": {
+    "fonts": { "display": "Poppins", "body": "Poppins" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#1A1A1A",
+      "accent": "#FF8604",
+      "muted": "#5A6472",
+      "surface": "#F5F7FA",
+      "secondary": "#0977B8",
+      "candidates": ["#FF8604", "#0977B8", "#CC3366", "#FFFFFF", "#333333"]
+    },
+    "_note": "textPrimary reported by Firecrawl branding as #FF8604 (the accent) — that is a detection artifact from an orange heading, not a body text color. Body text left to the template default; accent = #FF8604 (primary CTA), secondary = #0977B8 (secondary CTA)."
+  },
+  "services": [
+    {
+      "title": "Roof Replacement",
+      "short_description": "Full tear-off and replacement backed by a lifetime manufacturer warranty and a 10-year workmanship warranty.",
+      "long_description": "Even a well-maintained roof eventually reaches the end of its life. A 3-tab asphalt shingle roof lasts 15-20 years, architectural shingles 20-25, and tile or metal 50 or better. When age, storm damage, or a bad original installation takes out too much of the surface to justify a repair, we replace the whole system. Every crew on your roof is a Royal Roofing crew — we never subcontract. We handle tear-off through final cleanup, and if the replacement is going through insurance we attend the adjuster appointment to make sure they see the same damage we documented.",
+      "sub_services": ["Asphalt Shingle Roofing", "Metal Roofing", "Slate Roofing", "Flat & Rubber Roofing", "New Roof Installation"],
+      "hero_photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/istockphoto-1310643662-612x612-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair",
+      "short_description": "Same-day free inspection and estimate, with 24/7 emergency response for active leaks.",
+      "long_description": "Wet spots on the ceiling and shingles in the yard are the two calls we get most. The earlier we find the problem, the less likely it is to spread into the deck and structure — and the more likely a repair is enough. Our certified contractors inspect the roof and generate an estimate the same day, and we can file and manage the insurance claim so all you pay is the deductible. We repair steep-pitch asphalt shingle, flat TPO, slate, and metal systems. Residential repair service is available 24 hours a day, 7 days a week.",
+      "sub_services": ["Emergency Leak Repair", "Shingle Repair", "Flashing & Vent Repair", "Flat Roof Repair", "Insurance Claim Assistance"],
+      "hero_photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/1500.webp",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Storm Damage Repair",
+      "short_description": "Local storm-damage specialists who work your insurance claim start to finish — no storm chasers.",
+      "long_description": "Timing matters after severe weather, but so does who you call. Storm chasers overcharge and leave behind temporary fixes that need attention again in a season. We're here year-round. We start with a free inspection and an estimate broken out line by line, then work hand in hand with your adjuster — we know the software and resources insurance companies use, and catering to their system is what makes the process simple for you. Water that gets into the attic ruins underlayment and decking long before you notice it inside, which is why the free inspection comes first.",
+      "sub_services": ["Wind Damage Repair", "Hail Damage Repair", "Emergency Tarping", "Insurance Claim Management", "Adjuster Meetings"],
+      "hero_photo": "https://royalroofnepa.com/wp-content/uploads/2024/03/Roof-Storm-Damage-1024x683.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Siding & Gutters",
+      "short_description": "Vinyl, wood, metal and fiber cement siding plus seamless aluminum gutters — with 0% financing available.",
+      "long_description": "Siding does more than set the look of a house. Quality siding holds heat in through a Pennsylvania winter, keeps the place cooler in July, and stands up to rain, wind and snow while keeping bugs and dirt out. We install vinyl, wood, metal and fiber cement, each fitted with the same care we give a roof. Gutters are the other half of that envelope — they protect windows, siding and foundation, and seamless aluminum runs eliminate the joints where sectional gutters leak and clog. We evaluate size, roof pitch and surrounding trees before recommending a system, and we repair and replace existing gutters too.",
+      "sub_services": ["Vinyl Siding", "Fiber Cement Siding", "Seamless Aluminum Gutters", "Copper Gutters", "Gutter Repair", "Leaf Guards"],
+      "hero_photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/Siding-Installation.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Custom Decks",
+      "short_description": "TREX composite, cedar and pressure-treated decks built to fit how you actually use the yard.",
+      "long_description": "A good deck doesn't come out of a box. Maybe you need a spot for the grill and a table, maybe you want something bigger where family can spread out all summer. We walk the options with you: TREX composite with vinyl railings if you want low maintenance that doesn't fade or need sealing every year, cedar if you want the natural look and a surface you can walk barefoot on, pressure-treated if you want tough and practical without a big price tag. We also fix what a bad winter left behind — boards pulling up, railings that wobble, stairs that aren't safe. Ask about pergolas, gazebos and vinyl railings, and about 0% financing.",
+      "sub_services": ["TREX Composite Decking", "Cedar Decking", "Pressure-Treated Decking", "Vinyl Railings", "Pergolas & Gazebos", "Deck Repair"],
+      "hero_photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/New-Deck-Builder.jpg",
+      "gallery": [
+        { "photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/TREX-with-black-vinyl-railings.jpg", "alt": "TREX composite deck with black vinyl railings" },
+        { "photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/Cedar-Deck.jpg", "alt": "Cedar deck built in Northeastern Pennsylvania" }
+      ],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "services_not_used": [
+    { "title": "Commercial Roofing", "reason": "SERVICE_LIMIT is 5; commercial (EPDM, TPO, metal) surfaced in home SEO body copy instead", "url": "https://royalroofnepa.com/commercial-roofing/" }
+  ],
+  "service_areas": [
+    { "name": "Edwardsville", "state": "Pennsylvania", "state_abbr": "pa", "slug": "edwardsville-pa", "county": "Luzerne County", "_source": "gbp" },
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "county": "Luzerne County", "_source": "derived" },
+    { "name": "Kingston", "state": "Pennsylvania", "state_abbr": "pa", "slug": "kingston-pa", "county": "Luzerne County", "_source": "derived" },
+    { "name": "Scranton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "scranton-pa", "county": "Lackawanna County", "_source": "derived" },
+    { "name": "Dallas", "state": "Pennsylvania", "state_abbr": "pa", "slug": "dallas-pa", "county": "Luzerne County", "_source": "scraped", "_evidence": "Named on /custom-deck-builder/ (\"Trusted Custom Deck Builders in Dallas, PA\") and /roof-repair-pennsylvania/" },
+    { "name": "Hazleton", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hazleton-pa", "county": "Luzerne County", "_source": "derived" }
+  ],
+  "testimonials": [
+    { "name": "Jason Scott", "location": null, "text": "Royal Roofing was fast and friendly tearing off the old roof, repairing what was necessary and installing the new roof. They even came back and installed a new cupola that we bought for the roof of the garage.", "rating": 5, "_source": "scraped" },
+    { "name": "Chris Mitchell", "location": null, "text": "Very well. Excellent job. Job was completed in timely fashion. Would recommend this company for roofing work to anyone who needs a roof.", "rating": 5, "_source": "scraped" },
+    { "name": "David Nolan", "location": null, "text": "The roof inspector arrived on time. He inspected the roof and took pictures of the roof to share with me.", "rating": 5, "_source": "scraped" },
+    { "name": "George Stroney", "location": null, "text": "Next day went above and beyond to inspect my roof. My roof is not accessible but they made it work. Appreciated their due diligence.", "rating": 5, "_source": "scraped" }
+  ],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/metal.jpg", "alt": "Standing seam metal roof installation", "title": "Metal Roofing", "location": null },
+    { "photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/Storm-Damage-Tree-on-Roof1.jpg", "alt": "Storm damage — tree down on a residential roof", "title": "Storm Damage Repair", "location": null },
+    { "photo": "https://royalroofnepa.com/wp-content/uploads/2024/02/commercal.jpg", "alt": "Residential roof replacement in progress", "title": "Residential Roofing", "location": null },
+    { "photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/Gutter-Downspout-Installation222.jpg", "alt": "Seamless gutter and downspout installation", "title": "Gutter Installation", "location": null },
+    { "photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/Siding-Installation.jpg", "alt": "New siding installation on a Pennsylvania home", "title": "Siding Installation", "location": null },
+    { "photo": "https://royalroofnepa.com/wp-content/uploads/2025/10/TREX-Decks.jpg", "alt": "Finished TREX composite deck", "title": "Custom Decking", "location": null }
+  ],
+  "partners": [
+    { "name": "GAF", "logo_url": "https://royalroofnepa.com/wp-content/uploads/2024/02/gaf1.png" },
+    { "name": "Owens Corning", "logo_url": "https://royalroofnepa.com/wp-content/uploads/2024/02/owen.png" }
+  ],
+  "credentials": {
+    "warranty_manufacturer": "Lifetime manufacturer warranty",
+    "warranty_workmanship": "10-year workmanship warranty",
+    "warranty_no_leak": "15-year no-leak warranty",
+    "never_subcontracts": true,
+    "discounts": "5% off any full roof or gutter installation or repair over $1,500 for military, first responders, and seniors",
+    "financing": "0% financing options available; flexible terms and competitive APRs",
+    "insurance_claims": true
+  },
+  "brand_voice_sample": "When you call us about your roof, we are the roofers. We do not subcontract out. A good deck doesn't come out of a box. We build them to fit how you live. No shortcuts. No guesswork. Just solid work done right.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": "https://messenger.ngageics.com/ ... websiteid=221-132-36-26-245-173-219-31",
+    "form_platform": "WPForms (WordPress) + reCAPTCHA",
+    "call_tracking_number_detected": "(570) 258-8236 (mobile sticky bar — likely an existing tracking number)",
+    "note": "Detected on the CLIENT's existing WordPress site. These belong to the client's current vendor (Ngage live chat) and MUST NOT be copied into crm.*. Operator supplies MLA/GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_match_basis": "Single Apify result; GBP-listed website matches operator-supplied URL exactly",
+    "phone_conflict": "GBP profile field lists (570) 258-8866; GBP contact-enrichment phones[] and every CTA on the client's site use (570) 550-6578. Using (570) 550-6578 as the primary.",
+    "pages_scraped": ["/", "/residential-roofing-services/", "/roof-repair-pennsylvania/", "/roof-replacement-pennsylvania/", "/storm-damage-roof-repair/", "/commercial-roofing/", "/siding-services/", "/custom-deck-builder/", "/gutter-installation/", "/metal-roofing/", "/contact/"],
+    "socials_scraped": [],
+    "no_service_area_page": "Client site has no /service-areas page. Areas below Edwardsville derived from the Wilkes-Barre/Scranton (NEPA) metro; Dallas PA is evidenced on two service pages.",
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.244,
+    "warnings": [
+      "Firecrawl branding reported textPrimary = #FF8604 (same as accent). Treated as a detection artifact; body text falls back to template default.",
+      "Apify actor returned reviews[] empty despite maxReviews:5. Homepage testimonials used instead."
+    ]
+  }
+}

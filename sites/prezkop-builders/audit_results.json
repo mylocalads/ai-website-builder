@@ -1,0 +1,47 @@
+{
+  "slug": "prezkop-builders",
+  "url_audited": "https://prezkopbuilders.com/",
+  "audited_at": "2026-08-03",
+  "screenshot": "screenshots/prezkop-builders.png",
+  "status": "DOMAIN LOST",
+  "headline_finding": "prezkopbuilders.com no longer belongs to Prezkop Builders. Every URL on the domain — including /about, /contact and all four service pages — now serves an Indonesian online-gambling site branded 'Bambuhoki88'. HTTP 200 across the board, so there is no 404 signalling the loss.",
+  "evidence": {
+    "page_title": "BAMBUHOKI88 Prezkopbuilders - DiKasih Cobaan Link Bambuhoki, Ya Cobain Langsung Duaar!",
+    "og_site_name": "Bambuhoki88",
+    "meta_keywords": "Bambuhoki88, Bambuhoki88 LINK, Bambuhoki88 LOGIN, Bambuhoki88 DAFTAR, Bambuhoki88 RTP, Bambuhoki88 SITUS",
+    "outbound_cta_targets": ["https://bisaboy.pages.dev/ath/"],
+    "original_url_paths_still_indexed": [
+      "/about",
+      "/outdoor-living-contractors",
+      "/home-remodeling-new-construction-services",
+      "/hardwood-floor-refinishing",
+      "/pre-construction-services",
+      "/recent-projects",
+      "/contact"
+    ],
+    "last_legitimate_archive_capture": "2025-10-07"
+  },
+  "business_impact": [
+    "Any inbound link, business card, truck lettering, HBA of NEPA buyers-guide listing or old Google result pointing at prezkopbuilders.com now sends a prospective customer to a gambling site.",
+    "The BBB profile's 'Visit Website' button already points at a Facebook page rather than the domain, suggesting the loss predates this audit.",
+    "The domain's original URL structure was preserved by the squatter specifically to inherit Prezkop's existing search equity. Reclaiming or replacing the domain is urgent.",
+    "Brand-safety risk: the business name appears alongside gambling content in the page title, which is what search engines index."
+  ],
+  "what_the_old_site_did_well": [
+    "Clear four-service structure with a dedicated page per service",
+    "Genuinely well-written service copy in the owner's own voice — specific about wood species, finishing process and building science",
+    "Named, photographed three-person team",
+    "Four real, attributed customer testimonials",
+    "Accessibility toolbar plugin installed"
+  ],
+  "what_the_old_site_did_poorly": [
+    "WordPress/Elementor build with an Astra theme — heavy, slow, and dependent on a domain and host the client has now lost",
+    "No service-area pages at all despite serving multiple Wyoming Valley towns",
+    "Lorem ipsum left in production on the remodeling service page",
+    "Contact was a plain WPForms form with no CRM, no booking calendar, no chat and no call tracking",
+    "No Google Business Profile linked or claimed",
+    "Portfolio images were the only proof of work and they are now unrecoverable except for 13 files preserved by the Internet Archive"
+  ],
+  "recommendation": "Rebuild on a domain the client controls. Content and imagery for the rebuild were recovered from the Internet Archive rather than the live domain — nothing on the live site was used as design or content input.",
+  "design_dna_used": "NONE. Per pipeline rules the old site is operator reference only. The owl template is the sole source of layout and structure."
+}

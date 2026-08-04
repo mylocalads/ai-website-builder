@@ -1,0 +1,55 @@
+{
+  "slug": "quality-roofing-express",
+  "url": "https://www.qualityroofingexpress.org/",
+  "screenshot": "screenshots/quality-roofing-express.png",
+  "audited_at": "2026-08-03",
+  "purpose": "OPERATOR REFERENCE ONLY. This audit is never design DNA. The owl template is the sole source of layout and structure.",
+  "platform": "SITE123 (websiteID 2670849) — hosted page builder, single-page layout",
+  "metrics": {
+    "load_ms": 584,
+    "rendered_page_height_px": 13275,
+    "images_on_page": 57,
+    "images_that_never_loaded": 10,
+    "h1_count": 1,
+    "h2_count": 7,
+    "script_tags": 12,
+    "tel_links_on_page": 1,
+    "distinct_internal_links": 9,
+    "internal_pages": 0,
+    "has_viewport_meta": true
+  },
+  "strengths": [
+    "Real project photography — roughly 40 in-house job photos of completed asphalt, slate, metal and rubber roofs. That is the most valuable asset on the site and it carries straight over.",
+    "Clear brand mark and a committed brand colour (#cf1b1b) with an actual logo file available as a transparent PNG.",
+    "Full service menu is present and specific: asphalt (3-tab, architectural, slate-like), slate, metal, EPDM, torch-down, peel-and-stick, TPO, chimney flashing, skylights.",
+    "Owens Corning named as shingle supplier; Angie's List and Loc8NearMe badges displayed.",
+    "A booking form and a careers application already exist, so the client is used to taking submissions through the site."
+  ],
+  "weaknesses": [
+    "Everything is one page. 13,275px of scroll, zero internal pages, nine links that are all in-page anchors. No service pages, no city pages, no about page — there is nothing for a search engine to rank against 'roof replacement Scranton' or any other commercial query.",
+    "The page renders almost entirely blank in a headless browser even after a full scroll pass. SITE123's reveal-on-scroll animations leave sections at zero opacity when the intersection observer does not fire as expected — see the screenshot. Anything that renders the page without executing that library sees an empty document.",
+    "Ten of 57 images never finish loading at all.",
+    "Exactly one tel: link on a 13,000px page, and it sits in the footer. There is no phone CTA in the hero and no sticky call button on mobile — for a trade where the conversion is a phone call, that is the single most costly defect.",
+    "The H1 is the tagline in quotation marks — '\"For your Roofing and Siding\"'. It names no service and no city, so the strongest on-page SEO signal is spent on a slogan.",
+    "Meta description is a duplicate of the title. Meta keywords is empty. No structured data, no LocalBusiness schema, no canonical service pages to attach schema to.",
+    "Body copy carries repeated misspellings in the service headings — 'PROFFECIONAL', 'INSTALATION', 'SATISFING', 'PROVING' for 'providing'. Set in all-caps at display size, it is the first thing a homeowner comparing three quotes reads.",
+    "No licensed / insured / bonded disclosure anywhere. In Pennsylvania, where there is no state roofing licence and HICPA registration is the only thing homeowners are told to check, its absence is a live trust gap.",
+    "No service-area content of any kind. The business address is Scranton, but no city, county or coverage radius is stated on the page.",
+    "No reviews visible. The REVIEWS section is a client-side module that renders empty — the 74 Google reviews averaging 4.6 are doing nothing for the site.",
+    "Google Business Profile lists 'Online estimates: false' while the site's whole call to action is a free estimate request."
+  ],
+  "carry_over_assets": {
+    "logo": "https://images.cdn-files-a.com/uploads/2670849/800_filter_nobg_60ae705e274c5.png",
+    "project_photos": "~40 usable job photos under https://images.cdn-files-a.com/uploads/2670849/ — downloaded into public/img/ rather than hotlinked, since the SITE123 CDN goes away when the client cancels that plan",
+    "badges": ["Angie's List guarantee badge", "Loc8NearMe recommends badge"],
+    "about_copy": "The family-owned paragraph is genuine and in the client's own voice — kept, lightly copy-edited."
+  },
+  "priority_fixes_for_new_site": [
+    "Phone number in the header, in the hero, and sticky on mobile.",
+    "One page per service and one page per city, so there is something to rank and something to link to.",
+    "Server-rendered HTML — the content exists in the document whether or not any script runs.",
+    "H1 that names the service and the market: roof replacement and repair in Scranton, PA.",
+    "Surface the 4.6 / 74 Google reviews as real testimonials with reviewer names.",
+    "Copy-edit every service heading."
+  ]
+}

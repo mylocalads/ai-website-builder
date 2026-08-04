@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://raircon.vercel.app/sitemap-index.xml

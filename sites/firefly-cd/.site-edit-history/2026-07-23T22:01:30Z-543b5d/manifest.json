@@ -1,0 +1,37 @@
+{
+  "batch_id": "2026-07-23T22:01:30Z-543b5d",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "Replace image on home 'About Firefly' section and About page hero with img1.wsimg.com/.../7.png. Replace service tile hero photos for Roofing, Siding, Bathroom Remodels, Kitchen Remodels, Flooring (per URLs supplied); Windows uses the prior siding hero_photo. Us vs Them: replace us_photo (blob-7d7326b.png) and them_photo (elmersroofing.b-cdn.net .png).",
+  "diff_spec": [
+    { "op": "SET", "path": "src/content/site/config.json", "field": "team_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/7.png/:/rs=w:600,h:600,cg:true,m/cr=w:600,h:600" },
+    { "op": "SET", "path": "src/content/site/config.json", "field": "us_vs_them.us_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/blob-7d7326b.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:720" },
+    { "op": "SET", "path": "src/content/site/config.json", "field": "us_vs_them.them_photo", "value": "https://elmersroofing.b-cdn.net/wp-content/uploads/Blogs/Signs-of-a-good-or-bad-roof-job/sings-of-a-bad-roofing-cotractor-for-your-roof-replacement.png" },
+    { "op": "SET", "path": "src/content/services/roofing.md", "field": "frontmatter.hero_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/blob-7d7326b.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280,h:720" },
+    { "op": "SET", "path": "src/content/services/siding.md", "field": "frontmatter.hero_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/IMG_3251.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true" },
+    { "op": "SET", "path": "src/content/services/windows.md", "field": "frontmatter.hero_photo", "value": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=900&fit=crop&q=80", "note": "prior siding hero_photo, per operator request" },
+    { "op": "SET", "path": "src/content/services/bathroom-remodels.md", "field": "frontmatter.hero_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.05.08%E2%80%AFPM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true" },
+    { "op": "SET", "path": "src/content/services/kitchen-remodels.md", "field": "frontmatter.hero_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.01.10%E2%80%AFPM.png/:/rs=w:600,h:800,cg:true,m/cr=w:600,h:800" },
+    { "op": "SET", "path": "src/content/services/flooring.md", "field": "frontmatter.hero_photo", "value": "https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.04.12%E2%80%AFPM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true" }
+  ],
+  "files_touched": [
+    "src/content/site/config.json",
+    "src/content/services/roofing.md",
+    "src/content/services/siding.md",
+    "src/content/services/windows.md",
+    "src/content/services/bathroom-remodels.md",
+    "src/content/services/kitchen-remodels.md",
+    "src/content/services/flooring.md"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_H7nK9SXxiWndAStbWKZNibCtnsSE",
+    "url": "https://firefly-otred7vfx-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://firefly-cd.vercel.app",
+    "at": "2026-07-23T22:04:44Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

@@ -1,0 +1,50 @@
+:root {
+  --color-bg: #f5f4f2;
+  --color-surface: #ffffff;
+  --color-text: #14161a;
+  --color-muted: #5c5f66;
+  --color-primary: #1e2229;
+  --color-on-primary: #ffffff;
+  --color-accent: #cf1b1b;
+  --color-on-accent: #ffffff;
+
+  /* Quality Roofing Express's brand red, read straight off their own site
+     (--global_main_color, confirmed by <meta name="theme-color"> and the red
+     roof in their logo). Relative luminance 0.113 — dark enough that white sits
+     on it at 5.49:1, and dark enough to double as foreground text on the light
+     surfaces, so --color-accent-ink is the same value rather than a darkened
+     variant: 4.99:1 on --color-bg, 5.49:1 on --color-surface. Both clear AA,
+     which is why this client does not need the template's darkened ink. */
+  --color-accent-ink: #cf1b1b;
+
+  /* That same darkness makes it unreadable on the dark bands: 2.91:1 on
+     --color-primary. The template ships one --color-accent for two
+     incompatible jobs — button FILLS (must be dark enough for white label text)
+     and accent-coloured TEXT on --color-primary panels (must be light enough to
+     read on charcoal). It already solved the mirror-image case with
+     --color-accent-ink for light backgrounds; this token is that same fix
+     pointed the other way.
+
+     #f2685f is a lightened tint of the same brand red — not a new brand colour
+     — and measures 5.26:1 on --color-primary, clearing AA for normal text.
+
+     Used by: Testimonials .eyebrow/.mark/.stars, ProcessSteps .label,
+     WhyChooseUs counter, HeroOwl .badge-copy .stars over the photo scrim.
+     NOT used by any .btn/.icon fill — those pair --color-accent with
+     --color-on-accent and are already correct. */
+  --color-accent-on-dark: #f2685f;
+
+  --color-focus: #0057ff;
+
+  /* Both faces are the client's own, detected from their CSS custom properties:
+     --font_slogan is Playfair Display; --global_font / --font_logo / --font_menu
+     are Open Sans. Playfair is a high-contrast serif used at display sizes only
+     — its hairlines would cost legibility in body copy, which is why the body
+     face stays Open Sans. */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Open Sans', system-ui, sans-serif;
+
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

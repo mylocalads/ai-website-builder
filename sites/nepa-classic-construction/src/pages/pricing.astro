@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// Only ranges NEPA Classic Construction actually publishes. Where no dollar
+// figure is published, the row says so rather than inventing one.
+const costRows = [
+  { type: 'Paver patio', range: '$20–$45 per sq ft installed', timeline: '3–7 days (2–3 weeks with walls or built-ins)' },
+  { type: 'Landscaping (design + installation)', range: '$3,000–$25,000+', timeline: 'Spring and early fall are the ideal windows' },
+  { type: 'Retaining walls', range: 'Quoted per project — walls over 4 ft need engineering and permits', timeline: 'Varies with height and length' },
+  { type: 'Interior renovation (kitchen or bath)', range: 'Quoted per project after an on-site walkthrough', timeline: '4–8 weeks for a typical kitchen' },
+  { type: 'Small renovation', range: 'Quoted per project', timeline: '2–4 weeks' },
+  { type: 'Addition', range: 'Quoted per project', timeline: '6–12 weeks' },
+  { type: 'Whole-home renovation', range: 'Quoted per project', timeline: '4–8 months' },
+  { type: 'New build', range: 'Quoted per project', timeline: '6–9 months' },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`Published price ranges and real timelines for construction, renovation, hardscaping and landscaping across ${site.marketing_city ?? site.address.city}, ${site.marketing_state ?? site.address.state} and Northeast Pennsylvania.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your project"
+  />
+
+  <section class="cost-table">
+    <div class="container">
+      <h2>What projects cost and how long they take in Northeast PA</h2>
+      <p class="lede">Every job is priced on your specific property, but these are the ranges and timelines we work with across Luzerne and Lackawanna Counties. Where we have not published a dollar figure, it is because the number genuinely depends on the walkthrough — not because we are holding it back. The free on-site estimate is how you get your actual number, in writing.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Project type</th><th>Typical range</th><th>Typical timeline</th></tr>
+          </thead>
+          <tbody>
+            {costRows.map((r) => (
+              <tr><td>{r.type}</td><td>{r.range}</td><td>{r.timeline}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>What drives the price up or down:</strong> site access and how much excavation the grade needs, base depth and drainage for anything hardscaped, material selection, whether an older home turns up knob-and-tube or failed plumbing behind the walls, and permitting.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free on-site estimate</h2>
+        <p class="lede">Pick a time that works — we come out, walk the project with you, and send an itemized written estimate within days.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .cost-table { padding: var(--space-5) 0; background: var(--color-surface); }
+  .cost-table h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .cost-table .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .cost-table table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .cost-table th, .cost-table td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .cost-table th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .cost-table tbody tr:last-child td { border-bottom: 0; }
+  .cost-table .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

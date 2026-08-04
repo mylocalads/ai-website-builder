@@ -1,0 +1,11 @@
+node_modules
+dist
+.astro
+.vercel
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# project-map operator intake — CONTAINS CUSTOMER STREET ADDRESSES. Never commit.
+project-map-intake.*

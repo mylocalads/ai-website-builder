@@ -1,0 +1,30 @@
+{
+  "slug": "stubbs-landscaping",
+  "url": "https://stubbslandscaping.com/",
+  "screenshot": "screenshots/stubbs-landscaping.png",
+  "platform": "WordPress + Elementor (built by 75 Degrees West, © 2024)",
+  "audited_at": "2026-08-03",
+  "note": "OPERATOR REFERENCE ONLY. Per the pipeline anti-pattern lock, nothing in this file feeds design_reference.json or tokens.css. The owl template is the sole source of design truth.",
+  "strengths": [
+    "Genuinely good owned project photography — paver patios, retaining walls, fire pits, pool scapes, outdoor kitchens, plus an owner-with-branded-truck shot. This is the single most valuable asset to carry forward.",
+    "Real named client reviews already published on the homepage.",
+    "Deep service copy, especially the lawn-health and deck pages, written in a plain, non-corporate voice.",
+    "Accessibility toolbar present, and privacy/terms pages already exist."
+  ],
+  "weaknesses": [
+    "Zero service-area pages. The site never names Wilkes-Barre, Hazleton, Dallas, or any surrounding town as a landing page, so it competes for nothing outside 'Mountain Top'.",
+    "The 5.0 rating across 26 Google reviews appears nowhere above the fold — the strongest trust asset the business owns is invisible until you scroll past the fold into a slider.",
+    "No phone number in the header on any page; the only tap-to-call lives in the footer.",
+    "Testimonials sit in an auto-rotating carousel that repeats the same three reviews twice.",
+    "The 3D-rendering differentiator — the thing that most directly answers homeowner hesitation — is buried in a paragraph on /about rather than being a headline claim.",
+    "Heavy all-caps condensed display type in orange-on-white at small sizes hurts legibility.",
+    "Hero slider ships four large uncompressed slides; page weight is high on mobile."
+  ],
+  "carry_forward": [
+    "All owned project photography (originals recovered from /wp-content/uploads/, not thumbnails)",
+    "Named client reviews",
+    "Service taxonomy: hardscaping, landscaping, outdoor living, custom decks, plunge pools, lawn health",
+    "Owner credentials: Justin Rinehimer, founded 2010, Penn College horticulture, 9 full-time employees",
+    "Written conduct standard from the Outdoor Living page (branded trucks, clean-site checklist, smoke-free, neighbor courtesy)"
+  ]
+}

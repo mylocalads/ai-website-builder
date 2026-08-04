@@ -1,0 +1,392 @@
+{
+  "slug": "gt-roofing",
+  "business_name": "G&T Roofing & Home Improvements LLC",
+  "legal_name": "G&T Roofing & Home Improvements LLC",
+  "tagline": "Northeast PA Roofing Experts \u2014 No Job Too Small",
+  "phone": "+15708801640",
+  "phone_display": "(570) 880-1640",
+  "phone_secondary": "+15704538725",
+  "phone_secondary_display": "(570) 453-8725",
+  "email": "gtroofinghomeimprovements@gmail.com",
+  "address": {
+    "street": "77 Center St",
+    "city": "Pittston",
+    "state": "PA",
+    "postal": "18640",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.325926,
+    "lng": -75.7842536
+  },
+  "hours": {
+    "monday": "Open 24 hours",
+    "tuesday": "Open 24 hours",
+    "wednesday": "Open 24 hours",
+    "thursday": "Open 24 hours",
+    "friday": "Open 24 hours",
+    "saturday": "Open 24 hours",
+    "sunday": "Open 24 hours"
+  },
+  "rating": 5,
+  "review_count": 5,
+  "category": "Roofing contractor",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 2,
+  "social": {
+    "facebook": "https://www.facebook.com/p/GT-Roofing-Home-Improvements-LLC-61589025003849/",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=G%26T%20Roofing%20%26%20Home%20Improvements%20LLC&query_place_id=ChIJd20SX60fxYkRI8bVPVzlOx8"
+  },
+  "site_url": "https://www.gtroofinghomeimprovements.com/",
+  "logo_url": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/096c19a524d047c04b853ac01db58b6a.png",
+  "default_hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/59c6c99bdd4453d814ca151160db51bd.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/66dd1a6daacef4d7761fd4f03c733ff4.jpg",
+  "brand": {
+    "fonts": {
+      "display": "DM Sans",
+      "body": "DM Sans"
+    },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#333333",
+      "accent": "#003366",
+      "secondary_accent": "#cc0000",
+      "muted": "#666666",
+      "surface": "#f5f5f5",
+      "candidates": [
+        "hsl(210 100% 20%)",
+        "hsl(210 100% 35%)",
+        "hsl(0 100% 40%)",
+        "hsl(0 100% 50%)",
+        "hsl(0 0% 20%)",
+        "hsl(0 0% 96%)",
+        "hsl(0 0% 89%)"
+      ],
+      "_source": "css custom properties (--primary, --accent, --foreground, --background, --secondary, --border)"
+    }
+  },
+  "services": [
+    {
+      "title": "Roof Replacement",
+      "short_description": "Complete roof replacement services using premium materials.",
+      "long_description": "Complete roof replacement services using premium materials. We handle everything from tear-off to final inspection, ensuring your new roof protects your home for decades.",
+      "sub_services": [
+        "Full Tear-Off & Replacement",
+        "Architectural Shingles",
+        "Flat Roof / EPDM Systems",
+        "Final Inspection"
+      ],
+      "hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/59c6c99bdd4453d814ca151160db51bd.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair",
+      "short_description": "Fast, reliable repairs for leaks, damaged shingles, and storm damage.",
+      "long_description": "Fast, reliable repairs for leaks, damaged shingles, and storm damage. We diagnose issues quickly and provide lasting solutions to protect your investment.",
+      "sub_services": [
+        "Leak Repair",
+        "Shingle Replacement",
+        "Storm Damage Repair",
+        "Preventive Maintenance"
+      ],
+      "hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/55e2b0d0d981632221dad643ff2437b3.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Seamless Gutters",
+      "short_description": "Custom-fitted seamless gutter installation that channels water away from your foundation.",
+      "long_description": "Custom-fitted seamless gutter installation that channels water away from your foundation. Available in multiple colors to match your home. We also handle thorough gutter cleaning and repair to prevent clogs, leaks, and water damage.",
+      "sub_services": [
+        "Seamless Gutter Installation",
+        "Leaf Guard Protection",
+        "Gutter Cleaning",
+        "Gutter Repair"
+      ],
+      "hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/18442cd797f90271117cd4226486b3f0.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Siding",
+      "short_description": "Quality siding installation and replacement that protects your home from the elements.",
+      "long_description": "Quality siding installation and replacement that protects your home from the elements while boosting energy efficiency and visual appeal. We also install and repair soffit and fascia to protect your roof edges and improve ventilation.",
+      "sub_services": [
+        "Siding Installation",
+        "Siding Replacement",
+        "Siding Repair",
+        "Soffit & Fascia"
+      ],
+      "hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/66dd1a6daacef4d7761fd4f03c733ff4.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Chimney Work",
+      "short_description": "Expert chimney repair, repointing, and cap installation.",
+      "long_description": "Expert chimney repair, repointing, and cap installation. We ensure your chimney is safe, functional, and weather-tight, including structural repair and waterproofing.",
+      "sub_services": [
+        "Chimney Repair",
+        "Repointing",
+        "Cap Installation",
+        "Waterproofing"
+      ],
+      "hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/caeb280f0283d180452ef891e832254c.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Skylights & Painting",
+      "short_description": "Professional skylight installation and repair, plus interior and exterior painting.",
+      "long_description": "Professional skylight installation and repair to bring natural light into your home, with energy-efficient options, proper ventilation, and waterproofing. We also offer professional interior and exterior painting with quality preparation and application for a finish that lasts.",
+      "sub_services": [
+        "Skylight Installation",
+        "Skylight Repair",
+        "Exterior Painting",
+        "Interior Painting"
+      ],
+      "hero_photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/6403c9f4578a026ff475912d9a3505bc.jpg",
+      "gallery": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Scranton",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "scranton-pa",
+      "county": "Lackawanna County",
+      "_source": "scraped"
+    },
+    {
+      "name": "Wilkes-Barre",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "wilkes-barre-pa",
+      "county": "Luzerne County",
+      "_source": "scraped"
+    },
+    {
+      "name": "Pittston",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "pittston-pa",
+      "county": "Luzerne County",
+      "_source": "scraped"
+    },
+    {
+      "name": "Hazleton",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "hazleton-pa",
+      "county": "Luzerne County",
+      "_source": "scraped"
+    },
+    {
+      "name": "Stroudsburg",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "stroudsburg-pa",
+      "county": "Monroe County",
+      "_source": "scraped"
+    },
+    {
+      "name": "Carbondale",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "carbondale-pa",
+      "county": "Lackawanna County",
+      "_source": "scraped"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Anthony E.",
+      "location": "Pittston, PA",
+      "text": "GT roofing was a excellent and efficient company to hire, they were fast and came the same day.",
+      "rating": 5,
+      "_source": "thumbtack"
+    },
+    {
+      "name": "Daniel K.",
+      "location": "Pittston, PA",
+      "text": "They did a great job replacing and installing my siding. Overall they did a great job and cleaned everything after installing.",
+      "rating": 5,
+      "_source": "thumbtack"
+    },
+    {
+      "name": "Tanis R.",
+      "location": "Pittston, PA",
+      "text": "Alex and his team did an amazing job. They provided the best and most cost efficient option when replacing our siding.",
+      "rating": 5,
+      "_source": "thumbtack"
+    },
+    {
+      "name": "Maria Santos",
+      "location": "Scranton, PA",
+      "text": "Alex and his team did an outstanding job on our roof replacement. The price was fair, the work was completed on time, and they cleaned up everything perfectly. Highly recommend.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Robert Chen",
+      "location": "Wilkes-Barre, PA",
+      "text": "We had an emergency leak and Luis responded immediately. He fixed the problem quickly and the price was very reasonable. Great service from start to finish.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Jennifer Kowalski",
+      "location": "Hazleton, PA",
+      "text": "G&T Roofing installed new gutters and leaf guards on our home. The quality of work is excellent and we have not had any issues with clogged gutters since. Very professional team.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "David Martinez",
+      "location": "Stroudsburg, PA",
+      "text": "Honest pricing, quality work, and great communication throughout the project. They replaced our siding and it looks fantastic. Would definitely hire them again.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Sarah Thompson",
+      "location": "Carbondale, PA",
+      "text": "After getting several quotes, G&T had the best price without compromising on quality. Our new roof looks great and we feel confident it will last for years.",
+      "rating": 5,
+      "_source": "scraped"
+    },
+    {
+      "name": "Michael Patel",
+      "location": "Pittston, PA",
+      "text": "The team was professional, efficient, and respectful of our property. They completed our chimney repair ahead of schedule and the workmanship is top-notch.",
+      "rating": 5,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [
+    {
+      "name": "Alex Sacta",
+      "role": "Owner",
+      "photo": null,
+      "bio": "Alex leads G&T Roofing's crews on roof replacements, repairs, and siding across Northeast PA. Direct line: (570) 880-1640."
+    },
+    {
+      "name": "Luis",
+      "role": "Co-Owner",
+      "photo": null,
+      "bio": "Luis handles emergency leak calls and day-to-day project scheduling. Direct line: (570) 453-8725."
+    }
+  ],
+  "partners": [
+    {
+      "name": "GAF",
+      "logo_url": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/f6340f1109c1bf81bba6f42643f8a9bc.jpg"
+    },
+    {
+      "name": "Owens Corning",
+      "logo_url": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/1cb93301ed5136f1f67f6943d017d96f.jpg"
+    },
+    {
+      "name": "CertainTeed",
+      "logo_url": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/52e8cf045d6fe898d0ba840819d10c06.jpg"
+    },
+    {
+      "name": "IKO",
+      "logo_url": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/0b8c903a7cbb89638901613f61aaee56.jpg"
+    }
+  ],
+  "faqs": [],
+  "gallery": [
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/59c6c99bdd4453d814ca151160db51bd.jpg",
+      "alt": "Completed roof replacement with architectural shingles",
+      "title": "Complete Roof Replacement",
+      "description": "Full tear-off and replacement with architectural shingles"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/6403c9f4578a026ff475912d9a3505bc.jpg",
+      "alt": "Skylight installed with proper flashing and sealing",
+      "title": "Skylight Installation",
+      "description": "Professional skylight installation with proper flashing and sealing"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/18442cd797f90271117cd4226486b3f0.jpg",
+      "alt": "Seamless gutters with leaf guard protection",
+      "title": "Seamless Gutter Installation",
+      "description": "Custom-fitted gutters with leaf guard protection"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/66dd1a6daacef4d7761fd4f03c733ff4.jpg",
+      "alt": "House exterior after complete siding replacement",
+      "title": "Siding Renovation",
+      "description": "Complete siding replacement with improved insulation"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/caeb280f0283d180452ef891e832254c.jpg",
+      "alt": "Repaired and waterproofed chimney",
+      "title": "Chimney Repair",
+      "description": "Structural repair and waterproofing"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/960e8a1b62bcad49795728569f969f1a.jpg",
+      "alt": "New soffit and fascia with improved ventilation",
+      "title": "Soffit & Fascia Upgrade",
+      "description": "New soffit and fascia with improved ventilation"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/6903dc3b9275145f74caaa2c2f904ca2.jpg",
+      "alt": "EPDM flat roof system on a commercial building",
+      "title": "Flat Roof Installation",
+      "description": "Durable EPDM flat roof system for commercial property"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/b93149ee06a0230bc5bfda12c6fa8772.jpg",
+      "alt": "Home exterior after a full repaint",
+      "title": "Exterior Painting",
+      "description": "Complete exterior refresh with premium paint"
+    },
+    {
+      "photo": "https://horizons-cdn.hostinger.com/36ceb922-15ec-4b30-b3ff-c075ca65e700/55e2b0d0d981632221dad643ff2437b3.jpg",
+      "alt": "Roof leak repair and preventive maintenance work",
+      "title": "Roof Repair",
+      "description": "Leak repair and preventive maintenance"
+    }
+  ],
+  "about_story": "At G&T Roofing & Home Improvements LLC, we believe that quality roofing and home improvement services should be accessible to everyone. That's why we've built our business on three core principles: honest pricing, expert craftsmanship, and exceptional customer service.\n\nWe understand that your home is your most valuable investment. Whether you need a complete roof replacement, emergency repairs, or any of our home improvement services, we approach every project with the same level of care and attention to detail. No job is too small for our team.\n\nG&T Roofing is led by Alex and Luis, two dedicated professionals who have built their reputation on reliability, quality work, and fair pricing. Together, they ensure every project meets the highest standards of craftsmanship. We proudly use premium materials from trusted industry-leading suppliers including GAF, Owens Corning, CertainTeed, and IKO to ensure long-lasting quality, durability, and professional results on every project.",
+  "brand_voice_sample": "Professional roofing and home improvement services serving Northeast Pennsylvania. No job is too small. 100% guaranteed best prices. Free estimates available. We stand behind our commitment to provide the most competitive pricing in Northeast Pennsylvania. Get quality workmanship without breaking the bank.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "analytics_detected": [
+      "Google Analytics G-4P5P2053KW",
+      "Google Ads AW-18177232427"
+    ],
+    "note": "Existing site runs the CLIENT's own GA4 + Google Ads tags. Do NOT copy into crm.* \u2014 operator must paste MLA/GHL snippets during site-generate."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_place_id": "ChIJd20SX60fxYkRI8bVPVzlOx8",
+    "pages_scraped": [
+      "/"
+    ],
+    "socials_scraped": [],
+    "extraction_method": "Existing site is a Hostinger Horizons Vite/React SPA with an empty <title>. All page content was extracted for free from the shipped JS bundle (assets/index-DHQYaLtO.js) and CSS bundle \u2014 no Firecrawl spend required.",
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.012,
+    "warnings": [
+      "GBP had 5 ratings (5.0 avg) but zero review text \u2014 testimonials sourced from Thumbtack (verified) and the client's own published site copy.",
+      "Site-published testimonials (Maria Santos, Robert Chen, Jennifer Kowalski, David Martinez, Sarah Thompson, Michael Patel) are the client's own site content but could not be independently verified \u2014 tagged _source: scraped.",
+      "Two owner phone numbers on the existing site: Alex (570) 880-1640 (GBP primary) and Luis (570) 453-8725.",
+      "licensed/insured/bonded set FALSE: the client's existing site displays no license, insurance, or bonding claim anywhere, and no PA HIC registration number is publicly listed. Operator must obtain the PA HIC number from the client before any 'Licensed & Insured' badge is added. PA requires HIC registration for home-improvement work over $500.",
+      "Real client claims usable in copy: '100% Guaranteed Best Prices', 'Free estimates', 'No job is too small', GAF/Owens Corning/CertainTeed/IKO materials, 5.0 Google rating (5 ratings), open 24 hours per GBP."
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+:root {
+  /* Client-supplied: primary background #ffffff, secondary background #2d2d2d,
+     primary CTA #67ac46. --color-primary carries the secondary background —
+     it backs the dark photo-fallback panels in HeroOwl and ServicesGridOwl. */
+  --color-bg: #ffffff;
+  --color-surface: #f3f6f0;
+  --color-text: #1a1a1a;
+  --color-muted: #5a6152;
+  --color-primary: #2d2d2d;
+  --color-on-primary: #ffffff;
+  --color-accent: #67ac46;
+  /* White on #67ac46 measures 2.77:1 — it fails even the large-text AA
+     threshold of 3:1, so accent-backed labels are near-black at 6.27:1.
+     See the button-contrast section of the README before changing this. */
+  --color-on-accent: #1a1a1a;
+  /* The accent as FOREGROUND (eyebrows, tick marks, stars, icons, link hovers)
+     on a light background. #67ac46 on #ffffff is only 2.78:1, so accent-coloured
+     text on the white/surface sections uses this darker green at 4.91:1 instead.
+     Sections backed by --color-primary (Testimonials, ProcessSteps, WhyChooseUs)
+     and the photo-scrim hero keep --color-accent — it clears 4.9:1 on #2d2d2d. */
+  --color-accent-ink: #4a7d32;
+  --color-focus: #0057ff;
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

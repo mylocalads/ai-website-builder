@@ -1,0 +1,34 @@
+{
+  "slug": "comprehensive-pain-specialists",
+  "url_audited": "https://www.cpmspecialists.com/",
+  "screenshot": "screenshots/comprehensive-pain-specialists.png",
+  "captured_at": "2026-08-03",
+  "purpose": "OPERATOR REFERENCE ONLY — never used as design DNA. Template is the sole source of layout and structure.",
+  "strengths": [
+    "Real photography throughout — providers, patients, procedure imagery. No stock-looking gradients.",
+    "Insurance carrier logos (Aetna, Cigna, Humana, UnitedHealthcare, Ambetter, Blue Cross Blue Shield) are displayed prominently — strong trust signal worth carrying forward.",
+    "Three attributed patient reviews with 5-star marks are on the homepage.",
+    "Address, business hours, and social links are all present in the footer.",
+    "Deep condition and procedure coverage — roughly 90 individual condition/procedure pages exist behind the nav."
+  ],
+  "weaknesses": [
+    "Navigation is overwhelming: a 90+ item mega-menu across SERVICES, PROCEDURES, and RESOURCES with no clear primary path. A patient in pain has to parse four nested lists to find anything.",
+    "No conversion path above the fold beyond a single 'BOOK AN APPOINTMENT' button — no phone number visible in the hero, no 'accepting new patients' or 'same-day appointments' message anywhere on the homepage.",
+    "The strongest true differentiators (same-day appointments, accepting new patients, board-certified physician) are buried on the FAQ page and never surface on the homepage.",
+    "Page is extremely long (~7,500px) with duplicated desktop/mobile content blocks rendered in the same DOM, which bloats the page and repeats sections visually.",
+    "Two competing phone numbers (new patients vs existing patients) are only reachable through a modal on the contact page — a new patient cannot find a number to call from the homepage.",
+    "Dense dark-navy blocks stacked back-to-back with low contrast body copy hurt readability for an older patient demographic.",
+    "Aggressive 'You cannot copy content of this website, your IP is being recorded' banner appears in page content — reads as hostile to visitors.",
+    "Third-party vendor widgets (onrevenue.us, hipaaserver2.us) drive text/chat/appointment flows; an AI chat assistant is self-labeled 'in Beta testing, so I can make mistakes' on a medical site."
+  ],
+  "load_issues": [
+    "Homepage renders both desktop and mobile variants of most sections in the same document rather than swapping via CSS breakpoints, roughly doubling image payload."
+  ],
+  "carry_forward": [
+    "Insurance carrier logos → PartnerBadges band",
+    "Three attributed patient testimonials → Testimonials section",
+    "Provider headshots (Josephson, Clark, Haley) → team_members",
+    "The five homepage-prioritized conditions (Back, Neck, Joint, Nerve, CRPS) → the five service pages",
+    "Six named service-area towns → service-area pages"
+  ]
+}

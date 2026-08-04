@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://h4-roofing-construction.vercel.app/sitemap-index.xml

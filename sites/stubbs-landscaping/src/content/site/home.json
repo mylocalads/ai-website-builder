@@ -1,0 +1,211 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Mountain Top, PA — Serving Luzerne County Since 2010",
+    "headline": "See Your Backyard In 3D Before We Break Ground",
+    "subheadline": "Stubbs Landscaping designs and builds the whole outdoor space — paver patios, retaining walls, outdoor kitchens, custom decks, plunge pools, and the planting around them — and you walk through the design in 3D before a single machine shows up.",
+    "cta_text": "Get My Free Design Consult",
+    "cta_href": "/book",
+    "photo": "/img/hero-patio.jpg",
+    "video_link_text": "How a project runs, start to finish",
+    "video_link_href": "/about",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5,
+        "label": "5.0 on Google",
+        "sublabel": "26 reviews, none below 4 stars"
+      },
+      {
+        "label": "Since 2010",
+        "sublabel": "Nine full-time employees"
+      }
+    ],
+    "quote_card": {
+      "quote": "Justin was great to work with and listened to every detail we wanted and made sure it was exactly as we expected.",
+      "author": "Kaitlyn Kowalek",
+      "cta_text": "Start My Design",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 26
+    }
+  },
+  "promise_bar": [
+    {
+      "text": "3D renderings before construction",
+      "icon": "document"
+    },
+    {
+      "text": "We return the call and send the quote",
+      "icon": "phone"
+    },
+    {
+      "text": "Nine full-time employees, no subs",
+      "icon": "hammer"
+    }
+  ],
+  "promise_band": {
+    "eyebrow": "Why Patios Fail",
+    "headline": "The Part Of Your Patio You Will Never See Is The Part That Decides It",
+    "body": "Almost every sunken, heaving, or separating paver patio in this valley traces back to the same thing: what happened before the pavers went down. Too shallow a sub-base. Fill that was never compacted in lifts. No slope built in, so water sits instead of leaving. No edge restraint, so the field creeps outward every freeze-thaw cycle. Northeastern Pennsylvania gets a hard freeze-thaw season and it finds every shortcut. We excavate to depth, compact in lifts, build the pitch in, and set proper restraints — which is unglamorous, adds days to the schedule, and is the entire reason our work is still flat years later.",
+    "cta_text": "Ask Us About Your Site",
+    "cta_href": "/contact",
+    "icon": "shield"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The Stubbs Design-Build Process",
+    "intro": "Every project runs the same way whether it is a walkway in Mountain Top or a full outdoor living build with a plunge pool. Design it, show it to you, build it with our own crew, and leave the site clean every single day.",
+    "blocks": [
+      {
+        "title": "Design before dirt",
+        "body": "We measure the property, talk through how you actually want to use the space, and produce full 3D renderings and walkthrough videos. It is hard to make design decisions in the dark — you get to see the look and the flow, and change your mind, while changing your mind is still free.",
+        "icon": "document"
+      },
+      {
+        "title": "A written standard for how we behave on your property",
+        "body": "Branded trucks and attire so you know who is in the driveway. A clean-site checklist at the end of every day. A smoke-free policy on your property. And if a neighbour has a concern about the work, we handle it — you should not have to.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What a project looks like",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Site visit and measure",
+        "body": "We walk the property, take grades and measurements, and talk through budget honestly before anyone draws anything."
+      },
+      {
+        "title": "3D design and estimate",
+        "body": "You get renderings, a walkthrough video, and a written estimate with the materials named. Revisions happen here, on screen, not in the field."
+      },
+      {
+        "title": "Build and clean",
+        "body": "Our own crew executes the design, does the excavation and base work properly, and leaves the site tidy at the end of every day."
+      }
+    ],
+    "guarantee": {
+      "title": "You deal with the people who did the work",
+      "body": "Stubbs is nine full-time employees and an owner who is on site. There is no call centre, no subcontractor to point at, and no sales rep who disappears after the deposit. If something is not right, you call Justin and you get Justin.",
+      "cta_text": "Talk To Justin",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "Getting Started Is Three Steps",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free site visit",
+        "icon": "clipboard",
+        "body": "We come out, measure, take grades, and find out how you actually want to use the space."
+      },
+      {
+        "label": "Step Two",
+        "title": "3D design and written estimate",
+        "icon": "document",
+        "body": "Renderings, a walkthrough video, and a line-item estimate with the materials named. Revise it until it is right."
+      },
+      {
+        "label": "Step Three",
+        "title": "We build it",
+        "icon": "hammer",
+        "body": "Our own crew handles excavation, base, hardscape, planting, and cleanup, on the schedule we gave you."
+      }
+    ],
+    "cta_text": "Get My Free Design Consult",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Stubbs Landscaping",
+    "headline": "Started At Sixteen With A Mower. Still On Site Today.",
+    "body": "Justin Rinehimer started doing landscaping jobs at sixteen to earn spending money, considered a career in chemical engineering, then decided to follow the work he actually liked and took a horticulture degree at Penn College instead. He founded Stubbs Landscaping in 2010. Sixteen years later it is nine full-time employees with more than thirty years of combined experience, running full design-build projects across Luzerne County — and Justin is still the person who walks your property and answers your call.",
+    "checklist": [
+      "Founded in Mountain Top in 2010",
+      "Nine full-time employees, 30+ years combined experience",
+      "Penn College horticulture degree",
+      "Full 3D renderings and walkthrough videos on every design",
+      "Residential and commercial properties",
+      "5.0 on Google across 26 reviews"
+    ],
+    "photo": "/img/crew-landscape-lighting.jpg",
+    "photo_alt": "A Stubbs Landscaping crew member wiring low-voltage landscape lighting into a finished stone bed",
+    "photo_cutout": false,
+    "cta_text": "More About Us",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Building Outdoors In Northeast PA",
+    "headline": "Landscaping & Hardscaping In Mountain Top And The Wyoming Valley",
+    "paragraphs": [
+      "Building outdoors on this side of the mountain is not the same as building in a flat suburb. Mountain Top sits at elevation above the Wyoming Valley, so lots run to grade and a patio usually means a retaining wall and a stair run before it means pavers. The ground is shale-derived and shallow over rock in places, which changes how you excavate and where water is going to go once you have changed the grade. And the freeze-thaw cycle here is genuinely punishing — anything set on an inadequate base moves within a couple of winters.",
+      "That is why we design the whole thing at once rather than adding a patio to a yard and a wall to a patio. Grades, drainage, hardscape, planting, lighting, and any pool or deck get drawn together, you see all of it in 3D before we commit, and then one crew builds it. It is also why we would rather tell you a project needs more base work than sell you the cheaper number and come back in three years."
+    ],
+    "checklist": [
+      "Excavation, sub-base, and compaction done to depth",
+      "Drainage and pitch designed in, not added later",
+      "Retaining and seating walls for real grade changes",
+      "Full 3D renderings before construction starts",
+      "One crew for hardscape, planting, decks, and pools"
+    ],
+    "image": "/img/gallery-stone-wall.jpg",
+    "image_alt": "Natural stone retaining wall holding a graded slope in Luzerne County",
+    "image_position": "left",
+    "cta_text": "Get My Free Design Consult",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Kaitlyn Kowalek",
+      "location": "Luzerne County, PA",
+      "text": "Thank you Stubbs for our beautiful patio that we can't wait to enjoy with our family and friends! Justin was great to work with and listened to every detail we wanted and made sure it was exactly as we expected. Best of all he and staff heavily entertained our 3 year old! Thanks again!",
+      "rating": 5
+    },
+    {
+      "name": "John Welch",
+      "location": "Luzerne County, PA",
+      "text": "Highly recommend Stubbs Landscaping! Communication was great getting my project scheduled. The crew did a fantastic job grading, soil prepping, and seeding. Very professional from start to finish.",
+      "rating": 5
+    },
+    {
+      "name": "Vicky Sherratt-Serhan",
+      "location": "Luzerne County, PA",
+      "text": "Justin and his team just completed a patio for me. They were professional and pleasant. I love how the patio turned out and can't wait to enjoy it. Highly recommend!!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you really do 3D renderings for every project?",
+      "a": "Yes, and it is the part of our process customers mention most. We produce full 3D renderings and walkthrough videos from the measurements we take on site, so you can see the look and the flow of the finished space before construction starts. It is hard to make design decisions in the dark, and it is a lot cheaper to move a wall on screen than after it is built."
+    },
+    {
+      "q": "How much does a paver patio cost in the Mountain Top area?",
+      "a": "It depends far more on what is under the patio than on the paver you pick. A flat, well-drained site with easy machine access is a very different number from a sloped lot that needs a retaining wall, a stair run, and drainage work before any pavers go down. We will not quote a square-foot price sight unseen — we come out, take grades, and give you a written estimate with the materials named."
+    },
+    {
+      "q": "Why do patios sink or heave, and how do you prevent it?",
+      "a": "Almost always because of what happened before the pavers went down: a sub-base that was too shallow, fill that was never compacted in lifts, no pitch built in so water sits, or missing edge restraints so the field creeps. Northeast Pennsylvania freeze-thaw finds every one of those. We excavate to depth, compact in lifts, build the slope in, and set proper restraints. It adds days to the schedule and it is the reason our work stays flat."
+    },
+    {
+      "q": "How far ahead do I need to book?",
+      "a": "Design and hardscape work in this region books up through the spring and summer, so the sooner you start the design conversation the better your placement in the schedule. Design and permitting take time on their own, which means a project you start planning in winter is often the one that gets built early in the season."
+    },
+    {
+      "q": "Do you pull permits?",
+      "a": "For deck projects we secure the proper permits on your behalf and give you documentation on every component and product for your records. For hardscape work, whether a permit is required depends on the municipality and on the scope — retaining walls above a certain height in particular. We tell you what your township needs before we start."
+    },
+    {
+      "q": "Are you a full-service company or do you subcontract?",
+      "a": "We are nine full-time employees. Hardscaping, landscaping, outdoor living, custom decks, plunge pools, and lawn health are all handled by our own crew, which is the reason a patio, the plantings around it, the lighting in it, and the deck it connects to can be designed as one thing instead of coordinated across four contractors."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We are based on Yeager Road in Mountain Top and work across Luzerne County and the surrounding Northeastern Pennsylvania area — Wilkes-Barre, Kingston, Dallas and the Back Mountain, Drums, and Hazleton among them. If you are not sure whether you fall inside the service area, call (570) 760-6813 and we will tell you straight away."
+    },
+    {
+      "q": "Do you do smaller jobs, or only full backyard builds?",
+      "a": "Both. Plenty of our work is a single walkway, a mulch and planting refresh, a retaining wall repair, or an aeration and overseeding visit. Projects that start small also have a habit of turning into the full design later, which is fine — we would rather build it in stages that fit your budget than talk you into all of it at once."
+    }
+  ]
+}

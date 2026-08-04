@@ -1,0 +1,211 @@
+{
+  "slug": "morris-kitchens-donnelly-designs",
+  "business_name": "Morris Kitchens & Donnelly Designs",
+  "legal_name": "Morris Kitchens & Donnelly Designs, LLC",
+  "tagline": "Award-Winning Kitchen & Bathroom Remodeling in Wilkes-Barre, PA",
+  "phone": "+15708256956",
+  "phone_display": "(570) 825-6956",
+  "email": "morriskitchensllc@gmail.com",
+  "address": {
+    "street": "107 West End Rd",
+    "city": "Hanover Township",
+    "state": "PA",
+    "postal": "18706",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2344363, "lng": -75.9243557 },
+  "hours": {
+    "monday": "9:00 AM - 5:00 PM",
+    "tuesday": "9:00 AM - 5:00 PM",
+    "wednesday": "9:00 AM - 5:00 PM",
+    "thursday": "9:00 AM - 5:00 PM",
+    "friday": "9:00 AM - 5:00 PM",
+    "saturday": "By appointment"
+  },
+  "rating": 4.7,
+  "review_count": 31,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 31,
+  "license_number": "PA 191211",
+  "category": "Kitchen remodeler",
+  "social": {
+    "facebook": "https://www.facebook.com/Morriskitchensdd",
+    "instagram": "https://www.instagram.com/morriskitchens/",
+    "google_maps": "https://www.google.com/maps/place/Morris+Kitchens+%26+Countertops/@41.2344363,-75.9243557,15z/data=!4m5!3m4!1s0x0:0xfabcf2be790109a9!8m2!3d41.2344363!4d-75.9243557"
+  },
+  "site_url": "https://morriskitchensllc.com",
+  "logo_url": "https://morriskitchensllc.com/wp-content/uploads/2024/05/MorrisKitchesDonnelyDesignsLLC-Logo.png",
+  "footer_logo_url": "https://morriskitchensllc.com/wp-content/uploads/2024/05/footer-logo.png",
+  "default_hero_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/05/03-IMG_4459.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/IMG953144.jpg",
+  "brand": {
+    "fonts": { "display": "Archivo", "body": "Archivo" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#000000",
+      "accent": "#9CC233",
+      "primary": "#114261",
+      "muted": null,
+      "surface": null,
+      "candidates": ["#114261", "#9CC233", "#066aab", "#FFFFFF", "#000000"],
+      "_source": "elementor global tokens (post-7.css) + raw homepage CSS"
+    }
+  },
+  "about": {
+    "story": "Morris Kitchens has been in business since 1995 — started by local proprietor John Morris. The original showroom was in Plymouth and moved to Hanover Township in 2008, right next to Colarusso's Pizza & Pasta in the West End Plaza. In January 2016 John Morris retired and Patrick Healey purchased the business. Pat graduated from Johnson College and was a home builder in the area for almost 30 years. In October 2016 Celeste Donnelly joined to design kitchens and baths — a Marywood University graduate with a BFA in interior design, with prior experience at a kitchen design center and 12 years at a local tile store. Morris Kitchens & Donnelly Designs, LLC provides exceptional service to homeowners updating a kitchen and business owners who want a bathroom that will impress clients. We cater to any size project, large or small, and provide the highest quality service our professional staff can offer.",
+    "_source": "scraped"
+  },
+  "services": [
+    {
+      "title": "Kitchen Remodeling",
+      "short_description": "Full kitchen design and remodeling — from a refresh to a total renovation — handled by award-winning designers and our own in-house installers.",
+      "long_description": "Remodeling and updating your kitchen is one of the most beneficial projects you can do to improve the look, value, and functionality of your home. Whether you're looking to spruce up an existing kitchen, complete a total renovation, or add an addition to provide more space, we are here to help meet your goals, needs, and tastes. Today's kitchens are a reflection of our lifestyles — designed for functionality and versatility, well equipped with modern technology, and warm and inviting. As highly experienced, award-winning designers, we will guide you with all appropriate selections to achieve an established design concept. We'll listen to your needs and dreams and respect your budget while guiding you through every step of the process.",
+      "sub_services": ["Project development", "Kitchen cabinetry", "Countertops", "Kitchen islands", "Plumbing", "Electrical", "Trim", "Painting"],
+      "hero_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/kitchen-project-9.jpg",
+      "about_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/EatBar-1.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Bathroom Remodeling",
+      "short_description": "Master baths, kids' baths, and powder rooms — vanities, sinks, faucets, showers, tile, and hardware selected and installed by one team.",
+      "long_description": "If you're like most homeowners, you have more than one bathroom — the master bath, the one the kids share, and the powder room for guests. Bathroom renovations provide a great return on your investment, both financially and emotionally. There are so many options when renovating a bathroom that it takes an expert to do it properly. In addition to the plumbing and electrical work, the design aspect alone is a confusing compilation of choices. We know how to create a guest bathroom or powder room that will be the envy of every visitor — it's amazing how the right vanity, the latest style sink, faucets, hardware, and colors can transform a tiny room into an overnight sensation.",
+      "sub_services": ["Bathroom cabinets", "Vanities", "Sinks", "Faucets", "Showers", "Tile and other surfaces", "Hardware"],
+      "hero_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180823_162337-scaled-1.jpg",
+      "about_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180823_162220.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Custom Cabinets",
+      "short_description": "Top-quality, solid-wood, made-in-USA cabinets from Omega, Homecrest, Mantra, and Century — a huge variety of styles and colors.",
+      "long_description": "You and your kitchen or bathroom have a story to tell. Whether you desire the customized appeal of Omega Cabinetry, the contemporary sleekness of Formica, or the form and function of Homecrest Cabinetry, Morris Kitchens & Donnelly Designs can help you find the kitchen cabinets or bathroom cabinets that are right for you. Cabinets are the foundation of any kitchen or bathroom design, so we've made sure to bring you a selection of choices to meet every style and taste, every value and budget. Combine these offerings with highly competitive pricing, outstanding customer service, and one-stop shopping and let us be your personal project consultant for every selection in your remodeling project.",
+      "sub_services": ["Omega Cabinetry", "Homecrest Cabinetry", "Mantra Cabinets", "Century Cabinetry", "Kitchen cabinets", "Bathroom cabinets"],
+      "hero_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/01720831b68a16e2e6b0cc2df048a753-1024x585.jpg",
+      "about_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/20171115_093635.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Countertops",
+      "short_description": "Granite, quartz, marble, solid surface, natural wood, and laminate — dozens of options on display in our Hanover Township showroom.",
+      "long_description": "Your countertops play a starring role in your kitchen design. They set the style and tone for the entire kitchen or bathroom with their material, color, veining, edge, and more. There is a vast range of options available — from granite to engineered quartz, marble, natural wood tops, and plastic laminates like Formica and Wilsonart. The key to finding the perfect countertop is selecting an option that balances your style and functional needs. Some materials like marble or wood have a natural beauty that can't be beaten but require specialized cleaning and ongoing maintenance. Others are more durable, stain-resistant, and virtually maintenance-free. You can view dozens of countertops on display at our showroom — come in to see, feel, and find the exact countertop you're looking for.",
+      "sub_services": ["Granite", "Quartz", "Marble", "Solid surface", "Natural wood tops", "Laminate"],
+      "hero_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/countertops-gallery-7.jpg",
+      "about_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/countertops-gallery-4.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Design Services",
+      "short_description": "Free in-showroom design consultation — layouts, selections, and coordination with your contractor, builder, or designer.",
+      "long_description": "We believe that selecting items for your home should be an exciting and creative process. That's why we've created a modern and inviting showroom where you can explore, design, and let your imagination run wild. Our knowledgeable design consultants are here to assist you in finding the perfect items that match your personal taste and fit within your budget, working closely with you so every detail is considered. Whether it's coordinating with your contractor, builder, or designer, we've got you covered — from measurements and compatibility to seamless delivery and accurate billing, we take care of the entire process so you can focus on bringing your vision to life.",
+      "sub_services": ["Free design consultation", "Detailed floor plans", "Material and finish selection", "Contractor coordination", "Measurement and compatibility checks", "Delivery scheduling"],
+      "hero_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/05/start-image.png",
+      "about_photo": "https://morriskitchensllc.com/wp-content/uploads/2024/06/MPBeams.jpg",
+      "_source": "scraped"
+    }
+  ],
+  "other_spaces": [
+    { "name": "Mudroom", "photo": "https://morriskitchensllc.com/wp-content/uploads/elementor/thumbs/Mudroom-scaled-qp4jwilnmzjflnq4zllumjac0hzbkysfucyhk1eiow.jpg" },
+    { "name": "Office Area", "photo": "https://morriskitchensllc.com/wp-content/uploads/elementor/thumbs/Home-Office-qp4jxxcxw1gx0loer7jpd6h83b154mdy1c6pgzb9cw.jpg" },
+    { "name": "Wet Bar", "photo": "https://morriskitchensllc.com/wp-content/uploads/elementor/thumbs/basement-wet-bar-contractor-qp4jxnyjzp41si22a3hfo8um5gbgzncmo1nuo7p734.jpg" }
+  ],
+  "service_areas": [
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "slug": "wilkes-barre-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Hanover Township", "state": "Pennsylvania", "state_abbr": "pa", "slug": "hanover-township-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Kingston", "state": "Pennsylvania", "state_abbr": "pa", "slug": "kingston-pa", "county": "Luzerne County", "_source": "inferred:metro" },
+    { "name": "Mountain Top", "state": "Pennsylvania", "state_abbr": "pa", "slug": "mountain-top-pa", "county": "Luzerne County", "_source": "inferred:metro" },
+    { "name": "Dallas", "state": "Pennsylvania", "state_abbr": "pa", "slug": "dallas-pa", "county": "Luzerne County", "_source": "inferred:metro" },
+    { "name": "Nanticoke", "state": "Pennsylvania", "state_abbr": "pa", "slug": "nanticoke-pa", "county": "Luzerne County", "_source": "inferred:metro" }
+  ],
+  "testimonials": [
+    { "name": "Sonia Jones", "location": null, "text": "I would HIGHLY recommend Morris Kitchens! They did a fantastic job on our kitchen, and they have great customer service! They maximized the space exceptionally well. The island is 10ft with back-to-back cabinet storage underneath and awesome work.", "rating": 5, "_source": "scraped" },
+    { "name": "Alicia Roback", "location": null, "text": "Celeste is very helpful with layout and design. She goes above and beyond to please her customers. Her crew is punctual, polite and provides quality craftsmanship. They did an amazing job on our bathroom remodel and we couldn't be happier. Thank you for a job well done Morris Kitchens & Donnelly Designs!", "rating": 5, "_source": "scraped" },
+    { "name": "Melissa Bogart", "location": null, "text": "Celeste is not only knowledgeable and affordable when it comes to cabinets, her designs are top notch. She can make any kitchen (even the small one) functional, beautiful and affordable.", "rating": 5, "_source": "scraped" },
+    { "name": "Carol Swan", "location": null, "text": "I just had my kitchen remodeled and at completion the results are amazing! Celeste has many options to choose from and was always courteous and professional with any changes or additions I requested. She was a pleasure to work with and I found the quality and pricing to be good as well!", "rating": 5, "_source": "scraped" },
+    { "name": "Steve Stalter", "location": null, "text": "We had a great experience with Morris Kitchens & Donnelly Designs, LLC. We had our kitchen remodeled and they were affordable, started and finished on time as well as quality products and work.", "rating": 5, "_source": "scraped" },
+    { "name": "George Shovlin", "location": null, "text": "Bought cabinets for a several different kitchens and bathrooms there over the years. Great place to buy, they give great advice and fair prices. Best of all is the service which is second to none, could not ask for more!", "rating": 5, "_source": "scraped" },
+    { "name": "Laura G. Carter", "location": null, "text": "Celeste was incredibly helpful and kind to me and my mother who needed new kitchen cabinets. We wanted to stick with a local business and now we won't go anywhere else for our kitchen & bath cabinet needs. Simply the best!", "rating": 5, "_source": "scraped" },
+    { "name": "Jocelyne Melton", "location": null, "text": "Celeste did an amazing job at consulting and guiding our company as we made decisions on renovations! She knows her trade, cares, and thinks outside the box. Thanks Celeste!", "rating": 5, "_source": "scraped" }
+  ],
+  "team_members": [
+    { "name": "Patrick Healey", "role": "Owner", "photo": null, "bio": "Pat graduated from Johnson College and was a home builder in the area for almost 30 years before purchasing Morris Kitchens in January 2016. Owning the kitchen business lets him keep using his creativity on installations of kitchens, bathrooms, entertainment areas, and bar areas.", "_source": "scraped" },
+    { "name": "Celeste Donnelly", "role": "Designer", "photo": null, "bio": "Celeste joined Morris Kitchens in October 2016. She is a graduate of Marywood University with a bachelor's of fine arts in interior design, with prior design experience at a kitchen design center and 12 years at a local tile store. No job is too small or too big.", "_source": "scraped" }
+  ],
+  "faqs": [
+    { "q": "Do you help design our kitchen (or other area) or is that up to us?", "a": "We definitely help to design your kitchen or other area that you are working on. We offer free design services. Detailed floor plans are not available until a contract is signed for purchase, unless you would like to purchase the design itself from Morris Kitchens." },
+    { "q": "How long does it take for cabinets to come in?", "a": "Our HomeCrest cabinet line is normally a three week lead time (dependent upon holidays or truck schedules). Our weekly cut-off is Tuesday afternoon; cabinets are then shipped in three weeks on a Friday and usually arrive on Monday. Our semi-custom / custom line from Omega is normally a 5 to 6 week lead time." },
+    { "q": "What is the ordering process and what forms of payment do you accept?", "a": "We require a 75% down payment on the cabinets or countertops that are being ordered." },
+    { "q": "How long will it take to complete my project?", "a": "Every project is different, but on average a kitchen takes approximately 6-8 weeks to complete, including delivery time on the cabinets. Countertops usually take about 1-2 weeks to arrive. Smaller projects like bathrooms or laundry areas may only take a week." },
+    { "q": "What is the normal process of construction?", "a": "First we tweak your design until you are totally happy with it. Next comes a final measure of your space to make sure everything will fit as planned. After that products get ordered, and just before they arrive the demolition of your space begins. If you have your own contractor, we coordinate delivery around their schedule." }
+  ],
+  "partners": [
+    { "name": "Omega Cabinetry" },
+    { "name": "Homecrest Cabinetry" },
+    { "name": "Mantra Cabinets" },
+    { "name": "Century Cabinetry" },
+    { "name": "Cambria" },
+    { "name": "Corian" },
+    { "name": "Formica" },
+    { "name": "Wilsonart" },
+    { "name": "MSI Q Quartz" },
+    { "name": "DuPont" }
+  ],
+  "gallery": [
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/kitchen-project-9.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/EatBar-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/MPBeams.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20171115_093635.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20171115_093627.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20171115_093100-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20171115_092710-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180904_141137.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180904_141100.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180904_140958-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180904_140933.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180823_162220.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180823_162314.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180823_162337-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180823_162411-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20180731_173915-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170706_092742.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170706_092756.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170706_092817.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170703_140249-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170703_140359.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170703_140134.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170622_172200-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/20170703_135726-e1576630676447-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/IMG955718-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/IMG955715.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/IMG955713-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/00000PORTRAIT_00000_BURST20191103110010545-e1576630529135-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/06/00000PORTRAIT_00000_BURST20191103110357866-scaled-1.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/05/03-IMG_4459.jpg",
+    "https://morriskitchensllc.com/wp-content/uploads/2024/05/s2.jpg"
+  ],
+  "brand_voice_sample": "We promise to help you realize your dream space, offering you the inspiration, products, knowhow, and design guidance you need, while respecting your taste, your time, and your budget. We'll take your kitchen, bath or room remodeling project from \"How do we do this?\"... to beautifully done.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "Client's existing site uses WPForms + reCAPTCHA v2 — not a CRM embed. No GHL widgets detected. Operator must paste in GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_name": "Morris Kitchens & Donnelly Designs LLC",
+    "gbp_place_id": "ChIJOwQiwEEQxYkRqQkBeb7yvPo",
+    "pages_scraped": ["/", "/about", "/kitchens", "/bathrooms", "/cabinets", "/countertops", "/design-services", "/faq", "/contact", "/our-products", "/gallery"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.25,
+    "warnings": [
+      "First Apify query (\"Morris Kitchens & Donnelly Designs\" / Wilkes-Barre, PA) returned 0 rows; re-ran as \"Morris Kitchens\" / Hanover Township, Luzerne County, PA and matched. Two lookups billed (~$0.008).",
+      "GBP returned no review text (reviews array null) — all 8 testimonials come from the client's own website.",
+      "Client's /bathrooms page contains copy-paste boilerplate referencing a competitor ('Artisan design team'). That text was NOT carried over; bathroom copy was rewritten from the client's own remaining content.",
+      "insured/bonded not stated anywhere on the site — left false. PA HIC registration #PA 191211 is displayed in the footer, so licensed = true.",
+      "brand.colors surface/muted not authored in the client's CSS — design-reference derives them."
+    ]
+  }
+}

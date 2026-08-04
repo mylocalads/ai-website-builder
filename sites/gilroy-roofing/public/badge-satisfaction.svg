@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="100% satisfaction guaranteed — Gilroy Roofers">
+  <defs>
+    <path id="arcTop" d="M120 120 m-92 0 a92 92 0 0 1 184 0" fill="none"/>
+    <path id="arcBottom" d="M120 120 m92 0 a92 92 0 0 1 -184 0" fill="none"/>
+  </defs>
+
+  <circle cx="120" cy="120" r="116" fill="#f15537"/>
+  <circle cx="120" cy="120" r="108" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 6" opacity="0.85"/>
+  <circle cx="120" cy="120" r="88" fill="#000000"/>
+
+  <text font-family="Montserrat, Inter, sans-serif" font-size="19" font-weight="800" fill="#ffffff" letter-spacing="3.2">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">SATISFACTION GUARANTEED</textPath>
+  </text>
+  <text font-family="Montserrat, Inter, sans-serif" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="4">
+    <textPath href="#arcBottom" startOffset="50%" text-anchor="middle">GILROY ROOFERS</textPath>
+  </text>
+
+  <!-- roofline mark -->
+  <path d="M72 128 L120 92 L168 128" fill="none" stroke="#f15537" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 130 v26 h72 v-26" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="120" y="80" text-anchor="middle" font-family="Montserrat, Inter, sans-serif" font-size="26" font-weight="800" fill="#f15537">100%</text>
+  <text x="120" y="182" text-anchor="middle" font-family="Montserrat, Inter, sans-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="2">SINCE 1972</text>
+</svg>

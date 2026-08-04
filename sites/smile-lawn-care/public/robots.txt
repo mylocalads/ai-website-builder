@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://smile-lawn-care.vercel.app/sitemap-index.xml

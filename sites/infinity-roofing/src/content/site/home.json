@@ -1,0 +1,181 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving Dallas & North Georgia",
+    "headline": "We Handle The Claim. You Get Your Roof.",
+    "subheadline": "A local Dallas, GA roofing company — not a storm chaser working the neighbourhood for a season. We document the damage, meet your adjuster on the roof, and keep the claim moving so you are not the one fighting for coverage.",
+    "cta_text": "Get My Free Inspection!",
+    "cta_href": "/book",
+    "video_link_text": "What makes Infinity different?",
+    "video_link_href": "/about",
+    "quote_card": {
+      "quote": "Got a few other estimates, but Dan was the most professional and the only one to show up on time.",
+      "author": "James Scott — Google Review",
+      "cta_text": "Get My Free Inspection!",
+      "cta_href": "/book"
+    },
+    "trust_badges": [
+      { "label": "Licensed & Insured", "sublabel": "Full liability coverage" },
+      { "label": "500+ Roofs Completed", "sublabel": "Across North Georgia" }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Insurance claims handled start to finish", "icon": "umbrella" },
+    { "text": "Local to Paulding County", "icon": "home" },
+    { "text": "We never touch your deductible", "icon": "wallet" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We Leave It Cleaner Than We Found It",
+    "body": "Ask anyone who has had a roof torn off: the mess is what they remember. Tear-off goes straight to the dumpster as we work, the whole yard and driveway get a magnet sweep for nails before we pack up, and we walk the property with you before we leave. It is the single thing our customers mention most often, and it is not an afterthought — it is part of the job we quoted you for.",
+    "cta_text": "Get My Free Inspection!",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Storm Damage, Handled Properly",
+    "intro": "Every Infinity job runs the same way, whether it is a full replacement after a hailstorm or a single leak around a chimney. No surprises, no pressure to sign today, and no chasing us for answers.",
+    "blocks": [
+      {
+        "title": "We document the damage before the adjuster arrives",
+        "body": "The most common reason a Georgia roof claim gets denied is an adjuster calling storm damage ordinary wear and tear. We photograph and measure the damage properly first, so there is a record to point at instead of an argument to have.",
+        "icon": "document"
+      },
+      {
+        "title": "We never waive or absorb your deductible",
+        "body": "It is a common closing tactic and it is illegal in Georgia under HB 423 — and it is the homeowner, not just the contractor, who ends up exposed. If someone offers, that tells you what kind of operation they run.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "Clean-up is part of the job, not an afterthought",
+    "steps": [
+      { "title": "Debris straight to the dumpster", "body": "Tear-off is cleared as we go, not left piled in your driveway." },
+      { "title": "Magnet sweep for nails", "body": "The whole yard and driveway, before we pack up." },
+      { "title": "A final walk with you", "body": "We check the property together before we leave." }
+    ],
+    "guarantee": {
+      "title": "A written estimate, and no deposit to get one",
+      "body": "We come out, get on the roof, and put a written number in your hand. No deposit, no same-day-only pricing, and no pressure to sign while we are standing in your driveway. If the honest answer is a repair rather than a replacement, that is the answer you get.",
+      "cta_text": "Talk to Dan",
+      "cta_href": "/contact",
+      "badge_alt": "Infinity Roofing & Cleaning free written estimate",
+      "badge_image": "/badge-satisfaction.svg"
+    },
+    "steps_icon": "broom"
+  },
+  "process_steps": {
+    "headline": "Our Storm Damage Process",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free inspection & documentation",
+        "icon": "clipboard",
+        "body": "We get on the roof, photograph the damage, and give you a written report."
+      },
+      {
+        "label": "Step Two",
+        "title": "We meet your adjuster",
+        "icon": "umbrella",
+        "body": "We walk the roof with them and make the case for full coverage."
+      },
+      {
+        "label": "Step Three",
+        "title": "Installation & full clean-up",
+        "icon": "hammer",
+        "body": "Premium materials, then debris cleared and the yard swept for nails."
+      },
+      {
+        "label": "Step Four",
+        "title": "Final walkthrough",
+        "icon": "broom",
+        "body": "We check the property together before we consider the job finished."
+      }
+    ],
+    "cta_text": "Get My Free Inspection!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Infinity Roofing & Cleaning",
+    "headline": "The Roofer Who Still Does His Own Estimates",
+    "body": "Dan runs Infinity Roofing & Cleaning out of Dallas, Georgia, and still turns up to quote the work himself — which is why so many of our reviews use his name. We have completed more than 500 roofing projects across North Georgia and processed over 500 storm damage claims, and we do the exterior cleaning side too, so we can tell you honestly when your roof needs a soft wash rather than a replacement.",
+    "checklist": [
+      "Locally owned and operated from Dallas, GA",
+      "Licensed and insured, with full liability coverage",
+      "Insurance restoration specialists — 500+ claims processed",
+      "Residential, commercial, HOA and property management work",
+      "Roofing and exterior cleaning under one roof"
+    ],
+    "photo_alt": "A completed asphalt shingle roof replacement in North Georgia",
+    "photo_cutout": false,
+    "photo": "/img/completed-roof.jpg",
+    "cta_text": "Get My Free Inspection!",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why Homeowners Choose Us",
+    "headline": "Roofing In Dallas, Georgia",
+    "paragraphs": [
+      "North Georgia is hard on roofs from both directions. Spring and summer bring the hail and straight-line wind that take shingles off outright, and the humidity does the slower damage — Gloeocapsa magma algae feeds on the limestone in asphalt shingles, which is what those black streaks on the north-facing slope actually are.",
+      "We handle both ends of that. Storm damage with the insurance claim managed from inspection through settlement, and soft wash roof cleaning that clears the algae without stripping the granules the way pressure washing does."
+    ],
+    "checklist": [
+      "Residential and commercial roofing, repair through full replacement",
+      "Storm and hail damage with insurance claim handling",
+      "Soft wash roof cleaning, house washing and driveway cleaning",
+      "Gutter cleaning, repair and replacement",
+      "Solar installation planned around the roof's remaining life"
+    ],
+    "image": "/img/new-shingles.jpg",
+    "image_alt": "A North Georgia home with a new architectural shingle roof",
+    "image_position": "left",
+    "review": {
+      "name": "Darlene Mangram",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "I had my new roof put on Monday. They did an excellent job. They worked all day nonstop. And they cleaned up all the mess. I am very pleased."
+    },
+    "cta_text": "Get My Free Inspection!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    { "name": "Andrew Thurston", "text": "These guys did a great job fixing a leak around my fireplace chimney and some loose shingles. Would definitely call them again.", "rating": 5 },
+    { "name": "Tiffany Garmon", "text": "100/10 will always recommend Dan! When I saw the completed pressure wash, I literally sighed of enjoyment with how it looks!", "rating": 5 },
+    { "name": "Madison Leigh", "text": "Infinity Roofing was amazing from start to finish. Super professional, showed up on time, and walked me through everything. My new roof looks so good.", "rating": 5 },
+    { "name": "BreakOut Bob", "text": "Dan gave us an excellent initial consultation when we needed to replace our roof. He explained the process and gave us several different options.", "rating": 5 },
+    { "name": "Tim Gerber", "text": "From their professionalism to the quality of work, this company is outstanding! Others in the past have killed my grass and flowers.", "rating": 5 },
+    { "name": "Matthew Herbert", "text": "By far the best in service, consultation and product. If I was able to leave more stars I would! I have referred them to at least 9 others.", "rating": 5 },
+    { "name": "Ashley Ledford", "text": "Dan was really great! I called regarding a gutter clean and pressure wash for my house, driveway, and back patio and he was able to come out the next day to quote.", "rating": 5 },
+    { "name": "Andrew Clark", "text": "Dan put a new shingle roof on my house. He was very professional, friendly, and his crew got it done very quickly. He gave me a great price.", "rating": 5 }
+  ],
+  "faqs": [
+    {
+      "q": "Will my insurance actually cover a new roof?",
+      "a": "It depends on your policy and on how the damage is documented. The most common reason a Georgia claim gets denied is the adjuster classifying storm damage as ordinary wear and tear, which happens most often when the damage is subtle or the roof already has some age on it. We photograph and measure everything before the adjuster arrives and meet them on the roof, so the claim is decided on a record rather than an impression."
+    },
+    {
+      "q": "A contractor offered to cover my deductible. Is that normal?",
+      "a": "No — it is illegal in Georgia under HB 423, and it exposes you as well as the contractor. It is used as a closing tactic, so treat it as a warning about how that company operates. We quote the work honestly and you pay your deductible to your insurer as your policy requires."
+    },
+    {
+      "q": "Someone knocked on my door after the storm. Should I use them?",
+      "a": "Be careful. Storm chasers follow weather into an area, work it hard for a season, and leave — and after one North Atlanta hailstorm the BBB logged around 30% more roofing complaints than normal. Legitimate local contractors rarely need to canvass door to door. Ask for a fixed local address, check how far back their reviews go, and get the estimate in writing before anyone signs anything."
+    },
+    {
+      "q": "What are the black streaks on my roof, and will pressure washing remove them?",
+      "a": "Those streaks are Gloeocapsa magma, a blue-green algae that feeds on the limestone in asphalt shingles and causes granule loss over time. Do not let anyone pressure wash them off — the pressure strips granules and shortens the roof's life, and the algae grows back within weeks. A proper soft wash treats the algae itself and typically keeps the roof clean for three to six years."
+    },
+    {
+      "q": "Do I need a full replacement, or will a repair do?",
+      "a": "Often a repair. A handful of wind-lifted shingles, a leak around a chimney or a failed pipe boot are all repairs, not replacements. We will tell you when that is the honest answer even though it is the smaller job — and we will tell you plainly when a roof is genuinely at the end of its life."
+    },
+    {
+      "q": "Which areas do you cover?",
+      "a": "We are based in Dallas, GA and work across Paulding, Cobb, Douglas and Fulton counties — including Marietta, Kennesaw, Douglasville, Acworth, Smyrna and Roswell. If you are just outside that, call us and we will tell you honestly whether we are the right people for the job."
+    },
+    {
+      "q": "How much does the inspection cost?",
+      "a": "Nothing, and there is no deposit to get a written estimate. We come out, get on the roof, and put a number in your hand. There is no same-day-only pricing and no pressure to sign while we are standing in your driveway."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "kind": "config",
+  "business_name": "Royal Roofing Systems",
+  "legal_name": "Royal Roofing Systems, LLC",
+  "tagline": "A Better Roof at a Better Price",
+  "phone": "+15705506578",
+  "phone_display": "(570) 550-6578",
+  "email": "office@royalroofnepa.com",
+  "address": {
+    "street": "20 W Grove St",
+    "city": "Edwardsville",
+    "state": "PA",
+    "postal": "18704",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2686508, "lng": -75.9104468 },
+  "hours": {
+    "monday": "8:00 AM - 6:00 PM",
+    "tuesday": "8:00 AM - 6:00 PM",
+    "wednesday": "8:00 AM - 6:00 PM",
+    "thursday": "8:00 AM - 6:00 PM",
+    "friday": "8:00 AM - 6:00 PM",
+    "saturday": "8:00 AM - 12:00 PM"
+  },
+  "site_url": "https://royal-roofing-systems.vercel.app",
+  "rating": 4.8,
+  "review_count": 61,
+  "licensed": true,
+  "insured": true,
+  "bonded": true,
+  "years_in_business": 15,
+  "social": {
+    "facebook": "https://www.facebook.com/RoyalRoofNEPA",
+    "google_maps": "https://maps.google.com/?cid=12658354035490682164"
+  },
+  "logo_url": "/logo-royal.png",
+  "default_hero_photo": "/img/hero-home.jpg",
+  "about_photo": "/img/residential-roofing.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    {
+      "name": "GAF",
+      "logo_url": "https://royalroofnepa.com/wp-content/uploads/2024/02/gaf1.png"
+    },
+    {
+      "name": "Owens Corning",
+      "logo_url": "https://royalroofnepa.com/wp-content/uploads/2024/02/owen.png"
+    }
+  ],
+  "why_choose_us": [
+    {
+      "title": "We are the roofers",
+      "description": "When you call us about your roof, the crew that shows up works for us. We do not subcontract, so the person who quoted the job is accountable for the job."
+    },
+    {
+      "title": "Same-day inspection and written estimate",
+      "description": "A certified contractor inspects the roof and generates the estimate the same day. Residential repair service runs 24 hours a day, 7 days a week."
+    },
+    {
+      "title": "Insurance claim specialists",
+      "description": "We meet your adjuster on site so they see the same damage we documented, then follow up with the carrier until you have a decision."
+    },
+    {
+      "title": "Warranties in writing",
+      "description": "A 15-year no-leak warranty, a lifetime manufacturer warranty, and a 10-year workmanship warranty on every roof we install."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "0% financing on roofs, siding, gutters and decks",
+    "description": "Every homeowner's situation is different. We offer short-term and long-term plans with flexible terms and competitive APRs, including 0% options on qualifying projects. Military, first responders and seniors also get 5% off any full roof or gutter installation or repair over $1,500.",
+    "cta_text": "Talk financing with us",
+    "cta_href": "/contact"
+  },
+  "us_vs_them": {
+    "enabled": true,
+    "headline": "Royal Roofing vs. the truck that showed up after the storm",
+    "us_label": "ROYAL ROOFING",
+    "them_label": "STORM CHASERS",
+    "rows": [
+      { "label": "Based in the Wyoming Valley, 15 years and counting", "us": true, "them": false },
+      { "label": "In-house crews, never subcontracted", "us": true, "them": false },
+      { "label": "Written, itemized estimate the same day", "us": true, "them": false },
+      { "label": "Meets your insurance adjuster in person", "us": true, "them": false },
+      { "label": "15-year no-leak warranty you can actually call on", "us": true, "them": false },
+      { "label": "Still here next spring when you need a repair", "us": true, "them": false }
+    ]
+  },
+  "gallery": [
+    {
+      "title": "Standing seam metal roof",
+      "photo": "/img/metal-roofing.jpg",
+      "alt": "Standing seam metal roof installed on a Pennsylvania home",
+      "description": "Interlocking metal panels rated for 50 years or better, fabricated in standing seam or architectural shingle styles."
+    },
+    {
+      "title": "Storm damage response",
+      "photo": "/img/storm-damage.jpg",
+      "alt": "Tree down across a residential roof after a storm",
+      "description": "Emergency response, documentation for the claim, and a full restoration once the carrier approves the scope."
+    },
+    {
+      "title": "Residential roof replacement",
+      "photo": "/img/residential-roofing.jpg",
+      "alt": "Crew replacing an asphalt shingle roof on a residential home",
+      "description": "Full tear-off to final magnet sweep, handled start to finish by our own crews."
+    },
+    {
+      "title": "Seamless gutters and downspouts",
+      "photo": "/img/gutter-install.jpg",
+      "alt": "Seamless aluminum gutter and downspout installation",
+      "description": "Custom-formed on site so there are no seams to leak or clog."
+    },
+    {
+      "title": "Siding installation",
+      "photo": "/img/siding-install.jpg",
+      "alt": "New siding being installed on a Pennsylvania home",
+      "description": "Vinyl, wood, metal and fiber cement, fitted to hold heat in through a Wyoming Valley winter."
+    },
+    {
+      "title": "TREX composite deck",
+      "photo": "/img/trex-decks.jpg",
+      "alt": "Finished TREX composite deck with railings",
+      "description": "Low-maintenance composite decking that does not fade, split, or need sealing every spring."
+    },
+    {
+      "title": "TREX with black vinyl railings",
+      "photo": "/img/trex-railings.jpg",
+      "alt": "TREX composite deck with black vinyl railings",
+      "description": "Vinyl railings stay tight instead of loosening the way old wood rails do."
+    },
+    {
+      "title": "Cedar decking",
+      "photo": "/img/cedar-deck.jpg",
+      "alt": "Cedar deck built in Northeastern Pennsylvania",
+      "description": "Natural cedar you can walk barefoot on, holding up to NEPA rain, snow and summer heat."
+    }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Roofing, siding, gutters",
+    "heading_rest": "and decks",
+    "subtitle": "Residential and commercial exterior work across Northeastern Pennsylvania, installed by our own crews and backed by a 15-year no-leak warranty."
+  }
+}

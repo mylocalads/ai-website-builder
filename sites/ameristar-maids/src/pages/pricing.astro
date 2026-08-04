@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// No published rate card: this business prices every clean from a free in-home
+// estimate, so a table of invented per-square-foot numbers would contradict the
+// one thing the page is actually promising. These are the factors the estimate
+// walks through instead.
+const quoteFactors = [
+  { factor: 'Size and layout', detail: 'Square footage, number of bedrooms and bathrooms, and how many floors and staircases are in play.' },
+  { factor: 'Level of service', detail: 'A hand-detailed Top-to-Bottom Deluxe takes considerably longer than a General maintenance clean.' },
+  { factor: 'How long since the last clean', detail: 'Built-up grease, soap scum, and dust take real time to remove. Homes on a regular schedule cost less per visit.' },
+  { factor: 'Frequency', detail: 'Weekly and bi-weekly homes stay easier to maintain than monthly or one-time visits, and are priced accordingly.' },
+  { factor: 'Pets, children, and traffic', detail: 'More hair, more fingerprints, more floors. It changes the time on site, so we account for it up front.' },
+  { factor: 'What you want us to skip or add', detail: 'Leave the guest room alone, deep clean the playroom — the plan is built around your home, not a standard package.' },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How AmeriStar Maids prices house cleaning across ${site.address.city}, ${site.address.state} — a free in-home estimate, a written scope, and the number you were quoted.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get My Free Estimate"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a price for your home"
+  />
+
+  <section class="quote-factors">
+    <div class="container">
+      <h2>What shapes your quote</h2>
+      <p class="lede">We do not publish a per-square-foot rate, because two homes of the same size can be hours apart in the work they need. Here is what we actually look at during the free in-home estimate.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Factor</th><th>Why it matters</th></tr>
+          </thead>
+          <tbody>
+            {quoteFactors.map((r) => (
+              <tr><td>{r.factor}</td><td>{r.detail}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>The one number we will give you over the phone:</strong> nothing. Call (570) 310-1057 and we will book the estimate instead — it is free, it takes a few minutes, and it is the only honest way to price a house.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free in-home estimate</h2>
+        <p class="lede">Pick a time that works — we come out, walk the home with you, and leave you with a written scope and price.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .quote-factors { padding: var(--space-5) 0; background: var(--color-surface); }
+  .quote-factors h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .quote-factors .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .quote-factors table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .quote-factors th, .quote-factors td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .quote-factors th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .quote-factors tbody tr:last-child td { border-bottom: 0; }
+  .quote-factors .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

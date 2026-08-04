@@ -1,0 +1,30 @@
+:root {
+  --color-bg: #f4f6f9;
+  --color-surface: #ffffff;
+  --color-text: #111827;
+  --color-muted: #545e70;
+  --color-primary: #144e9d;
+  --color-on-primary: #ffffff;
+  --color-accent: #f5a623;
+  --color-on-accent: #1a1c17;
+  /* The accent as FOREGROUND TEXT on a LIGHT background (eyebrows, tick marks,
+     stars, pins, chevrons). --color-accent is a FILL colour: #f5a623 measures
+     only 1.94:1 on --color-bg and 2.07:1 on --color-surface, so using it as text
+     fails AA. This darker variant is 5.47:1 / 5.93:1.
+
+     Sections backed by --color-primary (Testimonials, ProcessSteps,
+     WhyChooseUs) and the dark photo scrim in HeroOwl deliberately KEEP
+     --color-accent — it clears 3.98:1 on the navy panel, where this ink would
+     fall well below. Per-client rule: light background -> ink, dark panel ->
+     accent.
+
+     Palette derivation and every measured pair are recorded in
+     design_reference.json at the site root. */
+  --color-accent-ink: #8a5a00;
+  --color-focus: #0057ff;
+  --font-display: 'Red Hat Display', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 3px; --radius-md: 6px; --radius-lg: 10px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "comfortable-climate-hvac",
+  "url": "https://comfortableclimatehvac.com/",
+  "screenshot": "screenshots/comfortable-climate-hvac.png",
+  "captured": "2026-08-03",
+  "_purpose": "OPERATOR REFERENCE ONLY. Not design DNA. The owl template is the sole source of layout and structure.",
+  "strengths": [
+    "Real, specific credential on the page: Fujitsu 'Elite Contractor' status for 2024.",
+    "Licensed & insured with the PA registration number (PA #091633) printed in the footer.",
+    "Phone number is present in the header on every page with a 'Call for a free estimate' label.",
+    "Genuine long-form service copy on the Heating, Plumbing, and Air Conditioning pages, including concrete service lists.",
+    "16 real, named customer reviews exist on the site, several naming the owner directly."
+  ],
+  "weaknesses": [
+    "The homepage testimonial carousel shows fabricated placeholder reviews ('Michael Doe', 'Sue Jones', 'Carolyn Wintner') with stock avatars — a direct credibility liability sitting above the fold's second screen.",
+    "Body copy renders as pale grey on white and fails WCAG AA contrast in the intro and 'Our Features' sections.",
+    "The 11-item service icon grid is decorative only — the icons are not links, so there are no service landing pages for Furnace, Heat Pump, Water Heater, Boiler, Ductless, or Geothermal.",
+    "Service area is a single sentence on one page naming three counties; no per-city pages exist, so there is no local SEO surface for Dallas, Wilkes-Barre, Scranton, Kingston, Tunkhannock, or Clarks Summit.",
+    "Real reviews are buried six pages deep behind pagination and interleaved with spam submissions (random character strings) from an unmoderated review form.",
+    "Rating discrepancy is visible to visitors: the on-site widget shows 4.6 from 26 reviews (dragged down by spam), while the Google listing is 5.0 from 17.",
+    "Contact conversion relies on an arithmetic captcha ('7 + 12 =') on every form.",
+    "The Fujitsu Elite Contractor award — the single strongest differentiator — sits mid-page below a decorative icon row rather than in the hero.",
+    "No structured data, no per-service metadata, and the same generic form repeats three times per page.",
+    "Copy contradicts itself on tenure: the homepage and footer say 'over 25 years', the About page says 'over 35 years', and the Plumbing page says 'over 30 years'."
+  ],
+  "load_notes": "Images are proxied through Optimole; the page renders but carries four separate form embeds and a duplicated brand-logo carousel.",
+  "verdict": "Real business substance is present but buried, and the fake homepage testimonials actively undercut trust. The rebuild's job is to promote the real credentials and real reviews, add per-service and per-city pages, and fix contrast."
+}

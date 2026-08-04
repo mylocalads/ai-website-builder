@@ -1,0 +1,38 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Miami, FL",
+    "headline": "South Florida Civil Construction, Done Right the First Time",
+    "subheadline": "Commercial concrete, industrial concrete, and on-demand volumetric concrete delivery across South and Central Florida — from a family-owned team with 10+ years on the ground.",
+    "cta_text": "Get In Touch Now!",
+    "cta_href": "/contact",
+    "photo": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/6a62b4a7cf9f8312dc70ddb3.jpeg"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "What areas of Florida do you serve?",
+      "a": "We're based in Miami and cover all of South Florida — up to about three hours out — including Miami-Dade, Broward, Palm Beach, and reaching Fort Myers and Naples on the west coast. If you're inside that footprint, give us a call."
+    },
+    {
+      "q": "What types of clients do you work with?",
+      "a": "Municipalities, commercial developers, private developers, contractors, businesses, and homeowners. We've done public infrastructure like Miami-Dade County bus stops and site work for national brands like Starbucks and McDonald's — plus a lot of work that never makes the sign out front."
+    },
+    {
+      "q": "What is volumetric concrete, and why does it matter?",
+      "a": "Volumetric trucks mix concrete on-site instead of hauling a pre-mixed batch from the plant. That means fresh concrete every time, exact PSI, no minimum-load waste, and no rush to place it before it sets. We run two of these trucks and use them on our own jobs plus supply outside contractors and homeowners."
+    },
+    {
+      "q": "How do I get a quote?",
+      "a": "Call Chris at (305) 613-1490 or Thomas at (305) 498-2327, or email Chris@headleycg.com or Thomas@headleycg.com. Send us the scope, address, and any drawings you have, and we'll get you a real number quickly — not a runaround."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes — fully licensed and insured for civil construction and concrete work in Florida. We're happy to send our credentials with any bid package."
+    },
+    {
+      "q": "Is any project too small — or too large?",
+      "a": "No. We do everything from a single volumetric-truck footing pour for a homeowner to full site development for corporate campuses, apartments, and county infrastructure. Same crew, same standards."
+    }
+  ]
+}

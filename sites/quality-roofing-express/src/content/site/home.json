@@ -1,0 +1,259 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Scranton, PA",
+    "headline": "The roof goes on. The mess doesn't stay.",
+    "subheadline": "Tear-off, replacement, repair and flat-roof work across Lackawanna and Luzerne counties — asphalt, slate, metal and rubber. Most roofs go on in a day, and the yard looks like we were never there. 4.6 stars across 74 Google reviews.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/hero-crew-roof.jpg",
+    "video_link_text": "See what a one-day tear-off looks like",
+    "video_link_href": "/our-work",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 4.6,
+        "label": "4.6 out of 5",
+        "sublabel": "74 Google reviews"
+      }
+    ],
+    "quote_card": {
+      "quote": "Roof was done so quickly, the price was great and clean up was unbelievable — you would not have even known they were here.",
+      "author": "Barb",
+      "cta_text": "Price My Roof",
+      "cta_href": "/book",
+      "rating": 4.6,
+      "review_count": 74
+    }
+  },
+  "promise_bar": [
+    "Free written estimate",
+    "Most roofs done in a day",
+    "Magnet sweep before we leave",
+    "Open 7 days — winter included"
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "Winter weather doesn't stop us",
+    "body": "In northeastern Pennsylvania the roof problems arrive in January. Ice builds at the eaves, meltwater backs up under the shingles, and the stain shows up on a bedroom ceiling three days later — usually right when half the contractors in the valley have shut down until spring. We work through it. Call us in February and you will get a person, an appointment and a straight answer about whether it is an ice dam, a flashing failure, or a roof that has simply run out of years.",
+    "cta_text": "Book a free estimate",
+    "cta_href": "/book",
+    "image": "/img/winter-house-snow.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "What actually happens on your roof",
+    "intro": "Roofing is not complicated, but it is easy to do badly in ways a homeowner never sees. Here is what we do, and why each part matters once the old shingles are off.",
+    "blocks": [
+      {
+        "title": "We strip it to the deck and look",
+        "body": "Layering new shingles over old hides everything worth finding. We tear off to the bare decking, then walk it. Soft boards, rot around the chimney, split rafters — that is the moment those get found, not two winters later when the ceiling stains.",
+        "icon": "document",
+        "image": "/img/rotted-decking.jpg"
+      },
+      {
+        "title": "Bad decking gets replaced, not covered",
+        "body": "Fasteners only hold as well as the wood they go into. Anything soft or delaminated comes out and new sheathing goes down before a single course of underlayment. It is the least visible part of the job and the part a cheap quote quietly skips.",
+        "icon": "shield",
+        "image": "/img/new-decking.jpg"
+      },
+      {
+        "title": "Water barrier first, shingles second",
+        "body": "Ice-and-water membrane at the eaves and in the valleys, then underlayment across the field, then flashing worked properly into the chimney and sidewalls. In a climate that freezes and thaws all winter, this layer is what actually keeps the water out — the shingles are the part you can see.",
+        "icon": "umbrella",
+        "image": "/img/underlayment-ridge.jpg"
+      },
+      {
+        "title": "Then we clean up like it is our own house",
+        "body": "Debris into the dumpster as it comes off, a rolling magnet across the lawn, the driveway and the flowerbeds, and a walk of the property before the truck moves. Nails in the grass is the single most common complaint homeowners have about roofers. Our reviews say it is not one of ours.",
+        "icon": "broom",
+        "image": "/img/crew-ladder-rowhome-2.jpg"
+      }
+    ],
+    "steps_title": "What that looks like on your calendar",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Free estimate, in writing",
+        "body": "We come out, get on the roof, and give you a written number — not a range shouted from the driveway."
+      },
+      {
+        "title": "We schedule around the weather",
+        "body": "Materials get delivered, and we give you a date. NEPA weather moves; if it moves the date, you hear it from us first."
+      },
+      {
+        "title": "Tear-off and install, usually one day",
+        "body": "A typical Scranton house goes from old roof to new roof between morning and evening."
+      },
+      {
+        "title": "Cleanup and walkthrough",
+        "body": "Magnet pass, property walk, and we do not leave until you have looked at it."
+      }
+    ],
+    "guarantee": {
+      "title": "If it is our work, we come back",
+      "body": "Every roofing job hits something unexpected — that is the nature of pulling the lid off a house. What separates contractors is what happens after. If a leak traces back to our workmanship, we come back and we fix it. One customer has now had us out for a third and fourth roof over five years. That does not happen if you do not stand behind the first one.",
+      "cta_text": "See our work",
+      "cta_href": "/our-work"
+    }
+  },
+  "process_steps": {
+    "headline": "Four steps, no mystery",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Call or text (570) 614-3914",
+        "body": "You get a person. Text works too — a lot of homeowners prefer it."
+      },
+      {
+        "label": "Step Two",
+        "title": "We get on the roof",
+        "body": "A real inspection, not a look from the ground, and photos of anything we find."
+      },
+      {
+        "label": "Step Three",
+        "title": "A written estimate, fast",
+        "body": "You should not have to chase anyone for a number. You will not have to chase us."
+      },
+      {
+        "label": "Step Four",
+        "title": "Install, clean up, walk it with you",
+        "body": "Most roofs go on in a day, and the property gets swept before we pull out."
+      }
+    ],
+    "cta_text": "Start with a free estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Quality Roofing Express",
+    "headline": "Independent, family owned, and from around here",
+    "body": "We are an independent, family owned business that came out of a small local town, and we work in the communities we live in. We take pride in treating each home as if it were our own — as homeowners ourselves, we know what weather damage costs and what it feels like to worry about it. The memories made in a home are a treasure, and protecting them is the part of this job that matters.",
+    "checklist": [
+      "Family owned and owner-run — Osman is on the job, not just the paperwork",
+      "614 N Rebecca Ave, Scranton — a real address in West Scranton, not a call center",
+      "Open seven days: 7am–7pm weekdays, 8am–7pm Saturday, Sunday mornings",
+      "4.6 stars across 74 Google reviews, with repeat customers on their third and fourth roof",
+      "Residential and commercial — asphalt, slate, metal, EPDM, TPO, torch-down and peel-and-stick"
+    ],
+    "photo": "/img/estimate-clipboard.jpg",
+    "photo_alt": "A written roofing estimate on a clipboard beside a tape measure and hammer",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Roofing in Lackawanna County",
+    "headline": "What a Scranton roof is actually up against",
+    "paragraphs": [
+      "Scranton housing stock is old and it is dense. Double blocks and row homes sharing a wall, steep slate roofs from the coal era, back porches and additions running flat against the main pitch, and chimneys that have been reflashed by three different people over sixty years. It is not a market where one roof system fits every house — which is why we run asphalt, slate, metal and four different flat-roof membranes rather than selling everyone the same package.",
+      "The weather does the rest. Northeastern Pennsylvania freezes and thaws all winter long, and that cycle is what actually kills roofs here. Snow melts off the warm middle of a roof, refreezes at the cold eave, and the resulting ice dam pushes water backwards under the shingles where no shingle was ever designed to stop it. That is why we put ice-and-water membrane at the eaves and in every valley as a matter of course, and why we do not shut the phones off in January the way a lot of contractors in the valley do.",
+      "The other thing worth knowing: Pennsylvania does not issue a roofing license. Registration with the Attorney General's office confirms a contractor carries insurance — it certifies nothing about the quality of the work, and the state's lookup database has spent long stretches offline. So homeowners here are left doing what homeowners have always done, which is asking a neighbor. We would rather be judged on that than on a badge. Seventy-four Google reviews, an average of 4.6, and customers who have had us back for a third and fourth roof is the record we would point at."
+    ],
+    "checklist": [
+      "Free estimate, delivered in writing after we get on the roof",
+      "Tear-off to the deck — bad sheathing replaced, not covered over",
+      "Ice-and-water membrane at the eaves and valleys as standard",
+      "Flat and low-slope roofs: EPDM, TPO, torch-down and peel-and-stick",
+      "Magnet sweep and a property walk before the truck leaves"
+    ],
+    "image": "/img/rooftop-street-view.jpg",
+    "image_alt": "View from a roof in progress out across a Scranton street of two-family homes",
+    "image_position": "right",
+    "review": {
+      "name": "Tom Belinsky",
+      "text": "I have personally had Osman and his team do three roofs for me and they are currently working on a roof for my son. From the moment I met Osman five years ago to the present, he has been the consummate professional. The quality of work and the attention to detail are second to none.",
+      "rating": 5,
+      "source": "Google"
+    },
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Barb",
+      "text": "I highly recommend Quality Roofing Express for anyone in need of a new roof. Osman and his crew did an excellent job. They all work together so well. Roof was done so quickly, the price was great and clean up was unbelievable, you would not have even known they were here. Thank you for a great job.",
+      "rating": 5
+    },
+    {
+      "name": "Ali Wilson",
+      "text": "The crew was professional, prompt, clean and skilled. We are so happy we went with Quality Roofing Express and will be calling for other jobs in the future! Thank you for putting a new roof over our heads.",
+      "rating": 5
+    },
+    {
+      "name": "Tom Belinsky",
+      "text": "I have personally had Osman and his team do three roofs for me and they are currently working on a roof for my son. From the moment I met Osman five years ago to the present, he has been the consummate professional. The quality of work and the attention to detail are second to none.",
+      "rating": 5
+    },
+    {
+      "name": "Carolene",
+      "text": "They were quick to get me an estimate, and kept in contact with me throughout the process. On time with great quality work and customer service. Definitely recommend.",
+      "rating": 5
+    },
+    {
+      "name": "jeffrey cerato",
+      "text": "My new roof looks great. Very fair price and excellent workmanship. Friendly staff. My new roof was on in one day. Highly recommend.",
+      "rating": 5
+    },
+    {
+      "name": "Lawrence Rosetti",
+      "text": "The work on my roof was professionally done in a timely fashion. The workers were great and cleaned up nicely after completing the job.",
+      "rating": 5
+    },
+    {
+      "name": "Tayla Clements",
+      "text": "Fast response times, excellent work, and great job cleaning up afterwards. Very satisfied customer.",
+      "rating": 5
+    },
+    {
+      "name": "Lisa Conley",
+      "text": "Such a great company! Very professional. We couldn't be happier. Just had them do another part of our roof and once again they were awesome.",
+      "rating": 5
+    },
+    {
+      "name": "Michael Stout",
+      "text": "Replaced existing roof. Very pleasant to work with and did good work. Update — roof still holding up well.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "What does an estimate cost, and how fast can I get one?",
+      "a": "Nothing, and quickly. We come out, get on the roof rather than eyeballing it from the driveway, and give you the number in writing. Customers specifically mention how fast the estimate came back — not having to chase a contractor for a price is half the reason people call us in the first place."
+    },
+    {
+      "q": "How long does a roof replacement take?",
+      "a": "Most residential roofs in this area are a one-day job once the material is on site. Reviewers say it themselves: \"My new roof was on in one day.\" Bigger homes, steep slate work and roofs that turn up rotted decking can run into a second day, and we tell you that up front rather than at the end."
+    },
+    {
+      "q": "Do you work in the winter?",
+      "a": "Yes. Northeastern Pennsylvania does most of its roof damage between December and March, so shutting down for the season never made sense to us. Ice dams, wind-lifted shingles and flashing leaks all get handled through the winter, and we are reachable seven days a week."
+    },
+    {
+      "q": "My ceiling is stained but I cannot see anything wrong from the ground. What now?",
+      "a": "Water travels. The stain is almost never directly under the entry point, which is why guessing at a patch usually fails. We trace it properly — chimney and sidewall flashing, valleys, vent boots and ice-dam backup at the eaves are the usual suspects on Scranton houses, in roughly that order. You get photos of whatever we find."
+    },
+    {
+      "q": "Do I need a full replacement, or can this be repaired?",
+      "a": "Plenty of roofs we look at have years left and need a flashing detail fixed, not a tear-off. We will tell you when that is the case. A roof at the end of its life shows it — granules gone, shingles curling and brittle, multiple leaks in different planes — and at that point repairs stop being economical. Either way you get the reasoning, with photos."
+    },
+    {
+      "q": "My roof is flat. Do you do those?",
+      "a": "Yes, residential and commercial. Scranton has a lot of flat and low-slope roofs — back additions, porch roofs, small commercial buildings — and we run all four common membranes: EPDM rubber, TPO, torch-down modified bitumen and peel-and-stick. Which one is right depends on the deck, the drainage and how much foot traffic the roof gets."
+    },
+    {
+      "q": "Can you match or repair a slate roof?",
+      "a": "We do work on slate, including full slate installation, and we also install slate-like architectural shingles for homeowners who want the look without the cost or the weight. Older Scranton homes with original slate are worth an honest conversation about which way to go — the two paths are very different in price and lifespan."
+    },
+    {
+      "q": "What about the deposit and payment schedule?",
+      "a": "Ask us directly and we will put it in writing with the estimate before anything is signed. Homeowners are right to be cautious here — stories about large deposits and disappearing contractors are common, and nothing about a payment schedule should be verbal."
+    },
+    {
+      "q": "How bad is the mess?",
+      "a": "Roofing is messy while it is happening; that part is unavoidable. What is avoidable is what gets left behind. Debris goes into the dumpster as it comes off, a rolling magnet goes over the lawn, driveway and beds, and someone walks the property before we pull out. Three separate Google reviewers brought up our cleanup without being asked."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "We are based at 614 N Rebecca Ave in West Scranton and work across Lackawanna and Luzerne counties — Scranton, Dunmore, Dickson City, Old Forge, Clarks Summit and Wilkes-Barre, plus the surrounding boroughs. If you are not sure whether you are in range, call and ask."
+    }
+  ]
+}

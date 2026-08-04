@@ -1,0 +1,152 @@
+{
+  "kind": "config",
+  "business_name": "Golden Business Machines",
+  "legal_name": "Golden Business Machines, Inc.",
+  "tagline": "The only office technology company you will ever need",
+  "phone": "+18006926217",
+  "phone_display": "1-800-692-6217",
+  "address": {
+    "street": "165 Church Street",
+    "city": "Kingston",
+    "state": "PA",
+    "postal": "18704",
+    "country": "US"
+  },
+  "marketing_city": "Wilkes-Barre",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.2712444,
+    "lng": -75.8791005
+  },
+  "hours": {
+    "monday": "8:00 AM – 4:30 PM",
+    "tuesday": "8:00 AM – 4:30 PM",
+    "wednesday": "8:00 AM – 4:30 PM",
+    "thursday": "8:00 AM – 4:30 PM",
+    "friday": "8:00 AM – 4:30 PM"
+  },
+  "site_url": "https://golden-business-machines.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 57,
+  "social": {
+    "facebook": "https://www.facebook.com/pages/Golden-Business-Machines-Inc/126424977465619",
+    "linkedin": "https://www.linkedin.com/company/golden-business-machines",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Golden%20Business%20Machines%20Inc&query_place_id=ChIJl3nOUBYaxYkRmFzHwYIKN7Q"
+  },
+  "logo_url": "/logo-gbm.png",
+  "default_hero_photo": "/img/hero-office-mfp.jpg",
+  "about_photo": "/img/office-team.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    {
+      "name": "Canon",
+      "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/06/canon.png"
+    },
+    {
+      "name": "Microsoft 365",
+      "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/11/Microsoft_365_logo.png"
+    },
+    {
+      "name": "N-able",
+      "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/N-Able.png"
+    },
+    {
+      "name": "uniFLOW",
+      "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/Canon_uniFLOW_300.png"
+    },
+    {
+      "name": "PaperCut",
+      "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/PaperCut-Reseller-Logo-RGB.png"
+    },
+    {
+      "name": "Barracuda",
+      "logo_url": "https://goldenbusiness.com/wp-content/uploads/2021/10/Barracuda.jpeg"
+    }
+  ],
+  "why_choose_us": [
+    {
+      "title": "On site in four hours",
+      "description": "Not a callback window, not a ticket number. When a device goes down, a GBM technician is at your office in four hours or less — because we dispatch from Kingston, Edwardsville, Moosic, Hazleton and Williamsport, not from another state."
+    },
+    {
+      "title": "Locally owned since 1969",
+      "description": "Fifty-seven years in the same valley, and the decisions about your account still get made here. Over 45 sales and service professionals, none of them routing you to a head office three time zones away."
+    },
+    {
+      "title": "One vendor for print and IT",
+      "description": "The copier, the network it sits on, the security around it and the documents that come off it are all our responsibility. Nobody gets to point at the other guy."
+    },
+    {
+      "title": "You can see what a page costs",
+      "description": "Managed print gives you real tracking of volume and cost per page across every device on the network, so print spend becomes a number you manage instead of a bill you absorb."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Multifunction copier/printer fleets",
+      "photo": "/img/copiers-mfp.jpg",
+      "alt": "A network-ready multifunction copier in a working office",
+      "description": "Canon black & white and color MFPs sized for everything from a three-person office to an enterprise floor."
+    },
+    {
+      "title": "Wide format printing",
+      "photo": "/img/wide-format.jpg",
+      "alt": "A wide format printer producing a large-scale print",
+      "description": "Large format solutions from 17 to 60 inches for architecture, engineering, construction and graphic arts."
+    },
+    {
+      "title": "In-house production printing",
+      "photo": "/img/digital-press.jpg",
+      "alt": "A wide format printer running a large-scale colour job",
+      "description": "Bring high-volume and large-format work in house instead of sending it to a print shop."
+    },
+    {
+      "title": "Network infrastructure",
+      "photo": "/img/managed-it.jpg",
+      "alt": "A technician working on structured network cabling in a communications closet",
+      "description": "Workstations, servers, switching and structured cabling, installed and supported by our own staff."
+    },
+    {
+      "title": "Monitoring and security",
+      "photo": "/img/network-rack.jpg",
+      "alt": "A technician working at a server rack",
+      "description": "Real-time network and device monitoring, patching, firewalls and backup across Northeastern PA."
+    },
+    {
+      "title": "Document management",
+      "photo": "/img/document-management.jpg",
+      "alt": "Printed documents being reviewed on a desk",
+      "description": "Capture, storage, full-text retrieval and workflow automation with Laserfiche enterprise content management."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Office technology",
+    "heading_rest": "and the IT behind it",
+    "subtitle": "Canon copiers and printers, wide format and production print, managed IT, network security and document management — for businesses across Northeastern and Central Pennsylvania."
+  }
+}

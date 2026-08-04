@@ -1,0 +1,103 @@
+{
+  "kind": "config",
+  "business_name": "Diamond Ridge Industrial Services",
+  "tagline": "Industry-Leading Concrete Solutions & Preventative Maintenance",
+  "phone": "+15708629399",
+  "phone_display": "(570) 862-9399",
+  "email": "info@diamondridgeindservices.com",
+  "address": {
+    "street": "PO Box 138",
+    "city": "Archbald",
+    "state": "PA",
+    "postal": "18403",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.4042555,
+    "lng": -75.6622274
+  },
+  "hours": {
+    "monday": "8am-5pm",
+    "tuesday": "8am-5pm",
+    "wednesday": "8am-5pm",
+    "thursday": "8am-5pm",
+    "friday": "8am-5pm"
+  },
+  "site_url": "https://diamond-ridge-industrial-services.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/diamondridgeIndServices/",
+    "instagram": "https://www.instagram.com/diamondridgeindservices/"
+  },
+  "logo_url": "/logo-diamond-ridge.png",
+  "default_hero_photo": "/img/coatings-after.jpg",
+  "about_photo": "/img/about-crew.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    { "name": "McLane", "logo_url": "/img/partner-mclane.png" },
+    { "name": "Amcor", "logo_url": "/img/partner-amcor.jpg" },
+    { "name": "Berry Global", "logo_url": "/img/partner-berry.jpg" },
+    { "name": "Lowe's", "logo_url": "/img/partner-lowes.png" },
+    { "name": "Diamond H", "logo_url": "/img/partner-diamond-h.png" }
+  ],
+  "why_choose_us": [
+    {
+      "title": "Back on the floor in an hour",
+      "description": "Fibrecrete-G cures in an hour or less. The aisle you shut down in the morning is carrying forklifts again before lunch."
+    },
+    {
+      "title": "It flexes instead of cracking",
+      "description": "Rigid cementitious patches fail the moment the slab moves. Our system flexes with expansion, contraction and heavy wheel loads, so the repair does not become next year's repair."
+    },
+    {
+      "title": "We install in the cold",
+      "description": "Low-temperature cure means winter is not a reason to defer the work, and freezer and cold-storage floors are a specialism rather than an exception."
+    },
+    {
+      "title": "Women-owned, Mid-Atlantic based",
+      "description": "Run out of Northeastern Pennsylvania and working across six states, with a women-owned structure that qualifies for national-account diversity programs."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    { "photo": "/img/joint-before.jpg", "alt": "Excavator breaking out failed concrete in a facility yard", "title": "Full-depth removal", "description": "Section loss taken back to sound concrete before placement." },
+    { "photo": "/img/joint-after.jpg", "alt": "Crew placing and screeding new concrete from a mixer truck", "title": "Placement and finish", "description": "The same area rebuilt and finished flush with the surrounding slab." },
+    { "photo": "/img/marking-hero.jpg", "alt": "Warehouse aisle with worn white floor markings before restriping", "title": "Before restriping", "description": "Worn markings in a live distribution aisle." },
+    { "photo": "/img/marking-after.jpg", "alt": "The same warehouse aisle with fresh yellow line marking", "title": "After restriping", "description": "Traffic lanes and work zones reinstated in high-visibility yellow." },
+    { "photo": "/img/coatings-hero.jpg", "alt": "Technician applying a resin floor coating in a manufacturing bay", "title": "Coating application", "description": "Resin system going down over a prepared substrate." },
+    { "photo": "/img/coatings-after.jpg", "alt": "Finished seamless industrial floor coating with yellow guard rails", "title": "Finished coating", "description": "Seamless, cleanable, and ready for forklift traffic." },
+    { "photo": "/img/gallery-slab.jpg", "alt": "Blue coated walkway ramp inside a distribution center", "title": "Coated walkway", "description": "Colour-coded pedestrian route with a slip-resistant finish." },
+    { "photo": "/img/gallery-dock.jpg", "alt": "Technician repairing a concrete dock edge at a loading bay", "title": "Dock edge repair", "description": "Impact-damaged dock edges rebuilt without pulling the bay out of rotation." }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Concrete Repair",
+    "heading_rest": "& Floor Protection",
+    "subtitle": "Preventative maintenance and repair for warehouses, manufacturing plants, cold storage and distribution centers across the Mid-Atlantic."
+  }
+}

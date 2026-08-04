@@ -1,0 +1,48 @@
+{
+  "slug": "eastern-residential-solutions",
+  "category": "Roofing contractor",
+  "location": "Scranton / NEPA, PA + Baltimore, MD",
+  "threads_analyzed": 28,
+  "method_note": "Reddit blocked direct thread fetch (WebFetch and Firecrawl both refused reddit.com). Findings are synthesized from Firecrawl search excerpts of 28 real Reddit threads across r/Scranton, r/baltimore, r/Roofing, r/HomeImprovement, r/homeowners, r/RoofingSales and r/Insurance. Comment-level depth is therefore excerpt-level, not full-thread.",
+  "subreddits": ["r/Scranton", "r/baltimore", "r/Roofing", "r/HomeImprovement", "r/homeowners", "r/RoofingSales", "r/Insurance"],
+  "pain_points": [
+    "Roofers do not call back. Homeowners repeatedly describe contacting 6-10 roofers and getting 2-3 to respond at all. One r/RoofingSales thread has customers saying they had to reach out to 10+ roofers just to get 3 to answer, return a call, or show up. In r/baltimore, a homeowner reported a company no-showed the estimate and then acted like the homeowner was the problem.",
+    "Storm-chaser and door-knock insurance scams. After hail or wind events, out-of-town crews knock doors promising a 'free roof', pressure a same-day signature, ask the homeowner to endorse the first insurance check, and disappear. Threads across r/homeowners and r/Roofing repeatedly warn that contractors who invent or exaggerate damage to work the claim are borderline fraud and leave the homeowner exposed.",
+    "No written quote and no written warranty. Homeowners describe roofers refusing to give a written estimate until they have seen the insurance scope, and roofers who say they 'don't do warranties' but will 'come out whenever you need'. Multiple threads flag lack of a documented workmanship warranty as the single biggest red flag.",
+    "Ghosting and schedule chaos mid-project. Threads describe roofers who vanish for months and then call saying 'you're scheduled tomorrow, 30% fee if you cancel', and roofers who leave a section of roof undone and stop returning calls once mostly paid.",
+    "Filthy jobsite cleanup. A recurring, very specific complaint: nails left across the yard and driveway, shingle debris left behind, one homeowner told to just mow over the construction debris. Homeowners with pets and kids treat cleanup as a real safety issue, not a nicety.",
+    "Uncertainty about who actually shows up. Homeowners ask whether the company uses its own W-2 crews or subcontracts the work out, and worry that the salesperson they vetted has nothing to do with the crew on the roof."
+  ],
+  "what_customers_value": [
+    "Actually answering the phone and showing up when you said you would. In r/Scranton the top-praised roofer was described as professional, not upselling, and explaining everything upfront — responsiveness beats price in the recommendation threads.",
+    "A real, transferable manufacturer warranty backed by a certified installer — and a workmanship warranty in writing. Homeowners specifically seek out manufacturer-certified installers (Owens Corning Preferred / Platinum) because a bait-and-switch on the installer voids the long warranty.",
+    "An honest insurance advocate rather than an insurance opportunist. Homeowners want a contractor who will document real damage and push the adjuster for the correct scope, while making clear the homeowner still pays the deductible — the distinction between 'helps with the claim' and 'games the claim' is the whole trust question.",
+    "Detailed, itemized, written estimates that make the material, scope, and price legible before anything is signed.",
+    "A crew that leaves the property cleaner than they found it — magnet sweep for nails, debris hauled, yard intact.",
+    "Local, established, and findable. Threads consistently favor companies with a physical local address and years of nearby work over out-of-area crews that appeared after a storm."
+  ],
+  "business_differentiators": [
+    "5.0 star Google rating across 31 reviews — an unusually clean record for a roofing contractor, and it directly answers the 'who can I actually trust' question that starts most of these threads.",
+    "Owens Corning Preferred Contractor. The site states this earns the longest warranty available, which is precisely the manufacturer-certification credential homeowners in r/Roofing tell each other to demand.",
+    "A division of Eastern Roofing Systems Inc., an established commercial roofing company on the east coast, operating from a fixed address at 1 Keystone Pl, Jessup, PA with PA HIC# 017000 and MD HIC# 161389 — the opposite of the out-of-town storm chaser.",
+    "Their own customer review explicitly describes the honest-insurance-advocate posture: 'Their project managers have no problem helping you navigate through insurance claims... They do not have to do this as they are getting paid the same amount regardless of insurance payment.' That is the exact reassurance the insurance-scam threads are asking for.",
+    "Cleanup shows up unprompted in four separate customer reviews ('super clean and my yard was left very neat', 'left the job site as clean or cleaner than they found it', 'took all the debris away', 'excellent job on cleaning up') — real proof against the loudest recurring complaint.",
+    "Responsiveness is named directly by a customer: 'They are the only company who called back when they said they would and started the work when they said they would.' That review answers the #1 pain point verbatim.",
+    "Speed on the roof: documented jobs completed in 1-2 days (24 sq in one day, 28 sq in one day, 53 sq in two days, 31 sq storm replacement).",
+    "One-of-a-kind in-home estimate with options for every budget and financing available — addresses the no-written-quote and price-opacity complaints."
+  ],
+  "gaps": [
+    "The site does not state an insured or bonded status anywhere. Licensing is displayed (PA HIC# 017000, MD HIC# 161389) but 'insured' could not be verified, so it is flagged false in intake and must not be claimed on the generated site until the operator confirms.",
+    "No stated years in business for the residential division and no stated workmanship warranty term. The reviews reference a comprehensive warranty but the term length is never published — a concrete number would be the single highest-value addition to the site.",
+    "No public statement about whether crews are in-house or subcontracted."
+  ],
+  "copy_angles": [
+    "Lead the hero with the callback promise, not a generic 'quality roofing' line. The #1 documented frustration in both metros is roofers who never call back. Something in the register of 'The roofer who calls back — and shows up when we said we would' is directly supported by a real customer review.",
+    "Make the Owens Corning Preferred Contractor badge a first-screen trust element, paired with the longest-warranty-available claim. This is the credential homeowners are told to look for and it is verifiable.",
+    "Run an explicit storm-damage / insurance-claim section that draws the honest-advocate line out loud: we document the real damage, we work directly with your adjuster, we get paid the same regardless of what your insurer pays. Quote the Lori T. review verbatim — it makes the argument better than marketing copy can.",
+    "Feature cleanup as a named promise, not a throwaway. 'We leave your yard cleaner than we found it' backed by three real review quotes converts the loudest complaint into the clearest differentiator.",
+    "Put the 5.0 / 31 reviews figure in the hero trust badge and repeat the speed proof (roofs completed in 1-2 days) in the process section — concrete numbers beat adjectives in a category where every competitor claims quality.",
+    "Structure the estimate section around the in-home estimate + written options + financing, answering the 'nobody will give me a real written quote' complaint head on.",
+    "Anchor local credibility with real project locations from their own portfolio — Scranton, Clarks Summit, Dickson City, Carbondale, Clarks Green, Monroe Township — rather than generic 'serving NEPA' language. Named towns with named jobs defeat the storm-chaser suspicion."
+  ]
+}

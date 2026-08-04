@@ -1,0 +1,75 @@
+{
+  "sources": {
+    "mode": "library",
+    "library": "roofing",
+    "template": "owl",
+    "urls": [],
+    "urls_not_scraped": [
+      "https://owlroofing.com/",
+      "https://firefly-cd.vercel.app/"
+    ],
+    "why_not_scraped": "The `owl` template lives in this repo at astro-templates/owl/ and is the structural source of truth — reference-libraries/roofing.json says as much in its note_url_fragility field. Scraping owlroofing.com would only surface Owl's own brand palette and program names, which the library explicitly forbids reusing. Structure comes from the template; palette and typography come from the client's own brand tokens in intake-scraped.json. Firecrawl cost avoided: ~$0.04."
+  },
+  "palette": {
+    "bg": "#f4f6f9",
+    "surface": "#ffffff",
+    "text": "#14181f",
+    "muted": "#5a6472",
+    "primary": "#0b2233",
+    "on_primary": "#ffffff",
+    "accent": "#ff8604",
+    "on_accent": "#14181f",
+    "accent_ink": "#a8560a",
+    "focus": "#0977b8"
+  },
+  "palette_rationale": {
+    "accent": "#ff8604 verbatim from the client's site — it is the primary CTA color on every page of royalroofnepa.com and the dominant color in the logo.",
+    "on_accent": "#ff8604 measures 2.42:1 against white, so white button labels fail even the 3:1 non-text threshold. Near-black labels on the orange measure 7.34:1. The client's current site uses white-on-orange and fails; this fixes it without changing the brand color.",
+    "accent_ink": "#a8560a is the accent as FOREGROUND TEXT on light surfaces (eyebrows, ticks, stars, pins). 5.25:1 on surface, 4.85:1 on bg. Dark panels keep the full #ff8604, which clears 6.71:1 on --color-primary.",
+    "primary": "#0b2233 is a deep navy derived from the client's secondary blue #0977b8. It gives the dark bands (Testimonials, ProcessSteps, WhyChooseUs, hero scrim) a brand-anchored ground instead of a generic charcoal.",
+    "focus": "#0977b8 — the client's secondary blue gets one clear job as the focus ring, rather than competing with orange as a second CTA color the way it does on their current site.",
+    "dropped": "#cc3366 — a stray magenta in the client's CSS with no visible role. Not carried forward."
+  },
+  "contrast_audit": {
+    "text_on_bg": "16.4:1",
+    "muted_on_bg": "5.5:1",
+    "on_accent_on_accent": "7.3:1",
+    "accent_ink_on_surface": "5.3:1",
+    "accent_ink_on_bg": "4.9:1",
+    "accent_on_primary": "6.7:1",
+    "on_primary_on_primary": "16.3:1",
+    "verdict": "All pairs clear WCAG AA; most clear AAA."
+  },
+  "typography": {
+    "display": "Poppins",
+    "body": "Inter",
+    "rationale": "Poppins is the client's detected brand face and carries the display voice. Inter handles body text, which the owl template sets at length across SEO body, service long-descriptions and FAQs — Poppins' geometric forms and tall x-height get tiring past a paragraph."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "section_styling_hints": [
+    "Fixed owl section order — hero (full-bleed photo + floating quote card) → promise bar → services grid → testimonials (dark band) → promise band → signature system → process steps (dark band) → about + checklist → SEO body → FAQ → blog row → closing CTA.",
+    "Dark bands run on #0b2233 with #ff8604 accents; light sections run on #f4f6f9/#ffffff with #a8560a accent text.",
+    "Real project photography from the client's own library — no stock.",
+    "One outline icon per section at most, semantic only."
+  ],
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "stacking three competing H1s in the first viewport (the client's current home page does this)",
+    "using heading levels as font sizes — the client's current page runs h1 → h5 → h6 → h2 in reading order",
+    "white text on the #ff8604 orange (2.4:1 — the client's current buttons fail AA)",
+    "the stray magenta #cc3366 from the client's current CSS",
+    "duplicating the estimate form multiple times per page",
+    "a 50-state dropdown on a form for a single-metro contractor",
+    "third-party chat widgets other than the operator's GHL snippet",
+    "a second phone number in a sticky mobile bar competing with the primary tracking number"
+  ]
+}

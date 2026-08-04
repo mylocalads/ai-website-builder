@@ -1,0 +1,16 @@
+{
+  "name": "Pinnacle Roofing & Sheet Metal, Inc.",
+  "email": "pinnroof@aol.com",
+  "phone": "(570) 735-7751",
+  "address": "100 Hay St, Nanticoke, PA 18634",
+  "website": "https://www.pinnacleroofingpa.com/",
+  "rating": 5,
+  "reviewCount": 3,
+  "category": "Roofing contractor",
+  "hours": "Mon-Fri 6am-5pm, Sat-Sun Closed",
+  "slug": "pinnacle-roofing-sheet-metal",
+  "geo": { "lat": 41.2005496, "lng": -76.0115444 },
+  "placeId": "ChIJSYsJpegNxYkRLbkogpFFRu8",
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Pinnacle%20Roofing%20%26%20Sheet%20Metal%2C%20Inc.&query_place_id=ChIJSYsJpegNxYkRLbkogpFFRu8",
+  "reviews": []
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Morris Kitchens & Donnelly Designs LLC",
+  "email": "morriskitchensllc@gmail.com",
+  "phone": "(570) 825-6956",
+  "address": "107 West End Rd, Hanover, PA 18706",
+  "website": "http://www.morriskitchensllc.com/",
+  "rating": 4.7,
+  "reviewCount": 31,
+  "category": "Kitchen remodeler",
+  "hours": "Mon-Fri 9am-5pm, Sat by appointment",
+  "slug": "morris-kitchens-donnelly-designs",
+  "placeId": "ChIJOwQiwEEQxYkRqQkBeb7yvPo",
+  "location": { "lat": 41.2344363, "lng": -75.9243557 },
+  "reviews": []
+}

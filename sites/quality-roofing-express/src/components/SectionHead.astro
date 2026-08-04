@@ -1,0 +1,22 @@
+---
+// `as` exists because three index routes — /blog, /service-area and /contact —
+// used SectionHead as their ONLY page heading and it hardcoded <h2>, so those
+// pages shipped with no <h1> at all. Section usage keeps the h2 default; a page
+// whose primary heading this IS passes as="h1". Styling is identical either way,
+// so this changes document outline only, never appearance.
+export interface Props { eyebrow?: string; heading: string; subtitle?: string; align?: 'center' | 'left'; as?: 'h1' | 'h2'; }
+const { eyebrow, heading, subtitle, align = 'center', as: Heading = 'h2' } = Astro.props;
+---
+<div class={`section-head ${align}`}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Heading>{heading}</Heading>
+  {subtitle && <p class="subtitle">{subtitle}</p>}
+</div>
+<style>
+  .section-head { max-width: 780px; margin: 0 auto var(--space-3); }
+  .section-head.center { text-align: center; }
+  .section-head.left { text-align: left; margin: 0 0 var(--space-3); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
+  h1, h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.01em; }
+  .subtitle { color: var(--color-muted); font-size: 1.05rem; margin: 0; }
+</style>

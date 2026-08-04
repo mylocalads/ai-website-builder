@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-bg: #f4f6f8;
+  --color-surface: #ffffff;
+  --color-text: #10161c;
+  --color-muted: #5a6672;
+  --color-primary: #114261;
+  --color-on-primary: #ffffff;
+  --color-accent: #9cc233;
+  --color-on-accent: #10161c;
+  /* The accent as FOREGROUND TEXT on a LIGHT background (eyebrows, tick marks,
+     stars, pins, chevrons). --color-accent is a FILL colour: this client's
+     brand lime #9cc233 measures only ~1.9:1 on --color-bg, so using it as text
+     fails AA. This darker olive is 5.6:1 on --color-bg and 5.9:1 on
+     --color-surface.
+
+     Sections backed by --color-primary (Testimonials, ProcessSteps,
+     WhyChooseUs) and the dark photo scrim in HeroOwl deliberately KEEP
+     --color-accent — it clears 5.2:1 on the navy panel, where this olive would
+     fall below AA. Rule: light background -> ink, dark panel -> accent.
+     Brand source: Elementor global tokens on morriskitchensllc.com
+     (primary #114261, accent #9CC233, Archivo). */
+  --color-accent-ink: #4f6b13;
+  --color-focus: #0057ff;
+  --font-display: 'Archivo', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Archivo', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "royal-roofing-systems",
+  "category": "Roofing contractor",
+  "location": "Wilkes-Barre / Scranton, PA (NEPA)",
+  "threads_analyzed": 0,
+  "method": "DEGRADED — reddit.com is blocked in this environment (Firecrawl scrape refuses the domain, direct fetch returns an interstitial, and the browser pane blocks it by policy). Findings below are drawn from (a) Reddit comment excerpts returned in Firecrawl search result descriptions, (b) r/Scranton thread titles that establish local demand patterns, and (c) the business's own Google review tags, which are real customer language. No full thread bodies were read.",
+  "sources": [
+    "https://www.reddit.com/r/Scranton/comments/1h19x1d/roofing/",
+    "https://www.reddit.com/r/Scranton/comments/1cypewc/contractor_recommendations/",
+    "https://www.reddit.com/r/Scranton/comments/1fqlg26/names_of_contractors_old_homes_only/",
+    "https://www.reddit.com/r/Scranton/comments/1il7ryv/construction_companies_wirh_experience_in_older/",
+    "https://www.reddit.com/r/Scranton/comments/1cf9xaw/cost_of_home_renovation_in_nepa/",
+    "https://www.reddit.com/r/Roofing/comments/15w1zud/what_to_watch_out_for_from_storm_chasers/",
+    "https://www.reddit.com/r/homeowners/comments/16pr1z9/storm_chaser_roof_company_and_insurance_whats_the/"
+  ],
+  "pain_points": [
+    "Contractors who never follow up with the estimate. The single most repeated complaint in the search corpus — homeowners describe hounding trades for weeks after a walkthrough and getting nothing in writing. 'Why don't contractors ever send me an estimate?' and 'Does anyone else literally have to hound contractors for an estimate?' are both high-engagement threads.",
+    "Quotes that are all over the map with no line-item breakdown. Homeowners report $10k-to-$20k spreads on what looks like the same roof, and roofers who refuse to itemize tear-off, underlayment, ventilation and disposal. Without a breakdown they can't tell a real bid from a padded one.",
+    "The salesperson who quotes the job is not on the roof doing it. 'How risky is a roofer who uses subcontractors?' and 'LPT: Never hire a contractor unless the person who gave the estimate will be there' both surface this. Complaints about substituted materials — the wrong ice-and-water shield, the wrong ridge vent under a GAF-system price — trace directly back to subbed crews.",
+    "Storm chasers knocking after weather. Out-of-area crews offering a 'free inspection', pushing an insurance claim, doing a temporary fix and being unreachable a season later. Multiple r/Roofing and r/homeowners threads exist purely to warn about this pattern.",
+    "NEPA's old housing stock has almost no contractors who will touch it. r/Scranton has recurring threads titled 'Names of Contractors (Old Homes Only)' and 'Construction companies with experience in older homes.' Slate roofs on pre-war Wyoming Valley homes are the specific gap — most local outfits quote a shingle tear-off or decline the job."
+  ],
+  "what_customers_value": [
+    "An honest repair-or-replace answer. 'Honest roofing companies?' threads consistently define honest as a roofer willing to say the roof has years left rather than selling a replacement off a free inspection.",
+    "One accountable company from quote to cleanup — in-house crews, no subs, the same name on the estimate and on the truck.",
+    "A written, itemized estimate delivered fast. Same-day or next-day beats a lower number that arrives in two weeks, because most homeowners are calling with an active leak.",
+    "A local business with a physical address and a review history, specifically as the counter to storm chasers. Longevity in the metro is the trust signal.",
+    "Someone who will actually handle the insurance claim — meet the adjuster, document the damage, and get the scope approved — instead of handing the homeowner a form."
+  ],
+  "business_differentiators": [
+    "Royal Roofing states flatly on their homepage: 'When you call us about your roof, we are the roofers. We do not subcontract out.' That is a direct, verbatim answer to the loudest pain point in the corpus, and it is theirs — not a claim invented for this site.",
+    "Their roof-repair page commits to a certified contractor inspecting and generating an estimate the SAME DAY, with residential repair service available 24/7. That addresses both the never-sends-the-estimate complaint and the active-leak urgency.",
+    "Their storm-damage page opens by warning homeowners about storm chasers — a local, year-round company positioning against out-of-town crews. They pair it with concrete insurance-claim work: attending adjuster appointments so the adjuster sees the same damage they documented, and following up with the carrier on the decision.",
+    "Slate roofing is a first-class service line, with 'installed hundreds of slate roofs in the area' on their materials pages. In a metro whose Reddit asks repeatedly for old-home contractors, that is a real and rare capability.",
+    "4.8 stars across 61 Google reviews, with Google's own extracted review tags reading 'honest contractors' (3), 'courteous crew' (4) and 'friendly workers' (4) — the exact vocabulary the corpus says buyers are screening for. Backed by a 15-year no-leak warranty, a lifetime manufacturer warranty and a 10-year workmanship warranty.",
+    "15 years locally owned and operated out of Edwardsville, with 0% financing and a 5% discount for military, first responders and seniors on jobs over $1,500."
+  ],
+  "gaps": [
+    "No published price ranges or itemized-estimate sample anywhere on the current site, even though pricing opacity is the #2 pain point. The generated site should at least explain WHAT drives the number (squares, pitch, deck condition, material) — their roof-replacement page already contains that copy; it is just buried.",
+    "No team page, no owner name, no crew photos. The 'local, accountable, not a storm chaser' claim would land harder with faces on it. Flagged for operator paste-in.",
+    "Old-home / slate expertise is real but is only mentioned inside a materials sub-page. It deserves surfacing on the home page for the Wyoming Valley market."
+  ],
+  "copy_angles": [
+    "Lead the hero with the no-subcontractor promise. 'The crew on your roof works for us.' It is their own line, it is verifiable, and it answers the #1 complaint in the market before the visitor scrolls.",
+    "Make same-day free inspection + written estimate the primary CTA everywhere, not 'contact us'. The competing failure mode is silence after the walkthrough, so the offer should be the speed of the estimate, not the estimate itself.",
+    "Give storm damage its own prominent path and frame it as local-vs-storm-chaser. Say plainly that they were here before the storm and will be here after it, and that they meet the adjuster in person.",
+    "Put the honest repair-or-replace stance in a trust section: they will tell you when the roof has years left. Pair it with the review-tag language 'honest contractors' and a real customer quote.",
+    "Surface slate and old-home capability on the home page for the Wyoming Valley's pre-war housing stock — a differentiator almost no competitor in the metro advertises.",
+    "Demystify cost instead of quoting a price: a short 'what drives your roof number' block (roof squares, pitch, deck condition, material, insurance vs retail) plus the 0% financing and the military/first-responder/senior discount."
+  ]
+}

@@ -1,0 +1,97 @@
+---
+export interface Props {
+  eyebrow?: string;
+  heading: string;
+  body: string;
+  photo?: string;
+  photo_alt?: string;
+  photo_position?: 'left' | 'right';
+  bullets?: string[];
+  /** Required by CC BY / CC BY-SA sources. Rendered under the image. */
+  photo_credit?: string;
+  photo_credit_href?: string;
+}
+const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [], photo_credit, photo_credit_href } = Astro.props;
+
+// The upstream owl template renders `body` as a single <p>, but site-generate's
+// contract for about.story is "2-3 paragraphs" — so a correctly authored story
+// collapsed into one unreadable block. Split on blank lines instead. A body with
+// no blank line still yields exactly one paragraph, so single-paragraph callers
+// (service and service-area AboutSections) are unaffected.
+const paragraphs = body.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+---
+<section class="about-section" aria-labelledby="about-heading">
+  <div class="container">
+    <div class={`about-grid ${photo ? (photo_position === 'left' ? 'photo-left' : '') : 'no-photo'}`}>
+      <div class="about-copy">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <h2 id="about-heading">{heading}</h2>
+        {paragraphs.map((p) => <p>{p}</p>)}
+        {bullets.length > 0 && (
+          <ul class="bullets">
+            {bullets.map((b) => (
+              <li>
+                <svg class="check" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.14" />
+                  <path d="M7 12.5l3.5 3.5L17 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      {photo && (
+        <figure class="about-figure">
+          <img src={photo} alt={photo_alt} class="about-photo" loading="lazy" />
+          {photo_credit && (
+            <figcaption class="photo-credit">
+              {photo_credit_href
+                ? <a href={photo_credit_href} rel="noopener nofollow">{photo_credit}</a>
+                : photo_credit}
+            </figcaption>
+          )}
+        </figure>
+      )}
+    </div>
+  </div>
+</section>
+<style>
+  .about-section { padding: var(--space-5) 0; }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: center; }
+  /* With no photo the two-column grid leaves a dead empty column. Collapse to a
+     single readable measure instead of stranding the copy in one half. */
+  .about-grid.no-photo { grid-template-columns: minmax(0, 820px); }
+  .about-grid.photo-left { grid-template-areas: 'photo copy'; }
+  .about-grid.photo-left .about-copy { grid-area: copy; }
+  .about-grid.photo-left .about-figure { grid-area: photo; }
+  /* grid-area belongs ONLY under .photo-left. On the default grid there are
+     no named areas, so an unconditional `grid-area: photo` creates an
+     implicit one and collapses the copy column to a few characters wide. */
+  .about-figure { margin: 0; min-width: 0; }
+  .photo-credit { margin: 0.4rem 0 0; font-size: 0.72rem; color: var(--color-muted); opacity: 0.8; }
+  .photo-credit a { color: inherit; }
+  /* width:100% is load-bearing. Without it the img falls back to its intrinsic
+     width, so a source narrower than the column (client photos often are)
+     leaves a ragged gap beside it. */
+  .about-photo { width: 100%; border-radius: var(--radius-md); aspect-ratio: 4/3; object-fit: cover; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 2.75rem); line-height: 1.15; margin: 0 0 var(--space-2); }
+  p { font-size: 1.05rem; line-height: 1.65; color: var(--color-muted); }
+  .bullets { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-direction: column; gap: 0.65rem; }
+  .bullets li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; color: var(--color-text); }
+  .check { flex-shrink: 0; color: var(--color-accent-ink); }
+  @media (max-width: 780px) {
+    .about-grid, .about-grid.photo-left { grid-template-columns: 1fr; grid-template-areas: none; gap: var(--space-3); align-items: start; }
+    /* Reset the FIGURE, not the img. `.about-figure` is the grid item that
+       carries `grid-area: photo` on desktop; `.about-photo` is the <img> inside
+       it and was never a grid item. Resetting only the img left the figure
+       pointing at a named area that no longer exists once grid-template-areas
+       is `none`, so it collapsed to its intrinsic width — measured 151px wide on
+       a 375px viewport instead of filling the column. Only bites the
+       photo_position="left" variant, i.e. every service page. */
+    .about-grid.photo-left .about-copy, .about-grid.photo-left .about-figure { grid-area: auto; }
+    .about-figure { width: 100%; min-width: 0; }
+    .about-photo { aspect-ratio: 4/3; width: 100%; }
+  }
+</style>

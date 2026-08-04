@@ -1,0 +1,139 @@
+{
+  "kind": "config",
+  "business_name": "Quality Roofing Express",
+  "tagline": "Roofing & Siding in Scranton, PA",
+  "phone": "+15706143914",
+  "phone_display": "(570) 614-3914",
+  "email": "qualityroofingexpress@gmail.com",
+  "address": {
+    "street": "614 N Rebecca Ave",
+    "city": "Scranton",
+    "state": "PA",
+    "postal": "18504",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 41.4210921,
+    "lng": -75.6801342
+  },
+  "hours": {
+    "monday": "7am-7pm",
+    "tuesday": "7am-7pm",
+    "wednesday": "7am-7pm",
+    "thursday": "7am-7pm",
+    "friday": "7am-7pm",
+    "saturday": "8am-7pm",
+    "sunday": "9am-12pm"
+  },
+  "site_url": "https://quality-roofing-express.vercel.app",
+  "rating": 4.6,
+  "review_count": 74,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/qualityroofingexpress",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=Quality%20Roofing%20Express&query_place_id=ChIJT3NpTdXZxIkRXrlxdqrgXIk"
+  },
+  "logo_url": "/img/logo.png",
+  "default_hero_photo": "/img/hero-crew-roof.jpg",
+  "about_photo": "/img/estimate-clipboard.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "The cleanup is part of the job",
+      "description": "Read our Google reviews and the same thing keeps surfacing. \"Clean up was unbelievable, you would not have even known they were here.\" \"Cleaned up nicely after completing the job.\" \"Great job cleaning up afterwards.\" Three different homeowners, unprompted. Nails left in the lawn is the number one complaint about roofers anywhere — it is not a complaint we get."
+    },
+    {
+      "title": "Most roofs go on in a day",
+      "description": "A full tear-off and reroof on a typical Scranton home is a one-day job for our crew. Homeowners tell us the same thing afterwards: the roof was finished quickly, and the estimate came back fast enough that nobody had to chase us for a number."
+    },
+    {
+      "title": "Osman is on the job, not just on the paperwork",
+      "description": "Quality Roofing Express is independent and family owned. Customers name Osman personally in their reviews, and one homeowner has had us back for a third and fourth roof across five years — his own house, then his son's. Pennsylvania issues no roofing license to check, so that kind of repeat business is the credential that actually means something."
+    },
+    {
+      "title": "Winter does not stop us",
+      "description": "Ice dams and melt-refreeze leaks show up in January, which is exactly when a lot of contractors stop answering the phone. We work through the NEPA winter and we are reachable seven days a week — 7am to 7pm Monday through Friday, 8am to 7pm Saturday, and Sunday mornings."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "photo": "/img/shingle-roof-finished.jpg",
+      "alt": "Finished multi-tone architectural shingle roof photographed along the ridge",
+      "title": "Architectural shingle replacement",
+      "location": "Scranton, PA"
+    },
+    {
+      "photo": "/img/crew-ladder-rowhome.jpg",
+      "alt": "Quality Roofing Express crew member on a ladder against a two-family home during a tear-off",
+      "title": "Tear-off day on a double block",
+      "location": "West Scranton, PA"
+    },
+    {
+      "photo": "/img/flat-roof-crew.jpg",
+      "alt": "Crew member working across a low-slope membrane roof",
+      "title": "Low-slope membrane installation",
+      "location": "Scranton, PA"
+    },
+    {
+      "photo": "/img/slate-roof.jpg",
+      "alt": "Close view of a slate roof with staggered courses and flashing at the valley",
+      "title": "Slate roof work",
+      "location": "Lackawanna County, PA"
+    },
+    {
+      "photo": "/img/metal-roof.jpg",
+      "alt": "Metal roof on a single-story home under an overcast sky",
+      "title": "Metal roof installation",
+      "location": "Lackawanna County, PA"
+    },
+    {
+      "photo": "/img/rotted-decking.jpg",
+      "alt": "Rotted roof decking boards exposed after the old shingles were stripped away",
+      "title": "What was under the old roof",
+      "location": "Scranton, PA"
+    },
+    {
+      "photo": "/img/new-decking.jpg",
+      "alt": "Fresh plywood sheathing installed across a roof plane before underlayment goes down",
+      "title": "New sheathing before underlayment",
+      "location": "Scranton, PA"
+    },
+    {
+      "photo": "/img/torch-down.jpg",
+      "alt": "Torch-down modified bitumen membrane being heat-welded onto a flat roof",
+      "title": "Torch-down flat roof",
+      "location": "Scranton, PA"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Every roof",
+    "heading_rest": "a Scranton house wears",
+    "subtitle": "Asphalt, slate, metal and every flat-roof membrane in the book — residential and commercial, across Lackawanna and Luzerne counties."
+  }
+}

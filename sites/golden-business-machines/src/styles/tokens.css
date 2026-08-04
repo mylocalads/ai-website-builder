@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-text: #101828;
+  --color-muted: #5a6472;
+  --color-primary: #1c2733;
+  --color-on-primary: #ffffff;
+
+  /* GBM's own brand red, taken from their live CSS. White on it measures
+     5.04:1, so button labels pass AA at any size. */
+  --color-accent: #df0028;
+  --color-on-accent: #ffffff;
+
+  /* The accent as FOREGROUND TEXT on a LIGHT background (eyebrows, tick marks,
+     stars, pins, chevrons). #df0028 already passes on white (5.04:1) and on
+     --color-surface (4.66:1); this darker variant gives 6.04:1 of headroom
+     across every light tone the template uses. */
+  --color-accent-ink: #c8001f;
+
+  /* GBM is the INVERSE of the template default's contrast problem. The stock
+     gold accent fails as text on LIGHT backgrounds and works on the dark
+     bands; this red is the other way round — #df0028 measures only 2.89:1 on
+     --color-primary and fails AA there. So the dark-band components
+     (Testimonials, ProcessSteps, WhyChooseUs, HeroOwl scrim) use this lighter
+     tint for accent-coloured TEXT instead: 5.79:1 on #1c2733, and still
+     unmistakably the GBM red. Fills and buttons on dark bands keep
+     --color-accent, since their white labels carry the contrast. */
+  --color-accent-on-dark: #ff7383;
+
+  --color-focus: #0057ff;
+  --font-display: 'Poppins', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Open Sans', 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

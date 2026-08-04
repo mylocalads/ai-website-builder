@@ -1,0 +1,66 @@
+{
+  "sources": {
+    "mode": "library",
+    "library": "default",
+    "urls": [],
+    "note": "reference-libraries/default.json carries no reference URLs — the owl template under astro-templates/owl/ is the structural source of truth. No Firecrawl spend on this step. Palette and typography are the CLIENT's own brand tokens, read from their site's CSS custom properties and sampled from their logo PNG (brand only, never layout)."
+  },
+  "template": "owl",
+  "palette": {
+    "bg": "#faf8f5",
+    "surface": "#ffffff",
+    "text": "#1a1e1b",
+    "muted": "#5c6159",
+    "primary": "#0b3729",
+    "on_primary": "#ffffff",
+    "accent": "#c7a257",
+    "on_accent": "#1a1e1b",
+    "accent_ink": "#7d5a1c",
+    "focus": "#0057ff"
+  },
+  "palette_provenance": {
+    "#0b3729": "client CSS --primary: hsl(160 68% 13%), used as the site's dark section colour; also appears as a literal hex in their bundle",
+    "#faf8f5": "client CSS --background: hsl(43 33% 97%)",
+    "#1a1e1b": "client CSS --foreground: hsl(135 7% 11%)",
+    "#c7a257": "client CSS --accent: hsl(40 50% 56%)",
+    "#c92121": "dominant logo colour (sampled from logo-BjbCzadu.png, 103k px) — carried by the logo mark itself, not promoted to a token",
+    "#3e9c26": "secondary logo colour (62k px) — same, logo only"
+  },
+  "contrast_audit": {
+    "text_on_bg": 15.91,
+    "text_on_surface": 16.86,
+    "muted_on_bg": 5.99,
+    "muted_on_surface": 6.35,
+    "on_primary_on_primary": 13.18,
+    "accent_on_primary": 5.48,
+    "on_accent_on_accent": 7.01,
+    "accent_ink_on_bg": 5.91,
+    "accent_ink_on_surface": 6.27,
+    "rule": "Owl uses --color-accent both as a FILL and as TEXT on the dark --color-primary panels (Testimonials, ProcessSteps, WhyChooseUs, hero scrim), and --color-accent-ink as text on light backgrounds. The client's logo red #c92121 measures only 2.34:1 on the deep green panel and fails there, so the client's own declared gold is the accent token and the red stays in the logo. Every pair above clears WCAG AA."
+  },
+  "typography": {
+    "display": "Fraunces",
+    "body": "Geist",
+    "note": "Both are the client's own fonts (CSS --font-serif: \"Fraunces\"; --font-sans: \"Geist\") and both are available on Google Fonts (verified HTTP 200). Inter and system-ui remain in the fallback stack."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "section_styling_hints": [
+    "Alternate cream (--color-bg) and deep-green (--color-primary) full-bleed bands, as the client's own site does — this is a colour rhythm, not a layout copy.",
+    "Serif display headings with a coloured second line; the client sets that precedent and owl's SectionHead supports lead/rest splitting.",
+    "Gold used sparingly: eyebrows, ticks, step numerals, button fills."
+  ],
+  "avoid": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "hash-anchor navigation standing in for real pages",
+    "client-side-only rendering with no prerendered HTML",
+    "sitemap entries pointing at 404s",
+    "content hidden behind un-rendered accordions",
+    "fabricated reviews, ratings or star counts — this business has none yet"
+  ],
+  "_generated_at": "2026-08-04"
+}

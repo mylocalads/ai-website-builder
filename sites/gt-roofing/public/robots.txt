@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gt-roofing-five.vercel.app/sitemap-index.xml

@@ -1,0 +1,80 @@
+{
+  "slug": "pinnacle-roofing-sheet-metal",
+  "template": "owl",
+  "vertical": "roofing",
+  "generated_at": "2026-08-03",
+  "reference_urls": [
+    "https://owlroofing.com/",
+    "https://firefly-cd.vercel.app/"
+  ],
+  "reference_role_notes": "owl is the role:primary reference for this template's structure (fixed section order: hero + floating quote card -> promise bar -> services grid -> testimonials -> promise band -> signature system -> process steps on a dark band -> about with checklist -> long-form SEO body -> FAQ -> blog row -> closing CTA). firefly-cd carries the type and spacing discipline. Structure only — no Owl Roofing brand program names ('We Give A Hoot', 'Protect Your Nest', 'Get It Right Guarantee') may appear.",
+  "brand_source": {
+    "detected_from": "https://www.pinnacleroofingpa.com/ (Firecrawl branding extraction + logo)",
+    "detected_colors": {
+      "primary": "#03779C",
+      "secondary": "#FAE231",
+      "accent": "#F30E1E",
+      "background": "#FFFFFF"
+    },
+    "detected_fonts": ["Source Sans Pro", "Open Sans"],
+    "logo_url": "https://le-cdn.hibuwebsites.com/983869aca4494363a1e28ddf9dfabe34/dms3rep/multi/opt/12139828-1920w.png",
+    "reasoning": "The logo is a teal mountain silhouette under a yellow/orange sun with the wordmark in red. Teal and yellow are carried forward as the system. The red is deliberately DROPPED as a surface color — the old site used #F30E1E as a full-page background, which is the single worst trait of the existing design and the main thing the rebuild fixes. Red is retained only in the logo itself."
+  },
+  "palette": {
+    "bg": "#f4f6f8",
+    "surface": "#ffffff",
+    "text": "#101c22",
+    "muted": "#566670",
+    "primary": "#0a2a38",
+    "on_primary": "#ffffff",
+    "accent": "#f4d01c",
+    "on_accent": "#0a2a38",
+    "accent_ink": "#04688a",
+    "focus": "#0057ff"
+  },
+  "contrast_verification": {
+    "text_on_bg": "16.4:1 PASS",
+    "muted_on_bg": "5.5:1 PASS",
+    "on_primary_on_primary": "17.4:1 PASS",
+    "on_accent_on_accent": "9.9:1 PASS",
+    "accent_on_primary_dark_band": "9.9:1 PASS (>=3:1 required)",
+    "accent_ink_on_bg": "5.7:1 PASS (>=4.5:1 required for eyebrows, ticks, stars, pins)",
+    "note": "The template's default gold accent cannot be used as foreground text on light, hence the separate --color-accent-ink. Here the ink is the brand teal and the fill is the brand yellow — both trace to the client's logo."
+  },
+  "typography": {
+    "display": "Montserrat",
+    "body": "Source Sans 3",
+    "reasoning": "Montserrat is kept from the template for display — geometric, industrial, and it holds up at the large weights the hero uses. Body moves from Inter to Source Sans 3, the maintained successor to the Source Sans Pro detected on the client's existing site, so the brand's own body voice carries over. Both are Google Fonts and load from the same stylesheet call.",
+    "google_fonts_href": "https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+  },
+  "spacing_and_shape": {
+    "radius_sm": "4px",
+    "radius_md": "8px",
+    "radius_lg": "14px",
+    "scale": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+    "max_width": "1200px",
+    "note": "Template defaults kept unchanged. Low radii suit a commercial/industrial contractor."
+  },
+  "motion": {
+    "policy": "Template defaults only — no scroll-triggered animation, no parallax, no counters. Respect prefers-reduced-motion."
+  },
+  "imagery_direction": {
+    "subject": "Real low-slope and flat commercial roofs: white single-ply membrane fields, mechanical curbs, parapet and flashing detail, standing-seam and architectural metal, crews working on institutional/industrial buildings in Northeastern PA.",
+    "avoid": "Residential shingle roofs, suburban houses, homeowner-with-clipboard shots.",
+    "source": "Client's own roof photography from the existing site where usable; Unsplash commercial/industrial roofing for gaps."
+  },
+  "anti_patterns": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "saturated red as a page or section background (the specific failure of the client's existing site)",
+    "residential homeowner framing — this client is a commercial roofing contractor",
+    "Owl Roofing's branded program names in any generated copy"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "springlake-pools-masonry",
+  "business_name": "SpringLake Pools & Masonry",
+  "legal_name": null,
+  "tagline": "Building Luxury. Designing Dreams.",
+  "phone": "+15708554235",
+  "phone_display": "(570) 855-4235",
+  "email": "springlakepools@gmail.com",
+  "address": {
+    "street": "35 Colonial Rd",
+    "city": "Dallas",
+    "state": "PA",
+    "postal": "18612",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 40.8556259, "lng": -75.689281 },
+  "hours": {
+    "monday": "8am-5pm",
+    "tuesday": "8am-5pm",
+    "wednesday": "8am-5pm",
+    "thursday": "8am-5pm",
+    "friday": "8am-5pm",
+    "saturday": "8am-5pm"
+  },
+  "rating": 5,
+  "review_count": 8,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "social": {
+    "facebook": "https://www.facebook.com/springlakepools",
+    "instagram": "https://www.instagram.com/springlakepools"
+  },
+  "site_url": "https://springlakepools.com/",
+  "logo_url": "https://springlakepools.com/wp-content/uploads/2025/08/springlake-pools-and-masonry-logo-1.png",
+  "favicon_url": "https://springlakepools.com/wp-content/uploads/2025/08/cropped-springlake-pools-and-masonry-favicon-final-32x32.png",
+  "default_hero_photo": "https://springlakepools.com/wp-content/uploads/2023/04/IMG_2278_Original-1024x767.jpeg",
+  "default_hero_video": null,
+  "about_photo": "https://springlakepools.com/wp-content/uploads/2023/03/SpringLakePools-aboutus-768x1024.jpeg",
+  "brand": {
+    "fonts": { "display": "Cormorant", "body": "Karla" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#0F2A43",
+      "accent": "#2CB1BC",
+      "muted": "#133453",
+      "surface": "#FFFFFF",
+      "candidates": ["#0F2A43", "#133453", "#2CB1BC", "#FFFFFF", "#102A43"]
+    }
+  },
+  "services": [
+    {
+      "title": "Custom Pool & Spa Construction",
+      "short_description": "Custom concrete and gunite pools, integrated spas, and complete backyard designs built for Pennsylvania's freeze-thaw climate.",
+      "long_description": "Gunite pool construction is the specialty because it holds up to Pennsylvania weather. Spray-applied concrete creates the strongest shell available, and it lets the pool take any shape a lot demands — curving around mature oaks, fitting narrow Back Mountain lots, or stepping down a slope. Every build starts with excavation planned around local soil conditions, from the rocky ledge near Bear Creek to Back Mountain clay. Infinity edges, sun ledges, benches, grottos, acrylic walls, water features, and integrated spas are all in scope.",
+      "sub_services": ["Inground Pool Installation", "Gunite Pool Construction", "Custom Pool Design & Build", "Custom Spas & Hot Tubs", "Saltwater & Chlorine Systems"],
+      "hero_photo": "https://springlakepools.com/wp-content/uploads/2023/04/IMG_2278_Original-1024x767.jpeg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Pool Renovation & Remodeling",
+      "short_description": "Replastering, tile, coping, and full concrete pool renovations that make an aging pool look new without a rebuild.",
+      "long_description": "Faded, stained, or cracked plaster and chipped waterline tile are what a Pennsylvania winter does to a pool over ten to fifteen years. Renovation work covers plastering, tile, coping, sandblasting, patio and deck surfaces, depth changes, added spas and water features, benches and tanning ledges, travertine paver installs, and colour-changing lighting. Plaster options carry lifetime warranties and can be brought back to new colour without the demolition most pool plaster requires.",
+      "sub_services": ["Replastering", "Waterline Tile", "Coping", "Sandblasting", "Complete Pool Renovations", "Add a Spa or Water Feature"],
+      "hero_photo": "https://springlakepools.com/wp-content/uploads/2023/03/SpringLake-Pools-and-Masonry-Work-1024x768.jpeg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Pool Repair Service",
+      "short_description": "Resurfacing, replastering, tile and coping repair, and electronic leak detection — including emergency repair when a pool fails mid-season.",
+      "long_description": "Pool problems never happen at a convenient time, so emergency repair is part of the service. Resurfacing and replastering restore a smooth finish and stop small leaks after freeze-thaw has cracked plaster. Coping repair addresses the stone and concrete at the pool's edge before water gets behind the shell. Leak detection uses electronic listening equipment and pressure testing to find failures in the shell, plumbing lines, and equipment — most of them at pipe joints or where plumbing enters the pool.",
+      "sub_services": ["Pool Resurfacing", "Pool Replastering", "Pool Tile Replacement", "Pool Coping Repair", "Pool Leak Detection", "Emergency Pool Repair"],
+      "hero_photo": "https://springlakepools.com/wp-content/uploads/2025/08/pool-replastering-dallas-pa.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Pool Cleaning & Maintenance",
+      "short_description": "Weekly maintenance, seasonal openings and closings, chemical balancing, and water testing across Luzerne and Lackawanna counties.",
+      "long_description": "Openings start in April depending on weather — covers off and stored, equipment restarted, chemistry balanced, swim-ready inside a week. Closings drain lines below frost level, add antifreeze where needed, and install winter covers, which is what prevents an expensive freeze failure. In between: weekly maintenance, chemical balancing tuned to local water, professional water testing for bacteria, metals, and chemical levels, and inspection and safety audits for homeowners buying or selling a house with a pool.",
+      "sub_services": ["Pool Opening Service", "Pool Closing & Winterization", "Weekly Maintenance", "Chemical Balancing", "Water Testing", "Pool Inspection & Safety Audits"],
+      "hero_photo": "https://springlakepools.com/wp-content/uploads/2025/08/pool-closing-services-dallas-pa.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Masonry & Outdoor Living",
+      "short_description": "Stonework, waterfalls, pavers, retaining walls, fire pits, pool decks, and outdoor kitchens — built by the same crew that builds the pool.",
+      "long_description": "Masonry is half the name for a reason. Stone walls and retaining structures, coping, pool decks, pavers, fire pits, waterfalls, and complete outdoor kitchens are done in-house rather than subcontracted, which is why the hardscape and the pool actually meet the way the design drawing said they would. Custom rockwork, deck jets, rain arcs, and LED lighting extend the same work into the finished backyard.",
+      "sub_services": ["Waterfalls & Water Features", "Stonework", "Pavers & Pool Decks", "Retaining Walls", "Fire Pits", "Outdoor Kitchens"],
+      "hero_photo": "https://springlakepools.com/wp-content/uploads/2023/03/SpringLake-Pools-Spa-Masonry-Work-1024x770.jpeg",
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Dallas", "state": "PA", "state_abbr": "pa", "slug": "dallas-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Back Mountain", "state": "PA", "state_abbr": "pa", "slug": "back-mountain-pa", "county": "Luzerne County", "neighborhoods": ["Shavertown", "Trucksville", "Harveys Lake"], "_source": "scraped" },
+    { "name": "Wilkes-Barre", "state": "PA", "state_abbr": "pa", "slug": "wilkes-barre-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Mountain Top", "state": "PA", "state_abbr": "pa", "slug": "mountain-top-pa", "county": "Luzerne County", "_source": "scraped" },
+    { "name": "Clarks Summit", "state": "PA", "state_abbr": "pa", "slug": "clarks-summit-pa", "county": "Lackawanna County", "_source": "scraped" },
+    { "name": "Scranton", "state": "PA", "state_abbr": "pa", "slug": "scranton-pa", "county": "Lackawanna County", "_source": "scraped" }
+  ],
+  "service_areas_not_used": ["Bear Creek, PA", "Blakeslee, PA", "Tannersville, PA", "Pittston, PA"],
+  "testimonials": [],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/IMG_2204.jpeg", "alt": "Custom concrete pool with stone coping and surrounding patio" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/IMG_2208.jpeg", "alt": "Finished gunite pool with tanning ledge" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/4146307.jpg", "alt": "Custom concrete pool builder project" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/2067402.jpg", "alt": "Backyard pool with masonry surround" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/IMG_0031.jpeg", "alt": "Inground pool with integrated spa" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/IMG_4132.jpeg", "alt": "Concrete pool and hardscape patio" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/img-1683.jpg", "alt": "Pool deck and retaining wall stonework" },
+    { "photo": "https://springlakepools.com/wp-content/uploads/2023/03/8592636.jpg", "alt": "Completed backyard pool project" }
+  ],
+  "about_story_source": "https://springlakepools.com/about-us/",
+  "brand_voice_sample": "Building Luxury. Designing Dreams. From your first design consult to the champagne toast at completion, we will communicate clearly, interface often and dedicate our time to the details.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The existing site uses a WordPress plugin form labelled 'Contact Form Demo (#1)' behind reCAPTCHA, plus an embedded Google Maps iframe. Neither is a GHL asset — nothing was copied into crm.*. All CRM widgets remain operator paste-in."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "place_id": "ChIJVet0clQ0YoURzxb0fEPVSco",
+    "pages_scraped": ["/", "/about-us/", "/services/", "/service-areas/", "/contact/", "/recent-projects/", "/swimming-pool-contractor/", "/pool-repair-service/", "/pool-cleaning-service/", "/custom-pools-spas/", "/concrete-pool-renovations/"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-03",
+    "cost_estimate_usd": 0.25,
+    "warnings": [
+      "FOUNDING-YEAR CONFLICT: /about-us claims 'Since 1982' and 'OVER 40 YEARS OF EXPERIENCE'; the homepage and all 2025 service pages claim 'Since 2007' and 'over a decade'; the OG description says 'more than 30 years'. years_in_business is left null and no founding year is asserted anywhere in the generated site. Operator must confirm with the client.",
+      "NO TESTIMONIALS AVAILABLE: Apify returned an empty reviews[] array on two runs; the client site publishes no testimonials; Facebook and Reddit are both blocked for Firecrawl. Rating 5.0 / 8 reviews is confirmed and used as a trust badge, but no review text exists. Nothing was fabricated. Operator must paste reviews in or wire the GHL reviews widget.",
+      "insured/bonded left false — the site states 'Licensed swimming pool contractor serving NEPA' but makes no insurance or bonding claim.",
+      "Social profile pages were not scraped (Facebook and Instagram are unsupported by Firecrawl); URLs came from the GBP payload and the site footer."
+    ]
+  }
+}

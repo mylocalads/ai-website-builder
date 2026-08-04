@@ -1,0 +1,35 @@
+{
+  "slug": "pinnacle-roofing-sheet-metal",
+  "url": "https://www.pinnacleroofingpa.com/",
+  "screenshot": "screenshots/pinnacle-roofing-sheet-metal.png",
+  "platform": "Hibu (hibuwebsites.com CDN, templated SMB site builder)",
+  "audited_at": "2026-08-03",
+  "note": "OPERATOR REFERENCE ONLY. Per the pipeline anti-pattern lock, nothing in this audit seeds design_reference.json or tokens.css. The owl template is the sole source of design and structure.",
+  "strengths": [
+    "Genuinely strong underlying credentials that the site under-sells: Excalibur Award every year since 1994, Versico authorization, established 1993.",
+    "A named client roster (Geisinger, Sanofi Pasteur, Tobyhanna Army Depot, Kalahari Resort, Wilkes University, P&G, WBS Airport) that is far better social proof than most contractors have.",
+    "Clear commercial positioning — the copy never drifts into residential.",
+    "Real team bios with photos and tenure, and two staffed locations with distinct phone numbers.",
+    "Both phone numbers are click-to-call in the header on every page."
+  ],
+  "weaknesses": [
+    "Full-bleed pure-red (#F30E1E) page background behind every section. It is the single loudest problem — it flattens hierarchy, fights the teal nav, and reads as a 2008 template.",
+    "Only five thin content pages plus two location pages. No per-service pages, no service-area pages, no blog — almost no organic surface area for 'commercial roofing Wilkes-Barre / Scranton'.",
+    "The award and client-roster proof is buried two levels deep under ABOUT US instead of on the homepage.",
+    "Stale copy on the homepage: 'With 23 years' experience' against an 'Established in 1993' claim — the number was never updated and now understates them by a decade.",
+    "No structured data, weak meta titles ('Roofer Nanticoke'), no sitemap discipline. URLs carry Hibu numeric IDs (/services/4108099).",
+    "Contact form is a Hibu widget with no CRM behind it; /contact 404s while the real forms sit on the location pages.",
+    "Legal links (privacy, terms, accessibility) all point off-site to Hibu's budurl.com redirects rather than to the client's own pages.",
+    "Cookie banner covers the mid-page content on load; accessibility widget overlays the lower-left.",
+    "Images are low-resolution roof photos scaled up; no alt text discipline ('Commercial' repeated as alt on unrelated images)."
+  ],
+  "load_notes": "Renders fine and is reasonably fast, but ships Hibu placeholder tokens ({{placeholder_retargeting_pixel}}, {{placeholder_footer_reserve1..7}}) as visible page text in the footer — evidence of an unconfigured template.",
+  "rebuild_priorities": [
+    "Kill the red page background; rebuild on the brand teal + a construction yellow, with deep teal-navy dark bands.",
+    "Promote the Excalibur Award and the named client roster to the homepage.",
+    "Fix the tenure math: lead with 'Since 1993' / 33 years, never '23 years'.",
+    "Expand from 5 thin pages to per-service and per-service-area pages targeting Wilkes-Barre, Scranton, Hazleton, Dickson City, Nanticoke, and the Poconos.",
+    "Give emergency leak service its own prominent band with both location numbers.",
+    "Host real privacy/terms/accessibility pages instead of Hibu redirects."
+  ]
+}

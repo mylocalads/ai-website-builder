@@ -1,0 +1,53 @@
+{
+  "sources": {
+    "mode": "combo",
+    "library": "default",
+    "template": "owl",
+    "urls": [],
+    "note": "No paid reference scrape was run. Structure and section rhythm come from the owl template (the sole source of truth for design); palette and typography are re-derived from the client's own brand tokens captured in intake-scraped.json. Anti-patterns merge reference-libraries/default.json with tells found in audit_results.json."
+  },
+  "palette": {
+    "bg": "#f6fbfd",
+    "surface": "#ffffff",
+    "text": "#101218",
+    "muted": "#4B4F58",
+    "primary": "#0a2f40",
+    "on_primary": "#ffffff",
+    "accent": "#148dbd",
+    "on_accent": "#ffffff",
+    "accent_ink": "#0b5f81",
+    "focus": "#0057ff"
+  },
+  "contrast_check": {
+    "text_on_bg": 17.95,
+    "muted_on_bg": 7.87,
+    "on_primary_on_primary": 14.06,
+    "on_accent_on_accent": 3.77,
+    "accent_on_primary": 3.73,
+    "accent_ink_on_bg": 6.78,
+    "notes": "on_accent is white at 3.77:1 — valid only because every accent-backed label in the owl template is 20px/700, where the AA threshold is 3:1. Do not shrink accent buttons below 1.25rem. accent_ink (#0b5f81) is the foreground variant for eyebrows, ticks, stars and chevrons on light backgrounds; dark primary panels keep the full accent (3.73:1)."
+  },
+  "typography": {
+    "display": "Poppins",
+    "body": "Lato",
+    "source": "Both detected on the client's existing site (Google Fonts: Poppins 400/500/600/700 and Lato 400). Retained as brand tokens."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "section_styling_hints": [
+    "Deep navy-teal (#0a2f40) panels for the trust, process and testimonial bands — carries the brand blue without the washed-out light-on-light problem of the current site",
+    "Brand blue reserved for CTAs, eyebrows and tick marks, not for body text",
+    "Real crew photography from the client's own library — no stock"
+  ],
+  "avoid": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "script / handwriting typefaces for headlines (the current site's clipped cursive hero)",
+    "light blue body text on white — the current site's dominant contrast failure",
+    "JavaScript-dependent carousels that leave blank voids before hydration",
+    "burying the 'One Maid. Same Maid. Every Time.' promise below the fold"
+  ]
+}

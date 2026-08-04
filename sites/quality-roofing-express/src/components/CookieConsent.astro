@@ -1,0 +1,31 @@
+<div id="cookie-consent" hidden>
+  <div class="cc-inner container">
+    <p>We use cookies to improve your experience and analyze site traffic. Read our <a href="/privacy">Privacy Policy</a>.</p>
+    <div class="cc-actions">
+      <button type="button" data-cc="accept">Accept</button>
+      <button type="button" data-cc="reject">Reject non-essential</button>
+    </div>
+  </div>
+</div>
+<style>
+  #cookie-consent { position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-bg); border-top: 1px solid var(--color-surface); padding: var(--space-2) 0; z-index: 100; box-shadow: 0 -4px 14px rgba(0,0,0,0.08); }
+  .cc-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); flex-wrap: wrap; }
+  .cc-actions { display: flex; gap: var(--space-1); }
+  .cc-actions button { padding: 0.5rem 1rem; border: 1px solid var(--color-text); background: transparent; cursor: pointer; border-radius: var(--radius-sm); }
+  .cc-actions button[data-cc="accept"] { background: var(--color-accent); color: var(--color-on-accent); border-color: var(--color-accent); }
+</style>
+<script is:inline>
+  (function () {
+    var el = document.getElementById('cookie-consent');
+    if (!el) return;
+    var stored = localStorage.getItem('cc');
+    if (!stored) el.hidden = false;
+    el.addEventListener('click', function (e) {
+      var t = e.target.closest('[data-cc]');
+      if (!t) return;
+      localStorage.setItem('cc', t.getAttribute('data-cc'));
+      el.hidden = true;
+      window.dispatchEvent(new CustomEvent('cookie-consent', { detail: { choice: t.getAttribute('data-cc') } }));
+    });
+  })();
+</script>

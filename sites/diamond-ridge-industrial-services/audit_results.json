@@ -1,0 +1,33 @@
+{
+  "slug": "diamond-ridge-industrial-services",
+  "url": "https://diamondridgeindservices.com/",
+  "screenshot": "screenshots/diamond-ridge-industrial-services.png",
+  "captured_at": "2026-08-03",
+  "capture_method": "Firecrawl (Playwright capture returned HTTP 403 — the site blocks the local headless browser)",
+  "platform": "WordPress + Divi 5.0 alpha",
+  "purpose": "OPERATOR REFERENCE ONLY — not design DNA. The owl template is the sole source of layout and structure.",
+  "strengths": [
+    "Genuinely strong first-party photography and video — real crews, real slabs, real before/after pairs",
+    "Named enterprise logos (McLane, Amcor, Berry Global, Diamond H, Lowe's) sitting above the fold as social proof",
+    "Service copy is specific and technical: cure times, ASTM references, cold-storage specialism, named failure modes",
+    "Clear single conversion action ('Get a free quote') repeated consistently"
+  ],
+  "weaknesses": [
+    "Autoplaying full-bleed hero video with the logo overlaid on it — the headline competes with motion and the LCP is heavy",
+    "No local or service-area pages at all; six states are claimed in a sentence on /services and nowhere else, so there is no geographic SEO surface",
+    "Testimonial section repeats the same review three times, which reads as a placeholder loop rather than social proof",
+    "No FAQ content anywhere on the site — zero eligibility for FAQ rich results on high-intent technical queries",
+    "Contact form is a native Divi form with no CRM behind it; nothing routes to a pipeline",
+    "Phone number is inconsistent between the /contact page (570) 479-2629 and the global footer (570) 479-2620",
+    "A default 'hello world' post from the WordPress install is still published at /2025/12/01/hello-world",
+    "Site returns 403 to non-browser clients, which also blocks some crawlers and preview tools",
+    "No privacy, terms, or accessibility pages — footer 'Terms of Use' and 'Privacy Policy' links on service pages point at '#'"
+  ],
+  "seo_gaps": [
+    "No service-area pages",
+    "No FAQ schema",
+    "No LocalBusiness structured data",
+    "Service page H1s carry no geography",
+    "No sitemap-driven internal linking between services and markets"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "slug": "h4-roofing-construction",
+  "business_name": "H4 Roofing & Construction",
+  "legal_name": "H4 Roofing & Construction, LLC",
+  "tagline": "Trusted Roofing Experts in Dayton, Ohio",
+  "phone": "+19374120001",
+  "phone_display": "(937) 412-0001",
+  "email": "info@h4constructionohpa.com",
+  "address": {
+    "street": "3347 Witherspoon Drive",
+    "city": "Dayton",
+    "state": "OH",
+    "postal": "45440",
+    "country": "US"
+  },
+  "marketing_city": "Dayton",
+  "marketing_state": "Ohio",
+  "geo": { "lat": 39.7983824, "lng": -84.0155381 },
+  "hours": {
+    "monday": "6:00 AM - 8:00 PM",
+    "tuesday": "6:00 AM - 8:00 PM",
+    "wednesday": "6:00 AM - 8:00 PM",
+    "thursday": "6:00 AM - 8:00 PM",
+    "friday": "6:00 AM - 8:00 PM",
+    "saturday": "6:00 AM - 8:00 PM"
+  },
+  "rating": 5.0,
+  "review_count": 52,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 15,
+  "credentials": [
+    { "name": "CertainTeed ShingleMaster Credentialed", "_source": "logo/badge asset on client site (6a5a56c804ef0de8013d58f7.jpg)" },
+    { "name": "BBB Accredited Business, A+ rating", "_source": "bbb", "accredited_since": "2026-06-28" },
+    { "name": "OSHA 10 & OSHA 30 Certified", "_source": "scraped:/about" },
+    { "name": "Family owned and operated", "_source": "scraped:/about" }
+  ],
+  "owners": [
+    { "name": "Drew Harper", "role": "Co-Owner", "_source": "bbb" },
+    { "name": "Trey L. Harper", "role": "Co-Owner", "_source": "bbb" }
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/p/H4-Construction-LLC-61566317053594/",
+    "instagram": "https://www.instagram.com/h4constructionohpa/",
+    "google_maps": "https://www.google.com/maps/place/H4+Roofing+%26+Construction/@39.7983824,-84.0155381,10z/data=!3m1!4b1!4m6!3m5!1s0x2c98a8bee96baf0b:0xc9d3c03fedaf8818!8m2!3d39.7983824!4d-84.015538!16s%2Fg%2F11lt_mk7wk"
+  },
+  "site_url": "https://h4roofingandconstruction.com",
+  "logo_url": "https://assets.cdn.filesafe.space/MUYbyveg1sZgSkK6xdPk/media/6a3ac76aee187be68959d8a4.png",
+  "logo_note": "EXISTING logo found — black 'H4 ROOFING' wordmark with four-point sparkles, transparent PNG 676x369. Same mark appears on the client's physical yard signs and feather flags in 12+ job photos. Operator believed no logo existed.",
+  "default_hero_photo": "raw/photos/6a626e67cf9f8312dc502638.jpg",
+  "about_photo": null,
+  "brand": {
+    "fonts": {
+      "display": null,
+      "body": null,
+      "_note": "Client site uses Inter/Roboto/Poppins — GoHighLevel template defaults, not a brand choice. Owl template fonts win."
+    },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#0a0a0a",
+      "accent": "#c49029",
+      "_source": "operator-supplied",
+      "secondary_bg": "#0a0a0a"
+    }
+  },
+  "about": {
+    "story": [
+      "At H4 Roofing & Construction, roofing is more than a service—it is a commitment to protecting homes, businesses, and families throughout Dayton, Ohio and surrounding communities. As a family-owned and operated company with 15 years of industry experience, H4 Roofing & Construction has built a reputation for delivering dependable roofing and exterior improvement solutions backed by quality workmanship, honest communication, and customer-focused service.",
+      "H4 Roofing & Construction was founded on simple principles: provide exceptional customer service, deliver quality craftsmanship, and offer fair pricing without compromising results. Every roofing and exterior project is approached with professionalism, integrity, and a commitment to customer satisfaction."
+    ],
+    "_source": "scraped:/about"
+  },
+  "services": [
+    { "title": "Residential Roofing", "short_description": "Complete roofing solutions including inspections, repairs, and full replacements with premium materials.", "_source": "operator" },
+    { "title": "Roof Inspection", "short_description": null, "_source": "operator", "_warning": "Operator-supplied description was pressure-washing copy ('Professional house washing, driveway cleaning, and exterior surface restoration services') — does not match the service. Needs rewrite." },
+    { "title": "Siding", "short_description": null, "_source": "operator" },
+    { "title": "Gutters", "short_description": null, "_source": "operator" },
+    { "title": "Concrete", "short_description": null, "_source": "operator", "_warning": "No photo evidence in 40-photo client library." },
+    { "title": "Flooring", "short_description": null, "_source": "operator", "_warning": "No photo evidence in 40-photo client library." },
+    { "title": "Drywall", "short_description": null, "_source": "operator", "_warning": "No photo evidence in 40-photo client library." }
+  ],
+  "service_areas_client_listed": [
+    "Dayton", "Kettering", "Bellbrook", "Centerville", "Beavercreek",
+    "Springboro", "Huber Heights", "Vandalia", "Troy", "Miamisburg"
+  ],
+  "service_areas": [
+    { "name": "Dayton", "state": "Ohio", "state_abbr": "oh", "slug": "dayton-oh", "_source": "operator" },
+    { "name": "Kettering", "state": "Ohio", "state_abbr": "oh", "slug": "kettering-oh", "_source": "proposed" },
+    { "name": "Centerville", "state": "Ohio", "state_abbr": "oh", "slug": "centerville-oh", "_source": "proposed" },
+    { "name": "Beavercreek", "state": "Ohio", "state_abbr": "oh", "slug": "beavercreek-oh", "_source": "proposed" },
+    { "name": "Bellbrook", "state": "Ohio", "state_abbr": "oh", "slug": "bellbrook-oh", "_source": "proposed" },
+    { "name": "Miamisburg", "state": "Ohio", "state_abbr": "oh", "slug": "miamisburg-oh", "_source": "proposed" }
+  ],
+  "testimonials": [
+    { "name": "Tina Taylor Thomas", "location": "Dayton, OH", "text": "Absolute best! Promises and trust are everything to me. Trey followed through on both and the H4 Team provided a roof surely to last.", "rating": 5, "date": "2026-07-19", "_source": "google via chamberofcommerce" },
+    { "name": "Kala Ellington", "location": "Dayton, OH", "text": "H4 construction provided top notch customer service and support for my unexpected roofing job, discovered during another remodeling project!!! Thanks to the team at H4", "rating": 5, "date": "2026-07-19", "_source": "google via chamberofcommerce" },
+    { "name": "Tara R.", "location": "Tipp City, OH", "text": "Great communication and speedy, professional service", "rating": 5, "date": "2026-07-20", "_source": "google via chamberofcommerce", "_note": "Business response names the job location as Tipp City, OH." },
+    { "name": "The Ls", "location": "Dayton, OH", "text": "They were very responsive and the repair was completed very quickly.", "rating": 5, "date": "2026-07-03", "_source": "google via chamberofcommerce" },
+    { "name": "RocknStuff", "location": "Dayton, OH", "text": "Smooth transaction from start to finish! I highly recommend using H4 roofing and construction for your roofing needs. The crew does an excellent job! You will be completely satisfied!", "rating": 5, "date": "2026-07-03", "_source": "google via chamberofcommerce" }
+  ],
+  "rating_breakdown": { "5": 51, "4": 1, "3": 0, "2": 0, "1": 0, "_source": "chamberofcommerce" },
+  "third_party_description": "H4 Roofing & Construction is a trusted roofing contractor serving Dayton, Ohio, specializing in roof replacement, roof repair, storm damage restoration, inspections, gutters, siding, and insurance claim assistance for residential and commercial properties.",
+  "team_members": [],
+  "faqs": [],
+  "gallery": {
+    "count": 46,
+    "local_dir": "raw/photos/",
+    "note": "40+ authentic job photos at 5712x4284 / 4284x5712 / 4032x3024. Subjects: completed shingle roof replacements on Dayton-area ranch and two-story homes with H4 yard signs, tear-off and decking in progress, synthetic underlayment, shingle pallets staged in driveways, H4 feather flags, gutter/downspout stock being carried, one twilight exterior. ALL roofing or roofing-adjacent — zero concrete, flooring, or drywall photos.",
+    "excluded_as_stock": [
+      "6a3acefe7249909712276eb4.jpg (612x408, clay tile installer)",
+      "6a3acf68ee187be6895c49f7.jpg (526x350, window installer)",
+      "6a3b1302b2e956bc241f9d3a.jpg (900x500, generic house)",
+      "6a6100195e892103d4883481.jpg (243x203)",
+      "6a62728ddf29341f4d6a491c.jpg (612x408)"
+    ]
+  },
+  "brand_voice_sample": "Dependable roofing and exterior improvement solutions backed by quality workmanship, honest communication, and customer-focused service.",
+  "crm": {
+    "calendar_embed_snippet": null,
+    "contact_form_snippet": null,
+    "chat_widget_snippet": null,
+    "reviews_widget_snippet": null,
+    "call_tracking_snippet": null,
+    "_note": "Operator directed: use placeholder business card with contact info in place of BOTH the calendar widget and the contact form."
+  },
+  "code_injection": { "head": null, "body_start": null, "body_end": null },
+  "custom_domain": null,
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_note": "Operator states no GBP exists; directed to use BBB as the source. A Google Maps place entry does resolve (cid 0xc9d3c03fedaf8818) and supplied the geo coordinates, but no GBP review payload was pulled.",
+    "sources_used": [
+      "bbb.org profile (free WebFetch)",
+      "h4roofingandconstruction.com / , /about, /contact, /portfolio (free WebFetch + free curl)",
+      "raw HTML curl for asset URLs, email, fonts"
+    ],
+    "pages_scraped": ["/", "/about", "/contact", "/portfolio"],
+    "socials_scraped": [],
+    "generated_at": "2026-07-30",
+    "cost_spent_usd": 0.0,
+    "warnings": [
+      "years_in_business conflict: client site claims '15 years of industry experience'; BBB records the LLC as founded 2015-06-04 (11 years) and 'locally owned since 2024-11-01'. Using the client's own published claim of 15 years experience; confirm before publishing.",
+      "rating 5.0 / 52 reviews comes from chamberofcommerce.com search metadata, NOT verified first-party. Do not publish a numeric review count until confirmed.",
+      "licensed/insured/bonded: no explicit badge or footer disclosure found on the client site. Left false rather than guessed.",
+      "No testimonials captured — chamberofcommerce.com returns 403 to curl. Firecrawl (~$0.02) is the remaining route to real review text.",
+      "Sister domain h4constructionohpa.com 404s on every path despite being listed on BBB and indexed in search. The client's email address is on that dead domain."
+    ]
+  }
+}

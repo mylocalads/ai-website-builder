@@ -1,0 +1,29 @@
+{
+  "slug": "springlake-pools-masonry",
+  "url": "https://springlakepools.com/",
+  "screenshot": "screenshots/springlake-pools-masonry.png",
+  "captured_at": "2026-08-03",
+  "purpose": "OPERATOR REFERENCE ONLY. Per the kit's anti-pattern lock, nothing in this file may seed design_reference.json or tokens.css. The owl template is the sole source of design and structure.",
+  "platform": "WordPress + Elementor",
+  "strengths": [
+    "Deep, genuinely local SEO copy — soil conditions, freeze-thaw, named towns and landmarks. Most of it is usable verbatim as source material.",
+    "Broad service taxonomy already built out: build, renovation, repair, cleaning, plus dozens of sub-service pages.",
+    "Ten service-area landing pages already exist, so the local intent is mapped.",
+    "Real project photography — 28 finished-pool images on /recent-projects."
+  ],
+  "weaknesses": [
+    "Conflicting company history on the same site: /about-us says 'Since 1982' and 'OVER 40 YEARS OF EXPERIENCE', while the homepage and every 2025 service page say 'Since 2007' and 'over a decade'. The OG description says 'more than 30 years'. Three different answers.",
+    "No testimonials or reviews anywhere on the site despite a 5.0 Google rating.",
+    "Third-party accessibility-toolbar plugin injected at the top of the DOM rather than real semantic accessibility.",
+    "Contact form is a demo-labelled plugin form ('Contact Form Demo (#1)') gated behind reCAPTCHA that reports 'Recaptcha requires verification' — likely a broken or friction-heavy lead path.",
+    "Elementor page weight: heavy embedded Google Maps tiles and unoptimised full-size JPEGs.",
+    "Duplicated boilerplate hero/contact block repeated near-identically across service pages."
+  ],
+  "content_reusable": [
+    "Service long-copy for build / repair / cleaning / renovation",
+    "Service-area town list and local context sentences",
+    "Sub-service lists per service",
+    "28 project photos",
+    "Brand fonts and colours (already extracted to intake-scraped.json)"
+  ]
+}

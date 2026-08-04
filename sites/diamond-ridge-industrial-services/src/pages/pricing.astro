@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import PricingTable from '../components/PricingTable.astro';
+import Financing from '../components/Financing.astro';
+import FAQ from '../components/FAQ.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
+const pricing = (pricingEntry?.data as any) ?? { intro: 'Straightforward pricing.', packages: [], notes: undefined };
+const homeEntry = await getEntry('site', 'home').catch(() => null);
+const faqs = (homeEntry?.data as any)?.faqs ?? [];
+const calendarSnippet = site.crm?.calendar_embed_snippet;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
+
+// Deliberately NO dollar figures. Industrial concrete work is scoped per site
+// and the client publishes no rate card; inventing ranges here would be a
+// fabricated claim on a page a facility manager reads as a quote.
+const scopeRows = [
+  { driver: 'Failure mode', detail: 'Joint edge, slab surface, full-depth section loss, or a subgrade void under the slab — each is a different repair and a different cost.' },
+  { driver: 'Square footage & linear feet', detail: 'Coatings and resurfacing price by area; joint repair and line marking price by linear foot.' },
+  { driver: 'Access & operating window', detail: 'Whether we can work a live aisle, need a night shift, or can take the bay out of service changes the crew plan.' },
+  { driver: 'Substrate condition', detail: 'Moisture, contamination and existing coating all drive the surface prep, which is where most coating failures start.' },
+  { driver: 'Temperature & environment', detail: 'Freezer and cold-storage work uses different chemistry and a different sequence than an ambient warehouse floor.' },
+  { driver: 'Return-to-service requirement', detail: 'A one-hour cure back to forklift traffic is a specification, and it narrows the materials that qualify.' },
+];
+---
+<BaseLayout
+  title={`Pricing — ${site.business_name}`}
+  description={`How ${site.business_name} scopes and prices industrial concrete repair, joint restoration, floor coatings and line marking.`}
+  breadcrumbs={crumbs}
+  pagePath="/pricing"
+>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Request A Site Assessment"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+    form_heading="Get a scoped quote for your floor"
+  />
+
+  <section class="scope-table">
+    <div class="container">
+      <h2>How a floor project gets priced</h2>
+      <p class="lede">Six things decide the number. We walk all six with your maintenance lead on the assessment, before anyone quotes anything, so the price arrives with its reasoning attached.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>What we assess</th><th>Why it moves the number</th></tr>
+          </thead>
+          <tbody>
+            {scopeRows.map((r) => (
+              <tr><td>{r.driver}</td><td>{r.detail}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="factors"><strong>What you get back:</strong> a written scope naming the failure mode, the system we would specify, the area or linear footage covered, the operating window we need, and the return-to-service time. Assessments are free and carry no obligation.</p>
+    </div>
+  </section>
+
+  {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
+  {pricing.notes && (
+    <section class="pricing-notes">
+      <div class="container"><p>{pricing.notes}</p></div>
+    </section>
+  )}
+
+  {calendarSnippet && (
+    <section class="book">
+      <div class="container">
+        <h2>Book your free site assessment</h2>
+        <p class="lede">Pick a time that works around your operation. We walk the floor, identify what is actually failing, and follow up with a written scope.</p>
+        <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
+      </div>
+    </section>
+  )}
+
+  <Financing />
+  <FAQ items={faqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
+  .scope-table { padding: var(--space-5) 0; background: var(--color-surface); }
+  .scope-table h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .scope-table .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
+  .scope-table table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .scope-table th, .scope-table td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .scope-table th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .scope-table tbody tr:last-child td { border-bottom: 0; }
+  .scope-table .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
+  .book { padding: var(--space-5) 0; }
+  .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+  .book .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .calendar-wrap iframe { width: 100%; min-height: 700px; border: 0; }
+</style>

@@ -1,0 +1,49 @@
+{
+  "slug": "infinity-roofing",
+  "category": "Roofing Contractor / Exterior Cleaning",
+  "location": "Dallas GA — Paulding, Cobb, Douglas & Fulton Counties, North Georgia",
+  "threads_analyzed": 0,
+  "_source_note": "Reddit was UNAVAILABLE for this run. reddit.com blocks Anthropic's crawler (WebSearch and WebFetch both return 400), and old.reddit.com is blocked by browser policy. No Reddit data was gathered. Findings below come from Georgia-specific consumer-protection and trade sources instead: the Georgia Attorney General's Consumer Protection Division, BBB regional reporting, Georgia insurance-law summaries, and North Georgia exterior-cleaning trade sources. Provenance is weaker than Reddit for tone-of-voice, but stronger for factual/legal claims. Do not present these as 'what locals are saying online'.",
+  "sources": [
+    "https://consumered.georgia.gov/ask-ed/2017-01-23/beware-roofers-scamming-storm-victims",
+    "https://consumer.georgia.gov/consumer-topics/storms-fraud",
+    "https://www.peachtreerestorations.com/blog/p.241101011/insurance-deductible-laws-in-georgia/",
+    "https://www.bigleagueroofs.com/insights/roof-insurance-claim-denied-georgia",
+    "https://colonyroofers.com/learningcenter/top-roofing-scams-atlanta",
+    "https://www.vandrupressurewashing.com/pressure-washing-tips/how-georgias-humidity-impacts-your-roof-and-why-cleaning-matters-guide"
+  ],
+  "pain_points": [
+    "Storm chasers door-knock North Georgia neighbourhoods within days of a hailstorm. After one North Atlanta hailstorm the BBB logged roughly 30% more roofing complaints than normal. Homeowners cannot tell a local contractor from an out-of-state crew that will be gone by spring.",
+    "Contractors offer to 'waive', 'absorb', or 'eat' the insurance deductible as a closing tactic. This is illegal in Georgia under HB 423, and it exposes the homeowner — not just the contractor — to an insurance-fraud problem. Homeowners generally do not know it is illegal.",
+    "The most common roof-claim denial in Georgia is the adjuster reclassifying storm damage as ordinary 'wear and tear'. This hits hardest when the damage is subtle or the roof already has some age on it, and homeowners rarely have the documentation to push back.",
+    "Homeowners do not know whether their policy is ACV or RCV until the cheque arrives short. An ACV policy pays the depreciated value of the roof, so the settlement can land far below the replacement cost the homeowner expected.",
+    "High-pressure sales: demands for a same-day signature, a deposit before any work, and a 'today only' price. Georgia's AG consumer alert names this pattern explicitly.",
+    "On the cleaning side: contractors pressure-wash asphalt shingle roofs. It strips granules and the algae returns within weeks. Homeowners paying for a roof clean often do not know to ask for soft wash."
+  ],
+  "what_customers_value": [
+    "A contractor with a verifiable local address who will still be reachable a year later — the single strongest counter-signal to a storm chaser.",
+    "Someone who deals with the insurance adjuster directly, so the homeowner is not the one arguing for coverage.",
+    "A written estimate in hand, with no deposit demanded up front.",
+    "Showing up when they said they would. This is the most frequently praised behaviour in this trade's reviews, above price and above craftsmanship.",
+    "Thorough cleanup — debris cleared and the yard swept for nails, verified before the crew leaves.",
+    "Being told the honest thing (repair, not replacement; soft wash, not pressure wash) even when it is the smaller job."
+  ],
+  "business_differentiators": [
+    "Real fixed local address at 294 Fieldcrest Dr, Dallas GA 30132 — in Paulding County, inside the service area, not an out-of-state PO box. Direct answer to the storm-chaser pain point.",
+    "Third-party review history spans four years (oldest Directorii reviews are 4 years old, newest 3 days old), demonstrating continuity through multiple storm seasons. A storm chaser has no four-year local review trail.",
+    "Insurance-claim handling is their stated specialty — they handle adjuster communication from inspection through settlement. Directly addresses both the 'wear and tear' denial and the homeowner-vs-adjuster burden.",
+    "Reviews repeatedly name the owner (Dan) doing the consultation and estimate personally, and specifically praise punctuality: 'the only one to show up on time', 'always on time and communicative'. Grounded in real named reviews, not a claim we invented.",
+    "Multiple reviews independently praise cleanup: 'they cleaned up all the mess', 'after job did complete clean up', 'others in the past have killed my grass and flowers' (contrasting favourably). Supports a cleanup-focused promise section.",
+    "They run roofing AND soft-wash roof cleaning under one roof, so they can credibly explain why a shingle roof should never be pressure-washed — an education angle a roofing-only or cleaning-only competitor cannot own.",
+    "GAP: no verifiable rating or review count, no confirmed founding year, and no confirmed warranty term. The site must not lean on any of those three."
+  ],
+  "copy_angles": [
+    "Lead the hero with local + insurance-claim handling positioned against storm chasers — the North Georgia homeowner's actual decision is 'is this person going to still be here', not 'what is the price'. This replaces Gilroy's 'You don't pay until your roof is done' as the primary hook.",
+    "State plainly that they never touch your deductible, and say why: it is illegal in Georgia (HB 423) and it puts the homeowner at risk. This is a trust signal a storm chaser structurally cannot copy, and almost no competitor site says it.",
+    "Own the 'wear and tear' denial in the storm-damage service page and FAQ: we photograph and document the damage properly so the adjuster cannot write it off as age. This is the single highest-intent worry for a homeowner with a storm-damaged roof.",
+    "Use cleanup as the promise-band section, quoting the real reviews. It is the most-praised concrete behaviour in their own review history and it maps to Gilroy's promise-band slot.",
+    "Make soft wash vs pressure wash an explicit education block on the roof-cleaning service page — 'if someone offers to pressure-wash your shingles, say no'. Positions them as the honest operator and captures a real search intent.",
+    "Use 'no payment until you're satisfied'-style reassurance ONLY if Dan confirms it. Gilroy's equivalent slot should otherwise carry the free-inspection + written-estimate + no-deposit promise, which is defensible without client sign-off."
+  ],
+  "generated_at": "2026-07-30"
+}
