@@ -1,9 +1,303 @@
 | Business | Slug | Pages | Vercel URL | Date |
 |----------|------|-------|------------|------|
-| Headley Construction Group | headley-construction-group | 19 | https://headley-construction-group.vercel.app | 2026-07-23 |
+| Raircon Corporation | raircon | 24 | https://raircon.vercel.app | 2026-08-04 |
+| Prezkop Builders | prezkop-builders | 25 | https://prezkop-builders.vercel.app | 2026-08-03 |
+| Stubbs Landscaping | stubbs-landscaping | 25 | https://stubbs-landscaping.vercel.app | 2026-08-03 |
+| Morris Kitchens & Donnelly Designs | morris-kitchens-donnelly-designs | 26 | https://morris-kitchens-donnelly-designs.vercel.app | 2026-08-03 |
+| Comprehensive Pain Specialists | comprehensive-pain-specialists | 23 | https://comprehensive-pain-specialists.vercel.app | 2026-08-03 |
+| Royal Roofing Systems | royal-roofing-systems | 26 | https://royal-roofing-systems.vercel.app | 2026-08-03 |
+| Pinnacle Roofing & Sheet Metal | pinnacle-roofing-sheet-metal | 25 | https://pinnacle-roofing-sheet-metal.vercel.app | 2026-08-03 |
+| Headley Construction Group | headley-construction-group | 19 | https://headleycg.com | 2026-08-03 |
 | Bilski's Lawn Care | bilskis-lawncare | 23 | https://bilskis-lawncare.vercel.app | 2026-07-29 |
 | Smile Lawn Care | smile-lawn-care | 38 | https://smile-lawn-care.vercel.app | 2026-07-29 |
 | H4 Roofing & Construction | h4-roofing-construction | 27 | https://h4-roofing-construction.vercel.app | 2026-07-30 |
+| Results Roofing | results-roofing | 26 | https://results-roofing-seven.vercel.app | 2026-07-31 |
+| G&T Roofing & Home Improvements | gt-roofing | 24 | https://gt-roofing-five.vercel.app | 2026-08-03 |
+| Quality Roofing Express | quality-roofing-express | 26 + /book (SSR) | https://quality-roofing-express.vercel.app | 2026-08-03 |
+| Eastern Residential Solutions | eastern-residential-solutions | 23 | https://eastern-residential-solutions.vercel.app | 2026-08-03 |
+| AmeriStar Maids | ameristar-maids | 25 | https://ameristar-maids.vercel.app | 2026-08-03 |
+| Patriot Metal Products | patriot-metal-products | 24 | https://patriot-metal-products.vercel.app | 2026-08-03 |
+| Golden Business Machines | golden-business-machines | 24 | https://golden-business-machines.vercel.app | 2026-08-03 |
+
+## Golden Business Machines — `golden-business-machines` — 2026-08-03
+
+Template: **owl**. Full 9-step pipeline, `--auto`. Live: https://golden-business-machines.vercel.app
+
+### Business
+
+Office technology dealer and managed IT provider, Kingston PA. Founded 1969 by Joseph R. Bradley,
+locally owned, 45+ sales and service staff, five offices (Kingston HQ, Edwardsville service/warehouse,
+Moosic/Scranton, Hazleton, Williamsport). Exclusive authorized Canon dealer; authorized HP reseller and
+service center; Microsoft Certified. GBP: 4.0 stars / 4 reviews, category "Printing equipment supplier".
+
+### ⚠️ Vertical mismatch — first B2B/office-tech client on this kit
+
+This is **not** a home-services contractor. The owl template's copy defaults assume a homeowner buying a
+roof. Everything customer-facing was remapped to office technology; see "Template debt" below for what
+should move upstream so the next non-home-services client doesn't need the same pass.
+
+### Pipeline
+
+| Step | Result |
+|---|---|
+| intake-from-web | `intake-scraped.json` — GBP + 20 pages Firecrawled |
+| find-business | Single exact GBP match, website matched operator URL. Apify run `evAkIOca2gmcqJikf` |
+| scrape-content | Not needed — Firecrawl got everything |
+| local-research | `local_research.json` — copier-lease and MSP pain points |
+| site-audit | `screenshots/golden-business-machines.png` + `audit_results.json` |
+| design-reference | `design_reference.json` — brand red kept, palette re-derived for AA |
+| site-generate | 24 pages |
+| vercel-deploy | Live, all routes 200 |
+| short-link | Skipped (`--auto`) |
+
+**Actual spend: ~$0.40** (GBP $0.004 + 21 Firecrawl page scrapes). Above the documented $0.20–0.35 band
+because the client site has five product sub-pages and six IT sub-pages worth reading, plus two geo pages.
+
+### Content shipped
+
+- 5 services: copiers-and-mfps, printers-and-scanners, wide-format-and-digital-presses,
+  managed-it-services, managed-print-and-document-management
+- 6 service areas: wilkes-barre-pa, scranton-pa, kingston-pa (HQ), hazleton-pa, williamsport-pa,
+  stroudsburg-pa — all **scraped** (named on the client's own site and/or backed by a physical office)
+- 7 home FAQs, 6-item gallery, 6 partner badges (Canon, Microsoft 365, N-able, uniFLOW, PaperCut, Barracuda)
+- 1 blog post: "The Five Copier Lease Costs Nobody Quotes You"
+- `marketing_city` Wilkes-Barre / `marketing_state` PA (office in Kingston) — the Firefly pattern
+
+### Design tokens
+
+Brand red `#DF0028` extracted from the client's live CSS and kept. Fonts Poppins + Open Sans, also theirs.
+
+GBM's red is the **inverse** of the template default's contrast problem: the stock gold fails as text on
+LIGHT backgrounds and works on dark bands; this red passes on light (5.04:1 on white) and fails on dark
+(2.89:1 on `--color-primary`). So a new `--color-accent-on-dark: #ff7383` token (5.79:1) was added and the
+dark-band components — Testimonials, ProcessSteps, WhyChooseUs — were pointed at it for accent-coloured
+TEXT. Fills and buttons keep `--color-accent`; their white labels carry the contrast.
+
+### Imagery
+
+Unsplash for services (12 files in `public/img/`), Wikimedia Commons for the six service-area landmarks
+with visible CC attribution in frontmatter. Client's own logo pulled to `public/logo-gbm.png`; partner
+logos hotlink the client's CDN because the schema's `partners[].logo_url` requires `z.string().url()` and
+will not take a local path.
+
+**Note on process:** the first image pass mis-assigned four slots — a coffee-shop photo shipped as
+`copiers-mfp.jpg` — because candidates were picked off a contact sheet numbered by grid position, and
+blank cells shifted the numbering. Fixed by labelling every tile with its own Unsplash photo ID. Do that
+from the start.
+
+### Template debt (fixed in the site copy; belongs upstream in `astro-templates/owl`)
+
+These are all hardcoded roofing/home-services strings or layout assumptions in the template, not content:
+
+- `pages/index.astro`, `about.astro`, `our-work.astro`, `pricing.astro`, `book.astro`,
+  `service-area/[slug].astro`, `services/[slug].astro` — hardcoded "Get Your Free Estimate!" /
+  "Request A Free In-Person Roof Estimate Today!"
+- `pricing.astro` shipped a hardcoded four-row **roof cost table** with dollar figures
+- `WhyChooseUs.astro` heading read "Reasons homeowners pick us"
+- `services/index.astro` read "What we do for {city} homeowners"
+- `ClosingCTA.astro` defaults referenced a new roof **and "Serving Wilkes-Barre and the Wyoming Valley
+  since 1972"** — leftover copy from an earlier client, not a template default
+- `BlogCards.astro` heading "Roofing Advice"
+- `EstimateForm.astro` + `api/estimate.ts` shared a roofing service list (must stay in sync) and a
+  "Property address" label
+- `ServicesGridOwl.astro` fallback heading "Full-service roofing solutions"
+- `services/[slug].astro` built its form heading as `` `Free ${title.toLowerCase()} estimate` `` —
+  lowercasing mangles acronyms ("Free managed it services estimate")
+
+Two genuine layout bugs, also fixed in the site copy:
+
+- **ServicesGridOwl tile clipping.** `.tile` had a fixed `aspect-ratio: 16/10` with `.body` absolutely
+  positioned at `bottom: 0`. Service names that wrap to three lines overflowed the box and were clipped
+  by `overflow: hidden` — the first line of "Copiers & Multifunction Printers" was cut in half. Changed
+  to a flex column with `min-height` so the tile grows; scrim ramp strengthened to cover the taller text.
+- **HeroOwl mobile overflow.** The `max-width: 560px` block forces `flex-wrap: nowrap` plus
+  `white-space: nowrap` on trust badges, tuned for exactly two. Three badges pushed the document to
+  449px on a 390px viewport and the whole page scrolled sideways. Changed to wrap.
+
+### Verification
+
+Playwright over the production build, desktop 1280 and mobile 390: 8 pages, 0 console errors, 0 failed
+requests, 0 broken images, no horizontal overflow. All 11 live routes return 200.
+
+### Open items
+
+- **CRM is empty.** `crm` is `{ provider: "ghl" }` only — no chat, reviews, form/calendar embed,
+  call-tracking snippet or number. The native `EstimateForm` posts to `/api/estimate`, which needs a
+  destination in env or it returns `unavailable`.
+- `code_injection` head / body_start / body_end all empty. No Meta Pixel, no GTM.
+- **No testimonials.** GBP reports 4 reviews but the Apify actor returned no review bodies, and the
+  client site publishes none. `testimonials: []` — the section self-hides rather than shipping fakes.
+- **`rating` / `review_count` deliberately omitted** from `config.json`. 4.0 from 4 reviews is real but
+  too thin to display as social proof, and omitting it also suppresses the AggregateRating JSON-LD.
+  Operator's call to switch on.
+- No team members — the client site names only the 1969 founder.
+- No custom domain attached. Client's live site remains goldenbusiness.com.
+- No short link (`--auto` skips it).
+- Client's existing stack noted but **not** copied into `crm.*`: WPForms + reCAPTCHA, TeamViewer remote
+  support (`get.teamviewer.com/dhm4sj3`), UserWay accessibility widget.
+
+## Patriot Metal Products — `patriot-metal-products` — 2026-08-03
+
+Template: **owl**. Full 9-step pipeline, `--auto`. Live: https://patriot-metal-products.vercel.app
+
+**Business:** multi-process industrial custom coater at 1005 N. Vine Street, Berwick, PA 18603.
+Incorporated 1986. Autophoretic, powder, zinc plating, batch paint, dip coating, plus fabrication,
+assembly, burn-off, blasting, an onsite certification laboratory, and a three-truck fleet.
+Phone 570-759-3634, info@patriot-mp.com. GBP category "Sheet metal contractor" (understates them).
+
+**Content:** 5 services, 6 service areas, 8 gallery items, 8 home FAQs, 1 blog article, 24 pages.
+
+### Deliberate omissions — do not "fix" these without new data
+- **Rating suppressed.** GBP shows **2.7 across 7 reviews**. No rating badge, star row, review-count
+  chip, or `aggregateRating` schema anywhere on the site. This is a live reputation problem — the fix
+  is a review-generation push, not a website change. Flag to the client.
+- **No testimonials.** GBP returned zero review bodies and the client site has none. `testimonials: []`
+  and the section self-hides. Nothing was fabricated.
+- **No team section.** The client's three `/team/` pages carry lorem ipsum bios and WordPress demo names
+  ("JOHN LEADER", "STEVE CHEMICI", "MARK TERAN"), and the "headshots" render as placeholder chrome
+  letters D/N/M. Real names and roles are preserved in `intake-scraped.json`; photos are null.
+- **licensed/insured/bonded all false.** No badge or footer disclosure found. Not guessed.
+- `financing` and `us_vs_them` disabled — consumer-finance framing is wrong for a B2B job shop.
+
+### Template gaps found and patched in the client copy (worth fixing upstream in `astro-templates/owl`)
+The owl template hardcodes roofing/home-services copy in places a non-roofing client cannot override:
+- `ClosingCTA.astro` shipped **another client's copy as its default** — "Serving Wilkes-Barre and the
+  Wyoming Valley since 1972" (Gilroy). Any client not overriding it publishes Gilroy's history.
+- `EstimateForm.astro` — default heading "Request A Free In-Person Roof Estimate Today!", a hardcoded
+  roofing `SERVICES` list, and a "Property address" field label.
+- `api/estimate.ts` — the server-side `SERVICES` allowlist is a second hardcoded roofing list that must
+  be kept in sync with the component or valid submissions fail validation.
+- `pricing.astro` — a hardcoded asphalt/metal/cedar/tile roof cost table.
+- `book.astro` — "Book Your Free Inspection", on-site-visit copy.
+- `ServicesGridOwl.astro` ("Full-service roofing solutions"), `BlogCards.astro` ("Roofing Advice"),
+  `WhyChooseUs.astro` ("Reasons homeowners pick us"), `services/index.astro` ("for {city} homeowners"),
+  `blog/index.astro` description.
+All rewritten in `sites/patriot-metal-products/` for a coating buyer. `astro-templates/` untouched.
+
+### Design
+- Palette derived from the **real** brand mark, not the old site's CSS. The plant sign at 1005 N. Vine
+  is a red/white/blue "PMP" on a black plaque; the old site's `#3498DB` is the WordPress theme demo's
+  blue and was dropped. Firecrawl's detected `#FAB702` amber was used for a first pass and then
+  discarded once the sign was visible in the hero photo.
+- `--color-primary #0d1520` (near-black navy, from the sign plaque), `--color-accent #ef4136` (patriot
+  red), `--color-accent-ink #a81f2b`, `--color-on-accent #16181b`.
+- Contrast computed, not eyeballed: accent on the dark band **4.78:1**, button label on accent **4.64:1**,
+  accent-ink on bg **6.70:1**, white on primary **18.34:1**. A truer flag red (`#C8102E`) was rejected —
+  it falls to 2.66:1 on the dark band.
+- Fonts: Montserrat display (matches both the owl default and the client's detected heading font) +
+  Source Sans 3 body (closest maintained sibling to their PT Sans).
+
+### Images
+All 13 client photos were **downloaded into `public/img/`, not hotlinked**. The client's site is
+`http://` with a **broken TLS handshake**, so hotlinking would have been blocked as mixed content on an
+HTTPS Vercel site. Resized to 1600px max and recompressed: 12.9 MB → 2.4 MB.
+`facility-aerial.jpg` was renamed `plant-entrance.jpg` — it is the building entrance, not an aerial.
+
+### Open items for the operator
+- **CRM is empty.** No GHL chat, reviews, calendar, contact-form or call-tracking snippets were supplied,
+  so `crm` is `{provider: "ghl"}` only and those sections self-hide. The native `EstimateForm` posts to
+  `/api/estimate`, which needs a delivery destination configured in env or it will fail closed.
+- **No code injection.** `code_injection` is empty — no Meta Pixel, no GTM.
+- **Logo is weak.** The only asset is a 94×85 px chrome "PMP" wordmark, too small for retina header use.
+  The plant sign photo shows a much better red/white/blue mark — ask the client for the vector original.
+- **Service areas are partly inferred.** Only Berwick is GBP-confirmed. Bloomsburg, Danville, Hazleton,
+  Wilkes-Barre and Williamsport are justified by the client's own I-80 access and three-truck fleet
+  claims, but are marked `_source: "inferred"` and should be confirmed.
+- **No lead times published anywhere** — the single loudest buyer complaint in this category, and the
+  client says nothing about it. Worth asking them for a real number.
+- **No ISO 9001 / IATF claim found.** Engineering buyers filter on it. If they hold one, it belongs in
+  the header.
+- Local research ran at **snippet depth only** — Reddit blocks both the WebSearch crawler and Firecrawl,
+  and its JSON endpoint refused requests. Pain points are directionally sound but not quote-verified.
+- No custom domain attached. No short link created (`--auto` skips it).
+- Vercel SSO is **off** for this project — the `.vercel.app` URL is publicly reachable, unlike the
+  documented default. Flag if that is not intended.
+
+## eastern-residential-solutions (2026-08-03)
+
+Full 9-step pipeline, `--auto`. Template: **owl**. Roofing / siding / seamless gutters, Jessup PA
+(1 Keystone Pl) with a second office in Baltimore MD. GBP: 5.0 across 31 reviews, one clean match,
+website agreed with the operator-supplied URL. Spend ~$0.28 (Apify $0.004 + 13 Firecrawl pages).
+
+**Design.** Brand tokens came out of Firecrawl's `branding` format on the client homepage: accent
+`#d90916` (their real Get Quote red), secondary navy `#2c506e`, display face Oswald. Two derivations
+were forced by contrast, both recorded in `design_reference.json`:
+
+- The navy could not be used as `--color-primary` directly. Owl renders eyebrows, star rows and
+  quote marks in `--color-accent` on the dark bands, and the brand red measures **1.61:1** against
+  `#2c506e` — unreadable. Driving the navy to `#0a1622` lifts it to 3.48:1.
+- Firecrawl reported `Playfair Display` in the body role. It is a serif display face and was
+  rejected for running copy in favour of the template default, Inter. Oswald was kept for display.
+- `#0000ee` was also detected and discarded — it is the browser default link colour on unstyled
+  anchors, not a brand colour. Worth watching for on any Wix site.
+
+All seven contrast pairs pass the README's verify script.
+
+**Images: do not hotlink Wix, and do not trust the client's own gallery.** Downloaded 29 images off
+`static.wixstatic.com` into `public/img/` (the GoDaddy lesson from firefly-cd applies equally here),
+resized with PIL, total 5.1MB. Then **9 of the 29 had to be thrown out after visual inspection**,
+which is the part worth remembering — a contact sheet of every downloaded asset should be a standard
+step, not an optional one:
+
+- 3 were Eastern-branded BEFORE/AFTER marketing cards with a phone number burned into the pixels
+  (would have conflicted with any future call-tracking number).
+- 2 were stacked BEFORE/AFTER composites with white letterboxing.
+- 1 was a testimonial quote card, not a photo.
+- 1 was a stock photo of glass skyscrapers sitting on their *roofing* page.
+- 2 were commercial buildings (a car wash, a modern black-clad build) on a residential site.
+- 3 more had an "AFTER" label baked into the top strip and were salvaged by cropping 10% off the top.
+
+The Owens Corning badge had a **Pink Panther graphic** beside it on the source site; cropped out and
+re-composited onto a white tile so it reads on the dark `--color-primary` guarantee card. Team
+headshots were re-fetched using Wix's own `/v1/crop/x_,y_,w_,h_/` transform params rather than
+centre-cropping the originals — Wix has already computed a face-centred crop and it is better than
+guessing.
+
+`partners[].logo_url` is `z.string().url()` in the schema, so it cannot take a local path. It is set
+to the absolute production URL and 404s in local preview until deploy. **If this project's URL ever
+changes, that field has to change with it.**
+
+**Reddit was unreachable.** WebFetch, Firecrawl and the `.json` API all refused `reddit.com` this
+run. `local_research.json` was built from Firecrawl *search-result excerpts* across 28 real threads
+(r/Scranton, r/baltimore, r/Roofing, r/HomeImprovement, r/homeowners, r/RoofingSales, r/Insurance)
+and the file records that the depth is excerpt-level, not full-thread. The angles held up well —
+"roofers never call back" is the dominant complaint in both metros and Eastern has a review answering
+it verbatim, which became the hero headline.
+
+### Three owl TEMPLATE defects found — fixed in this site copy only, flagged upstream
+
+1. **`ClosingCTA.astro` ships another client's copy as its default prop.** Line 16 of the template
+   reads *"Serving Wilkes-Barre and the Wyoming Valley since 1972"* plus a no-payment-until-satisfied
+   term. Every page calls `<ClosingCTA />` with no props, so this renders site-wide. It is false for
+   every client except G&T Roofing and it has **already shipped live** on `gilroy-roofing`,
+   `quality-roofing-express` and `results-roofing`.
+2. **`AboutSection.astro` renders `body` as a single `<p>`,** while site-generate's contract for
+   `about.story` is explicitly "2–3 paragraphs". A correctly authored story collapses into a wall of
+   text. Fixed here by splitting on blank lines; single-paragraph callers are unaffected.
+3. **`about.astro` feeds `story.slice(0, 190)` into the hero,** which cuts mid-word on any real
+   story. Fixed here by taking whole sentences up to ~190 chars.
+
+All three belong upstream in `astro-templates/owl/`, and defect 1 needs a fix-and-redeploy pass over
+the three affected live sites. Not done from this run — `site-generate` must never write to
+`astro-templates/`.
+
+**Operator paste-ins still outstanding** (each section self-hides or degrades gracefully until set):
+GHL chat / reviews / calendar / contact-form snippets, `crm.captcha_snippet`, call-tracking number,
+`code_injection.head` (Meta Pixel / GTM), and a custom domain. The native `/api/estimate` endpoint is
+live but has **no lead destination configured** — set `LEAD_WEBHOOK_URL`, or `RESEND_API_KEY` +
+`LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`, in the Vercel project env. Until then a submission returns
+the "please call us instead" message rather than silently dropping the lead, but **no lead reaches
+the CRM**. This is the highest-priority item before the site is used for outreach.
+
+**Two accuracy notes carried into the content.** `insured` and `bonded` are `false` — the client's
+site displays licensing (PA HIC# 017000, MD HIC# 161389) but never states insured status, so nothing
+on the generated site claims it. And GBP lists (570) 382-8629 while the client's footer displays a
+toll-free (877) 570-3774 whose `tel:` link still dials the 570 number; the GBP number is canonical
+throughout.
+
+`sites/eastern-residential-solutions/raw/` was deleted during scaffold cleanup before the Astro copy
+— the aggregated `intake-scraped.json` retains every extracted field, but the per-URL Firecrawl
+archive is gone. Re-scraping would cost ~$0.26 and yield no new content, so it was not repeated.
 
 ## mylocalads (2026-07-25)
 - Source: 1:1 recreation of live https://mylocalads.co (all 9 pages)
@@ -960,3 +1254,1584 @@ and confirm it appears in Whitman's PayPal before pointing customers at this pag
 still open from the earlier deploy: `/api/estimate` has no delivery destination
 (`vercel env ls production` is empty), so the lead forms capture nothing; and there is no
 captcha on that endpoint.
+
+## results-roofing — 2026-07-31
+
+- **Client:** Results Roofing (GBP: "Results Roofing", HQ 2828 E Trinity Mills Rd Ste 212, Carrollton TX 75006)
+- **Source site:** https://resultsroofing.com/ — a modern, competently built Divi site, NOT an old-site rescue
+- **Template:** `owl`, scaffolded from `astro-templates/owl/` (operator asked for "the Gilroy template"; gilroy-roofing is an owl build)
+- **Pages:** 26 static + `/book` on-demand (`prerender = false`, same as gilroy)
+- **Local build:** clean. All 17 spot-checked routes 200 on the dev server.
+- **Spend this run:** ~$0.25 total — GBP lookup $0.004, Firecrawl 12 pages ~$0.23, Firecrawl web search for Reddit ~$0.02. design-reference cost $0.
+
+### Why this rebuild is a conversion job, not a redesign
+
+The audit screenshot is the argument. Their site is responsive, HTTPS, real typography, their own
+photography — and its **testimonials section renders completely empty**. A full-width blue band
+reads "WHAT OUR CUSTOMERS SAY ABOUT US" and shows nothing, because the Trustindex widget never
+populates. A business with **1,802 reviews at 4.9 stars was displaying zero of them.** The bottom
+contact form renders as a blank white rectangle in the same capture.
+
+Meanwhile the differentiator — insurance-claim advocacy — appears nowhere on their home page. It is
+buried in `/services/emergency-services` and `/storm-damage`. Google's own review tags say
+insurance claim assistance is mentioned **181** times, adjuster meetings 26, thorough inspection 62.
+The thing customers value most was the thing hardest to find.
+
+So: testimonials are baked into `home.json` as real text (never a third-party widget), and the
+`signature_system` slot carries the claim process on the home page.
+
+### Research notes
+
+Reddit is **hard-blocked** for both WebSearch (`domains are not accessible to our user agent`) and
+Firecrawl (`we do not support this site`). `old.reddit.com` still returns 200 to a normal browser
+UA; `www.reddit.com` returns 403. Threads were found via Firecrawl web search and fetched with
+curl. 9 DFW threads, ~200 comments — see `local_research.json`.
+
+### Contrast: the client's brand red cannot do both jobs
+
+Measured, not estimated:
+
+| pair | ratio | |
+|---|---|---|
+| white on brand red `#ba2a22` | 6.10:1 | PASS — every button |
+| brand red as text on `--color-bg` | 5.64:1 | PASS |
+| white on deep navy `#062a6b` | 13.54:1 | PASS — all four dark bands |
+| coral `#f4756a` on `#062a6b` | 4.90:1 | PASS — new token |
+| brand red on their own brand blue `#0047ba` | **1.32:1** | fail — why primary is not the raw blue |
+| brand red on the deepened navy | **2.22:1** | fail — why the new token exists |
+| brand red on pure **black** | **3.44:1** | fail — no dark band rescues it |
+
+**Added `--color-accent-on-dark` in the site copy** and repointed 8 rules: Testimonials
+`.eyebrow`/`.stars`/`.mark`, ProcessSteps `.label`, WhyChooseUs counter, HeroOwl `.badge-copy
+.stars`, plus the two dark-band `:hover` border-colors. Fills (`background: var(--color-accent)` +
+`--color-on-accent`) were already correct and were left alone. HeroOwl:212 `.stars` sits on
+`--color-surface` (white) at 6.10:1 and was also left alone.
+
+This is the exact mirror of the `--color-accent-ink` fix already in the template — one
+`--color-accent` cannot serve both button fills and text on navy. Worth upstreaming.
+
+For reference: **gilroy's own accent `#f15537` is 3.45:1 with white button text and fails AA.**
+Gilroy's palette *shape* was the reference here, not its values.
+
+### TEMPLATE BUGS FOUND (not fixed upstream — fixed in the site copy only)
+
+1. **`astro-templates/owl/src/components/ClosingCTA.astro:16` still ships Gilroy's copy as its
+   default `body`:** *"...no payment until the job is finished and you're satisfied. Serving
+   Wilkes-Barre and the Wyoming Valley since 1972."* Eleven call sites take that default, so it
+   rendered on this Dallas client's home page with another client's city, another client's founding
+   year, and a payment-terms promise Results Roofing has never made. The 2026-07-25 log entry claims
+   this was swept; it was not. **Every owl build since then should be re-checked.**
+2. **`ServicesGridOwl.astro` clipped long service titles.** `.tile` had a hard `aspect-ratio: 16/10`
+   with `.body` absolutely pinned to `bottom: 0`; a two-line title plus three chips overflowed
+   upward and "Storm Damage & Insurance Claims" lost its entire first line. Site copy now uses a
+   flex column with `min-height`, so the tile grows instead of clipping.
+3. **`EstimateForm` / `HeroOwl` printed raw review counts** ("1802 reviews") while every other
+   surface said "1,802". Both now use `toLocaleString('en-US')`.
+
+### KIT BUG FIXED UPSTREAM (`scripts/screenshot.js`)
+
+Playwright was not installed at the kit root at all, and once installed, its bundled
+`chrome-headless-shell` was served a **bare 403 page** by resultsroofing.com's WAF — which
+screenshotted cleanly and would have silently poisoned the audit with a picture of an error page.
+The script now launches the locally installed Google Chrome (falling back to bundled chromium) and
+**warns loudly on any HTTP >= 400**.
+
+### Content decisions
+
+- **5 services** (owl cap). Storm Damage & Insurance Claims is `order: 1` — deliberately ahead of
+  Roof Replacement. Replacement is what they sell; the claim is what people search at 11pm after
+  the hail stops. Emergency Services was folded into Storm Damage rather than dropped. Paintless
+  Dent Repair excluded — it is an auto-body service on a separate domain (resultspdr.com).
+- **6 service areas** (owl cap): Dallas, Fort Worth, Houston, Austin, San Antonio, Atlanta. Their
+  other four markets (Raleigh, Wilmington, N Myrtle Beach, Amarillo, Temple, College Station) are
+  named in body copy but have no pages.
+- **3 original blog posts** written from the Reddit research: the storm-chaser piece, an ACV vs RCV
+  explainer, and the should-you-file trade-off. None are rewrites of their existing posts.
+- **All 19 photos localized to `public/img/`** rather than hotlinked off their WordPress CDN,
+  per the schema comment. Optimized to 2.8MB total. Two stock images from their site were dropped
+  (a terracotta-tile shot and an AdobeStock tree-on-roof kept only for the Atlanta area page).
+- Content was drafted in British spelling and swept to US: 23 replacements across 2 passes
+  (cheque->check, neighbourhood->neighborhood, mould->mold, labour->labor, favour->favor,
+  itemised->itemized, scrutinise->scrutinize, authorisation->authorization, maths->math,
+  characterise->characterize, realise->realize, localised->localized).
+
+### Claims deliberately NOT made (no source)
+
+- `insured: false`. Their site says "licensed roofing construction company" but "licensed and
+  insured" appears only as generic advice about what to look for in *any* contractor, never as a
+  claim about themselves. **Operator must confirm before flipping this.**
+- No `years_in_business` — no "since YYYY" appears anywhere on their site.
+- No claim about how Results Roofing handles deductibles. The FAQ and blog state the **Texas statute**
+  (a contractor may not pay, waive, rebate or absorb any part of a deductible) as consumer education
+  and never assert their own practice.
+- The one-year filing window is phrased as policy-dependent ("many set an outside limit of roughly a
+  year... the exact window is set by your policy"), never as a statutory deadline, because it is not one.
+- No Class 4 shingle *program* is claimed — it is discussed as an option to ask their agent about.
+
+### OPEN ITEMS for the operator
+
+- **Phone.** Using the site-wide header number (214) 301-5533. They publish **nine**: GBP says
+  (469) 270-8037, the HQ footer says 469-218-8983, `/storm-damage` and `/about` say (214) 505-1442,
+  plus seven regional office lines. Swap in a tracking number before this goes to the client.
+- **All five CRM paste-ins are unset** (`crm: { provider: "ghl" }` only). The native `EstimateForm`
+  renders and validates but `crm.form_action_url` is unset, so **submissions go nowhere**. Also no
+  `crm.captcha_snippet` — the dev-only notice is correctly absent from the production build, but the
+  endpoint is uncaptcha'd. Do not send traffic here until both are wired.
+- `code_injection.head` / `body_end` empty — no Meta Pixel, no GTM.
+- No service-area landmark photos. `landmark_photo` is unset on all six, so AboutSection falls back
+  to text-only (the intended fallback per the schema comment, not a bug).
+- Hero video not used. They ship one (`og:video` mp4) and the template supports it, but the schema
+  requires an absolute URL and their CDN link is a hotlink risk. Revisit after deploy if wanted.
+- `.form-error` uses a fixed `#be1e1e`, deliberately not accent-derived. For this client that is
+  within a hair of the brand red, so an error banner will read as brand chrome. Cosmetic; noted.
+
+### Deploy — 2026-07-31
+
+**Live: https://results-roofing-seven.vercel.app** — 26 static pages + `/book` on-demand. All 29
+routes (including `/sitemap-index.xml` and `/robots.txt`) verified 200 against the live host.
+
+**`results-roofing.vercel.app` is NOT ours and must never be used.** It is a Next.js app on someone
+else's Vercel account, titled "Results Roofing | Instant Roof Replacement Quotes" — almost certainly
+the client's own Roofle instant-quote product. Because the clean name was taken, Vercel auto-assigned
+`results-roofing-seven`.
+
+`site-generate` had optimistically baked `https://results-roofing.vercel.app` into `astro.config.mjs`,
+`robots.txt` and `config.json` before the project existed, so the first deploy shipped **canonical
+tags and a sitemap pointing at a third party's site**. Caught by sweeping every route on the live
+host rather than trusting the deploy's READY state — the first sweep came back a nonsense mix of 200s
+and 404s, which is what a foreign app answering your hostname looks like. Rewritten and redeployed;
+canonicals and the robots sitemap line now verified live.
+
+**Lesson for `site-generate`:** do not write a presumed `{slug}.vercel.app` into canonicals. Either
+leave `REPLACE_SITE_URL` in place until `vercel-deploy` resolves the real alias, or claim the project
+first. The interim URL is a guess and this is the second failure mode it has produced (see the
+mylocalads CWD-hijack entry above for the first).
+
+Verification on the live host: zero occurrences of `Wilkes`, `1972`, `Wyoming Valley`, `DEV ONLY`,
+`Sample`, `Denver`, `Example Roofing`, `gilroy`, `Lorem`, or the wrong `results-roofing.vercel.app`
+across 8 sampled pages. Exactly two phone numbers render site-wide: the main line (214) 301-5533 and
+the claims department (844) 227-3484 — both intentional.
+
+**Still true and still blocking client hand-off:** `crm.form_action_url` is unset, so the estimate
+form validates and then drops the lead; there is no captcha on `/api/estimate`; no Pixel/GTM; and the
+phone is the client's published header number rather than a tracking number.
+
+If a nicer URL is wanted before outreach, rename the Vercel project (e.g. `results-roofing-tx`) or
+attach a custom domain — then re-run the URL rewrite + redeploy, because canonicals are baked at
+build time.
+
+---
+
+## 2026-08-03 — firefly-cd: custom domain `fireflycd.com` attached (DNS pending)
+
+`fireflycd.com` and `www.fireflycd.com` added to Vercel project `firefly-cd` (ownership verified,
+`domainOwnership: current-scope`, no conflicts). Canonicals rewritten from `firefly-cd.vercel.app`
+to `https://fireflycd.com` in `astro.config.mjs`, `public/robots.txt`, and
+`src/content/site/config.json`; rebuilt (22 pages) and redeployed to production. Verified
+`dist/index.html` carries `rel="canonical" href="https://fireflycd.com/"`.
+
+**Not yet live** — the domain is on GoDaddy nameservers (`ns59/ns60.domaincontrol.com`) and still
+resolves to GoDaddy Website Builder (`76.223.105.230`, `13.248.243.5`, `Server: DPS/2.0.0-beta`).
+Operator must swap the web records at GoDaddy:
+
+| Type  | Name | Value                                  |
+|-------|------|----------------------------------------|
+| A     | `@`  | `216.198.79.1`                         |
+| A     | `@`  | `64.29.17.1`                           |
+| CNAME | `www`| `d71b7c76faba8aae.vercel-dns-017.com.`  |
+
+**Do NOT change nameservers and do NOT touch MX or TXT.** Google Workspace email is live on this
+domain (MX → `aspmx.l.google.com` et al.) and there are two `google-site-verification` TXT records
+plus an SPF record (`v=spf1 include:dc-aa8e722993._spfm.fireflycd.com ~all`). Moving to
+`ns1/ns2.vercel-dns.com` would drop all of it and break the client's email. Record-level swap only.
+
+Cutting the A records replaces the client's existing GoDaddy-built site at the root — that is the
+intent, but it is the point of no return for the old site's content, which lives only in GoDaddy's
+builder.
+
+## headley-construction-group — domain attach 2026-08-03
+
+- **Domain:** headleycg.com (apex, canonical) + www.headleycg.com (308 → apex)
+- **Registrar:** Squarespace Domains; **DNS host:** HostGator (ns6125/6126.hostgator.com)
+- **DNS method:** A-record swap at HostGator — nameservers deliberately NOT delegated to Vercel
+  because the domain runs Google Workspace email (MX aspmx.l.google.com + SPF TXT). NS
+  delegation would drop those records and break the client's email.
+- **Records handed to operator (not yet set as of this entry):**
+  - `A  @    216.198.79.1` and `A  @    64.29.17.1` (Vercel rank-1 IPv4 pair; legacy `76.76.21.21` also valid)
+  - `A  www  216.198.79.1` / `64.29.17.1` — or `CNAME www → cname.vercel-dns.com.`
+  - Delete the existing `A @ 192.254.237.187` and `A www 192.254.237.187` (HostGator shared host)
+- **Cutover state:** headleycg.com still serving the OLD HostGator site (HTTP 200) until the
+  A records change. Vercel side is fully configured and waiting.
+- **Canonical rewrite:** astro.config.mjs `site:`, public/robots.txt sitemap line, and
+  src/content/site/config.json `site_url` all moved vercel.app → https://headleycg.com
+- **Redeploy:** dpl_AExECEMrBv8jTx12vv5UXsc4c1P9 (READY, prod, 19 pages) — verified
+  canonical + sitemap emit https://headleycg.com
+- **SSO:** left at default (`all_except_custom_domains`) — vercel.app gated, custom domain public
+
+### Same day — DNS cut over, `fireflycd.com` verified live
+
+Operator made the GoDaddy record swap. Verified against public DNS (`@8.8.8.8`):
+
+- Root A → `216.198.79.1`, `64.29.17.1` ✓
+- `www` → CNAME `d71b7c76faba8aae.vercel-dns-017.com.` ✓, 301s to apex ✓
+- `http://` → 308 to `https://` ✓
+- SSL cert issued and validating clean (`ssl_verify_result=0`), `server: Vercel`, `x-vercel-cache: HIT`
+- **MX, SPF, and both `google-site-verification` TXT records intact** — Google Workspace email unaffected
+- Nameservers deliberately still `ns59/ns60.domaincontrol.com`; Vercel's inspect flags this as a
+  nameserver mismatch (`✘`). **That flag is expected and must be ignored** — record-level pointing is
+  the correct configuration here precisely because moving NS to Vercel would strand the client's email.
+
+All 22 routes return 200: `/`, `/about/`, `/accessibility/`, `/book/`, `/contact/`, `/our-work/`,
+`/pricing/`, `/privacy/`, `/terms/`, `/service-areas/`, `/services/` + 6 service pages, and the 5
+flat-root area pages (`/spokane-wa/`, `/spokane-valley-wa/`, `/liberty-lake-wa/`, `/post-falls-id/`,
+`/otis-orchards-wa/`). Unknown paths 404 correctly. Sitemap resolves and points at `fireflycd.com`.
+Zero `firefly-cd.vercel.app` references across 6 sampled pages. Title renders the correct market
+("Spokane") — no geography leakage from other clients.
+
+**Verification gotcha worth remembering:** the first live sweep after the cutover returned `200` on
+`/` and `404` on every other route, with GoDaddy's `Server: DPS/2.0.0-beta` and GoDaddy's
+`robots.txt`. That was **not** a deploy failure — it was the local macOS resolver still caching the
+old GoDaddy A records while public DNS had already updated. Confirm with
+`curl -w "%{remote_ip}"` before diagnosing anything; if it shows the old IP, re-test with
+`curl --resolve fireflycd.com:443:216.198.79.1` to hit the Vercel edge directly. A partial-404 sweep
+is the exact signature of a stale resolver pointing at a foreign host, and it looks identical to a
+broken deploy.
+
+### 2026-08-03 — firefly-cd: added Kootenai County, ID service area (23 pages)
+
+New service-area page live at `https://fireflycd.com/kootenai-county-id/`. Deploy
+`dpl_33gX3MzYGZGpH9hXAD1bCHBnXMVj`. Snapshotted to
+`.site-edit-history/2026-08-03T17:46:34Z-k7n3x1/` (rollback-able).
+
+**Operator said "Kootenay County" — corrected to Kootenai County, Idaho.** Kootenay is a region in
+British Columbia; the Idaho county bordering Spokane is Kootenai, and the existing `post-falls-id.md`
+already carried `county: Kootenai County`. Worth noting the overlap: Post Falls sits inside Kootenai
+County, so these two pages compete for some of the same queries.
+
+**The real work was the area cap, not the markdown.** `firefly` hardcodes `.slice(0, 5)` on
+service_areas in FIVE places, and the site already had exactly 5 areas:
+
+    src/pages/[area].astro:31              ← route generation (the critical one)
+    src/pages/service-areas/index.astro:8
+    src/components/Header.astro:5
+    src/components/Footer.astro:5
+    src/components/ServiceAreaGrid.astro:4
+
+Dropping in a 6th markdown file alone would have **silently discarded one area** — sort-by-order
+then slice, no build error, page just 404s. All five raised to 6 with operator approval (CLAUDE.md
+flags this cap as "raise deliberately"). Two of the five live under `src/pages/**`, outside
+`site-edit`'s allowed write roots — called out and approved before applying, not assumed.
+
+**Photos: Google Places URLs are not usable here.** They are signed, they expire, and Google's terms
+bar persisting them in a static site. Used Wikimedia Commons instead, filtered to **CC0 and public
+domain only** — CC BY-SA would drag attribution + share-alike onto a commercial client page.
+
+**Then hotlinking Wikimedia failed too, and the failure was quiet.** `upload.wikimedia.org` only
+serves *pre-rendered* thumbnail widths: `1920px` and `1280px` returned 200 while `1600px`, `1200px`,
+`1024px` and `800px` all returned **400**. The first deploy shipped 400ing images because the widths
+were swapped to 1600/1200 after only the 1920px URL had been verified — re-verify a URL after
+changing any part of it, including a size segment. Fix: downloaded the originals and self-hosted at
+`public/images/`, referenced by absolute URL (`https://fireflycd.com/images/...`) because the
+schema's `z.string().url()` rejects root-relative paths. Self-hosting is the better answer regardless
+— no dependency on a third party's thumbnail cache.
+
+Sized 1600x900 (hero) and 1200x900 (landmark) via PIL, q=75, ~310KB each. That is ~2.5x the ~125KB
+of the existing Unsplash area photos; dense lake/forest detail does not compress like the simpler
+stock shots, and hitting 150KB required q=45, which visibly degrades a hero. Chose visual quality.
+
+Verified live: all 6 area pages 200, new page in sitemap, header/footer nav and `/service-areas/`
+index, `local_context` renders, zero occurrences of the "Kootenay" misspelling.
+
+**Standing risk, unrelated to this edit (flagged, not fixed):** 42 image references across this site
+still point at `img1.wsimg.com` — GoDaddy's CDN, scraped from the old GoDaddy Website Builder site.
+Now that the domain has moved off GoDaddy hosting, cancelling the GoDaddy website plan could 404 all
+42. They should be migrated to `public/` before that plan lapses.
+
+### 2026-08-03 — firefly-cd: Kootenai County hero swapped to operator-supplied kcgov.us photo
+
+Deploy `dpl_3sQhvSA51GjdZAttd75p5FA4UVfK`. Snapshot
+`.site-edit-history/2026-08-03T17:58:07Z-p2m8q4/`.
+
+Operator supplied `https://www.kcgov.us/ImageRepository/Document?documentID=22679` — an aerial of
+Coeur d'Alene looking down the Spokane River toward the lake, autumn color. Materially better than
+the generic lake stock it replaced: locally recognizable, which is the whole point of an area page.
+
+Source 2200x1150 (aspect 1.913) → LANCZOS 1722x900 → center-crop 1600x900, q78, **184KB** — lighter
+than the 309KB shot it replaced. Crop trims only 61px per side; river, townfront, lake and mountains
+all survive.
+
+Filename kept identical, so no markdown edit was needed. That raises a stale-CDN risk, so the live
+asset was verified by **sha256 against the local file** rather than by HTTP 200 — they match, and
+dimensions read 1600x900. A 200 alone would not have distinguished the new image from a cached old
+one at the same URL.
+
+**LICENSE UNVERIFIED — open risk on a live commercial page.** Only US *federal* works are
+automatically public domain (17 USC §105); state and county works are not. A drone shot this
+polished is commonly licensed to a county by its photographer for the county's own use, which would
+not cover a contractor's marketing site. Operator was told before the swap and chose to proceed.
+Confirm reuse rights with Kootenai County; if they decline, roll back to batch
+`2026-08-03T17:58:07Z-p2m8q4` to restore the CC0 lake photo.
+
+Landmark photo left as the public-domain Lake Coeur d'Alene sunset — the supplied image is a 1.913
+panorama and cropping it to the landmark slot's 4:3 would gut the composition.
+
+## G&T Roofing & Home Improvements — `gt-roofing` — 2026-08-03
+
+**Live:** https://gt-roofing-five.vercel.app · **Template:** owl · **Pages:** 24
+**GBP:** 77 Center St, Pittston, PA 18640 · (570) 880-1640 · 5.0 (5 ratings) · place_id `ChIJd20SX60fxYkRI8bVPVzlOx8`
+
+### Pipeline notes
+
+**GBP took three lookups (~$0.012).** "G&T Roofing & Home Improvements" + "Scranton, PA" returned
+zero results; broadening to "Northeast Pennsylvania" resolved the location query to the Philadelphia
+metro and returned eight unrelated Bucks County contractors. A free WebSearch surfaced the real city
+(Pittston) from a Thumbtack listing, and the third Apify run with `locationQuery: "Pittston, PA"` hit
+on the first result with an exact website match. Lesson: when a `locationQuery` names a *region*
+rather than a city, Apify geocodes it badly — find the actual city first, even if that costs a free
+search.
+
+**Firecrawl spend: $0.00.** The existing site is a Hostinger Horizons Vite/React SPA whose served
+HTML is a 6.4 KB shell with an empty `<title>`. All page content ships inside `assets/index-*.js`,
+so the entire content set — services, testimonials, gallery with categories and captions, about
+copy, manufacturer list, both owner phone numbers — was extracted for free by grepping the JS
+bundle. Brand tokens came from the CSS bundle plus a live Playwright `getComputedStyle` read. Worth
+checking for any Horizons / Lovable / v0-style SPA before paying to scrape one.
+
+**Brand palette is logo-derived, not CSS-derived.** The site's CSS declares `--primary hsl(210 100%
+20%)` (#003366) and `--accent hsl(0 100% 40%)` (#cc0000); the logo PNG samples at #053173 and
+#b60c16. Used the logo values — the mark is what sits next to these colours on every page. Font is
+DM Sans for both roles, taken from the client's own Google Fonts link.
+
+**Contrast: the owl template's single `--color-accent` fails on this brand.** #b60c16 measures
+1.80:1 on the navy dark bands. Applied the same `--color-accent-on-dark` fix results-roofing uses —
+#ff7d70, a tint of the same brand red, 4.97:1 on #053173 — and patched the eight call sites in
+`Testimonials`, `ProcessSteps`, `WhyChooseUs` and `HeroOwl` in this client site only. The template
+still ships one token for two incompatible jobs; third client to hit it.
+
+### TEMPLATE DEFECT FOUND — unconditional licensing claim
+
+`astro-templates/owl/src/pages/service-area/[slug].astro` asserts "local, licensed service" in the
+meta description of **every** service-area page, and "fast, honest, licensed work" in the
+AboutSection fallback body — both hardcoded, neither gated on `site.licensed`. `TrustBadges.astro`
+gates its visible badge correctly; these two strings do not.
+
+G&T publishes **no** licensing, insurance, bonding or warranty claim anywhere on their own site, and
+no PA HIC registration number is on public record for them. Set `licensed`/`insured`/`bonded` to
+`false` and patched both strings in this client site to key off `site.licensed`. Verified zero
+occurrences of "licens/insured/bonded" in the rendered HTML of every page except `/terms` (where
+"licensors" is unrelated boilerplate).
+
+**Still live upstream.** Every other owl site with `licensed: false` is publishing the same claim.
+Spawned a follow-up task to fix the template and audit results-roofing, infinity-roofing,
+h4-roofing-construction, quality-roofing-express and eastern-residential-solutions.
+
+### SECOND TEMPLATE DEFECT — WhyChooseUs eyebrow fails AA
+
+`WhyChooseUs.astro` renders `SectionHead` on a `--color-primary` band and already `:global()`-overrides
+that head's `h2` and `.subtitle` for the dark background — but not `.eyebrow`, which is
+`--color-accent-ink`, the accent tuned for LIGHT backgrounds. So "WHY CHOOSE US" rendered at
+**1.80:1** on navy. Caught by pixel-sampling the deployed page, not by reading the CSS; the section
+looks plausible in a full-page screenshot at thumbnail scale.
+
+Fixed here with one `:global(.section-head .eyebrow)` override to `--color-accent-on-dark` (4.97:1),
+verified live by re-sampling the same pixel region — #b60c16 before, #ff7d70 after. Spawned a second
+follow-up task to fix it upstream, ship `--color-accent-on-dark` in the template's own `tokens.css`
+(three client sites have now added it independently), and audit the other owl builds.
+
+### Open items for the operator
+
+- **PA HIC number** — Pennsylvania requires registration for home-improvement work over $500, the
+  registry is public, and homeowners are actively advised to check it. This is the single
+  highest-value missing asset on the site. Collect it from Alex, then set `licensed: true` and add
+  the number to the footer.
+- **Written workmanship warranty** — nothing on record. Competitors publishing a 2-year written
+  workmanship warranty beat G&T on this directly.
+- **All CRM slots empty** — `crm` is `{ provider: "ghl" }` only. No chat, reviews widget, calendar,
+  form embed or call-tracking snippet. The native `EstimateForm` renders but has no
+  `form_action_url`, so **submissions currently go nowhere**. Highest-priority paste-in.
+- **Client is already running paid traffic** to the old site — GA4 `G-4P5P2053KW` and Google Ads
+  `AW-18177232427` are installed there. Neither was carried over (client tags are not ours to
+  copy). Decide whose tags go in `code_injection.head` before pointing any ads at this URL.
+- **Six site-published testimonials** (Maria Santos, Robert Chen, Jennifer Kowalski, David Martinez,
+  Sarah Thompson, Michael Patel) came from the client's existing site and could not be independently
+  verified — the GBP has 5 ratings but zero review text. The three Thumbtack reviews (Tanis R.,
+  Anthony E., Daniel K.) are verifiable. Confirm the six with the client or drop them.
+- **Second owner's number** — Luis at (570) 453-8725 appears in body copy but `phone` is Alex's
+  (570) 880-1640 throughout the header, schema and footer, per GBP.
+- **No city landmark photos** — service-area pages use the client's own project photography as hero
+  images and omit `landmark_photo` rather than using unlicensed or generic stock.
+
+### Content
+
+5 services (roof-replacement, roof-repair, seamless-gutters, siding-and-exterior,
+chimney-and-skylights — consolidated from the client's 8 to fit `SERVICE_LIMIT = 5`, all 8 covered
+via `sub_services`). 6 service areas (scranton, wilkes-barre, pittston, hazleton, carbondale,
+stroudsburg — all `-pa`, `AREA_LIMIT = 6`). 8 home testimonials, 8 home FAQs, 9 gallery items, 4
+partner badges, 1 blog post (ice dams / NEPA freeze-thaw). 14 client images pulled from the
+Hostinger CDN into `public/img/` rather than hotlinked; logo background made transparent, trimmed
+and resized 1254px/977KB → 640px/272KB.
+
+
+## Quality Roofing Express — `quality-roofing-express` — 2026-08-03
+
+| | |
+|---|---|
+| **Live** | https://quality-roofing-express.vercel.app |
+| **Template** | `owl` |
+| **Pages** | 26 static + `/book` (SSR) = 27 routes, all 200 |
+| **Client site (old)** | https://www.qualityroofingexpress.org/ — SITE123, single page |
+| **GBP** | 4.6 ★ / 74 reviews · placeId `ChIJT3NpTdXZxIkRXrlxdqrgXIk` |
+| **Deployment** | `dpl_7ZeDgedCjtrFQskSfMSRMin4V7gV` (READY, prod) |
+| **Spend** | ~$0.012 (2 Apify runs: Maps lookup + reviews scrape). **Zero Firecrawl spend** — the client site is a single page and was fetched with `curl` + parsed locally; Reddit research used Firecrawl *search* snippets only, since Firecrawl refuses to scrape reddit.com. |
+
+### Intake
+
+Business confirmed from 2 GBP hits by matching the operator-supplied URL. 614 N Rebecca Ave,
+West Scranton PA 18504 · (570) 614-3914 · Qualityroofingexpress@gmail.com · open 7 days
+(7am–7pm Mon–Fri, 8am–7pm Sat, 9am–12pm Sun).
+
+The Maps actor returned `reviews: null` despite `maxReviews: 5`, so a second run against
+`compass~google-maps-reviews-scraper` supplied 12 reviews (10 with usable text). Worth
+remembering — `lukaskrivka~google-maps-with-contact-details` does not reliably honour
+`maxReviews`, and testimonials are not optional content.
+
+Brand tokens came off the client's own CSS custom properties, not guesswork:
+`--global_main_color: #cf1b1b` (confirmed by `<meta name="theme-color">` and the logo),
+`--font_slogan: Playfair Display`, `--global_font: Open Sans`. Logo pulled as a transparent
+PNG from their CDN and served from `public/img/` — hotlinking a SITE123 CDN that disappears
+the day they cancel that plan is not an option.
+
+40 real job photos were pulled off their CDN, EXIF-transposed, resized and committed to
+`public/img/`. No stock photography anywhere on the site.
+
+### Content decisions
+
+- **9 service tiles consolidated to 5** (the `owl` `SERVICE_LIMIT`). The four separate
+  membrane tiles (EPDM / TPO / torch-down / peel-and-stick) became one **Flat & Rubber
+  Roofing** page with the four as `sub_services`; chimney flashing and skylights folded into
+  **Roof Repairs & Leaks**. Four thin near-duplicate membrane pages would have competed with
+  each other for the same query.
+- **Siding is deliberately NOT a service page**, despite being in the client's own tagline.
+  The only 1-star Google review (Dec 2024) is a siding job that rippled, with the owner
+  attributing it to the manufacturer. The site leads with roofing, which is where the
+  evidence is.
+- **6 service areas** are an operator/marketing decision, not scraped — the client's site
+  lists no coverage at all. Scranton (HQ), Dunmore, Dickson City, Old Forge, Clarks Summit,
+  Wilkes-Barre. Neighbourhoods are real; local context is written from the housing stock,
+  not invented specifics.
+- **Copy angle** comes straight from the research: cleanup and speed. Three separate Google
+  reviewers praise the cleanup unprompted, and "nails left in the yard" is the single most
+  common homeowner complaint about roofers on Reddit. Hero headline is
+  "The roof goes on. The mess doesn't stay."
+- **Winter availability** got its own PromiseBand section. NEPA does most of its roof damage
+  Dec–Mar; the client's own site already said "Winter weather doesn't stop us" and nobody
+  else in the metro advertises it.
+- **`licensed` / `insured` / `bonded` are all `false`.** Nothing on the client's site claims
+  them and nothing verifies them. Pennsylvania issues no roofing licence at all — HICPA
+  registration confirms insurance and identifies the registrant, nothing more — so the site
+  argues from repeat business and reviews instead. The template hardcoded "licensed" into
+  two strings in `service-area/[slug].astro`; both were rewritten out.
+- **Third-party badges left off.** Their site displays BBB, Angie's List and Loc8NearMe
+  marks. The files are in `public/img/` (`badge-bbb.png`, `badge-angies-list.png`,
+  `badge-loc8nearme.png`) but `partners: []` — "Angie's List" has not existed as a brand
+  since the Angi rebrand, and none of the three could be verified as current. Reinstate once
+  confirmed.
+
+### Template defects found and fixed in the site copy
+
+All four ship with `astro-templates/owl` and will recur on every future owl build. Fixed here
+only — upstreaming is a separate change.
+
+1. **`ClosingCTA.astro` defaults to Gilroy Roofing's copy.** The `body` default literally
+   reads "Serving Wilkes-Barre and the Wyoming Valley since 1972" — another client's market
+   and another client's founding year — and it renders on *every page* of any site cloned
+   from the template. `sites/eastern-residential-solutions/` has the same string live.
+2. **No `<h1>` on four routes.** `/blog`, `/service-area`, `/contact` and `/book` used
+   `SectionHead` as their only heading and it hardcoded `<h2>`. Added an `as` prop
+   (default `h2`, styling identical) and passed `as="h1"` on those four. All 27 routes now
+   carry exactly one h1, a meta description and a canonical.
+3. **`.header-row` silently zeroed the container gutter.** It is also `.container`
+   (`padding: 0 var(--space-3)`), and its own `padding: var(--space-2) 0` shorthand won on
+   Astro's scoped-selector specificity. Above 1200px the auto margin hid it; below that the
+   logo ran flush to the screen edge. Restoring the gutter then squeezed the logo to 79px
+   wide via flex, so the mobile logo is now width-pinned and the circular phone badge is
+   dropped under 480px — the *number* stays visible, since "no phone CTA on mobile" was the
+   old site's worst defect.
+4. **16 rigid `repeat(auto-fit, minmax(Npx, 1fr))` grid floors** caused horizontal scroll on
+   narrow viewports (the 330px service tile overflowed a 320px screen). All rewritten to
+   `minmax(min(Npx, 100%), 1fr)`.
+
+Verified after the fixes: no horizontal overflow on any of 27 routes at 375 / 414 / 768 /
+1024 / 1440. At 320px two pages still exceed by 3px — cosmetic, unfixed, iPhone-SE-1 era.
+
+### Contrast
+
+Brand red `#cf1b1b` is a mid-dark red (luminance 0.113). White on it is 5.49:1 and it also
+works as text on light surfaces (4.99:1 on bg, 5.49:1 on surface), so `--color-accent-ink`
+is the same value rather than a darkened variant. It fails on the dark bands at 2.91:1, so a
+`--color-accent-on-dark: #f2685f` token (5.26:1) was added and the six accent-as-text-on-dark
+call sites repointed — the same fix `results-roofing` needed, for the same template reason.
+
+### OPEN — blocking for real lead capture
+
+1. **No lead destination configured.** `vercel env ls` returns nothing. `/api/estimate`
+   currently returns `?error=unavailable` and shows the visitor "Online requests aren't
+   switched on yet. Please call us and we'll get you booked in." Set `LEAD_WEBHOOK_URL`
+   (GHL inbound webhook) — or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL` —
+   on the Vercel project. Every form on the site is dead until this is set.
+2. **No GHL snippets pasted.** `crm` is `{provider: "ghl"}` only — no chat widget, no reviews
+   widget, no calendar embed, no call-tracking number. Those sections self-hide.
+3. **No `code_injection`.** No Meta Pixel, no GTM.
+4. **Vercel SSO is OFF on this project** — the `*.vercel.app` URL is publicly reachable,
+   unlike the `all_except_custom_domains` default noted in the vercel-deploy skill. Left as
+   found (it is what makes the URL usable for outreach), but flagging the deviation.
+5. **Unverified with the client:** deposit and payment schedule (the FAQ answer is written
+   conservatively and says "ask us"), licensed/insured/bonded status, years in business, and
+   whether the 6 service areas match their real coverage radius.
+6. **No custom domain attached.** `qualityroofingexpress.org` still serves the SITE123 site.
+
+### 2026-08-03 — Pinnacle Roofing & Sheet Metal, Inc. (owl template)
+
+Full 9-step pipeline, `--auto`. Nanticoke, PA commercial roofing contractor, est. 1993.
+GBP confirmed (`ChIJSYsJpegNxYkRLbkogpFFRu8`, 100 Hay St, 5.0 / 3 reviews). Old site is a
+Hibu template on a full-bleed `#F30E1E` red background; brand tokens taken as teal
+`#03779C` + yellow `#FAE231` (logo mountain + sun), red deliberately dropped as a surface
+colour. Tokens: primary `#0a2a38`, accent `#f4d01c`, accent-ink `#04688a`. All six
+contrast checks pass, including accent-on-dark-band at 9.9:1.
+
+- **Cost:** ~$0.18 (GBP $0.004 + 9 Firecrawl scrapes). The Apify run used
+  `locationQuery: "Pennsylvania"`, which is far too broad — it found the right place in the
+  first ~30s and then kept crawling for 15+ minutes (5,689 search pages) before it was
+  aborted manually. **Pass a city, not a state.** Because it was aborted, the run returned
+  no review bodies, so `testimonials[]` on this site is intentionally EMPTY rather than
+  fabricated; the Testimonials section self-hides.
+- **Social proof substitute:** the client's `/experience-and-affiliations` page lists a
+  verifiable roster of NEPA buildings (Geisinger ×4, Sanofi Pasteur, Tobyhanna Army Depot,
+  Kalahari Resort, Wilkes University, WBS Airport, P&G Mehoopany …). That roster carries
+  the SeoBody checklist and WhyChooseUs in place of reviews, and is stronger than three
+  Google stars for a commercial buyer.
+- **Stale claim NOT carried forward:** the old homepage says "With 23 years' experience"
+  while also claiming "Established in 1993". `years_in_business` was derived from 1993 (33),
+  and the 23 was dropped.
+- **Imagery:** every client photo on the old Hibu site tops out at 723px wide (the
+  `-1920w` CDN suffix is a lie — the source assets are small). Client photos are therefore
+  used only for gallery tiles, team headshots and the small promise-band figure; all
+  hero/full-bleed images are Unsplash commercial low-slope roofing, downloaded to
+  `public/img/` rather than hotlinked. One Unsplash pick was swapped after review because
+  it was a Stockholm street ("FLEMINGGATAN") standing in for Scranton.
+
+**Template defects found and patched inside `sites/pinnacle-roofing-sheet-metal/` only —
+these are still present in `astro-templates/owl/` and should be fixed upstream:**
+
+1. `ClosingCTA.astro` ships Gilroy's copy as its DEFAULT body — "no payment until the job
+   is finished" and "Serving Wilkes-Barre and the Wyoming Valley since 1972". It renders on
+   8 pages with no props, so every new owl client inherits another client's guarantee as a
+   factual claim. **Highest-severity of the five.**
+2. `WhyChooseUs.astro` hardcodes `heading="Reasons homeowners pick us"`, and
+   `pages/services/index.astro` hardcodes "What we do for {city} homeowners." Both are
+   wrong for any commercial-only client.
+3. `Gallery.astro` `.card img` has no `width: 100%`, so images render at intrinsic width.
+   A 230px client photo rendered as a 230px thumbnail next to a full-width tile.
+4. `Footer.astro` has icon branches for facebook/youtube/instagram only. A GBP-only client
+   (`social: { google_maps }`) renders an empty accent-coloured square with an aria-label
+   and no glyph. Added map-pin + yelp branches. `contact.astro` already had the map pin —
+   the two components had drifted.
+5. `about.astro` used `story.slice(0, 190)` for the hero subheadline, cutting mid-word
+   ("…flat and low"). Replaced with sentence-boundary truncation.
+   Separately, `.role` (about), `.phone-large a` (book), `.eyebrow` (thank-you) and `.keep`
+   (blog index) use `--color-accent` as foreground text on a LIGHT background. That is the
+   exact case `--color-accent-ink` exists for, and it fails AA for any client with a light
+   accent — here the yellow measured 1.3:1. `BlogCards.astro` already uses the ink variant;
+   `blog/index.astro` had drifted from it.
+
+**Left for operator paste-in:** all five GHL snippets (chat, reviews, calendar, contact
+form, call-tracking), `code_injection.head`/`body_end`, `crm.form_action_url` +
+`captcha_snippet` (the native EstimateForm currently has no POST target), and
+`licensed`/`insured`/`bonded` — all three are `false` because the client's site displays no
+badge or footer disclosure, which is almost certainly wrong for a contractor of this size
+and needs confirming rather than guessing.
+
+### 2026-08-03 — firefly-cd: confirming redeploy (`dpl_FVux8GW6uzW9vkEmnNekJVy4pj1b`)
+
+Operator-requested deploy. **No content change** — a fresh build was compared to the live host by
+sha256 first (hero image, landmark image, and `kootenai-county-id/index.html` all MATCH), so
+`dpl_3sQhvSA51GjdZAttd75p5FA4UVfK` was already current. Redeployed anyway on request; new deployment
+id, identical bytes.
+
+Full sweep green: all 23 routes 200, plus sitemap, robots.txt and both self-hosted images.
+
+Operator closed the two open hand-off items: the 42 `img1.wsimg.com` GoDaddy-CDN image references and
+the estimate form's `crm.form_action_url` are both confirmed OK. No longer tracked as risks.
+
+**Only item still open: the kcgov.us hero photo's reuse license** (see the
+`2026-08-03T17:58:07Z-p2m8q4` entry above). Unverified, live, operator-accepted.
+
+### headleycg.com — LIVE 2026-08-03
+
+- **Cutover complete.** DNS moved off HostGator entirely; nameservers now
+  nse1-4.squarespacedns.com (registrar-managed). HostGator dependency eliminated.
+- **Why the NS migration instead of the planned A-record edit:** client could not recover
+  the HostGator account (support required a court order). HostGator was never handling
+  email — MX pointed at Google Workspace the whole time — it was only hosting the DNS
+  zone. That made the zone unmaintainable and put email at risk if the account lapsed.
+  Rebuilding the zone at Squarespace removed the single point of failure.
+- **Records live:** A @ + www -> 216.198.79.1 / 64.29.17.1 (Vercel); MX x5 Google Workspace;
+  SPF `v=spf1 include:_spf.google.com ~all`; DKIM regenerated (old google._domainkey in the
+  HostGator zone was truncated mid-key and had never validated — fixed during migration).
+- **SSL gotcha worth remembering:** Vercel's automatic cert issuance had already failed and
+  stopped retrying, because the domain was attached hours BEFORE DNS pointed at Vercel, so
+  the initial http-01 challenge failed. `verified: true` / `misconfigured: false` in the API
+  masked it — port 443 accepted TCP then dropped the TLS handshake (SSL_ERROR_SYSCALL) with
+  no cert to serve. Fix: force issuance via `POST /v7/certs` with cns [apex, www].
+  cert_AP1c4PXMfFC9Lt6kw9bqvUf9, valid to 2026-11-01, autoRenew on.
+  **Lesson: attach the domain AFTER DNS is repointed, or force-issue the cert afterward.**
+- **Verified live:** all 19 routes HTTP 200 over the custom domain (incl. 5 flat service-area
+  slugs), canonical + sitemap emit https://headleycg.com, www -> apex 308, old HostGator page
+  fully replaced (42,898 B Astro build vs 19,001 B legacy), Google Workspace mail unaffected.
+
+---
+
+## Comfortable Climate HVAC — 2026-08-03
+
+| Business | Slug | Template | Pages | Vercel URL | Date |
+|----------|------|----------|-------|------------|------|
+| Comfortable Climate HVAC | `comfortable-climate-hvac` | owl | 24 | https://comfortable-climate-hvac.vercel.app | 2026-08-03 |
+
+**Source:** https://comfortableclimatehvac.com/ — Dallas, PA (Back Mountain / Wyoming Valley, NEPA).
+GBP confirmed: HVAC contractor, 5.0 from 17 reviews, all five-star. Service-area business, no
+public street address. Owner: Joe Szczechowicz. Licensed & insured, PA #091633.
+
+**Pipeline cost:** ~$0.37 (3× Apify Google Maps @ ~$0.004, 16 Firecrawl page scrapes, 1 branding
+extraction).
+
+**Content:** 5 services (Heating, Air Conditioning, Plumbing, Ductless Mini-Splits, Water Heaters),
+6 service areas (Dallas, Wilkes-Barre, Kingston, Scranton, Clarks Summit, Tunkhannock — spanning
+Luzerne, Lackawanna and Wyoming counties), 10 home testimonials, 8 home FAQs, 6 gallery items,
+1 blog post. All testimonials are real named reviews scraped from the client's own /reviews
+pages 1–6.
+
+**Brand tokens:** detected from the client's site — Montserrat / Open Sans, accent #fadb6e
+(their yellow), primary #1e2452 (their navy). `--color-on-accent` set to navy, NOT white: white
+on their yellow measures 1.36:1 and fails even large-text AA. `--color-accent-ink` derived as
+#8a6a00 for accent-as-text on light backgrounds. All seven contrast pairs PASS AA.
+
+**Data conflicts found on the client's site (resolved conservatively):**
+- Tenure stated three ways — "over 25 years" (home + footer), "over 35 years" (about), "over 30
+  years" of plumbing experience. Used 25.
+- Hours conflict — GBP shows 7am–8pm seven days; site footer states Mon–Fri 8:00–5:00. Used the
+  site's published hours; emergency availability is surfaced in copy instead.
+- Rating conflict — Google 5.0/17 vs on-site widget 4.6/26 (inflated by spam submissions to an
+  unmoderated review form). Used the Google figures.
+- **The client's existing homepage carries fabricated placeholder testimonials** ("Michael Doe",
+  "Sue Jones", "Carolyn Wintner" with stock avatars). Excluded entirely.
+
+**Template defects found and patched inside `sites/comfortable-climate-hvac/` only:**
+These are `owl` template bugs — roofing-specific content hardcoded into shared components, which
+would have shipped roofing copy on an HVAC site. Patched locally; the upstream template still has
+them and every non-roofing client will hit the same thing.
+1. `EstimateForm.astro` + `api/estimate.ts` — service dropdown hardcoded to roofing options
+   (`Roof repair`, `Gutter installation`, `Skylight repair`…). The two lists must stay in sync or
+   valid submissions fail server-side validation. Replaced both with HVAC options.
+2. `EstimateForm.astro` / `HeroOwl.astro` / `book.astro` / `index.astro` / `about.astro` — default
+   heading "Request A Free In-Person **Roof** Estimate Today!".
+3. `pricing.astro` — an entire hardcoded roof-cost table (asphalt/metal/cedar/tile per-square
+   pricing). Replaced with broad HVAC installed-cost ranges, explicitly labelled not-a-quote.
+4. `ClosingCTA.astro` — default body was **Gilroy Roofers' copy verbatim**: "no payment until the
+   job is finished… Serving Wilkes-Barre and the Wyoming Valley since 1972." Both claims are false
+   for this client. This is the most serious of the four — it is another client's guarantee.
+5. `ServicesGridOwl.astro` — subtitle default "Full-service roofing solutions"; `BlogCards.astro`
+   heading "Roofing Advice"; `blog/index.astro` description.
+6. `ServicesGridOwl.astro` scrim — template gradient fades to rgba(…,0.08) at the top, where the
+   tile TITLE sits. This client's own job photos are brightly-lit mechanical rooms, so titles
+   dropped below AA. Raised the top end to 0.46.
+
+**Still needs operator paste-in (sections self-hide until supplied):** GHL chat widget, reviews
+widget, calendar embed, contact/estimate form embed URLs, call-tracking snippet + number,
+`code_injection.head` (Meta Pixel / GTM), `code_injection.body_end`, custom domain.
+No `crm.*` field was auto-populated — the client's existing site uses native WordPress forms with
+an arithmetic captcha, and no third-party CRM loader was detected.
+
+**Verified live:** 24 routes built; homepage, a service page, a service-area page and
+sitemap-index.xml all HTTP 200 on the production URL. Canonical and JSON-LD
+(LocalBusiness + AggregateRating + FAQPage + GeoCoordinates + OpeningHoursSpecification) emit
+https://comfortable-climate-hvac.vercel.app.
+
+
+---
+
+## AmeriStar Maids — 2026-08-03
+
+| | |
+|---|---|
+| **Live** | https://ameristar-maids.vercel.app |
+| **Template** | `owl` |
+| **Pages** | 25 built (incl. `/book`, `/api/estimate` SSR fn) |
+| **Client site** | https://ameristarmaids.com/ (WordPress / Astra + Elementor) |
+| **GBP** | AmeriStar Maids, 1100 Twin Stacks Dr Ste. 1202, Dallas PA 18612 — 4.9 (171 reviews), House cleaning service |
+| **Spend** | ~$0.004 (Apify GBP lookup only — see note below) |
+
+### Pipeline notes
+
+- **Zero Firecrawl spend.** ameristarmaids.com serves complete server-rendered HTML, so all 11
+  pages (homepage, 5 service pages, specials, request-a-quote, gift-cards, 2 blog posts) came
+  back on a plain `curl` with a browser UA. Firecrawl was never needed. Total run cost was the
+  single Apify Google Maps call.
+- **Apify returned 0 review bodies** despite `maxReviews: 5`. The 4 testimonials on the site are
+  the named reviews published on the client's own homepage instead.
+- **Reddit is now closed to both paths** — `reddit.com/search.json` blocks the datacenter IP and
+  Firecrawl refuses the domain outright ("we do not support this site"). `local-research` fell
+  back to Firecrawl *search*, which still surfaces indexed thread titles + snippets; 26 threads
+  across r/housekeeping, r/homeowners, r/workingmoms and r/CleaningTips. Local NEPA subreddit
+  activity for this category is effectively zero, so the pain-point set is national-category
+  signal applied to the local market. **If this keeps recurring, `local-research` Step 3 should
+  be rewritten around search snippets rather than thread fetches.**
+- **Copy angle that drove the build:** the loudest complaint in the category is a rotating
+  cleaner. AmeriStar already had "One Maid. Same Maid. Every Time." buried mid-page in small
+  type on their old site — it is now the H1.
+
+### Owl template carried roofing copy into a non-roofing vertical
+
+The owl template hardcodes roofing strings in ELEVEN places outside the content collections, so
+a cleaning client ships "Request A Free In-Person **Roof** Estimate Today!" above the fold and an
+"Average **roof** costs" price table on /pricing. All were fixed in the client copy under
+`sites/ameristar-maids/`, but they will recur on the next non-roofing owl build:
+
+| File | String |
+|---|---|
+| `pages/index.astro`, `pages/about.astro`, `pages/book.astro` | `form_heading="Request A Free In-Person Roof Estimate Today!"` |
+| `components/HeroOwl.astro` | same string, twice, as the `form_heading` fallback |
+| `components/EstimateForm.astro` | same string as the `heading` default, plus a 10-item roofing `SERVICES` list |
+| `pages/api/estimate.ts` | the server-side `SERVICES` allowlist — **must stay byte-identical to the form's list** |
+| `components/ClosingCTA.astro` | default body: *"…no payment until the job is finished… Serving Wilkes-Barre and the Wyoming Valley since 1972."* — a leftover claim from an earlier client, shipped on every page |
+| `components/ServicesGridOwl.astro` | `'Full-service roofing solutions'` fallback |
+| `components/BlogCards.astro` | `<h2>Roofing Advice</h2>` |
+| `pages/blog/index.astro` | `Roofing advice and local guidance from …` meta description |
+| `pages/pricing.astro` | entire `roofCostRows` table + "measure the roof" calendar copy |
+| `pages/thank-you.astro` | *"dealing with an active leak?"* |
+
+**Recommended upstream fix:** move these to `config.json` (a `vertical_copy` block, or reuse
+`services_section`) so they are per-client data rather than template literals. The
+ClosingCTA "since 1972" line is the worst of them — it is a factual claim about a different
+business that renders on all 25 pages by default.
+
+### Other defects found and fixed in the client copy
+
+- `Footer.astro` renders a social link as a 36px accent-coloured tile but only has icon arms for
+  facebook / youtube / instagram. A `google_maps` entry therefore shipped as an **empty blue
+  square**. Added a map-pin arm. Same latent bug for `yelp`, `linkedin`, `tiktok`.
+- `EstimateForm.astro` labels the address field "Property address" — fine for roofing, reworded
+  to "Home address" here.
+
+### Design tokens
+
+Client brand blue `#148dbd` re-derived against the owl contrast rules rather than dropped in raw:
+
+| Token | Value | Ratio |
+|---|---|---|
+| `--color-accent` | `#148dbd` | white label 3.77:1 — passes ONLY because accent buttons are 1.25rem/700 (3:1 threshold) |
+| `--color-accent-ink` | `#0b5f81` | 6.78:1 on bg — the text-weight variant for eyebrows/ticks/stars |
+| `--color-primary` | `#0a2f40` | white 14.06:1; accent-on-primary 3.73:1 for dark panels |
+| `--color-bg` / `--color-text` / `--color-muted` | `#f6fbfd` / `#101218` / `#4b4f58` | 17.95:1 / 7.87:1 |
+
+Fonts kept from the client's own site: Poppins (display) + Lato (body).
+
+### Open items
+
+- **SSO is OFF on this project** — `https://ameristar-maids.vercel.app/` returns 200 publicly,
+  unlike the `all_except_custom_domains` default described in the vercel-deploy skill. Left as
+  found; flag before using this URL in outreach if the gate was intended.
+- **No CRM widgets wired.** `crm` is `{provider: "ghl"}` only. The native EstimateForm posts to
+  the site's own `/api/estimate` function; `crm.captcha_snippet` is unset, so there is no spam
+  gate on it. Paste in the GHL calendar / chat / reviews / form snippets before this takes real
+  traffic.
+- **No code injection.** `code_injection` is empty. The client's existing site runs their own
+  Meta Pixel (`742989059457566`, via PixelYourSite) — that is the CLIENT's pixel and was
+  deliberately NOT copied. MLA's own pixel/GTM goes in `code_injection.head`.
+- **Service areas were derived, not scraped.** The client names REGIONS only ("Back Mountain,
+  Wyoming Valley, Mountain Top … throughout Luzerne County"). The six town pages (Dallas,
+  Shavertown, Kingston, Wilkes-Barre, Mountain Top, Harveys Lake) are all inside those named
+  regions, but the specific towns are an operator choice — confirm with the client.
+- **`licensed: false`** — the site claims bonded + insured + workers' comp, never licensed. Left
+  false rather than guessed. PA does not license house cleaners statewide, so this is probably
+  correct as-is.
+- No custom domain attached. No short link created (`--auto` skips it).
+
+## Morris Kitchens & Donnelly Designs — 2026-08-03
+
+- **Template:** `owl`. Live: https://morris-kitchens-donnelly-designs.vercel.app (26 pages).
+- **Source:** https://morriskitchensllc.com/ (WordPress + Elementor, built 2024 by 75 Degrees West).
+- **GBP:** "Morris Kitchens & Donnelly Designs LLC", 107 West End Rd, Hanover PA 18706,
+  (570) 825-6956, 4.7 / 31 reviews, category "Kitchen remodeler". First Apify query
+  (name + "Wilkes-Barre, PA") returned 0 rows; re-ran as "Morris Kitchens" +
+  "Hanover Township, Luzerne County, PA" and matched. Two lookups billed.
+- **Brand tokens auto-detected** from the client's Elementor globals: primary `#114261`
+  (navy), accent `#9CC233` (lime), font Archivo. Lime fails AA as body text on light
+  (~1.9:1), so `--color-accent-ink: #4f6b13` (5.6:1) was derived for eyebrows/ticks/stars.
+- **Images:** 28 real project photos downloaded from the client's CMS into `public/img/`
+  rather than hotlinked. No stock photography anywhere on the site.
+- **Content:** 5 services (kitchen, bathroom, cabinets, countertops, design services),
+  6 service areas (Wilkes-Barre, Hanover Township, Kingston, Mountain Top, Dallas,
+  Nanticoke), 8 testimonials, 8 home FAQs, 12 gallery items, 3 blog posts, 2 team members.
+- **Copy angle used:** the client's own FAQ already publishes real lead times (HomeCrest
+  ~3wk, Omega 5-6wk, kitchen 6-8wk, countertops 1-2wk) and terms (75% deposit). Local
+  research says the #1 NEPA complaint is estimate ghosting and vague timelines, so those
+  numbers were pulled out of the buried FAQ and given their own promise band and a
+  pricing-page table.
+
+### Template defect found (owl) — flagged, not patched upstream
+
+`astro-templates/owl/` has roofing-specific strings hardcoded outside content collections.
+Patched in this site's copy only:
+
+- `EstimateForm.astro` — default heading + the entire 10-item `SERVICES` dropdown (attic
+  venting, gutters, roof repair, skylights) were roofing-only.
+- `ClosingCTA.astro` — default headline "Need A New Roof?" and a body claiming
+  "Serving Wilkes-Barre and the Wyoming Valley since 1972" (a leftover from another client,
+  coincidentally the same metro).
+- `ServicesGridOwl.astro` — heading fallback "Full-service roofing solutions".
+- `BlogCards.astro` — hardcoded `<h2>Roofing Advice</h2>`.
+- `blog/index.astro` — description "Roofing advice and local guidance from…".
+- `HeroOwl.astro`, `index.astro`, `about.astro` — form heading default.
+- `pricing.astro` — an entire hardcoded asphalt/metal/cedar/tile cost table. Replaced with
+  a lead-time + deposit-terms table sourced from the client's own FAQ (no invented prices).
+
+### Notes / open items
+
+- **`insured: false`, `bonded: false`** — neither is stated anywhere on the client's site or
+  GBP, so both were left false rather than guessed. `licensed: true` is backed by the PA HIC
+  registration `#PA 191211` in their footer. Worth confirming with the client.
+- **Service areas beyond Wilkes-Barre and Hanover Township are operator-chosen** — the
+  client's site has no service-area page at all. Kingston, Mountain Top, Dallas, and
+  Nanticoke are Luzerne County towns within reasonable range of the showroom; confirm.
+- **The client's live /bathrooms page contains competitor boilerplate** — it refers to the
+  "Artisan design team" and "Artisan's designers" several times. Not carried over; the
+  bathroom copy was rewritten from their remaining content. Worth telling them regardless,
+  since it is on their live site today.
+- **All CRM paste-ins are unset** — no GHL chat, reviews, calendar, contact form, or call
+  tracking. Those sections self-hide. The native `EstimateForm` posts to `/api/estimate`,
+  which needs env config before it delivers leads anywhere.
+- **No code injection** — no Meta Pixel, GTM, or number-swap configured.
+- No custom domain attached. No short link created (`--auto` skips it).
+
+---
+
+## SpringLake Pools & Masonry — 2026-08-03
+
+| Field | Value |
+|---|---|
+| Slug | `springlake-pools-masonry` |
+| Template | `owl` |
+| Old site | https://springlakepools.com/ |
+| Live URL | https://springlake-pools-masonry.vercel.app |
+| Vercel project | `springlake-pools-masonry` (`prj_x0Fjbpoq0n7CRPm7fEJLnT1DSdIu`) |
+| Pages built | 24 |
+| Services | 5 — Custom Pool & Spa Construction, Pool Renovation & Remodeling, Pool Repair Service, Pool Cleaning & Maintenance, Masonry & Outdoor Living |
+| Service areas | 6 — Dallas, Back Mountain, Wilkes-Barre, Mountain Top, Clarks Summit, Scranton (all PA) |
+| Blog posts | 1 — "Why Gunite Holds Up To A Pennsylvania Winter" |
+| GBP | 5.0 (8 reviews), Swimming pool contractor, place `ChIJVet0clQ0YoURzxb0fEPVSco` |
+| Spend | ~$0.25 (2 Apify runs + 11 Firecrawl scrapes) |
+
+**Brand tokens** — auto-detected from the client site via Firecrawl's branding extractor:
+Cormorant (display) + Karla (body); navy `#0f2a43`, teal accent `#2cb1bc`.
+`--color-on-accent` is `#06232e` (DARK), not white — the brand teal measures 2.61:1 against
+white and fails AA. `--color-accent-ink` `#10707a` is the accent-as-text variant (5.3:1 on bg).
+
+**Open items for the operator:**
+
+- **No testimonials.** The Apify Google Maps actor returned an empty `reviews[]` array on two
+  separate runs for this place ID; the client's own site publishes no testimonials; Facebook
+  and Reddit are both unsupported by Firecrawl. Rating (5.0) and count (8) are confirmed and
+  used as a trust badge, but no review TEXT exists anywhere. `home.json.testimonials` is `[]`
+  and the section does not render. Nothing was fabricated. Paste real reviews in or wire the
+  GHL reviews widget.
+- **Founding-year conflict on the client's own site.** `/about-us` says "Since 1982" and
+  "OVER 40 YEARS OF EXPERIENCE"; the homepage and every 2025 service page say "Since 2007" and
+  "over a decade"; the OG description says "more than 30 years". Three different answers.
+  `years_in_business` was left unset and NO founding year is asserted anywhere in the generated
+  site. Confirm with the client, then add it.
+- **CRM widgets are all unset.** `crm` is `{ provider: "ghl" }` only — no chat, reviews,
+  calendar, contact form, call-tracking snippet or `form_action_url`. The native EstimateForm
+  posts to `/api/estimate`, which needs a delivery destination in env or it will 500. Also no
+  `captcha_snippet`.
+- **No code injection.** `code_injection` is empty — MLA's pixel/GTM still needs adding.
+  The client's existing site runs reCAPTCHA and a WordPress plugin form; neither was copied.
+- **`insured` / `bonded` left false.** The client's service page says "Licensed swimming pool
+  contractor serving NEPA" (so `licensed: true`), but makes no insurance or bonding claim.
+- **Four service-area towns were dropped** to stay inside the owl 6-area cap: Bear Creek,
+  Blakeslee, Tannersville, Pittston. They exist on the old site if the client wants them.
+- **Reddit research ran degraded.** reddit.com is blocked for both Firecrawl and WebFetch here,
+  so `local_research.json` was synthesized from search-result titles and snippets rather than
+  full comment bodies. Directionally sound, not quotable.
+- No custom domain attached. No short link created (`--auto` skips it).
+
+**Template defect found (owl) — belongs upstream, patched only in this client site:**
+`astro-templates/owl` hardcodes roofing copy in eight places that every non-roofing client
+will hit: `EstimateForm.astro` (default heading + a hardcoded roofing service dropdown),
+`src/pages/api/estimate.ts` (hardcoded roofing allowlist — a mismatch silently rejects real
+leads with `?error=service`), `HeroOwl.astro`, `ClosingCTA.astro` (defaults still carry
+Gilroy Roofers' "Wilkes-Barre … since 1972" copy), `BlogCards.astro` ("Roofing Advice"),
+`ServicesGridOwl.astro`, `book.astro`, `blog/index.astro`, and `pricing.astro` (an entire
+hardcoded asphalt/metal/cedar/tile roof-cost table). All fixed inside
+`sites/springlake-pools-masonry/` per the rule that `site-generate` never edits the template.
+
+---
+
+## Comprehensive Pain Specialists — 2026-08-03
+
+**Live:** https://comprehensive-pain-specialists.vercel.app
+**Template:** `owl` (Gilroy) · **Slug:** `comprehensive-pain-specialists` · **Pages:** 23 static + `/book` (SSR)
+**Source:** operator-supplied https://www.cpmspecialists.com/ (serves the same site as the GBP-listed
+https://comprehensivepaindocs.org/ — all asset URLs live on the `.org` domain).
+
+**GBP confirmation:** Comprehensive Pain Specialists, 1177 PA-315, Dolphin Plaza, Wilkes-Barre, PA 18702 ·
+(570) 232-3920 · Pain management physician · 3.2★ (27 reviews) · placeId `ChIJpcjlCXQbxYkRCWVQUib_Yh4`.
+
+**Pipeline cost this run:** ~$0.16 (2× Apify GBP lookup $0.008, Firecrawl homepage + 6 inner pages ~$0.15,
+0 social scrapes, 0 design-reference scrapes).
+
+### Vertical mismatch — read before the next edit
+
+This is a **medical practice**, not home services. The `owl` template ships contractor-shaped pages and copy.
+The following client-site deviations were made deliberately and are NOT template drift:
+
+- `/pricing` → **`/insurance`** (rewritten as an Insurance & Payment page; the hardcoded roof-cost table is gone).
+  Nav label in `Header.astro` and `Footer.astro` changed to "Insurance".
+- **`/our-work` deleted** along with `our-work.json` — a clinic has no project gallery, and the page would
+  have rendered empty. Nav links removed.
+- `pricing.json` deleted (no published prices; self-pay quoted by phone).
+- `EstimateForm` reason-for-visit list replaced the roofing service list (mirrored in `pages/api/estimate.ts`
+  so server-side validation still matches). "Property address" → "City or town". Submit label →
+  "Request My Appointment".
+- `ClosingCTA` defaults rewritten — the template default still carried Owl Roofing's
+  *"Serving Wilkes-Barre and the Wyoming Valley since 1972"* line. Coincidentally the right metro, entirely
+  the wrong business. Check this on every owl clone.
+- `terms.astro` §2–6 rewritten for a medical practice: no-medical-advice notice, no physician-patient
+  relationship from website use, results-may-vary, insurance/self-pay responsibility, models-not-patients
+  photo notice. The contractor warranty/project/estimate language is legally wrong here. **This diverges from
+  the "identical legal body text across all clients" rule in CLAUDE.md — intentional, and any future medical
+  client needs the same treatment.**
+- `Testimonials` eyebrow "Real Customer Experiences" → "Real Patient Experiences"; `WhyChooseUs` heading
+  "Reasons homeowners pick us" → "Why patients choose us"; `BlogCards` "Roofing Advice" → "Pain Management
+  Insights"; services index "for {city} homeowners" → "for patients across…".
+- `src/content/config.ts`: `partners[].logo_url` relaxed from `z.string().url()` to `z.string()` so insurance
+  carrier logos serve from this site's own `public/img/insurers/` instead of hotlinking the client's CMS or
+  hardcoding the production hostname. **Worth upstreaming to both templates.**
+
+### Content decisions
+
+- **Rating suppressed.** GBP aggregate is 3.2★ (27). It appears nowhere on the site — no trust badge, no
+  form star strip, no schema aggregateRating. The three attributed 5★ patient quotes carry the social proof
+  instead. Do not "fix" this by adding the aggregate back.
+- **Services (5/5)** — Back Pain, Neck Pain, Joint Pain, Nerve Pain, Complex Pain Conditions. These are the
+  five the client's own homepage prioritises, chosen out of ~90 condition/procedure pages on the old site.
+- **Service areas (6/6)** — Wilkes-Barre, Mountain Top, Pittston, Dallas, Plymouth, Glen Lyon. All six are
+  named verbatim on the client's homepage ("We serve patients from Wilkes-Barre PA, Glen Lyon PA, Dallas PA,
+  Pittston PA, Mountain Top PA, Plymouth PA"). County/neighborhood detail is operator-derived from geography.
+- **Two phone numbers.** New patients (570) 232-3920 is the site-wide number; existing patients
+  (570) 270-5700 appears only on `/book`. Both are on the client's contact page.
+- **`licensed: true`, `insured: false`, `bonded: false`** — "licensed" reflects the board-certified physician;
+  the other two are contractor concepts with no medical analogue and were left false rather than guessed.
+- **Local research** — Reddit thread bodies were unfetchable (Reddit blocks both WebFetch and Firecrawl).
+  Findings came from search-result titles and indexed comment snippets across r/ChronicPain, r/PainManagement,
+  r/ChronicIllness, r/Fibromyalgia, r/NEPA, r/Scranton. The hero angle ("Seen this week, not next year")
+  comes from the two strongest signals: 6–14 month waits to see a pain specialist, and NEPA-specific
+  complaints about the dominant hospital system's scheduling.
+- **Images** are the client's own, downloaded to `public/img/` rather than hotlinked. Provider headshots,
+  condition photos, hero, and six insurance carrier logos.
+- **Design tokens** derived from the client's brand blue `#1025A1`. That blue is unreadable on the owl
+  template's dark navy bands (1.56:1), so it became `--color-accent-ink` for text on light backgrounds and a
+  lighter sibling `#2E5BFF` carries the fill/CTA role. Fonts: Poppins (client's own) for display, Inter for
+  body — the client's live site sets body copy at 12px Poppins, a readability defect for this demographic.
+
+### Open items
+
+- **No GHL snippets pasted** — `crm` is `{provider: "ghl"}` only. Chat widget, reviews widget, calendar embed,
+  contact/estimate form embeds, and call tracking are all unset. The native `EstimateForm` posts to
+  `/api/estimate`, which has **no destination configured** — set `LEAD_WEBHOOK_URL`, or
+  `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`, in Vercel env or form submissions go nowhere.
+- **No captcha** — `crm.captcha_snippet` unset. Honeypot + TCPA consent checkbox only.
+- **No code injection** — no Meta Pixel, no GTM, no number-swap.
+- **HIPAA** — the client's existing stack (onrevenue.us, hipaaserver2.us) is HIPAA-flagged. The generated form
+  collects name, email, phone, city, and a reason-for-visit category only. Do not add free-text symptom or
+  history fields without a BAA in place. Client's vendor widget URLs are recorded in
+  `intake-scraped.json._detected_crm_snippets` for reference — do NOT paste them into `crm.*`.
+- **No email address** — none published by the client or listed on GBP. `email` omitted; footer shows phone only.
+- No custom domain attached. No short link created (`--auto` skips it).
+- Vercel SSO is **off** for this project — the `.vercel.app` URL is publicly reachable, unlike the documented
+  default. Flag if that is not intended.
+
+---
+
+## Royal Roofing Systems — `royal-roofing-systems` — 2026-08-03
+
+**Template:** `owl` · **Live:** https://royal-roofing-systems.vercel.app (SSO off — public) · **26 pages**
+
+### Pipeline
+
+| Step | Result |
+|---|---|
+| intake-from-web | Firecrawl homepage + 10 inner pages. Branding format detected fonts/colors/logo. |
+| find-business (Apify GBP) | 1 exact match, GBP website = operator URL. `reviews[]` came back EMPTY despite `maxReviews:5`. |
+| scrape-content | Skipped — Firecrawl succeeded on all 11 pages. |
+| local-research | **DEGRADED.** reddit.com is blocked three ways in this environment: Firecrawl refuses the domain, direct curl returns an interstitial, and the browser pane blocks it by policy. Findings built from Firecrawl *search-result descriptions* (which quote Reddit comments), r/Scranton thread titles, and GBP review tags. No thread bodies read — flagged in `local_research.json.method`. |
+| site-audit | Playwright full-page screenshot → `screenshots/royal-roofing-systems.png` (6.2 MB — the old Elementor page is that heavy). |
+| design-reference | Library `roofing`, no Firecrawl spend. Rationale in `design_reference.json.sources.why_not_scraped`. |
+| site-generate | 5 services, 6 areas, 3 blog posts, 8 gallery items. |
+| vercel-deploy | 4 deploys (initial + 3 fixes). All 17 spot-checked routes 200. |
+
+### Client facts
+
+- **NAP:** Royal Roofing Systems, LLC · 20 W Grove St, Edwardsville PA 18704 · (570) 550-6578 · office@royalroofnepa.com
+- **Phone conflict:** the GBP `phone` field lists **(570) 258-8866**, but GBP contact-enrichment `phones[]` AND every CTA on royalroofnepa.com use **(570) 550-6578**. Used 550-6578. A third number, (570) 258-8236, sits in the old site's sticky mobile bar — likely an existing tracking number. **Confirm with the client before any paid traffic runs.**
+- 4.8★ / 61 reviews · 15 years · licensed, bonded, insured · GAF + Owens Corning
+- Warranty stack: lifetime manufacturer + 10-year workmanship + 15-year no-leak
+- 0% financing; 5% military / first responder / senior discount over $1,500
+
+### Design tokens
+
+Accent `#ff8604` is the client's own brand orange, carried verbatim. **`--color-on-accent` is near-black `#14181f`, not white** — white-on-#ff8604 is 2.42:1 and fails even the 3:1 non-text threshold, which is exactly what the client's current WordPress site ships. Near-black is 7.34:1. `--color-accent-ink: #a8560a` is the light-background text variant (5.25:1 on surface). `--color-primary: #0b2233` is a navy derived from their secondary blue `#0977b8`, which is reused as the focus ring so it stops competing with orange as a second CTA color. Stray magenta `#cc3366` from their CSS was dropped. Fonts: Poppins (their brand face) display + Inter body.
+
+### Deviations from the pristine template — all inside `sites/royal-roofing-systems/`
+
+1. **`BaseLayout.astro`** — Google Fonts `<link>` switched from Montserrat to Poppins. The owl template loads fonts via `<link>` in BaseLayout, not via `@import` in tokens.css as `site-generate` §11 assumes. Editing the existing link beat adding a second loading mechanism and shipping an unused Montserrat.
+2. **`ClosingCTA.astro`** — see template defects below.
+3. **`Footer.astro`** — see template defects below.
+
+### ⚠ Template defects found — fix in `astro-templates/owl/`, not per-client
+
+1. **`ClosingCTA.astro` default `body` carries another client's facts.** Shipped text: *"…no payment until the job is finished and you're satisfied. Serving Wilkes-Barre and the Wyoming Valley since 1972."* That is Gilroy Roofers' copy (founded 1972, Wilkes-Barre). It renders on **eleven** pages of every owl build. For Royal it was factually false — they are 15 years old and make no no-payment-until-satisfied claim. A default that states a *claim* ships that claim; the default should be claim-free and copy should come from content. Overridden locally.
+2. **`Footer.astro` renders an empty accent square for any `social` key that is not facebook / youtube / instagram.** `google_maps` (the GBP CID link) hit this. The key cannot simply be dropped — `BaseLayout.astro:58` feeds every social URL into the LocalBusiness `sameAs` array and the GBP CID is the strongest sameAs signal a local business has. Added a map-pin glyph locally; the template should either carry glyphs for every key it accepts or skip unknown keys instead of drawing an empty tile.
+3. **Minor:** `home.json.hero.quote_card.rating` reads as the *aggregate* rating in `HeroOwl.astro:141` (`"{rating} rating from {review_count} reviews"`), not as the individual quoted reviewer's stars. Setting it to the review's own `5` printed "5.0 rating from 61 reviews" against a real 4.8. Not a code bug, but the field name invites the mistake — worth a schema comment.
+
+### YAML gotcha (cost a build)
+
+Four frontmatter values contained `: ` inside unquoted scalars (`about_body` on kingston/hazleton/dallas, `long_description` on custom-decks) → `bad indentation of a mapping entry`. Fixed with `>-` block scalars. Worth a lint step in `site-generate` before `astro sync`.
+
+### Still needs operator paste-in
+
+`crm.*` is `{ provider: "ghl" }` only — no chat widget, no reviews widget, no form embed, no call-tracking snippet or number. `code_injection` head/body_start/body_end all empty (no Meta Pixel, no GTM). No custom domain attached. No team members (the client's site has no team page — worth requesting crew photos, since "local, accountable, not a storm chaser" is the whole positioning and it currently has no faces).
+
+**Note:** the client's existing site runs an Ngage live-chat widget (`websiteid=221-132-36-26-245-173-219-31`) and a second phone in a sticky bar. Both were deliberately NOT carried over — they are the client's current vendor's, not MLA's.
+
+---
+
+## Diamond Ridge Industrial Services — `diamond-ridge-industrial-services` — 2026-08-03
+
+**Template:** `owl` · **Live:** https://diamond-ridge-industrial-services.vercel.app (SSO off — public) · **25 static pages + `/book` (SSR)**
+
+**Vertical note:** first **B2B / industrial** build on this kit. The buyer is a facility or maintenance
+manager, not a homeowner, and a lot of the owl template's default copy assumes the opposite. See
+"Template defects" below.
+
+### Pipeline
+
+| Step | Result |
+|---|---|
+| intake-from-web | Firecrawl homepage (`-f markdown,branding,links`) + 9 inner pages. The CLI's `branding` format returned fonts, colors, logo and favicon in one call — cheaper and cleaner than parsing CSS by hand. |
+| find-business (Apify GBP) | **Two runs billed.** `locationQuery: "Archbald, Pennsylvania"` returned **0 results**; `locationQuery: "Scranton, Pennsylvania"` returned the exact match. Lesson: for a small-borough service-area business, query the metro, not the borough. Confirmed by website-URL match. `reviews[]` came back empty again (5.0 / 1 review). |
+| scrape-content | Skipped — Firecrawl succeeded on all 10 pages. |
+| local-research | Reddit reachable this run via `firecrawl search`. Threads on forklift-traffic concrete repair and peeling epoxy, plus trade sources on joint-arris progression and the 80%-of-coating-failures-are-prep statistic. |
+| site-audit | Playwright returned **HTTP 403** — the client's WP host blocks the local headless browser. Fell back to a Firecrawl screenshot (`-f screenshot --json`, then download the returned GCS URL). |
+| design-reference | Library `concrete`. Palette derived, not scraped — see below. |
+| site-generate | 5 services, 6 areas, 2 blog posts, 9 project entries, 5 partner logos, 22 client photos localised to `public/img/`. |
+| vercel-deploy | 1 deploy. Homepage, a service page, an area page and the sitemap all 200. |
+
+### Client facts
+
+- **NAP:** Diamond Ridge Industrial Services · PO Box 138, Archbald PA 18403 · (570) 862-9399 · info@diamondridgeindservices.com
+- **No street address anywhere** — service-area business, GBP publishes none. PO Box taken from the client's `/contact`.
+- **Phone conflict:** `/contact` lists a second number as **(570) 479-2629**; the global footer and GBP both list **(570) 479-2620**. Used the footer/GBP value. Primary CTA number is (570) 862-9399. **Confirm both with the client.**
+- GBP: 5.0 / **1 review**, category "Construction company", Mon–Fri 8–5. `rating` / `review_count` were deliberately **omitted from `config.json`** — TrustBadges would have rendered "5★ (1 reviews)" and the hero quote card "5.0 rating from 1 reviews". Credibility rides on the named enterprise logos instead.
+- **Women-owned.** Stated on their site; used as a supplier-diversity angle rather than a decorative badge.
+- Stated coverage: PA, NY, NJ, DE, MD, WV. Named clients: McLane, Amcor, Berry Global, Lowe's, Diamond H.
+- `licensed` / `insured` / `bonded` all left **false** — no badge or footer disclosure anywhere on the client site.
+
+### Service areas are DERIVED, not scraped
+
+The client names **six states and zero cities**. Six metros inside that stated footprint were chosen for the
+area pages — Scranton, Wilkes-Barre, Hazleton, Allentown (PA), Binghamton (NY), Newark (NJ) — weighted to
+warehouse/distribution corridors. DE, MD and WV are covered in body copy but have no page. Flagged in
+`intake-scraped.json._notes.warnings`. **Worth confirming with the client before ads run.**
+
+### Design tokens
+
+`--color-primary: #144e9d` is the client's own CSS brand navy, carried verbatim — and it is the *only*
+chromatic brand value they have. Both logo files sample as **pure monochrome white** (mean RGB 254.5/255.0),
+so there was no ink to derive from and no logo usable on the owl template's light header. Fix: recomposed a
+high-res horizontal lockup from the 1080×572 stacked logo (badge cropped, wordmark cropped, recombined,
+alpha-tinted) in navy for the header/footer, white for dark contexts, plus a square favicon set from the
+mountain badge. All in `public/`.
+
+Accent `#f5a623` is **derived, not scraped**, and the reasoning is recorded in `design_reference.json.rationale`:
+the client's other detected colors (`#2ea3f2`, `#2098d1`) are Divi defaults measuring under 1.6:1 against the
+navy panel, so they cannot function as the template's accent-on-dark; safety amber is already the colour of
+their own floor-line-marking work. Measured pairs: accent-on-primary 3.98:1, `--color-accent-ink #8a5a00`
+5.47:1 on bg / 5.93:1 on surface, text 16.39:1, muted 6.04:1, on-primary 8.06:1, on-accent 8.48:1.
+
+Fonts: detected heading face **Bank Gothic** is proprietary with no Google Fonts equivalent, so the detected
+*body* face (Red Hat Display) was promoted to display at 600–900 — it keeps the squared technical letterform
+without substituting an unrelated face. Inter carries body. Radii tightened 4/8/14 → 3/6/10.
+
+### Deviations from the pristine template — all inside `sites/diamond-ridge-industrial-services/`
+
+1. **B2B copy sweep.** Every "Get Your Free Estimate" / "Free In-Person Roof Estimate" string became
+   "Request A Site Assessment" / "Request A Free On-Site Assessment"; the form submit button and the
+   `Property address` field label became `Request My Site Assessment` and `Facility address`.
+2. **`EstimateForm.astro` `SERVICES[]`** replaced with the client's own contact-form options (Fibrecrete-G,
+   Traditional Concrete Repair, Joint Repair & Protection, Industrial Floor Coating, Floor Line Marking,
+   Freezer / Cold Storage, Other).
+3. **`pricing.astro`** — the hardcoded `roofCostRows` table (asphalt/metal/cedar/tile with dollar ranges) was
+   replaced with a six-row "what we assess and why it moves the number" table carrying **no dollar figures**.
+   Industrial concrete is scoped per site and the client publishes no rate card; inventing ranges on a page a
+   facility manager reads as a quote would be a fabricated claim. Class renamed `.roof-cost` → `.scope-table`.
+4. **`service-area/[slug].astro`** — the default H1 `${business_name} — Serving ${name}, ${full state}`
+   wrapped to **six lines** on this business name. Now `Industrial Concrete Repair In {City}, {ST}` using
+   `state_abbr`; `<title>` still carries the brand. Meta description dropped the word "licensed" (unverified)
+   and `serviceType` no longer interpolates the tagline.
+5. **`services/[slug].astro`** — `form_heading` no longer lowercases the service title ("Free fibrecrete-g
+   estimate" → "Free Fibrecrete-G assessment").
+6. **`BaseLayout.astro`** — Montserrat → Red Hat Display; favicon/apple-touch-icon links added (the owl
+   template ships none).
+7. **`config.ts`** — `partners[].logo_url` relaxed from `z.string().url()` to `z.string()` so partner logos
+   can be served from `public/` (see defect 3).
+
+### ⚠ Template defects found — fix in `astro-templates/owl/`, not per-client
+
+1. **Residential assumptions are baked into shared components, not content.** `WhyChooseUs.astro` hardcodes
+   *"Reasons homeowners pick us"*; `services/index.astro` hardcodes *"What we do for {city} homeowners"*;
+   `ServicesGridOwl.astro` falls back to *"Full-service roofing solutions"*; `BlogCards.astro` hardcodes
+   *"Roofing Advice"*; `blog/index.astro`'s meta description hardcodes *"Roofing advice and local guidance"*;
+   `EstimateForm.astro` hardcodes a ten-item roofing service list and a `Property address` label;
+   `HeroOwl.astro` hardcodes the roofing form heading twice as a fallback. None of these are reachable from
+   content — every non-roofing client has to patch component source. **These belong in `site/config.json`.**
+2. **`ClosingCTA.astro` still ships Gilroy's facts as its default `body`** (*"…Serving Wilkes-Barre and the
+   Wyoming Valley since 1972."*). Reported on the royal-roofing-systems build 2026-08-03 and still present.
+   Overridden locally again.
+3. **`partners[].logo_url` is `z.string().url()`** while every other image field in the same schema accepts a
+   local path and is *documented* as preferring one. A client whose partner logos are hotlinked off a CDN
+   cannot localise them without editing the schema.
+4. **Hero headline and `ClosingCTA` headline can collide.** Both defaulted to the same string here until the
+   ClosingCTA default was changed — worth a note, since ClosingCTA renders on every page.
+
+### Client-site issues worth raising with the owner (from `audit_results.json`)
+
+- Footer "Terms of Use" and "Privacy Policy" links on the service pages point at `#` — there are no such pages.
+- A default WordPress `hello world` post is still published at `/2025/12/01/hello-world`.
+- The testimonial section repeats the same review three times.
+- The site returns 403 to non-browser clients, which blocks some crawlers and preview tools.
+- The two phone numbers disagree between `/contact` and the footer.
+
+### Still needs operator paste-in
+
+`crm` is `{ provider: "ghl" }` only — no chat widget, no reviews widget, no form embed, no call-tracking
+snippet or number. `code_injection` head / body_start / body_end all empty (no Meta Pixel, no GTM). No custom
+domain attached. No short link (`--auto` skips it). No team members — the client has no team page, but they
+do have a good crew photo (already used as the About image) and a women-owned story that would carry a
+founder bio well.
+
+**Note:** the client's `/contact` form is a native Divi form with no CRM behind it. Nothing was carried over —
+recorded in `intake-scraped.json._detected_crm_snippets` for reference only.
+
+---
+
+## Stubbs Landscaping — `stubbs-landscaping` — 2026-08-03
+
+**Template:** owl (Gilroy/Owl, operator-pinned) · **Live:** https://stubbs-landscaping.vercel.app · **25 pages**
+
+Source: https://stubbslandscaping.com/ (WordPress + Elementor, built by 75 Degrees West).
+GBP confirmed: Stubbs Landscaping LLC, Landscaper, 5.0 ★ / 26 reviews, (570) 760-6813.
+GBP has no street address (service-area listing) — 24 Yeager Rd, Mountain Top PA 18707 came from the
+site footer and /contact. Run in `--auto`; all pipeline pauses skipped per operator instruction.
+
+**Cost this run:** ~$0.23 (Apify GBP $0.004 + Firecrawl homepage w/ branding + 9 inner pages + 1 raw HTML).
+`design-reference` ran template-pinned with no Firecrawl (~$0.02/URL saved) — see design_reference.json.
+
+### Content
+
+6 services (hardscaping, landscaping, outdoor-living, custom-decks, plunge-pools, lawn-health) ·
+6 service areas (mountain-top-pa, wilkes-barre-pa, dallas-pa, kingston-pa, drums-pa, hazleton-pa) ·
+3 testimonials · 8 home FAQs · 10 gallery items · 1 blog post.
+
+`SERVICE_LIMIT` raised 5 → 6 in `src/lib/limits.ts`, deliberately and documented in-file: six genuinely
+distinct trades, each with a substantial dedicated page on the client's existing site, not the thin
+near-duplicate pile the cap exists to prevent.
+
+### Design tokens
+
+Brand pair sampled from the logo PNG: orange `#F08020/#F58022` + leaf green `#8DC63F`. The Firecrawl
+branding extractor also returned `#CC3366` — an unused Elementor kit default that appears nowhere on the
+rendered page or in the logo. Discarded.
+
+`--color-primary: #223b14` is the leaf green taken down to a deep forest value (white 12.3:1, brand orange
+4.7:1 on it). `--color-on-accent: #16201a` — white on the brand orange is 2.6:1 and fails AA.
+`--color-accent-ink: #af5000` for the orange as text on light (4.9:1 on bg, 5.3:1 on surface).
+Fonts kept at the owl defaults (Montserrat + Inter): the client's site has no brand typeface — headings
+fall through to a system-ui stack and body is Roboto.
+
+### Template defect found and patched locally
+
+The owl template ships **hardcoded roofing copy** that `site-generate` does not touch. Patched in
+`sites/stubbs-landscaping/` across 9 files:
+
+- `EstimateForm.astro` + `api/estimate.ts` — default heading and the 10-item service dropdown were roofing
+  options (Attic venting, Gutter repair, Roof inspection…). Both lists must stay in sync or the API
+  rejects valid submissions.
+- `ClosingCTA.astro` — shipped Owl Roofing's own body copy including **"Serving Wilkes-Barre and the
+  Wyoming Valley since 1972"**, which would have published a false founding date on every page. Stubbs
+  was founded 2010.
+- `HeroOwl.astro`, `ServicesGridOwl.astro`, `BlogCards.astro`, `pages/index.astro`, `pages/about.astro`,
+  `pages/book.astro`, `pages/blog/index.astro` — roofing headings and fallbacks.
+- `pages/pricing.astro` — an entire hardcoded "Average roof costs" table (asphalt shingle / metal / cedar
+  shake / tile per-square pricing). Replaced with a six-row "what decides the price" table.
+
+**This hits every non-roofing client built on owl.** Belongs upstream in `astro-templates/owl/`.
+
+### Correction made mid-build
+
+`Employee-5.jpg` was initially read as a photo of owner Justin Rinehimer and written into `team_members`
+and the About block alt text. It is not identified as him anywhere — the client's site uses it in the
+"Interested in Being Part of Our Team?" careers section, so it is an unnamed crew member. Attribution
+removed, `team_members` emptied, file renamed to `crew-landscape-lighting.jpg`, alt text corrected.
+**No verified photo of Justin exists in the scraped set — operator should request one.**
+
+### Imagery
+
+24 photos pulled as full-size originals from `/wp-content/uploads/` (not Elementor thumbnails) and served
+from `public/img/`. Re-encoded at q76 / 1600px cap only where that beat the original: 13.0 MB → 7.8 MB.
+The one image with no recoverable original was a stock iStock lawn photo, replaced with an owned crew photo.
+
+### Verified live
+
+All 25 routes return 200. Canonical `https://stubbs-landscaping.vercel.app/`. No console errors, no broken
+images, no horizontal overflow at 1280px or 375px. Section order confirmed against the owl fixed order:
+hero → promise-bar → services → testimonials → promise-band → signature → process → about → seo-body →
+faq → blog-cards → closing-cta. Service dropdown confirmed rendering the 10 landscaping options.
+SSO is **off** on this project, so the vercel.app URL is publicly reachable.
+
+### Still needs operator paste-in
+
+`crm` is `{ provider: "ghl" }` only — no chat widget, no reviews widget, no form/calendar embed, no
+call-tracking snippet or number. The native `EstimateForm` posts to `/api/estimate`, which needs a
+destination configured in env or it will return `unavailable`. `code_injection` head / body_start /
+body_end all empty (no Meta Pixel, no GTM). No custom domain. No short link (`--auto` skips it).
+
+`licensed` / `insured` / `bonded` all left **false** — the client's site displays no badge or footer
+disclosure for any of the three. Confirm with the client before flipping; a landscaper this size is almost
+certainly insured, but we do not publish it on their behalf without confirmation.
+
+Service areas were **derived**, not scraped — the client's site names no explicit area list, only
+"Northeastern Pennsylvania" and "Luzerne County". Worth confirming the six chosen towns match where they
+actually take work.
+
+
+## Prezkop Builders — `prezkop-builders` — 2026-08-03
+
+**Live:** https://prezkop-builders.vercel.app — 25 pages, owl template, build + deploy clean.
+
+### The headline problem: the client lost their domain
+
+`prezkopbuilders.com` no longer belongs to Prezkop Builders. Every path on it — `/`, `/about`,
+`/contact` and all four service pages — now returns HTTP 200 serving an Indonesian online-gambling
+site branded **Bambuhoki88**. The squatter kept the original URL structure to inherit Prezkop's search
+equity, and the page `<title>` reads "BAMBUHOKI88 Prezkopbuilders…", so the business name is indexed
+alongside gambling content. The BBB profile's "Visit Website" button already points at a Facebook page
+rather than the domain, which suggests the loss predates this build. Screenshot at
+`screenshots/prezkop-builders.png`. Last legitimate archive capture: 2025-10-07.
+
+**Nothing on the live domain was used as input.** All content and imagery were recovered from Internet
+Archive snapshots (8 pages). The owl template remains the sole source of design and layout.
+
+### No Google Business Profile
+
+Three Apify Google Maps runs (Nanticoke PA / Wilkes-Barre PA / unfiltered "Prezkop Builders Nanticoke PA")
+returned **zero** matching places. Competitors in the same searches returned normally, so the actor and
+token are fine — the listing genuinely does not exist. Consequences:
+
+- `rating` and `review_count` are **unset**. No aggregate rating renders anywhere on the site.
+  HomeAdvisor shows 5.0 but publishes no review count, so it was not imported.
+- Testimonials are the four verbatim reviews recovered from the client's own archived site
+  (Melissa Roberts, Renee McGuire Dopko, Jim Brogna, Shannon Dixon) — all real, all attributed.
+- Claiming the GBP is the single highest-value local-SEO action available to this client and is an
+  obvious sales angle.
+
+### NAP sources (no GBP, so assembled)
+
+| Field | Value | Source |
+|---|---|---|
+| Address | 1092 W Main St, Nanticoke, PA 18634 | BBB profile + HBA of NEPA Buyers Guide |
+| Phone | (570) 814-0099 | client website footer (2025 snapshot) — **used as primary** |
+| Phone (alt) | (570) 417-5360 | number on file with the BBB — **confirm which one rings** |
+| Email | prezkop.builders@yahoo.com | client website footer |
+| Hours | Mon–Fri 7:00am–5:00pm | HomeAdvisor listing |
+| License | PA164836 (PA Office of the Attorney General) | BBB profile |
+| Entity | Prezkop Builders, LLC — started 4/1/2021, incorporated 4/19/2021 | BBB + PA corporate registry |
+
+`licensed` and `insured` set **true** (BBB records a real PA HIC license number). `bonded` false.
+`years_in_business` 5.
+
+### Imagery
+
+Only **13 of ~56** referenced images survive in the Internet Archive. All 13 recovered, re-encoded to
+1600px / q55 (3.0 MB total) and served from `public/img/`. That is 12 real photos plus the logo —
+enough for an 8-item gallery, 3 team headshots, 4 service heroes and 3 blog heroes with no repeats that
+matter. **Zero stock photography used.** If the client can supply their current project photos, the
+gallery and service pages are the first place to spend them.
+
+### Template defects fixed in this client's copy
+
+The owl template hardcodes roofing copy in places a non-roofing client cannot use. Fixed under
+`sites/prezkop-builders/` only (template untouched):
+
+- `EstimateForm.astro` — default heading "Request A Free In-Person **Roof** Estimate Today!" and a
+  10-item roofing-only service dropdown (roof repair, skylights, gutters). Replaced with the client's
+  actual services.
+- `HeroOwl.astro`, `index.astro`, `about.astro`, `book.astro` — same roofing form heading passed as a prop.
+- `ClosingCTA.astro` — "Need A New Roof? Book Your Inspection Now."
+- `BlogCards.astro` — "Roofing Advice" heading; `blog/index.astro` description.
+- `ServicesGridOwl.astro` — "Full-service roofing solutions" fallback.
+- `pricing.astro` — an entire hardcoded **average roof cost table** (asphalt/metal/cedar/tile with
+  dollar ranges). Replaced with a "what drives the number" table by project type, with **no invented
+  dollar figures** — this client's spread runs from four stair treads to a whole-home remodel, and a
+  made-up range would contradict the page's own promise.
+
+**This is worth fixing upstream.** Those strings should come from `config.json`, not be baked into the
+template — every non-roofing owl client will hit the same six files.
+
+### Design tokens
+
+Accent `#3c6c8c` and accent-ink `#1b4e73` are the client's own Astra global brand blues, recovered
+from the archived CSS. Contrast measured, not assumed: accent 5.65:1 on white (white button labels pass
+AA), 3.07:1 on `--color-primary: #1c1a17` (clears the 3:1 non-text minimum on the dark panels).
+Accent-ink 8.80:1 on bg / 7.94:1 on surface. Primary is a warm near-black rather than the template's
+olive — a mid blue needs the darker panel to hold that 3:1. Fonts Raleway + Roboto, also the client's own.
+`BaseLayout.astro` font `<link>` updated to match (owl loads fonts via link, not a tokens.css @import).
+
+### Content shipped
+
+- 4 services: outdoor-living, remodeling-new-construction, hardwood-floor-refinishing, pre-construction-services
+- 6 service areas: nanticoke-pa (HQ), wilkes-barre-pa, hunlock-creek-pa, dallas-pa, kingston-pa, mountain-top-pa
+  — Nanticoke, Hunlock Creek and Dallas are **scraped** (named on the client's own site, including a
+  "Hardwood Floor Refinishing Dallas, PA" page title); Wilkes-Barre, Kingston and Mountain Top are
+  **derived** from the metro. Worth confirming the derived three.
+- 8 home FAQs, 4 testimonials, 8-item gallery, 3 team members, 3 blog posts
+- `marketing_city` Wilkes-Barre / `marketing_state` PA (office in Nanticoke) — the Firefly pattern
+
+### Open items
+
+- **CRM is empty.** `crm` is `{ provider: "ghl" }` only — no chat, reviews, form/calendar embed,
+  call-tracking snippet or number. The native `EstimateForm` posts to `/api/estimate`, which needs a
+  destination in env or it returns `unavailable`.
+- `code_injection` head / body_start / body_end all empty. No Meta Pixel, no GTM.
+- No custom domain attached. **This is the urgent one** — the client cannot go back to
+  `prezkopbuilders.com`, so a replacement domain is a prerequisite, not a nice-to-have.
+- No short link (`--auto` skips it).
+- Confirm which of the two phone numbers rings.
+
+---
+
+## NEPA Classic Construction — `nepa-classic-construction` — 2026-08-04
+
+**Live:** https://nepa-classic-construction.vercel.app — 24 pages, owl template, build + deploy clean.
+Run in `--auto` (operator: "without questions asked"). Total paid spend this run: **~$0.38**
+(2 Apify Google Maps runs ≈ $0.008, 18 Firecrawl scrapes ≈ $0.36).
+
+### No Google Business Profile
+
+Two Apify Google Maps runs — `"NEPA Classic Construction"` / Pittston PA (run `OpzHRxnxIrGqqjOCU`,
+0 results) and `"NEPA Classic"` / Luzerne County PA (run `aRsfqVzpoWYX4o1VT`, 8 results, none matching) —
+returned **no listing**. Unrelated NEPA-named businesses came back normally, so the actor and token
+are fine; the listing genuinely does not exist. Consequences:
+
+- `rating` and `review_count` are **unset**. No aggregate rating renders anywhere on the site.
+- `testimonials` is **empty** — there are no reviews on the client's site or on Google, and none
+  were fabricated. The `Testimonials` component self-hides on an empty array.
+- NAP, hours, geo, licensed/insured and years-in-business come from the client's own site:
+  the schema.org `GeneralContractor` JSON-LD block and the footer text.
+- **Claiming the GBP and collecting the first reviews is the single highest-value action available
+  to this client, and the obvious sales angle.** Every NEPA contractor-recommendation thread we read
+  resolves into "who has reviews".
+
+### The old site is a Lovable React SPA with real problems
+
+`nepaclassic.com` ships an empty `<div id="root">` — no server-rendered HTML at all. Findings in
+`sites/nepa-classic-construction/audit_results.json`:
+
+- **All seven `/contractor-{city}-pa` service-area URLs listed in its sitemap return 404 on the live
+  site.** The sitemap advertises pages that were never built.
+- FAQ answers and all per-service copy live only in the JS bundle; the accordions never mount their
+  content, so none of it is in the DOM for a crawler.
+- About / Portfolio / FAQ / Contact are hash anchors, not pages. No privacy, terms or accessibility page.
+
+Because Firecrawl could not read the un-rendered accordions, per-service copy and the 26 FAQ q/a pairs
+were read out of the site's **own JS data module** (`/assets/index-LM1c6zrL.js`). That is a real,
+traceable source — the client's own authored content — not generated text.
+
+### Brand tokens (client site + logo, brand only — never layout)
+
+| Token | Value | Source |
+|---|---|---|
+| `--color-bg` | `#faf8f5` | client CSS `--background: hsl(43 33% 97%)` |
+| `--color-text` | `#1a1e1b` | client CSS `--foreground: hsl(135 7% 11%)` |
+| `--color-primary` | `#0b3729` | client CSS `--primary: hsl(160 68% 13%)`, also a literal hex in their bundle |
+| `--color-accent` | `#c7a257` | client CSS `--accent: hsl(40 50% 56%)` |
+| `--font-display` | Fraunces | client CSS `--font-serif` |
+| `--font-body` | Geist | client CSS `--font-sans` |
+| logo red / green | `#c92121` / `#3e9c26` | sampled from `logo-BjbCzadu.png` |
+
+**Why the accent is the gold and not the logo red.** The red is the louder brand colour, but owl uses
+`--color-accent` as TEXT on the dark `--color-primary` panels (Testimonials, ProcessSteps, WhyChooseUs,
+hero scrim). Red on `#0b3729` measures **2.34:1** and fails AA there. The client's own declared gold
+clears **5.48:1**. So the gold is the token and the red stays in the logo mark. Full contrast audit in
+`design_reference.json`. `--color-on-accent` is dark (`#1a1e1b`, 7.01:1) because white on the gold is
+2.4:1; `--color-accent-ink` (`#7d5a1c`) is the darkened variant for text on light sections.
+
+**Logo treatment.** The mark's letterforms and the "CONSTRUCTION" wordmark are **white**, so it is only
+legible on a dark field — which is how the client presents it on their own dark header. Rather than
+recolour the artwork, `public/logo-nepa-classic.png` composites the untouched logo onto a `#0b3729`
+plate. The source PNG is transparent-background; alpha bbox was used to trim it.
+
+### Content caps applied
+
+- **9 services detected → 5 shipped** (`SERVICE_LIMIT`). `patio-installation`, `retaining-walls` and
+  `walkways-driveways` folded into Hardscaping `sub_services`; `home-renovations` folded into General
+  Contracting. No copy was lost — the sub-service FAQs were merged into the parent service.
+- **7 service areas detected → 6 shipped** (`AREA_LIMIT`). Plains, PA dropped (smallest, a township).
+
+### Imagery
+
+Only **6 real project photos** exist (3 before/after pairs), all pulled from the client's site and
+served from `public/img/` rather than hotlinked. Two service cards were rendering the same photo, so
+`svc-exterior-detail.jpg` and `svc-landscape-detail.jpg` are distinct crops of `exterior-reno-after.jpg`
+— same real project, different framing. All five service cards are now visually distinct.
+
+Service-area landmark photos are Wikimedia Commons town images, downloaded locally and resized, each
+with visible `landmark_credit` + `landmark_credit_href` (all CC BY-SA, attribution required).
+Note: Wikimedia `/thumb/` URLs 400'd for these files; the originals fetched fine and were resized locally.
+
+### Local research is thin by necessity
+
+Reddit is blocked in this environment for WebSearch, WebFetch, Firecrawl scrape **and** the in-app
+browser (403 / unsupported-site / blocked-by-policy). Findings in `local_research.json` come from
+Firecrawl web-search result snippets — which do surface real Reddit post and comment text — across
+11 threads including four NEPA-specific ones. Full comment threads were not read. The dominant signal
+is unambiguous and consistent: **contractors ghosting after the walkthrough**, wild quote spreads on the
+same job (one r/Scranton commenter: quoted $90–120k for a rewire, had it done for $25k), and nobody
+wanting the small-to-mid job. That drove the hero.
+
+### Copy angle driving the build
+
+Hero leads with the estimate promise — "The Free Estimate You Will Actually Get Back" — rather than a
+services list, because ghosting is the #1 local pain point and essentially nobody markets against it.
+The `promise_band` and `signature_system` both extend it. Second angle: one contractor for the whole
+project. Third: the pre-1940 NEPA housing stock (knob-and-tube, plaster) and freeze-thaw base spec,
+which the client already speaks to in their own copy.
+
+### Template copy replaced (owl ships roofing defaults)
+
+`form_heading` on index/about/book, `EstimateForm` + `api/estimate.ts` service option lists (kept in
+sync — the API rejects any value not in its Set), `ClosingCTA` headline and body, `BlogCards` heading,
+`ServicesGridOwl` fallback subtitle, and the whole `/pricing` cost table. The pricing table now carries
+only ranges NEPA Classic actually publishes ($20–45/sq ft pavers, $3k–25k+ landscaping) and says
+"Quoted per project" everywhere else rather than inventing a number.
+
+### Open items for the operator
+
+- **GHL paste-ins: none supplied.** `crm` is `{provider: "ghl"}` only — no chat widget, no reviews
+  widget, no calendar embed, no contact-form snippet, no call-tracking number. Those sections self-hide.
+- **The native EstimateForm posts to `/api/estimate`, which has no destination configured.** Set
+  `LEAD_WEBHOOK_URL`, or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`, in the Vercel
+  project env — otherwise submissions are logged and dropped.
+- No captcha snippet (`crm.captcha_snippet`) and no `TURNSTILE_SECRET_KEY` / `RECAPTCHA_SECRET_KEY`.
+  The honeypot is the only bot defence right now.
+- `code_injection` head / body_start / body_end all empty. No Meta Pixel, no GTM.
+- No custom domain attached. Deploy is on the bare `*.vercel.app` alias and is publicly reachable
+  (SSO is off on this project).
+- No short link (`--auto` skips it).
+- No socials found anywhere (site, GBP, footer). `social` is `{}` and the footer social row self-hides.
+- No street address published by the client — city/state/ZIP only. Worth obtaining for local SEO.
+- Claim the Google Business Profile. This is the top priority.
+
+---
+
+## Raircon Corporation — `raircon` — 2026-08-04
+
+**Live:** https://raircon.vercel.app · **Template:** `owl` · **Pages:** 24 · **Old site:** https://raircon.com/
+
+**Business (GBP-confirmed):** Raircon Corporation, 1388 SE 9th Ct, Hialeah, FL 33010 ·
+(305) 885-4422 · 4.7★ / 219 reviews · Air conditioning contractor · founded Jan 2002 ·
+place_id `ChIJtakHa5-82YgRMDAkCyejfBI`.
+
+**Pipeline cost this run: ~$0.008.** Only the Apify GBP lookup was paid (two runs — the first
+query `Raircon` + `Miami, FL` returned 0 results; `Raircon Corporation` + `Miami-Dade County,
+Florida` found it). **No Firecrawl spend:** raircon.com returns full server-rendered HTML to a
+plain fetch, so all 13 pages were captured with curl. `design-reference` read the owl template
+in-repo rather than scraping the reference URLs.
+
+**Content:** 5 services (client lists 8; grouped into 5 to fit `SERVICE_LIMIT` with nothing
+dropped — AC+HVAC, Mechanical+Refrigeration, Plumbing, Electrical, Construction+Remodeling) ·
+6 service areas (Miami, Hialeah, Miami Beach, Fort Lauderdale, Pembroke Pines, Key West) ·
+5 testimonials · 8 FAQs · 8 gallery items · 1 blog post. All imagery is the client's own,
+downloaded to `public/img/` rather than hotlinked off their WordPress.
+
+**Tokens:** brand red `#bd0101` accent + navy `#002349` primary, Outfit + Roboto (both detected
+on the client's Google Fonts link). Note: `intake-from-web` initially read the accent as the
+Kadence *theme default* orange `#f7630c` from CSS custom properties — the rendered screenshot
+showed the live brand is red, and it was corrected.
+
+### Template defects found and patched in this client site
+
+The `owl` template carries hardcoded **roofing** copy in nine places. All were fixed inside
+`sites/raircon/`, but they will recur on every non-roofing client until fixed upstream in
+`astro-templates/owl/`:
+
+| File | Was |
+|---|---|
+| `pages/index.astro` | `form_heading="Request A Free In-Person Roof Estimate Today!"` |
+| `pages/book.astro` | same heading + roof-specific intro |
+| `pages/about.astro` | same heading |
+| `components/HeroOwl.astro` | same string as the default in two places |
+| `components/EstimateForm.astro` | default heading + a roofing-only `SERVICES` dropdown |
+| **`pages/api/estimate.ts`** | **server-side `SERVICES` allowlist was roofing-only** |
+| `components/ClosingCTA.astro` | `'Need A New Roof?'` + body asserting *Gilroy's* guarantee and "Serving Wilkes-Barre and the Wyoming Valley since 1972" |
+| `components/BlogCards.astro` | `<h2>Roofing Advice</h2>` |
+| `pages/pricing.astro` | a hardcoded asphalt-shingle / cedar-shake / metal price table |
+
+Two of these were more than cosmetic:
+
+- **`api/estimate.ts`** validates `service` against a server-side allowlist. Because the form
+  now offers HVAC options and the API still expected roofing ones, *every* submission would
+  have been rejected as invalid — a silent lead drop. The two lists are now in sync and
+  carry comments saying so.
+- **`ClosingCTA.astro`** shipped another client's guarantee ("no payment until the job is
+  finished") and another client's city and founding year as the site-wide default body.
+
+`pricing.astro` was rewritten as a "what drives the price" table rather than a price table —
+there is no verified Raircon rate card, and the page copy explicitly says we do not publish
+flat prices.
+
+**Accent-on-dark contrast:** the owl template uses `--color-accent` both as a button fill and as
+accent text inside the dark `--color-primary` bands. Raircon's brand red satisfies the first
+(6.63:1 on white) but fails the second (2.37:1 on `#002349`), and no single red satisfies both.
+`tokens.css` adds a `--color-accent-on-dark: #ff8a8a` (7.4:1 on the navy) applied to text only,
+so button fills stay true brand red. Verified in-browser via computed styles.
+
+### Open items for the operator
+
+- **Lead capture is not wired up.** `/api/estimate` has no destination configured: it needs
+  either `LEAD_WEBHOOK_URL`, or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL` set
+  in Vercel env — or GHL snippets pasted into `crm.*`. Until then the form returns
+  "Online requests aren't switched on yet."
+- No GHL paste-ins supplied: chat widget, reviews widget, calendar embed, contact/estimate form
+  embeds, call-tracking snippet. All self-hide.
+- No code injection (Meta Pixel / GTM) supplied.
+- No custom domain attached; `raircon.vercel.app` is publicly reachable (SSO is off on this project).
+- No short link (`--auto` skips it).
+- Client publishes **no email address** anywhere on their site — `email` is unset.
+- Client's footer Instagram link is a dead placeholder (`https://instagram.com`) — omitted.
+  Facebook is real and included.
+- Reddit comment bodies were unreachable (blocked to the WebSearch/WebFetch UA, 403 on the
+  public JSON API, unsupported by Firecrawl). `local_research.json` is synthesized from thread
+  titles and search snippets — directional, not a full comment read.
+- Worth telling the client: their **current** site's main homepage body block still sells
+  "expert sprinkler repair services... lawn sprinkler system" — leftover from an unrelated
+  template — and their reviews section renders as a blank white void.

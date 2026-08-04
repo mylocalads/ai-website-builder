@@ -32,10 +32,24 @@ async function screenshot(url, outPath, width, timeout) {
   // Ensure output directory exists
   mkdirSync(dirname(outPath), { recursive: true });
 
-  const browser = await chromium.launch({ headless: true });
+  // Prefer the locally installed Google Chrome. Playwright's bundled
+  // chrome-headless-shell is fingerprinted by common WAFs and gets served a bare
+  // 403 page — which screenshots "successfully" and silently poisons the audit.
+  // Fall back to bundled chromium only when Chrome isn't installed.
+  const launchArgs = ['--disable-blink-features=AutomationControlled'];
+  let browser;
+  try {
+    browser = await chromium.launch({ channel: 'chrome', headless: true, args: launchArgs });
+  } catch {
+    console.warn('  Google Chrome not found, falling back to bundled chromium (some sites will 403)...');
+    browser = await chromium.launch({ headless: true, args: launchArgs });
+  }
   const context = await browser.newContext({
     viewport: { width: parseInt(width), height: 900 },
-    userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    locale: 'en-US',
+    timezoneId: 'America/Chicago',
+    userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    extraHTTPHeaders: { 'Accept-Language': 'en-US,en;q=0.9' },
   });
 
   const page = await context.newPage();
@@ -56,10 +70,15 @@ async function screenshot(url, outPath, width, timeout) {
 
   try {
     try {
-      await page.goto(url, {
+      const resp = await page.goto(url, {
         waitUntil: 'networkidle',
         timeout: parseInt(timeout),
       });
+      // A blocked request still renders and screenshots cleanly. Say so loudly
+      // rather than handing the auditor a picture of an error page.
+      if (resp && resp.status() >= 400) {
+        console.warn(`  WARNING: ${url} returned HTTP ${resp.status()} — the capture is of an error page, not the site.`);
+      }
     } catch (e) {
       // If networkidle times out, try domcontentloaded as fallback
       console.warn(`  networkidle timeout, falling back to domcontentloaded...`);

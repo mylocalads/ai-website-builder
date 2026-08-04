@@ -2,38 +2,393 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "golden-business-machines",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/golden-business-machines",
+        "--",
+        "--port",
+        "4531"
+      ],
+      "port": 4531,
+      "autoPort": false
+    },
+    {
+      "name": "mla-starter-hub",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "/Users/marcellusm/Claude Projects/mla-starter-hub",
+        "--",
+        "--port",
+        "3100"
+      ],
+      "port": 3100,
+      "autoPort": false
+    },
+    {
       "name": "firefly-cd",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "preview", "--prefix", "sites/firefly-cd", "--", "--port", "4399"],
+      "runtimeArgs": [
+        "run",
+        "preview",
+        "--prefix",
+        "sites/firefly-cd",
+        "--",
+        "--port",
+        "4399"
+      ],
       "port": 4399,
       "autoPort": false
     },
     {
       "name": "mylocalads",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/mylocalads", "--", "--port", "4321"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/mylocalads",
+        "--",
+        "--port",
+        "4321"
+      ],
       "port": 4321,
       "autoPort": false
     },
     {
       "name": "bilskis-lawncare",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/bilskis-lawncare", "--", "--port", "4331"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/bilskis-lawncare",
+        "--",
+        "--port",
+        "4331"
+      ],
       "port": 4331,
       "autoPort": false
     },
     {
       "name": "whitman-lawncare",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/whitman-lawncare", "--", "--port", "4341"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/whitman-lawncare",
+        "--",
+        "--port",
+        "4341"
+      ],
       "port": 4341,
       "autoPort": false
     },
     {
       "name": "smile-lawn-care",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/smile-lawn-care", "--", "--port", "4351"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/smile-lawn-care",
+        "--",
+        "--port",
+        "4351"
+      ],
       "port": 4351,
+      "autoPort": false
+    },
+    {
+      "name": "infinity-roofing",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/infinity-roofing",
+        "--",
+        "--port",
+        "4361"
+      ],
+      "port": 4361,
+      "autoPort": false
+    },
+    {
+      "name": "h4-roofing-construction",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/h4-roofing-construction",
+        "--",
+        "--port",
+        "4371"
+      ],
+      "port": 4371,
+      "autoPort": false
+    },
+    {
+      "name": "results-roofing",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/results-roofing",
+        "--",
+        "--port",
+        "4381"
+      ],
+      "port": 4381,
+      "autoPort": false
+    },
+    {
+      "name": "quality-roofing-express",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/quality-roofing-express",
+        "--",
+        "--port",
+        "4391"
+      ],
+      "port": 4391,
+      "autoPort": false
+    },
+    {
+      "name": "gt-roofing",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/gt-roofing",
+        "--",
+        "--port",
+        "4401"
+      ],
+      "port": 4401,
+      "autoPort": false
+    },
+    {
+      "name": "eastern-residential-solutions",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/eastern-residential-solutions",
+        "--",
+        "--port",
+        "4411"
+      ],
+      "port": 4411,
+      "autoPort": false
+    },
+    {
+      "name": "pinnacle-roofing-sheet-metal",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/pinnacle-roofing-sheet-metal",
+        "--",
+        "--port",
+        "4421"
+      ],
+      "port": 4421,
+      "autoPort": false
+    },
+    {
+      "name": "ameristar-maids",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/ameristar-maids",
+        "--",
+        "--port",
+        "4431"
+      ],
+      "port": 4431,
+      "autoPort": false
+    },
+    {
+      "name": "patriot-metal-products",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/patriot-metal-products",
+        "--",
+        "--port",
+        "4451"
+      ],
+      "port": 4451,
+      "autoPort": false
+    },
+    {
+      "name": "springlake-pools-masonry",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/springlake-pools-masonry",
+        "--",
+        "--port",
+        "4461"
+      ],
+      "port": 4461,
+      "autoPort": false
+    },
+    {
+      "name": "comfortable-climate-hvac",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/comfortable-climate-hvac",
+        "--",
+        "--port",
+        "4441"
+      ],
+      "port": 4441,
+      "autoPort": false
+    },
+    {
+      "name": "royal-roofing-systems",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/royal-roofing-systems",
+        "--",
+        "--port",
+        "4481"
+      ],
+      "port": 4481,
+      "autoPort": false
+    },
+    {
+      "name": "comprehensive-pain-specialists",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/comprehensive-pain-specialists",
+        "--",
+        "--port",
+        "4471"
+      ],
+      "port": 4471,
+      "autoPort": false
+    },
+    {
+      "name": "stubbs-landscaping",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/stubbs-landscaping",
+        "--",
+        "--port",
+        "4501"
+      ],
+      "port": 4501,
+      "autoPort": false
+    },
+    {
+      "name": "morris-kitchens-donnelly-designs",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/morris-kitchens-donnelly-designs",
+        "--",
+        "--port",
+        "4491"
+      ],
+      "port": 4491,
+      "autoPort": false
+    },
+    {
+      "name": "diamond-ridge-industrial-services",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/diamond-ridge-industrial-services",
+        "--",
+        "--port",
+        "4511"
+      ],
+      "port": 4511,
+      "autoPort": false
+    },
+    {
+      "name": "prezkop-builders",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/prezkop-builders",
+        "--",
+        "--port",
+        "4521"
+      ],
+      "port": 4521,
+      "autoPort": false
+    },
+    {
+      "name": "raircon",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/raircon",
+        "--",
+        "--port",
+        "4551"
+      ],
+      "port": 4551,
+      "autoPort": false
+    },
+    {
+      "name": "nepa-classic-construction",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/nepa-classic-construction",
+        "--",
+        "--port",
+        "4541"
+      ],
+      "port": 4541,
       "autoPort": false
     }
   ]
