@@ -15,3 +15,14 @@ Thumbs.db
 # Screenshots (regenerated on each run)
 screenshots/
 .vercel
+
+# Firecrawl scrape archives kept for debugging by intake-from-web. Regenerable,
+# and they carry whatever keys were embedded in the client's public page HTML —
+# three of them held the same live Google Maps browser key. Nothing downstream
+# reads these after intake. Moved here from the monorepo's .gitignore when this
+# folder was split into its own repo.
+sites/*/raw/
+
+# Caches
+.firecrawl/
+sites/**/.firecrawl/
