@@ -1,0 +1,350 @@
+[{
+  "title": "RC Moore Nanticoke",
+  "subTitle": null,
+  "description": "Warehouse with docks situated within Tradeport 164 Building 9.",
+  "price": null,
+  "categoryName": "Warehouse",
+  "address": "301 Dziak Dr, Nanticoke, PA 18634",
+  "neighborhood": null,
+  "street": "301 Dziak Dr",
+  "city": "Nanticoke",
+  "postalCode": "18634",
+  "state": "Pennsylvania",
+  "countryCode": "US",
+  "phone": "",
+  "phoneUnformatted": "",
+  "claimThisBusiness": true,
+  "location": {
+    "lat": 41.1832196,
+    "lng": -75.9937526
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 3.4,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJVd2dzIQNxYkRIMrhxaJadt4",
+  "categories": [
+    "Warehouse"
+  ],
+  "fid": "0x89c50d84cc9ddd55:0xde765aa2c5e1ca20",
+  "cid": "16030099578822969888",
+  "reviewsCount": 78,
+  "imagesCount": 13,
+  "imageCategories": [],
+  "scrapedAt": "2026-08-03T23:38:14.170Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "8 AM to 10 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "8 AM to 10 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "8 AM to 10 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "8 AM to 10 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "8 AM to 10 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [],
+  "additionalInfo": {
+    "Accessibility": [
+      {
+        "Wheelchair accessible entrance": true
+      },
+      {
+        "Wheelchair accessible parking lot": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=RC%20Moore%20Nanticoke&query_place_id=ChIJVd2dzIQNxYkRIMrhxaJadt4",
+  "searchPageUrl": "https://www.google.com/maps/search/Prezkop%20Builders%20Nanticoke%20PA?hl=en",
+  "searchString": "Prezkop Builders Nanticoke PA",
+  "language": "en",
+  "rank": 2,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWk0pMekdaLqbbf5GzzIWX3Anc1ArkPvvKy7N0hjupwqTnlkd9676XPL5Tc5tRjVSRDbQVhBfIqQsQPBtjN6RQ4v4any3gqIHXv0b39f270DUudPZW_hEMWsyWnwpKHoJm0cf1e27_hrmHbg=w408-h306-k-no",
+  "kgmid": "/g/11td32f17x",
+  "emails": [],
+  "phones": [],
+  "phonesUncertain": [],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "leadsEnrichment": []
+},
+{
+  "title": "Champion Builders, Inc.",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "General contractor",
+  "address": "239 Pringle St, Kingston, PA 18704",
+  "neighborhood": null,
+  "street": "239 Pringle St",
+  "city": "Kingston",
+  "postalCode": "18704",
+  "state": "Pennsylvania",
+  "countryCode": "US",
+  "website": "http://championbuildersinc.com/",
+  "phone": "(570) 283-2529",
+  "phoneUnformatted": "+15702832529",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.2716575,
+    "lng": -75.8996405
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJ1bGQqqAQxYkRsNFgrdxNUGk",
+  "categories": [
+    "General contractor"
+  ],
+  "fid": "0x89c510a0aa90b1d5:0x69504ddcad60d1b0",
+  "cid": "7588650982316233136",
+  "reviewsCount": 4,
+  "imagesCount": 4,
+  "imageCategories": [],
+  "scrapedAt": "2026-08-03T23:38:14.170Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Thursday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Friday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Open 24 hours"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Open 24 hours"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [],
+  "additionalInfo": {
+    "Accessibility": [
+      {
+        "Wheelchair accessible entrance": true
+      },
+      {
+        "Wheelchair accessible parking lot": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Champion%20Builders%2C%20Inc.&query_place_id=ChIJ1bGQqqAQxYkRsNFgrdxNUGk",
+  "searchPageUrl": "https://www.google.com/maps/search/Prezkop%20Builders%20Nanticoke%20PA?hl=en",
+  "searchString": "Prezkop Builders Nanticoke PA",
+  "language": "en",
+  "rank": 3,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl4QR6unYggr_1J9QLoBK9KjrRXkiDIdpBFlLT_Orq-6scQrK5UyHe0zZjD20Ydilj0fxxzfaIcC8GFA05AGs3hv-kuAqtofyRR0fVSOlDYETEJFivfp5Q3RaM91SPdvKs8Qrx-=w426-h240-k-no",
+  "kgmid": "/g/1tg_bfkd",
+  "emails": [
+    "info@championbuildersinc.com"
+  ],
+  "phones": [],
+  "phonesUncertain": [
+    "570-283-2529",
+    "570-283-1009",
+    "(570) 283-2529"
+  ],
+  "linkedIns": [
+    "https://www.linkedin.com/in/champion-builders-08b686251"
+  ],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [
+    "https://www.facebook.com/TheChampionBuildersInc"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "championbuildersinc.com",
+  "leadsEnrichment": []
+},
+{
+  "title": "Pennco Contracting",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Home builder",
+  "address": null,
+  "neighborhood": null,
+  "street": null,
+  "city": null,
+  "postalCode": null,
+  "state": null,
+  "countryCode": null,
+  "website": "http://www.penncocontracting.com/",
+  "phone": "(570) 256-2974",
+  "phoneUnformatted": "+15702562974",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.231896,
+    "lng": -76.0935751
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJJ6liZB5txYkRU_cKUm8WyO8",
+  "categories": [
+    "Home builder",
+    "Service establishment"
+  ],
+  "fid": "0x89c56d1e6462a927:0xefc8166f520af753",
+  "cid": "17278084637780539219",
+  "reviewsCount": 3,
+  "imagesCount": 2,
+  "imageCategories": [],
+  "scrapedAt": "2026-08-03T23:38:14.168Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [],
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Pennco%20Contracting&query_place_id=ChIJJ6liZB5txYkRU_cKUm8WyO8",
+  "searchPageUrl": "https://www.google.com/maps/search/Prezkop%20Builders%20Nanticoke%20PA?hl=en",
+  "searchString": "Prezkop Builders Nanticoke PA",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlypZYg-nDM5t13O-6iFIxStdUFdi04mrN8RC8bDzMHatK0p9o_BAyGiLHcbPuMw8FcTocxwTbgp1vM3I9GYCVTwiVjf0LYbdaeqT_CNRqdbSY6pHAHmhHxV8hvHMJsYhWgP3bC=w408-h306-k-no",
+  "kgmid": "/g/1vf9d9p7",
+  "emails": [],
+  "phones": [],
+  "phonesUncertain": [
+    "(570) 256-2974",
+    "(570) 256-4420",
+    "570-256-4420"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [
+    "https://www.facebook.com/penncocontracting"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "penncocontracting.com",
+  "leadsEnrichment": []
+}]

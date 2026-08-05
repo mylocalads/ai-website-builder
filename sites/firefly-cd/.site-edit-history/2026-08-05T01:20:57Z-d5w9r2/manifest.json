@@ -1,0 +1,65 @@
+{
+  "batch_id": "2026-08-05T01:20:57Z-d5w9r2",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "add a 'Decking' service page and deploy",
+  "diff_spec": [
+    {
+      "op": "CREATE",
+      "path": "src/content/services/decking.md",
+      "note": "order=7; hero+gallery are Firefly's own deck project photo from img1.wsimg.com"
+    },
+    {
+      "op": "SET",
+      "path": "src/pages/services/[slug].astro",
+      "field": "slice",
+      "value": ".slice(0, 7)",
+      "note": "service route cap 6->7"
+    },
+    {
+      "op": "SET",
+      "path": "src/pages/services/index.astro",
+      "field": "slice",
+      "value": ".slice(0, 7)",
+      "note": "was 5 (not 6) - this ALSO fixes flooring being silently missing from the services grid"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/OurServices.astro",
+      "field": "slice",
+      "value": ".slice(0, 7)"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/Header.astro",
+      "field": "services.slice",
+      "value": ".slice(0, 7)",
+      "note": "areas slice deliberately left at 6"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/Footer.astro",
+      "field": "services.slice",
+      "value": ".slice(0, 7)",
+      "note": "areas slice deliberately left at 6"
+    }
+  ],
+  "files_touched": [
+    "src/content/services/decking.md",
+    "src/pages/services/[slug].astro",
+    "src/pages/services/index.astro",
+    "src/components/OurServices.astro",
+    "src/components/Header.astro",
+    "src/components/Footer.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_url": "https://firefly-lt8bimi6y-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://fireflycd.com",
+    "page_count": 24
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

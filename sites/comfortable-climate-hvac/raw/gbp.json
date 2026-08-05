@@ -1,0 +1,169 @@
+[{
+  "title": "Comfortable Climate HVAC",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "HVAC contractor",
+  "address": null,
+  "neighborhood": null,
+  "street": null,
+  "city": null,
+  "postalCode": null,
+  "state": null,
+  "countryCode": null,
+  "website": "http://comfortableclimatehvac.com/",
+  "phone": "(570) 333-0380",
+  "phoneUnformatted": "+15703330380",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.277069,
+    "lng": -75.8803045
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJ8Z4_uLcixYkRsV2z91WSRNA",
+  "categories": [
+    "HVAC contractor",
+    "Air conditioning contractor",
+    "Air conditioning repair service",
+    "Service establishment",
+    "Heating contractor"
+  ],
+  "fid": "0x89c522b7b83f9ef1:0xd0449255f7b35db1",
+  "cid": "15007280756230938033",
+  "reviewsCount": 17,
+  "reviewsDistribution": {
+    "oneStar": 0,
+    "twoStar": 0,
+    "threeStar": 0,
+    "fourStar": 0,
+    "fiveStar": 17
+  },
+  "imagesCount": 14,
+  "imageCategories": [
+    "All",
+    "Inside",
+    "Machine",
+    "By owner"
+  ],
+  "scrapedAt": "2026-08-03T23:28:29.861Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "7 AM to 8 PM"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [
+    {
+      "title": "leaking",
+      "count": 2
+    },
+    {
+      "title": "fair pricing",
+      "count": 2
+    },
+    {
+      "title": "responsiveness",
+      "count": 3
+    },
+    {
+      "title": "crew",
+      "count": 2
+    },
+    {
+      "title": "awesome job",
+      "count": 2
+    },
+    {
+      "title": "call",
+      "count": 2
+    },
+    {
+      "title": "hot water",
+      "count": 4
+    }
+  ],
+  "additionalInfo": {
+    "Offerings": [
+      {
+        "Installation service": true
+      },
+      {
+        "Repair services": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Comfortable%20Climate%20HVAC&query_place_id=ChIJ8Z4_uLcixYkRsV2z91WSRNA",
+  "searchPageUrl": "https://www.google.com/maps/search/Comfortable%20Climate%20HVAC%20Dallas%20PA?hl=en",
+  "searchString": "Comfortable Climate HVAC Dallas PA",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnt7E9IaeKmTVn13BI2m_1ACL3P7KQZiM8H9hRWHnKaurc6pe54Kj2piiV3Qe2DCQ9vEKsLQHUOxFIWQqZYyJ1Bb8ZHoDVM9hTF391sIh40DDBwg1OhgTTOKksD9M-W-eSrKJGz=w408-h544-k-no",
+  "kgmid": "/g/11bw2hyf0h",
+  "emails": [
+    "joeairheat@gmail.com"
+  ],
+  "phones": [
+    "5703330380",
+    "570-333-0380"
+  ],
+  "phonesUncertain": [
+    "(570) 333-0380"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [
+    "https://www.facebook.com/ComfortableClimateHVAC"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "comfortableclimatehvac.com",
+  "leadsEnrichment": []
+}]

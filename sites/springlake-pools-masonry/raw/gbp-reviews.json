@@ -1,0 +1,139 @@
+[{
+  "title": "SpringLake Pools & Masonry",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Swimming pool contractor",
+  "address": null,
+  "neighborhood": null,
+  "street": null,
+  "city": null,
+  "postalCode": null,
+  "state": null,
+  "countryCode": null,
+  "website": "https://springlakepools.com/",
+  "phone": "(570) 855-4235",
+  "phoneUnformatted": "+15708554235",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 40.8556259,
+    "lng": -75.689281
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJVet0clQ0YoURzxb0fEPVSco",
+  "categories": [
+    "Swimming pool contractor",
+    "Service establishment",
+    "Pool cleaning service",
+    "Swimming pool repair service"
+  ],
+  "fid": "0x856234547274eb55:0xca49d5437cf416cf",
+  "cid": "14576416154797217487",
+  "reviewsCount": 8,
+  "reviewsDistribution": {
+    "oneStar": 0,
+    "twoStar": 0,
+    "threeStar": 0,
+    "fourStar": 0,
+    "fiveStar": 8
+  },
+  "imagesCount": 44,
+  "imageCategories": [
+    "All",
+    "Inside",
+    "Videos",
+    "By owner"
+  ],
+  "scrapedAt": "2026-08-03T23:32:21.764Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [
+    {
+      "title": "affordability",
+      "count": 2
+    },
+    {
+      "title": "communication",
+      "count": 2
+    },
+    {
+      "title": "questions",
+      "count": 2
+    },
+    {
+      "title": "company",
+      "count": 3
+    }
+  ],
+  "additionalInfo": {
+    "Service options": [
+      {
+        "English": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "questionsAndAnswers": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=SpringLake%20Pools%20%26%20Masonry&query_place_id=ChIJVet0clQ0YoURzxb0fEPVSco",
+  "searchString": "Direct Detail URL: https://www.google.com/maps/search/?api=1&query=SpringLake%20Pools%20%26%20Masonry&query_place_id=ChIJVet0clQ0YoURzxb0fEPVSco",
+  "language": "en",
+  "inputStartUrl": "https://www.google.com/maps/search/?api=1&query=SpringLake%20Pools%20%26%20Masonry&query_place_id=ChIJVet0clQ0YoURzxb0fEPVSco",
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlnzkb-0uYnX9kuWZkiaVj-4rBKgoD96KStCskNUmxbnOJYBF8l5YX7yWodpITjrh9WV6g7rqNQjyOrW1hMUJNPeyCvzf8mjmJm5uYn0rbOKICE7oaxy7qirFzIaa5cODlSiZnC4Dl1VWE=w408-h306-k-no",
+  "kgmid": "/g/11txkz888g",
+  "webResults": [],
+  "tableReservationLinks": [],
+  "tableReservationProviders": [],
+  "bookingLinks": [],
+  "restaurantData": {
+    "tableReservationProvider": null
+  },
+  "ownerUpdates": [],
+  "emails": [
+    "Springlakepools@gmail.com",
+    "springlakepools@gmail.com"
+  ],
+  "phones": [
+    "+15708554235"
+  ],
+  "phonesUncertain": [
+    "570-855-4235",
+    "41.338203",
+    "75.995645",
+    "(570) 855-4235"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [
+    "https://www.instagram.com/springlakepools"
+  ],
+  "facebooks": [
+    "https://www.facebook.com/springlakepools"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "springlakepools.com",
+  "imageUrls": [],
+  "reviews": [],
+  "leadsEnrichment": []
+}]

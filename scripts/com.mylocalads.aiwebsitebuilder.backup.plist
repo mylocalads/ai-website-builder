@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Reference copy. The live one must be at:
+    ~/Library/LaunchAgents/com.mylocalads.aiwebsitebuilder.backup.plist
+
+  Install:
+    cp scripts/com.mylocalads.aiwebsitebuilder.backup.plist ~/Library/LaunchAgents/
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.mylocalads.aiwebsitebuilder.backup.plist
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.mylocalads.aiwebsitebuilder.backup</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/marcellusm/Claude Projects/mla-agents/ai-website-builder/scripts/daily-backup.sh</string>
+    <string>/Users/marcellusm/Claude Projects/mla-agents/ai-website-builder</string>
+  </array>
+
+  <!-- 10:00 daily. Asleep -> runs on wake. Powered off -> runs at next login.
+       Off for days -> runs ONCE on return, not once per missed day. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>10</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/marcellusm/Library/Logs/git-daily-backup.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/marcellusm/Library/Logs/git-daily-backup.err</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

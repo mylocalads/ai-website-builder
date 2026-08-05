@@ -1,0 +1,201 @@
+[{
+  "title": "Comprehensive Pain Specialists",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Pain management physician",
+  "address": "1177 PA-315, Dolphin Plaza, Wilkes-Barre, PA 18702",
+  "neighborhood": null,
+  "street": "1177 PA-315, Dolphin Plaza",
+  "city": "Wilkes-Barre",
+  "postalCode": "18702",
+  "state": "PA",
+  "countryCode": "US",
+  "website": "https://comprehensivepaindocs.org/",
+  "phone": "(570) 232-3920",
+  "phoneUnformatted": "+15702323920",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.2594909,
+    "lng": -75.8197402
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": "755J+Q4 Wilkes-Barre, Pennsylvania",
+  "menu": null,
+  "servicesLink": "https://comprehensivepaindocs.org/services",
+  "totalScore": 3.2,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJpcjlCXQbxYkRCWVQUib_Yh4",
+  "categories": [
+    "Pain management physician",
+    "Doctor",
+    "Medical clinic",
+    "Pain control clinic",
+    "Specialized clinic"
+  ],
+  "fid": "0x89c51b7409e5c8a5:0x1e62ff2652506509",
+  "cid": "2189592908910322953",
+  "reviewsCount": 27,
+  "reviewsDistribution": {
+    "oneStar": 11,
+    "twoStar": 1,
+    "threeStar": 0,
+    "fourStar": 2,
+    "fiveStar": 13
+  },
+  "imagesCount": 38,
+  "imageCategories": [
+    "All",
+    "By owner",
+    "Street View & 360°"
+  ],
+  "scrapedAt": "2026-08-03T23:29:51.559Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "8 AM to 4 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "8 AM to 4 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "8 AM to 4 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "8 AM to 4 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "8 AM to 4 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [
+    {
+      "category": "People also search for",
+      "title": "Pain Center of Wyoming Valley",
+      "reviewsCount": 6,
+      "totalScore": 4.3
+    },
+    {
+      "category": "People also search for",
+      "title": "Dr. Joseph D. Paz, DO",
+      "reviewsCount": 13,
+      "totalScore": 4.3
+    },
+    {
+      "category": "People also search for",
+      "title": "Pain Management Association",
+      "reviewsCount": 0,
+      "totalScore": 0
+    },
+    {
+      "category": "People also search for",
+      "title": "Relievus Wilkes-Barre",
+      "reviewsCount": 47,
+      "totalScore": 4.5
+    }
+  ],
+  "placesTags": [],
+  "reviewsTags": [],
+  "additionalInfo": {
+    "Accessibility": [
+      {
+        "Wheelchair accessible entrance": true
+      },
+      {
+        "Wheelchair accessible parking lot": true
+      },
+      {
+        "Wheelchair accessible restroom": true
+      }
+    ],
+    "Amenities": [
+      {
+        "Restroom": true
+      }
+    ],
+    "Planning": [
+      {
+        "Appointment required": true
+      },
+      {
+        "Appointments recommended": true
+      }
+    ],
+    "Payments": [
+      {
+        "Credit cards": true
+      },
+      {
+        "Debit cards": true
+      },
+      {
+        "NFC mobile payments": true
+      },
+      {
+        "Credit cards": true
+      }
+    ],
+    "Parking": [
+      {
+        "Free parking lot": true
+      },
+      {
+        "On-site parking": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Comprehensive%20Pain%20Specialists&query_place_id=ChIJpcjlCXQbxYkRCWVQUib_Yh4",
+  "searchPageUrl": "https://www.google.com/maps/search/Comprehensive%20Pain%20Specialists%201177%20PA-315%20Wilkes-Barre%20PA%2018702?hl=en",
+  "searchString": "Comprehensive Pain Specialists 1177 PA-315 Wilkes-Barre PA 18702",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnvNFI4nXqvPqvLFUGalbDuKCdsFAdPfDd1XQLDmsiXrP-dwgr3l-UsYXqrsQQltYtKE2Lu_mgay-C6qPopYyGb7h7xaGVOYrkneYioR_YdZ8f-gJ2q7JTAIXoHtNgDBCV4SxNioQ=w408-h725-k-no",
+  "kgmid": "/g/11b6_ctxmc",
+  "emails": [],
+  "phones": [],
+  "phonesUncertain": [
+    "(570) 232-3920",
+    "41.259490",
+    "75.819740"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [
+    "https://www.instagram.com/comprehensive_pain_specialist"
+  ],
+  "facebooks": [
+    "https://www.facebook.com/share"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "comprehensivepaindocs.org",
+  "leadsEnrichment": []
+}]

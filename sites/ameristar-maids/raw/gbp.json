@@ -1,0 +1,211 @@
+[{
+  "title": "AmeriStar Maids",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "House cleaning service",
+  "address": "1100 Twin Stacks Dr Ste. 1202, Dallas, PA 18612",
+  "neighborhood": null,
+  "street": "1100 Twin Stacks Dr Ste. 1202",
+  "city": "Dallas",
+  "postalCode": "18612",
+  "state": "Pennsylvania",
+  "countryCode": "US",
+  "website": "https://www.ameristarmaids.com/",
+  "phone": "(570) 310-1057",
+  "phoneUnformatted": "+15703101057",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.3397287,
+    "lng": -75.9760242
+  },
+  "locatedIn": "Twin Stacks Center",
+  "floor": null,
+  "plusCode": "82QF+VH Dallas, Pennsylvania",
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 4.9,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJm38tI3QXxYkRK1NLLzVxnLM",
+  "categories": [
+    "House cleaning service",
+    "Carpet cleaning service",
+    "Window cleaning service"
+  ],
+  "fid": "0x89c51774232d7f9b:0xb39c71352f4b532b",
+  "cid": "12942343902396633899",
+  "reviewsCount": 171,
+  "reviewsDistribution": {
+    "oneStar": 2,
+    "twoStar": 0,
+    "threeStar": 3,
+    "fourStar": 4,
+    "fiveStar": 162
+  },
+  "imagesCount": 169,
+  "imageCategories": [
+    "All",
+    "Latest",
+    "Inside",
+    "By owner"
+  ],
+  "scrapedAt": "2026-08-03T23:23:26.022Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "8:30 AM to 4:30 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "8:30 AM to 4:30 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "8:30 AM to 4:30 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "8:30 AM to 4:30 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "8:30 AM to 4:30 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [
+    {
+      "category": "People also search for",
+      "title": "AmeriStar Facility Solutions | Cleaning & Janitorial Services",
+      "reviewsCount": 16,
+      "totalScore": 5
+    },
+    {
+      "category": "People also search for",
+      "title": "shine time cleaning",
+      "reviewsCount": 0,
+      "totalScore": 0
+    },
+    {
+      "category": "People also search for",
+      "title": "Krall Cleaning Experts",
+      "reviewsCount": 30,
+      "totalScore": 4.9
+    },
+    {
+      "category": "People also search for",
+      "title": "Streakfree Cleaning Service",
+      "reviewsCount": 139,
+      "totalScore": 4.9
+    }
+  ],
+  "placesTags": [],
+  "reviewsTags": [
+    {
+      "title": "pleasant staff",
+      "count": 14
+    },
+    {
+      "title": "trustworthy crew",
+      "count": 3
+    },
+    {
+      "title": "kitchen cleaning",
+      "count": 3
+    },
+    {
+      "title": "help with toddlers",
+      "count": 2
+    },
+    {
+      "title": "top to bottom",
+      "count": 2
+    },
+    {
+      "title": "apartment cleaning",
+      "count": 2
+    },
+    {
+      "title": "fair pricing",
+      "count": 2
+    },
+    {
+      "title": "punctuality",
+      "count": 11
+    },
+    {
+      "title": "spotless cleaning",
+      "count": 2
+    },
+    {
+      "title": "attention to detail",
+      "count": 12
+    }
+  ],
+  "additionalInfo": {
+    "Service options": [
+      {
+        "Online estimates": true
+      },
+      {
+        "Onsite services": false
+      }
+    ],
+    "Accessibility": [
+      {
+        "Wheelchair accessible parking lot": true
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=AmeriStar%20Maids&query_place_id=ChIJm38tI3QXxYkRK1NLLzVxnLM",
+  "searchPageUrl": "https://www.google.com/maps/search/AmeriStar%20Maids/@41.343652062003336,-75.97599580167045,17z?hl=en",
+  "searchString": "AmeriStar Maids",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWl5rrUa7mtZI9U88sgnhRSoSoyHHt-jKf5Tt7MJ1bxz7jFd6aCnpplJnyVOmAQ4ja3tR3esEK5uwz-hTKsFLxWBh3WAj-MsYCQE1LWOilI1jxQpegoU1Aivn6yFHH-YMF_MVMyeTw=w408-h413-k-no",
+  "kgmid": "/g/11gy7_1pjb",
+  "emails": [
+    "info@ameristarmaids.com"
+  ],
+  "phones": [
+    "(570) 310-1057",
+    "+15703101057"
+  ],
+  "phonesUncertain": [
+    "(570) 310-1057",
+    "113 334 433 221",
+    "570-310-1057"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [
+    "https://www.facebook.com/AmeriStarMaids"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "ameristarmaids.com",
+  "leadsEnrichment": []
+}]

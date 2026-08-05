@@ -1,0 +1,137 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Montserrat",
+        "role": "heading"
+      },
+      {
+        "family": "Open Sans",
+        "role": "body"
+      }
+    ],
+    "colors": {
+      "primary": "#FADB6E",
+      "secondary": "#8DD7F7",
+      "accent": "#1E2452",
+      "background": "#FFFFFF",
+      "textPrimary": "#1E2452",
+      "link": "#1E2452"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Open Sans",
+        "heading": "Montserrat"
+      },
+      "fontStacks": {
+        "heading": [
+          "Montserrat",
+          "Helvetica",
+          "Arial",
+          "Lucida",
+          "sans-serif"
+        ],
+        "body": [
+          "Open Sans",
+          "Arial",
+          "sans-serif"
+        ],
+        "paragraph": [
+          "Montserrat",
+          "Helvetica",
+          "Arial",
+          "Lucida",
+          "sans-serif"
+        ]
+      },
+      "fontSizes": {
+        "h1": "30px",
+        "h2": "50px",
+        "body": "20px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "3px"
+    },
+    "components": {
+      "input": {
+        "background": "#FFFFFF",
+        "textColor": "#1E2452",
+        "borderColor": null,
+        "borderRadius": "3px",
+        "borderRadiusCorners": {
+          "topLeft": "3px",
+          "topRight": "3px",
+          "bottomRight": "3px",
+          "bottomLeft": "3px"
+        },
+        "shadow": "none"
+      }
+    },
+    "images": {
+      "logo": "https://ml8skt4c7os0.i.optimole.com/w:255/h:263/q:mauto/f:best/https://comfortableclimatehvac.com/wp-content/uploads/2020/06/logo.png",
+      "favicon": "https://ml8skt4c7os0.i.optimole.com/w:32/h:32/q:mauto/f:best/dpr:2/https://comfortableclimatehvac.com/wp-content/uploads/2020/06/logo.png",
+      "ogImage": null,
+      "logoHref": "https://comfortableclimatehvac.com/"
+    },
+    "__llm_logo_reasoning": {
+      "selectedIndex": 0,
+      "reasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'Comfortable Climate HVAC'.",
+      "confidence": 0.95,
+      "source": "llm"
+    },
+    "personality": {
+      "tone": "professional",
+      "energy": "medium",
+      "targetAudience": "homeowners seeking HVAC services"
+    },
+    "designSystem": {
+      "framework": "custom",
+      "componentLibrary": ""
+    },
+    "confidence": {
+      "buttons": 0,
+      "colors": 0.9,
+      "overall": 0.45
+    },
+    "__llm_metadata": {
+      "logoSelection": {
+        "llmCalled": true,
+        "llmSucceeded": true,
+        "finalSource": "llm",
+        "rawLogoSelection": {
+          "selectedLogoIndex": 0,
+          "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and matches the brand name 'Comfortable Climate HVAC'.",
+          "confidence": 0.95
+        }
+      },
+      "buttonClassification": {
+        "llmCalled": false,
+        "llmSucceeded": false
+      }
+    }
+  },
+  "metadata": {
+    "title": "Comfortable Climate HVAC | Heating, Plumbing & Air Conditioning Company",
+    "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
+    "msapplication-TileImage": "https://ml8skt4c7os0.i.optimole.com/w:255/h:263/q:mauto/f:best/https://comfortableclimatehvac.com/wp-content/uploads/2020/06/logo.png",
+    "language": "en-US",
+    "generator": [
+      "Websoham v.3.0.0",
+      "WordPress 7.0.2"
+    ],
+    "robots": "max-image-preview:large",
+    "scrapeId": "019fc9f7-2785-7379-a53d-8bbe366a893e",
+    "sourceURL": "https://comfortableclimatehvac.com",
+    "url": "https://comfortableclimatehvac.com/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=UTF-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "c139c898-8047-401d-bddc-fa5ba55af748",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  }
+}

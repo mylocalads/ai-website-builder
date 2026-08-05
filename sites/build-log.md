@@ -2835,3 +2835,36 @@ so button fills stay true brand red. Verified in-browser via computed styles.
 - Worth telling the client: their **current** site's main homepage body block still sells
   "expert sprinkler repair services... lawn sprinkler system" — leftover from an unrelated
   template — and their reviews section renders as a blank white void.
+
+### 2026-08-04 — firefly-cd: added Decking service page + fixed hidden Flooring bug (24 pages)
+
+Live at `https://fireflycd.com/services/decking/`. Deploy
+`firefly-lt8bimi6y`. Snapshot `.site-edit-history/2026-08-05T01:20:57Z-d5w9r2/`.
+
+**Found a live bug while raising the cap: Flooring was invisible on `/services/`.** The service caps
+were inconsistent — `[slug].astro`, `OurServices`, `Header` and `Footer` all sliced at 6, but
+`src/pages/services/index.astro` sliced at **5**, with 6 services in the collection. So the services
+index grid rendered only 5 cards and `flooring` (order=6) never appeared, despite having its own
+page and sitting in the nav. It looked fine on a link sweep because the header/footer nav still
+emitted the link on that page — counting `href` occurrences finds nothing; you have to count cards
+*inside* the `.grid` block. All service caps now 7.
+
+**Watch the sed blast radius.** `sed 's|slice(0, 6)|slice(0, 7)|'` over `Header.astro` and
+`Footer.astro` also hit the *service_areas* line in those files, silently raising the area cap to 7
+while `[area].astro` stayed at 6. Harmless today (only 6 areas exist, so nothing 404s) but it would
+have produced a dead nav link the moment a 7th area was added. Reverted; final audit confirms
+services=7, areas=6 in all ten slice sites. Grep the full cap surface after any bulk substitution —
+`Header`/`Footer` carry both collections on adjacent lines.
+
+**Decking is a real Firefly service, not an assumed one** — `config.json` already carried a project
+titled "Exterior + deck refresh" in Otis Orchards. Hero and gallery use that project's own photo from
+`img1.wsimg.com`, re-cropped through iSteam params (`cr=t:12%,h:56%/rs=w:1200`) from portrait
+600x800 into 1200x895 (4:3), matching the aspect the other service heroes use. Only one genuine deck
+photo exists in their asset set, so the gallery has a single entry rather than padded filler.
+
+Verified live: all 7 service pages 200, `/services/` grid renders 7 cards (flooring + decking both
+present), decking in sitemap and homepage nav, hero image 200, all 6 area pages still 200.
+
+**Copy is drafted, not client-supplied — needs Firefly's sign-off on three specifics:** the materials
+list (composite / PVC / wood), "we pull the permits where the job calls for them", and the one-to-two
+week build estimate. Everything else mirrors claims already published elsewhere on their site.

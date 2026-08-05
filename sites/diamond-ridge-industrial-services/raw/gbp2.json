@@ -1,0 +1,128 @@
+[{
+  "title": "Diamond Ridge Industrial Services",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Construction company",
+  "address": null,
+  "neighborhood": null,
+  "street": null,
+  "city": null,
+  "postalCode": null,
+  "state": null,
+  "countryCode": null,
+  "website": "https://diamondridgeindservices.com/",
+  "phone": "(570) 479-2620",
+  "phoneUnformatted": "+15704792620",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.4042555,
+    "lng": -75.6622274
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJNR9g_2Av4IURHM-jGB3CqBg",
+  "categories": [
+    "Construction company",
+    "Service establishment"
+  ],
+  "fid": "0x85e02f60ff601f35:0x18a8c21d18a3cf1c",
+  "cid": "1776883483220889372",
+  "reviewsCount": 1,
+  "reviewsDistribution": {
+    "oneStar": 0,
+    "twoStar": 0,
+    "threeStar": 0,
+    "fourStar": 0,
+    "fiveStar": 1
+  },
+  "imagesCount": 18,
+  "imageCategories": [
+    "All",
+    "Construction",
+    "By owner"
+  ],
+  "scrapedAt": "2026-08-03T23:31:17.647Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "Closed"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [],
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Diamond%20Ridge%20Industrial%20Services&query_place_id=ChIJNR9g_2Av4IURHM-jGB3CqBg",
+  "searchPageUrl": "https://www.google.com/maps/search/Diamond%20Ridge%20Industrial%20Services/@41.340095027283446,-75.64479307488918,16z?hl=en",
+  "searchString": "Diamond Ridge Industrial Services",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn7hpdky1TxGollQHtNBbl5bybKIN2ZMpuFCPF_kJkuV1bajnTB3KRmGhE5tIT-HUFvZ40zCjVJcgbS90ITutIZYM9071aqsK7WcLDq6ifo0RubMB68WYLXsoZJ1VFfrNKGFB8=w408-h365-k-no",
+  "kgmid": "/g/11y6pkh_76",
+  "emails": [
+    "info@diamondridgeindservices.com"
+  ],
+  "phones": [],
+  "phonesUncertain": [
+    "(570) 862-9399",
+    "(570) 479-2620",
+    "(570) 479-2629"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [
+    "http://instagram.com/diamondridgeindservices",
+    "https://www.instagram.com/diamondridgeindservices"
+  ],
+  "facebooks": [
+    "https://www.facebook.com/diamondridgeIndServices"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "diamondridgeindservices.com",
+  "leadsEnrichment": []
+}]

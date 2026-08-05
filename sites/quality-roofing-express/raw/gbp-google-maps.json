@@ -1,0 +1,316 @@
+[{
+  "title": "Quality Roofing Express",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Roofing contractor",
+  "address": "614 N Rebecca Ave, Scranton, PA 18504",
+  "neighborhood": null,
+  "street": "614 N Rebecca Ave",
+  "city": "Scranton",
+  "postalCode": "18504",
+  "state": "Pennsylvania",
+  "countryCode": "US",
+  "website": "https://www.qualityroofingexpress.org/",
+  "phone": "(570) 614-3914",
+  "phoneUnformatted": "+15706143914",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.4210921,
+    "lng": -75.6801342
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": "C8C9+CW Scranton, Pennsylvania",
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 4.6,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJT3NpTdXZxIkRXrlxdqrgXIk",
+  "categories": [
+    "Roofing contractor",
+    "Repair service"
+  ],
+  "fid": "0x89c4d9d54d69734f:0x895ce0aa7671b95e",
+  "cid": "9898033103789734238",
+  "reviewsCount": 74,
+  "reviewsDistribution": {
+    "oneStar": 6,
+    "twoStar": 0,
+    "threeStar": 1,
+    "fourStar": 3,
+    "fiveStar": 64
+  },
+  "imagesCount": 109,
+  "imageCategories": [
+    "All",
+    "Inside",
+    "Videos",
+    "House",
+    "By owner",
+    "Street View & 360°"
+  ],
+  "scrapedAt": "2026-08-03T17:44:14.920Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7 AM to 7 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "8 AM to 7 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "9 AM to 12 PM"
+    }
+  ],
+  "openingHoursBusinessConfirmationText": "Updated by this business 6 weeks ago",
+  "peopleAlsoSearch": [
+    {
+      "category": "People also search for",
+      "title": "Erie Home Roofing",
+      "reviewsCount": 318,
+      "totalScore": 4.8
+    },
+    {
+      "category": "People also search for",
+      "title": "BF Construction",
+      "reviewsCount": 238,
+      "totalScore": 4.9
+    },
+    {
+      "category": "People also search for",
+      "title": "Maggie Roofing Contractors",
+      "reviewsCount": 1,
+      "totalScore": 5
+    },
+    {
+      "category": "People also search for",
+      "title": "For The Love of Roofing",
+      "reviewsCount": 13,
+      "totalScore": 4.1
+    },
+    {
+      "category": "People also search for",
+      "title": "WaterpRoof Roofing Diagnostics",
+      "reviewsCount": 0,
+      "totalScore": 0
+    }
+  ],
+  "placesTags": [],
+  "reviewsTags": [
+    {
+      "title": "siding installation",
+      "count": 3
+    },
+    {
+      "title": "tarp installation",
+      "count": 3
+    },
+    {
+      "title": "quality roofing",
+      "count": 2
+    },
+    {
+      "title": "waiting time",
+      "count": 3
+    },
+    {
+      "title": "considerate staff",
+      "count": 3
+    },
+    {
+      "title": "great workers",
+      "count": 2
+    },
+    {
+      "title": "roof replacement",
+      "count": 16
+    },
+    {
+      "title": "cleanup",
+      "count": 20
+    },
+    {
+      "title": "new roof",
+      "count": 3
+    },
+    {
+      "title": "leak",
+      "count": 3
+    }
+  ],
+  "additionalInfo": {
+    "Service options": [
+      {
+        "Onsite services": true
+      },
+      {
+        "Online estimates": false
+      }
+    ]
+  },
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Quality%20Roofing%20Express&query_place_id=ChIJT3NpTdXZxIkRXrlxdqrgXIk",
+  "searchPageUrl": "https://www.google.com/maps/search/Quality%20Roofing%20Express/@41.455989418173246,-75.69624630022163,16z?hl=en",
+  "searchString": "Quality Roofing Express",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkv9tokTmUXcs55wnt1AuYoRULS2bQpcsD6Uqu_J2PPQeOXwmYk-TIKgKGTwEtmk_mo5VEmsVBnVLC54dSwNjvZ6YQAVxvY4HFFFzWb2KvVqgMohFyeYUoqs25v1IjY-E4JmzXA=w408-h544-k-no",
+  "kgmid": "/g/11fppl5c6q",
+  "emails": [
+    "Qualityroofingexpress@gmail.com"
+  ],
+  "phones": [
+    "570-614-3914"
+  ],
+  "phonesUncertain": [
+    "570-614-3914"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [
+    "http://www.facebook.com/Quality-Roofing-EXpress-2046349175583923",
+    "https://www.facebook.com/qualityroofingexpress"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "qualityroofingexpress.org",
+  "leadsEnrichment": []
+},
+{
+  "title": "Quality Roofing Express",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Roofing contractor",
+  "address": null,
+  "neighborhood": null,
+  "street": null,
+  "city": null,
+  "postalCode": null,
+  "state": null,
+  "countryCode": null,
+  "phone": "",
+  "phoneUnformatted": "",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.4042555,
+    "lng": -75.6622274
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJh2L3vBDfxIkRkai-84usmeI",
+  "categories": [
+    "Roofing contractor",
+    "Service establishment"
+  ],
+  "fid": "0x89c4df10bcf76287:0xe299ac8bf3bea891",
+  "cid": "16328271641098234001",
+  "reviewsCount": 1,
+  "imagesCount": 38,
+  "imageCategories": [],
+  "scrapedAt": "2026-08-03T17:44:25.720Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "7 AM to 8 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "7 AM to 8 PM"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [],
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Quality%20Roofing%20Express&query_place_id=ChIJh2L3vBDfxIkRkai-84usmeI",
+  "searchPageUrl": "https://www.google.com/maps/search/Quality%20Roofing%20Express/@41.41735795454331,-75.66194415,16z?hl=en",
+  "searchString": "Quality Roofing Express",
+  "language": "en",
+  "rank": 2,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlhQaPTjZVwby2MmSHPn1sITBu4E_bu89XTxOf9K-PfSMz_x4kB6cFnCVgTWrDaKDFfrkX-uRGN34Cqo4ySxUGLOCZhybsF026F-9rQgecSXjiJv6iBVvnegQZ6pvOTIqHPwu1T=w408-h271-k-no",
+  "kgmid": "/g/11gj4j6kq6",
+  "emails": [],
+  "phones": [],
+  "phonesUncertain": [],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [],
+  "facebooks": [],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "leadsEnrichment": []
+}]

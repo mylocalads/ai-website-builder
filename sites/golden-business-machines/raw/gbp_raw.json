@@ -1,0 +1,184 @@
+[
+  {
+    "title": "Golden Business Machines Inc",
+    "subTitle": null,
+    "description": null,
+    "price": null,
+    "categoryName": "Printing equipment supplier",
+    "address": "165 Church St, Kingston, PA 18704",
+    "neighborhood": null,
+    "street": "165 Church St",
+    "city": "Kingston",
+    "postalCode": "18704",
+    "state": "Pennsylvania",
+    "countryCode": "US",
+    "website": "http://www.goldenbusiness.com/",
+    "phone": "(800) 692-6217",
+    "phoneUnformatted": "+18006926217",
+    "claimThisBusiness": false,
+    "location": {
+      "lat": 41.2712444,
+      "lng": -75.8791005
+    },
+    "locatedIn": null,
+    "floor": null,
+    "plusCode": "74CC+F9 Kingston, Pennsylvania",
+    "menu": null,
+    "servicesLink": null,
+    "totalScore": 4,
+    "permanentlyClosed": false,
+    "temporarilyClosed": false,
+    "placeId": "ChIJl3nOUBYaxYkRmFzHwYIKN7Q",
+    "categories": [
+      "Printing equipment supplier",
+      "Computer consultant",
+      "Computer networking service",
+      "Computer support and services",
+      "Copier repair service",
+      "Digital printer",
+      "Office equipment rental service",
+      "Office equipment repair service",
+      "Office equipment supplier",
+      "Printer repair service"
+    ],
+    "fid": "0x89c51a1650ce7997:0xb4370a82c1c75c98",
+    "cid": "12985859607259208856",
+    "reviewsCount": 4,
+    "reviewsDistribution": {
+      "oneStar": 1,
+      "twoStar": 0,
+      "threeStar": 0,
+      "fourStar": 0,
+      "fiveStar": 3
+    },
+    "imagesCount": 12,
+    "imageCategories": [
+      "All",
+      "By owner",
+      "Street View & 360\u00b0"
+    ],
+    "scrapedAt": "2026-08-03T23:28:41.940Z",
+    "reserveTableUrl": null,
+    "googleFoodUrl": null,
+    "hotelStars": null,
+    "hotelDescription": null,
+    "checkInDate": null,
+    "checkOutDate": null,
+    "hotelAds": [],
+    "popularTimesLiveText": null,
+    "popularTimesLivePercent": null,
+    "popularTimesHistogram": {},
+    "openingHours": [
+      {
+        "day": "Monday",
+        "hours": "8\u202fAM to 4:30\u202fPM"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "8\u202fAM to 4:30\u202fPM"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "8\u202fAM to 4:30\u202fPM"
+      },
+      {
+        "day": "Thursday",
+        "hours": "8\u202fAM to 4:30\u202fPM"
+      },
+      {
+        "day": "Friday",
+        "hours": "8\u202fAM to 4:30\u202fPM"
+      },
+      {
+        "day": "Saturday",
+        "hours": "Closed"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "peopleAlsoSearch": [
+      {
+        "category": "People also search for",
+        "title": "Golden Technologies",
+        "reviewsCount": 9,
+        "totalScore": 3.3
+      },
+      {
+        "category": "People also search for",
+        "title": "B.E.S.T. Service Inc",
+        "reviewsCount": 0,
+        "totalScore": 0
+      },
+      {
+        "category": "People also search for",
+        "title": "World Trade Copiers",
+        "reviewsCount": 0,
+        "totalScore": 0
+      },
+      {
+        "category": "People also search for",
+        "title": "Gold Star Wide Format",
+        "reviewsCount": 4,
+        "totalScore": 5
+      },
+      {
+        "category": "People also search for",
+        "title": "Advanced Business Equipment",
+        "reviewsCount": 0,
+        "totalScore": 0
+      }
+    ],
+    "placesTags": [],
+    "reviewsTags": [],
+    "additionalInfo": {
+      "Accessibility": [
+        {
+          "Wheelchair accessible entrance": true
+        },
+        {
+          "Wheelchair accessible parking lot": true
+        }
+      ]
+    },
+    "gasPrices": [],
+    "url": "https://www.google.com/maps/search/?api=1&query=Golden%20Business%20Machines%20Inc&query_place_id=ChIJl3nOUBYaxYkRmFzHwYIKN7Q",
+    "searchPageUrl": "https://www.google.com/maps/search/Golden%20Business%20Machines/@41.27219211626572,-75.88737895,17z?hl=en",
+    "searchString": "Golden Business Machines",
+    "language": "en",
+    "rank": 1,
+    "isAdvertisement": false,
+    "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkqPc6Wt-y2hRpWBX-ESFpGpOeyBmSmUBKdty_9DDkC8ln91fDgjn7LuTz0D1DI_8xCoft482ZPy48o7pi5YTRHEEFacvRA-4ai5SpU5Ergd2XYxAMbCIZgVf0o9uCkgDWF01hnFg=w408-h306-k-no",
+    "kgmid": "/g/1tdn514s",
+    "emails": [],
+    "phones": [
+      "(570) 288-7554",
+      "(570) 342-5600"
+    ],
+    "phonesUncertain": [
+      "+15702887554",
+      "800-692-6217",
+      "(570) 288-7554",
+      "800-889-4426",
+      "(570) 342-5600",
+      "(570) 323-1778",
+      "(570) 454-8805"
+    ],
+    "linkedIns": [
+      "https://www.linkedin.com/company/golden-business-machines"
+    ],
+    "twitters": [],
+    "instagrams": [],
+    "facebooks": [
+      "https://www.facebook.com/pages/Golden-Business-Machines-Inc/126424977465619",
+      "https://www.facebook.com/GoldenBusinessMachines"
+    ],
+    "youtubes": [],
+    "tiktoks": [],
+    "pinterests": [],
+    "discords": [],
+    "domain": "goldenbusiness.com",
+    "leadsEnrichment": []
+  }
+]

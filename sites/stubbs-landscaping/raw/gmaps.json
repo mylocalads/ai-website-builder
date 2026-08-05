@@ -1,0 +1,167 @@
+[{
+  "title": "Stubbs Landscaping LLC",
+  "subTitle": null,
+  "description": null,
+  "price": null,
+  "categoryName": "Landscaper",
+  "address": null,
+  "neighborhood": null,
+  "street": null,
+  "city": null,
+  "postalCode": null,
+  "state": null,
+  "countryCode": null,
+  "website": "https://stubbslandscaping.com/",
+  "phone": "(570) 760-6813",
+  "phoneUnformatted": "+15707606813",
+  "claimThisBusiness": false,
+  "location": {
+    "lat": 41.142396,
+    "lng": -75.910905
+  },
+  "locatedIn": null,
+  "floor": null,
+  "plusCode": null,
+  "menu": null,
+  "servicesLink": null,
+  "totalScore": 5,
+  "permanentlyClosed": false,
+  "temporarilyClosed": false,
+  "placeId": "ChIJe2ZBMJ70ta8RBjfIe362N7I",
+  "categories": [
+    "Landscaper",
+    "Service establishment"
+  ],
+  "fid": "0xafb5f49e3041667b:0xb237b67e7bc83706",
+  "cid": "12841933516829112070",
+  "reviewsCount": 26,
+  "reviewsDistribution": {
+    "oneStar": 0,
+    "twoStar": 0,
+    "threeStar": 0,
+    "fourStar": 1,
+    "fiveStar": 25
+  },
+  "imagesCount": 73,
+  "imageCategories": [
+    "All",
+    "Exterior",
+    "Inside",
+    "By owner"
+  ],
+  "scrapedAt": "2026-08-03T23:27:59.837Z",
+  "reserveTableUrl": null,
+  "googleFoodUrl": null,
+  "hotelStars": null,
+  "hotelDescription": null,
+  "checkInDate": null,
+  "checkOutDate": null,
+  "hotelAds": [],
+  "popularTimesLiveText": null,
+  "popularTimesLivePercent": null,
+  "popularTimesHistogram": {},
+  "openingHours": [
+    {
+      "day": "Monday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Tuesday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Wednesday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Thursday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Friday",
+      "hours": "8 AM to 5 PM"
+    },
+    {
+      "day": "Saturday",
+      "hours": "8 AM to 2 PM"
+    },
+    {
+      "day": "Sunday",
+      "hours": "Closed"
+    }
+  ],
+  "peopleAlsoSearch": [],
+  "placesTags": [],
+  "reviewsTags": [
+    {
+      "title": "paver patio restoration",
+      "count": 2
+    },
+    {
+      "title": "mulching",
+      "count": 3
+    },
+    {
+      "title": "professional communication",
+      "count": 3
+    },
+    {
+      "title": "promptness",
+      "count": 2
+    },
+    {
+      "title": "meticulousness",
+      "count": 2
+    },
+    {
+      "title": "satisfaction",
+      "count": 2
+    },
+    {
+      "title": "planting",
+      "count": 2
+    },
+    {
+      "title": "job",
+      "count": 5
+    },
+    {
+      "title": "lawn",
+      "count": 3
+    }
+  ],
+  "gasPrices": [],
+  "url": "https://www.google.com/maps/search/?api=1&query=Stubbs%20Landscaping%20LLC&query_place_id=ChIJe2ZBMJ70ta8RBjfIe362N7I",
+  "searchPageUrl": "https://www.google.com/maps/search/Stubbs%20Landscaping/@41.11579528280493,-75.92392550151094,17z?hl=en",
+  "searchString": "Stubbs Landscaping",
+  "language": "en",
+  "rank": 1,
+  "isAdvertisement": false,
+  "imageUrl": "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnVHLyvM13CMxNoUiri-8tbl_6Ex-ukQJxb0yP8lJwFQiJ6vySSFviPMWAci2GusVJzxn7tOBbEbVDfcanfI61I7XpiPCZa9dJ4YZMJ2JbL-w24LVmPy7YJtW6kqvNezw0ue8BebJKIYxFo=w426-h240-k-no",
+  "kgmid": "/g/11yxk46gcy",
+  "emails": [
+    "StubbsLandscaping13@gmail.com"
+  ],
+  "phones": [
+    "(570) 760-6813",
+    "570-760-6813"
+  ],
+  "phonesUncertain": [
+    "(570) 760-6813",
+    "570-760-6813"
+  ],
+  "linkedIns": [],
+  "twitters": [],
+  "instagrams": [
+    "https://www.instagram.com/stubbslandscaping"
+  ],
+  "facebooks": [
+    "https://www.facebook.com/profile.php?id=100063716613263"
+  ],
+  "youtubes": [],
+  "tiktoks": [],
+  "pinterests": [],
+  "discords": [],
+  "domain": "stubbslandscaping.com",
+  "leadsEnrichment": []
+}]

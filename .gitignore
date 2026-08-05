@@ -12,16 +12,26 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-# Screenshots (regenerated on each run)
-screenshots/
-.vercel
+# Screenshots ARE backed up — they are the "before" half of before/after
+# marketing material. But only as WebP: site-audit writes 2.4 MB PNGs, and git
+# stores binaries whole, so re-screenshotting one client would add another full
+# copy to history forever. The 38 existing PNGs converted to WebP at q80 went
+# from 94 MB to 16 MB with no visible loss. scripts/daily-backup.sh converts any
+# new PNG before committing, so this rule is self-healing rather than a trap.
+screenshots/*.png
 
-# Firecrawl scrape archives kept for debugging by intake-from-web. Regenerable,
-# and they carry whatever keys were embedded in the client's public page HTML —
-# three of them held the same live Google Maps browser key. Nothing downstream
-# reads these after intake. Moved here from the monorepo's .gitignore when this
-# folder was split into its own repo.
-sites/*/raw/
+# Firecrawl/curl scrape archives ARE backed up — used for QC and as the record
+# of what a client's site looked like at intake.
+#
+# WARNING: these are scraped from clients' public page HTML and have previously
+# contained live API keys (a Google Maps browser key appeared in four of them,
+# scrubbed 2026-08-04). Committing one to GitHub triggers secret scanning, which
+# notifies the vendor and can get a PAYING CLIENT's key revoked — breaking their
+# live site. scripts/daily-backup.sh refuses to commit if a key pattern appears.
+#
+# Only the bulk photo originals are excluded: one client (h4-roofing) had 252 MB
+# of original JPGs here, 98% of all raw data, re-downloadable from their site.
+sites/*/raw/photos/
 
 # Caches
 .firecrawl/
