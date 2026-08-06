@@ -6,7 +6,7 @@ seo_h1: "Tree Removal Service in Miami-Dade County"
 icon: "hammer"
 short_description: "Safe removal of hazardous, dead, diseased, storm-damaged and overgrown trees — with full debris hauling included on every job."
 long_description: "Not every tree problem needs removal, and we will tell you when it does not. When it does — a tree severely damaged by a hurricane, disease or pests that have compromised its structure, roots working at a foundation or septic line, or a tree simply too close to the house to be maintained safely — we take it down in a planned sequence rather than a hurry. Miami-Dade County requires permits to remove protected and heritage species, and our crew handles that coordination with the county directly. Rafael personally quotes every removal, usually the same day you call, and the price you are quoted includes hauling every piece away."
-hero_photo: /img/large-tree-removal-sectioned.webp
+hero_photo: /img/tree-removal-in-progress.webp
 about_photo: /img/spider-lift-tight-access.webp
 about_photo_alt: "Compact tracked spider lift set up in a narrow side yard beside a two-storey house to reach a large tree"
 about_heading: "Reaching trees a truck cannot"
@@ -29,8 +29,8 @@ faqs:
   - q: "Is cleanup really included?"
     a: "Yes, on every job. We haul away all branches, trunk sections and wood chips. Your property is left clean — that is not an extra line on the invoice."
 gallery:
-  - photo: /img/large-tree-removal-sectioned.webp
-    alt: "Crew member beside a large tree cut down to two trunk sections, surrounded by the sectioned canopy laid out on the lawn"
+  - photo: /img/tree-removal-in-progress.webp
+    alt: "Tree cut back to bare trunk stubs with the felled canopy spread across the garden and a chip truck standing by"
 ---
 
 ## When does a tree need to be removed?

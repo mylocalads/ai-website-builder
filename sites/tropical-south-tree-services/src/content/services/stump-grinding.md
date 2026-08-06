@@ -6,6 +6,10 @@ seo_h1: "Stump Grinding Service in Miami-Dade County"
 icon: "clock"
 short_description: "Complete below-grade stump and root removal — no trip hazards, no regrowth, no sinkhole where the stump used to be."
 long_description: "A stump left in the ground is a trip hazard, a termite and fungus host, an obstacle to replanting, and in many species a source of persistent suckering. We grind below grade — not level with the ground, below it — so the hole can be filled and the spot sodded or replanted. Most stumps take a few hours, including the large ones, and the grindings are either backfilled into the void or hauled away, your choice."
+hero_photo: /img/large-tree-removal-sectioned.webp
+about_photo: /img/tree-removal-in-progress.webp
+about_photo_alt: "Tree cut back to bare trunk stubs with the felled canopy and a chip truck alongside, before the stumps are ground out"
+about_heading: What the grinder is left with
 order: 3
 sub_services:
   - "Below-Grade Grinding"
@@ -23,7 +27,10 @@ faqs:
     a: "Grinding below grade and taking out the root flare stops the suckering that makes species like ficus keep coming back. Left as a cut stump, many South Florida species will keep sending up shoots."
   - q: "Can I plant or lay sod where the stump was?"
     a: "Yes, once the void is filled properly. Backfill with soil rather than chips if you are planting straight away — decaying chips tie up nitrogen and settle as they break down."
-gallery: []
+gallery:
+  - photo: /img/large-tree-removal-sectioned.webp
+    alt: "Two trunk stumps cut down to grade after a removal, with the sectioned canopy cleared onto the lawn around them"
+
 ---
 
 ## Why grinding matters after a removal

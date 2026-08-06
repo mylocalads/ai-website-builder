@@ -23,6 +23,10 @@ export interface Props {
     rating?: number;
     review_count?: number;
   };
+  /** CSS background-position for the photo; defaults to centre. */
+  photo_focus?: string;
+  /** Overrides photo_focus below 768px. Falls back to photo_focus when unset. */
+  photo_focus_mobile?: string;
   form_embed_url?: string;
   form_title?: string;
   /** Render the native estimate form in the aside. */
@@ -38,7 +42,7 @@ export interface Props {
 }
 const {
   eyebrow, headline, subheadline, cta_text, cta_href,
-  photo, video, video_link_text, video_link_href, quote_card,
+  photo, photo_focus, photo_focus_mobile, video, video_link_text, video_link_href, quote_card,
   form_embed_url, form_title = 'Book now', show_form = false, form_heading,
   trust_badges = [],
 } = Astro.props;
@@ -73,7 +77,13 @@ const asideMode = form_embed_url && calendarSnippet
   <div
     class="media"
     aria-hidden="true"
-    style={photo ? `background-image: url(${photo});` : undefined}
+    style={photo
+      ? [
+          `background-image: url(${photo});`,
+          photo_focus ? `--hero-focus: ${photo_focus};` : '',
+          photo_focus_mobile ? `--hero-focus-mobile: ${photo_focus_mobile};` : '',
+        ].filter(Boolean).join(' ')
+      : undefined}
   >
     {video && <video src={video} autoplay muted loop playsinline poster={photo}></video>}
     <span class="scrim"></span>
@@ -161,7 +171,14 @@ const asideMode = form_embed_url && calendarSnippet
 
 <style>
   .hero { position: relative; isolation: isolate; min-height: clamp(30rem, 70vh, 44rem); display: flex; align-items: center; }
-  .media { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: center; background-color: var(--color-primary); }
+  /* Focal point is a custom property so a single off-centre photo can be steered
+     without every hero on the site inheriting the offset. `cover` crops the long
+     axis, which on a narrow viewport means the middle vertical strip — fine for a
+     centred subject, useless for one sitting at 70% width. */
+  .media { position: absolute; inset: 0; z-index: -1; background-size: cover; background-position: var(--hero-focus, center); background-color: var(--color-primary); }
+  @media (max-width: 768px) {
+    .media { background-position: var(--hero-focus-mobile, var(--hero-focus, center)); }
+  }
   .media video { width: 100%; height: 100%; object-fit: cover; }
   .scrim { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,20,25,0.82) 0%, rgba(15,20,25,0.45) 60%, rgba(15,20,25,0.25) 100%); }
 

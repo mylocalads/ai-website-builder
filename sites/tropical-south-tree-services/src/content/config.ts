@@ -262,6 +262,16 @@ const site = defineCollection({
         cta_text: z.string(),
         cta_href: z.string(),
         photo: z.string().optional(),
+        /**
+         * CSS background-position for the hero photo, e.g. "70% 50%". Defaults
+         * to centre. Exists because a wide photo whose subject is off-centre
+         * gets cropped to the middle strip on a narrow viewport — the Tropical
+         * South hero has its crew on the right, so a centre crop on mobile
+         * showed nothing but sky. `photo_focus_mobile` overrides below 768px and
+         * falls back to `photo_focus` when unset.
+         */
+        photo_focus: z.string().optional(),
+        photo_focus_mobile: z.string().optional(),
         video: z.string().url().optional(),
         video_link_text: z.string().optional(),
         video_link_href: z.string().optional(),
