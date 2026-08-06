@@ -3473,6 +3473,32 @@ the root, both old nested paths return 404, every page has exactly one h1, all
 titles unique, no broken internal links, sitemap carries only the flat URLs, and
 the landscaping anchors resolve to real ids.
 
+### Fix — mega menu was unclickable
+
+Reported immediately after the restructure: the menus disappeared on the way to
+them, so **no sub-page in any of the three menus could be reached by mouse.**
+
+Anchoring the menus to `.header-row` (which is what stopped a wide menu
+overflowing the viewport) moved them out of the nav item's own box. The logo
+makes the header row 131px tall while a nav link is 24px and vertically centred,
+so the link sat at y=54–78 with the menu starting at y=131 — a **54px dead
+zone**. Travelling from the link to the menu crossed it, `:hover` on the `<li>`
+was lost, and the menu closed mid-move.
+
+Fixed by making the nav items span the header's full height so their box meets
+the menu — not by a hover-bridge pseudo-element or a JS close-delay. Hovering the
+menu already keeps the `<li>` hovered because the menu is a descendant of it, so
+the gap was the whole problem.
+
+The stretch had to pass down the entire chain to work: `align-self: stretch` on
+the `<nav>` alone left the `<ul>` at its 40px content height, so the `<li>`
+children had nothing tall to stretch against. The `<nav>` is now a flex container
+with stretch alignment. The last 16px of header bottom padding is closed with
+`top: calc(100% - var(--space-2))` on the menu.
+
+Verified by driving the pointer rather than by inspection — gap measures 0px on
+all three menus, and hover → travel → click lands on the right page, live.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
