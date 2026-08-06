@@ -3499,6 +3499,55 @@ with stretch alignment. The last 16px of header bottom padding is closed with
 Verified by driving the pointer rather than by inspection — gap measures 0px on
 all three menus, and hover → travel → click lands on the right page, live.
 
+### Header restyle — blue / yellow
+
+Header shell is brand blue `#0f4d89`; top-level nav is brand yellow `#f1d940`
+bold; sub-menus are white panels with blue text; phone number white beside a
+yellow phone icon.
+
+**The logo had to be recoloured.** The source is a 400x400 raster with a hard
+white background and a blue wordmark — on a blue header it renders as a white
+box. It is now transparent with a white wordmark, sun and palm untouched.
+
+Method matters here: it was done by **un-premultiplying the artwork from white**
+(`alpha = 1 - min(channel)`, colour divided back out), not by threshold-keying
+white to transparent. A threshold leaves a white halo on every anti-aliased edge
+— worst on the sun's rim and the palm fronds. Blue pixels then map to white at
+their existing alpha so the letters keep soft edges, and the low-saturation
+pixels left over from the original's white letter-outline are pushed to white
+too; left grey they read as a dirty fringe against the blue.
+
+The original is preserved at `public/logo-original.webp`. **This is a change to
+the client's logo asset** — if they object, swap `logo_url` back and put a white
+chip behind it instead.
+
+**Scoping.** The yellow applies to `.nav-list > li > a` — the child combinator is
+load-bearing, since without it the rule repaints the sub-menu links that are
+meant to stay blue-on-white. `.phone-cta` is excluded because the phone block has
+its own colour split.
+
+**Mega-menu hover:** a yellow accent bar wipes in from the left while the row
+nudges 4px right and takes a soft blue wash, driven by `transform` and a
+pseudo-element rather than animated padding or border-width so it stays on the
+compositor and the text never reflows. Top-level items grow a white underline
+from the centre that persists while their menu is open.
+
+**Contrast re-audited against rendered values, all pass:** yellow nav on blue
+6.03:1 · white phone number 8.60:1 · phone label 5.92:1 · blue sub-menu items on
+white 8.60:1 · gold group headings 7.42:1. Header focus rings moved off
+`--color-focus` (#0057ff — nearly invisible on this blue) to the brand yellow.
+
+Worth recording: the audit script itself was wrong first. It parsed
+`color(srgb 1 1 1 / 0.78)` as `(1,1,1)` and reported the phone label at 2.43:1 —
+normalised channels read as 0-255. The corrected parser puts it at 5.92:1. Any
+future contrast sweep on this repo needs to handle `color(srgb …)`, not just
+`rgb()`/`rgba()`.
+
+**Mobile:** the hamburger was a hardcoded `stroke="#111"`, all but invisible on
+blue — it now inherits `currentColor` and renders yellow. The drop-down panel is
+a white sheet with blue text, matching the desktop menus rather than the header
+it drops out of.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
