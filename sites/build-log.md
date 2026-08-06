@@ -2868,3 +2868,330 @@ present), decking in sitemap and homepage nav, hero image 200, all 6 area pages 
 **Copy is drafted, not client-supplied — needs Firefly's sign-off on three specifics:** the materials
 list (composite / PVC / wood), "we pull the permits where the job calls for them", and the one-to-two
 week build estimate. Everything else mirrors claims already published elsewhere on their site.
+
+---
+
+## mylocalads — multi-category case studies (2026-08-05)
+
+Case studies could previously live in exactly one Results collection, because they were nested
+inside `collections[].caseStudies[]`. Clients bundle services, so that shape could not represent a
+real engagement. Restructured to a flat `caseStudies[]` list where each study carries a
+`categories` tag array and appears in **every** category it tags.
+
+**Model** (`src/data/caseStudies.js`)
+- `categories` — collection metadata only. `caseStudies` — flat list, each with `categories: [...]`.
+- **First tag is primary.** It sets the canonical URL and sorts that study ahead of merely
+  cross-tagged ones inside its collection.
+- `collections` is now derived, so `results.astro` and `Header.astro` consume the same shape as
+  before — no changes needed in either beyond the tag pills.
+- Import-time integrity checks throw on an unknown tag, an empty tag set, a repeated tag, or a
+  duplicate slug. Slugs are now **globally** unique, not per-collection.
+
+**Routing** — `getStaticPaths` emits one route per (category, study) pair: 17 routes for 9 studies.
+`findCaseStudy` returns null unless the study actually tags that category, so an untagged pairing
+404s (verified: `/results/websites/pa-roofer`, `/results/ai-agents/firefly-contractors-design`,
+`/results/crm/hvac-group` all 404).
+
+**SEO** — every cross-tagged URL sets `rel=canonical` to the primary-category URL, and
+`astro.config.mjs` filters non-canonical case-study URLs out of the sitemap via
+`isDuplicateCaseStudyPath`. Sitemap carries 9 case-study URLs, one per study — not 17.
+
+**Rendering decoupled from URL category.** Before/after images and the feature chips now render on
+data presence rather than `collection.slug === 'websites'`, so a Websites+CRM study keeps its
+rebuild visuals when reached via `/results/crm/`. Verified live in the browser.
+
+**Tag pills** — the case-study header and each carousel slide render the full tag set; the category
+you arrived through is filled, the others are outlined and link to `/results#{slug}`. Wraps to two
+rows at 320px with no horizontal overflow.
+
+### New case study: Firefly Contractors & Design (operator-supplied metrics)
+
+- `firefly-contractors-design`, tagged `['lead-generation', 'crm', 'websites']` — first three-service
+  bundle on the site, and the reason for this refactor. Leads the Lead Generation carousel.
+- Spokane WA remodeler, 15 years, the same client as `sites/firefly-cd/` — links out to the live
+  site we built at fireflycd.com via a new optional `siteUrl` field.
+- Metrics (operator-supplied, 3 months ≈ May–July 2026): 270 leads, 110 inspections (41%),
+  57 closed jobs (52% off inspections, 21% lead→sale), under $40K total marketing spend,
+  over $900K revenue → better than 22:1, under $150 all-in per lead.
+- **Spend is OVERALL marketing spend, not ad spend** — the copy says "total marketing spend" and the
+  derived per-lead figure is labelled "all-in", deliberately not "cost per lead", to avoid implying
+  an ad CPL comparable to the other Lead Gen studies.
+
+### OPEN ITEMS
+
+- **Narrative copy is drafted, not client-supplied.** Challenge / approach / outcome for Firefly were
+  written from the metrics plus what `sites/firefly-cd/` documents. Needs Firefly's sign-off before
+  outreach — it names them and publishes their revenue.
+- **Before/after images are still `/placeholders/website-*.svg`** on all three Websites studies. No
+  screenshot of Firefly's old GoDaddy builder site exists (per the 2026-08-03 cutover entry its
+  content lived only in GoDaddy's builder), so a genuine "before" may be unrecoverable.
+- All 8 pre-existing case studies keep placeholder `dashboardImage`s.
+- Tag sets on the 8 original studies were assigned from each study's own `approach[]` /
+  `activeFeatures` copy, not from billing records. Operator should reconcile against what each
+  client actually bought.
+- Not deployed. Local build + 92 unit tests pass; last production deploy predates this change.
+
+### Same day — Services Purchased + real Firefly before/after
+
+**"Active Features" → "Services Purchased."** Field renamed `activeFeatures` → `servicesPurchased`.
+Firefly's chips are `['Lead Generation', 'CRM', 'Website', 'GBP Optimization']`.
+
+**GBP Optimization has no Results collection.** The chip list is therefore its own field, not derived
+from `categories`. `SERVICE_LABEL_TO_CATEGORY` maps the labels that DO name a collection
+("Website" → `websites`, singular service name vs plural collection name) and an import-time check
+throws if a study claims one of those without the matching tag — verified by temporarily adding
+"AI Agents" to Firefly, which failed the build with the expected message. Unmapped labels
+(GBP Optimization) pass through untouched.
+
+The other two Websites studies had `activeFeatures` listing site features (Live Chat, Call Tracking,
+CRM Integration, AI Assistant). Under the new heading that would have read as a purchase claim, so
+they now list `['Website', 'CRM', 'AI Agents']` — matching their tags.
+
+**Real screenshots replace the placeholders on Firefly.** Operator-supplied full-page captures,
+`cwebp -q 74 -resize 1000 0 -m 6`:
+
+| | Source | Shipped |
+|---|---|---|
+| before | 2022×9905 PNG, 4.4MB | `/case-studies/firefly-before.webp` 1000×4899, 169K |
+| after | 1882×7788 PNG, 7.0MB | `/case-studies/firefly-after.webp` 1000×4139, 168K |
+
+11.4MB → 337K. Intrinsic `width`/`height` are declared in the data so the tall capture cannot shift
+layout while loading.
+
+**Crop-to-top + click for full page.** A page-height screenshot scaled to fit is unreadable, so the
+frame is `aspect-ratio: 4/3` with `overflow: hidden` and the image at natural aspect — showing the
+top 15.5% (before) and 18.3% (after). Measured live: 416×312 frame over a 416×2038 image, tops
+aligned. Same treatment on the carousel minis, which otherwise would have rendered a slide thousands
+of pixels tall.
+
+Clicking opens a full-page viewer: fixed overlay, image at natural width in a scrollable pane, Esc or
+backdrop to close, body scroll locked, focus moved to the close button and restored on close.
+Verified live — open sets the right src/caption, `scrollTop` resets to 0 on reopen, and scrolling
+reaches the bottom of the full capture. The underlying markup is a plain `<a href="{image}">`, so it
+degrades to opening the raw image without JS, and modified clicks (⌘/ctrl/shift) are deliberately not
+intercepted — confirmed by a ⌘-click navigating to the image itself.
+
+**Deploy:** dpl_wnvbmsVqfh8kCesu4c4K2fFiXARL (preview, READY) —
+https://mylocalads-89lef6bl4-marcellus-mylocaladscs-projects.vercel.app
+Supersedes dpl_7xcfNb8LR8LTdAEs5mEzViMKZjdh. Still SSO-gated (all routes 302 to vercel.com/sso-api),
+so the link only opens for the team. 99 unit tests pass.
+
+**Verification note:** the Browser pane went hidden mid-session, which makes `clientWidth` read 0 and
+screenshots come back solid black. A "horizontal overflow" reading on /results was that artifact, not
+a real defect — re-measured at an explicit 1280×800 viewport, `scrollWidth === clientWidth`. Force a
+viewport size before trusting any layout measurement from a hidden pane.
+
+**Still outstanding:** placeholder before/after on `home-remodeler` and `concrete-company-site`;
+placeholder `dashboardImage` on all 8 non-Firefly studies; Firefly's narrative copy still needs the
+client's sign-off.
+
+### 2026-08-05 — Results trimmed to the one real case study; production live
+
+Operator: "remove the other dummy templates for now." The eight pre-Firefly studies were
+anonymized clients with illustrative metrics and `/placeholders/*.svg` imagery — unpublished, not
+deleted.
+
+**Archived, not removed.** They now sit in `archivedCaseStudies` in the same file, exported so tests
+can guard them. The integrity checks run over published + archived together, so an archived entry
+cannot drift out of validity while parked. Restoring one is a move back into `caseStudies` plus real
+screenshots.
+
+**Empty categories are now dropped from `collections`.** With only Firefly published, `ai-agents` has
+nothing in it; left alone it would have rendered a category pill opening a blank carousel and a
+header dropdown item going nowhere. `categories` still defines all four, so AI Agents reappears by
+itself the moment a study tags it. Verified live: pills and dropdown both show exactly Lead
+Generation / CRM / Websites.
+
+**Tests reworked to be derived rather than slug-hardcoded.** Several asserted against slugs that are
+now archived — `findCaseStudy('websites', 'pa-roofer')` still returned null, but vacuously, testing
+nothing. They now iterate the published set. Added coverage for archived studies staying out of every
+collection, staying restorable (valid tags, no slug collision), and 404ing on every category. The
+single-tag code path is now only exercised by the archive, and there is an explicit test saying so —
+if the last single-tagged study is ever deleted outright, that test fails loudly.
+
+**Live: https://mylocalads.vercel.app** — dpl_8EpiuZpUwxwobMn4WN8kLWcLzwe8 (production, READY).
+
+Verified anonymously against the live host:
+- 3 Firefly routes 200; all 6 sampled archived routes 404
+- Zero occurrences of any archived slug or client name anywhere in `dist/` (11 strings swept)
+- Sitemap down to `/results/` + the one canonical Firefly URL
+- 13 pages total, 103 unit tests pass
+
+**Copy worth revisiting:** the /results hero still reads "Pick a category below to see the case
+studies" — with one study cross-tagged into three categories, every pill shows the same slide. Not
+broken, but the invitation over-promises. Left as-is rather than rewriting marketing copy unasked.
+
+**Unchanged and still true:** canonicals point at `mylocalads.co`, which still serves the old
+Cloudflare site, so these pages will not be indexed until the domain moves. `/google-ads-bundle` and
+`/facebook-google-ads-bundle` exist on the old site and have no equivalent here — a domain cutover
+would 404 them.
+
+### Same day — AI Agents restored with an empty state
+
+Removing the eight dummy studies emptied `ai-agents` entirely: all four studies tagged with it
+(Regional Roofing Brand, Local HVAC Group, Home Remodeler, Concrete Company) were archived, and
+Firefly bought GBP Optimization rather than AI Agents. The "drop empty collections" filter added
+alongside the archival then hid the category from the pills and the header dropdown — which silently
+pulled a $250/mo product off a sales surface. Operator caught it.
+
+**Reverted the filter; empty categories now render an empty state instead of disappearing.**
+`collections` exposes all four categories again. A category with nothing published renders a dashed
+panel using its existing `tagline` + `intro` (previously unused in the UI) plus a "Book a call with
+our team" CTA into /booking-page. New `emptyCollections()` helper reports which are in that state.
+
+Deliberately NOT a `.case-slide` — the carousel counts those, so reusing the class would have
+rendered "1 / 1" with live arrows over a panel that is not a case study. The control row is hidden
+outright when the active track has zero slides rather than showing "1 / 0".
+
+**Copy bug caught in the browser, not in review:** the first draft read "We're preparing a AI Agents
+case study" — the category name is interpolated, so "a CRM" / "a AI Agents" would need per-category
+a/an handling. Rephrased to "{name} case studies are being prepared for publication", which needs no
+article at all.
+
+Verified live across all four pills: lead-generation / crm / websites each 1 slide with controls
+visible and "1/1"; ai-agents 0 slides, empty panel, controls hidden, "0/0". No horizontal overflow.
+Sitemap unchanged — an empty category publishes no URL. Archived routes still 404.
+
+**Live: https://mylocalads.vercel.app** — dpl_Hha86kiDeveiw1hf91mBNCW1bcEy (production, READY).
+105 unit tests pass, including new coverage that every collection carries the copy its empty state
+needs and that the carousel's default category is never an empty one.
+
+**Still unresolved:** GBP Optimization is sold and appears as a Services Purchased chip on Firefly,
+but has no Results category, so it gets no pill. Adding it would mean a fifth category that is empty
+on day one.
+
+## 2026-08-05 — mylocalads: post-payment fulfillment + verified confirmation page
+
+Closing the gap identified while walking the checkout flow: a completed purchase did nothing but
+redirect the browser. One API route existed (`/api/checkout`), nothing listened for
+`checkout.session.completed`, and `/checkout-success` confirmed unconditionally.
+
+### 1. `/api/stripe-webhook` (new, on-demand)
+
+Verifies the Stripe signature over the RAW body via `constructEventAsync`, re-fetches the session
+from Stripe (rather than trusting the event snapshot, and to expand line items), and POSTs a flat
+order record to `ORDER_WEBHOOK_URL`.
+
+Status-code discipline matters here because Stripe retries non-2xx for days:
+- unhandled event type, or a session that is not fulfillable → **200** (retrying cannot help)
+- missing/invalid signature → **400**, never retried, never acted on
+- missing env config, Stripe retrieve failure, downstream CRM non-2xx or unreachable → **500**, so
+  Stripe's retries act as the safety net rather than the order being lost
+- `ORDER_WEBHOOK_URL` unset → **200** plus a `console.error` carrying the full payload, so the order
+  is recoverable from logs by hand. Retrying would not conjure a destination.
+
+### 2. `src/lib/order-payload.js` (new, pure)
+
+Session → CRM record. Kept pure and separately tested because it is the only place that decides what
+an order *means*.
+
+**The trap it exists to avoid:** a CRM-only cart starts the 7-day trial, so Stripe reports
+`payment_status: 'no_payment_required'` and `amount_total: 0`. Treating only `'paid'` as success
+would have silently dropped every trial signup — the entire funnel for the cheapest plan.
+`isFulfillable()` accepts both, and the payload flags `is_trial` so the CRM can route them apart.
+
+Unknown item ids pass through with the raw id as the name rather than being dropped: a mystery line
+is recoverable, a missing one is not.
+
+### 3. `/checkout-success` — static → on-demand, now verified
+
+Previously any visitor to the URL saw "You're All Set!" and had their cart emptied; `session_id` was
+placed in the URL and never read. Now retrieves the session and renders one of three states:
+`confirmed` (clears the cart), `incomplete` (cart preserved, back to /cart), or `unverified`.
+
+`unverified` is the deliberate fallback for a Stripe outage or a bad id — it never tells a customer
+who may well have paid that their order failed, and never clears the cart. Confirmed orders greet
+the customer by first name and vary the copy for a trial.
+
+### Verified
+
+Signature handling exercised end-to-end against a local dev server with a known secret, computing
+real HMACs:
+
+| Request | Result |
+|---|---|
+| no signature header | 400 `missing_signature` |
+| forged signature | 400 `invalid_signature` |
+| signature from the wrong secret | 400 `invalid_signature` |
+| **valid signature over a tampered body** | **400 `invalid_signature`** |
+| valid signature | passes verification, proceeds to retrieve |
+| valid signature, `invoice.paid` | 200, `ignored invoice.paid` |
+| GET | 405 |
+
+`/checkout-success` verified live: no longer confirms without a real session, emits
+`confirmed = false` so the cart-clear does not fire, and the raw `session_id` is never reflected into
+the HTML (XSS check: 0 occurrences of an injected `<script>`).
+
+127 unit tests pass (22 new). `/checkout-success` confirmed absent from static output; both API
+routes present in `.vercel/output/config.json`.
+
+**Live: https://mylocalads.vercel.app** — dpl_FviLxBZqdfdf6trKTcj2m6mcFJ2d (production, READY).
+
+### OPERATOR — two env vars required before fulfillment works
+
+The webhook currently answers `500 not_configured`, which is correct and harmless: the endpoint is
+not registered in Stripe yet, so nothing is calling it.
+
+1. Stripe → Developers → Webhooks → Add endpoint
+   URL `https://mylocalads.vercel.app/api/stripe-webhook`, event `checkout.session.completed`.
+   Copy the signing secret (`whsec_…`) → `vercel env add STRIPE_WEBHOOK_SECRET production`
+2. Create the receiving automation (Make / Zapier / GHL inbound webhook) that creates the contact +
+   opportunity → `vercel env add ORDER_WEBHOOK_URL production`
+3. Redeploy — Vercel env changes only reach the functions on a new deployment.
+4. Stripe → "Send test webhook" to confirm a 200.
+
+**Dedupe is the receiving automation's job.** Stripe retries until it gets a 2xx, so the same order
+can legitimately arrive more than once. Every payload carries `session_id` as a stable key.
+
+**After the DNS cutover**, update the Stripe endpoint URL to `https://mylocalads.co/...`. The
+checkout endpoint's own origin detection follows `x-forwarded-host` automatically and needs no
+change; the Stripe-side endpoint registration is manual.
+
+`docs/cart-stripe-verification.md` is now partly stale — its "Not yet verified" section still says
+the post-payment redirect is untested, which remains true for a real card, but the page it describes
+has been replaced.
+
+### Same day — env vars wired, retrieve-failure fallback, fulfillment live
+
+`STRIPE_WEBHOOK_SECRET` and `ORDER_WEBHOOK_URL` added to the **mylocalads** project by the operator.
+The `500 not_configured` guard is gone; the endpoint now rejects unsigned/forged requests with 400,
+which confirms both secrets are readable by the function.
+
+**Note for future work:** `mla-starter-hub` (client.mylocalads.co) also has a `STRIPE_WEBHOOK_SECRET`,
+holding a DIFFERENT value. Stripe signing secrets are per-endpoint, so the two are not
+interchangeable — running `vercel env add` from the wrong directory would silently break signature
+verification on one of them. Checked for a collision: the starter-hub endpoint subscribes only to
+`invoice.*` and no-ops everything else, so `checkout.session.completed` reaching it cannot cause
+duplicate fulfillment.
+
+**Retrieve failure no longer loses the order.** The handler re-fetched the session and returned 500
+on failure. Two problems: Stripe's dashboard "Send test webhook" carries a sample session id that
+does not exist in the account, so a perfectly healthy endpoint would answer 500 and look broken —
+training the operator to ignore a status that also signals real failure. And a transient Stripe
+outage depended on retries.
+
+Since the event payload is already signature-verified, it is authentic Stripe data — the retrieve
+only buys freshness. On any retrieval failure the handler now logs a warning and falls back to the
+signed payload. Nothing in `buildOrderPayload` needs expanded line items (it reads `metadata.items`),
+so the fallback is complete, not degraded.
+
+**Full chain verified locally** — dev server with a dummy Stripe key (forcing the fallback), a known
+webhook secret, real computed HMACs, and a local HTTP receiver standing in for the CRM:
+
+| Case | Result |
+|---|---|
+| paid 5-item cart, valid signature | 200, payload delivered |
+| CRM-only trial, valid signature | 200, `is_trial: true`, `amount_total "0.00"` |
+| CRM endpoint down | 500 `crm_unreachable`, full payload logged for recovery |
+| fallback engaged | logged 3/3 |
+
+Captured payload confirmed: contact (email/name/phone/business_name), item ids resolved to catalog
+names (`crm` → "Home Service CRM"), amounts as decimal strings, `session_id` dedupe key,
+`terms_of_service: "accepted"`, subscription + customer ids unwrapped.
+
+**Live: https://mylocalads.vercel.app** — dpl_5p83T2Bzjew7p5d5NHJt6X4fqhgJ (production, READY).
+127 tests pass. Live: unsigned 400, forged 400, GET 405, `/checkout-success` with a fake id renders
+the neutral "confirming" state rather than a false confirmation.
+
+**Remaining:** no real card has been run end to end. The Stripe endpoint registration itself was done
+by the operator and has not been observed delivering a live event.
