@@ -3295,269 +3295,126 @@ twice on one page — dropped from `seo_body`.
 
 ---
 
-## Tropical South Landscaping — 2026-08-06
+## Tropical South Tree Services — 2026-08-06
 
 | | |
 |---|---|
-| Slug | `tropical-south-landscaping` |
-| Template | `owl` |
-| Old site | https://tropicalsouthlandscaping.com/ (GoDaddy Website Builder) |
-| Live | https://tropical-south-landscaping.vercel.app |
-| Pages | 24 (5 services, 6 service areas, 1 blog post) |
-| Vertical | Landscaping / tree service |
+| Slug | `tropical-south-tree-services` |
+| Template | `owl` (caps raised — see below) |
+| Old site | https://tropicalsouthtreeservices.com/ (GroovePages) |
+| Live | https://tropical-south-tree-services.vercel.app |
+| Pages | 51 — 20 services, 16 service areas, 3 blog posts |
+| Vertical | Tree service / arboriculture |
 | Market | Miami-Dade County, FL (HQ Cutler Bay) |
+
+> **Supersedes `tropical-south-landscaping`,** built earlier the same day against
+> the wrong reference URL and removed in the same commit. Same owner — Rafael
+> Quezada, Cutler Bay — but a genuinely different business with its own phone
+> number, address and brand. The orphaned `tropical-south-landscaping` Vercel
+> project was **not** deleted; that is an operator call.
 
 ### Identity
 
-Owner-led by Rafael Quezada, 12+ years, licensed and insured. 9351 Marine Dr,
-Cutler Bay, FL 33189 · (305) 333-2642 · tropicalsouthlandscaping@gmail.com ·
-Mon–Sun 6:00 AM – 8:00 PM.
+Tropical South Tree Services, founded March 2019 by Rafael Quezada.
+9980 Haitian Dr, Cutler Bay, FL 33189 · (305) 299-1189 ·
+tropicalsouthtreeservices@gmail.com · Mon–Sat 7:00 AM – 8:00 PM,
+24/7 emergency storm response. Licensed and insured, Commercial General
+Liability. **5.0 stars across 200+ Google reviews.**
 
-**GBP lookup did not run** — `.env` is absent from the repo so `APIFY_TOKEN` was
-unavailable. NAP and hours were corroborated instead across the client's own site
-plus Yelp, MapQuest, YellowPages and ZoomInfo, all in agreement. `geo` is left
-unset rather than guessed. `business_profile.json` records the substitution; re-run
-`/find-business` once the token is restored if a canonical GBP payload (CID, geo,
-GBP review text) is wanted.
+Sourcing was unusually easy: the client publishes an `llms.txt` at the site root
+carrying NAP, hours, the full service and area taxonomy, and directional pricing.
+That plus 36 scraped sub-pages is the whole intake. No Apify GBP lookup was run
+(still no `APIFY_TOKEN` in `.env`), but `llms.txt` and the site agree on
+everything a GBP call would have returned except geo, which is left unset.
 
-### Rating provenance
+### The structural decision
 
-Published 4.9 / 224 reviews is the client's **verified HomeAdvisor–Angi profile**
-(96% five-star), not Google. The hero trust badge omits the `mark` field on purpose
-so the template does not stamp a Google "G" against a non-Google rating. Angi's
-list page shows 4.8 / 235 for the same profile and Yelp shows 5.0 / 1 — the
-HomeAdvisor profile page was taken as the primary because it is the one with the
-review corpus attached. All eight testimonials are real published reviews quoted
-verbatim with the source named.
+The client publishes **20 service pages in three nav groups and 16 service-area
+pages.** The owl template caps at 5 and 6. The operator asked for the full
+structure, so the caps were raised — deliberately, and with the anti-thin-page
+rationale in `src/lib/limits.ts` checked rather than waived:
 
-### Copy strategy
+- The 20 services are distinct billable jobs with different equipment, price
+  bases and buying triggers. Crown reduction is not canopy thinning; hazardous
+  removal is not storm cleanup; arborist reports are a different product entirely.
+- The 16 areas carry genuinely local content. **Permitting is the differentiator
+  and it is real:** Coral Gables and Pinecrest administer their own tree
+  ordinances on top of Miami-Dade DERM, the unincorporated communities go
+  straight to the county with no municipal layer, Homestead adds city urban
+  forestry for right-of-way, and Redland's agricultural parcels follow different
+  provisions at 18-inch trunk diameter. Storm history differs too — Andrew made
+  landfall on Homestead, Irma hit Cutler Bay directly.
 
-Local research converged hard on one failure mode: Miami-Dade homeowners do not
-complain about workmanship, they complain that crews stop answering the phone. So
-the hero, promise band, promise bar and every CTA assert callback and punctuality
-rather than craft — and the client's own reviews say exactly that ("estimate on a
-Saturday, arrived Monday morning as agreed"; "customer for the past 7 years…
-reliable, professional and punctual"). Secondary angle is the hurricane-season
-booking window, which is also the blog post.
+Three additions keep that scale usable:
+
+- **`src/lib/taxonomy.ts`** groups services into the client's own three lines of
+  business, with a runtime assertion that grouping can never drop a service.
+- **`FEATURED_SERVICE_LIMIT` (6) / `FEATURED_AREA_LIMIT` (8)** keep the homepage
+  grids short while all 20/16 pages generate and appear in nav, footer and hubs.
+  `limits.ts` now **throws at build time** if a featured limit ever exceeds its
+  generation limit — the exact 404 that file was written to prevent, previously
+  documented in a comment and now enforced.
+- **Header** renders both menus as grouped mega-menus.
 
 ### Design
 
-Palette derived from the logo — palm green `#12492a` primary, sun orange `#f2a007`
-accent. The logo's wordmark blue `#2a8fff` is deliberately excluded: every photo on
-this site is greenery under a blue sky, and a blue UI accent disappears into it.
-All three owl accent tokens re-derived and audited in `design_reference.json`; every
-text pair clears WCAG AA (lowest 5.54:1). Fonts left at the owl default — the old
-GoDaddy site declares no brand `font-family`.
+Operator-supplied: `#0f4d89` primary, `#f1d940` for CTAs and secondary titles.
 
-Imagery: 10 real job photos lifted from the client's own gallery and service pages,
-resized to 1400px and served from `public/img/` rather than hotlinked off the
-GoDaddy CDN. The stock images on several of their existing service pages were not
-carried over. No layout, section rhythm or CSS was taken from the old site.
+This client is the textbook case for owl's three-token accent split. `#f1d940`
+measures **1.42:1 as text on white** — unusable — and **6.03:1 on the navy** —
+excellent. So it is kept completely unmodified as the button fill and as
+`--color-accent-on-dark`, with a deep gold `#6b5200` derived for accent-as-text
+on light backgrounds (6.90:1 on bg, 7.42:1 on surface). Every text pair clears
+WCAG AA. Secondary titles use the yellow as a rule beneath group headings on
+`/services`.
 
-`/pricing` ships no cost table and no dollar figures — the client publishes no rate
-card, so the three tiers are quoted-on-site with the pricing basis stated.
+Imagery: 10 real job photos from the client's own gallery, resized to 1400–1600px
+and served from `public/`. Only photos that were actually inspected were kept —
+the other 20 were discarded rather than shipped with guessed alt text.
+
+### Defects found and fixed during verification
+
+1. **`/contact`, `/blog` and `/service-area` shipped with no `h1` at all.**
+   `SectionHead` always emitted `h2`, and on those three pages it *is* the
+   primary heading. Added an `as` prop defaulting to `h2` so no other call site
+   changed. A page with no h1 is a ranking and screen-reader defect, and nothing
+   in the build surfaces it.
+2. **`WhyChooseUs` eyebrow rendered at 1.16:1 on the primary band** — invisible.
+   It inherited `--color-accent-ink`, which is tuned for light backgrounds.
+   `SectionHead`'s colours are now overridable through inherited custom
+   properties that a dark section sets once on its own container.
+3. **The services tile clipped long titles.** `aspect-ratio: 16/10` plus an
+   absolutely-positioned caption meant the caption could not influence tile
+   height, so "Hazardous Tree Removal" was cut off at the top — with a green
+   build. Tiles now size to content with a `min-height` floor. **Second client in
+   a row to hit this**; worth fixing in `astro-templates/owl` itself.
+4. **The services mega-menu overflowed the viewport by 60px** at 1280. Now
+   anchored to the header container rather than its nav item.
 
 ### Verification
 
-Local build clean. Verified in-browser before deploy: no console errors, no
-horizontal overflow at 375px, 11/11 assets load, no broken internal links. Live:
-27/27 routes 200, canonical / robots / sitemap all resolve to
-`https://tropical-south-landscaping.vercel.app`, JSON-LD emits LocalBusiness +
-AggregateRating + FAQPage.
+51/51 pages have exactly one `h1`. All titles and meta descriptions unique. No
+broken internal links. No horizontal overflow at 375px. JSON-LD emits
+LocalBusiness, Service, FAQPage and BreadcrumbList across the site. Live: all 36
+service and area sub-pages return 200, canonical / robots / sitemap all resolve
+to the production alias.
 
-Two real defects caught and fixed in review: the **"Lawn & Landscape Maintenance"
-service tile overflowed its card by 12px and clipped the title** — the owl tile is
-`aspect-ratio: 16/10` with an absolutely-positioned body, so a three-line title plus
-three chip rows runs off the top. Retitled to the client's own wording, "Landscape
-Maintenance". And **`public/robots.txt` still carried `REPLACE_SITE_URL`**, which
-would have broken sitemap discovery for every crawler.
+### Pricing
 
-Also swapped the Coral Gables and Kendall service-area hero photos: both were
-split-frame before/after images, which read as a seam down the middle when used
-full-bleed behind hero text.
+Unlike most clients, this one publishes real bands, so `/pricing` ships an actual
+cost table: removal $250–$3,500+, trimming $150–$950 per tree, stump grinding
+$100–$450 per stump, with the variables that move each number. Cleanup is stated
+as included in every figure because the client includes it.
 
 ### Outstanding — needs operator / client
 
 | Field | Status |
 |---|---|
 | `crm.*` (chat, reviews, calendar, contact form, call tracking) | empty — GHL paste-in |
-| `crm.form_action_url` / `captcha_snippet` | unset — native EstimateForm posts to `/api/estimate`, which needs `LEAD_WEBHOOK_URL` **or** `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL` set in Vercel env, otherwise submissions fail with `?error=unavailable` |
+| `crm.form_action_url` / `captcha_snippet` | unset — the native EstimateForm posts to `/api/estimate`, which needs `LEAD_WEBHOOK_URL` **or** `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL` in Vercel env, or submissions fail with `?error=unavailable` |
 | `code_injection.head` / `body_end` (Pixel, GTM) | empty — operator |
-| `geo` | unset — needs GBP lookup once `APIFY_TOKEN` is restored |
+| `geo` | unset — needs a GBP lookup once `APIFY_TOKEN` is restored |
+| `social` | empty — no social profiles linked from the client's site |
 | Custom domain | not attached |
-| `team_members` | empty — only the owner's name is public; headshots would strengthen `/about` |
-| Service areas | Cutler Bay is HQ and Miami-Dade County is stated by the client. The other five (Palmetto Bay, Pinecrest, Kendall, Coral Gables, Homestead) were selected for county coverage — confirm the client actually services all five before driving paid traffic |
-
-### 2026-08-06 — bay-plumbing-co: imagery fix (follow-up)
-
-**The first deploy shipped with no imagery.** Every hero rendered as a flat dark band; the only
-`<img>` on most pages was the header and footer logo. `default_hero_photo`, every service
-`hero_photo` / `about_photo` / `gallery`, every service-area `landmark_photo`, the blog `hero_image`
-and the `/our-work` galleries were all left unset. Nothing was broken — the fields were simply never
-populated, so nothing failed at build time and the pages "validated" while looking empty.
-
-Cause: the `default.json` reference library lists "generic stock photography" as an anti-pattern and
-I applied it as a blanket ban on licensed stock. That is not what it means — `gilroy-roofing`, the
-reference build for this template, uses Unsplash for hero/about/seo_body and Wikimedia for area
-landmarks, and CLAUDE.md's own no-website path specifies Unsplash imagery. The anti-pattern targets
-*generic* imagery, not licensed photography chosen to fit the trade.
-
-**Sourcing.** Unsplash and Pexels both block headless browsers (Unsplash serves a BotStopper reject
-page, Pexels a Cloudflare interstitial), so neither could be searched for photo IDs. Final sources:
-
-| Source | Licence | Used for |
-|---|---|---|
-| Pixabay | free commercial, no attribution | hero (pipe wrenches), red valve, kitchen tap, drainage pipe |
-| Client's own site | already in commercial use by the client | burst pipe, backflow valve, shop photo |
-| Wikimedia Commons | CC0 | septic tank |
-| Wikimedia Commons | CC BY 2.0/3.0, CC BY-SA 3.0 | six service-area landmarks, credited |
-
-All images are self-hosted under `public/img/` (4.3 MB) rather than hotlinked — per the schema
-comment, a client photo served from someone else's CDN can vanish. Area landmarks carry
-`landmark_credit` + `landmark_credit_href`, which the template renders as a visible attribution line
-under the figure; verified rendering on `/service-area/key-biscayne-fl`.
-
-**Two rejects caught by looking at the images rather than trusting the search result.** A Commons
-result for "manhole sewer inspection" was a photograph of a child inside a sump — removed before it
-reached a build. A Pixabay "plumber" result was a cartoon frog on a toilet. Every image in the final
-set was opened and inspected before use.
-
-**`our-work.json` `projects[]` is dead data in this template.** `pages/our-work.astro` builds the
-page from per-service `gallery` arrays and never reads `projects`. The five project entries written
-during the first pass rendered nothing. Fixed by populating `gallery` on each service — `/our-work`
-went from 2 images to 11. The `projects[]` array is left in place but is currently inert; only
-`intro` renders.
-
-Also fixed: home `seo_body.image` restored (it had been dropped when it duplicated the About photo;
-it now uses a different image), and the site hero swapped from a tight valve crop that read as an
-orange blob at full-bleed to a landscape pipe-wrench photo in the brand red.
-
-Verified: 25/25 local routes 200 with 0 broken images and 0 console errors; mobile 390px still has
-no horizontal overflow; live re-check of 5 representative pages returns 0 broken images.
-**Live: https://bay-plumbing-co.vercel.app** — deployment `dpl_9NbfNv1Q2GKJsWzWPBQpstLBecwi`.
-
-**Separately — real client offers found on `/specials.html` and NOT published.** The client's specials
-page carries two genuine coupons: $50 off any residential garbage disposal installation scheduled
-over the internet (In-Sink-Erator Badger V 1/2HP $295, Pro-Com 3/4HP stainless $455, Pro-ES 3/4HP
-auto-reverse $495), and $75 or 10% off water heater replacement, whichever is greater — both Dade
-County only, one coupon per visit, change-out and connection to existing plumbing only. These are
-real published offers but the prices are undated and may be years stale, and stale pricing is exactly
-the surprise-invoice failure the review corpus complains about. Confirm currency with the client
-before putting them on `/pricing`.
-
-### 2026-08-06 — bay-plumbing-co: inverted header (operator request)
-
-Header bar inverted to the brand red `#d10909` with nav, logo, phone number and phone icon in
-`#ffffff`. Scoped entirely to `.site-header` in `src/components/Header.astro` — no token changed, no
-other surface affected.
-
-**White logo generated, not downloaded.** The client's own white logo asset is 217×82 and drops the
-license line. Instead the full-resolution red mark was recoloured in place — every pixel with
-alpha > 0 set to white, alpha preserved — giving a 354×159 white logo with `LICENSED C.C. 6469 &
-INSURED CFC057007` still legible. Exposed as a new optional `logo_url_inverse` on the site config
-schema; `Header` reads `logo_url_inverse ?? logo_url`, so the **footer keeps the red mark** on its
-light background and any site not setting the field is unaffected.
-
-**Bar colour is a literal, not `var(--color-accent)`.** They are near-identical (`#d10909` vs
-`#d10a0a`) but independent by design: `--color-accent` is the *button fill* token, and buttons sit on
-this bar. Binding the header to it would make any future button-red change silently repaint the
-header — and would make buttons on the bar invisible today.
-
-Five things needed re-deriving because they were built for a light bar and vanish or fail contrast on
-red:
-
-| Element | Was | Now |
-|---|---|---|
-| Phone icon badge | 16% `--color-accent` tint, `--color-accent-ink` glyph | `rgba(255,255,255,.18)` disc, white glyph |
-| Phone hover | darkened to `--color-accent-ink` | underline + badge lift |
-| Focus ring | `--color-focus` `#0057ff` | white (blue on red is near-invisible) |
-| Mobile hamburger | hardcoded `stroke="#111"` | `currentColor` |
-| Pulse keyframe | `color-mix` on `--color-accent` | white-based |
-
-Dropdowns and the mobile panel use `#b30808` — a darker red so they read as surfaces hanging off the
-bar rather than same-colour rectangles. White on `#b30808` is 7.10:1. Mobile sub-items were
-`--color-muted` to sit back from their parent; on red that hierarchy is carried by size and weight
-instead, since a dimmed white would drop under AA.
-
-Contrast: white on `#d10909` is **5.59:1** — AA at the 0.72rem "Give Us A Call!" label as well as at
-nav size.
-
-Verified: 25/25 routes assert `rgb(209, 9, 9)` and the white logo, 0 broken images, 0 console errors;
-mobile 390px no horizontal overflow; footer confirmed still serving `/logo-bay-plumbing.png`. Live
-re-check across 4 pages returns the same computed values with the logo loading.
-
-### 2026-08-06 — bay-plumbing-co: call badge brightened
-
-Follow-up to the header inversion. The icon disc was left at `rgba(255,255,255,0.18)`, which on
-`#d10909` renders as a washed-out pink smudge — the glyph read fine but the badge itself did not.
-
-The circle is now defined by a **bright white ring** (`inset 0 0 0 2px rgba(255,255,255,0.85)`)
-rather than by its fill. The fill only rises 0.18 → 0.22 deliberately: the glyph is white, and
-pushing the disc lighter starts eating the glyph's own contrast against it. At 22% the disc blends to
-roughly `#db3f3f`, leaving the white glyph at 4.38:1 — well over the 3:1 non-text UI needs — while
-the ring does the work of making the badge visible. Hover goes to 34% fill with a solid white ring.
-
-**The pulse keyframes had to re-declare the ring.** `box-shadow` is a single property, so the
-`phone-glow` animation — which sets only the outer glow — replaces anything declared on
-`.phone-icon`. Left alone, the badge outline would have disappeared for the whole animation on
-mobile, which is exactly where the pulse is the main thing drawing the eye to the call button. Each
-frame now carries `inset … 2px` alongside the glow; verified in the computed style mid-travel:
-`rgba(255,255,255,0.85) 0 0 0 2px inset, rgba(0,0,0,0) 0 0 0 7.72997px`.
-
-Pulse itself brightened 0.55 → 0.85 and its travel widened 12px → 14px, so the halo stays legible
-against the red for its full expansion instead of fading out in the first few pixels.
-
-Verified: 15 routes assert disc `rgba(255,255,255,0.22)`, an inset ring, a white glyph and the
-`rgb(209,9,9)` bar — 0 mismatches, 0 console errors, mobile 390px no horizontal overflow. Live
-computed values match.
-
-### 2026-08-06 — bay-plumbing-co: real owl pulse + UserWay accessibility widget
-
-**The pulse was never running on desktop.** The owl template declares it inside
-`@media (max-width: 900px)` as `.mobile-phone .phone-icon { animation: phone-glow … }` — so above
-900px there was no animation at all, only a hover state. That is the template's own default, not
-something introduced here; any owl site has the same gap.
-
-**Also the wrong effect.** Checked `owlroofing.com` directly. Its call button is not one halo growing
-outward — it is TWO concentric rings that fade in and out on a stagger:
-
-```
-.btn--phone .icon::before { box-shadow: 0 0 0 3px rgba(accent,.5);
-                            animation: pulseffect  2s ease-in-out infinite; }
-.btn--phone .icon::after  { box-shadow: 0 0 0 3px rgba(accent,.25), 0 0 0 6px rgba(accent,.5);
-                            animation: pulseffect2 2s ease-in-out infinite; }
-@keyframes pulseffect  { 0%{opacity:0} 30%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
-@keyframes pulseffect2 { 0%{opacity:0} 30%{opacity:0} 50%{opacity:1} 70%{opacity:0} 100%{opacity:0} }
-```
-
-The spreads are FIXED and it is the **opacity** that animates. The outer ring peaks at 50%, after the
-inner one has already arrived — that offset is the entire illusion, and it is why the rings read as a
-ripple travelling outward even though neither ever moves. Reproduced exactly, in white for the red
-bar, and moved out of the mobile media query so it runs at every breakpoint as it does on owlroofing.
-
-Dropped the hand-rolled `phone-glow` keyframe and with it the fragile
-`box-shadow`-must-redeclare-the-inset-ring problem from the previous entry — the rings are now
-pseudo-elements, so the badge's own outline is untouched by the animation. `prefers-reduced-motion`
-holds the rings at `opacity: 0` rather than merely stopping the animation, which would freeze them
-mid-cycle as a permanent static double outline.
-
-**UserWay accessibility widget** (account `Kr4R6Esvbd`) added to `code_injection.head` — operator
-paste-in, stored verbatim, nothing synthesized.
-
-The vendor asks for it "first in `<head>`". The slot rendered LAST in head, so it was moved up — to
-immediately after `<meta charset>` and `<meta viewport>`, not literally first. It must not go above
-charset: the spec requires `<meta charset>` within the first 1024 bytes, and this slot holds
-operator-pasted markup of unbounded length, so a multi-KB tag manager above it is how a page ends up
-sniffing the wrong encoding. Verified in the built HTML: charset at byte 289, injection immediately
-after, both well inside the limit.
-
-Verified: 16 routes assert `pulseffect` / `pulseffect2` on `::before` / `::after`, the `rgb(209,9,9)`
-bar, and UserWay present in head — 0 mismatches, 0 console errors, mobile 390px no overflow. Widget
-confirmed loading (8 successful userway.org responses, `tunings/Kr4R6Esvbd` 200, element in DOM) both
-locally and live.
-
-**Two things left for the operator on the widget:** `data-color` is commented out in the pasted
-snippet — uncommenting it (already pre-filled `#d10909`) would match the widget button to the new
-header red. And `data-statement_url` still points at `http://www.example.com/accessibility`; this
-site has a real `/accessibility` page it could reference. Both left exactly as pasted rather than
-edited on the client's behalf.
+| `team_members` | empty — only Rafael and a site supervisor named Steve appear publicly |
+| Old `tropical-south-landscaping` Vercel project | still live and now orphaned — delete or leave, operator's call |
