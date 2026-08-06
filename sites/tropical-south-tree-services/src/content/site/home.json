@@ -129,11 +129,9 @@
   "owner_trust": {
     "eyebrow": "Meet The Owner",
     "headline": "Why Miami-Dade Homeowners Trust Tropical South Tree Services & Rafael",
-    "lede": "Rafael Quezada founded Tropical South in Cutler Bay in March 2019, and he still prices every job himself.",
+    "lede": "Rafael Quezada started Tropical South in Cutler Bay in 2019 with one truck, one crew, and a rule he still works to: he prices every job himself.",
     "body": [
-      "In this trade the usual experience is a salesman on commission who quotes the work, a subcontracted crew you have never met who does it, and an invoice that does not match either. That is where most of the complaints about tree companies in Miami-Dade come from — not from bad cutting, but from nobody being accountable for the job end to end.",
-      "Rafael answers the phone. He walks your property, tells you what the tree actually needs — including when the honest answer is that it needs nothing — and writes the price down before anyone starts. The crew that turns up is the crew he trained and works alongside, and the number you were quoted is the number you pay.",
-      "That is also why he will tell you about a permit you would rather not hear about. Miami-Dade requires approval to remove protected and heritage species, and Coral Gables and Pinecrest run their own permitting on top of the county's. A quote that skips that conversation is not cheaper — it is the one that ends in a fine and a mandatory replanting order."
+      "He grew up working South Florida yards and knows these trees the way you only can after a couple of decades of them — which royal palms drop early, which ficus is about to find a foundation, which live oak will ride out a storm. He comes out himself, walks the property with you, and tells you plainly what it needs; sometimes that answer is that it needs nothing yet, and he will say so. Seven years on the crew is bigger and the equipment is better, but the part customers keep writing about has not changed — he shows up when he said, and the price he quoted is the price you pay."
     ],
     "stats": [
       {
@@ -154,21 +152,26 @@
       }
     ],
     "checklist": [
-      "The owner quotes every job — no call centre, no commissioned salesman",
+      "Rafael quotes every job personally, usually the same day",
       "Licensed and insured in Miami-Dade, documentation before work begins",
       "County and city permit coordination handled for you",
-      "ISA certified arborist partners for reports, assessments and disputes",
+      "ISA certified arborist partners for reports and assessments",
       "Bilingual service in English and Spanish",
       "Full cleanup and debris haul-away included in every price"
     ],
-    "photo": "/img/crew-pole-saw-palm.webp",
-    "photo_alt": "Tropical South crew member in a branded blue shirt using an extension pole saw on a palm beside a trimmed hedge",
-    "quote": {
-      "text": "Rafael and his crew are excellent. Professional, friendly and timely. Honest pricing and excellent work. Will recommend to friends and family.",
-      "author": "Nando — Google review"
-    },
+    "photo": "/img/rafael-quezada-owner.webp",
+    "photo_alt": "Rafael Quezada, owner of Tropical South Tree Services, in a branded shirt in front of a mature banyan",
     "cta_text": "Talk to Rafael",
-    "cta_href": "/contact"
+    "cta_href": "/contact",
+    "photo_framed": true,
+    "review": {
+      "text": "Rafael and his crew are excellent. Professional, friendly and timely. Honest pricing and excellent work. Will recommend to friends and family.",
+      "author": "Nando",
+      "avatar": "/img/review-nando.webp",
+      "date": "May 21, 2026",
+      "rating": 5,
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Tropical+South+Tree+Services%2C+Cutler+Bay%2C+FL+33189"
+    }
   },
   "process_steps": {
     "headline": "How A Job Runs",

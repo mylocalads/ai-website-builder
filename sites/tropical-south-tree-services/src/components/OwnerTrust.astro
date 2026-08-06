@@ -18,7 +18,16 @@ export interface Props {
     checklist?: string[];
     photo?: string;
     photo_alt?: string;
-    quote?: { text: string; author: string };
+    review?: {
+      text: string;
+      author: string;
+      avatar?: string;
+      date?: string;
+      rating?: number;
+      source_url?: string;
+    };
+    /** Set when the portrait already carries its own frame/shadow. */
+    photo_framed?: boolean;
     cta_text?: string;
     cta_href?: string;
   };
@@ -56,14 +65,42 @@ const { data } = Astro.props;
 
         <aside class="side">
           {data.photo && (
-            <figure class="shot">
+            <figure class={`shot ${data.photo_framed ? 'framed' : ''}`}>
               <img src={data.photo} alt={data.photo_alt ?? ''} loading="lazy" decoding="async" />
             </figure>
           )}
-          {data.quote && (
-            <figure class="quote">
-              <blockquote>{data.quote.text}</blockquote>
-              <figcaption>{data.quote.author}</figcaption>
+          {data.review && (
+            <figure class="greview">
+              <div class="gr-head">
+                {data.review.avatar
+                  ? <img class="gr-avatar" src={data.review.avatar} alt="" loading="lazy" decoding="async" width="96" height="96" />
+                  : <span class="gr-avatar gr-initial" aria-hidden="true">{data.review.author.trim().charAt(0)}</span>}
+                <div class="gr-who">
+                  <span class="gr-name">{data.review.author}</span>
+                  {data.review.date && <span class="gr-date">{data.review.date}</span>}
+                </div>
+                {/* Google's own mark, used to attribute a genuine Google review. */}
+                <svg class="gr-g" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+                  <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.4a5.5 5.5 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.6-5.2 3.6-8.8z"/>
+                  <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3a7.2 7.2 0 0 1-10.7-3.8h-4v3.1A12 12 0 0 0 12 24z"/>
+                  <path fill="#FBBC05" d="M5.3 14.3a7.1 7.1 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1z"/>
+                  <path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1A7.2 7.2 0 0 1 12 4.8z"/>
+                </svg>
+              </div>
+              <div class="gr-stars" role="img" aria-label={`${data.review.rating ?? 5} out of 5 stars`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"
+                       fill={i < (data.review!.rating ?? 5) ? '#FBBC04' : '#DADCE0'}>
+                    <path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/>
+                  </svg>
+                ))}
+              </div>
+              <blockquote>{data.review.text}</blockquote>
+              <figcaption>
+                {data.review.source_url
+                  ? <a href={data.review.source_url} rel="noopener noreferrer" target="_blank">Read our Google reviews →</a>
+                  : 'Posted on Google'}
+              </figcaption>
             </figure>
           )}
         </aside>
@@ -104,14 +141,40 @@ const { data } = Astro.props;
   .side { display: grid; gap: var(--space-3); }
   .shot { margin: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 14px 34px rgba(6,34,61,0.16); }
   .shot img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+  /* The owner portrait ships with its own rounded white frame and drop shadow
+     baked into the PNG. Wrapping it in a second one double-frames it, so the
+     framed variant drops the container's chrome and shows the image whole
+     instead of cropping it to 4:3. */
+  .shot.framed { border-radius: 0; box-shadow: none; overflow: visible; }
+  .shot.framed img { aspect-ratio: auto; height: auto; object-fit: contain; }
 
-  /* Accent bar rather than a quote glyph — the yellow is doing the same job here
-     as it does on the mega-menu hover and the /services group rules. */
-  .quote { margin: 0; padding: var(--space-3); background: var(--color-surface); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); }
-  .quote blockquote { margin: 0 0 var(--space-1); font-size: 1.02rem; line-height: 1.55; color: var(--color-text); }
-  .quote blockquote::before { content: '“'; }
-  .quote blockquote::after { content: '”'; }
-  .quote figcaption { font-size: 0.85rem; font-weight: 700; color: var(--color-muted); }
+  /* Styled to read as an actual Google review card rather than a pull-quote:
+     avatar, name, date, the Google mark, and Google's own amber stars (#FBBC04)
+     rather than the site accent — the whole point is that it looks like it came
+     from Google, so borrowing the brand yellow here would undercut it. */
+  .greview {
+    margin: 0; padding: var(--space-3);
+    background: var(--color-surface);
+    border: 1px solid #dadce0;
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 3px rgba(60,64,67,0.16);
+  }
+  .gr-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
+  .gr-avatar { width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; object-fit: cover; display: block; }
+  .gr-initial {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--color-primary); color: var(--color-on-primary);
+    font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+  }
+  .gr-who { display: flex; flex-direction: column; line-height: 1.25; flex: 1; min-width: 0; }
+  .gr-name { font-weight: 700; color: var(--color-text); font-size: 0.95rem; }
+  .gr-date { font-size: 0.8rem; color: #70757a; }
+  .gr-g { flex-shrink: 0; }
+  .gr-stars { display: flex; gap: 1px; margin-bottom: 0.5rem; }
+  .greview blockquote { margin: 0 0 var(--space-2); font-size: 0.98rem; line-height: 1.6; color: var(--color-text); }
+  .greview figcaption { font-size: 0.8rem; color: #70757a; }
+  .greview figcaption a { color: var(--color-accent-ink); font-weight: 700; text-decoration: none; }
+  .greview figcaption a:hover, .greview figcaption a:focus-visible { text-decoration: underline; }
 
   .stats {
     list-style: none; margin: var(--space-4) 0 0; padding: var(--space-3) 0 0;
