@@ -327,7 +327,6 @@ const site = defineCollection({
         headline: z.string(),
         lede: z.string().optional(),
         body: z.array(z.string()).default([]),
-        stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
         checklist: z.array(z.string()).default([]),
         photo: z.string().optional(),
         photo_alt: z.string().optional(),

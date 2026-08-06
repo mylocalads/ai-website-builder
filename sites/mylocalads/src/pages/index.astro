@@ -84,20 +84,16 @@ const howItWorks = [
 
 // bgImage URLs are placeholders (loremflickr serves industry-keyword photos).
 // Swap for licensed industry photography (Unsplash, Pexels, or client-owned) when ready.
-// What a lead actually IS, stated once. Identical across every industry, so it
-// lives here rather than being repeated five times in the data — it renders in
-// the slot the old "Track:" line used to occupy.
-const LEAD_TYPES =
-  'Leads are in-person booked estimates and estimate inquiries (via form / call).';
+// What a lead actually IS now lives in the section lead above the tiles —
+// repeating it on every tile was redundant.
 
-// Categories we serve beyond the five tiles above.
+// Categories we serve beyond the tiles above.
 const moreCategories = [
   'Plumbing',
   'Landscaping',
   'Tree Services',
   'Electricians',
-  'Decking',
-  'Siding',
+  'General Contractors',
 ];
 
 const industries = [
@@ -114,12 +110,12 @@ const industries = [
     bgImage: '/industries/roofing.webp',
   },
   {
-    slug: 'general-contractors',
-    name: 'General Contractors',
+    slug: 'decking-siding',
+    name: 'Decking & Siding',
     tagline:
-      'You will receive multi-phase remodel, addition, and full-service build leads.',
-    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l7 7-4 4-7-7z"/><path d="M10 7L3 14l4 4 7-7"/><path d="M8 19l-3 3"/></svg>`,
-    bgImage: 'https://loremflickr.com/1200/800/construction,site,worker?lock=102',
+      'You will receive deck build, siding replacement, and exterior repair leads.',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h18"/><path d="M7 7v10"/><path d="M17 7v10"/></svg>`,
+    bgImage: 'https://loremflickr.com/1200/800/deck,siding,house?lock=102',
   },
   {
     slug: 'concrete',
@@ -136,15 +132,6 @@ const industries = [
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16"/><path d="M4 8v10a2 2 0 002 2h12a2 2 0 002-2V8"/><path d="M9 4h6v4H9z"/></svg>`,
     bgImage: 'https://loremflickr.com/1200/800/kitchen,remodel?lock=104',
   },
-];
-
-const categories = [
-  'General Contractors',
-  'Roofers',
-  'Concrete Contractors',
-  'Kitchen Remodelers',
-  'Bathroom Remodelers',
-  '& Similar...',
 ];
 
 const faqs = [
@@ -183,7 +170,7 @@ const faqLd = {
   <section class="hero">
     <div class="container hero-inner">
       <h1>The #1 Marketing Supplier For America's Top <span class="hl">Builders</span>!</h1>
-      <p class="hero-sub">We're your AI-native marketing supplier handling lead generation, websites, SEO, and a custom CRM solution. Real marketing, done by <strong>real experts</strong> and AI agents in the loop. Not the other way around!</p>
+      <p class="hero-sub">We bring you homeowners who are ready to buy — <strong>exclusive leads</strong>, never shared with another contractor, sent straight to your team. You run the jobs. We keep your calendar full.</p>
       <div class="hero-ctas">
         <a href="/booking-page" class="btn btn-primary btn-lg">Get More Leads!</a>
         <a href="/booking-page" class="btn btn-secondary btn-lg">Book A Call</a>
@@ -248,7 +235,7 @@ const faqLd = {
     <div class="container">
       <div class="text-center section-heading">
         <span class="eyebrow">How It Works</span>
-        <h2>Leverage Real Marketing Pros With AI Agents In The Loop</h2>
+        <h2 class="hiw-title">Let's Build <span class="hl">America</span> Together!</h2>
         <p class="section-lead">Simple, transparent, and built to move fast. No 90-day agency onboardings — your campaigns and setups go live in days.</p>
       </div>
       <div class="hiw-grid">
@@ -274,7 +261,7 @@ const faqLd = {
       <div class="text-center section-heading">
         <span class="eyebrow">Industries We Serve</span>
         <h2>Performance Marketing For Your Industry</h2>
-        <p class="section-lead">Same playbook, tuned to how your specific corner of home services actually buys, closes, and scales.</p>
+        <p class="section-lead">Every lead is a homeowner in your area who asked for an estimate — either an in-person estimate already booked on your calendar, or an estimate request that came in by form or phone call.</p>
       </div>
       <div class="industries-grid">
         {industries.map((i, idx) => (
@@ -302,7 +289,6 @@ const faqLd = {
               </div>
               <h3 class="industry-name">{i.name}</h3>
               <p class="industry-tagline">{i.tagline}</p>
-              <p class="industry-leadtypes">{LEAD_TYPES}</p>
               <a href="/booking-page" class="btn btn-secondary btn-sm industry-cta">Book A Call</a>
             </div>
           </div>
@@ -319,7 +305,6 @@ const faqLd = {
               ))}
               <li class="more-category more-category-etc">&amp; More</li>
             </ul>
-            <p class="industry-leadtypes">{LEAD_TYPES}</p>
             <a href="/booking-page" class="btn btn-secondary btn-sm industry-cta">Book A Call</a>
           </div>
         </div>
@@ -453,25 +438,6 @@ const faqLd = {
   </section>
 
   {/* CATEGORIES — matches live: black bg, big blue-accented headline */}
-  <section class="section categories-section">
-    <div class="container text-center">
-      <h2 class="categories-title">Let's Build <span class="hl">America</span> Together!</h2>
-      <p class="section-lead muted">We work best with home service businesses in the following categories.</p>
-      <div class="category-grid">
-        {categories.map((c) => (
-          <div class="category-chip">{c}</div>
-        ))}
-      </div>
-      <p class="muted" style="max-width: 720px; margin: var(--space-3) auto;">
-        If your business category is not listed here don't hesitate to contact us at <a href="mailto:support@mylocalads.co">support@mylocalads.co</a>. We've also had tremendous success with other business categories that are not listed here.
-      </p>
-      <div class="hero-ctas" style="justify-content: center;">
-        <a href="/booking-page" class="btn btn-primary btn-lg">Get More Leads!</a>
-        <a href="/#case-studies" class="btn btn-secondary btn-lg">Watch Case Study!</a>
-      </div>
-    </div>
-  </section>
-
   {/* FAQs */}
   <section class="section section-alt" id="faqs">
     <div class="container container-narrow">
@@ -725,11 +691,9 @@ const faqLd = {
     font-family: var(--font-display); font-weight: 600;
     color: #fff; margin: 0; font-size: 1rem;
     text-shadow: 0 1px 8px rgba(0,0,0,0.6);
-  }
-  .industry-leadtypes {
-    color: rgba(255,255,255,0.85); margin: 0; font-size: 0.9rem;
+    /* Absorbs the leftover height so the CTA stays pinned to the bottom of the
+       tile regardless of how many lines the tagline runs to. */
     flex: 1;
-    text-shadow: 0 1px 8px rgba(0,0,0,0.6);
   }
   .industry-cta { align-self: flex-start; margin-top: var(--space-1); }
 
@@ -1027,24 +991,10 @@ const faqLd = {
   .case-cta { margin-top: var(--space-4); }
 
   /* CATEGORIES */
-  .categories-section { padding-bottom: var(--space-5); }
-  .categories-title { font-size: clamp(2rem, 5vw, 3.5rem); }
-  .categories-title .hl { color: var(--color-accent); }
-  .category-grid {
-    display: flex; flex-wrap: wrap; gap: var(--space-2);
-    justify-content: center; margin: var(--space-4) auto var(--space-2);
-    max-width: 900px;
-  }
-  .category-chip {
-    background: transparent; color: #fff;
-    padding: 0.9rem 1.6rem; border-radius: var(--radius-pill);
-    font-family: var(--font-display); font-weight: 800;
-    text-transform: uppercase; letter-spacing: 0.05em;
-    border: 2px solid var(--color-accent);
-    font-size: 0.95rem;
-    transition: background 0.15s ease, transform 0.15s ease;
-  }
-  .category-chip:hover { background: rgba(0,56,255,0.15); transform: translateY(-2px); }
+  /* Inherited from the retired "Let's Build America Together!" section, whose
+     headline this one now carries. */
+  .hiw-title { font-size: clamp(2rem, 5vw, 3.5rem); }
+  .hiw-title .hl { color: var(--color-accent); }
 
   /* FINAL CTA on blue */
   .final-cta { padding: var(--space-6) 0; }

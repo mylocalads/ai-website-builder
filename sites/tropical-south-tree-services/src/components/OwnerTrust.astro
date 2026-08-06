@@ -2,19 +2,19 @@
 /**
  * Owner-trust block: who actually shows up, and why that matters in this trade.
  *
- * Sits above the services grid on the homepage. The proof points are rendered
- * as a stat row rather than prose because they are the numbers a homeowner is
- * actually comparing (years, rating, review count, response) and prose buries
- * them.
+ * Sits above the services grid on the homepage.
+ *
+ * There is deliberately no stat row here. It carried "founded 2019", "5.0 stars
+ * / 200+ reviews", "24/7" and "same-day quotes" — every one of which is already
+ * stated in the hero trust badges, the promise bar or this section's own lede.
+ * Repeating them a fourth time added height, not credibility.
  */
-export interface Stat { value: string; label: string }
 export interface Props {
   data?: {
     eyebrow?: string;
     headline: string;
     lede?: string;
     body?: string[];
-    stats?: Stat[];
     checklist?: string[];
     photo?: string;
     photo_alt?: string;
@@ -105,14 +105,6 @@ const { data } = Astro.props;
           )}
         </aside>
       </div>
-
-      {(data.stats ?? []).length > 0 && (
-        <ul class="stats">
-          {data.stats!.map((s) => (
-            <li><span class="value">{s.value}</span><span class="label">{s.label}</span></li>
-          ))}
-        </ul>
-      )}
     </div>
   </section>
 )}
@@ -175,15 +167,4 @@ const { data } = Astro.props;
   .greview figcaption { font-size: 0.8rem; color: #70757a; }
   .greview figcaption a { color: var(--color-accent-ink); font-weight: 700; text-decoration: none; }
   .greview figcaption a:hover, .greview figcaption a:focus-visible { text-decoration: underline; }
-
-  .stats {
-    list-style: none; margin: var(--space-4) 0 0; padding: var(--space-3) 0 0;
-    border-top: 1px solid color-mix(in srgb, var(--color-primary) 14%, transparent);
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);
-    text-align: center;
-  }
-  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-2); } }
-  .stats li { display: flex; flex-direction: column; gap: 0.15rem; }
-  .stats .value { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.4vw, 2.3rem); color: var(--color-primary); line-height: 1; }
-  .stats .label { font-size: 0.85rem; color: var(--color-muted); font-weight: 600; }
 </style>
