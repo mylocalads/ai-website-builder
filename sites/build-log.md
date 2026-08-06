@@ -3485,3 +3485,28 @@ nav size.
 Verified: 25/25 routes assert `rgb(209, 9, 9)` and the white logo, 0 broken images, 0 console errors;
 mobile 390px no horizontal overflow; footer confirmed still serving `/logo-bay-plumbing.png`. Live
 re-check across 4 pages returns the same computed values with the logo loading.
+
+### 2026-08-06 — bay-plumbing-co: call badge brightened
+
+Follow-up to the header inversion. The icon disc was left at `rgba(255,255,255,0.18)`, which on
+`#d10909` renders as a washed-out pink smudge — the glyph read fine but the badge itself did not.
+
+The circle is now defined by a **bright white ring** (`inset 0 0 0 2px rgba(255,255,255,0.85)`)
+rather than by its fill. The fill only rises 0.18 → 0.22 deliberately: the glyph is white, and
+pushing the disc lighter starts eating the glyph's own contrast against it. At 22% the disc blends to
+roughly `#db3f3f`, leaving the white glyph at 4.38:1 — well over the 3:1 non-text UI needs — while
+the ring does the work of making the badge visible. Hover goes to 34% fill with a solid white ring.
+
+**The pulse keyframes had to re-declare the ring.** `box-shadow` is a single property, so the
+`phone-glow` animation — which sets only the outer glow — replaces anything declared on
+`.phone-icon`. Left alone, the badge outline would have disappeared for the whole animation on
+mobile, which is exactly where the pulse is the main thing drawing the eye to the call button. Each
+frame now carries `inset … 2px` alongside the glow; verified in the computed style mid-travel:
+`rgba(255,255,255,0.85) 0 0 0 2px inset, rgba(0,0,0,0) 0 0 0 7.72997px`.
+
+Pulse itself brightened 0.55 → 0.85 and its travel widened 12px → 14px, so the halo stays legible
+against the red for its full expansion instead of fading out in the first few pixels.
+
+Verified: 15 routes assert disc `rgba(255,255,255,0.22)`, an inset ring, a white glyph and the
+`rgb(209,9,9)` bar — 0 mismatches, 0 console errors, mobile 390px no horizontal overflow. Live
+computed values match.
