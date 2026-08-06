@@ -1,0 +1,34 @@
+{
+  "name": "Tropical South Landscaping",
+  "legal_name": "Tropical South Landscaping Inc.",
+  "owner": "Rafael Quezada",
+  "email": "tropicalsouthlandscaping@gmail.com",
+  "phone": "(305) 333-2642",
+  "whatsapp": "https://wa.me/13053332642",
+  "website": "https://tropicalsouthlandscaping.com/",
+  "address": "9351 Marine Dr, Cutler Bay, FL 33189",
+  "geo": null,
+  "geo_note": "No Apify Maps run this session (APIFY_TOKEN not present in .env) — lat/lng left null rather than guessed.",
+  "rating": 4.9,
+  "reviewCount": 224,
+  "rating_source": "HomeAdvisor/Angi verified-review profile (rated.TropicalSouth.45356792). Angi list page shows 4.8 / 235 for the same profile; Yelp shows 5.0 / 1.",
+  "category": "Landscaper / Tree Service",
+  "hours_gbp": {
+    "Monday": "6:00 AM - 8:00 PM",
+    "Tuesday": "6:00 AM - 8:00 PM",
+    "Wednesday": "6:00 AM - 8:00 PM",
+    "Thursday": "6:00 AM - 8:00 PM",
+    "Friday": "6:00 AM - 8:00 PM",
+    "Saturday": "6:00 AM - 8:00 PM",
+    "Sunday": "6:00 AM - 8:00 PM"
+  },
+  "hours_source": "Yelp + YellowPages listings both report Mon-Sun 6:00 AM - 8:00 PM.",
+  "employees": "5-9",
+  "social": {
+    "facebook": "https://www.facebook.com/Tropical-South-Landscaping-106683338573422/",
+    "instagram": "https://www.instagram.com/tropicalsouthlandscaping/"
+  },
+  "source": "Firecrawl scrape of tropicalsouthlandscaping.com + Firecrawl search across HomeAdvisor/Angi, Yelp, MapQuest, YellowPages, ZoomInfo",
+  "source_note": "GBP lookup via Apify was NOT run — no APIFY_TOKEN in .env. NAP was corroborated across four independent directory listings instead. Re-run /find-business once the token is added if a canonical GBP payload (CID, geo, GBP review text) is needed.",
+  "retrieved": "2026-08-06"
+}

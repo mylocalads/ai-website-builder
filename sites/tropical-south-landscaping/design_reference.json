@@ -1,0 +1,67 @@
+{
+  "slug": "tropical-south-landscaping",
+  "template": "owl",
+  "generated_at": "2026-08-06",
+  "source": {
+    "structure_and_layout": "astro-templates/owl — sole source of truth. No layout, component styling, section rhythm, or CSS was taken from the client's existing site.",
+    "brand_tokens": "Sampled from the client's logo (public/logo.png). The existing GoDaddy-built site declares no brand font-family and no brand hex values in its CSS — only social-icon brand colors (#1877F2 Facebook, #E1306C Instagram), which are not the client's palette."
+  },
+  "brand_input": {
+    "logo_colors": {
+      "wordmark_blue": "#2a8fff",
+      "sun_orange": "#f5a623",
+      "sun_yellow": "#ffd54a",
+      "palm_green": "#2e8b22"
+    },
+    "fonts_detected": null,
+    "fonts_note": "No font-family declarations or Google Fonts links found on the client's site. Falling back to the owl template default."
+  },
+  "palette": {
+    "--color-bg": "#f6f8f2",
+    "--color-surface": "#ffffff",
+    "--color-text": "#132218",
+    "--color-muted": "#4f5b50",
+    "--color-primary": "#12492a",
+    "--color-on-primary": "#ffffff",
+    "--color-accent": "#f2a007",
+    "--color-on-accent": "#1a1200",
+    "--color-accent-ink": "#8a5a06",
+    "--color-accent-on-dark": "#f7c153",
+    "--color-focus": "#0057ff"
+  },
+  "palette_rationale": "Primary is a deep palm green derived from the logo's palm and land shape — it carries the dark bands and reads as landscaping without being the generic mid-green every competitor uses. Accent is the logo's sun orange, which is the only warm note in the mark and gives buttons real urgency against all the green. The logo's blue is the wordmark colour; used as a UI accent it would fight the greenery in every photo, so it is deliberately not in the palette.",
+  "contrast_audit": {
+    "checked": "WCAG 2.1 AA, 4.5:1 for normal text",
+    "text_on_bg": "15.46:1 PASS",
+    "text_on_surface": "16.54:1 PASS",
+    "muted_on_bg": "6.67:1 PASS",
+    "muted_on_surface": "7.13:1 PASS",
+    "on_primary_on_primary": "10.44:1 PASS",
+    "on_accent_on_accent": "8.68:1 PASS",
+    "accent_ink_on_bg": "5.54:1 PASS",
+    "accent_ink_on_surface": "5.92:1 PASS",
+    "accent_on_dark_on_primary": "6.32:1 PASS",
+    "note": "The raw accent (#f2a007) measures 2.00:1 on the page background — correct for a button FILL behind #1a1200 text, never used as text. That is exactly what the three-accent-token split in tokens.css exists to enforce."
+  },
+  "typography": {
+    "--font-display": "'Montserrat', 'Inter', system-ui, sans-serif",
+    "--font-body": "'Inter', system-ui, sans-serif",
+    "note": "Owl template default, retained because no client brand font was detectable."
+  },
+  "spacing_radius_motion": "Owl template defaults, unmodified.",
+  "imagery": {
+    "policy": "Real client job photos only — 10 photos pulled from the client's own gallery and service pages, downsized and served from public/img/ rather than hotlinked off the old GoDaddy CDN.",
+    "hero": "/img/hero-crew-bucket-trim.jpg — a Tropical South crew member in a branded shirt, hard hat and harness working a Niftylift bucket against a clear Miami sky. Chosen because it is the only photo that shows the brand, the crew, and the safety gear at once.",
+    "no_stock": "The client's existing site uses GoDaddy stock images on several service pages (wsimg.com/isteam/stock/...). None were carried over."
+  },
+  "anti_patterns": [
+    "No generic stock lawn photography — this client has real job photos.",
+    "No 'before/after' slider gimmicks; the before/after pairs are single images and are labelled as such.",
+    "No countdown timers, no fake scarcity, no invented awards or certifications.",
+    "No invented prices — the client publishes no rate card, so /pricing carries no cost table.",
+    "No claimed licence numbers, no BBB accreditation claim (BBB profile is explicitly Not Accredited).",
+    "No 24/7 or emergency-service claim — published hours are 6am-8pm daily.",
+    "No layout, section rhythm, or component styling copied from tropicalsouthlandscaping.com.",
+    "No fabricated testimonials — every review on the site is verbatim from a verified public profile with attribution."
+  ]
+}

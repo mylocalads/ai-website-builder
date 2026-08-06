@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tropical-south-landscaping.vercel.app/sitemap-index.xml

@@ -1,0 +1,169 @@
+{
+  "kind": "config",
+  "business_name": "Tropical South Landscaping",
+  "legal_name": "Tropical South Landscaping Inc",
+  "tagline": "Miami-Dade lawn care and tree service that shows up",
+  "phone": "+13053332642",
+  "phone_display": "(305) 333-2642",
+  "email": "tropicalsouthlandscaping@gmail.com",
+  "address": {
+    "street": "9351 Marine Dr",
+    "city": "Cutler Bay",
+    "state": "FL",
+    "postal": "33189",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "hours": {
+    "monday": "6:00 AM - 8:00 PM",
+    "tuesday": "6:00 AM - 8:00 PM",
+    "wednesday": "6:00 AM - 8:00 PM",
+    "thursday": "6:00 AM - 8:00 PM",
+    "friday": "6:00 AM - 8:00 PM",
+    "saturday": "6:00 AM - 8:00 PM",
+    "sunday": "6:00 AM - 8:00 PM"
+  },
+  "site_url": "https://tropical-south-landscaping.vercel.app",
+  "rating": 4.9,
+  "review_count": 224,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 12,
+  "social": {
+    "facebook": "https://www.facebook.com/Tropical-South-Landscaping-106683338573422/",
+    "instagram": "https://www.instagram.com/tropicalsouthlandscaping/"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/hero-crew-bucket-trim.jpg",
+  "about_photo": "/img/shade-tree-lawn.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "We show up on the day we said",
+      "description": "The most common complaint about landscapers in Miami is that they stop answering the phone. Our customers keep writing the opposite — a quote on a Saturday, the crew on site Monday morning."
+    },
+    {
+      "title": "224 reviews, 4.9 average, 96% five stars",
+      "description": "Twelve years of verified homeowner reviews across Miami-Dade, including customers who have stayed with us seven years running."
+    },
+    {
+      "title": "One crew for the lawn and the trees",
+      "description": "Weekly mowing, tree trimming, removals, stump grinding and sod from the same company. One number to call instead of three."
+    },
+    {
+      "title": "Licensed, insured, and properly equipped",
+      "description": "Bucket and spider lifts, chipper and chip truck, and crews working to OSHA safety regulations and ISA pruning standards — not a ladder and a pickup."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Canopy thinning ahead of storm season",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/hero-crew-bucket-trim.jpg",
+      "alt": "Tropical South crew member in a branded shirt, hard hat and safety harness trimming a tree from a Niftylift bucket against a clear blue sky",
+      "description": "Selective thinning from an aerial lift so the limbs come out clean and the tree keeps its natural shape."
+    },
+    {
+      "title": "Oak trimmed back off the roofline",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/tree-trimming-oak-bucket-lift.jpg",
+      "alt": "Articulated boom lift positioned in a driveway to reach a mature oak overhanging a single-storey home",
+      "description": "Limbs lifted away from the roof and gutters before hurricane season, with the chipper staged on the street."
+    },
+    {
+      "title": "Lawn brought back, front to back",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/lawn-maintenance-before-after.jpg",
+      "alt": "Before and after of a poolside back lawn, overgrown on the left and evenly cut with clean edges on the right",
+      "description": "Before and after on a regular maintenance account — cut to height, edged, and blown clean off the pool deck."
+    },
+    {
+      "title": "Date palm cleaned up",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/palm-pruning-before-after.jpg",
+      "alt": "Before and after of a date palm, heavy with dead fronds on the left and pruned back to a clean crown on the right",
+      "description": "Dead fronds and seed pods removed without cutting into the live crown."
+    },
+    {
+      "title": "Tight-access removal by spider lift",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/tree-removal-spider-lift.jpg",
+      "alt": "Compact tracked spider lift set up in a narrow side yard beside a two-storey house to reach a large tree",
+      "description": "A tracked lift gets us into side yards a bucket truck cannot reach, without tearing up the lawn."
+    },
+    {
+      "title": "Stump ground out below grade",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/stump-grinding-toro.jpg",
+      "alt": "Crew member operating a Toro STX-26 tracked stump grinder against a stump beside a wooden fence",
+      "description": "Ground below ground level so the spot can be filled and replanted or sodded over."
+    },
+    {
+      "title": "Everything chipped and hauled away",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/chipper-crew-loading.jpg",
+      "alt": "Crew member feeding cut branches into a towable chipper on a residential street while a bucket lift works the tree behind",
+      "description": "The debris leaves with us the same day — nothing stacked at the curb waiting on a second trip."
+    },
+    {
+      "title": "Full removal, site cleared",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/tree-removal-cleared-stump.jpg",
+      "alt": "Sectioned trunk and root mass cut down to grade with the surrounding hedge left intact",
+      "description": "Sectioned down in pieces so nothing swung into the hedge or the neighbouring property."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Lawn Care & Tree Service",
+    "heading_rest": "Under One Roof",
+    "subtitle": "Residential, commercial and HOA properties across Miami-Dade — weekly maintenance, tree work, stump grinding and sod, handled by the same crew."
+  },
+  "estimate_form": {
+    "heading": "Get your free estimate",
+    "services": [
+      "Landscape & Lawn Maintenance",
+      "Tree Trimming",
+      "Tree Removal",
+      "Stump Grinding",
+      "Sod Installation",
+      "Storm Prep or Cleanup",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Get a free estimate from a crew that calls you back",
+    "body": "Twelve years in Miami-Dade, 224 verified reviews at a 4.9 average, licensed and insured. Tell us what the property needs and we will get you a price — no charge for the visit.",
+    "cta_text": "Get my free estimate",
+    "cta_href": "/contact"
+  },
+  "blog_section": {
+    "heading": "Yard & Tree Advice for South Florida",
+    "description": "Practical guidance on lawns, palms and storm prep for Miami-Dade homeowners, from the crew that works these yards every week."
+  }
+}

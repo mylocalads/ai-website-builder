@@ -1,0 +1,49 @@
+{
+  "kind": "pricing",
+  "intro": "Every property is different, so every price is quoted after we have looked at it. The visit and the written estimate are free. Our goal is to work within your budget while still doing a superior job — and you will never get an invoice for work you did not agree to first.",
+  "packages": [
+    {
+      "name": "Lawn & Landscape Maintenance",
+      "price": "Quoted per visit",
+      "unit": "weekly or bi-weekly",
+      "includes": [
+        "Mowing, edging, trimming and blowing",
+        "Weeding of flower beds and mulching",
+        "Hardscape blown clean every visit",
+        "Blades sharpened daily for the best cut",
+        "Residential, commercial and HOA properties"
+      ],
+      "cta_text": "Get my price",
+      "cta_href": "/contact"
+    },
+    {
+      "name": "Tree Service",
+      "price": "Quoted per job",
+      "unit": "trimming, removal, grinding",
+      "includes": [
+        "Trimming, pruning and canopy reduction",
+        "Palm tree trimming and full removals",
+        "Stump grinding below ground level",
+        "Chipping and same-day debris haul-away",
+        "Licensed, insured crews to OSHA and ISA standards"
+      ],
+      "cta_text": "Get my price",
+      "cta_href": "/contact"
+    },
+    {
+      "name": "Sod Installation",
+      "price": "Quoted per project",
+      "unit": "measured on site",
+      "includes": [
+        "Site measured and prepared before delivery",
+        "Old turf and debris removed",
+        "Fresh sod laid and rolled",
+        "Watering-in guidance for the first weeks",
+        "An established lawn in days, not a season of seed"
+      ],
+      "cta_text": "Get my price",
+      "cta_href": "/contact"
+    }
+  ],
+  "notes": "We do not publish a rate card, and you should be wary of anyone in this trade who does. What a lawn costs depends on the lot size, the slope, the number of beds and how far behind it has fallen; what a tree costs depends on its size, its species, what is underneath it and whether a lift can reach it. We come out, look at the actual property, and hand you a written number — at no charge and with no obligation. Call (305) 333-2642 or request an estimate and we will schedule the visit."
+}
