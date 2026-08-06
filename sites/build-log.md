@@ -3634,6 +3634,66 @@ Motion is opt-out twice over: hover/focus pauses it so a badge can be read, and
 the duplicate track hidden. The duplicate is `aria-hidden`, so a screen reader
 hears each award once rather than twice.
 
+### FAQ page, owner section, footer profiles, header polish
+
+**Menu headings back to gold** — reverted the previous change. Column headings
+read the same in both mega menus; the hover state signals the two Landscaping
+ones are clickable.
+
+**Phone CTA** is now a pill with an accent ring and the number underlined in
+brand yellow, so it reads as a link rather than a printed number.
+
+**Cert strip: static on desktop, scrolling on mobile.** All seven fit across the
+container at desktop widths, so scrolling added motion without information — and
+a repeating loop implies more badges than exist. The duplicate track is
+`display: none` on desktop rather than merely unanimated, which would have
+doubled every badge.
+
+**Band order swapped:** hero → promise bar → certs → owner → services.
+
+**New owner section** above the services grid, "Why Miami-Dade Homeowners Trust
+Tropical South Tree Services & Rafael", with proof points as a stat row (founded
+2019 · 5.0★ · 24/7 · same-day quotes).
+
+**Footer profile badges — every URL verified by fetching it.** This mattered more
+than expected:
+
+| Platform | Correct URL | Trap |
+|---|---|---|
+| Yelp | `/biz/tropical-south-tree-service-cutler-bay` | The obvious hit is the **landscaping** listing (305) 333-2642 |
+| HomeAdvisor | `rated.TropicalSouth.131737213` (256 reviews) | Landscaping profile is `45356792` (224 reviews) |
+| Yellow Pages | `/nationwide/mip/tropical-south-tree-service-576110523` | Search returns the landscaping listing on Marine Dr first |
+| Google | Maps search-by-query URL | No verifiable place-ID link is public — **swap in the real profile link when the client supplies it** |
+
+This owner runs two brands out of one entity, so all four directories carry BOTH
+records. Linking the wrong one puts a conflicting phone number one click from the
+footer, which is a genuine NAP-consistency problem for local SEO.
+
+Badges are the official platform marks the client already uses on their own site,
+not hand-drawn approximations of trademarked logos.
+
+**Regression fixed:** the footer was showing the recoloured WHITE-wordmark logo on
+the white footer, so the business name was invisible. Added `footer_logo_url`
+(falls back to `logo_url`) pointing at the preserved `logo-original.webp`. Worth
+remembering whenever a logo is recoloured for a dark header — check the footer.
+
+**New `/faq`, rewritten rather than copied.** The client's page runs 38 entries of
+which ~12 are near-duplicates of "do you plant native trees?", third-person and
+keyword-padded. Near-identical answers on one page compete with each other — the
+classic thin-content pattern. Now **26 distinct questions in five topics**, in the
+site's voice, every answer that names a service or price linking to the page that
+owns it, and FAQPage JSON-LD over the set.
+
+The accordion is native `<details>`/`<summary>`: open-able, keyboard operable and
+findable by in-page search before any JS runs. JS only adds category filtering and
+expand-all. Filtering uses the `hidden` attribute rather than a display class so
+the state reaches assistive tech. Expand-all temporarily drops the exclusive
+`name="faq"` grouping, which would otherwise fight it.
+
+One inconsistency resolved: the client's FAQ quotes stump grinding at $75–$400
+while their own llms.txt says $100–$450. The site uses **$100–$450** throughout so
+`/faq` and `/pricing` agree with each other.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
