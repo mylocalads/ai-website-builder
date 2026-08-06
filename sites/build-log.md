@@ -3418,3 +3418,62 @@ as included in every figure because the client includes it.
 | Custom domain | not attached |
 | `team_members` | empty — only Rafael and a site supervisor named Steve appear publicly |
 | Old `tropical-south-landscaping` Vercel project | still live and now orphaned — delete or leave, operator's call |
+
+### Amendment — 2026-08-06, operator-requested restructure
+
+Three changes, all local to this site. `astro-templates/owl` is untouched.
+
+**Detail pages moved to flat URLs.** `/tree-removal`, `/pinecrest-fl` — not
+`/services/tree-removal`, `/service-area/pinecrest-fl`. The hub pages `/services`
+and `/service-area` stay put; only the detail pages flattened. Astro cannot have
+two `[slug].astro` at the same level, so the two routes merged into one
+`src/pages/[slug].astro` dispatcher with the bodies extracted to
+`ServiceDetail.astro` / `AreaDetail.astro`.
+
+The old nested URLs now 404. **If the client ever points a real domain at this
+and the old paths were ever indexed, they need 301s** — nothing here creates
+them.
+
+Flattening merges both collections into one namespace shared with every static
+page, and `src/lib/urls.ts` exists to keep that safe:
+
+- `RESERVED_SLUGS` + `assertRoutableSlug` — a service called `about` would be
+  shadowed by `/about` and silently never built. Now throws at build time.
+- A service and an area sharing a slug would emit duplicate params with one
+  winning arbitrarily. Checked explicitly in `getStaticPaths`.
+- `serviceHref()` / `areaHref()` replace fourteen interpolated href sites.
+
+**Nav renamed and split.** "Services" → "Tree Services" (label only). New
+"Landscaping Services" menu alongside it. `groupServicesByCategory` gained an
+`only` parameter so each menu renders its own categories — without it both would
+render all 22 services and the split would be cosmetic.
+
+**Two new services**, category `Landscaping Services`, orders 21–22 so the
+homepage featured six are unchanged:
+
+| Service | Sub-services |
+|---|---|
+| Landscape Maintenance | Mowing, Edging, Trimming, Blowing, Landscape Design, Planting, Mulching, Weeding Flower Beds, Spring Cleanup |
+| Sod | Sod Installation, Sod Replacement |
+
+The 11 sub-services are **sections of their parent page, not pages**. "Blowing"
+and "Edging" do not support a defensible standalone page, and minting eleven of
+them is precisely the thin-content pile `SERVICE_LIMIT` exists to prevent. The
+menu deep-links into the parent by anchor instead, with the id produced by one
+shared `subServiceId()` used by both the menu and the bullet list so the two
+cannot drift. `AboutSection` gained an opt-in `bullet_ids` prop and
+`scroll-margin-top` so a deep link clears the sticky header.
+
+`SERVICE_LIMIT` 20 → 22. `/services` now covers both lines of business, so its
+title and h1 were corrected to "Tree & Landscaping Services" — it would otherwise
+have under-described its own contents.
+
+Site is now **53 pages**. Verified live: all 22 services and 16 areas resolve at
+the root, both old nested paths return 404, every page has exactly one h1, all
+titles unique, no broken internal links, sitemap carries only the flat URLs, and
+the landscaping anchors resolve to real ids.
+
+**If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
+so — they would need real, differentiated content rather than a split of the
+parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
+
