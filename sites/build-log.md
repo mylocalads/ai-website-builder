@@ -3589,3 +3589,45 @@ whenever a content-schema field is added.
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
 
+
+### 2026-08-06 — bay-plumbing-co: hero background video
+
+Operator supplied `b_w_875.mp4` — the client's own hero footage, pulled off their Weebly site.
+Self-hosted at `public/video/hero-bay-plumbing.mp4`. 1280×720, H.264 + AAC, 35.6s, **11.19 MB**,
+already faststart (`moov` before `mdat`), so it streams rather than waiting on a full download.
+
+**Both video schema fields were `.url()`-only, which made self-hosting impossible.** A file dropped
+in `public/` can only be referenced as `/video/x.mp4`, and that fails URL validation — the only way
+to satisfy the schema was to hardcode the deploy domain, which then breaks on every preview URL and
+the day a custom domain is attached. Relaxed `default_hero_video` and `hero.video` to `z.string()`,
+matching the "URL or local path" convention the photo fields already document.
+
+**Set on `home.hero.video`, deliberately not on `config.default_hero_video`.** Service and
+service-area pages pass no `video` prop, but `default_hero_video` would have put an 11 MB autoplay
+asset behind the hero of all 25 pages. Verified in the built output: exactly 1 page carries a
+`<video>`.
+
+The poster is `/img/hero-pipe-wrenches.jpg`, so LCP paints from the JPEG rather than waiting on video
+data, and `prefers-reduced-motion` — which the component honours by hiding the video entirely —
+leaves the still in place. Confirmed `display: none` under a reduced-motion context.
+
+Caching: Vercel serves it `max-age=0, must-revalidate`, but with a strong ETag. Checked a
+conditional request — repeat visits get **304, 0 bytes re-sent** — so the 11 MB is a first-visit cost
+only. `accept-ranges: bytes` is set, so seeking and partial fetch work. Left as-is rather than adding
+a `vercel.json` header rule that could collide with the adapter's generated config.
+
+**Content note for the operator.** The clip is a montage and the plumbing does not lead: roughly the
+first 10 seconds are the black-and-white interior/window footage flagged in `audit_results.json`, and
+it only reaches the showerhead and chrome-tap shots at about 14s and 28s. A first-time visitor sees
+the living-room segment. Trimming the first ~12s would fix it and would also cut the file size
+substantially, but that needs a transcoder — **ffmpeg is not installed on this machine**, so nothing
+was re-encoded. A `#t=12` media fragment was considered and rejected: `loop` restarts at 0, so it
+would only affect the very first play.
+
+Also unaddressed without a transcoder: the file still carries an AAC audio track that can never play
+(the element is `muted`), and mobile downloads the full 11 MB — the component has no small-screen
+opt-out.
+
+Verified: 13 routes, exactly 1 with a hero video, 0 console errors; playing/looping/muted at 1280×720
+locally and live; mobile 390px playing with no horizontal overflow; production asset 200 with
+correct `video/mp4` content type.

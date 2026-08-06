@@ -122,7 +122,13 @@ const site = defineCollection({
       // logo_url. Unset, Header falls back to logo_url and nothing changes.
       logo_url_inverse: z.string().optional(),
       default_hero_photo: z.string().optional(),  // URL or local path
-      default_hero_video: z.string().url().optional(),
+      // URL or local path, matching default_hero_photo above. This was
+      // `.url()`-only, which silently made self-hosting impossible: a client
+      // video dropped in public/ can only be referenced as `/video/x.mp4`, and
+      // that fails URL validation, so the only way to satisfy the schema was to
+      // hardcode the deploy domain — which then breaks on every preview URL and
+      // the day a custom domain is attached.
+      default_hero_video: z.string().optional(),
       about_photo: z.string().optional(),         // URL or local path
       team_photo: z.string().optional(),          // URL or local path
       team_members: z.array(z.object({
@@ -267,7 +273,7 @@ const site = defineCollection({
         cta_text: z.string(),
         cta_href: z.string(),
         photo: z.string().optional(),
-        video: z.string().url().optional(),
+        video: z.string().optional(),   // URL or local path — see default_hero_video
         video_link_text: z.string().optional(),
         video_link_href: z.string().optional(),
         trust_badges: z.array(z.object({
