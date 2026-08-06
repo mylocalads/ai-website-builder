@@ -1,30 +1,103 @@
 ---
+// On-demand, NOT static. This page used to confirm unconditionally — anyone
+// loading /checkout-success saw "You're All Set!" and had their cart emptied,
+// because session_id was placed in the URL and then never read. It now asks
+// Stripe whether that session actually completed.
+export const prerender = false;
+
+import Stripe from 'stripe';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BottomCTA from '../components/BottomCTA.astro';
+import { isFulfillable, customFieldValue } from '../lib/order-payload.js';
+
+const sessionId = Astro.url.searchParams.get('session_id');
+
+// Three outcomes, deliberately distinct:
+//   confirmed   Stripe says this session completed. Safe to clear the cart.
+//   unverified  We could not ask (no id, no key) or Stripe errored. Do NOT
+//               claim the order failed — the money may well have moved.
+//   incomplete  Stripe answered and the session is not complete.
+let state = 'unverified';
+let firstName = null;
+let isTrial = false;
+
+if (sessionId && /^cs_[A-Za-z0-9_]+$/.test(sessionId) && process.env.STRIPE_SECRET_KEY) {
+  try {
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+    if (isFulfillable(session)) {
+      state = 'confirmed';
+      isTrial = session.payment_status === 'no_payment_required';
+      const name = session.customer_details?.name ?? customFieldValue(session, 'businessname');
+      firstName = name ? String(name).trim().split(/\s+/)[0] : null;
+    } else {
+      state = 'incomplete';
+    }
+  } catch (err) {
+    // A bad id or a Stripe outage must not tell a paying customer their order
+    // failed.
+    console.error('[checkout-success] Could not verify session:', err?.message);
+    state = 'unverified';
+  }
+}
+
+const titles = {
+  confirmed: 'Order Confirmed | My Local Ads',
+  unverified: 'Confirming Your Order | My Local Ads',
+  incomplete: 'Checkout Not Completed | My Local Ads',
+};
 ---
-<BaseLayout
-  title="Order Confirmed | My Local Ads"
-  description="Your My Local Ads order is confirmed. Our team will reach out with next steps."
->
+<BaseLayout title={titles[state]} description="Your My Local Ads order status.">
   <section class="section">
     <div class="container container-narrow text-center">
-      <span class="eyebrow">Order Confirmed</span>
-      <h1>You're All Set!</h1>
-      <p class="lead">
-        Thanks for your order. Our team will reach out within one business day with
-        onboarding next steps. Questions right now? Call
-        <a href="tel:+18664511915">(866) 451-1915</a>.
-      </p>
-      <a href="/" class="btn btn-primary">Back To Home</a>
+      {state === 'confirmed' && (
+        <>
+          <span class="eyebrow">Order Confirmed</span>
+          <h1>{firstName ? `You're All Set, ${firstName}!` : "You're All Set!"}</h1>
+          <p class="lead">
+            {isTrial
+              ? 'Your free trial is active. Our team will reach out within one business day with onboarding next steps.'
+              : 'Thanks for your order. Our team will reach out within one business day with onboarding next steps.'}
+            {' '}Questions right now? Call <a href="tel:+18664511915">(866) 451-1915</a>.
+          </p>
+          <a href="/" class="btn btn-primary">Back To Home</a>
+        </>
+      )}
+
+      {state === 'unverified' && (
+        <>
+          <span class="eyebrow">Confirming</span>
+          <h1>We're Confirming Your Order</h1>
+          <p class="lead">
+            If your payment went through, you'll receive a Stripe receipt by email and our team will
+            reach out within one business day — nothing to do on your end. For confirmation right
+            now, call <a href="tel:+18664511915">(866) 451-1915</a>.
+          </p>
+          <a href="/" class="btn btn-primary">Back To Home</a>
+        </>
+      )}
+
+      {state === 'incomplete' && (
+        <>
+          <span class="eyebrow">Not Completed</span>
+          <h1>Your Checkout Wasn't Completed</h1>
+          <p class="lead">
+            No payment was taken and your cart is still saved. Pick up where you left off, or call
+            <a href="tel:+18664511915">(866) 451-1915</a> and we'll finish it with you.
+          </p>
+          <a href="/cart" class="btn btn-primary">Return To Cart</a>
+        </>
+      )}
     </div>
   </section>
 
   <BottomCTA />
 </BaseLayout>
 
-<script>
-  // Payment succeeded — empty the cart so a refresh or a later visit does not
-  // show items the customer has already bought.
-  import { cart } from '../lib/cart-store.js';
-  cart.clear();
+<script define:vars={{ confirmed: state === 'confirmed' }}>
+  // Only empty the cart on a verified purchase. Clearing it on an unverified or
+  // abandoned checkout would destroy a customer's selections for nothing.
+  if (confirmed) {
+    import('../lib/cart-store.js').then(({ cart }) => cart.clear());
+  }
 </script>
