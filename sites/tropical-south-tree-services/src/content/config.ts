@@ -34,8 +34,8 @@ const services = defineCollection({
   }),
 });
 
-// Owl: service_areas entries resolve at `/service-area/{filename-slug}` via
-// `src/pages/service-area/[slug].astro`. The filename MUST match the pattern
+// NOTE: this site serves service_areas at the ROOT (`/miami-fl`), not under
+// `/service-area/`. See src/pages/[slug].astro. The filename MUST match the pattern
 // `city-state.md` with a two-letter lowercase state (e.g. `denver-co.md`,
 // `miami-fl.md`) — the schema has no `slug` field and Astro derives the entry
 // slug from the filename. Because the route is nested, city slugs can no longer

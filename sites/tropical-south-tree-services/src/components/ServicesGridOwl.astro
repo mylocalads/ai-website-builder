@@ -1,6 +1,7 @@
 ---
 import { FEATURED_SERVICE_LIMIT } from '../lib/limits';
 import { getCollection, getEntry } from 'astro:content';
+import { serviceHref } from '../lib/urls';
 // FEATURED, not SERVICE_LIMIT: this client has twenty service pages and putting
 // all twenty on the homepage buries the six that actually drive calls. The rest
 // are one click away on /services, which lists every one grouped by category.
@@ -32,7 +33,7 @@ const heading = section.heading_lead
         <li>
           <a
             class={`tile ${s.data.hero_photo ? '' : 'no-photo'}`}
-            href={`/services/${s.slug}`}
+            href={serviceHref(s.slug)}
             style={s.data.hero_photo ? `background-image: url(${s.data.hero_photo});` : undefined}
           >
             <span class="scrim" aria-hidden="true"></span>

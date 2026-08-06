@@ -1,0 +1,91 @@
+---
+/**
+ * ONE root-level route serving BOTH collections.
+ *
+ * This client's detail pages live at the root — `/tree-removal`,
+ * `/pinecrest-fl` — rather than under `/services/` and `/service-area/`. Astro
+ * cannot have two `[slug].astro` files competing for the same level, so the two
+ * former routes were merged here and their bodies moved into
+ * ServiceDetail.astro / AreaDetail.astro.
+ *
+ * Flattening puts both collections into one namespace shared with every static
+ * page, which introduces two failure modes the nested layout did not have. Both
+ * are made loud rather than silent:
+ *
+ *   1. A collection slug colliding with a static route (`about`, `pricing`, …).
+ *      Astro resolves the static page and the detail page is simply never built
+ *      — no error, just a missing page. `assertRoutableSlug` throws instead.
+ *   2. A service and an area sharing a slug. getStaticPaths would emit duplicate
+ *      params and one would win arbitrarily. Checked explicitly below.
+ */
+import { getCollection } from 'astro:content';
+import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
+import { assertRoutableSlug } from '../lib/urls';
+import ServiceDetail from '../components/ServiceDetail.astro';
+import AreaDetail from '../components/AreaDetail.astro';
+
+export async function getStaticPaths() {
+  // Imports survive Astro's extraction of getStaticPaths into its own module;
+  // frontmatter-level consts do not. Everything this function needs is imported.
+  const AREA_SLUG_PATTERN = /^[a-z0-9-]+-[a-z]{2}$/;
+
+  const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+  const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order);
+
+  // Slicing a collection is always "valid", so an over-cap collection builds
+  // green while quietly shipping fewer pages than were authored — and the nav,
+  // which uses the same constants, would link only as far as what exists.
+  // Name the casualties.
+  if (services.length > SERVICE_LIMIT) {
+    console.warn(
+      `[services] ${services.length} services authored but SERVICE_LIMIT is ${SERVICE_LIMIT}. ` +
+      `Not building: ${services.slice(SERVICE_LIMIT).map((s) => s.slug).join(', ')}. ` +
+      `Raise SERVICE_LIMIT in src/lib/limits.ts to include them.`
+    );
+  }
+  if (areas.length > AREA_LIMIT) {
+    console.warn(
+      `[service_areas] ${areas.length} areas authored but AREA_LIMIT is ${AREA_LIMIT}. ` +
+      `Not building: ${areas.slice(AREA_LIMIT).map((a) => a.slug).join(', ')}. ` +
+      `Raise AREA_LIMIT in src/lib/limits.ts to include them.`
+    );
+  }
+
+  const paths: Array<{ params: { slug: string }; props: any }> = [];
+  const seen = new Map<string, string>();
+
+  const claim = (slug: string, collection: string) => {
+    assertRoutableSlug(slug, collection);
+    const prior = seen.get(slug);
+    if (prior) {
+      throw new Error(
+        `Slug "${slug}" is claimed by both ${prior} and ${collection}. Detail pages share one ` +
+        `root namespace on this site, so the two entries cannot coexist — rename one content file.`
+      );
+    }
+    seen.set(slug, collection);
+  };
+
+  for (const s of services.slice(0, SERVICE_LIMIT)) {
+    claim(s.slug, 'services');
+    paths.push({ params: { slug: s.slug }, props: { kind: 'service', entry: s } });
+  }
+
+  for (const a of areas.slice(0, AREA_LIMIT)) {
+    // The city-state filename convention is what the content schema documents
+    // and what the nav copy assumes ("Pinecrest, Florida"). A stray filename
+    // would still route, so it is checked rather than trusted.
+    if (!AREA_SLUG_PATTERN.test(a.slug)) {
+      console.warn(`[service_areas] Skipping "${a.slug}" — must match the city-state pattern (e.g. miami-fl).`);
+      continue;
+    }
+    claim(a.slug, 'service_areas');
+    paths.push({ params: { slug: a.slug }, props: { kind: 'area', entry: a } });
+  }
+
+  return paths;
+}
+
+const { kind, entry } = Astro.props;
+---
+{kind === 'service' ? <ServiceDetail service={entry} /> : <AreaDetail area={entry} />}

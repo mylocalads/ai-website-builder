@@ -2,7 +2,8 @@
 import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
 import { getIcon } from '../lib/icons';
 import { getEntry, getCollection } from 'astro:content';
-import { SERVICE_CATEGORY_ORDER, groupServicesByCategory } from '../lib/taxonomy';
+import { TREE_MENU_CATEGORIES, LANDSCAPING_MENU_CATEGORIES, groupServicesByCategory } from '../lib/taxonomy';
+import { serviceHref, areaHref, subServiceId, SERVICES_HUB, AREAS_HUB } from '../lib/urls';
 const site = (await getEntry('site', 'config')).data as any;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
 const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
@@ -12,7 +13,11 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
 // business itself uses. Grouping is presentation only — every service in
 // `services` appears in exactly one column, so the menu still links to the same
 // set of generated pages and the featured ⊆ generated invariant is untouched.
-const serviceGroups = groupServicesByCategory(services);
+// Two menus, two disjoint category sets. `only` is what keeps them disjoint —
+// without it each menu would render every service and the split would be
+// cosmetic. Together the two cover every category, so nothing is unreachable.
+const treeGroups = groupServicesByCategory(services, TREE_MENU_CATEGORIES);
+const landscapingGroups = groupServicesByCategory(services, LANDSCAPING_MENU_CATEGORIES);
 // Areas split into the operator's priority tier and the rest, mirroring the
 // client's own "Primary" / "More" split.
 const PRIMARY_AREA_COUNT = 7;
@@ -27,41 +32,64 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
     <nav aria-label="Primary" class="primary-nav">
       <ul class="nav-list">
         <li class="has-menu has-mega">
-          <a href="/services" aria-haspopup="true">Services <span aria-hidden="true">▾</span></a>
+          <a href={SERVICES_HUB} aria-haspopup="true">Tree Services <span aria-hidden="true">▾</span></a>
           <div class="submenu mega">
             <div class="mega-cols">
-              {serviceGroups.map((g) => (
+              {treeGroups.map((g) => (
                 <div class="mega-col">
                   <p class="mega-heading">{g.title}</p>
                   <ul>
-                    {g.services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+                    {g.services.map((s) => <li><a href={serviceHref(s.slug)}>{s.data.title}</a></li>)}
                   </ul>
                 </div>
               ))}
             </div>
-            <a class="mega-all" href="/services">View all services →</a>
+            <a class="mega-all" href={SERVICES_HUB}>View all services →</a>
           </div>
         </li>
         <li class="has-menu has-mega">
-          <a href="/service-area" aria-haspopup="true">Service Areas <span aria-hidden="true">▾</span></a>
+          <a href={SERVICES_HUB} aria-haspopup="true">Landscaping Services <span aria-hidden="true">▾</span></a>
+          <div class="submenu mega">
+            <div class="mega-cols">
+              {landscapingGroups.flatMap((g) => g.services).map((s) => (
+                <div class="mega-col">
+                  {/* The SERVICE is the column heading here and it is a link,
+                      unlike the Tree Services menu where the heading is a
+                      category with no page of its own. The items beneath are
+                      sub-services, which are sections of the parent page rather
+                      than pages — so they deep-link into it by anchor. */}
+                  <a class="mega-heading mega-heading-link" href={serviceHref(s.slug)}>{s.data.title}</a>
+                  <ul>
+                    {s.data.sub_services.map((sub: string) => (
+                      <li><a href={`${serviceHref(s.slug)}#${subServiceId(sub)}`}>{sub}</a></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <a class="mega-all" href={SERVICES_HUB}>View all services →</a>
+          </div>
+        </li>
+        <li class="has-menu has-mega">
+          <a href={AREAS_HUB} aria-haspopup="true">Service Areas <span aria-hidden="true">▾</span></a>
           <div class="submenu mega">
             <div class="mega-cols">
               <div class="mega-col">
                 <p class="mega-heading">Primary Service Areas</p>
                 <ul>
-                  {primaryAreas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}</a></li>)}
+                  {primaryAreas.map((a) => <li><a href={areaHref(a.slug)}>{a.data.name}</a></li>)}
                 </ul>
               </div>
               {moreAreas.length > 0 && (
                 <div class="mega-col">
                   <p class="mega-heading">More Service Areas</p>
                   <ul>
-                    {moreAreas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}</a></li>)}
+                    {moreAreas.map((a) => <li><a href={areaHref(a.slug)}>{a.data.name}</a></li>)}
                   </ul>
                 </div>
               )}
             </div>
-            <a class="mega-all" href="/service-area">View all service areas →</a>
+            <a class="mega-all" href={AREAS_HUB}>View all service areas →</a>
           </div>
         </li>
         <li><a href="/our-work">Our Work</a></li>
@@ -83,17 +111,35 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
           <li class="group">
             <details class="mobile-submenu">
               <summary class="group-heading">
-                <span>Services</span>
+                <span>Tree Services</span>
                 <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
               <ul class="sub">
-                {serviceGroups.map((g) => (
+                {treeGroups.map((g) => (
                   <>
                     <li class="sub-heading" aria-hidden="true">{g.title}</li>
-                    {g.services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+                    {g.services.map((s) => <li><a href={serviceHref(s.slug)}>{s.data.title}</a></li>)}
                   </>
                 ))}
-                <li><a class="sub-all" href="/services">View all services →</a></li>
+                <li><a class="sub-all" href={SERVICES_HUB}>View all services →</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="group">
+            <details class="mobile-submenu">
+              <summary class="group-heading">
+                <span>Landscaping Services</span>
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ul class="sub">
+                {landscapingGroups.flatMap((g) => g.services).map((s) => (
+                  <>
+                    <li><a class="sub-parent" href={serviceHref(s.slug)}>{s.data.title}</a></li>
+                    {s.data.sub_services.map((sub: string) => (
+                      <li class="sub-nested"><a href={`${serviceHref(s.slug)}#${subServiceId(sub)}`}>{sub}</a></li>
+                    ))}
+                  </>
+                ))}
               </ul>
             </details>
           </li>
@@ -104,8 +150,8 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
                 <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </summary>
               <ul class="sub">
-                {areas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}
-                <li><a class="sub-all" href="/service-area">View all service areas →</a></li>
+                {areas.map((a) => <li><a href={areaHref(a.slug)}>{a.data.name}, {a.data.state}</a></li>)}
+                <li><a class="sub-all" href={AREAS_HUB}>View all service areas →</a></li>
               </ul>
             </details>
           </li>
@@ -171,6 +217,15 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
     display: inline-block; margin: var(--space-2) var(--space-2) 0;
     font-weight: 700; font-size: 0.85rem; color: var(--color-accent-ink);
   }
+  /* In the Landscaping menu the column heading IS the service page, so it has to
+     look and behave like a link while keeping the visual weight of a heading. */
+  a.mega-heading-link {
+    display: block; text-decoration: none; border-radius: var(--radius-sm);
+    padding: 0.25rem var(--space-2); margin-bottom: 0.35rem;
+  }
+  a.mega-heading-link:hover, a.mega-heading-link:focus-visible {
+    background: var(--color-surface); text-decoration: underline;
+  }
   /* Icon badge + stacked label/number, rather than a solid pill. The number is
      the emphasis; the badge carries the accent colour. */
   .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: var(--color-text); }
@@ -210,6 +265,10 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
   }
   .mobile-nav .sub .sub-heading:first-child { padding-top: 0.2rem; }
   .mobile-nav .sub .sub-all { font-weight: 700; color: var(--color-text) !important; }
+  /* Landscaping menu on mobile: the parent service reads as a heading-weight
+     link, its sub-services indent beneath it. */
+  .mobile-nav .sub .sub-parent { font-weight: 700; color: var(--color-text) !important; padding-top: 0.5rem; }
+  .mobile-nav .sub .sub-nested a { padding-left: 1.5rem; }
 
   @keyframes phone-glow {
     0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 55%, transparent); }

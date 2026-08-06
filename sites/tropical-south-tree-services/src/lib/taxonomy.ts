@@ -1,18 +1,20 @@
 /**
  * Service grouping, in one place.
  *
- * This client sells twenty distinct services. Presented flat they read as an
- * undifferentiated list; grouped, they read as three coherent lines of business —
- * which is how the business itself describes them and how buyers actually search.
+ * This client sells services across two distinct lines of business, and the nav
+ * reflects that with two separate top-level menus:
  *
- * The groups are PRESENTATION ONLY. Grouping never changes which pages exist:
- * every service handed to `groupServicesByCategory` comes back in exactly one
- * group, including any whose `category` is missing or unrecognised (those fall
- * into the last group rather than being silently dropped). That property is what
- * keeps `src/lib/limits.ts`'s featured ⊆ generated invariant intact — a service
- * can never disappear from the nav just because someone typo'd its category.
+ *   "Tree Services"        → TREE_MENU_CATEGORIES  (20 services, 3 groups)
+ *   "Landscaping Services" → LANDSCAPING_MENU_CATEGORIES (2 services, 1 group)
  *
- * `category` is a free-string field in the content schema, so the match is done
+ * Grouping is PRESENTATION ONLY. It never changes which pages exist: every
+ * service handed to `groupServicesByCategory` comes back in exactly one group,
+ * including any whose `category` is missing or unrecognised (those fall into the
+ * fallback rather than being silently dropped). That property is what keeps
+ * `src/lib/limits.ts`'s featured ⊆ generated invariant intact — a service can
+ * never disappear from the nav because someone typo'd its category.
+ *
+ * `category` is a free-string field in the content schema, so matching is done
  * case-insensitively and trimmed.
  */
 
@@ -20,11 +22,22 @@ import type { CollectionEntry } from 'astro:content';
 
 type Service = CollectionEntry<'services'>;
 
-/** Display order of the groups, and the canonical label for each. */
-export const SERVICE_CATEGORY_ORDER = [
+/** Groups shown under the "Tree Services" menu, in display order. */
+export const TREE_MENU_CATEGORIES = [
   'Tree Care Services',
   'Land & Specialty Services',
   'Arborist Services',
+] as const;
+
+/** Groups shown under the "Landscaping Services" menu, in display order. */
+export const LANDSCAPING_MENU_CATEGORIES = [
+  'Landscaping Services',
+] as const;
+
+/** Every category, in the order the /services hub lists them. */
+export const SERVICE_CATEGORY_ORDER = [
+  ...TREE_MENU_CATEGORIES,
+  ...LANDSCAPING_MENU_CATEGORIES,
 ] as const;
 
 export type ServiceCategory = (typeof SERVICE_CATEGORY_ORDER)[number];
@@ -46,9 +59,16 @@ export interface ServiceGroup {
 /**
  * Bucket services into the ordered groups above, preserving the incoming sort
  * (which callers set by `order`). Empty groups are omitted so a client with only
- * two lines of business does not render an empty column.
+ * one line of business does not render an empty column.
+ *
+ * `only` restricts the result to a subset of categories — that is how the two
+ * nav menus each show their own half without either one silently swallowing the
+ * other's services.
  */
-export function groupServicesByCategory(services: Service[]): ServiceGroup[] {
+export function groupServicesByCategory(
+  services: Service[],
+  only?: readonly ServiceCategory[]
+): ServiceGroup[] {
   const buckets = new Map<ServiceCategory, Service[]>(
     SERVICE_CATEGORY_ORDER.map((c) => [c, []])
   );
@@ -58,17 +78,21 @@ export function groupServicesByCategory(services: Service[]): ServiceGroup[] {
     buckets.get(key)!.push(s);
   }
 
+  const wanted = only ?? SERVICE_CATEGORY_ORDER;
   const grouped = SERVICE_CATEGORY_ORDER
+    .filter((c) => wanted.includes(c))
     .map((title) => ({ title, services: buckets.get(title)! }))
     .filter((g) => g.services.length > 0);
 
-  // Belt and braces: grouping must never lose a service. If this ever trips,
-  // the nav is about to under-report and the bug is here, not in the content.
-  const total = grouped.reduce((n, g) => n + g.services.length, 0);
-  if (total !== services.length) {
-    throw new Error(
-      `groupServicesByCategory dropped services: ${services.length} in, ${total} out.`
-    );
+  // Belt and braces: when grouping the FULL set, nothing may be lost. Skipped
+  // when `only` is passed, because a subset is expected to drop the rest.
+  if (!only) {
+    const total = grouped.reduce((n, g) => n + g.services.length, 0);
+    if (total !== services.length) {
+      throw new Error(
+        `groupServicesByCategory dropped services: ${services.length} in, ${total} out.`
+      );
+    }
   }
 
   return grouped;

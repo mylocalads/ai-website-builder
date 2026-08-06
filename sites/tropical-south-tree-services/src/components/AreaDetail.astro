@@ -1,0 +1,84 @@
+---
+/**
+ * The full service-area detail page, extracted from what used to be
+ * src/pages/service-area/[slug].astro. See ServiceDetail.astro for why both
+ * bodies became components.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from './HeroOwl.astro';
+import PartnerBadges from './PartnerBadges.astro';
+import AboutSection from './AboutSection.astro';
+import Gallery from './Gallery.astro';
+import WhyChooseUs from './WhyChooseUs.astro';
+import ServicesGridOwl from './ServicesGridOwl.astro';
+import GHLReviewsWidget from './GHLReviewsWidget.astro';
+import Financing from './Financing.astro';
+import ServiceAreaGrid from './ServiceAreaGrid.astro';
+import FAQ from './FAQ.astro';
+import ClosingCTA from './ClosingCTA.astro';
+import GHLChatWidget from './GHLChatWidget.astro';
+import { areaHref, AREAS_HUB } from '../lib/urls';
+
+export interface Props { area: any }
+const { area } = Astro.props;
+
+const site = (await getEntry('site', 'config')).data as any;
+const home = await getEntry('site', 'home').catch(() => null);
+const homeData = (home?.data as any) ?? {};
+const homeFaqs = homeData.faqs ?? [];
+
+const title = `${site.business_name} — Serving ${area.data.name}, ${area.data.state}`;
+const description = `${site.business_name} serves ${area.data.name}, ${area.data.state} with local, licensed service across ${area.data.neighborhoods.slice(0, 3).join(', ') || 'the metro area'}.`;
+const path = areaHref(area.slug);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Service Areas', href: AREAS_HUB },
+  { name: `${area.data.name}, ${area.data.state}`, href: path },
+];
+
+const serviceLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: `Local ${site.tagline}`,
+  provider: { '@type': 'LocalBusiness', name: site.business_name },
+  areaServed: { '@type': 'AdministrativeArea', name: `${area.data.name}, ${area.data.state}` },
+  description,
+};
+---
+<BaseLayout title={title} description={description} breadcrumbs={crumbs} jsonLd={[serviceLd]} pagePath={path}>
+  <HeroOwl
+    eyebrow={`${area.data.name}, ${area.data.state}`}
+    headline={`${site.business_name} — Serving ${area.data.name}, ${area.data.state}`}
+    subheadline={area.data.local_context || `Local service across ${area.data.name} and surrounding communities.`}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={area.data.hero_photo ?? site.default_hero_photo}
+    show_form
+    form_heading={`Free estimate in ${area.data.name}`}
+  />
+  <PartnerBadges />
+  <AboutSection
+    eyebrow={`About ${area.data.name}`}
+    heading={`Local roots in ${area.data.name}`}
+    {/* Deliberately does NOT fall back to local_context: that string is already
+        the hero subheadline a few hundred pixels up, and falling back to it
+        reproduces the duplicate-paragraph bug about_body exists to fix. An area
+        without about_body gets the generic line instead. */}
+    body={area.data.about_body || `${site.business_name} proudly serves ${area.data.name} and the surrounding areas with fast, honest, licensed work.`}
+    photo={area.data.landmark_photo}
+    photo_alt={area.data.landmark_alt ?? `${area.data.name} landmark`}
+    photo_credit={area.data.landmark_credit}
+    photo_credit_href={area.data.landmark_credit_href}
+    photo_position="right"
+  />
+  <Gallery items={area.data.gallery ?? []} heading={`${area.data.name} work`} />
+  <WhyChooseUs />
+  <ServicesGridOwl />
+  <GHLReviewsWidget />
+  <Financing />
+  <ServiceAreaGrid />
+  <FAQ items={homeFaqs} />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>

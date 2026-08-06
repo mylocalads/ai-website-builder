@@ -20,7 +20,7 @@
  * ─────────────────────────────────────────────────────────────────────────────
  * RAISED FOR THIS CLIENT — from the template defaults of 5 / 6.
  *
- * Tropical South Tree Services already publishes 20 service pages in three nav
+ * Tropical South Tree Services publishes 20 tree-service pages in three nav
  * groups and 16 service-area pages, and the operator asked for that structure to
  * be reproduced in full. The anti-thin-page rationale above still holds and was
  * checked rather than waived: each of the 20 services is a distinct billable job
@@ -42,13 +42,13 @@
  */
 
 /** Service detail pages generated, and services listed on /services + in nav. */
-export const SERVICE_LIMIT = 20;
+export const SERVICE_LIMIT = 22;
 
 /** Service-area pages generated, and areas listed on /service-area + in nav. */
 export const AREA_LIMIT = 16;
 
 /**
- * Services shown in the HOMEPAGE tile grid. The full 20 would bury the page in
+ * Services shown in the HOMEPAGE tile grid. All 22 would bury the page in
  * a wall of tiles and flatten the priority order that actually drives calls, so
  * the grid shows the top `order` values only and defers the rest to /services.
  */

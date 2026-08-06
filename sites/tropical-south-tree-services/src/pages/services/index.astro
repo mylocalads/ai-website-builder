@@ -4,12 +4,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import ClosingCTA from '../../components/ClosingCTA.astro';
 import { groupServicesByCategory } from '../../lib/taxonomy';
+import { serviceHref } from '../../lib/urls';
 
 const site = (await getEntry('site', 'config')).data as any;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
-// This is the hub page for all twenty services, so it uses SERVICE_LIMIT (not
+// This is the hub page for EVERY service, so it uses SERVICE_LIMIT (not
 // the featured subset the homepage grid uses) and groups by line of business —
-// twenty ungrouped cards is a wall, and the grouping is also what gives the page
+// a couple of dozen ungrouped cards is a wall, and grouping also gives the page
 // a real heading outline for search engines rather than one h1 over a flat list.
 const groups = groupServicesByCategory(services);
 const marketCity = site.marketing_city ?? site.address.city;
@@ -17,15 +18,15 @@ const marketState = site.marketing_state ?? site.address.state;
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }];
 ---
 <BaseLayout
-  title={`Tree Services in ${marketCity}, ${marketState} — ${site.business_name}`}
-  description={`All ${services.length} tree care services from ${site.business_name}: removal, trimming, stump grinding, emergency storm response, land clearing and ISA-certified arborist reports across ${marketCity}-Dade County.`}
+  title={`Tree & Landscaping Services in ${marketCity}, ${marketState} — ${site.business_name}`}
+  description={`All ${services.length} services from ${site.business_name}: tree removal, trimming, stump grinding, emergency storm response, land clearing, ISA-certified arborist reports, landscape maintenance and sod across ${marketCity}-Dade County.`}
   breadcrumbs={crumbs}
   pagePath="/services"
 >
   <section class="services-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
     <div class="container">
-      <h1>Tree Services in {marketCity}-Dade County</h1>
-      <p>{services.length} services, one licensed and insured crew — from a single palm trim to full lot clearing and county permit reports.</p>
+      <h1>Tree & Landscaping Services in {marketCity}-Dade County</h1>
+      <p>{services.length} services, one licensed and insured crew — from a single palm trim to full lot clearing, county permit reports and the weekly landscape round.</p>
     </div>
   </section>
   {groups.map((g) => (
@@ -34,7 +35,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Services', href: '/service
         <h2 class="group-title">{g.title}</h2>
         <div class="grid">
           {g.services.map((s) => (
-            <a href={`/services/${s.slug}`} class="card">
+            <a href={serviceHref(s.slug)} class="card">
               <h3>{s.data.title}</h3>
               <p>{s.data.short_description}</p>
               <span class="more" aria-hidden="true">Learn more →</span>

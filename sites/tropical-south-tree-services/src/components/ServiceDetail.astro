@@ -1,54 +1,46 @@
 ---
-import { SERVICE_LIMIT } from '../../lib/limits';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, getEntry } from 'astro:content';
-import HeroOwl from '../../components/HeroOwl.astro';
-import PartnerBadges from '../../components/PartnerBadges.astro';
-import AboutSection from '../../components/AboutSection.astro';
-import Gallery from '../../components/Gallery.astro';
-import WhyChooseUs from '../../components/WhyChooseUs.astro';
-import ServicesGridOwl from '../../components/ServicesGridOwl.astro';
-import GHLReviewsWidget from '../../components/GHLReviewsWidget.astro';
-import Financing from '../../components/Financing.astro';
-import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
-import FAQ from '../../components/FAQ.astro';
-import ClosingCTA from '../../components/ClosingCTA.astro';
-import GHLChatWidget from '../../components/GHLChatWidget.astro';
+/**
+ * The full service detail page, extracted from what used to be
+ * src/pages/services/[slug].astro.
+ *
+ * It lives here rather than in the page because services and service areas now
+ * share ONE route — src/pages/[slug].astro — so that both resolve at the root
+ * (`/tree-removal`, `/pinecrest-fl`). Astro cannot have two `[slug].astro` files
+ * at the same level, so the page became a dispatcher and the two bodies became
+ * components. Nothing about the rendered output changed in the move.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from './HeroOwl.astro';
+import PartnerBadges from './PartnerBadges.astro';
+import AboutSection from './AboutSection.astro';
+import Gallery from './Gallery.astro';
+import WhyChooseUs from './WhyChooseUs.astro';
+import ServicesGridOwl from './ServicesGridOwl.astro';
+import GHLReviewsWidget from './GHLReviewsWidget.astro';
+import Financing from './Financing.astro';
+import ServiceAreaGrid from './ServiceAreaGrid.astro';
+import FAQ from './FAQ.astro';
+import ClosingCTA from './ClosingCTA.astro';
+import GHLChatWidget from './GHLChatWidget.astro';
+import { serviceHref, SERVICES_HUB } from '../lib/urls';
 
-export async function getStaticPaths() {
-  const services = (await getCollection('services'))
-    .sort((a, b) => a.data.order - b.data.order);
-
-  // Say what got dropped. Slicing a collection is always "valid", so a site with
-  // more services than SERVICE_LIMIT builds green while quietly shipping fewer
-  // pages than the content author wrote — and the nav, which uses the same
-  // constant, would link only as far as the pages that exist. Announce it.
-  if (services.length > SERVICE_LIMIT) {
-    console.warn(
-      `[services] ${services.length} services authored but SERVICE_LIMIT is ${SERVICE_LIMIT}. ` +
-      `Not building: ${services.slice(SERVICE_LIMIT).map((s) => s.slug).join(', ')}. ` +
-      `Raise SERVICE_LIMIT in src/lib/limits.ts to include them.`
-    );
-  }
-
-  return services
-    .slice(0, SERVICE_LIMIT)
-    .map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
-}
-
+export interface Props { service: any }
 const { service } = Astro.props;
+
 const site = (await getEntry('site', 'config')).data as any;
 
 const heroFormUrl = site.crm?.estimate_form_embed_url ?? site.crm?.contact_form_embed_url;
 const marketCity = site.marketing_city ?? site.address.city;
 const marketState = site.marketing_state ?? site.address.state;
 
+const path = serviceHref(service.slug);
 const title = `${service.data.title} in ${marketCity}, ${marketState} | ${site.business_name}`;
 const description = service.data.short_description;
 const crumbs = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: service.data.title, href: `/services/${service.slug}` },
+  { name: 'Services', href: SERVICES_HUB },
+  { name: service.data.title, href: path },
 ];
 
 const serviceLd = {
@@ -72,7 +64,7 @@ const faqLd = service.data.faqs.length > 0 ? {
   description={description}
   breadcrumbs={crumbs}
   jsonLd={faqLd ? [serviceLd, faqLd] : [serviceLd]}
-  pagePath={`/services/${service.slug}`}
+  pagePath={path}
 >
   <HeroOwl
     eyebrow={`${marketCity}, ${marketState}`}
@@ -95,6 +87,7 @@ const faqLd = service.data.faqs.length > 0 ? {
     photo_alt={service.data.about_photo_alt ?? `${service.data.title} — ${site.business_name}`}
     photo_position="left"
     bullets={service.data.sub_services ?? []}
+    bullet_ids
   />
   <Gallery items={service.data.gallery ?? []} heading={`${service.data.title} gallery`} />
   <WhyChooseUs />

@@ -1,5 +1,6 @@
 ---
 import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
+import { serviceHref, areaHref } from '../lib/urls';
 import { getEntry, getCollection } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
@@ -43,11 +44,11 @@ const year = new Date().getFullYear();
       </div>
       <div>
         <h3>Services</h3>
-        <ul>{services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}</ul>
+        <ul>{services.map((s) => <li><a href={serviceHref(s.slug)}>{s.data.title}</a></li>)}</ul>
       </div>
       <div>
         <h3>Service Areas</h3>
-        <ul>{areas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
+        <ul>{areas.map((a) => <li><a href={areaHref(a.slug)}>{a.data.name}, {a.data.state}</a></li>)}</ul>
       </div>
       <div>
         <h3>Company</h3>

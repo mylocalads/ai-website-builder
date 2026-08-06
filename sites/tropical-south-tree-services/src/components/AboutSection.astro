@@ -7,11 +7,19 @@ export interface Props {
   photo_alt?: string;
   photo_position?: 'left' | 'right';
   bullets?: string[];
+  /**
+   * Give each bullet an anchor id derived from its label, so a menu or a
+   * cross-link can point at one specific sub-service inside the page. Off by
+   * default — ids are only useful where something actually links to them, and
+   * on a page with two bullet lists they would collide.
+   */
+  bullet_ids?: boolean;
   /** Required by CC BY / CC BY-SA sources. Rendered under the image. */
   photo_credit?: string;
   photo_credit_href?: string;
 }
-const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [], photo_credit, photo_credit_href } = Astro.props;
+import { subServiceId } from '../lib/urls';
+const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right', bullets = [], bullet_ids = false, photo_credit, photo_credit_href } = Astro.props;
 ---
 <section class="about-section" aria-labelledby="about-heading">
   <div class="container">
@@ -23,7 +31,7 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
         {bullets.length > 0 && (
           <ul class="bullets">
             {bullets.map((b) => (
-              <li>
+              <li id={bullet_ids ? subServiceId(b) : undefined}>
                 <svg class="check" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.14" />
                   <path d="M7 12.5l3.5 3.5L17 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -72,7 +80,10 @@ const { eyebrow, heading, body, photo, photo_alt = '', photo_position = 'right',
   h2 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); font-size: clamp(1.85rem, 3.5vw, 2.75rem); line-height: 1.15; margin: 0 0 var(--space-2); }
   p { font-size: 1.05rem; line-height: 1.65; color: var(--color-muted); }
   .bullets { list-style: none; padding: 0; margin: var(--space-2) 0 0; display: flex; flex-direction: column; gap: 0.65rem; }
-  .bullets li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; color: var(--color-text); }
+  /* scroll-margin-top clears the sticky header when a bullet is deep-linked
+     from the Landscaping menu — without it the target lands underneath it. */
+  .bullets li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.05rem; color: var(--color-text); scroll-margin-top: 120px; }
+  .bullets li:target { background: color-mix(in srgb, var(--color-accent) 22%, transparent); border-radius: var(--radius-sm); }
   .check { flex-shrink: 0; color: var(--color-accent-ink); }
   @media (max-width: 780px) {
     .about-grid, .about-grid.photo-left { grid-template-columns: 1fr; grid-template-areas: none; gap: var(--space-3); align-items: start; }
