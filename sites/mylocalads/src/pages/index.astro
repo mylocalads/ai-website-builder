@@ -84,42 +84,61 @@ const howItWorks = [
 
 // bgImage URLs are placeholders (loremflickr serves industry-keyword photos).
 // Swap for licensed industry photography (Unsplash, Pexels, or client-owned) when ready.
+// What a lead actually IS, stated once. Identical across every industry, so it
+// lives here rather than being repeated five times in the data — it renders in
+// the slot the old "Track:" line used to occupy.
+const LEAD_TYPES =
+  'Leads are in-person booked estimates and estimate inquiries (via form / call).';
+
+// Categories we serve beyond the five tiles above.
+const moreCategories = [
+  'Plumbing',
+  'Landscaping',
+  'Tree Services',
+  'Electricians',
+  'Decking',
+  'Siding',
+];
+
 const industries = [
   {
     slug: 'roofing',
     name: 'Roofing',
-    tagline: 'You install, replace, and repair residential roofs.',
-    trackLabel: 'Track:',
-    trackItems: 'booked inspections, storm-restoration leads, insurance jobs, close rates',
+    tagline:
+      'You will receive residential roof installation, replacement, and repair leads.',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>`,
     bgImage: 'https://loremflickr.com/1200/800/roofing,contractor?lock=101',
   },
   {
     slug: 'general-contractors',
     name: 'General Contractors',
-    tagline: 'You handle multi-phase remodels, additions, and full-service builds.',
-    trackLabel: 'Track:',
-    trackItems: 'qualified estimate requests, project value, deposit conversions, referral leads',
+    tagline:
+      'You will receive multi-phase remodel, addition, and full-service build leads.',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l7 7-4 4-7-7z"/><path d="M10 7L3 14l4 4 7-7"/><path d="M8 19l-3 3"/></svg>`,
     bgImage: 'https://loremflickr.com/1200/800/construction,site,worker?lock=102',
   },
   {
     slug: 'concrete',
     name: 'Concrete',
-    tagline: 'You pour driveways, patios, walkways and slabs.',
-    trackLabel: 'Track:',
-    trackItems: 'sqft-based leads, seasonal demand pulse, quote turnaround, per-project margin',
+    tagline: 'You will receive driveway, patio, walkway, and slab leads.',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M7 7v10"/><path d="M12 7v10"/><path d="M17 7v10"/></svg>`,
     bgImage: 'https://loremflickr.com/1200/800/concrete,driveway?lock=103',
   },
   {
     slug: 'kitchen-bath',
     name: 'Kitchen & Bath',
-    tagline: 'You remodel high-ticket rooms — kitchens, bathrooms, whole-home.',
-    trackLabel: 'Track:',
-    trackItems: 'showroom appointments, financing-eligible leads, design consultations',
+    tagline:
+      'You will receive kitchen, bathroom, and whole-home remodel leads.',
     icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h16"/><path d="M4 8v10a2 2 0 002 2h12a2 2 0 002-2V8"/><path d="M9 4h6v4H9z"/></svg>`,
     bgImage: 'https://loremflickr.com/1200/800/kitchen,remodel?lock=104',
+  },
+  {
+    slug: 'land-tree-services',
+    name: 'Land & Tree Services',
+    tagline:
+      'You will receive tree removal, trimming, and land clearing leads.',
+    icon: `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l4.5 6h-3l4 5.5h-3.5L17 20H7l3-5.5H6.5l4-5.5h-3z"/><path d="M12 20v2"/></svg>`,
+    bgImage: 'https://loremflickr.com/1200/800/tree,service,landscaping?lock=105',
   },
 ];
 
@@ -262,8 +281,17 @@ const faqLd = {
         <p class="section-lead">Same playbook, tuned to how your specific corner of home services actually buys, closes, and scales.</p>
       </div>
       <div class="industries-grid">
-        {industries.map((i) => (
-          <div class="industry-card" style={i.bgImage ? `background-image: url('${i.bgImage}');` : ''}>
+        {industries.map((i, idx) => (
+          /* An odd number of industries leaves the last one alone in a 2-col
+             row with a hole beside it. Let it span the full width instead. */
+          <div
+            class={`industry-card${
+              industries.length % 2 === 1 && idx === industries.length - 1
+                ? ' industry-card-wide'
+                : ''
+            }`}
+            style={i.bgImage ? `background-image: url('${i.bgImage}');` : ''}
+          >
             <div class="industry-card-overlay" aria-hidden="true"></div>
             <div class="industry-card-content">
               <div class="industry-card-head">
@@ -271,11 +299,27 @@ const faqLd = {
               </div>
               <h3 class="industry-name">{i.name}</h3>
               <p class="industry-tagline">{i.tagline}</p>
-              <p class="industry-track"><span class="industry-track-label">{i.trackLabel}</span> {i.trackItems}</p>
+              <p class="industry-leadtypes">{LEAD_TYPES}</p>
               <a href="/booking-page" class="btn btn-secondary btn-sm industry-cta">Book A Call</a>
             </div>
           </div>
         ))}
+
+        {/* Spans the full grid width — the catch-all for everything not given
+            its own tile above. */}
+        <div class="industry-card industry-card-more">
+          <div class="industry-card-content">
+            <h3 class="industry-name">&amp; More Home Service Business Categories</h3>
+            <ul class="more-category-list">
+              {moreCategories.map((c) => (
+                <li class="more-category">{c}</li>
+              ))}
+              <li class="more-category more-category-etc">&amp; More</li>
+            </ul>
+            <p class="industry-leadtypes">{LEAD_TYPES}</p>
+            <a href="/booking-page" class="btn btn-secondary btn-sm industry-cta">Book A Call</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -627,6 +671,12 @@ const faqLd = {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    /* The border is translucent (rgba white .12) and a background image paints
+       under the border by default, while .industry-card-overlay is inset:0 —
+       the PADDING box, inside the border. That left a 1px ring of un-dimmed
+       photo glowing through the border. Clipping the image to the padding box
+       makes it end exactly where the overlay begins. */
+    background-clip: padding-box;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: 0;
@@ -673,13 +723,44 @@ const faqLd = {
     color: #fff; margin: 0; font-size: 1rem;
     text-shadow: 0 1px 8px rgba(0,0,0,0.6);
   }
-  .industry-track {
+  .industry-leadtypes {
     color: rgba(255,255,255,0.85); margin: 0; font-size: 0.9rem;
     flex: 1;
     text-shadow: 0 1px 8px rgba(0,0,0,0.6);
   }
-  .industry-track-label { color: #faf24c; font-weight: 700; }
   .industry-cta { align-self: flex-start; margin-top: var(--space-1); }
+
+  /* Orphaned last industry — full width so the row has no empty cell. Its copy
+     is capped so the text does not run the whole 1000px. */
+  .industry-card-wide { grid-column: 1 / -1; min-height: 260px; }
+  .industry-card-wide .industry-card-content { max-width: 620px; }
+
+  /* CATCH-ALL TILE — spans the whole grid, no photo, so it reads as a summary
+     rather than a sixth industry. */
+  .industry-card-more {
+    grid-column: 1 / -1;
+    min-height: 0;
+    background-image: none;
+    background: linear-gradient(135deg, rgba(0,56,255,0.16) 0%, var(--color-bg-elev) 70%);
+    border-style: dashed;
+  }
+  .industry-card-more .industry-name { font-size: 1.35rem; }
+  .more-category-list {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    list-style: none; padding: 0; margin: 0;
+  }
+  .more-category {
+    padding: 0.35rem 0.8rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    color: #fff;
+    font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;
+  }
+  .more-category-etc {
+    background: rgba(0,56,255,0.22);
+    border-color: rgba(0,56,255,0.45);
+  }
 
   /* PPL TILE — advertising channel badges */
   .ppl-tile-channels {
