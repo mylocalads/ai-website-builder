@@ -3585,6 +3585,55 @@ strips unknown keys** — so the focal point was dropped with no error and no
 warning, and the mobile hero looked unchanged. `rm -rf .astro` before rebuilding
 whenever a content-schema field is added.
 
+### Cert marquee, 2x2 mobile promise bar, menu heading colour
+
+**Landscaping menu headings were the wrong colour.** "Landscape Maintenance" and
+"Sod" are the only two headings in either mega menu that are LINKS to a page, but
+they inherited `.mega-heading`'s gold — the colour of the *non-clickable*
+category labels in the Tree Services menu. The one thing you could click looked
+like the one thing you could not. Now blue, matching every other clickable item;
+the uppercase weight still marks them as their column heading.
+
+**Promise bar on mobile** was `auto-fit minmax(220px, 1fr)`, which collapses to a
+single column at 375px and turned four short claims into a tall left-aligned
+list. Now a strict 2x2 grid, icon stacked above centred text.
+
+The icon highlight took two passes: concentric hard rings of translucent yellow
+desaturate against the blue and came out olive. Replaced with a thin hard ring
+plus a **blurred** glow, which holds the hue.
+
+**Certification marquee** sits between the hero and the promise bar — seven
+client badges (Google Guaranteed, Best of HomeAdvisor 2016–2021), downloaded and
+served locally from `public/badges/`, sized by HEIGHT so the wider Google seal
+sits level with the HomeAdvisor ones. The Google badge shipped 768x592 with a
+large white margin; trimmed to its bounding box and downscaled so it does not
+dwarf the rest.
+
+> Note for the operator: the HomeAdvisor awards run 2016–2021, but the tree
+> services brand was founded March 2019. They belong to the same legal entity
+> (Tropical South Landscaping Inc — the BBB listing carries this phone number),
+> and they came from the client's own site, so they are theirs to display. Flagged
+> only because the dates predate the brand.
+
+**Marquee loop maths — got it wrong first, caught it by measuring.** The markup is
+TWO tracks side by side, which requires each to translate `-100%` of its own
+width. I wrote `-50%`, which is the value for the *other* common shape — ONE
+track holding the list twice. At `-50%` the strip jumps backwards once per cycle.
+
+Verified by seeking the animation to its last frame and asserting track two lands
+exactly where track one started. Live: 981.6px travel against a 982px track,
+seamless.
+
+> Measurement trap worth remembering: `getAnimations()[0].currentTime` stays at 0
+> while the browser pane is hidden, because animation clocks are throttled. Sampling
+> positions over wall-clock time shows a frozen marquee that is actually fine —
+> seek the animation explicitly instead.
+
+Motion is opt-out twice over: hover/focus pauses it so a badge can be read, and
+`prefers-reduced-motion` stops it dead and hands scrolling back to the user with
+the duplicate track hidden. The duplicate is `aria-hidden`, so a screen reader
+hears each award once rather than twice.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
