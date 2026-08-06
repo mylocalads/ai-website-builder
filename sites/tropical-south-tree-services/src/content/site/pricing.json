@@ -1,0 +1,63 @@
+{
+  "kind": "pricing",
+  "intro": "We publish our ranges because most tree companies will not, and being kept in the dark until the invoice arrives is the most common complaint homeowners have about this trade. The figures below are the honest bands our Miami-Dade jobs fall into. Your actual price is quoted on site, free, by Rafael — and it is the price you pay.",
+  "cost_table": {
+    "heading": "What tree work costs in Miami-Dade",
+    "lede": "Directional ranges from our own Miami-Dade jobs. Every quote is free, given in writing on site, and includes full debris hauling and cleanup.",
+    "columns": ["Service", "Typical range", "What moves the number"],
+    "rows": [
+      ["Tree removal", "$250 – $3,500+", "Tree size and species, proximity to structures and lines, hazard level, and whether a lift can reach it"],
+      ["Tree trimming & pruning", "$150 – $950 per tree", "Canopy size and height, how long since it was last done, and access for a lift"],
+      ["Stump grinding", "$100 – $450 per stump", "Stump diameter and root depth — cheaper added to a removal we are already doing"],
+      ["Emergency & storm response", "Quoted on the call", "Urgency, conditions, what is under load, and time of day"],
+      ["Land clearing", "Quoted per parcel", "Acreage, vegetation density, protected species present, and haul-off volume"],
+      ["Arborist reports", "Quoted per report", "Report type and number of trees — commissioned through ISA certified arborist partners"]
+    ],
+    "footnote": "Ranges are directional, not a quote. Full cleanup and debris hauling is included in every figure above — it is never billed separately. Permit fees charged by Miami-Dade County or your city are passed through at cost."
+  },
+  "packages": [
+    {
+      "name": "Homeowners",
+      "price": "Free quote",
+      "unit": "same day, in writing",
+      "includes": [
+        "Rafael walks the property and prices it himself",
+        "Written scope before any work begins",
+        "Protected-species check and permit coordination",
+        "Full debris hauling and cleanup included",
+        "No obligation, and no charge for the visit"
+      ],
+      "cta_text": "Get my free quote",
+      "cta_href": "/contact"
+    },
+    {
+      "name": "HOAs & Property Managers",
+      "price": "Contract",
+      "unit": "agreed annual cost",
+      "includes": [
+        "Scheduled pruning and annual palm care",
+        "Documented hazard inspections for the board",
+        "Pre-season storm prep completed before June",
+        "Priority response after a named storm",
+        "One number for the whole community"
+      ],
+      "cta_text": "Discuss a contract",
+      "cta_href": "/services/tree-maintenance-contracts"
+    },
+    {
+      "name": "Emergency",
+      "price": "24/7",
+      "unit": "call anytime",
+      "includes": [
+        "Fallen trees and limbs on structures",
+        "Hazardous and storm-damaged trees",
+        "Blocked driveways and community access",
+        "Photographic documentation for your claim",
+        "Rafael answers the phone personally"
+      ],
+      "cta_text": "Call (305) 299-1189",
+      "cta_href": "tel:+13052991189"
+    }
+  ],
+  "notes": "Two things worth knowing before you compare quotes. First, cleanup is included in ours — if a cheaper quote does not say so explicitly, ask, because debris hauling is where the difference usually hides. Second, if a quote does not mention permits, that is a warning sign rather than a saving: Miami-Dade requires approval to remove protected and heritage species, Coral Gables and Pinecrest run their own permitting on top, and the fines plus mandatory replacement planting cost considerably more than the permit would have. Call (305) 299-1189 and we will tell you honestly what your job involves."
+}

@@ -1,0 +1,255 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Licensed & Insured In Miami-Dade Since 2019",
+    "headline": "Licensed Tree Service In Miami-Dade County",
+    "subheadline": "Tree removal, trimming, stump grinding and 24/7 storm response for homeowners, HOAs and commercial properties across Miami-Dade. Rafael quotes every job personally — usually the same day you call — and full cleanup is included on all of it.",
+    "cta_text": "Get My Free Quote",
+    "cta_href": "/contact",
+    "photo": "/img/crew-chipper-street-cleanup.webp",
+    "video_link_text": "See our work across Miami-Dade",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "Very good service! Professional — well equipped, responsive and responsible! Polite crew, came on time, removed 6 palms accurately and very quick, clean up nicely!",
+      "author": "Marina Krupskaya — Google review",
+      "cta_text": "Get My Free Quote",
+      "cta_href": "/contact",
+      "rating": 5.0,
+      "review_count": 200
+    },
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5.0,
+        "label": "5.0 Rating",
+        "sublabel": "200+ Google reviews"
+      },
+      {
+        "label": "Licensed & Insured",
+        "sublabel": "Miami-Dade County, since 2019"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Free Same-Day Quotes", "icon": "clock" },
+    { "text": "Licensed & Insured Since 2019", "icon": "shield" },
+    { "text": "24/7 Emergency Storm Response", "icon": "phone" },
+    { "text": "Full Cleanup Every Job", "icon": "broom" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "Full Cleanup On Every Job",
+    "body": "Ask around Miami-Dade about tree crews and you will hear the same complaint: the tree came down and the debris stayed up. We bring our own chipper and chip truck to every job, so branches are chipped as we cut and everything leaves with us the same day. Driveways, walkways and pool decks are blown clean before we go. That is not an add-on line on the invoice — it is part of the price you were quoted.",
+    "cta_text": "Get My Free Quote",
+    "cta_href": "/contact",
+    "icon": "broom"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The Owner Quotes It, The Crew Does It",
+    "intro": "Tropical South is a working tree service, not a call centre with subcontractors. Rafael prices the job on site, the same crew turns up to do it, and the number you were given is the number you pay.",
+    "blocks": [
+      {
+        "title": "We handle the county permits",
+        "body": "Miami-Dade requires a permit to remove protected and heritage species, and Coral Gables and Pinecrest administer their own on top of the county's. Getting that wrong carries real fines and mandatory replanting. We identify what is protected during the quote, tell you plainly what applies, and coordinate the paperwork — including a written assessment through our ISA certified arborist partners where the application needs one.",
+        "icon": "document"
+      },
+      {
+        "title": "Equipment that reaches the tree",
+        "body": "Bucket lift for street-side work, tracked spider lift for back gardens and narrow side returns, chipper and chip truck on every job. The spider lift fits through a standard side gate and spreads its weight across turf, which is how we reach trees behind the house without putting a truck on your lawn or telling you it cannot be done.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What every job includes",
+    "steps_icon": "broom",
+    "steps": [
+      {
+        "title": "A written scope before we start",
+        "body": "Priced on site by Rafael, in writing, at no charge."
+      },
+      {
+        "title": "Chipping as we cut",
+        "body": "Debris never becomes a pile waiting on a second trip."
+      },
+      {
+        "title": "Hardscape blown clean",
+        "body": "Driveway, walkways and pool deck, before we pack up."
+      }
+    ],
+    "guarantee": {
+      "title": "Free same-day quotes, from the owner",
+      "body": "Call and Rafael will come and look at it, usually the same day. You get a detailed written scope with transparent pricing and no obligation — and an honest answer about whether the tree needs the work at all. We have talked plenty of people out of removals they did not need.",
+      "cta_text": "Talk to Rafael",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Job Runs",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free same-day quote",
+        "icon": "clipboard",
+        "body": "Call or request online. Rafael walks the property, checks what is protected, and puts a written price in your hand."
+      },
+      {
+        "label": "Step Two",
+        "title": "Permits, then scheduling",
+        "icon": "document",
+        "body": "Where the county or your city requires approval we handle it, then book you in — emergencies same day."
+      },
+      {
+        "label": "Step Three",
+        "title": "Work done, site left clean",
+        "icon": "broom",
+        "body": "The job completed to the written scope, debris chipped and hauled, and a walk-through before we leave."
+      }
+    ],
+    "cta_text": "Get My Free Quote",
+    "cta_href": "/contact"
+  },
+  "about_block": {
+    "eyebrow": "About Tropical South",
+    "headline": "Miami-Dade Tree Care Since 2019",
+    "body": "Tropical South Tree Services is a licensed and insured tree care company working out of Cutler Bay, owned and run by Rafael Quezada. We serve homeowners, HOAs and commercial properties from Homestead and Redland up through Kendall, Pinecrest, Coral Gables and the City of Miami. Rafael quotes every job himself and is on site for the ones that need him — which is why customers name him personally in more than half our reviews.",
+    "checklist": [
+      "Owner-quoted, usually the same day you call",
+      "Licensed and insured in Miami-Dade County since 2019",
+      "5.0 stars across 200+ Google reviews",
+      "24/7 emergency response through storm season",
+      "County and city permit coordination handled for you",
+      "ISA certified arborist partners for reports and assessments"
+    ],
+    "photo": "/img/crew-pole-saw-palm.webp",
+    "photo_alt": "Tropical South crew member in a branded blue shirt using an extension pole saw on a palm beside a trimmed hedge",
+    "photo_cutout": false,
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Why Miami-Dade Calls Us",
+    "headline": "Tree Removal, Trimming And Stump Grinding In Miami-Dade County",
+    "paragraphs": [
+      "South Florida grows trees twelve months a year, which is why a canopy that cleared your roof last spring is into the tiles by this one. Live oak, ficus, mahogany, black olive and royal palm all put on serious growth here, and the maintenance window that keeps them safe is much shorter than most homeowners expect.",
+      "Then there is 1 June to 30 November. The trees that fail in a Miami-Dade hurricane are rarely the sickly ones — they are the big, dense, healthy-looking specimens whose canopies have never been thinned, and the ones carrying deadwood nobody has looked at from thirty feet up. Miami-Dade County's own guidance is to prune ahead of the season rather than during it, and once a storm is named every crew in the county is committed.",
+      "We handle all of it from one number: the routine trimming and stump grinding, the removals and the permits that go with them, the 24/7 storm response when something comes down at 2am, and the ISA-certified arborist reports when the county, an insurer or an HOA board wants it in writing."
+    ],
+    "checklist": [
+      "Tree removal with full debris hauling included",
+      "Trimming, crown reduction and canopy thinning to ISA standards",
+      "Stump grinding below grade, ready to replant or sod",
+      "24/7 emergency and storm damage response",
+      "Miami-Dade DERM and city permit coordination",
+      "HOA and commercial maintenance contracts"
+    ],
+    "image": "/img/ficus-canopy-before-after.jpg",
+    "image_alt": "Before and after of a large ficus, overgrown and shapeless on the left, reduced to a defined rounded canopy on the right",
+    "image_position": "left",
+    "review": {
+      "name": "blackirishlad",
+      "source": "Google review",
+      "rating": 5,
+      "text": "Tropical South was very professional and provided expert advice on how to proceed with my tree trimming. They knew the common laws and city ordinances that may have cost me hundreds of dollars if I went with someone else. They were also true to their work date, arrived on time, and I didn't have to follow up with them a 100 times (not even once)."
+    },
+    "cta_text": "Get My Free Quote",
+    "cta_href": "/contact"
+  },
+  "testimonials": [
+    {
+      "name": "blackirishlad",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Tropical South was very professional and provided expert advice on how to proceed with my tree trimming. They knew the common laws and city ordinances that may have cost me hundreds of dollars if I went with someone else. They were also true to their work date, arrived on time, and I didn't have to follow up with them a 100 times (not even once) to make sure they were going to do the job."
+    },
+    {
+      "name": "Marina Krupskaya",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Very good service! Professional — well equipped, responsive and responsible! Polite crew, came on time, removed 6 palms accurately and very quick, clean up nicely! Thank you very much Rafael — it was a pleasure, I am a realtor and will definitely recommend your company to my customers and colleagues!"
+    },
+    {
+      "name": "Ken Pryor",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Outstanding professionals. After the Arborist, underground lines and the permitting process TSTS gave great support every step of the way. Highly recommended!!"
+    },
+    {
+      "name": "Lourdes Summerdancer",
+      "location": "Google review",
+      "rating": 5,
+      "text": "We reached out for a quote to remove a 30–32 foot coconut tree and grind the stump in our backyard. Raphael responded quickly, provided a fair quote, and scheduled the appointment within a couple of days. The team worked efficiently and had the entire job done in about an hour. They cleaned up the area thoroughly and hauled away all the debris — no mess left behind."
+    },
+    {
+      "name": "Sam D.",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Raphael and the entire team at Tropical South Tree Services have been excellent. I have used them many times now for both emergency situations and general maintenance. They are far from cheapest but you truly get what you pay for with them. They have kept my and my neighbors property safe and even cleaned up after themselves."
+    },
+    {
+      "name": "Jennifer Patti Meizoso",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Absolutely AMAZING!! They were on time. Respectful of our property. Their pricing was very reasonable. They cleaned up every trimming that fell. We had used other tree trimming companies in previous years and the trees were never quite trimmed the way we had hoped. Tropical South did EXACTLY what we were hoping for."
+    },
+    {
+      "name": "Cassia Silva",
+      "location": "Google review",
+      "rating": 5,
+      "text": "This is the second time I called Tropical South for tree trimming, and once again they did a wonderful job. They trimmed my mango tree and my Poinciana tree as requested; they also removed a dead palm and another tree. The crew showed up on time and they are quick and efficient."
+    },
+    {
+      "name": "Maria Lambrechts",
+      "location": "Google review",
+      "rating": 5,
+      "text": "I hired them to remove a huge mango tree from my back yard located next to a swimming pool and electricity cables. They did the entire work in a couple of hours, including grinding the bottom part of the log and roots. They did a great job and left everything very neat around the area. I strongly recommend them."
+    },
+    {
+      "name": "ML Homestead",
+      "location": "Google review",
+      "rating": 5,
+      "text": "Tropical South Tree Services Owner & Crew were excellent. Prompt, courteous and knowledgeable. Took wonderful care of our huge Mahogany tree. Site supervisor Steve and his crew are real assets to the company. Thank you ALL involved for making the process super smooth!"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much does tree removal cost in Miami-Dade County?",
+      "a": "Removals generally run from $250 to $3,500 or more, depending on the size of the tree, how close it is to structures, how hazardous it is and whether equipment can reach it. Trimming and pruning is typically $150 to $950 per tree, and stump grinding $100 to $450 per stump. Every quote is free and given in writing before any work starts."
+    },
+    {
+      "q": "Do I need a permit to remove a tree in Miami-Dade?",
+      "a": "For protected and heritage species, yes. Miami-Dade County DERM administers the tree ordinance countywide, and Coral Gables and Pinecrest run their own permitting on top of it. Fines for unpermitted removal are significant and replacement planting is often mandatory. We identify what is protected at the quote and coordinate the permit for you."
+    },
+    {
+      "q": "Do you offer emergency tree service?",
+      "a": "Yes — 24/7 across Miami-Dade for storm damage, fallen trees and hazardous situations. Call (305) 299-1189 and Rafael responds personally. Our normal hours for quotes and scheduled work are 7:00 AM to 8:00 PM, Monday to Saturday."
+    },
+    {
+      "q": "Is cleanup included, or is it extra?",
+      "a": "Included, on every job. We bring our own chipper and chip truck, so branches are chipped as we cut and everything is hauled away the same day. Driveways, walkways and pool decks are blown clean before we leave."
+    },
+    {
+      "q": "How quickly can you give me a quote?",
+      "a": "Usually the same day you call. Rafael walks the property himself, prices the work and gives you a written scope at no charge and with no obligation."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes, fully licensed and insured in Miami-Dade County, and we have been operating since 2019. That matters most when the work is happening directly over your roof, your pool cage or a neighbour's property."
+    },
+    {
+      "q": "When should I trim my trees for hurricane season?",
+      "a": "Before it starts. Season runs 1 June to 30 November, and Miami-Dade County advises pruning ahead of it rather than during it. The useful booking window is late winter and spring — once a storm is named, every tree crew in the county is committed."
+    },
+    {
+      "q": "Do you top trees or do 'hurricane cuts'?",
+      "a": "No. Topping destroys a tree's structure and forces weak regrowth that is more likely to fail in the next storm, and the county's own guidance tells homeowners not to allow it. We thin and reduce to ISA standards instead, and we will explain the difference on site."
+    },
+    {
+      "q": "What trees do you work on?",
+      "a": "Every species common to South Florida — royal and coconut palms, queen palms, live oak, mango, avocado, gumbo limbo, ficus, black olive, mahogany and more. Palms and hardwoods are handled very differently and the crew is equipped for both."
+    },
+    {
+      "q": "Do you work with HOAs and commercial properties?",
+      "a": "Yes. We run scheduled maintenance contracts for HOA communities, property managers and commercial owners across Miami-Dade, including pre-season storm prep and priority response after a named storm."
+    }
+  ]
+}

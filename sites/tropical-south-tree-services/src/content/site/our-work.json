@@ -1,0 +1,76 @@
+{
+  "kind": "our-work",
+  "intro": "Every photo here is our own crew on a real Miami-Dade property — no stock imagery. Removals in tight side yards, canopies reduced properly rather than topped, palms cleared of dead fronds without stripping the crown, and storm debris chipped and hauled the same day. If you want to see something closer to your own property, call (305) 299-1189 and we will show you a job like it.",
+  "projects": [
+    {
+      "title": "Storm cleanup, chipped and hauled the same day",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/crew-chipper-street-cleanup.webp",
+      "alt": "Crew feeding storm-felled branches into a chipper on a residential street while a bucket lift works the damaged tree behind",
+      "description": "Bucket lift working the damaged tree while the chipper runs on the street below. Chipping as we cut is what keeps a job like this to one day instead of leaving a pile at the kerb for the county to collect."
+    },
+    {
+      "title": "Tight-access removal by tracked lift",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/spider-lift-tight-access.webp",
+      "alt": "Compact tracked spider lift set up in a narrow side yard beside a two-storey house to reach a large tree",
+      "description": "The tracked spider lift fits through a standard side gate and spreads its weight across the turf. It is what lets us reach trees behind a house without putting a truck on the lawn — or telling a customer the job cannot be done."
+    },
+    {
+      "title": "Ficus reduced, not topped",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/ficus-canopy-before-after.jpg",
+      "alt": "Before and after of a large ficus, overgrown and shapeless on the left, reduced to a defined rounded canopy on the right",
+      "description": "A crown reduction taken back to laterals rather than cut to stubs. The tree keeps its structure, seals its wounds, and holds this shape for years instead of throwing out weak regrowth that needs re-cutting every season."
+    },
+    {
+      "title": "Large removal, sectioned and lowered",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/large-tree-removal-sectioned.webp",
+      "alt": "Crew member beside a large tree cut down to two trunk sections, surrounded by the sectioned canopy laid out on the lawn",
+      "description": "Taken down in pieces and roped down rather than felled, because there was no direction this could safely have fallen. The canopy is laid out on the lawn ready to feed the chipper."
+    },
+    {
+      "title": "Palm cluster cleared of dead fronds",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/palm-cluster-trimming-before-after.webp",
+      "alt": "Before and after of a cluster of palms, heavy with dead fronds on the left and cleanly trimmed on the right with a lift alongside",
+      "description": "Dead fronds and seed pods removed, live crowns left intact. The opposite of the 'hurricane cut' that strips a palm to a handful of uprights and leaves it weaker than it started."
+    },
+    {
+      "title": "Date palm pruned to a clean crown",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/date-palm-pruning-before-after.jpg",
+      "alt": "Before and after of a date palm, heavy with dead fronds on the left and pruned back to a clean crown on the right",
+      "description": "Correct palm work takes the dead material and nothing else. The fronds are how a palm feeds itself and how it buffers wind at the crown — removing healthy ones does not protect it."
+    },
+    {
+      "title": "Coconut palm removal over a patio",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/coconut-palm-removal-before-after.webp",
+      "alt": "Before and after of a coconut palm beside a house, standing on the left and fully removed with the debris stacked on the right",
+      "description": "Removed in sections directly over a covered patio, with the fronds and nuts cleared and the area swept before we left."
+    },
+    {
+      "title": "Overgrowth cleared back to open ground",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/banana-clearing-before-after.jpg",
+      "alt": "Before and after of an overgrown corner of a garden, dense vegetation on the left and cleared open ground on the right",
+      "description": "Roots taken out rather than cut to ground level. In South Florida that is the difference between clearing something and clearing it again next season."
+    },
+    {
+      "title": "Mature live oak, thinned for storm season",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/live-oak-canopy-bucket-truck.webp",
+      "alt": "Mature live oak with a wide spreading canopy over a suburban street, with a bucket truck parked alongside",
+      "description": "Selective thinning through the interior. The tree keeps its height, spread and shade, and wind moves through the canopy rather than loading the trunk and root plate."
+    },
+    {
+      "title": "Routine palm maintenance from the ground",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/crew-pole-saw-palm.webp",
+      "alt": "Tropical South crew member in a branded blue shirt using an extension pole saw on a palm beside a trimmed hedge",
+      "description": "Not everything needs a lift. A good share of routine palm maintenance is pole work — done properly, on a schedule, so it never becomes a bigger job."
+    }
+  ]
+}

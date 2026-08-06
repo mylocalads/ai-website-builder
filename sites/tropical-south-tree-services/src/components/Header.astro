@@ -1,0 +1,234 @@
+---
+import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
+import { getIcon } from '../lib/icons';
+import { getEntry, getCollection } from 'astro:content';
+import { SERVICE_CATEGORY_ORDER, groupServicesByCategory } from '../lib/taxonomy';
+const site = (await getEntry('site', 'config')).data as any;
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
+
+// This client publishes twenty services. A flat twenty-item dropdown is a wall
+// of links nobody reads, so the menu is grouped into the same three buckets the
+// business itself uses. Grouping is presentation only — every service in
+// `services` appears in exactly one column, so the menu still links to the same
+// set of generated pages and the featured ⊆ generated invariant is untouched.
+const serviceGroups = groupServicesByCategory(services);
+// Areas split into the operator's priority tier and the rest, mirroring the
+// client's own "Primary" / "More" split.
+const PRIMARY_AREA_COUNT = 7;
+const primaryAreas = areas.slice(0, PRIMARY_AREA_COUNT);
+const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
+---
+<header class="site-header">
+  <div class="container header-row">
+    <a href="/" class="brand" aria-label={`${site.business_name} — Home`}>
+      {site.logo_url ? <img src={site.logo_url} alt={site.business_name} class="brand-logo" /> : site.business_name}
+    </a>
+    <nav aria-label="Primary" class="primary-nav">
+      <ul class="nav-list">
+        <li class="has-menu has-mega">
+          <a href="/services" aria-haspopup="true">Services <span aria-hidden="true">▾</span></a>
+          <div class="submenu mega">
+            <div class="mega-cols">
+              {serviceGroups.map((g) => (
+                <div class="mega-col">
+                  <p class="mega-heading">{g.title}</p>
+                  <ul>
+                    {g.services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <a class="mega-all" href="/services">View all services →</a>
+          </div>
+        </li>
+        <li class="has-menu has-mega">
+          <a href="/service-area" aria-haspopup="true">Service Areas <span aria-hidden="true">▾</span></a>
+          <div class="submenu mega">
+            <div class="mega-cols">
+              <div class="mega-col">
+                <p class="mega-heading">Primary Service Areas</p>
+                <ul>
+                  {primaryAreas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}</a></li>)}
+                </ul>
+              </div>
+              {moreAreas.length > 0 && (
+                <div class="mega-col">
+                  <p class="mega-heading">More Service Areas</p>
+                  <ul>
+                    {moreAreas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}</a></li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <a class="mega-all" href="/service-area">View all service areas →</a>
+          </div>
+        </li>
+        <li><a href="/our-work">Our Work</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a></li>
+      </ul>
+    </nav>
+    <a href={`tel:${site.phone}`} class="phone-cta mobile-phone"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a>
+    <details class="mobile-nav">
+      <summary aria-label="Open menu">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="#111" stroke-width="2.25" stroke-linecap="round" />
+        </svg>
+      </summary>
+      <nav aria-label="Mobile primary">
+        <ul>
+          <li class="group">
+            <details class="mobile-submenu">
+              <summary class="group-heading">
+                <span>Services</span>
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ul class="sub">
+                {serviceGroups.map((g) => (
+                  <>
+                    <li class="sub-heading" aria-hidden="true">{g.title}</li>
+                    {g.services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+                  </>
+                ))}
+                <li><a class="sub-all" href="/services">View all services →</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="group">
+            <details class="mobile-submenu">
+              <summary class="group-heading">
+                <span>Service Areas</span>
+                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </summary>
+              <ul class="sub">
+                {areas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}
+                <li><a class="sub-all" href="/service-area">View all service areas →</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="/our-work">Our Work</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+<style>
+  .site-header { border-bottom: 1px solid var(--color-surface); position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  /* Positioning context for the mega menus. They are anchored to this container
+     rather than to their <li>, so a wide menu can never run off the right edge
+     of the viewport — see .has-mega below. */
+  .header-row { position: relative; display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; gap: var(--space-3); }
+  .brand { font-family: var(--font-display); font-size: 1.25rem; text-decoration: none; flex: 1; display: inline-flex; align-items: center; }
+  .brand-logo { max-height: 99px; width: auto; display: block; }
+  .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: center; }
+  .nav-list a { text-decoration: none; }
+  .has-menu { position: relative; }
+  .submenu {
+    position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--color-bg);
+    border: 1px solid var(--color-surface); padding: var(--space-1) 0; margin: 0; list-style: none;
+    display: none; box-shadow: 0 4px 14px rgba(0,0,0,0.08); border-radius: var(--radius-sm);
+  }
+  .has-menu:hover .submenu, .has-menu:focus-within .submenu { display: block; }
+  .submenu li a { display: block; padding: 0.5rem var(--space-2); }
+
+  /* Multi-column menu for the twenty-service / sixteen-area menus. A flat list
+     that long runs off the bottom of the viewport; columns keep it on screen.
+     `right: 0` is NOT used — these menus are wide and the Service Areas item
+     sits left of centre, so anchoring left keeps them inside the page. The
+     max-width + right-edge clamp below stops the widest one overflowing on
+     narrow desktop widths. */
+  /* The Services menu carries twenty links in three columns and is ~845px wide.
+     Anchored to its <li> (which sits ~495px from the left at 1280) it ran 60px
+     past the right edge of the viewport. `position: static` on the parent hands
+     the positioning job to .header-row instead, so the menu spans the same
+     max-width container as the rest of the page and is clamped by definition
+     rather than by a guessed max-width. */
+  .has-mega { position: static; }
+  .submenu.mega {
+    padding: var(--space-3);
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+  .mega-cols { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); align-items: flex-start; }
+  .mega-col { min-width: 190px; }
+  .mega-col ul { list-style: none; margin: 0; padding: 0; }
+  .mega-heading {
+    margin: 0 0 0.35rem; padding: 0 var(--space-2);
+    font-family: var(--font-display); font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-accent-ink);
+    white-space: nowrap;
+  }
+  .mega-col li a { padding: 0.35rem var(--space-2); border-radius: var(--radius-sm); white-space: nowrap; }
+  .mega-col li a:hover, .mega-col li a:focus-visible { background: var(--color-surface); }
+  .mega-all {
+    display: inline-block; margin: var(--space-2) var(--space-2) 0;
+    font-weight: 700; font-size: 0.85rem; color: var(--color-accent-ink);
+  }
+  /* Icon badge + stacked label/number, rather than a solid pill. The number is
+     the emphasis; the badge carries the accent colour. */
+  .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: var(--color-text); }
+  /* Derived from the client's accent with color-mix rather than a hardcoded
+     rgba(). The literal here used to be Gilroy's orange, which every subsequent
+     client had to find and replace by hand. */
+  .phone-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 50%; background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-accent-ink); }
+  .phone-icon svg { width: 1.35rem; height: 1.35rem; }
+  .phone-copy { display: flex; flex-direction: column; line-height: 1.15; }
+  .phone-label { font-size: 0.72rem; font-weight: 600; color: var(--color-muted); }
+  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--color-text); white-space: nowrap; }
+  .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { color: var(--color-accent-ink); }
+  .mobile-nav, .mobile-phone { display: none; }
+  .mobile-nav summary { cursor: pointer; list-style: none; padding: 0.25rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
+  .mobile-nav summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+  .mobile-nav summary::-webkit-details-marker { display: none; }
+  .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); max-height: calc(100vh - 96px); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
+  .mobile-nav nav ul li a { display: block; padding: 0.35rem 0; text-decoration: none; line-height: 1.3; }
+  .mobile-nav .mobile-submenu { border-bottom: 1px solid var(--color-surface); }
+  .mobile-nav .mobile-submenu:last-of-type { border-bottom: 0; }
+  .mobile-nav .mobile-submenu > .group-heading { font-weight: 700; padding: 0.6rem 0; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+  .mobile-nav .mobile-submenu > .group-heading::-webkit-details-marker { display: none; }
+  .mobile-nav .mobile-submenu > .group-heading .chev { color: var(--color-muted); transition: transform 0.2s ease; flex-shrink: 0; }
+  .mobile-nav .mobile-submenu[open] > .group-heading .chev { transform: rotate(180deg); color: var(--color-accent-ink); }
+  .mobile-nav .sub { padding: 0.25rem 0 0.5rem; margin: 0 0 0.5rem 0.6rem; border-left: 2px solid var(--color-surface); }
+  .mobile-nav .sub li a { padding: 0.25rem 0 0.25rem 0.6rem; font-size: 0.95rem; color: var(--color-muted); line-height: 1.3; }
+  .mobile-nav .sub .all { font-weight: 600; color: var(--color-text); }
+  /* Group labels inside the twenty-item mobile services list. aria-hidden on the
+     markup because these are visual grouping only — the links below them already
+     name the service in full, so announcing "Tree Care Services" as a list item
+     would just add noise for a screen-reader user walking the list. */
+  .mobile-nav .sub .sub-heading {
+    padding: 0.6rem 0 0.2rem 0.6rem; font-family: var(--font-display);
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--color-accent-ink);
+  }
+  .mobile-nav .sub .sub-heading:first-child { padding-top: 0.2rem; }
+  .mobile-nav .sub .sub-all { font-weight: 700; color: var(--color-text) !important; }
+
+  @keyframes phone-glow {
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 55%, transparent); }
+    70%  { box-shadow: 0 0 0 12px color-mix(in srgb, var(--color-accent) 0%, transparent); }
+    100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent); }
+  }
+
+  @media (max-width: 900px) {
+    .primary-nav { display: none; }
+    .mobile-nav { display: inline-flex; }
+    .mobile-phone { display: inline-flex; margin: 0 auto; }
+    /* The pulse rides the circular badge now — on the transparent layout a
+       box-shadow on the link itself would throb as a rectangle around the text. */
+    .mobile-phone .phone-icon { animation: phone-glow 1.8s ease-out infinite; }
+    .mobile-phone .phone-label { display: none; }
+    .brand { flex: 0 1 auto; }
+    .brand-logo { max-height: 69px; }   /* 81px - 15%, trims the mobile header bar */
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-phone .phone-icon { animation: none; }
+  }
+</style>

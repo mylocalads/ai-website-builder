@@ -1,0 +1,29 @@
+---
+import { FEATURED_AREA_LIMIT as AREA_LIMIT } from '../lib/limits';
+import { getCollection } from 'astro:content';
+import SectionHead from './SectionHead.astro';
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
+---
+<section id="areas" class="areas" aria-label="Service areas">
+  <div class="container">
+    <SectionHead eyebrow="Where We Serve" heading="Our service area" />
+    <ul class="area-list">
+      {areas.map((a) => (
+        <li>
+          <a href={`/service-area/${a.slug}`}>
+            <span class="pin" aria-hidden="true">📍</span>
+            <span class="name">{a.data.name}, {a.data.state}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+<style>
+  .areas { padding: var(--space-5) 0; background: var(--color-surface); }
+  h2 { text-align: center; font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: var(--space-3); }
+  .area-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-2); max-width: 1000px; margin: 0 auto; }
+  .area-list a { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-2) var(--space-3); text-decoration: none; background: var(--color-bg); border-radius: var(--radius-md); font-size: 1.2rem; font-weight: 500; transition: transform 0.15s, box-shadow 0.15s; }
+  .area-list a:hover, .area-list a:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+  .pin { font-size: 1.5rem; color: var(--color-accent-ink); }
+</style>

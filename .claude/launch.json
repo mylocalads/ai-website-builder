@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "tropical-south-landscaping",
+      "name": "tropical-south-tree-services",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/tropical-south-landscaping", "--", "--port", "4332"],
-      "port": 4332
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/tropical-south-tree-services", "--", "--port", "4333"],
+      "port": 4333
     }
   ]
 }

@@ -1,0 +1,179 @@
+{
+  "kind": "config",
+  "business_name": "Tropical South Tree Services",
+  "legal_name": "Tropical South Tree Services",
+  "tagline": "Licensed tree service in Miami-Dade County — removal, trimming and stump grinding",
+  "phone": "+13052991189",
+  "phone_display": "(305) 299-1189",
+  "email": "tropicalsouthtreeservices@gmail.com",
+  "address": {
+    "street": "9980 Haitian Dr",
+    "city": "Cutler Bay",
+    "state": "FL",
+    "postal": "33189",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "hours": {
+    "monday": "7:00 AM - 8:00 PM",
+    "tuesday": "7:00 AM - 8:00 PM",
+    "wednesday": "7:00 AM - 8:00 PM",
+    "thursday": "7:00 AM - 8:00 PM",
+    "friday": "7:00 AM - 8:00 PM",
+    "saturday": "7:00 AM - 8:00 PM"
+  },
+  "site_url": "https://tropical-south-tree-services.vercel.app",
+  "rating": 5.0,
+  "review_count": 200,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 7,
+  "social": {},
+  "logo_url": "/logo.webp",
+  "default_hero_photo": "/img/crew-chipper-street-cleanup.webp",
+  "about_photo": "/img/crew-pole-saw-palm.webp",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Rafael quotes every job himself",
+      "description": "The owner walks your property, prices the work and gives you the scope in writing — usually the same day you call. You are not handed to a salesman on commission."
+    },
+    {
+      "title": "5.0 stars across 200+ Google reviews",
+      "description": "Licensed and insured in Miami-Dade since 2019, with a review record customers keep describing in the same three words: on time, professional, spotless."
+    },
+    {
+      "title": "We handle the county permits",
+      "description": "Miami-Dade requires permits for protected and heritage species, and Coral Gables and Pinecrest run their own on top. We identify what applies and coordinate it before anything is cut."
+    },
+    {
+      "title": "Full cleanup on every single job",
+      "description": "Our own chipper and chip truck go to every job, so the debris leaves with us the same day instead of sitting at your kerb waiting on a second trip."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Storm cleanup, chipped and hauled the same day",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/crew-chipper-street-cleanup.webp",
+      "alt": "Crew feeding storm-felled branches into a chipper on a residential street while a bucket lift works the damaged tree behind",
+      "description": "Chipping as we cut is what keeps a tree job to one day instead of leaving a pile at the kerb."
+    },
+    {
+      "title": "Tight-access removal by tracked lift",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/spider-lift-tight-access.webp",
+      "alt": "Compact tracked spider lift set up in a narrow side yard beside a two-storey house to reach a large tree",
+      "description": "The tracked lift fits through a side gate and spreads its weight across the turf, so we reach back-garden trees without a truck on the lawn."
+    },
+    {
+      "title": "Ficus brought back to a maintainable canopy",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/ficus-canopy-before-after.jpg",
+      "alt": "Before and after of a large ficus, overgrown and shapeless on the left, reduced to a defined rounded canopy on the right",
+      "description": "A crown reduction rather than a topping — cut back to laterals so the tree keeps its structure and holds the shape for years."
+    },
+    {
+      "title": "Large removal, sectioned down",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/large-tree-removal-sectioned.webp",
+      "alt": "Crew member beside a large tree cut down to two trunk sections, surrounded by the sectioned canopy laid out on the lawn",
+      "description": "Taken down in pieces and lowered rather than felled, so nothing swung into the house or the neighbouring property."
+    },
+    {
+      "title": "Palm cluster cleared of dead fronds",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/palm-cluster-trimming-before-after.webp",
+      "alt": "Before and after of a cluster of palms, heavy with dead fronds on the left and cleanly trimmed on the right with a lift alongside",
+      "description": "Dead fronds and seed pods removed without cutting into the live crowns — the opposite of a hurricane cut."
+    },
+    {
+      "title": "Date palm pruned to a clean crown",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/date-palm-pruning-before-after.jpg",
+      "alt": "Before and after of a date palm, heavy with dead fronds on the left and pruned back to a clean crown on the right",
+      "description": "Correct palm work takes the dead material and leaves the live crown that feeds the tree and buffers wind."
+    },
+    {
+      "title": "Coconut palm removal",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/coconut-palm-removal-before-after.webp",
+      "alt": "Before and after of a coconut palm beside a house, standing on the left and fully removed with the debris stacked on the right",
+      "description": "Removed in sections over a patio and pool enclosure, with the fronds and nuts cleared before we left."
+    },
+    {
+      "title": "Overgrowth cleared back to open ground",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/banana-clearing-before-after.jpg",
+      "alt": "Before and after of an overgrown corner of a garden, dense vegetation on the left and cleared open ground on the right",
+      "description": "Roots taken out rather than cut to the ground, which is the difference between clearing it and clearing it again next season."
+    },
+    {
+      "title": "Mature live oak, thinned and cleared",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/live-oak-canopy-bucket-truck.webp",
+      "alt": "Mature live oak with a wide spreading canopy over a suburban street, with a bucket truck parked alongside",
+      "description": "Selective thinning keeps the size and the shade while letting wind pass through instead of pushing against the canopy."
+    },
+    {
+      "title": "Palm work from the ground up",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/crew-pole-saw-palm.webp",
+      "alt": "Tropical South crew member in a branded blue shirt using an extension pole saw on a palm beside a trimmed hedge",
+      "description": "Not every job needs a lift — a lot of routine palm maintenance is pole work, done properly."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Tree Service",
+    "heading_rest": "Across Miami-Dade",
+    "subtitle": "Twenty services from one licensed and insured crew — removal, trimming, stump grinding, 24/7 storm response, land clearing and ISA-certified arborist reports."
+  },
+  "estimate_form": {
+    "heading": "Get your free quote",
+    "services": [
+      "Tree Removal",
+      "Tree Trimming & Pruning",
+      "Stump Grinding",
+      "Emergency / Storm Damage",
+      "Land Clearing",
+      "Arborist Report",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Get a free quote from the owner, usually the same day",
+    "body": "Rafael walks the property, prices the work and puts the scope in writing — at no charge. Licensed and insured in Miami-Dade since 2019, 5.0 stars across 200+ Google reviews, and full cleanup included on every job.",
+    "cta_text": "Get my free quote",
+    "cta_href": "/contact"
+  },
+  "blog_section": {
+    "heading": "Miami-Dade Tree Care Guides",
+    "description": "Permits, storm prep, species and cost guidance for Miami-Dade homeowners, HOAs and property managers — written by the crew that works these trees every week."
+  }
+}
