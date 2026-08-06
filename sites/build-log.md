@@ -3548,6 +3548,43 @@ blue — it now inherits `currentColor` and renders yellow. The drop-down panel 
 a white sheet with blue text, matching the desktop menus rather than the header
 it drops out of.
 
+### Home hero image + Stump Grinding tile
+
+**Home hero** uses the operator-supplied shot (branded crew member in a Niftylift
+bucket working a hedge against blue sky), served locally rather than hotlinked.
+
+It needed a focal-point control to survive mobile. The hero stacks headline,
+sub-copy, badges, CTA and the quote form, so at 375px the box is ~1566px tall —
+`background-size: cover` on a 2038x1222 landscape photo then shows a slice about
+20% of the image width, and centred that slice was **pure sky with the crew
+cropped out entirely**. HeroOwl gained optional `photo_focus` /
+`photo_focus_mobile` (CSS background-position via custom properties, mobile →
+desktop → centre fallback chain). Desktop keeps the centre crop; mobile uses
+`64% 50%` so the hard hat and branded shirt land beside the headline. Values were
+chosen by trying them in the browser at 375px, not derived from the dimensions.
+
+**Stump Grinding tile had no background image** — the only one of the six
+featured services without a `hero_photo`, so it fell back to the `no-photo`
+gradient and sat as a flat blue panel among five photographs.
+
+The client has **no photograph of stump grinding**. Every shot in their gallery is
+trimming or removal, and their own /stump-grinding page reuses a palm
+before/after. Rather than caption a picture as something it is not, the two most
+literal photos were reassigned:
+
+| Service | Photo | Why it is honest |
+|---|---|---|
+| Stump Grinding | sectioned-trunk shot | Literally two trunk stumps cut to grade with the canopy cleared — the exact state a grinder is brought in for |
+| Tree Removal | removal-in-progress shot (new) | Tree cut back to bare stubs, felled canopy across the garden, chip truck standing by |
+
+All six featured tiles now render with a photo; none fall back to the gradient.
+
+**Gotcha worth remembering:** Astro's content-layer cache in `.astro/` held the
+old parsed `home.json` after the schema gained the new fields, and **Zod silently
+strips unknown keys** — so the focal point was dropped with no error and no
+warning, and the mobile hero looked unchanged. `rm -rf .astro` before rebuilding
+whenever a content-schema field is added.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
