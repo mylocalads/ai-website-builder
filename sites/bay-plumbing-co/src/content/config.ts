@@ -116,6 +116,11 @@ const site = defineCollection({
       business_name: z.string(),
       legal_name: z.string().optional(),
       logo_url: z.string().optional(),            // URL or local path, e.g. /logo.png
+      // Light-on-dark variant of the logo, for surfaces the primary mark would
+      // disappear on. This site inverts the header to the brand red, so the
+      // header reads this and the footer — still on a light background — keeps
+      // logo_url. Unset, Header falls back to logo_url and nothing changes.
+      logo_url_inverse: z.string().optional(),
       default_hero_photo: z.string().optional(),  // URL or local path
       default_hero_video: z.string().url().optional(),
       about_photo: z.string().optional(),         // URL or local path

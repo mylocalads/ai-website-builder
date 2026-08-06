@@ -3444,3 +3444,44 @@ County only, one coupon per visit, change-out and connection to existing plumbin
 real published offers but the prices are undated and may be years stale, and stale pricing is exactly
 the surprise-invoice failure the review corpus complains about. Confirm currency with the client
 before putting them on `/pricing`.
+
+### 2026-08-06 — bay-plumbing-co: inverted header (operator request)
+
+Header bar inverted to the brand red `#d10909` with nav, logo, phone number and phone icon in
+`#ffffff`. Scoped entirely to `.site-header` in `src/components/Header.astro` — no token changed, no
+other surface affected.
+
+**White logo generated, not downloaded.** The client's own white logo asset is 217×82 and drops the
+license line. Instead the full-resolution red mark was recoloured in place — every pixel with
+alpha > 0 set to white, alpha preserved — giving a 354×159 white logo with `LICENSED C.C. 6469 &
+INSURED CFC057007` still legible. Exposed as a new optional `logo_url_inverse` on the site config
+schema; `Header` reads `logo_url_inverse ?? logo_url`, so the **footer keeps the red mark** on its
+light background and any site not setting the field is unaffected.
+
+**Bar colour is a literal, not `var(--color-accent)`.** They are near-identical (`#d10909` vs
+`#d10a0a`) but independent by design: `--color-accent` is the *button fill* token, and buttons sit on
+this bar. Binding the header to it would make any future button-red change silently repaint the
+header — and would make buttons on the bar invisible today.
+
+Five things needed re-deriving because they were built for a light bar and vanish or fail contrast on
+red:
+
+| Element | Was | Now |
+|---|---|---|
+| Phone icon badge | 16% `--color-accent` tint, `--color-accent-ink` glyph | `rgba(255,255,255,.18)` disc, white glyph |
+| Phone hover | darkened to `--color-accent-ink` | underline + badge lift |
+| Focus ring | `--color-focus` `#0057ff` | white (blue on red is near-invisible) |
+| Mobile hamburger | hardcoded `stroke="#111"` | `currentColor` |
+| Pulse keyframe | `color-mix` on `--color-accent` | white-based |
+
+Dropdowns and the mobile panel use `#b30808` — a darker red so they read as surfaces hanging off the
+bar rather than same-colour rectangles. White on `#b30808` is 7.10:1. Mobile sub-items were
+`--color-muted` to sit back from their parent; on red that hierarchy is carried by size and weight
+instead, since a dimmed white would drop under AA.
+
+Contrast: white on `#d10909` is **5.59:1** — AA at the 0.72rem "Give Us A Call!" label as well as at
+nav size.
+
+Verified: 25/25 routes assert `rgb(209, 9, 9)` and the white logo, 0 broken images, 0 console errors;
+mobile 390px no horizontal overflow; footer confirmed still serving `/logo-bay-plumbing.png`. Live
+re-check across 4 pages returns the same computed values with the logo loading.

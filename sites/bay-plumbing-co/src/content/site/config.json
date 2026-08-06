@@ -31,6 +31,7 @@
     "facebook": "https://www.facebook.com/BayPlumbingco/"
   },
   "logo_url": "/logo-bay-plumbing.png",
+  "logo_url_inverse": "/logo-bay-plumbing-white.png",
   "about_photo": "/img/bay-plumbing-shop.jpg",
   "team_members": [],
   "reference_urls": [],

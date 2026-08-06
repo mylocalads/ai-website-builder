@@ -9,7 +9,9 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
 <header class="site-header">
   <div class="container header-row">
     <a href="/" class="brand" aria-label={`${site.business_name} — Home`}>
-      {site.logo_url ? <img src={site.logo_url} alt={site.business_name} class="brand-logo" /> : site.business_name}
+      {site.logo_url || site.logo_url_inverse
+        ? <img src={site.logo_url_inverse ?? site.logo_url} alt={site.business_name} class="brand-logo" />
+        : site.business_name}
     </a>
     <nav aria-label="Primary" class="primary-nav">
       <ul class="nav-list">
@@ -36,7 +38,7 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
     <details class="mobile-nav">
       <summary aria-label="Open menu">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 6h16M4 12h16M4 18h16" stroke="#111" stroke-width="2.25" stroke-linecap="round" />
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" />
         </svg>
       </summary>
       <nav aria-label="Mobile primary">
@@ -73,53 +75,85 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   </div>
 </header>
 <style>
-  .site-header { border-bottom: 1px solid var(--color-surface); position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  /* Inverted header: the brand red carries the bar, and everything on it —
+     nav, logo, phone icon and number — is white. White on #d10909 measures
+     5.59:1, so it clears AA at the 0.72rem "Give Us A Call!" label as well as
+     at nav size.
+
+     The bar colour is set here rather than read from --color-accent because
+     --color-accent is the BUTTON fill token: buttons sitting on this bar would
+     then be invisible. The two are near-identical by design but independent —
+     changing the button red must not silently repaint the header.
+
+     Everything below scopes off .site-header, so the footer keeps the red logo
+     on its light background and no other surface is affected. */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: #d10909;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    color: #ffffff;
+  }
+  .site-header a { color: #ffffff; }
+  /* The blue --color-focus is near-invisible against the red bar. */
+  .site-header a:focus-visible,
+  .site-header summary:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }
   .header-row { display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; gap: var(--space-3); }
   .brand { font-family: var(--font-display); font-size: 1.25rem; text-decoration: none; flex: 1; display: inline-flex; align-items: center; }
   .brand-logo { max-height: 99px; width: auto; display: block; }
   .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: center; }
   .nav-list a { text-decoration: none; }
   .has-menu { position: relative; }
+  /* A darker red so the panel reads as a distinct surface hanging off the bar
+     rather than a floating rectangle of the same colour. White on #b30808 is
+     7.10:1. */
   .submenu {
-    position: absolute; top: 100%; left: 0; min-width: 220px; background: var(--color-bg);
-    border: 1px solid var(--color-surface); padding: var(--space-1) 0; margin: 0; list-style: none;
-    display: none; box-shadow: 0 4px 14px rgba(0,0,0,0.08); border-radius: var(--radius-sm);
+    position: absolute; top: 100%; left: 0; min-width: 220px; background: #b30808;
+    border: 1px solid rgba(255, 255, 255, 0.22); padding: var(--space-1) 0; margin: 0; list-style: none;
+    display: none; box-shadow: 0 6px 18px rgba(0,0,0,0.28); border-radius: var(--radius-sm);
   }
+  .submenu li a:hover { background: rgba(255, 255, 255, 0.14); }
   .has-menu:hover .submenu, .has-menu:focus-within .submenu { display: block; }
   .submenu li a { display: block; padding: 0.5rem var(--space-2); }
   /* Icon badge + stacked label/number, rather than a solid pill. The number is
      the emphasis; the badge carries the accent colour. */
-  .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: var(--color-text); }
-  /* Derived from the client's accent with color-mix rather than a hardcoded
-     rgba(). The literal here used to be Gilroy's orange, which every subsequent
-     client had to find and replace by hand. */
-  .phone-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 50%; background: color-mix(in srgb, var(--color-accent) 16%, transparent); color: var(--color-accent-ink); }
+  .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: #ffffff; }
+  /* The badge was a 16% tint of --color-accent with accent-ink glyph — both
+     disappear against a red bar. Inverted to a translucent white disc with a
+     white glyph, which keeps the badge shape without introducing a second hue. */
+  .phone-icon { display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.18); color: #ffffff; }
   .phone-icon svg { width: 1.35rem; height: 1.35rem; }
   .phone-copy { display: flex; flex-direction: column; line-height: 1.15; }
-  .phone-label { font-size: 0.72rem; font-weight: 600; color: var(--color-muted); }
-  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--color-text); white-space: nowrap; }
-  .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { color: var(--color-accent-ink); }
+  .phone-label { font-size: 0.72rem; font-weight: 600; color: #ffffff; }
+  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #ffffff; white-space: nowrap; }
+  /* Hover used to darken to accent-ink; on red that is barely a change and
+     fails contrast. Underline the number and lift the badge instead. */
+  .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { text-decoration: underline; }
+  .phone-cta:hover .phone-icon, .phone-cta:focus-visible .phone-icon { background: rgba(255, 255, 255, 0.3); }
   .mobile-nav, .mobile-phone { display: none; }
   .mobile-nav summary { cursor: pointer; list-style: none; padding: 0.25rem; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); }
   .mobile-nav summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
   .mobile-nav summary::-webkit-details-marker { display: none; }
-  .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: var(--color-bg); border: 1px solid var(--color-surface); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 4px 14px rgba(0,0,0,0.08); max-height: calc(100vh - 96px); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+  .mobile-nav[open] > nav { position: absolute; top: 100%; right: var(--space-3); left: var(--space-3); background: #b30808; border: 1px solid rgba(255, 255, 255, 0.22); border-radius: var(--radius-sm); padding: var(--space-2); box-shadow: 0 6px 18px rgba(0,0,0,0.28); max-height: calc(100vh - 96px); overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
   .mobile-nav nav ul { list-style: none; padding: 0; margin: 0; }
   .mobile-nav nav ul li a { display: block; padding: 0.35rem 0; text-decoration: none; line-height: 1.3; }
-  .mobile-nav .mobile-submenu { border-bottom: 1px solid var(--color-surface); }
+  .mobile-nav .mobile-submenu { border-bottom: 1px solid rgba(255, 255, 255, 0.22); }
   .mobile-nav .mobile-submenu:last-of-type { border-bottom: 0; }
-  .mobile-nav .mobile-submenu > .group-heading { font-weight: 700; padding: 0.6rem 0; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; }
+  .mobile-nav .mobile-submenu > .group-heading { font-weight: 700; padding: 0.6rem 0; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; color: #ffffff; }
   .mobile-nav .mobile-submenu > .group-heading::-webkit-details-marker { display: none; }
-  .mobile-nav .mobile-submenu > .group-heading .chev { color: var(--color-muted); transition: transform 0.2s ease; flex-shrink: 0; }
-  .mobile-nav .mobile-submenu[open] > .group-heading .chev { transform: rotate(180deg); color: var(--color-accent-ink); }
-  .mobile-nav .sub { padding: 0.25rem 0 0.5rem; margin: 0 0 0.5rem 0.6rem; border-left: 2px solid var(--color-surface); }
-  .mobile-nav .sub li a { padding: 0.25rem 0 0.25rem 0.6rem; font-size: 0.95rem; color: var(--color-muted); line-height: 1.3; }
-  .mobile-nav .sub .all { font-weight: 600; color: var(--color-text); }
+  .mobile-nav .mobile-submenu > .group-heading .chev { color: #ffffff; transition: transform 0.2s ease; flex-shrink: 0; }
+  .mobile-nav .mobile-submenu[open] > .group-heading .chev { transform: rotate(180deg); color: #ffffff; }
+  .mobile-nav .sub { padding: 0.25rem 0 0.5rem; margin: 0 0 0.5rem 0.6rem; border-left: 2px solid rgba(255, 255, 255, 0.3); }
+  /* Sub-items were --color-muted to sit back from their parent. On red the only
+     safe way to keep that hierarchy is size and weight — a dimmed white would
+     drop under AA. */
+  .mobile-nav .sub li a { padding: 0.25rem 0 0.25rem 0.6rem; font-size: 0.95rem; color: #ffffff; line-height: 1.3; }
+  .mobile-nav .sub .all { font-weight: 600; color: #ffffff; }
 
+  /* Pulsed in the accent red, which is invisible on a red bar. */
   @keyframes phone-glow {
-    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 55%, transparent); }
-    70%  { box-shadow: 0 0 0 12px color-mix(in srgb, var(--color-accent) 0%, transparent); }
-    100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 0%, transparent); }
+    0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55); }
+    70%  { box-shadow: 0 0 0 12px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
   }
 
   @media (max-width: 900px) {
