@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--prefix", "sites/tropical-south-tree-services", "--", "--port", "4333"],
       "port": 4333
+    },
+    {
+      "name": "bay-plumbing-co",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/bay-plumbing-co", "--", "--port", "4331"],
+      "port": 4331
     }
   ]
 }

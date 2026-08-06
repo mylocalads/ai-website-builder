@@ -1,0 +1,33 @@
+---
+/** See residential.astro — `commercial` is likewise a reserved service slug. */
+import { SERVICE_NAV_LIMIT } from '../../lib/limits';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry, getCollection } from 'astro:content';
+import ServiceIndex from '../../components/ServiceIndex.astro';
+import GHLChatWidget from '../../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const items = (await getCollection('services'))
+  .filter((s) => s.data.audience === 'commercial')
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, SERVICE_NAV_LIMIT);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Commercial', href: '/services/commercial' },
+];
+---
+<BaseLayout
+  title={`Commercial Plumbing Services in ${site.marketing_city ?? site.address.city}, ${site.address.state} — ${site.business_name}`}
+  description={`Backflow testing and County ordinance compliance, grease trap service, commercial jetting, property maintenance and new construction plumbing across Miami-Dade. Licensed C.C. 6469.`}
+  breadcrumbs={crumbs}
+  pagePath="/services/commercial"
+>
+  <ServiceIndex
+    eyebrow="For Business"
+    heading="Commercial Plumbing Services"
+    lede="Restaurants, retail, offices, multi-tenant buildings and new construction across Miami-Dade. Most businesses here are required by County ordinance to keep an up-to-date backflow preventer — and a kitchen line that fails mid-service is lost trading, not an inconvenience. We schedule around your hours, and we own the equipment rather than booking it."
+    groups={[{ items }]}
+  />
+  <GHLChatWidget />
+</BaseLayout>

@@ -1,0 +1,38 @@
+---
+/**
+ * Static route, so it wins over `[slug].astro` for /services/residential.
+ * `residential` and `commercial` are therefore RESERVED service slugs — a
+ * service file named either would build a page that this one shadows. Guarded
+ * in [slug].astro's getStaticPaths rather than left to chance.
+ */
+import { SERVICE_NAV_LIMIT } from '../../lib/limits';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry, getCollection } from 'astro:content';
+import ServiceIndex from '../../components/ServiceIndex.astro';
+import GHLChatWidget from '../../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const items = (await getCollection('services'))
+  .filter((s) => s.data.audience === 'residential')
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, SERVICE_NAV_LIMIT);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Residential', href: '/services/residential' },
+];
+---
+<BaseLayout
+  title={`Residential Plumbing Services in ${site.marketing_city ?? site.address.city}, ${site.address.state} — ${site.business_name}`}
+  description={`Emergency plumbing, drain cleaning, septic and drainfield work, water and sewer line replacement and fixture installation for ${site.address.city} homeowners. Family owned since 1968.`}
+  breadcrumbs={crumbs}
+  pagePath="/services/residential"
+>
+  <ServiceIndex
+    eyebrow="For Homeowners"
+    heading="Residential Plumbing Services"
+    lede="An older Miami house asks a lot of its plumbing — high water table, cast iron laid two generations ago, and septic still in the ground across a lot of the county. We have been handling all of it from the same shop on SW 28th Street since 1968, with a plumber on call 24 hours a day."
+    groups={[{ items }]}
+  />
+  <GHLChatWidget />
+</BaseLayout>

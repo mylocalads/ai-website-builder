@@ -1,0 +1,83 @@
+---
+/**
+ * Shared body for /services, /services/residential and /services/commercial.
+ *
+ * The three pages differ only in which services they list and what the hero
+ * says, so they render through one component rather than three near-identical
+ * copies of the same markup — the exact drift that put a 404 in the nav when
+ * Header linked six services and getStaticPaths built five.
+ *
+ * `groups` is an array so /services can show both markets under headings while
+ * the two sub-indexes pass a single group and render without one.
+ */
+import { getEntry } from 'astro:content';
+import ClosingCTA from './ClosingCTA.astro';
+
+export interface Props {
+  eyebrow?: string;
+  heading: string;
+  lede: string;
+  groups: { title?: string; blurb?: string; items: any[] }[];
+}
+const { eyebrow, heading, lede, groups } = Astro.props;
+const site = (await getEntry('site', 'config')).data as any;
+const showGroupHeadings = groups.length > 1;
+---
+<section
+  class="services-hero"
+  style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.62), rgba(15,20,25,0.62)), url(${site.default_hero_photo});`}
+>
+  <div class="container">
+    {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+    <h1>{heading}</h1>
+    <p>{lede}</p>
+  </div>
+</section>
+
+<section class="services-index">
+  <div class="container">
+    {groups.map((g) => (
+      <div class="group">
+        {showGroupHeadings && g.title && <h2 class="group-title">{g.title}</h2>}
+        {showGroupHeadings && g.blurb && <p class="group-blurb">{g.blurb}</p>}
+        <div class="grid">
+          {g.items.map((s) => (
+            <a href={`/services/${s.slug}`} class="card">
+              <h3>{s.data.title}</h3>
+              <p>{s.data.short_description}</p>
+              {s.data.sub_services?.length > 0 && (
+                <span class="chips">
+                  {s.data.sub_services.slice(0, 3).map((sub: string) => <span class="chip">{sub}</span>)}
+                </span>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+<ClosingCTA />
+
+<style>
+  /* The dark gradient below is applied inline and ONLY when the client has a
+     default_hero_photo, but `color: white` is unconditional — so without a photo
+     the copy was white on whatever the page background is. This fallback keeps
+     white text legible either way. It is a fixed dark neutral rather than
+     --color-primary on purpose: a client whose secondary background is light
+     (e.g. a yellow brand) would fail here. Matches HeroOwl's scrim colour. */
+  .services-hero { padding: var(--space-5) 0; background-color: #0f1419; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
+  .services-hero .eyebrow { color: var(--color-accent-on-dark); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem; margin: 0 0 var(--space-1); }
+  .services-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); margin-bottom: var(--space-1); }
+  .services-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 60ch; }
+  .services-index { padding: var(--space-4) 0 var(--space-5); }
+  .group + .group { margin-top: var(--space-5); }
+  .group-title { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: 0 0 var(--space-1); }
+  .group-blurb { color: var(--color-muted); margin: 0 0 var(--space-3); max-width: 65ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
+  .card { display: block; padding: var(--space-3); background: var(--color-surface); border-radius: var(--radius-md); text-decoration: none; }
+  .card h3 { margin: 0 0 var(--space-1); font-size: 1.25rem; font-family: var(--font-display); }
+  .card p { color: var(--color-muted); margin: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: var(--space-2); }
+  .chip { font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 999px; background: var(--color-bg); color: var(--color-muted); }
+</style>

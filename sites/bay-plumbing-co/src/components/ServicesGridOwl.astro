@@ -1,7 +1,14 @@
 ---
-import { SERVICE_LIMIT } from '../lib/limits';
+import { SERVICE_NAV_LIMIT } from '../lib/limits';
 import { getCollection, getEntry } from 'astro:content';
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const all = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+// Grouped rather than one ten-tile wall. Ten undifferentiated tiles on the home
+// page is exactly the "pile of near-duplicate services" the caps exist to
+// prevent — the split only reads as deliberate if the page shows it.
+const groups = [
+  { title: 'Residential Plumbing', href: '/services/residential', items: all.filter((s) => s.data.audience === 'residential').slice(0, SERVICE_NAV_LIMIT) },
+  { title: 'Commercial Plumbing', href: '/services/commercial', items: all.filter((s) => s.data.audience === 'commercial').slice(0, SERVICE_NAV_LIMIT) },
+].filter((g) => g.items.length > 0);
 const site = (await getEntry('site', 'config')).data as any;
 const section = site.services_section ?? { eyebrow: 'Our Services' };
 export interface Props { cta_text?: string; cta_href?: string; }
@@ -22,33 +29,45 @@ const heading = section.heading_lead
       <a class="see-all" href="/services">See all services</a>
     </div>
 
-    <ul class="grid">
-      {services.map((s) => (
-        <li>
-          <a
-            class={`tile ${s.data.hero_photo ? '' : 'no-photo'}`}
-            href={`/services/${s.slug}`}
-            style={s.data.hero_photo ? `background-image: url(${s.data.hero_photo});` : undefined}
-          >
-            <span class="scrim" aria-hidden="true"></span>
-            <span class="body">
-              <span class="title">{s.data.title}</span>
-              {s.data.sub_services.length > 0 && (
-                <span class="chips">
-                  {s.data.sub_services.slice(0, 3).map((sub) => <span class="chip">{sub}</span>)}
+    {groups.map((g) => (
+      <div class="group">
+        <div class="group-head">
+          <h3>{g.title}</h3>
+          <a class="group-all" href={g.href}>All {g.title.toLowerCase()} services</a>
+        </div>
+        <ul class="grid">
+          {g.items.map((s) => (
+            <li>
+              <a
+                class={`tile ${s.data.hero_photo ? '' : 'no-photo'}`}
+                href={`/services/${s.slug}`}
+                style={s.data.hero_photo ? `background-image: url(${s.data.hero_photo});` : undefined}
+              >
+                <span class="scrim" aria-hidden="true"></span>
+                <span class="body">
+                  <span class="title">{s.data.title}</span>
+                  {s.data.sub_services.length > 0 && (
+                    <span class="chips">
+                      {s.data.sub_services.slice(0, 3).map((sub) => <span class="chip">{sub}</span>)}
+                    </span>
+                  )}
                 </span>
-              )}
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
     {cta_text && cta_href && (
       <div class="section-cta"><a class="btn" href={cta_href}>{cta_text}</a></div>
     )}
   </div>
 </section>
 <style>
+  .group + .group { margin-top: var(--space-4); }
+  .group-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-2); }
+  .group-head h3 { font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 1.5rem); margin: 0; color: var(--color-text); }
+  .group-all { font-weight: 600; font-size: 0.9rem; color: var(--color-accent-ink); }
   .section-cta { text-align: center; margin-top: var(--space-4); }
   .section-cta .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.9rem 1.75rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; letter-spacing: 0.02em; text-transform: uppercase; text-decoration: none; }
 
@@ -63,9 +82,19 @@ const heading = section.heading_lead
   /* Two-up photo tiles, matching the reference layout. Tiles are image-led:
      the service name sits over the photo, sub-services read as chips beneath. */
   .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: var(--space-3); }
+  /* Was `display: block` + `aspect-ratio: 16/10` with an absolutely positioned
+     .body pinned to the bottom. That silently clipped any title long enough to
+     wrap to three lines: the body grew UPWARD past the top edge and `overflow:
+     hidden` cut it off — "Fixtures, Water Heaters & Remodels" lost its first
+     line entirely.
+
+     Now a flex column that pushes .body to the end, with the 16/10 shape kept
+     as a MINIMUM rather than a fixed size. Short titles look identical; long
+     ones make the tile taller instead of losing text. Grid row-stretch keeps
+     the row aligned. */
   .tile {
-    position: relative; display: block; overflow: hidden;
-    aspect-ratio: 16 / 10; border-radius: var(--radius-lg);
+    position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden; min-height: 0; border-radius: var(--radius-lg);
     background-color: var(--color-primary); background-size: cover; background-position: center;
     text-decoration: none; box-shadow: 0 8px 22px rgba(15,20,25,0.10);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -74,10 +103,14 @@ const heading = section.heading_lead
   /* A tile with no photo still has to look deliberate rather than broken. */
   .tile.no-photo { background-image: linear-gradient(160deg, var(--color-primary) 0%, rgba(0,0,0,0.65) 100%); }
   .scrim { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,12,16,0.88) 0%, rgba(10,12,16,0.35) 45%, rgba(10,12,16,0.08) 100%); }
-  .body { position: absolute; left: 0; right: 0; bottom: 0; padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
-  .title { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.1; }
+  /* Reserves the old 16/10 proportion without constraining height. */
+  .tile::before { content: ""; display: block; padding-top: 62.5%; }
+  .body { position: relative; padding: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
+  /* Trimmed from clamp(1.5rem, 2.6vw, 2.1rem): at the old size a five-word
+     service name ran to three lines in a 330px column. */
+  .title { font-family: var(--font-display); font-weight: 700; color: #ffffff; font-size: clamp(1.3rem, 2.1vw, 1.75rem); line-height: 1.12; text-wrap: balance; }
   .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .chip { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.28); color: #ffffff; font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 999px; backdrop-filter: none; }
 
-  @media (max-width: 560px) { .tile { aspect-ratio: 4 / 3; } }
+  @media (max-width: 560px) { .tile::before { padding-top: 75%; } }
 </style>

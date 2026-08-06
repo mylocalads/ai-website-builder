@@ -31,6 +31,20 @@ export async function getStaticPaths() {
     );
   }
 
+  // `residential` and `commercial` are static routes under /services/ (the two
+  // audience indexes). Astro gives a static route priority over a dynamic one,
+  // so a service named either would build a detail page that is permanently
+  // shadowed — reachable from nowhere, and invisible in every check that only
+  // asserts a 200. Fail loudly instead of shipping a dead page.
+  const RESERVED = new Set(['residential', 'commercial', 'index']);
+  const clashes = services.filter((s) => RESERVED.has(s.slug));
+  if (clashes.length > 0) {
+    throw new Error(
+      `[services] Reserved slug(s) used by a service: ${clashes.map((s) => s.slug).join(', ')}. ` +
+      `/services/residential and /services/commercial are the audience index pages. Rename the file.`
+    );
+  }
+
   return services
     .slice(0, SERVICE_LIMIT)
     .map((s) => ({ params: { slug: s.slug }, props: { service: s } }));

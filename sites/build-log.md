@@ -3680,3 +3680,74 @@ opt-out.
 Verified: 13 routes, exactly 1 with a hero video, 0 console errors; playing/looping/muted at 1280×720
 locally and live; mobile 390px playing with no horizontal overflow; production asset 200 with
 correct `video/mp4` content type.
+
+### 2026-08-06 — bay-plumbing-co: two header phone buttons + residential/commercial service split
+
+**Two stacked call buttons.** Miami `(305) 446-8141` and Key Biscayne `(305) 361-1177` — both numbers
+the client has published for decades. Style and effects unchanged from the single button (white ring,
+two-ring pulse, hover lift); everything scaled down so the pair occupies about the height one used to
+and the bar does not grow: badge 2.5rem→2.05rem, glyph 1.35rem→1.1rem, number 1.05rem→0.95rem, label
+0.72rem→0.66rem. Header measures 106px at desktop and 103px at mobile — unchanged.
+
+The label now carries the LOCATION rather than "Give Us A Call!", which makes it load-bearing: it is
+the only thing distinguishing the two buttons, so the old `.mobile-phone .phone-label { display:
+none }` rule had to go or mobile would show two identical-looking buttons.
+
+Both buttons render from one `phones` array used by the desktop nav and the mobile bar, so the two
+can never drift, and the secondary entry drops out cleanly for a client with one number.
+
+**Services split into two audiences — full separate sets, per operator decision.** Ten service pages
+now: five residential, five commercial. `SERVICE_LIMIT` raised 5→10, but the guardrail did not
+loosen — it moved to a new `SERVICE_NAV_LIMIT = 5`, which is **per market**, so neither menu can
+quietly grow past five.
+
+| Residential | Commercial |
+|---|---|
+| Emergency Plumbing Repair | Backflow Testing & Certification *(moved from residential)* |
+| Drain Cleaning & Stoppages | Grease Trap Pumping & Repair *(new)* |
+| Septic Systems & Drainfields | Property Maintenance & Inspections *(new)* |
+| Water & Sewer Lines | Commercial Drain & Sewer Jetting *(new)* |
+| Fixtures, Water Heaters & Remodels *(new)* | New Construction Plumbing *(new)* |
+
+Every new page is built from capability the client already documents on their own site — grease trap
+pump-outs, the property-maintenance inspection list (sewer, backflow, drainfield, septic, leaks,
+water pressure, hot water service, water connections), new construction, fixture install and
+kitchen/bath remodelling. Nothing was invented.
+
+New `audience` enum on the services schema, **required with no default**: a service that silently
+defaulted would vanish from one menu with nothing failing at build time — the same class of bug as
+the sliced-collection 404 that `lib/limits.ts` documents.
+
+Nav labels are "Residential Plumbing" / "Commercial Plumbing" rather than the full page titles, to
+keep the bar off the two phone buttons. The full "…Services" name is the H1 and the `aria-label`, so
+nothing is lost to a screen reader or to search. Verified no wrap or overflow at 1600/1440/1280/1180/
+1024/940 — nav height is a constant 70px across all of them.
+
+`/services/residential` and `/services/commercial` are new static routes, which under Astro take
+priority over `[slug].astro`. That makes `residential` and `commercial` **reserved service slugs**: a
+service file named either would build a detail page permanently shadowed by the index — reachable
+from nowhere and invisible to any check that only asserts a 200. `getStaticPaths` now throws on the
+collision rather than shipping a dead page.
+
+All three index pages (`/services` and the two sub-indexes) render through one new `ServiceIndex`
+component rather than three near-identical copies — `/services` passes both groups and gets headings,
+the sub-indexes pass one and render without. The home grid and the footer are likewise grouped, the
+footer going from 4 to 5 columns.
+
+**One layout bug this surfaced.** The home service tiles were `display: block` with `aspect-ratio:
+16/10` and an absolutely positioned `.body` pinned to the bottom, so any title long enough to wrap to
+three lines grew *upward* past the top edge and was cut off by `overflow: hidden`. "Fixtures, Water
+Heaters & Remodels" lost its entire first line. Rebuilt as a flex column that pushes the body to the
+end, with the 16/10 proportion kept as a minimum via a `::before` spacer rather than a fixed size —
+short titles look identical, long ones make the tile taller. Title clamp trimmed to
+`clamp(1.3rem, 2.1vw, 1.75rem)`. Asserted zero clipped tiles at 1440/900/390.
+
+Verified: **32 routes**, 0 bad statuses, 0 broken images, 0 header/phone/pulse mismatches, UserWay
+present on every page, 0 console errors, no horizontal overflow at 390px. Live re-check of 9 routes
+including all five new service pages returns 200, with both phone labels and both menu labels correct.
+
+**Watch item for the operator:** "Drain Cleaning & Stoppages" (residential) and "Commercial Drain &
+Sewer Jetting" are the one genuine overlap in the split. The copy differentiates them hard — domestic
+blockage vs. grease-laden shared commercial lines, preventive intervals and out-of-hours scheduling —
+but they are the two pages most likely to compete with each other in search. Worth watching once
+there is ranking data.

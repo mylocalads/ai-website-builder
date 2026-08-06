@@ -1,8 +1,15 @@
 ---
-import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
+import { AREA_LIMIT, SERVICE_NAV_LIMIT } from '../lib/limits';
 import { getEntry, getCollection } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+// Two columns rather than one list of ten. A single column would run twice the
+// height of every other column and lose the residential/commercial distinction
+// the rest of the site now makes.
+const serviceCols = [
+  { title: 'Residential', href: '/services/residential', items: allServices.filter((s) => s.data.audience === 'residential').slice(0, SERVICE_NAV_LIMIT) },
+  { title: 'Commercial', href: '/services/commercial', items: allServices.filter((s) => s.data.audience === 'commercial').slice(0, SERVICE_NAV_LIMIT) },
+].filter((c) => c.items.length > 0);
 const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
 const year = new Date().getFullYear();
 ---
@@ -42,8 +49,12 @@ const year = new Date().getFullYear();
         )}
       </div>
       <div>
-        <h3>Services</h3>
-        <ul>{services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}</ul>
+        <h3>Residential</h3>
+        <ul>{serviceCols[0]?.items.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}</ul>
+      </div>
+      <div>
+        <h3>Commercial</h3>
+        <ul>{serviceCols[1]?.items.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}</ul>
       </div>
       <div>
         <h3>Service Areas</h3>
@@ -71,7 +82,8 @@ const year = new Date().getFullYear();
 </footer>
 <style>
   .site-footer { background: var(--color-surface); padding: var(--space-5) 0 var(--space-3); margin-top: var(--space-5); }
-  .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+  .footer-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-4); }
+  @media (max-width: 1100px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
   .brand { font-family: var(--font-display); font-size: 1.15rem; }
   .footer-logo { max-height: 60px; width: auto; display: block; margin-bottom: var(--space-2); }
   h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1); }
