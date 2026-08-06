@@ -3292,3 +3292,98 @@ twice on one page — dropped from `seo_body`.
 | Custom domain | not attached |
 | Job photography | none exists; `/our-work` ships a written capability statement and an empty `projects` array rather than stock imagery. Highest-value asset to collect from the client. |
 | Service areas | Miami and Key Biscayne are stated by the client. Coconut Grove, Coral Gables, South Miami and Miami Beach were derived from HQ proximity — confirm before driving traffic. |
+
+---
+
+## Tropical South Landscaping — 2026-08-06
+
+| | |
+|---|---|
+| Slug | `tropical-south-landscaping` |
+| Template | `owl` |
+| Old site | https://tropicalsouthlandscaping.com/ (GoDaddy Website Builder) |
+| Live | https://tropical-south-landscaping.vercel.app |
+| Pages | 24 (5 services, 6 service areas, 1 blog post) |
+| Vertical | Landscaping / tree service |
+| Market | Miami-Dade County, FL (HQ Cutler Bay) |
+
+### Identity
+
+Owner-led by Rafael Quezada, 12+ years, licensed and insured. 9351 Marine Dr,
+Cutler Bay, FL 33189 · (305) 333-2642 · tropicalsouthlandscaping@gmail.com ·
+Mon–Sun 6:00 AM – 8:00 PM.
+
+**GBP lookup did not run** — `.env` is absent from the repo so `APIFY_TOKEN` was
+unavailable. NAP and hours were corroborated instead across the client's own site
+plus Yelp, MapQuest, YellowPages and ZoomInfo, all in agreement. `geo` is left
+unset rather than guessed. `business_profile.json` records the substitution; re-run
+`/find-business` once the token is restored if a canonical GBP payload (CID, geo,
+GBP review text) is wanted.
+
+### Rating provenance
+
+Published 4.9 / 224 reviews is the client's **verified HomeAdvisor–Angi profile**
+(96% five-star), not Google. The hero trust badge omits the `mark` field on purpose
+so the template does not stamp a Google "G" against a non-Google rating. Angi's
+list page shows 4.8 / 235 for the same profile and Yelp shows 5.0 / 1 — the
+HomeAdvisor profile page was taken as the primary because it is the one with the
+review corpus attached. All eight testimonials are real published reviews quoted
+verbatim with the source named.
+
+### Copy strategy
+
+Local research converged hard on one failure mode: Miami-Dade homeowners do not
+complain about workmanship, they complain that crews stop answering the phone. So
+the hero, promise band, promise bar and every CTA assert callback and punctuality
+rather than craft — and the client's own reviews say exactly that ("estimate on a
+Saturday, arrived Monday morning as agreed"; "customer for the past 7 years…
+reliable, professional and punctual"). Secondary angle is the hurricane-season
+booking window, which is also the blog post.
+
+### Design
+
+Palette derived from the logo — palm green `#12492a` primary, sun orange `#f2a007`
+accent. The logo's wordmark blue `#2a8fff` is deliberately excluded: every photo on
+this site is greenery under a blue sky, and a blue UI accent disappears into it.
+All three owl accent tokens re-derived and audited in `design_reference.json`; every
+text pair clears WCAG AA (lowest 5.54:1). Fonts left at the owl default — the old
+GoDaddy site declares no brand `font-family`.
+
+Imagery: 10 real job photos lifted from the client's own gallery and service pages,
+resized to 1400px and served from `public/img/` rather than hotlinked off the
+GoDaddy CDN. The stock images on several of their existing service pages were not
+carried over. No layout, section rhythm or CSS was taken from the old site.
+
+`/pricing` ships no cost table and no dollar figures — the client publishes no rate
+card, so the three tiers are quoted-on-site with the pricing basis stated.
+
+### Verification
+
+Local build clean. Verified in-browser before deploy: no console errors, no
+horizontal overflow at 375px, 11/11 assets load, no broken internal links. Live:
+27/27 routes 200, canonical / robots / sitemap all resolve to
+`https://tropical-south-landscaping.vercel.app`, JSON-LD emits LocalBusiness +
+AggregateRating + FAQPage.
+
+Two real defects caught and fixed in review: the **"Lawn & Landscape Maintenance"
+service tile overflowed its card by 12px and clipped the title** — the owl tile is
+`aspect-ratio: 16/10` with an absolutely-positioned body, so a three-line title plus
+three chip rows runs off the top. Retitled to the client's own wording, "Landscape
+Maintenance". And **`public/robots.txt` still carried `REPLACE_SITE_URL`**, which
+would have broken sitemap discovery for every crawler.
+
+Also swapped the Coral Gables and Kendall service-area hero photos: both were
+split-frame before/after images, which read as a seam down the middle when used
+full-bleed behind hero text.
+
+### Outstanding — needs operator / client
+
+| Field | Status |
+|---|---|
+| `crm.*` (chat, reviews, calendar, contact form, call tracking) | empty — GHL paste-in |
+| `crm.form_action_url` / `captcha_snippet` | unset — native EstimateForm posts to `/api/estimate`, which needs `LEAD_WEBHOOK_URL` **or** `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL` set in Vercel env, otherwise submissions fail with `?error=unavailable` |
+| `code_injection.head` / `body_end` (Pixel, GTM) | empty — operator |
+| `geo` | unset — needs GBP lookup once `APIFY_TOKEN` is restored |
+| Custom domain | not attached |
+| `team_members` | empty — only the owner's name is public; headshots would strengthen `/about` |
+| Service areas | Cutler Bay is HQ and Miami-Dade County is stated by the client. The other five (Palmetto Bay, Pinecrest, Kendall, Coral Gables, Homestead) were selected for county coverage — confirm the client actually services all five before driving paid traffic |
