@@ -1,0 +1,239 @@
+{
+  "slug": "bay-plumbing-co",
+  "business_name": "Bay Plumbing Co.",
+  "legal_name": "Bay Plumbing Company",
+  "tagline": "Can Fix Anybody's Plumbing",
+  "phone": "+13054468141",
+  "phone_display": "(305) 446-8141",
+  "phone_secondary": "+13053611177",
+  "phone_secondary_display": "(305) 361-1177",
+  "phone_secondary_label": "Key Biscayne",
+  "email": "info@bayplumbingco.com",
+  "address": {
+    "street": "3029 SW 28th St",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33133",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "geo": null,
+  "hours": {
+    "monday": "8:00 AM - 4:30 PM",
+    "tuesday": "8:00 AM - 4:30 PM",
+    "wednesday": "8:00 AM - 4:30 PM",
+    "thursday": "8:00 AM - 4:30 PM",
+    "friday": "8:00 AM - 4:30 PM"
+  },
+  "hours_note": "Office hours Mon-Fri 8:00AM-4:30PM per the client's own site. Emergency dispatch is 24/7/365, also stated on the client's site. Directory listings show 'Open 24 hours'; office hours are used as the authoritative figure and the 24-hour service is stated separately as a service claim.",
+  "rating": null,
+  "review_count": null,
+  "_rating_note": "NO Google Business Profile lookup was run — APIFY_TOKEN is absent from the repo. Third-party aggregates disagree sharply (Yelp 2.5/23, BestProsInTown 4.3/38), so no aggregate rating is published on the generated site. Operator: verify the GBP figure before enabling a rating badge.",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "license_numbers": "C.C. 6469 / CFC057007",
+  "_license_source": "Printed on the client's own logo artwork and painted on the building at 3029 SW 28th St (visible in their photo).",
+  "years_in_business": 57,
+  "founded": 1968,
+  "social": {
+    "facebook": "https://www.facebook.com/BayPlumbingco/"
+  },
+  "site_url": "https://www.bayplumbingco.com",
+  "logo_url": "/logo-bay-plumbing.png",
+  "default_hero_photo": null,
+  "default_hero_video": null,
+  "about_photo": "/img/bay-plumbing-shop.jpg",
+  "brand": {
+    "fonts": {
+      "display": null,
+      "body": null
+    },
+    "_fonts_note": "No font-family declarations or Google Fonts links detectable — Weebly serves typography from an external theme sheet. design-reference falls back to the template default.",
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#111111",
+      "accent": "#f90909",
+      "muted": "#d5d5d5",
+      "surface": "#f6f6f6",
+      "candidates": ["#f90909", "#ffffff", "#d5d5d5", "#000000", "#202020", "#3a96b8", "#f3f60c"]
+    }
+  },
+  "services": [
+    {
+      "title": "Emergency Plumbing Repair",
+      "short_description": "24 hours a day, 365 days a year, with the parts already on the truck.",
+      "long_description": "When you have a plumbing emergency, you can't afford to let the problem go from bad to worse. Bay Plumbing Co. has responded to Miami-Dade County plumbing emergencies 24 hours a day, 7 days a week, 365 days a year since 1968. Because we carry a large inventory of common plumbing materials on our own trucks, our plumbers arrive with what they need to fix most problems on the spot — no waiting on a supply house, no second appointment. We handle leaks of every kind, concealed or visible, on every type of pipe, and most can be repaired the same visit.",
+      "sub_services": ["Concealed and visible leak detection", "Emergency leak repair", "Burst and damaged pipe repair", "After-hours and weekend dispatch", "Water shut-off and make-safe"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Drain Cleaning & Stoppages",
+      "short_description": "Video-located, jetted clear, and cleaned up before we leave.",
+      "long_description": "It doesn't matter what's causing it or where it is — if your plumbing is stopped up, our Miami-Dade plumbers can get the water flowing freely again. We carry state-of-the-art video inspection equipment to find and reveal concealed damage inside your sewer lines rather than guessing, and jetting equipment to clear the line properly instead of just punching a hole through it. Where a line needs permanent access, we will dig down, locate it, and add a clean-out so the next service call takes minutes instead of hours.",
+      "sub_services": ["Main drain line stoppages", "Sewer camera inspection", "Hydro jetting", "Clean-out installation", "Kitchen, bath and laundry drains"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Septic Systems & Drainfields",
+      "short_description": "Inspected, pumped, repaired and replaced — with our own excavation equipment.",
+      "long_description": "Even small septic problems caused by damage to the drainfield lead to big issues if they are not dealt with right away. Our septic professionals diagnose drainfield issues and perform the repairs or replacement needed. We handle inspections, repairs and pump-outs for septic tanks and grease traps, and we install complete septic systems and drainfields. Critically, we do not sub-contract septic work, excavation work or concrete removal — we own that equipment and run those crews in house, which is why the job gets finished on our schedule rather than somebody else's.",
+      "sub_services": ["Drainfield inspection, repair and replacement", "Septic system installation", "Septic tank pump-outs", "Grease trap pumping and repair", "Excavation and concrete removal"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Backflow Testing & Certification",
+      "short_description": "Certified testing, usually done in 15 to 20 minutes.",
+      "long_description": "Annual backflow testing helps ensure that only clean, potable water flows through your plumbing into your home or business. Most Miami-Dade County businesses are required by County ordinance to have an up-to-date backflow preventer installed, and the Water and Sewer Department will often contact you directly to require a test. That is routine, not cause for alarm. Backflow Bob, Inc. — Bay Plumbing Co.'s certified backflow experts — is familiar with every type of preventer device, and in most cases can complete your test in 15 to 20 minutes with the equipment and materials on hand to handle simple repairs the same visit.",
+      "sub_services": ["Annual backflow testing", "Backflow certification", "Preventer repair and maintenance", "New preventer installation", "Commercial ordinance compliance"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Water & Sewer Lines",
+      "short_description": "Repaired, replaced, and connected to city sewer the right way the first time.",
+      "long_description": "We repair or replace water and sewer lines depending on what the line actually needs, and we will tell you honestly which one you are looking at. Whether you are building a new home or finally connecting an older Miami property to the city sewer system, we make sure the connection is done right the first time so you don't have problems down the line. Because our own crews handle the excavation and the concrete removal, there is no waiting on a subcontractor between the dig and the repair.",
+      "sub_services": ["Water line repair and replacement", "Sewer line repair and replacement", "City sewer connections", "Repiping", "New construction rough-in"],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Miami",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "miami-fl",
+      "_source": "scraped"
+    },
+    {
+      "name": "Coconut Grove",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "coconut-grove-fl",
+      "_source": "derived-from-hq-location"
+    },
+    {
+      "name": "Coral Gables",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "coral-gables-fl",
+      "_source": "derived-from-hq-location"
+    },
+    {
+      "name": "Key Biscayne",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "key-biscayne-fl",
+      "_source": "scraped"
+    },
+    {
+      "name": "South Miami",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "south-miami-fl",
+      "_source": "derived-from-hq-location"
+    },
+    {
+      "name": "Miami Beach",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "miami-beach-fl",
+      "_source": "derived-from-hq-location"
+    }
+  ],
+  "_service_areas_note": "Only Miami and Key Biscayne are named explicitly on the client's site; the rest are stated as 'Miami-Dade County and surrounding areas'. The four derived areas are the adjacent Miami-Dade municipalities nearest 33133 and are flagged for client confirmation.",
+  "testimonials": [
+    {
+      "name": "Marsha R.",
+      "location": "Miami, FL",
+      "text": "Spoke to Robert and Victoria about my plumbing issue. Nick came and he was on time, neat, tidy and efficient. He fixed my problem and I was very grateful that I called Bay Plumbing. Have used them for 25 years and they are all outstanding.",
+      "rating": 5,
+      "_source": "yelp"
+    },
+    {
+      "name": "Cathy B.",
+      "location": "Miami, FL",
+      "text": "Plumber Chris is a life saver. I had a bad back up and he went right to work and got me up and running in no time. Same day service too!",
+      "rating": 5,
+      "_source": "yelp"
+    },
+    {
+      "name": "Hebby S.",
+      "location": "Miami, FL",
+      "text": "Bay Plumbing is great! I have used them for several things, but recently Albert came and saved me a bundle by suggesting an easier fix on an issue I had with a recently renovated tub. I'm very grateful.",
+      "rating": 5,
+      "_source": "yelp"
+    },
+    {
+      "name": "Ashley H.",
+      "location": "Miami, FL",
+      "text": "Had hired them years prior with a good experience. Called them again for a leaking water heater and they were able to come even sooner than the agreed upon day since the leak had gotten worse. Were in and out quick and the job well done!",
+      "rating": 5,
+      "_source": "yelp"
+    },
+    {
+      "name": "Verified customer",
+      "location": "Miami, FL",
+      "text": "I hired them to fix a clog in my main drain line and the next morning 2 technicians came out and located my problem. The very next morning 2 other technicians came out, dug down 2 feet to find the drain line, added a clean out T and were done by noon. Cleaned up and left everything perfect. I am very impressed at the knowledge the technicians have. Chris, Jose, Robbie and Angel and of course their boss Robert. I highly recommend Bay Plumbing.",
+      "rating": 5,
+      "_source": "bestprosintown"
+    }
+  ],
+  "_testimonials_note": "All five are real, attributable, published reviews — four from Yelp, one from BestProsInTown. Text is verbatim apart from trimming a trailing signature on the Marsha R. review. Nothing was written or embellished. The BestProsInTown reviewer is published without a name on the source, hence 'Verified customer'.",
+  "team_members": [],
+  "faqs": [
+    {
+      "q": "Are estimates free?",
+      "a": "Estimates are free for work more involved than a service call — remodeling, replacing water or sewer lines, replacing fixtures, and similar quoted work. A straightforward service call is billed as a service call. Ask us on the phone what your job counts as and we will tell you before we dispatch anyone."
+    },
+    {
+      "q": "Do you really answer at 2am?",
+      "a": "Yes. We have had plumbers on call 24 hours a day, 365 days a year since 1968. Because our trucks carry a large inventory of common materials, an after-hours call usually gets fixed on the first visit rather than made safe and rebooked."
+    },
+    {
+      "q": "Do you sub-contract septic, excavation or concrete work?",
+      "a": "No. We own the equipment and run the crews in house — septic tank work, excavation and concrete removal all included. That is why we can dig, repair and close up without waiting on another company's schedule."
+    },
+    {
+      "q": "How long does backflow testing take?",
+      "a": "In most cases Backflow Bob, Inc. — our certified backflow testing arm — completes a test in 15 to 20 minutes, with the equipment and materials on hand to handle most simple repairs during the same visit."
+    },
+    {
+      "q": "Does Miami-Dade County require a backflow preventer?",
+      "a": "Most Miami-Dade County businesses are required by County ordinance to have an up-to-date backflow preventer installed, and the Water and Sewer Department may contact you directly to require an annual test. Some older buildings never had one installed at all. If you are not sure what you have, call us and we will find out."
+    },
+    {
+      "q": "How long have you been in business?",
+      "a": "Bay Plumbing Co. has been owned and operated by the same family since 1968 — 57 years serving Miami-Dade County from the same shop at 3029 SW 28th St."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Bay Plumbing Co. is licensed under C.C. 6469 and insured under CFC057007. Both numbers are printed on our trucks, our signage and our estimates."
+    },
+    {
+      "q": "Do you handle commercial as well as residential?",
+      "a": "Both, plus industrial. We serve Miami-Dade's residential, commercial and industrial plumbing needs, and we work regularly with landlords and property managers running multiple units."
+    }
+  ],
+  "gallery": [],
+  "brand_voice_sample": "Simply stated, we are plumbers who can do it all, do it efficiently and do it for an honest price. You're not just a number to us. You are a valued customer with real needs that we have the privilege of taking care of. We value YOU, not just your money.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The client's existing contact form is a native Weebly form (name/email/comments, no phone field). No third-party CRM, chat or tracking snippet is present anywhere on the site. All crm.* fields remain empty pending operator paste-in from the MLA GHL account."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_skipped_reason": "APIFY_TOKEN is not present in the repo (.env absent; only .env.example exists). Business identity was confirmed instead from the client's own site plus four independent directory listings (Yelp, BestProsInTown, BBB, YellowPages), all agreeing on name, address 3029 SW 28th St Miami FL 33133, and phone (305) 446-8141.",
+    "pages_scraped": ["/", "/why-us.html", "/services.html", "/residential--commercial.html", "/property-maintenance.html", "/backflow-testing.html", "/specials.html", "/contact-us.html"],
+    "socials_scraped": [],
+    "review_sources_scraped": ["yelp.com/biz/bay-plumbing-miami", "bestprosintown.com/fl/miami/bay-plumbing-co-", "bbb.org"],
+    "generated_at": "2026-08-06",
+    "cost_estimate_usd": 0.24,
+    "warnings": [
+      "Aggregate rating unresolved — see _rating_note. No rating badge published.",
+      "Four of six service areas are derived from HQ proximity, not stated by the client. Confirm before the client sends traffic to them.",
+      "geo lat/lng not captured (no GBP lookup). LocalBusiness schema omits geo coordinates."
+    ]
+  }
+}

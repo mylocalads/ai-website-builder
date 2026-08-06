@@ -1,0 +1,49 @@
+{
+  "slug": "bay-plumbing-co",
+  "url": "https://www.bayplumbingco.com/",
+  "screenshot": "screenshots/bay-plumbing-co.webp",
+  "audited_at": "2026-08-06",
+  "_purpose": "OPERATOR REFERENCE ONLY. This audit is not design DNA. The owl template is the sole source of truth for layout, structure and component styling. Only brand tokens (red/white/black, logo) and business facts were carried forward.",
+  "platform": "Weebly (free tier — 'Powered by Weebly' badge renders in the footer of every page)",
+  "strengths": [
+    "Genuine 1968 founding date and family-ownership story stated plainly and repeatedly",
+    "License and insurance numbers published on the logo itself (C.C. 6469 / CFC057007)",
+    "Strong, memorable tagline already in market: 'CAN FIX ANYBODY'S PLUMBING'",
+    "Clear brand color: a single saturated red (#f90909) on white/black",
+    "Substantial, specific service copy — septic, drainfield, backflow, jetting, video inspection — written in real detail rather than boilerplate",
+    "Real photo of the actual shop and signage at 3029 SW 28th St",
+    "Both phone numbers (Miami and Key Biscayne) surfaced on every page"
+  ],
+  "weaknesses": [
+    "Unedited template placeholder text is live in production: a 'SOMEONE ONCE SAID' pull-quote reading 'If you're writing a medium or long section of text, break it up with more than one paragraph' on /why-us",
+    "An entire orphan section titled 'It's What's for Breakfast' with coffee and cookie stock icons and 'To edit, click on the text and add your own words' — visible to every visitor on /why-us",
+    "Homepage hero overlay announces 'We are working on the ADA Compliance version. Coming Soon!' — an accessibility disclaimer instead of an offer",
+    "Hero background video is a black-and-white interior of a modern living room with mountains outside the window — not Miami, not plumbing, not theirs",
+    "The contact form's own comment field is labelled 'massage' (typo for 'message'), and the word appears again as stray body text in the footer",
+    "No testimonials or reviews anywhere on the site, despite dozens of real reviews existing on Yelp and other directories",
+    "No service-area pages — Miami-Dade is named in prose but there is no page targeting Coconut Grove, Coral Gables, Key Biscayne or South Miami",
+    "No individual service pages: everything collapses into one /services list page, so no SEO surface for 'drainfield repair Miami' or 'backflow testing Miami'",
+    "Body copy repeatedly says 'over 40 years' and 'four whole decades' — stale by nearly two decades against the 1968 date",
+    "Typo 'RESIDENTIAL & COMMERTIAL' as an H2 on /residential--commercial.html",
+    "'Bay County Plumbing' — the wrong company name — appears twice on /property-maintenance.html",
+    "Several internal links point to dead legacy paths (residential_and_commercial.html, backflow_certification_request.html) and one has a four-w typo: 'wwww.bayplumbingco.com'",
+    "No structured data, no sitemap, no canonical strategy, no analytics or pixel",
+    "Contact form collects name/email/comments only — no phone field, so an emergency lead cannot be called back",
+    "/specials.html is three untitled images with no readable offer text",
+    "Layout is table-based Weebly markup; mobile rendering degrades to stacked tables"
+  ],
+  "carried_forward": {
+    "brand_colors": ["#f90909 (primary red)", "#ffffff", "#000000", "#d5d5d5"],
+    "logo": "public/logo-bay-plumbing.png (transparent PNG, red wordmark with license line)",
+    "real_photo": "public/img/bay-plumbing-shop.jpg (their actual building and signage)",
+    "tagline": "CAN FIX ANYBODY'S PLUMBING",
+    "founded": 1968,
+    "credentials": "Licensed C.C. 6469 — Insured CFC057007"
+  },
+  "not_carried_forward": [
+    "All layout, section rhythm, table markup and component styling",
+    "The stock hero video and all decorative stock icons",
+    "Every placeholder and orphan section",
+    "The Weebly footer badge"
+  ]
+}

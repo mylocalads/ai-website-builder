@@ -1,0 +1,49 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a rate card, because a plumbing price that is honest depends on what is actually behind the wall. What we can publish is exactly how the charging works, so nothing about your invoice is a surprise. If you take one thing from this page: ask us on the phone whether your job is a free estimate or a service call, and we will tell you the number before anyone is dispatched.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What Drives the Number",
+    "lede": "These are the variables we look at when we quote a job in Miami-Dade. None of them are guesses over the phone — they are what the inspection is for.",
+    "columns": ["Type of work", "How it's charged", "What changes the price"],
+    "rows": [
+      [
+        "Free estimate work",
+        "No charge to quote",
+        "Remodeling, replacing water or sewer lines, replacing fixtures, new construction — anything more involved than a service call."
+      ],
+      [
+        "Service call",
+        "Billed as a service call",
+        "Diagnosing and repairing a specific fault. Ask for the service-call figure on the phone; we will give it to you before dispatch."
+      ],
+      [
+        "Emergency / after hours",
+        "Service call, out-of-hours rate",
+        "Time of day, day of week, and whether the water has to be made safe before the repair can start."
+      ],
+      [
+        "Drain stoppages",
+        "Quoted after inspection",
+        "Where the blockage sits, whether the line needs a camera, whether jetting is required, and whether a clean-out has to be cut in."
+      ],
+      [
+        "Septic & drainfield",
+        "Quoted after inspection",
+        "Tank condition, drainfield saturation, depth, access for the excavator, and how much concrete or paving has to come up and go back."
+      ],
+      [
+        "Backflow testing",
+        "Flat test fee",
+        "Usually 15–20 minutes. Repairs, if the device fails, are quoted separately — most simple ones we handle in the same visit."
+      ],
+      [
+        "Water & sewer line replacement",
+        "Free estimate, then quoted",
+        "Run length, depth, pipe material, slab or yard, and whether a city sewer connection is part of the work."
+      ]
+    ],
+    "footnote": "Because we own our excavation and concrete-removal equipment and do not sub-contract septic work, the dig and the make-good are inside our quote rather than a second contractor's invoice arriving later."
+  },
+  "notes": "Estimates are free for work more involved than a service call. We accept credit cards. Licensed C.C. 6469 · Insured CFC057007. Call (305) 446-8141 in Miami or (305) 361-1177 on Key Biscayne."
+}

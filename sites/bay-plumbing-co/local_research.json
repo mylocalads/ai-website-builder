@@ -1,0 +1,105 @@
+{
+  "slug": "bay-plumbing-co",
+  "category": "Plumber / Plumbing contractor",
+  "city": "Miami, FL",
+  "region": "Miami-Dade County (Coconut Grove, Coral Gables, Key Biscayne, South Miami)",
+  "_evidence_note": "Reddit thread BODIES were not obtainable — reddit.com blocks both Firecrawl and the WebFetch user agent. Findings below come from (a) Reddit/forum search-result titles and snippets, which evidence the questions Miami homeowners actually ask, and (b) 23 Yelp reviews + 38 BestProsInTown reviews of Bay Plumbing Co itself, which are local primary voice about THIS business. The client-review corpus is the stronger evidence and is weighted accordingly. Treated as directional, not as a read of full thread comments.",
+  "pain_points": [
+    {
+      "claim": "Miami homeowners assume every trade will try to rip them off, and default to distrust before the truck arrives.",
+      "evidence": "r/Miami: 'Struggling to Find Honest, Reliable Tradespeople in Miami' — 'nothing but bad experiences with tradespeople in Miami… the work is often mediocre'. r/Miami: 'Since Miami is full of scammers and people in the home services industry looking to rip you off in a moments notice, what do you mainly use to find solid [providers]?'",
+      "source": "search-result titles + snippets"
+    },
+    {
+      "claim": "Surprise trip/estimate fees disclosed only after the plumber is standing in the house is the single loudest complaint about this business.",
+      "evidence": "Yelp, Fred W.: 'They charged my Mom (in her 90's) $150 to come out and look at a leak issue. They didn't mention that they were going to charge $150 for the estimate when she called to make the appointment.' Yelp, Virginia W.: 'I called for \"emergency\" repair, the price was OUTRAGEOUS!!' r/homeowners: 'Once the plumber arrived, the price jumped to $595.'",
+      "source": "client reviews (Yelp) + search snippets"
+    },
+    {
+      "claim": "Phone/dispatch manner is the failure point far more often than the fieldwork. Reviewers repeatedly split the two: praise the plumber, fault the office.",
+      "evidence": "Yelp, Victoria H.: 'Owner is rude… The plumber, who actually came to my home was very nice and very professional. The problem was the owner of the company.' Yelp, Ana B.: 'Unresponsive and rude dispatcher.' BestProsInTown Sep 2023: 'he sent a very nice plumber out here who was very efficient and did a great job… [but] Robert called me back in a very rude and insulting manner.'",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Callbacks that never happen — the customer is left chasing the company after the first visit.",
+      "evidence": "BestProsInTown Sep 2023: 'Neither the air conditioning contractor or Robert from Bay Plumbing ever called us back, so finally, I messaged Robert.'",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Fear that a 15–20 minute visit will be billed like a full job, with no itemization.",
+      "evidence": "Yelp, John L.: 'spent a total of about 15-20 minutes working on it and claimed it was fixed. Charged $219 (with travel time and parking)… 10 minutes later it was blocked again.'",
+      "source": "client reviews"
+    },
+    {
+      "claim": "Miami's older housing stock and high water table make septic, drainfield and backflow work a recurring, high-stakes local problem homeowners cannot DIY.",
+      "evidence": "Client site documents drainfield repair/replacement, septic pump-outs, grease traps, and a Miami-Dade County ordinance requiring up-to-date backflow preventers on most commercial property. Homeowner searches in the metro skew heavily to septic/drain/sewer over fixture work.",
+      "source": "client website + category search patterns"
+    }
+  ],
+  "what_customers_value": [
+    "A price said out loud on the phone, before anyone is dispatched — including whether the visit itself costs money",
+    "Same-day arrival when the water is actually running: 'Plumber Chris is a life saver… got me up and running in no time. Same day service too!'",
+    "Named technicians they can ask for by name — Albert, Chris, Nick, Jose, Robbie and Angel all appear by name in positive reviews",
+    "Being talked out of the expensive fix when a cheaper one works: 'Albert came and saved me a bundle by suggesting an easier fix'",
+    "Crews that own the equipment and finish the same trip — no subcontractor handoff for excavation, septic or concrete",
+    "Continuity: reviewers cite 25-year relationships and multi-generational use of the same company",
+    "Clean-up: 'dug down 2 feet to find the drain line, added a clean out T and were done by noon. Cleaned up and left everything perfect.'"
+  ],
+  "business_differentiators": [
+    "Family owned and operated by the same family since 1968 — 57 years in Miami-Dade, verifiable and rare in a metro where trades churn",
+    "Everything in-house: large parts inventory, own excavation, septic and concrete-removal equipment, so jobs finish without a supply-house run or a subcontractor",
+    "24-hour emergency service with plumbers genuinely on call, not an answering service",
+    "Full septic and drainfield capability — inspection, repair, replacement, pump-outs, grease traps — which most Miami fixture plumbers do not carry",
+    "Certified backflow testing through Backflow Bob, Inc., relevant to the Miami-Dade commercial ordinance",
+    "Video inspection and jetting equipment in the fleet",
+    "Centrally located at 3029 SW 28th St, minutes from Coconut Grove, Coral Gables, Key Biscayne and South Miami",
+    "Free estimates on quoted work (remodels, water/sewer line replacement, fixture replacement)"
+  ],
+  "copy_angles": [
+    {
+      "angle": "Lead with the 1968 date, not with adjectives.",
+      "rationale": "In a market where the top complaint is 'everyone here is a scammer', a verifiable 57-year family-owned record does the trust work that no amount of 'honest and reliable' copy can. Every competitor claims honest; almost none can claim 1968.",
+      "example": "Same family. Same phone number. Since 1968."
+    },
+    {
+      "angle": "Put pricing transparency on the page, before the phone rings.",
+      "rationale": "Directly answers the loudest recurring complaint in this business's own review corpus — surprise estimate/trip fees. Stating when an estimate is free and when a diagnostic is billed defuses the exact conflict that produced the worst reviews.",
+      "example": "Free estimates on quoted work. If a visit carries a diagnostic fee, you hear the number on the phone — not at the door."
+    },
+    {
+      "angle": "Sell the yard, not just the wrench.",
+      "rationale": "Septic, drainfield, excavation and concrete removal in-house is the hardest thing for a competitor to copy and the thing Miami homeowners most fear subcontracting. It also justifies premium pricing honestly.",
+      "example": "We don't sub out septic, excavation or concrete. One crew, one truck, one bill."
+    },
+    {
+      "angle": "Name the technicians.",
+      "rationale": "Every strong review names a person. Making the crew visible converts an anonymous dispatch into a relationship and directly counters the 'rude office' theme.",
+      "example": "Ask for Chris, Albert or Nick — the same crew our customers have asked for by name for years."
+    },
+    {
+      "angle": "24 hours means a plumber, not a voicemail.",
+      "rationale": "Miami emergency plumbing is a commodity claim; the differentiator is stocked trucks plus in-house equipment, which is why they can actually finish at 2am.",
+      "example": "24 hours a day, 365 days a year — with the parts already on the truck."
+    },
+    {
+      "angle": "Speak to Coconut Grove / Coral Gables / Key Biscayne older-home owners specifically.",
+      "rationale": "The HQ sits in 33133. Older South Miami housing stock is exactly where cast-iron sewer lines, absent backflow preventers and failing drainfields live — the highest-value jobs and the ones only a fully equipped shop can take.",
+      "example": "Cast iron under a 1950s Grove house? We've been opening those floors since 1968."
+    }
+  ],
+  "gaps_and_cautions": [
+    "Aggregate ratings disagree sharply by platform: Yelp 2.5 (23 reviews) vs BestProsInTown 4.3 (38 reviews). No aggregate rating badge should be displayed on the site until a Google Business Profile figure is verified.",
+    "Every testimonial used on the generated site is a real, attributable, positive review pulled from Yelp or BestProsInTown. None were written or embellished.",
+    "The recurring negative theme is phone manner and fee disclosure, not workmanship. That is an operations fix, not a copy fix — the site can set honest expectations but cannot repair the call experience. Flag to the client.",
+    "No Google Business Profile lookup was performed: APIFY_TOKEN is absent from the repo, so rating, review_count, geo and canonical GBP hours are unverified and left unset in config."
+  ],
+  "sources": [
+    "https://www.yelp.com/biz/bay-plumbing-miami",
+    "https://www.bestprosintown.com/fl/miami/bay-plumbing-co-/",
+    "https://www.reddit.com/r/Miami/comments/1gwwluy/struggling_to_find_honest_reliable_tradespeople/",
+    "https://www.reddit.com/r/Miami/comments/13au7fj/what_do_you_use_to_find_reputable_providers_eg_ac/",
+    "https://www.reddit.com/r/Plumbing/comments/1d64jjm/can_anyone_recommend_a_good_plumber_in_miami/",
+    "https://www.bayplumbingco.com/"
+  ],
+  "generated_at": "2026-08-06"
+}

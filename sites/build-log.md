@@ -3195,3 +3195,100 @@ the neutral "confirming" state rather than a false confirmation.
 
 **Remaining:** no real card has been run end to end. The Stripe endpoint registration itself was done
 by the operator and has not been observed delivering a live event.
+
+---
+
+## Bay Plumbing Co. — `bay-plumbing-co` — 2026-08-06
+
+**Live: https://bay-plumbing-co.vercel.app** — 21 pages, `owl` template, project `bay-plumbing-co`
+(`prj_ZQhVFyYUchmGGbzJcLVMpgGzfsrG`), deployment `dpl_A7ixKzjeJn7rCS9zz3wyX4mjp8TM` (production, READY).
+
+Source site: https://www.bayplumbingco.com/ (Weebly free tier). Miami-Dade plumbing contractor,
+3029 SW 28th St, Miami FL 33133, family owned since 1968.
+
+### Pipeline
+
+| Step | Result |
+|---|---|
+| intake-from-web | 8 pages Firecrawled + 3 review directories → `intake-scraped.json` |
+| find-business (GBP) | **SKIPPED — no APIFY_TOKEN in repo.** See below. |
+| local-research | Reddit blocked; substituted the client's own 61-review corpus as local voice |
+| site-audit | `screenshots/bay-plumbing-co.png` + `audit_results.json` |
+| design-reference | `design_reference.json`, $0 (no reference URLs, no plumbing library) |
+| site-generate | owl scaffold, 5 services, 6 areas, 1 blog post |
+| vercel-deploy | local build clean, deployed, all 11 spot-checked routes 200 |
+| short-link | not run |
+
+Spend this run: ~$0.24 Firecrawl. No Apify spend (token absent).
+
+### GBP lookup did not run
+
+`.env` does not exist in the repo — only `.env.example` — so `APIFY_TOKEN` was unavailable and
+`find-business` could not execute. Identity was instead confirmed against the client's own site plus
+four independent directories (Yelp, BestProsInTown, BBB, YellowPages), all agreeing on name, address
+and phone. **Consequence:** `rating`, `review_count` and `geo` are unset in `config.json`, so the site
+ships no star badge and the LocalBusiness JSON-LD carries no coordinates. Re-run `/find-business`
+once a token is in place.
+
+### Rating deliberately withheld
+
+Third-party aggregates disagree sharply — Yelp **2.5 / 23 reviews**, BestProsInTown **4.3 / 38**.
+Publishing either would be a coin-flip on accuracy, so no aggregate rating appears anywhere on the
+site and "displaying an aggregate star rating" was added to the anti-patterns list in
+`design_reference.json`. The five testimonials used are real, attributable, published reviews (four
+Yelp, one BestProsInTown), verbatim apart from trimming one trailing signature. Nothing was written.
+
+### What the review corpus actually says (matters for the client conversation)
+
+The recurring complaint is **not workmanship** — it is phone manner and fee disclosure. Reviewers
+repeatedly split the two: praise the plumber by name, fault the office. The single loudest theme is a
+$150 estimate/trip fee disclosed only after the plumber arrived. That shaped the copy: the
+`promise_band` is built entirely around stating the price on the phone before dispatch, and the
+`/pricing` page publishes a `cost_table` of what is a free estimate vs. what is a service call rather
+than a rate card. The site can set honest expectations; it cannot fix the call experience. Raise it.
+
+### Assets and credentials
+
+License numbers were not in the HTML — they are baked into the logo artwork and painted on the
+building. Read off both: **Licensed C.C. 6469 · Insured CFC057007**. Logo and a genuine photo of the
+shop and signage pulled to `public/`. No stock photography used anywhere.
+
+### Tokens
+
+Brand red `#f90909` measures 4.14:1 on white — under AA for the white button labels owl puts on
+`--color-accent`. Re-derived the documented three-token set: fill `#d10a0a` (5.59:1 on white), ink
+`#b80a0a` (6.19:1 on bg / 6.81:1 on surface), on-dark `#ff5f52` (5.52:1 on `--color-primary`). This is
+verbatim the "dark saturated red" case the owl `tokens.css` comment anticipates.
+
+### Old site — notable findings
+
+Live production placeholder text on `/why-us`: a pull-quote reading "If you're writing a medium or
+long section of text, break it up with more than one paragraph", plus an entire orphan section titled
+"It's What's for Breakfast" with coffee and cookie stock icons and "To edit, click on the text and add
+your own words." The homepage hero overlay reads "We are working on the ADA Compliance version.
+Coming Soon!" The contact form's comment field is labelled "massage". Body copy says "over 40 years"
+against a 1968 founding date. `/property-maintenance.html` calls the company "Bay County Plumbing"
+twice. Full list in `audit_results.json`.
+
+### Verification
+
+Local build clean, no console errors on any of 16 routes crawled. Mobile 390px: no horizontal
+overflow (`scrollWidth === clientWidth`). Live: 11/11 routes 200, canonical and sitemap both resolve
+to `https://bay-plumbing-co.vercel.app`.
+
+Two layout fixes caught in review before deploy: `signature_system` had 4 grid items against an
+`auto-fit minmax(300px)` track, orphaning the fourth across a full row — merged to 3. And the shop
+photo was set on both `about_block.photo` and `seo_body.image`, rendering the site's only photograph
+twice on one page — dropped from `seo_body`.
+
+### Outstanding — needs operator / client
+
+| Field | Status |
+|---|---|
+| `crm.*` (chat, reviews, calendar, contact form, call tracking) | empty — GHL paste-in |
+| `crm.form_action_url` / `captcha_snippet` | unset — native EstimateForm cannot submit until set |
+| `code_injection.head` / `body_end` (Pixel, GTM) | empty — operator |
+| `rating` / `review_count` / `geo` | unset — needs GBP lookup |
+| Custom domain | not attached |
+| Job photography | none exists; `/our-work` ships a written capability statement and an empty `projects` array rather than stock imagery. Highest-value asset to collect from the client. |
+| Service areas | Miami and Key Biscayne are stated by the client. Coconut Grove, Coral Gables, South Miami and Miami Beach were derived from HQ proximity — confirm before driving traffic. |

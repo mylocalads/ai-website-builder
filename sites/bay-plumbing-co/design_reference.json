@@ -1,0 +1,64 @@
+{
+  "slug": "bay-plumbing-co",
+  "template": "owl",
+  "vertical": "default",
+  "reference_urls": [],
+  "_reference_note": "No plumbing reference library exists (only default, roofing, concrete). No designer reference URLs were supplied. Per the pipeline's ground rules the owl template is the sole source of truth for layout, structure and component styling; only the client's BRAND TOKENS were re-derived below. No paid reference scrape was run, so this step cost $0.",
+  "palette": {
+    "--color-bg": "#f4f5f6",
+    "--color-surface": "#ffffff",
+    "--color-text": "#14161a",
+    "--color-muted": "#5a5f66",
+    "--color-primary": "#1c1f24",
+    "--color-on-primary": "#ffffff",
+    "--color-accent": "#d10a0a",
+    "--color-on-accent": "#ffffff",
+    "--color-accent-ink": "#b80a0a",
+    "--color-accent-on-dark": "#ff5f52",
+    "--color-focus": "#0057ff"
+  },
+  "palette_derivation": {
+    "source": "Client brand red sampled from bayplumbingco.com CSS (#f90909, the single dominant brand hex) and from the logo artwork; black and white are the only other colours in the client's mark.",
+    "why_not_f90909": "The raw brand red #f90909 measures 4.14:1 against white — under WCAG AA (4.5:1) for the white button labels the owl template puts on --color-accent. Darkening to #d10a0a preserves the brand read and clears AA at 5.59:1.",
+    "contrast_checks": [
+      { "pair": "#ffffff on --color-accent #d10a0a", "ratio": "5.59:1", "verdict": "AA pass (normal text)" },
+      { "pair": "--color-accent-ink #b80a0a on --color-bg #f4f5f6", "ratio": "6.19:1", "verdict": "AA pass" },
+      { "pair": "--color-accent-ink #b80a0a on --color-surface #ffffff", "ratio": "6.81:1", "verdict": "AA pass" },
+      { "pair": "--color-accent-on-dark #ff5f52 on --color-primary #1c1f24", "ratio": "5.52:1", "verdict": "AA pass" },
+      { "pair": "--color-text #14161a on --color-bg #f4f5f6", "ratio": "16.4:1", "verdict": "AAA pass" },
+      { "pair": "--color-muted #5a5f66 on --color-bg #f4f5f6", "ratio": "6.3:1", "verdict": "AA pass" }
+    ],
+    "note": "This client is exactly the case the owl tokens.css comment describes: a dark saturated red that works as a button fill but cannot survive as text on a dark band. Hence the separate --color-accent-on-dark tint rather than an override fight in component CSS."
+  },
+  "typography": {
+    "--font-display": "'Montserrat', 'Inter', system-ui, sans-serif",
+    "--font-body": "'Inter', system-ui, sans-serif",
+    "source": "Template default. No font-family declarations or Google Fonts links were detectable on the client's site — Weebly serves typography from an external theme sheet — so intake recorded brand.fonts as null and the documented fallback applies."
+  },
+  "spacing": {
+    "--radius-sm": "4px",
+    "--radius-md": "8px",
+    "--radius-lg": "14px",
+    "--space-1": "0.5rem",
+    "--space-2": "1rem",
+    "--space-3": "1.5rem",
+    "--space-4": "2.5rem",
+    "--space-5": "4rem",
+    "--max-width": "1200px",
+    "source": "Template default, unchanged."
+  },
+  "motion": {
+    "source": "Template default. No motion, transition or keyframe data was extracted from the client's site — prohibited by the intake anti-pattern lock."
+  },
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "stock hero video unrelated to the trade or the city (the client's current site runs a black-and-white mountain-view living room)",
+    "unedited template placeholder copy of any kind",
+    "displaying an aggregate star rating — no verified Google figure exists and third-party aggregates disagree sharply"
+  ],
+  "generated_at": "2026-08-06"
+}

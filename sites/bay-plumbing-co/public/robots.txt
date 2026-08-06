@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bay-plumbing-co.vercel.app/sitemap-index.xml

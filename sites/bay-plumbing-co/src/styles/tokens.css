@@ -1,0 +1,40 @@
+:root {
+  --color-bg: #f4f5f6;
+  --color-surface: #ffffff;
+  --color-text: #14161a;
+  --color-muted: #5a5f66;
+  --color-primary: #1c1f24;
+  --color-on-primary: #ffffff;
+
+  /* Bay Plumbing Co. brand red. The client's authored value is #f90909, which
+     measures 4.14:1 against white — under AA for the white button labels this
+     template puts on --color-accent. #d10a0a reads as the same red and clears
+     AA at 5.59:1.
+
+     This client is the exact case the template's own token notes describe: a
+     dark saturated red works as a button fill but cannot survive as text on the
+     dark --color-primary band. Hence three tokens, not one.
+
+       --color-accent          FILL behind --color-on-accent (buttons, icon
+                               circles, badges). Never used as body text.
+       --color-accent-ink      the red as TEXT on a LIGHT background
+                               (eyebrows, tick marks, stars, pins, chevrons).
+       --color-accent-on-dark  the red as TEXT inside the dark --color-primary
+                               bands and over the hero scrim.
+
+     Measured: white on #d10a0a = 5.59:1. #b80a0a on --color-bg = 6.19:1 and on
+     --color-surface = 6.81:1. #ff5f52 on --color-primary = 5.52:1. Fills inside
+     the dark bands keep --color-accent, so the colour the eye reads as "the
+     button colour" is unchanged site-wide. */
+  --color-accent: #d10a0a;
+  --color-on-accent: #ffffff;
+  --color-accent-ink: #b80a0a;
+  --color-accent-on-dark: #ff5f52;
+
+  --color-focus: #0057ff;
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

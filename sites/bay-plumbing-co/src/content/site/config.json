@@ -1,0 +1,108 @@
+{
+  "kind": "config",
+  "business_name": "Bay Plumbing Co.",
+  "legal_name": "Bay Plumbing Company",
+  "tagline": "Can Fix Anybody's Plumbing",
+  "phone": "+13054468141",
+  "phone_display": "(305) 446-8141",
+  "email": "info@bayplumbingco.com",
+  "address": {
+    "street": "3029 SW 28th St",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33133",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "hours": {
+    "monday": "8:00 AM – 4:30 PM",
+    "tuesday": "8:00 AM – 4:30 PM",
+    "wednesday": "8:00 AM – 4:30 PM",
+    "thursday": "8:00 AM – 4:30 PM",
+    "friday": "8:00 AM – 4:30 PM"
+  },
+  "site_url": "https://bay-plumbing-co.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 57,
+  "social": {
+    "facebook": "https://www.facebook.com/BayPlumbingco/"
+  },
+  "logo_url": "/logo-bay-plumbing.png",
+  "about_photo": "/img/bay-plumbing-shop.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Same family since 1968",
+      "description": "Fifty-seven years in Miami-Dade, run out of the same shop on SW 28th Street. If you grew up here, there is a fair chance we did your parents' plumbing too."
+    },
+    {
+      "title": "We don't sub out the hard part",
+      "description": "Septic work, excavation and concrete removal are all in house. One crew digs, repairs and closes up — no waiting on another company's calendar."
+    },
+    {
+      "title": "The parts are already on the truck",
+      "description": "We carry a large inventory of common materials, so most jobs finish on the first visit instead of pausing for a supply-house run."
+    },
+    {
+      "title": "Licensed C.C. 6469 · Insured CFC057007",
+      "description": "The numbers are painted on the building and printed on every estimate. Ask any contractor for theirs before you let them open a wall."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Plumbing, Septic",
+    "heading_rest": "& Backflow",
+    "subtitle": "Residential, commercial and industrial work across Miami-Dade County — with the video, jetting and excavation equipment to finish it ourselves."
+  },
+  "estimate_form": {
+    "heading": "Tell Us What's Going On",
+    "services": [
+      "Emergency — water is running now",
+      "Leak detection or repair",
+      "Drain stoppage or sewer backup",
+      "Septic tank or drainfield",
+      "Grease trap pumping or repair",
+      "Backflow testing or certification",
+      "Water or sewer line replacement",
+      "New construction or remodel",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Water running where it shouldn't?",
+    "body": "Call (305) 446-8141 in Miami or (305) 361-1177 on Key Biscayne. We have had plumbers on call 24 hours a day, 365 days a year since 1968 — and we will tell you on the phone what the visit costs before anyone gets in a truck.",
+    "cta_text": "Request a Plumber",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Plumbing Advice for Miami Homes",
+    "description": "Practical notes on septic systems, cast iron, backflow rules and emergency plumbing from a Miami-Dade shop that has been at it since 1968."
+  }
+}
