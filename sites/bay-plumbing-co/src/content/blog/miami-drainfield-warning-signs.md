@@ -3,6 +3,7 @@ title: Five Signs Your Miami Drainfield Is Failing
 description: The window between a damp patch in the yard and a house that will not drain is short in Miami's water table. Here is what to look for, and what it costs to ignore.
 publish_date: "2026-08-06"
 read_time: 5 min read
+hero_image: /img/septic-tank.jpg
 author: Bay Plumbing Co.
 tags:
   - Septic

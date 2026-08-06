@@ -26,7 +26,14 @@ faqs:
     a: Yes. We own our concrete-removal and excavation equipment, so slab work does not require bringing in another company. We cut, repair and make good ourselves.
   - q: Do you do remodels and new construction?
     a: Both. We handle new fixture installation and hook-up, kitchen and bathroom remodelling, and full new-construction plumbing for residential and commercial buildings in Dade County.
-gallery: []
+hero_photo: /img/hero-red-valve.jpg
+about_photo: /img/kitchen-tap.jpg
+about_photo_alt: Clean water running from a kitchen tap
+gallery:
+  - photo: /img/sewer-pipe-stack.jpg
+    alt: Sewer pipe staged for a line replacement
+  - photo: /img/kitchen-tap.jpg
+    alt: Clean water running from a kitchen tap
 ---
 
 Water and sewer lines are where a Miami plumbing job gets expensive, and where the difference between contractors shows up most clearly. A lot of the housing stock through Coconut Grove, Coral Gables and South Miami still runs on cast iron laid two generations ago. It scales, it cracks, and eventually roots find it — and once that starts, patching one break rarely buys much time.

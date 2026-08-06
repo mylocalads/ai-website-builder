@@ -26,7 +26,14 @@ faqs:
     a: Yes, and you should. Finding out after closing that the drainfield needs replacing is one of the most expensive surprises in Miami real estate. We inspect the tank, the field and the rest of the plumbing infrastructure and give you an accurate estimate of the costs before you buy.
   - q: Do you handle grease traps for restaurants?
     a: Yes. We pump, inspect and repair grease traps as well as septic tanks, on a scheduled or as-needed basis for commercial kitchens across Miami-Dade.
-gallery: []
+hero_photo: /img/septic-tank.jpg
+about_photo: /img/bay-plumbing-shop.jpg
+about_photo_alt: The Bay Plumbing Co. yard and equipment base at 3029 SW 28th Street
+gallery:
+  - photo: /img/septic-tank.jpg
+    alt: Septic tank access lids opened for inspection in a yard
+  - photo: /img/bay-plumbing-shop.jpg
+    alt: The Bay Plumbing Co. yard and equipment base in Miami
 ---
 
 Septic is the work that separates a plumbing company from a plumber. A lot of Miami-Dade property — particularly south and west of the built-up core — still runs on a tank and a drainfield rather than city sewer, and the local water table gives those systems a harder life than they would have almost anywhere else in the country.

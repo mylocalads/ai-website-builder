@@ -14,12 +14,22 @@
       "cta_text": "Request a Plumber",
       "cta_href": "/book",
       "rating": 5
-    }
+    },
+    "photo": "/img/hero-pipe-wrenches.jpg"
   },
   "promise_bar": [
-    { "text": "Family owned since 1968", "icon": "home" },
-    { "text": "24 hours a day, 365 days a year", "icon": "clock" },
-    { "text": "Licensed C.C. 6469 · Insured CFC057007", "icon": "shield" }
+    {
+      "text": "Family owned since 1968",
+      "icon": "home"
+    },
+    {
+      "text": "24 hours a day, 365 days a year",
+      "icon": "clock"
+    },
+    {
+      "text": "Licensed C.C. 6469 · Insured CFC057007",
+      "icon": "shield"
+    }
   ],
   "promise_band": {
     "eyebrow": "Our Promise",
@@ -48,9 +58,18 @@
     "steps_title": "What an emergency call actually looks like",
     "steps_icon": "clock",
     "steps": [
-      { "title": "A real plumber, any hour", "body": "We have had someone on call 24 hours a day, 365 days a year since 1968. Not an answering service taking a message for the morning." },
-      { "title": "Fixed on the first visit, usually", "body": "Our trucks carry a large inventory of common materials, so most repairs happen there and then — no supply-house run, no second appointment." },
-      { "title": "Cleaned up before we leave", "body": "\"Dug down 2 feet to find the drain line, added a clean out T and were done by noon. Cleaned up and left everything perfect.\" — verified customer review." }
+      {
+        "title": "A real plumber, any hour",
+        "body": "We have had someone on call 24 hours a day, 365 days a year since 1968. Not an answering service taking a message for the morning."
+      },
+      {
+        "title": "Fixed on the first visit, usually",
+        "body": "Our trucks carry a large inventory of common materials, so most repairs happen there and then — no supply-house run, no second appointment."
+      },
+      {
+        "title": "Cleaned up before we leave",
+        "body": "\"Dug down 2 feet to find the drain line, added a clean out T and were done by noon. Cleaned up and left everything perfect.\" — verified customer review."
+      }
     ],
     "guarantee": {
       "title": "Fair price, honest answer",
@@ -62,10 +81,30 @@
   "process_steps": {
     "headline": "How to Get a Plumber Out Here",
     "steps": [
-      { "label": "Step One", "title": "Call or send the form", "icon": "phone", "body": "(305) 446-8141 in Miami, (305) 361-1177 on Key Biscayne, or the form on this page." },
-      { "label": "Step Two", "title": "We tell you what it costs", "icon": "clipboard", "body": "Free estimate on quoted work, or the service-call number up front. Before dispatch, not at the door." },
-      { "label": "Step Three", "title": "We show up and fix it", "icon": "hammer", "body": "With the parts on the truck and, if the job needs it, the excavator behind it." },
-      { "label": "Step Four", "title": "We clean up", "icon": "broom", "body": "Yard back together, floor swept, line marked with a clean-out if you needed one." }
+      {
+        "label": "Step One",
+        "title": "Call or send the form",
+        "icon": "phone",
+        "body": "(305) 446-8141 in Miami, (305) 361-1177 on Key Biscayne, or the form on this page."
+      },
+      {
+        "label": "Step Two",
+        "title": "We tell you what it costs",
+        "icon": "clipboard",
+        "body": "Free estimate on quoted work, or the service-call number up front. Before dispatch, not at the door."
+      },
+      {
+        "label": "Step Three",
+        "title": "We show up and fix it",
+        "icon": "hammer",
+        "body": "With the parts on the truck and, if the job needs it, the excavator behind it."
+      },
+      {
+        "label": "Step Four",
+        "title": "We clean up",
+        "icon": "broom",
+        "body": "Yard back together, floor swept, line marked with a clean-out if you needed one."
+      }
     ],
     "cta_text": "Request a Plumber",
     "cta_href": "/book"
@@ -111,7 +150,10 @@
       "text": "Nick came and he was on time, neat, tidy and efficient. He fixed my problem and I was very grateful that I called Bay Plumbing. Have used them for 25 years and they are all outstanding."
     },
     "cta_text": "Request a Plumber",
-    "cta_href": "/book"
+    "cta_href": "/book",
+    "image": "/img/kitchen-tap.jpg",
+    "image_alt": "Clean water running from a kitchen tap",
+    "image_position": "left"
   },
   "testimonials": [
     {

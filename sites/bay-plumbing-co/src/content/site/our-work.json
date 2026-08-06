@@ -1,5 +1,41 @@
 {
   "kind": "our-work",
-  "intro": "Fifty-seven years of Miami-Dade plumbing does not photograph well — most of our best work is buried two feet under somebody's yard or sealed back inside a wall. A typical week looks like this: locate a main drain line under a Coconut Grove slab, dig down, repair it and cut in a clean-out so the next call takes minutes; pump and rebuild a failing septic tank south of the Trail; run the annual backflow test on a Coral Gables commercial property; replace a cast-iron sewer run in a 1950s house; and answer whatever comes in at 2am. We are collecting job photography now — in the meantime, the reviews on this site are from real customers describing real jobs, and we are happy to give references for work like yours.",
-  "projects": []
+  "intro": "Fifty-seven years of Miami-Dade plumbing does not photograph well — most of our best work ends up buried two feet under somebody's yard or sealed back inside a wall. Below is the kind of work a typical week brings. We are building out a full job-photo library now; in the meantime the reviews on this site are from real customers describing real jobs, and we are happy to give references for work like yours.",
+  "projects": [
+    {
+      "title": "Main drain line located, dug and cleaned out",
+      "location": "Coconut Grove, Miami",
+      "photo": "/img/sewer-manhole.jpg",
+      "alt": "Sewer access chamber opened at ground level",
+      "description": "Two technicians located the blockage the morning after the call. The next morning another pair dug down two feet to the drain line, added a clean-out T and were finished by noon — described by the customer as \"cleaned up and left everything perfect.\""
+    },
+    {
+      "title": "Septic tank and drainfield service",
+      "location": "South Miami",
+      "photo": "/img/septic-tank.jpg",
+      "alt": "Septic tank access lids opened for inspection in a yard",
+      "description": "Inspection, pump-out and drainfield assessment on a property still off city sewer. Excavation handled by our own crew and equipment — no sub-contractor between the dig and the repair."
+    },
+    {
+      "title": "Backflow preventer tested and certified",
+      "location": "Coral Gables",
+      "photo": "/img/backflow-valve.jpg",
+      "alt": "Backflow preventer valve assembly at ground level",
+      "description": "Annual County-ordinance testing through Backflow Bob, Inc. Most tests take 15 to 20 minutes, with simple repairs handled the same visit."
+    },
+    {
+      "title": "Emergency leak repair",
+      "location": "Miami, FL",
+      "photo": "/img/burst-pipe.jpg",
+      "alt": "Water spraying from a split pipe joint",
+      "description": "After-hours call, repaired on the first visit with material carried on the truck. We have had plumbers on call 24 hours a day since 1968."
+    },
+    {
+      "title": "Our shop at 3029 SW 28th Street",
+      "location": "Miami, FL 33133",
+      "photo": "/img/bay-plumbing-shop.jpg",
+      "alt": "The Bay Plumbing Co. building and signage in Miami",
+      "description": "Same family, same address since 1968 — centrally located to the customers we serve, with the inventory and the equipment fleet kept on site."
+    }
+  ]
 }

@@ -3387,3 +3387,60 @@ full-bleed behind hero text.
 | Custom domain | not attached |
 | `team_members` | empty — only the owner's name is public; headshots would strengthen `/about` |
 | Service areas | Cutler Bay is HQ and Miami-Dade County is stated by the client. The other five (Palmetto Bay, Pinecrest, Kendall, Coral Gables, Homestead) were selected for county coverage — confirm the client actually services all five before driving paid traffic |
+
+### 2026-08-06 — bay-plumbing-co: imagery fix (follow-up)
+
+**The first deploy shipped with no imagery.** Every hero rendered as a flat dark band; the only
+`<img>` on most pages was the header and footer logo. `default_hero_photo`, every service
+`hero_photo` / `about_photo` / `gallery`, every service-area `landmark_photo`, the blog `hero_image`
+and the `/our-work` galleries were all left unset. Nothing was broken — the fields were simply never
+populated, so nothing failed at build time and the pages "validated" while looking empty.
+
+Cause: the `default.json` reference library lists "generic stock photography" as an anti-pattern and
+I applied it as a blanket ban on licensed stock. That is not what it means — `gilroy-roofing`, the
+reference build for this template, uses Unsplash for hero/about/seo_body and Wikimedia for area
+landmarks, and CLAUDE.md's own no-website path specifies Unsplash imagery. The anti-pattern targets
+*generic* imagery, not licensed photography chosen to fit the trade.
+
+**Sourcing.** Unsplash and Pexels both block headless browsers (Unsplash serves a BotStopper reject
+page, Pexels a Cloudflare interstitial), so neither could be searched for photo IDs. Final sources:
+
+| Source | Licence | Used for |
+|---|---|---|
+| Pixabay | free commercial, no attribution | hero (pipe wrenches), red valve, kitchen tap, drainage pipe |
+| Client's own site | already in commercial use by the client | burst pipe, backflow valve, shop photo |
+| Wikimedia Commons | CC0 | septic tank |
+| Wikimedia Commons | CC BY 2.0/3.0, CC BY-SA 3.0 | six service-area landmarks, credited |
+
+All images are self-hosted under `public/img/` (4.3 MB) rather than hotlinked — per the schema
+comment, a client photo served from someone else's CDN can vanish. Area landmarks carry
+`landmark_credit` + `landmark_credit_href`, which the template renders as a visible attribution line
+under the figure; verified rendering on `/service-area/key-biscayne-fl`.
+
+**Two rejects caught by looking at the images rather than trusting the search result.** A Commons
+result for "manhole sewer inspection" was a photograph of a child inside a sump — removed before it
+reached a build. A Pixabay "plumber" result was a cartoon frog on a toilet. Every image in the final
+set was opened and inspected before use.
+
+**`our-work.json` `projects[]` is dead data in this template.** `pages/our-work.astro` builds the
+page from per-service `gallery` arrays and never reads `projects`. The five project entries written
+during the first pass rendered nothing. Fixed by populating `gallery` on each service — `/our-work`
+went from 2 images to 11. The `projects[]` array is left in place but is currently inert; only
+`intro` renders.
+
+Also fixed: home `seo_body.image` restored (it had been dropped when it duplicated the About photo;
+it now uses a different image), and the site hero swapped from a tight valve crop that read as an
+orange blob at full-bleed to a landscape pipe-wrench photo in the brand red.
+
+Verified: 25/25 local routes 200 with 0 broken images and 0 console errors; mobile 390px still has
+no horizontal overflow; live re-check of 5 representative pages returns 0 broken images.
+**Live: https://bay-plumbing-co.vercel.app** — deployment `dpl_9NbfNv1Q2GKJsWzWPBQpstLBecwi`.
+
+**Separately — real client offers found on `/specials.html` and NOT published.** The client's specials
+page carries two genuine coupons: $50 off any residential garbage disposal installation scheduled
+over the internet (In-Sink-Erator Badger V 1/2HP $295, Pro-Com 3/4HP stainless $455, Pro-ES 3/4HP
+auto-reverse $495), and $75 or 10% off water heater replacement, whichever is greater — both Dade
+County only, one coupon per visit, change-out and connection to existing plumbing only. These are
+real published offers but the prices are undated and may be years stale, and stale pricing is exactly
+the surprise-invoice failure the review corpus complains about. Confirm currency with the client
+before putting them on `/pricing`.

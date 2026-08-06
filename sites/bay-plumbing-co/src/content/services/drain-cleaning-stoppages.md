@@ -24,7 +24,14 @@ faqs:
     a: It is an access point cut into the line at ground level. Where a property has no usable access we will dig down, locate the drain line and add a clean-out T. It turns future service calls from an excavation into a fifteen-minute job.
   - q: Why do Miami houses back up so often?
     a: A lot of the older stock through the Grove, the Gables and South Miami still runs on cast iron laid two generations ago. Cast iron scales and cracks with age, and the high water table lets roots find the cracks. It is the single most common thing we camera.
-gallery: []
+hero_photo: /img/sewer-pipe-stack.jpg
+about_photo: /img/drain-pipes.jpg
+about_photo_alt: Drainage pipe runs stacked ready for installation
+gallery:
+  - photo: /img/drain-pipes.jpg
+    alt: Drainage pipe runs stacked ready for installation
+  - photo: /img/sewer-pipe-stack.jpg
+    alt: Large-bore corrugated drainage pipe on a job site
 ---
 
 A stoppage is the job most likely to be done badly, because "the water is moving again" looks identical whether the line was properly cleared or merely punctured. We do it the other way round: find out what is actually in the pipe, clear it so it stays clear, and leave you with access for next time.

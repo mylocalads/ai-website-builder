@@ -104,5 +104,6 @@
   "blog_section": {
     "heading": "Plumbing Advice for Miami Homes",
     "description": "Practical notes on septic systems, cast iron, backflow rules and emergency plumbing from a Miami-Dade shop that has been at it since 1968."
-  }
+  },
+  "default_hero_photo": "/img/hero-pipe-wrenches.jpg"
 }

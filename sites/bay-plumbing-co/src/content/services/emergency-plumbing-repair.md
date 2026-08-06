@@ -24,7 +24,14 @@ faqs:
     a: Usually. We keep a large inventory of common plumbing material on the trucks specifically so an emergency does not turn into two appointments. If a part is genuinely unusual we will tell you what we are waiting on and make the property safe in the meantime.
   - q: What should I do before you arrive?
     a: Shut the water off at the main if you can reach it safely, and keep people away from any standing water near electrics. Then leave it — do not pour chemicals down a backed-up line, because it makes the line more dangerous for whoever opens it.
-gallery: []
+hero_photo: /img/kitchen-tap.jpg
+about_photo: /img/burst-pipe.jpg
+about_photo_alt: Water spraying from a split pipe joint against a red wall
+gallery:
+  - photo: /img/burst-pipe.jpg
+    alt: Water spraying from a split pipe joint
+  - photo: /img/hero-red-valve.jpg
+    alt: A main shut-off valve on a supply line
 ---
 
 Water does not wait for business hours, and in Miami it rarely stops on its own. A supply line that lets go at midnight, a main drain that backs up into a ground-floor bathroom, a water heater that finally splits — every hour those go unattended is more floor, more drywall and more money.

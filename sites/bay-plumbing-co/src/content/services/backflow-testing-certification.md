@@ -26,7 +26,10 @@ faqs:
     a: That is common. Some older buildings do not have one at all. Call us and we will find out what you have, tell you whether the ordinance applies to your property, and install a preventer if one is needed.
   - q: Do residential properties need backflow testing?
     a: The ordinance targets commercial property, but it is a good idea for residential homes to have backflow testing periodically — especially older homes, which often do not have an adequate preventer fitted.
-gallery: []
+hero_photo: /img/backflow-valve.jpg
+gallery:
+  - photo: /img/backflow-valve.jpg
+    alt: A backflow preventer valve assembly at ground level
 ---
 
 Backflow is the failure nobody sees until it has already happened: contaminated water from an outside source pulled backwards into a clean supply. The device that stops it is small, cheap relative to the consequences, and legally required across most of Miami-Dade's commercial property.
