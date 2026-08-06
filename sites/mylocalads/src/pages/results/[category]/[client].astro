@@ -1,14 +1,19 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BottomCTA from '../../../components/BottomCTA.astro';
-import { collections, findCaseStudy } from '../../../data/caseStudies.js';
+import {
+  allCaseStudyRoutes,
+  findCaseStudy,
+  categoriesFor,
+  canonicalPath,
+} from '../../../data/caseStudies.js';
 
+// One route per (category, case study) pair, so a study tagged into three
+// categories is reachable from all three.
 export function getStaticPaths() {
-  return collections.flatMap((c) =>
-    c.caseStudies.map((cs) => ({
-      params: { category: c.slug, client: cs.slug },
-    }))
-  );
+  return allCaseStudyRoutes().map(({ categorySlug, caseStudy }) => ({
+    params: { category: categorySlug, client: caseStudy.slug },
+  }));
 }
 
 const { category, client } = Astro.params;
@@ -16,11 +21,45 @@ const match = findCaseStudy(category, client);
 if (!match) throw new Error(`Case study not found: ${category}/${client}`);
 const { collection, caseStudy } = match;
 
-const isWebsites = collection.slug === 'websites';
+// Every tagged category, so a bundled client shows its full service mix
+// regardless of which category the visitor arrived through.
+const tags = categoriesFor(caseStudy);
+
+// Sections render off the data the study actually has, not off the category in
+// the URL — otherwise a Websites + CRM study would lose its before/after when
+// reached via /results/crm/.
+const hasBeforeAfter = Boolean(caseStudy.beforeImage && caseStudy.afterImage);
+const hasServices = Boolean(caseStudy.servicesPurchased?.length);
+
+// Full-page screenshots. The frame below crops to the top; the anchor opens the
+// whole thing.
+const shots = [
+  {
+    src: caseStudy.beforeImage,
+    size: caseStudy.beforeImageSize,
+    label: 'Before',
+    caption: 'the old site',
+    alt: `${caseStudy.client} homepage before the rebuild`,
+    labelClass: 'ba-label',
+  },
+  {
+    src: caseStudy.afterImage,
+    size: caseStudy.afterImageSize,
+    label: 'After',
+    caption: 'the MLA rebuild',
+    alt: `${caseStudy.client} homepage after the rebuild`,
+    labelClass: 'ba-label ba-label-after',
+  },
+];
+
+// The same study is served from every tagged category. Point them all at the
+// primary category so search engines index one page, not N duplicates.
+const canonical = new URL(canonicalPath(caseStudy) + '/', Astro.site).toString();
 ---
 <BaseLayout
   title={`${caseStudy.client} — ${collection.name} Case Study | My Local Ads`}
   description={caseStudy.summary}
+  canonical={canonical}
 >
   <article class="section case-study-page">
     <div class="container container-narrow">
@@ -31,7 +70,17 @@ const isWebsites = collection.slug === 'websites';
       </nav>
 
       <header class="case-header">
-        <span class="case-pill">{collection.name}</span>
+        <ul class="case-pills" aria-label="Services in this engagement">
+          {tags.map((tag) => (
+            tag.slug === collection.slug ? (
+              <li><span class="case-pill is-current" aria-current="true">{tag.name}</span></li>
+            ) : (
+              <li>
+                <a class="case-pill case-pill-link" href={`/results#${tag.slug}`}>{tag.name}</a>
+              </li>
+            )
+          ))}
+        </ul>
         <h1 class="case-headline">{caseStudy.headline}</h1>
         <p class="case-lede">{caseStudy.summary}</p>
       </header>
@@ -52,36 +101,60 @@ const isWebsites = collection.slug === 'websites';
         ))}
       </section>
 
-      {isWebsites && caseStudy.beforeImage && caseStudy.afterImage && (
+      {hasBeforeAfter && (
         <section class="site-before-after">
           <h2>Before &amp; After</h2>
           <div class="ba-grid">
-            <figure class="ba-cell">
-              <img src={caseStudy.beforeImage} alt={`${caseStudy.client} homepage before`} loading="lazy" />
-              <figcaption><span class="ba-label">Before</span> — the old site</figcaption>
-            </figure>
-            <figure class="ba-cell">
-              <img src={caseStudy.afterImage} alt={`${caseStudy.client} homepage after`} loading="lazy" />
-              <figcaption><span class="ba-label ba-label-after">After</span> — the MLA rebuild</figcaption>
-            </figure>
+            {shots.map((shot) => (
+              <figure class="ba-cell">
+                {/* Anchor, not a button: without JS this still opens the full
+                    screenshot. The lightbox below just intercepts the click. */}
+                <a
+                  class="ba-shot"
+                  href={shot.src}
+                  target="_blank"
+                  rel="noopener"
+                  data-lightbox
+                  data-caption={`${shot.label} — ${shot.caption}`}
+                  aria-label={`View the full-page ${shot.label.toLowerCase()} screenshot`}
+                >
+                  <img
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.size?.width}
+                    height={shot.size?.height}
+                    loading="lazy"
+                  />
+                  <span class="ba-expand" aria-hidden="true">View full page ⤢</span>
+                </a>
+                <figcaption><span class={shot.labelClass}>{shot.label}</span> — {shot.caption}</figcaption>
+              </figure>
+            ))}
           </div>
+          {caseStudy.siteUrl && (
+            <p class="ba-live-link">
+              <a href={caseStudy.siteUrl} target="_blank" rel="noopener">
+                Visit the live site: {caseStudy.siteUrl.replace(/^https?:\/\//, '')} →
+              </a>
+            </p>
+          )}
         </section>
       )}
 
-      {isWebsites && caseStudy.activeFeatures && caseStudy.activeFeatures.length > 0 && (
+      {hasServices && (
         <section class="site-features">
-          <h2>Active Features</h2>
+          <h2>Services Purchased</h2>
           <ul class="feature-chip-list">
-            {caseStudy.activeFeatures.map((f) => (
+            {caseStudy.servicesPurchased.map((service) => (
               <li class="feature-chip">
-                <span class="feature-dot" aria-hidden="true"></span> {f}
+                <span class="feature-dot" aria-hidden="true"></span> {service}
               </li>
             ))}
           </ul>
         </section>
       )}
 
-      {!isWebsites && caseStudy.dashboardImage && (
+      {!hasBeforeAfter && caseStudy.dashboardImage && (
         <section class="case-dashboard-section">
           <h2>Live Dashboard</h2>
           <div class="case-dashboard-frame">
@@ -120,6 +193,18 @@ const isWebsites = collection.slug === 'websites';
     </div>
   </article>
 
+  {hasBeforeAfter && (
+    <div class="lightbox" id="shot-lightbox" hidden>
+      <div class="lightbox-bar">
+        <span class="lightbox-caption"></span>
+        <button type="button" class="lightbox-close" aria-label="Close full-page view">✕</button>
+      </div>
+      <div class="lightbox-scroll">
+        <img class="lightbox-img" src="" alt="" />
+      </div>
+    </div>
+  )}
+
   <BottomCTA />
 </BaseLayout>
 
@@ -136,6 +221,14 @@ const isWebsites = collection.slug === 'websites';
   .case-breadcrumbs .current { color: #fff; }
 
   .case-header { margin-bottom: var(--space-3); }
+
+  /* One pill per tagged category. The category in the URL is filled in; the
+     others link back to their collection on /results. */
+  .case-pills {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    list-style: none; padding: 0;
+    margin: 0 0 var(--space-2);
+  }
   .case-pill {
     display: inline-block;
     padding: 0.4rem 0.9rem; border-radius: var(--radius-pill);
@@ -144,7 +237,18 @@ const isWebsites = collection.slug === 'websites';
     color: #fff;
     font-family: var(--font-display); font-weight: 700;
     font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
-    margin-bottom: var(--space-2);
+  }
+  .case-pill-link {
+    background: transparent;
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .case-pill-link:hover, .case-pill-link:focus-visible {
+    background: rgba(0, 56, 255, 0.12);
+    border-color: rgba(0, 56, 255, 0.4);
+    color: #fff;
   }
   .case-headline {
     font-size: clamp(1.75rem, 4.2vw, 2.75rem);
@@ -224,6 +328,10 @@ const isWebsites = collection.slug === 'websites';
     gap: var(--space-2);
   }
   @media (max-width: 700px) { .ba-grid { grid-template-columns: 1fr; } }
+
+  .ba-live-link { margin: var(--space-2) 0 0; font-family: var(--font-display); font-weight: 600; }
+  .ba-live-link a { color: var(--color-primary); text-decoration: none; overflow-wrap: anywhere; }
+  .ba-live-link a:hover, .ba-live-link a:focus-visible { text-decoration: underline; }
   .ba-cell {
     position: relative; margin: 0;
     border-radius: var(--radius-md); overflow: hidden;
@@ -231,7 +339,35 @@ const isWebsites = collection.slug === 'websites';
     background: #000;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   }
-  .ba-cell img { width: 100%; height: auto; display: block; }
+  /* Full-page screenshots run thousands of pixels tall. Fixing the frame's
+     aspect ratio and letting the image overflow it shows the TOP of the capture
+     at full width — a readable crop rather than a squashed whole page. */
+  .ba-shot {
+    display: block; position: relative;
+    aspect-ratio: 4 / 3; overflow: hidden;
+    cursor: zoom-in; text-decoration: none;
+  }
+  .ba-shot img { width: 100%; height: auto; display: block; }
+  .ba-shot::after {
+    /* Fade the hard crop edge so it reads as "continues below". */
+    content: ''; position: absolute; inset: auto 0 0 0; height: 96px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+    pointer-events: none;
+  }
+  .ba-expand {
+    position: absolute; right: 8px; bottom: 8px; z-index: 1;
+    background: rgba(0,0,0,0.72); color: #fff;
+    padding: 0.3rem 0.6rem; border-radius: var(--radius-sm);
+    font-family: var(--font-display); font-weight: 700; font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    backdrop-filter: blur(4px);
+    transition: background 0.15s ease;
+  }
+  .ba-shot:hover .ba-expand, .ba-shot:focus-visible .ba-expand {
+    background: var(--color-primary);
+  }
+  .ba-shot:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
+
   .ba-cell figcaption {
     padding: 0.5rem 0.75rem; font-size: 0.8rem;
     color: var(--color-text-muted); background: rgba(255,255,255,0.02);
@@ -245,6 +381,44 @@ const isWebsites = collection.slug === 'websites';
     text-transform: uppercase; letter-spacing: 0.08em;
   }
   .ba-label-after { background: #faf24c; color: #000; }
+
+  /* Full-page viewer. The image renders at natural width inside a scrollable
+     pane, so the whole capture is readable top to bottom. */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0, 0, 0, 0.94);
+    display: flex; flex-direction: column;
+  }
+  .lightbox[hidden] { display: none; }
+  .lightbox-bar {
+    flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: var(--space-2);
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.6);
+  }
+  .lightbox-caption {
+    color: #fff; font-family: var(--font-display); font-weight: 700;
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .lightbox-close {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; border-radius: var(--radius-sm);
+    width: 34px; height: 34px; font-size: 1rem; line-height: 1;
+    cursor: pointer; flex: 0 0 auto;
+    transition: background 0.15s ease;
+  }
+  .lightbox-close:hover, .lightbox-close:focus-visible { background: var(--color-primary); }
+  .lightbox-scroll {
+    flex: 1 1 auto; overflow-y: auto; overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--space-2);
+  }
+  .lightbox-img {
+    display: block; margin: 0 auto;
+    width: 100%; max-width: 1000px; height: auto;
+    border-radius: var(--radius-sm);
+  }
 
   /* Websites-only Active Features chip list */
   .site-features { margin-bottom: var(--space-4); }
@@ -317,3 +491,55 @@ const isWebsites = collection.slug === 'websites';
   }
   .case-back:hover { color: #fff; }
 </style>
+
+<script is:inline>
+  (function () {
+    var box = document.getElementById('shot-lightbox');
+    // No before/after on this case study — the markup was never rendered.
+    if (!box) return;
+
+    var img = box.querySelector('.lightbox-img');
+    var caption = box.querySelector('.lightbox-caption');
+    var closeBtn = box.querySelector('.lightbox-close');
+    var scroll = box.querySelector('.lightbox-scroll');
+    var lastFocus = null;
+
+    function open(src, alt, text, trigger) {
+      lastFocus = trigger;
+      img.src = src;
+      img.alt = alt;
+      caption.textContent = text;
+      box.hidden = false;
+      // Always start at the top of the capture, even on a reopen.
+      scroll.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function close() {
+      box.hidden = true;
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+
+    document.querySelectorAll('[data-lightbox]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        // Let modified clicks fall through to the href so "open in new tab"
+        // still works.
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        var shot = link.querySelector('img');
+        open(link.getAttribute('href'), shot ? shot.alt : '', link.dataset.caption || '', link);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    // Click the backdrop (not the image) to dismiss.
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target === scroll) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !box.hidden) close();
+    });
+  })();
+</script>

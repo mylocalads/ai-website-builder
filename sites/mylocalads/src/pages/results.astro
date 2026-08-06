@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BottomCTA from '../components/BottomCTA.astro';
-import { collections } from '../data/caseStudies.js';
+import { collections, categoriesFor } from '../data/caseStudies.js';
 
 // Shared partner logos, matching the homepage
 const partners = [
@@ -51,11 +51,38 @@ const defaultCategory = collections[0].slug;
           data-category={c.slug}
           style={c.slug === defaultCategory ? '' : 'display:none;'}
         >
+          {/* A service we sell with nothing published yet. Deliberately not a
+              `.case-slide` — the carousel counts those, and this must not read
+              as "1 of 1" with live arrows. */}
+          {c.caseStudies.length === 0 && (
+            <div class="case-empty-state">
+              <span class="case-slide-pill is-current">{c.name}</span>
+              <h2 class="case-empty-headline">{c.tagline}</h2>
+              <p class="case-empty-body">{c.intro}</p>
+              {/* Phrased without an article on purpose — "a AI Agents" vs "a CRM"
+                  would need per-category a/an handling to read correctly. */}
+              <p class="case-empty-note">
+                {c.name} case studies are being prepared for publication. In the meantime, we'll
+                walk you through the real numbers on a call.
+              </p>
+              <a href="/booking-page" class="btn btn-primary btn-lg case-empty-cta">
+                Book a call with our team
+              </a>
+            </div>
+          )}
           {c.caseStudies.map((cs, i) => (
             <article class={`case-slide${i === 0 ? ' is-active' : ''}`} data-index={i}>
               <div class="case-slide-body">
                 <div class="case-slide-head">
-                  <span class="case-slide-pill">{c.name}</span>
+                  <ul class="case-slide-pills" aria-label="Services in this engagement">
+                    {categoriesFor(cs).map((tag) => (
+                      <li>
+                        <span class={`case-slide-pill${tag.slug === c.slug ? ' is-current' : ''}`}>
+                          {tag.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                   <h2 class="case-slide-headline">{cs.headline}</h2>
                   <p class="case-slide-summary">{cs.summary}</p>
                 </div>
@@ -75,7 +102,7 @@ const defaultCategory = collections[0].slug;
                 <a href={`/results/${c.slug}/${cs.slug}`} class="case-slide-cta">Read full case study →</a>
               </div>
               <div class="case-slide-visual">
-                {c.slug === 'websites' && cs.beforeImage && cs.afterImage ? (
+                {cs.beforeImage && cs.afterImage ? (
                   <div class="site-before-after-mini">
                     <div class="ba-mini-cell">
                       <span class="ba-mini-label">Before</span>
@@ -170,10 +197,14 @@ const defaultCategory = collections[0].slug;
       if (target && target.scrollIntoView) {
         target.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
-      // Position indicator
-      currentEl.textContent = String(activeIndex + 1);
+      // Position indicator. An empty category shows the empty-state panel
+      // instead of slides, so hide the whole control row rather than render
+      // a nonsensical "1 / 0".
+      const controls = document.querySelector('.carousel-controls');
+      if (controls) controls.hidden = slides.length === 0;
+      currentEl.textContent = String(slides.length === 0 ? 0 : activeIndex + 1);
       totalEl.textContent = String(slides.length);
-      // Disable arrows when only 1 slide
+      // Disable arrows when there is nothing to page through
       const single = slides.length <= 1;
       prevBtn.disabled = single;
       nextBtn.disabled = single;
@@ -320,6 +351,9 @@ const defaultCategory = collections[0].slug;
     border: 1px solid var(--color-border);
     background: #000;
   }
+  /* Same top-crop as the case study page — these are full-page captures, so
+     without a fixed frame one slide would run thousands of pixels tall. */
+  .ba-mini-cell { aspect-ratio: 4 / 3; }
   .ba-mini-cell img { width: 100%; height: auto; display: block; }
   .ba-mini-label {
     position: absolute; top: 6px; left: 6px;
@@ -331,14 +365,51 @@ const defaultCategory = collections[0].slug;
   }
   .ba-mini-label-after { background: rgba(250, 242, 76, 0.9); color: #000; }
 
+  /* Shown in place of the carousel for a service with no published study yet.
+     Sized to roughly match a slide so switching categories does not jolt. */
+  .case-empty-state {
+    flex: 0 0 auto;
+    width: min(760px, 92vw);
+    scroll-snap-align: center;
+    display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--color-bg-elev);
+    border: 1px dashed var(--color-border);
+    border-radius: 20px;
+  }
+  .case-empty-headline {
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    margin: 0; color: #fff; line-height: 1.2;
+  }
+  .case-empty-body {
+    margin: 0; color: var(--color-text-muted);
+    font-family: var(--font-display); font-weight: 500; line-height: 1.55;
+  }
+  .case-empty-note {
+    margin: 0; color: var(--color-text-subtle); font-size: 0.92rem; line-height: 1.55;
+  }
+  .case-empty-cta { margin-top: var(--space-1); }
+  .carousel-controls[hidden] { display: none; }
+
+  /* A bundled client tags several categories, so this is a wrapping row. The
+     pill for the track you're viewing is filled in; the rest are outlined. */
+  .case-slide-pills {
+    display: flex; flex-wrap: wrap; gap: 0.4rem;
+    list-style: none; padding: 0; margin: 0;
+  }
   .case-slide-pill {
-    display: inline-block; align-self: flex-start;
+    display: inline-block;
     padding: 0.4rem 0.9rem; border-radius: var(--radius-pill);
-    background: rgba(0, 56, 255, 0.18);
-    border: 1px solid rgba(0, 56, 255, 0.4);
-    color: #fff;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
     font-family: var(--font-display); font-weight: 700;
     font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+  }
+  .case-slide-pill.is-current {
+    background: rgba(0, 56, 255, 0.18);
+    border-color: rgba(0, 56, 255, 0.4);
+    color: #fff;
   }
   .case-slide-headline {
     font-size: clamp(1.35rem, 2.4vw, 1.85rem);
