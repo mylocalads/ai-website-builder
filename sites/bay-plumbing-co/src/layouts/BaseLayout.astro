@@ -76,6 +76,19 @@ const ldPayloads = [localBusinessLd, breadcrumbLd, ...(Array.isArray(jsonLd) ? j
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/*
+      code-injection:head sits here rather than at the very end of <head> so
+      vendor snippets that ask to be "first in head" (UserWay, GTM, most pixels)
+      load before the fonts, title and JSON-LD.
+
+      It is NOT literally first, and must not be: the spec requires <meta
+      charset> inside the first 1024 bytes of the document, and this slot holds
+      operator-pasted markup of unbounded length. Pushing a multi-KB tag manager
+      above charset is how a page ends up sniffing the wrong encoding and
+      rendering mojibake. charset + viewport first, injection immediately after,
+      is the standard compromise.
+    */}
+    {injection.head && <Fragment set:html={`<!-- code-injection:head -->\n${injection.head}\n<!-- /code-injection:head -->`} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -104,7 +117,6 @@ const ldPayloads = [localBusinessLd, breadcrumbLd, ...(Array.isArray(jsonLd) ? j
     <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     {ldPayloads.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, '\\u003c')} />)}
-    {injection.head && <Fragment set:html={`<!-- code-injection:head -->\n${injection.head}\n<!-- /code-injection:head -->`} />}
   </head>
   <body>
     {injection.body_start && <Fragment set:html={`<!-- code-injection:body_start -->\n${injection.body_start}\n<!-- /code-injection:body_start -->`} />}

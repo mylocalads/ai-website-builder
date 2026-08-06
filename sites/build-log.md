@@ -3510,3 +3510,54 @@ against the red for its full expansion instead of fading out in the first few pi
 Verified: 15 routes assert disc `rgba(255,255,255,0.22)`, an inset ring, a white glyph and the
 `rgb(209,9,9)` bar — 0 mismatches, 0 console errors, mobile 390px no horizontal overflow. Live
 computed values match.
+
+### 2026-08-06 — bay-plumbing-co: real owl pulse + UserWay accessibility widget
+
+**The pulse was never running on desktop.** The owl template declares it inside
+`@media (max-width: 900px)` as `.mobile-phone .phone-icon { animation: phone-glow … }` — so above
+900px there was no animation at all, only a hover state. That is the template's own default, not
+something introduced here; any owl site has the same gap.
+
+**Also the wrong effect.** Checked `owlroofing.com` directly. Its call button is not one halo growing
+outward — it is TWO concentric rings that fade in and out on a stagger:
+
+```
+.btn--phone .icon::before { box-shadow: 0 0 0 3px rgba(accent,.5);
+                            animation: pulseffect  2s ease-in-out infinite; }
+.btn--phone .icon::after  { box-shadow: 0 0 0 3px rgba(accent,.25), 0 0 0 6px rgba(accent,.5);
+                            animation: pulseffect2 2s ease-in-out infinite; }
+@keyframes pulseffect  { 0%{opacity:0} 30%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
+@keyframes pulseffect2 { 0%{opacity:0} 30%{opacity:0} 50%{opacity:1} 70%{opacity:0} 100%{opacity:0} }
+```
+
+The spreads are FIXED and it is the **opacity** that animates. The outer ring peaks at 50%, after the
+inner one has already arrived — that offset is the entire illusion, and it is why the rings read as a
+ripple travelling outward even though neither ever moves. Reproduced exactly, in white for the red
+bar, and moved out of the mobile media query so it runs at every breakpoint as it does on owlroofing.
+
+Dropped the hand-rolled `phone-glow` keyframe and with it the fragile
+`box-shadow`-must-redeclare-the-inset-ring problem from the previous entry — the rings are now
+pseudo-elements, so the badge's own outline is untouched by the animation. `prefers-reduced-motion`
+holds the rings at `opacity: 0` rather than merely stopping the animation, which would freeze them
+mid-cycle as a permanent static double outline.
+
+**UserWay accessibility widget** (account `Kr4R6Esvbd`) added to `code_injection.head` — operator
+paste-in, stored verbatim, nothing synthesized.
+
+The vendor asks for it "first in `<head>`". The slot rendered LAST in head, so it was moved up — to
+immediately after `<meta charset>` and `<meta viewport>`, not literally first. It must not go above
+charset: the spec requires `<meta charset>` within the first 1024 bytes, and this slot holds
+operator-pasted markup of unbounded length, so a multi-KB tag manager above it is how a page ends up
+sniffing the wrong encoding. Verified in the built HTML: charset at byte 289, injection immediately
+after, both well inside the limit.
+
+Verified: 16 routes assert `pulseffect` / `pulseffect2` on `::before` / `::after`, the `rgb(209,9,9)`
+bar, and UserWay present in head — 0 mismatches, 0 console errors, mobile 390px no overflow. Widget
+confirmed loading (8 successful userway.org responses, `tunings/Kr4R6Esvbd` 200, element in DOM) both
+locally and live.
+
+**Two things left for the operator on the widget:** `data-color` is commented out in the pasted
+snippet — uncommenting it (already pre-filled `#d10909`) would match the widget button to the new
+header red. And `data-statement_url` still points at `http://www.example.com/accessibility`; this
+site has a real `/accessibility` page it could reference. Both left exactly as pasted rather than
+edited on the client's behalf.
