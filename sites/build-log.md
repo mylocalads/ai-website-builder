@@ -3694,6 +3694,43 @@ One inconsistency resolved: the client's FAQ quotes stump grinding at $75–$400
 while their own llms.txt says $100–$450. The site uses **$100–$450** throughout so
 `/faq` and `/pricing` agree with each other.
 
+### Meet The Owner — portrait, tighter copy, real Google review card
+
+**Copy cut to a lede plus one paragraph** (141 words, down from ~330) and
+refocused on Rafael. The previous version opened by describing how the rest of
+the trade works — commissioned salesmen, subcontracted crews, invoices that do
+not match. Even as a contrast that plants the doubt before answering it: the
+reader is now thinking about crews they cannot trust while looking at ours.
+Removed from the paragraphs *and* the checklist, which carried the same "no call
+centre, no commissioned salesman" line.
+
+Replaced with his story — started 2019 with one truck, grew up working these
+yards, knows which royal palms drop early and which live oak rides out a storm,
+comes out himself and will say when a tree needs nothing yet.
+
+> **Still outstanding:** the same framing survives in the `signature_system`
+> block further down the homepage — "a working tree service, not a call centre
+> with subcontractors". Left in place because the operator scoped this change to
+> the Meet The Owner section, but the same reasoning applies. One-line change to
+> `home.json` if wanted.
+
+**Owner portrait** replaces the generic crew photo. The supplied PNG carries its
+own rounded white frame and drop shadow, so the container's border-radius and
+box-shadow double-framed it — added a `photo_framed` flag that drops the wrapper
+chrome and shows the image whole instead of cropping to 4:3. Worth reusing for
+any client-supplied image that arrives pre-framed.
+
+**The review now reads as an actual Google review** rather than a highlighted
+pull-quote: avatar, name, date, Google mark, five stars, link through to the
+profile. Styled to Google's own conventions — `#dadce0` hairline border,
+`#70757a` secondary text, amber `#FBBC04` stars **rather than the site's brand
+yellow**. Borrowing the site accent would have undercut the one thing the card
+exists to do, which is look like it came from Google rather than from us.
+
+Avatar and date are the real ones from Nando's May 2026 review, taken from the
+client's own review widget and self-hosted rather than hotlinked off
+googleusercontent.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
