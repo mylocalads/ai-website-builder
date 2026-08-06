@@ -172,7 +172,29 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
   .header-row { position: relative; display: flex; align-items: center; justify-content: space-between; padding: var(--space-2) 0; gap: var(--space-3); }
   .brand { font-family: var(--font-display); font-size: 1.25rem; text-decoration: none; flex: 1; display: inline-flex; align-items: center; }
   .brand-logo { max-height: 99px; width: auto; display: block; }
-  .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: center; }
+  /* Nav items STRETCH to the full height of the header row rather than being
+     centred in it, so that a nav item's box actually touches the mega menu that
+     opens beneath it.
+
+     Centred, they did not: the logo makes .header-row 131px tall while a nav
+     link is 24px, so the link sat at y=54–78 with the menu starting at y=131.
+     That left a 54px dead zone. Moving the pointer from the link down to the
+     menu crossed it, `:hover` on the <li> was lost, and the menu vanished before
+     it could be clicked — every sub-page in both mega menus was unreachable by
+     mouse.
+
+     Stretching closes 38px of that; `top` on .submenu.mega below closes the
+     remaining 16px of header padding. Hovering the menu itself keeps the <li>
+     hovered because the menu is a DESCENDANT of it — the gap was the only
+     problem, so no JS and no hover-bridge pseudo-element is needed. */
+  .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: var(--space-3); align-items: stretch; }
+  /* align-self stretches the <nav> to the header row's full height, but the
+     <ul> inside it is a normal block and would keep its 40px content height —
+     so the <li> children had nothing tall to stretch against. Making the <nav>
+     a flex container with stretch alignment passes the height down to the list,
+     which passes it to the items. */
+  .primary-nav { align-self: stretch; display: flex; align-items: stretch; }
+  .nav-list > li { display: flex; align-items: center; }
   .nav-list a { text-decoration: none; }
   .has-menu { position: relative; }
   .submenu {
@@ -201,6 +223,12 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
     left: 0;
     right: 0;
     width: auto;
+    /* Flush with the bottom of the stretched nav item rather than the bottom of
+       the header's padding box, so there is no gap for the pointer to cross.
+       .header-row's bottom padding is var(--space-2); absolutely positioned
+       children resolve percentages against the padding box, so subtracting it
+       lands exactly on the nav item's bottom edge. */
+    top: calc(100% - var(--space-2));
   }
   .mega-cols { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-4); align-items: flex-start; }
   .mega-col { min-width: 190px; }
