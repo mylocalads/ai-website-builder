@@ -1,0 +1,126 @@
+---
+/**
+ * Owner-trust block: who actually shows up, and why that matters in this trade.
+ *
+ * Sits above the services grid on the homepage. The proof points are rendered
+ * as a stat row rather than prose because they are the numbers a homeowner is
+ * actually comparing (years, rating, review count, response) and prose buries
+ * them.
+ */
+export interface Stat { value: string; label: string }
+export interface Props {
+  data?: {
+    eyebrow?: string;
+    headline: string;
+    lede?: string;
+    body?: string[];
+    stats?: Stat[];
+    checklist?: string[];
+    photo?: string;
+    photo_alt?: string;
+    quote?: { text: string; author: string };
+    cta_text?: string;
+    cta_href?: string;
+  };
+}
+const { data } = Astro.props;
+---
+{data && (
+  <section class="owner" aria-labelledby="owner-heading">
+    <div class="container">
+      <div class="grid">
+        <div class="copy">
+          {data.eyebrow && <p class="eyebrow">{data.eyebrow}</p>}
+          <h2 id="owner-heading">{data.headline}</h2>
+          {data.lede && <p class="lede">{data.lede}</p>}
+          {(data.body ?? []).map((p) => <p>{p}</p>)}
+
+          {(data.checklist ?? []).length > 0 && (
+            <ul class="checklist">
+              {data.checklist!.map((c) => (
+                <li>
+                  <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                    <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.16" />
+                    <path d="M7 12.5l3.5 3.5L17 9.5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>{c}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {data.cta_text && data.cta_href && (
+            <a class="cta" href={data.cta_href}>{data.cta_text}</a>
+          )}
+        </div>
+
+        <aside class="side">
+          {data.photo && (
+            <figure class="shot">
+              <img src={data.photo} alt={data.photo_alt ?? ''} loading="lazy" decoding="async" />
+            </figure>
+          )}
+          {data.quote && (
+            <figure class="quote">
+              <blockquote>{data.quote.text}</blockquote>
+              <figcaption>{data.quote.author}</figcaption>
+            </figure>
+          )}
+        </aside>
+      </div>
+
+      {(data.stats ?? []).length > 0 && (
+        <ul class="stats">
+          {data.stats!.map((s) => (
+            <li><span class="value">{s.value}</span><span class="label">{s.label}</span></li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+)}
+<style>
+  .owner { padding: var(--space-5) 0; background: var(--color-bg); }
+  .grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: var(--space-4); align-items: start; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.85rem; font-weight: 700; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
+  h2 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.15; text-transform: uppercase; margin: 0 0 var(--space-2); color: var(--color-text); }
+  .lede { font-size: 1.15rem; font-weight: 600; color: var(--color-text); margin: 0 0 var(--space-2); }
+  .copy p { color: var(--color-muted); margin: 0 0 var(--space-2); line-height: 1.6; }
+
+  .checklist { list-style: none; margin: var(--space-3) 0 0; padding: 0; display: grid; gap: 0.6rem; }
+  .checklist li { display: flex; gap: 0.7rem; align-items: flex-start; color: var(--color-text); }
+  .checklist svg { color: var(--color-accent-ink); flex-shrink: 0; margin-top: 0.15rem; }
+
+  .cta {
+    display: inline-block; margin-top: var(--space-3);
+    background: var(--color-accent); color: var(--color-on-accent);
+    padding: 0.85rem 1.6rem; border-radius: var(--radius-sm);
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none;
+  }
+  .cta:hover, .cta:focus-visible { filter: brightness(1.06); }
+
+  .side { display: grid; gap: var(--space-3); }
+  .shot { margin: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 14px 34px rgba(6,34,61,0.16); }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+
+  /* Accent bar rather than a quote glyph — the yellow is doing the same job here
+     as it does on the mega-menu hover and the /services group rules. */
+  .quote { margin: 0; padding: var(--space-3); background: var(--color-surface); border-left: 4px solid var(--color-accent); border-radius: var(--radius-md); }
+  .quote blockquote { margin: 0 0 var(--space-1); font-size: 1.02rem; line-height: 1.55; color: var(--color-text); }
+  .quote blockquote::before { content: '“'; }
+  .quote blockquote::after { content: '”'; }
+  .quote figcaption { font-size: 0.85rem; font-weight: 700; color: var(--color-muted); }
+
+  .stats {
+    list-style: none; margin: var(--space-4) 0 0; padding: var(--space-3) 0 0;
+    border-top: 1px solid color-mix(in srgb, var(--color-primary) 14%, transparent);
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3);
+    text-align: center;
+  }
+  @media (max-width: 700px) { .stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-2); } }
+  .stats li { display: flex; flex-direction: column; gap: 0.15rem; }
+  .stats .value { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3.4vw, 2.3rem); color: var(--color-primary); line-height: 1; }
+  .stats .label { font-size: 0.85rem; color: var(--color-muted); font-weight: 600; }
+</style>

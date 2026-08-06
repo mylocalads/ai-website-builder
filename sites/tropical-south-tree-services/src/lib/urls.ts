@@ -34,7 +34,7 @@ export const AREAS_HUB = '/service-area';
  */
 export const RESERVED_SLUGS = new Set([
   // static pages
-  'about', 'accessibility', 'blog', 'book', 'contact', 'index', 'our-work',
+  'about', 'accessibility', 'blog', 'book', 'contact', 'faq', 'index', 'our-work',
   'pricing', 'privacy', 'terms', 'thank-you',
   // hub routes
   'services', 'service-area',

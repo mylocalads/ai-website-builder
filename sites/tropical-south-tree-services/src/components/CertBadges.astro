@@ -74,7 +74,26 @@ const { badges = [], heading = 'Awarded & verified', duration = 42 } = Astro.pro
     display: flex; align-items: center; gap: clamp(2rem, 5vw, 4rem);
     list-style: none; margin: 0; padding: 0 clamp(1rem, 2.5vw, 2rem) 0 0;
     width: max-content; flex: none;
-    animation: cert-scroll var(--marquee-duration, 42s) linear infinite;
+  }
+
+  /* DESKTOP: static. All seven badges fit across the container at once, so
+     scrolling them adds motion without adding information — and a repeating
+     loop implies there are more badges than there are. The duplicate track is
+     removed from the layout entirely rather than just left unanimated, which
+     would double every badge. */
+  @media (min-width: 768px) {
+    .viewport { justify-content: center; -webkit-mask-image: none; mask-image: none; }
+    .track {
+      width: auto; flex-wrap: wrap; justify-content: center;
+      padding: 0; gap: clamp(1.5rem, 3.5vw, 3rem) clamp(2rem, 4vw, 3.5rem);
+    }
+    .track[aria-hidden='true'] { display: none; }
+  }
+
+  /* MOBILE: seven badges cannot fit legibly across 375px, so the strip scrolls.
+     Only here does the duplicate track and the -100% translate come into play. */
+  @media (max-width: 767px) {
+    .track { animation: cert-scroll var(--marquee-duration, 42s) linear infinite; }
   }
   .viewport:hover .track,
   .viewport:focus-within .track { animation-play-state: paused; }
@@ -98,7 +117,7 @@ const { badges = [], heading = 'Awarded & verified', duration = 42 } = Astro.pro
   @media (prefers-reduced-motion: reduce) {
     /* Stop entirely and hand scrolling back to the user. The duplicate track is
        hidden so the list is not silently repeated when it is not moving. */
-    .track { animation: none; }
+    .track { animation: none !important; }
     .viewport { overflow-x: auto; scrollbar-width: thin; }
     .track[aria-hidden='true'] { display: none; }
   }

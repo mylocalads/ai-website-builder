@@ -1,0 +1,189 @@
+---
+/**
+ * Grouped FAQ accordion with category filtering.
+ *
+ * Built on native <details>/<summary>, so every question is open-able, keyboard
+ * operable and findable by the browser's own in-page search before a single line
+ * of JS runs. The JS layer only adds the category filter and the expand/collapse
+ * all control — if it fails to load, the page is still a complete, usable FAQ.
+ *
+ * Filtering hides items with the `hidden` attribute rather than `display: none`
+ * in a class, so the state is visible to assistive tech rather than only to the
+ * stylesheet.
+ */
+export interface FaqItem { q: string; a: string; category: string }
+export interface Props { items: FaqItem[]; categories: string[] }
+const { items, categories } = Astro.props;
+const ALL = 'All questions';
+const tabs = [ALL, ...categories];
+---
+<div class="faq-accordion" data-faq>
+  <div class="toolbar">
+    <div class="tabs" role="tablist" aria-label="Filter questions by topic">
+      {tabs.map((c, i) => (
+        <button
+          type="button"
+          class="tab"
+          role="tab"
+          data-filter={c}
+          aria-selected={i === 0 ? 'true' : 'false'}
+        >
+          {c}
+          <span class="count" data-count-for={c}></span>
+        </button>
+      ))}
+    </div>
+    <button type="button" class="expand-all" data-expand-all aria-expanded="false">Expand all</button>
+  </div>
+
+  <p class="result-count" data-result-count aria-live="polite"></p>
+
+  <ul class="items">
+    {items.map((item, i) => (
+      <li data-category={item.category}>
+        <details name="faq" class="item">
+          <summary>
+            <span class="q-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span class="q">{item.q}</span>
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </summary>
+          <div class="a"><p set:html={item.a} /></div>
+        </details>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  // Progressive enhancement only — the accordion works without any of this.
+  document.querySelectorAll('[data-faq]').forEach((root) => {
+    const items = [...root.querySelectorAll<HTMLLIElement>('li[data-category]')];
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('.tab')];
+    const expandAll = root.querySelector<HTMLButtonElement>('[data-expand-all]');
+    const countEl = root.querySelector<HTMLParagraphElement>('[data-result-count]');
+    const ALL = tabs[0]?.dataset.filter ?? 'All questions';
+
+    // Counts per tab, so the filter tells you how much is behind it.
+    tabs.forEach((t) => {
+      const f = t.dataset.filter!;
+      const n = f === ALL ? items.length : items.filter((li) => li.dataset.category === f).length;
+      const span = t.querySelector('.count');
+      if (span) span.textContent = String(n);
+    });
+
+    const apply = (filter: string) => {
+      let shown = 0;
+      items.forEach((li) => {
+        const match = filter === ALL || li.dataset.category === filter;
+        li.hidden = !match;
+        if (match) shown++;
+        // Collapse anything being hidden so the expand-all state stays honest.
+        if (!match) li.querySelector('details')?.removeAttribute('open');
+      });
+      if (countEl) countEl.textContent = `Showing ${shown} question${shown === 1 ? '' : 's'}`;
+      tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.filter === filter)));
+    };
+
+    tabs.forEach((t) => t.addEventListener('click', () => apply(t.dataset.filter!)));
+
+    expandAll?.addEventListener('click', () => {
+      const opening = expandAll.getAttribute('aria-expanded') !== 'true';
+      // `name="faq"` makes the group exclusive in supporting browsers, which
+      // would fight an expand-all. Drop the grouping while expanded, restore it
+      // when collapsing back.
+      items.forEach((li) => {
+        if (li.hidden) return;
+        const d = li.querySelector('details');
+        if (!d) return;
+        if (opening) { d.removeAttribute('name'); d.setAttribute('open', ''); }
+        else { d.removeAttribute('open'); d.setAttribute('name', 'faq'); }
+      });
+      expandAll.setAttribute('aria-expanded', String(opening));
+      expandAll.textContent = opening ? 'Collapse all' : 'Expand all';
+    });
+
+    apply(ALL);
+  });
+</script>
+
+<style>
+  .toolbar { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; justify-content: space-between; margin-bottom: var(--space-2); }
+  .tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tab {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    font: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer;
+    padding: 0.5rem 0.95rem; border-radius: 999px;
+    background: var(--color-surface); color: var(--color-primary);
+    border: 1.5px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+    transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  }
+  .tab:hover { transform: translateY(-1px); border-color: var(--color-accent); }
+  .tab[aria-selected='true'] { background: var(--color-primary); color: var(--color-on-primary); border-color: var(--color-primary); }
+  .tab .count {
+    font-size: 0.72rem; font-weight: 700; line-height: 1;
+    padding: 0.2rem 0.4rem; border-radius: 999px;
+    background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    color: var(--color-accent-ink);
+  }
+  .tab[aria-selected='true'] .count { background: var(--color-accent); color: var(--color-on-accent); }
+
+  .expand-all {
+    font: inherit; font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    background: none; border: 0; padding: 0.4rem 0;
+    color: var(--color-accent-ink); border-bottom: 2px solid transparent;
+  }
+  .expand-all:hover { border-bottom-color: var(--color-accent); }
+
+  .result-count { margin: 0 0 var(--space-3); font-size: 0.85rem; color: var(--color-muted); }
+
+  .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; }
+
+  .item {
+    background: var(--color-surface); border-radius: var(--radius-md);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+    overflow: hidden;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .item:hover { border-color: color-mix(in srgb, var(--color-accent) 60%, transparent); }
+  .item[open] { border-color: var(--color-accent); box-shadow: 0 10px 26px rgba(6,34,61,0.10); }
+
+  summary {
+    display: flex; align-items: center; gap: var(--space-2);
+    padding: var(--space-3); cursor: pointer; list-style: none;
+    font-weight: 700; color: var(--color-primary); line-height: 1.35;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary:focus-visible { outline: 2px solid var(--color-focus); outline-offset: -2px; border-radius: var(--radius-md); }
+
+  /* The index number doubles as the accent: it fills yellow when the row is
+     open, which is what makes scanning a long list feel like progress. */
+  .q-index {
+    flex-shrink: 0; width: 2rem; height: 2rem; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-family: var(--font-display);
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+    color: var(--color-primary);
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+  .item[open] .q-index, .item:hover .q-index { background: var(--color-accent); color: var(--color-on-accent); transform: scale(1.06); }
+
+  .q { flex: 1; }
+  .chev { flex-shrink: 0; color: var(--color-accent-ink); transition: transform 0.22s ease; }
+  .item[open] .chev { transform: rotate(180deg); }
+
+  .a { padding: 0 var(--space-3) var(--space-3) calc(var(--space-3) + 2rem + var(--space-2)); }
+  .a p { margin: 0; color: var(--color-muted); line-height: 1.65; }
+  .a :global(a) { color: var(--color-accent-ink); font-weight: 600; }
+
+  @media (max-width: 560px) {
+    .a { padding-left: var(--space-3); }
+    summary { padding: var(--space-2); gap: 0.75rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tab, .item, .q-index, .chev { transition: none; }
+  }
+</style>

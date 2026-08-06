@@ -95,6 +95,7 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
         <li><a href="/our-work">Our Work</a></li>
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/about">About</a></li>
+        <li><a href="/faq">FAQ</a></li>
         <li><a href="/contact">Contact</a></li>
         <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a></li>
       </ul>
@@ -158,6 +159,7 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
           <li><a href="/our-work">Our Work</a></li>
           <li><a href="/pricing">Pricing</a></li>
           <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
@@ -322,14 +324,12 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
     display: block; text-decoration: none; border-radius: var(--radius-sm);
     padding: 0.25rem var(--space-2); margin-bottom: 0.35rem;
   }
-  /* These two headings are the only ones in either menu that are LINKS to a
-     page. They inherited .mega-heading's gold, which is the colour of the
-     non-clickable category labels in the Tree Services menu — so the one thing
-     you could click looked like the one thing you could not. Blue matches every
-     other clickable item in the panel; the uppercase weight still marks them as
-     the heading of their column. */
+  /* Gold, matching the category labels in the Tree Services menu. These two are
+     links rather than plain labels, but consistency across the two menus is what
+     the operator wants — a column heading reads as a column heading in both. The
+     hover state is what signals they are clickable. */
   a.mega-heading-link {
-    color: var(--color-primary);
+    color: var(--color-accent-ink);
     transition: background 0.18s ease, color 0.18s ease;
   }
   a.mega-heading-link:hover, a.mega-heading-link:focus-visible {
@@ -339,7 +339,22 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
   }
   /* Icon badge + stacked label/number, rather than a solid pill. The number is
      the emphasis; the badge carries the accent colour. */
-  .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: var(--color-on-primary); }
+  /* Framed as a button so it reads as tappable at a glance, rather than as a
+     stray icon and a number floating in the header. */
+  .phone-cta {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: color-mix(in srgb, var(--color-on-primary) 9%, transparent);
+    border: 1.5px solid color-mix(in srgb, var(--color-accent) 55%, transparent);
+    padding: 0.4rem 0.9rem 0.4rem 0.45rem;
+    border-radius: 999px;
+    text-decoration: none; color: var(--color-on-primary);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .phone-cta:hover, .phone-cta:focus-visible {
+    background: color-mix(in srgb, var(--color-on-primary) 15%, transparent);
+    border-color: var(--color-accent);
+    transform: translateY(-1px);
+  }
   /* Derived from the client's accent with color-mix rather than a hardcoded
      rgba(). The literal here used to be Gilroy's orange, which every subsequent
      client had to find and replace by hand. */
@@ -368,8 +383,15 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
   .phone-icon svg { width: 1.35rem; height: 1.35rem; }
   .phone-copy { display: flex; flex-direction: column; line-height: 1.15; }
   .phone-label { font-size: 0.72rem; font-weight: 600; color: color-mix(in srgb, var(--color-on-primary) 78%, transparent); }
-  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: var(--color-on-primary); white-space: nowrap; }
-  .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { color: var(--color-accent); }
+  /* Underlined so it is unambiguously a link and not just a printed number.
+     The offset keeps the rule clear of the digits' baseline. */
+  .phone-number {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
+    color: var(--color-on-primary); white-space: nowrap;
+    text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 80%, transparent);
+  }
+  .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { color: var(--color-accent); text-decoration-color: var(--color-accent); }
   .mobile-nav, .mobile-phone { display: none; }
   /* Hamburger inherits currentColor now — it was hardcoded #111, which is all
      but invisible against the blue header. */

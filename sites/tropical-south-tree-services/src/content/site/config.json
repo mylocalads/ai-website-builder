@@ -31,7 +31,30 @@
   "bonded": false,
   "years_in_business": 7,
   "social": {},
+  "profiles": [
+    {
+      "name": "Google Business Profile",
+      "url": "https://www.google.com/maps/search/?api=1&query=Tropical+South+Tree+Services%2C+Cutler+Bay%2C+FL+33189",
+      "logo": "/profiles/google-business-profile.webp"
+    },
+    {
+      "name": "HomeAdvisor",
+      "url": "https://www.homeadvisor.com/rated.TropicalSouth.131737213.html",
+      "logo": "/profiles/homeadvisor.webp"
+    },
+    {
+      "name": "Yelp",
+      "url": "https://www.yelp.com/biz/tropical-south-tree-service-cutler-bay",
+      "logo": "/profiles/yelp.webp"
+    },
+    {
+      "name": "Yellow Pages",
+      "url": "https://www.yellowpages.com/nationwide/mip/tropical-south-tree-service-576110523",
+      "logo": "/profiles/yellowpages.webp"
+    }
+  ],
   "logo_url": "/logo.webp",
+  "footer_logo_url": "/logo-original.webp",
   "default_hero_photo": "/img/crew-chipper-street-cleanup.webp",
   "about_photo": "/img/crew-pole-saw-palm.webp",
   "team_members": [],

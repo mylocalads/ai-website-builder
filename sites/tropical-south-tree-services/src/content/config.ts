@@ -116,6 +116,12 @@ const site = defineCollection({
       business_name: z.string(),
       legal_name: z.string().optional(),
       logo_url: z.string().optional(),            // URL or local path, e.g. /logo.png
+      /**
+       * Optional second mark for the footer, for clients whose header logo is
+       * tuned for a dark header and would disappear on the light footer.
+       * Falls back to logo_url when unset.
+       */
+      footer_logo_url: z.string().optional(),
       default_hero_photo: z.string().optional(),  // URL or local path
       default_hero_video: z.string().url().optional(),
       about_photo: z.string().optional(),         // URL or local path
@@ -149,6 +155,17 @@ const site = defineCollection({
       bonded: z.boolean().default(false),
       years_in_business: z.number().optional(),
       social: z.record(z.string().url()).default({}),
+      /**
+       * Directory / review profiles shown as linked platform badges in the
+       * footer. Separate from `social` because these carry the platform's own
+       * artwork rather than a generic glyph, and because they are review
+       * profiles rather than social feeds.
+       */
+      profiles: z.array(z.object({
+        name: z.string(),
+        url: z.string().url(),
+        logo: z.string(),
+      })).default([]),
       reference_urls: z.array(z.string().url()).default([]),
       // DEPRECATED (v2.2): section order is fixed per page type; this field is no longer read.
       section_rhythm: z.array(z.string()).default([]),
@@ -304,6 +321,20 @@ const site = defineCollection({
         z.string(),
         z.object({ text: z.string(), icon: z.string().optional() }),
       ])).default([]),
+      /** Owner-trust block above the services grid on the homepage. */
+      owner_trust: z.object({
+        eyebrow: z.string().optional(),
+        headline: z.string(),
+        lede: z.string().optional(),
+        body: z.array(z.string()).default([]),
+        stats: z.array(z.object({ value: z.string(), label: z.string() })).default([]),
+        checklist: z.array(z.string()).default([]),
+        photo: z.string().optional(),
+        photo_alt: z.string().optional(),
+        quote: z.object({ text: z.string(), author: z.string() }).optional(),
+        cta_text: z.string().optional(),
+        cta_href: z.string().optional(),
+      }).optional(),
       promise_band: z.object({
         eyebrow: z.string().optional(),
         headline: z.string(),

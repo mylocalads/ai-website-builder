@@ -1,0 +1,253 @@
+---
+/**
+ * Dedicated FAQ page.
+ *
+ * Rewritten from the client's own /faq rather than copied. Theirs runs to 38
+ * entries of which roughly a dozen are near-duplicates of "do you plant native
+ * trees?", written in the third person ("the team", "services are offered") and
+ * padded with keywords. Duplicated Q&A is the classic thin-content pattern —
+ * near-identical answers on one page compete with each other and dilute the
+ * entries that would otherwise rank.
+ *
+ * So: deduplicated to distinct questions, grouped into topics a homeowner
+ * actually shops by, rewritten in the site's first-person voice, and every
+ * answer that names a service or a price links to the page that owns it.
+ * FAQPage JSON-LD is emitted for the full set.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+import SectionHead from '../components/SectionHead.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const marketCity = site.marketing_city ?? site.address.city;
+const marketState = site.marketing_state ?? site.address.state;
+const phone = site.phone_display;
+const tel = `tel:${site.phone}`;
+
+const CAT = {
+  quotes: 'Quotes & pricing',
+  permits: 'Permits & rules',
+  storm: 'Storm & emergency',
+  care: 'Tree care & planting',
+  working: 'Working with us',
+};
+
+const faqs = [
+  // ── Quotes & pricing ──────────────────────────────────────────────────────
+  {
+    category: CAT.quotes,
+    q: 'How much does tree removal cost in Miami-Dade County?',
+    a: `Removals generally run <strong>$250 to $3,500 or more</strong>. A large tree close to the house — the most common job we quote in Homestead and Palmetto Bay — typically lands between <strong>$1,200 and $2,500</strong>, and more if it is tangled with utility lines. Size, proximity to structures, hazard level and whether a lift can reach it are what move the number. See <a href="/pricing">our published ranges</a>, or call ${phone} for a free on-site quote.`,
+  },
+  {
+    category: CAT.quotes,
+    q: 'How much does tree trimming cost?',
+    a: `Usually <strong>$150 to $950 per tree</strong>, depending on canopy size, height, how long it has been since it was last done, and access for a lift. <a href="/tree-pruning-trimming">Trimming and pruning</a> on a mature specimen close to a roofline costs more than a routine palm clean-up, which is why we price on site rather than over the phone.`,
+  },
+  {
+    category: CAT.quotes,
+    q: 'How much does stump grinding cost?',
+    a: `Typically <strong>$100 to $450 per stump</strong>, driven by diameter and root depth. It is meaningfully cheaper added to a <a href="/tree-removal">removal</a> we are already doing, because the mobilisation is already paid for — so decide about the stump at the quote rather than a month later. Full detail on <a href="/stump-grinding">the stump grinding page</a>.`,
+  },
+  {
+    category: CAT.quotes,
+    q: 'Are estimates really free, and how fast can I get one?',
+    a: `Yes, and usually the same day you call. Rafael walks the property himself, checks what is protected, and puts a written scope and price in your hand at no charge and with no obligation. Call or text ${phone}.`,
+  },
+  {
+    category: CAT.quotes,
+    q: 'Is cleanup included, or billed separately?',
+    a: 'Included, on every job. We bring our own chipper and chip truck, so branches are chipped as we cut and everything is hauled away the same day. Driveways, walkways and pool decks are blown clean before we leave. If a cheaper quote does not say this explicitly, ask — debris hauling is where the difference usually hides.',
+  },
+
+  // ── Permits & rules ───────────────────────────────────────────────────────
+  {
+    category: CAT.permits,
+    q: 'Do I need a permit to remove a tree in Miami-Dade?',
+    a: 'For protected and heritage species, yes. Miami-Dade County DERM administers the tree ordinance countywide, and removal without approval carries real fines plus mandatory replacement planting. We identify what is protected during the quote and coordinate the permit for you — read the <a href="/blog/miami-dade-tree-removal-permit-guide">full permit guide</a>.',
+  },
+  {
+    category: CAT.permits,
+    q: 'Does my city have its own tree rules on top of the county?',
+    a: 'Some do, and it matters. <a href="/coral-gables-fl">Coral Gables</a> and <a href="/pinecrest-fl">Pinecrest</a> both administer their own tree removal permits alongside DERM, and both enforce them actively. Unincorporated communities such as <a href="/kendall-fl">Kendall</a>, <a href="/perrine-fl">Perrine</a> and <a href="/the-hammocks-fl">The Hammocks</a> go straight to the county with no municipal layer. <a href="/redland-fl">Redland</a> agricultural parcels follow different provisions again at 18-inch trunk diameter.',
+  },
+  {
+    category: CAT.permits,
+    q: 'My HOA has its own rules. Do I still need a county permit?',
+    a: 'Yes — they are separate approvals and you generally need both. Getting one and assuming it covers the other is the most common expensive mistake we see. We handle the county side and will tell you plainly what your board still has to sign off.',
+  },
+  {
+    category: CAT.permits,
+    q: 'Can you provide an arborist report for a permit, insurance claim or dispute?',
+    a: 'Yes. We work directly with ISA certified arborist partners who produce written assessments that meet Miami-Dade DERM and city permit requirements, and that carry weight with insurers, attorneys and HOA boards. They are independent of our crew — that separation is exactly what makes the report worth having. See <a href="/arborist-reports">arborist reports</a>.',
+  },
+  {
+    category: CAT.permits,
+    q: 'Are you licensed and insured?',
+    a: 'Yes — fully licensed and insured in Miami-Dade County, carrying Commercial General Liability on every job, and operating since 2019. We provide documentation before work begins as a matter of course rather than on request. That matters most when the work is happening thirty feet up over your roof, your pool cage or a neighbour’s property.',
+  },
+
+  // ── Storm & emergency ─────────────────────────────────────────────────────
+  {
+    category: CAT.storm,
+    q: 'How fast can you respond to an emergency after a storm?',
+    a: `Storm calls are our top priority — usually same day or within 24 hours, depending on demand and road conditions. Trees on houses, hung limbs and blocked access get triaged first. ${phone} is monitored around the clock and Rafael responds personally. See <a href="/emergency-tree-services">emergency tree service</a>.`,
+  },
+  {
+    category: CAT.storm,
+    q: 'When should I trim my trees for hurricane season?',
+    a: 'Two to four weeks before the season starts on 1 June — so April or May is the sweet spot. Miami-Dade County advises pruning ahead of the season rather than during it, and once a storm is named every crew in the county is committed. If you are already into the season it is still worth doing: thinning an overgrown canopy at any point beats waiting.',
+  },
+  {
+    category: CAT.storm,
+    q: 'What actually fails in a hurricane — and what should I do about it?',
+    a: 'Three things, and none of them are the trees that look unhealthy: deadwood, a dense canopy that has never been thinned, and heavy limbs grown out over the roof. All three are routine to fix in spring. The right work is <a href="/tree-canopy-thinning">selective thinning</a> and <a href="/deadwood-removal">deadwood removal</a> — not a "hurricane cut".',
+  },
+  {
+    category: CAT.storm,
+    q: 'A tree is touching a power line. Can you remove it?',
+    a: 'Not while it is energised. Call Florida Power & Light first and keep everyone well clear — once the utility has made the line safe, we can handle the tree.',
+  },
+  {
+    category: CAT.storm,
+    q: 'Do you document damage for insurance claims?',
+    a: 'Yes. We photograph the damage and the work as we go, which is what adjusters ask for, and we can arrange a formal written assessment through our ISA certified arborist partners where a claim requires one.',
+  },
+
+  // ── Tree care & planting ──────────────────────────────────────────────────
+  {
+    category: CAT.care,
+    q: 'Do you top or "hatrack" trees?',
+    a: 'No. Topping cuts limbs back to stubs and forces weak, densely attached regrowth that is <em>more</em> likely to fail in the next storm, and the decay that enters through the open stubs is permanent. Miami-Dade County guidance specifically tells homeowners not to allow it. We reduce and thin to ISA standards instead — see <a href="/tree-crown-reduction">crown reduction</a>.',
+  },
+  {
+    category: CAT.care,
+    q: 'How should palms be trimmed?',
+    a: 'Dead fronds and seed pods off, live crown left alone. Stripping a palm back to a handful of upright fronds — the "hurricane cut" you see across South Florida — weakens it rather than protecting it, because the fronds are how the palm feeds itself and buffers wind at the crown. Most palms want attention once or twice a year.',
+  },
+  {
+    category: CAT.care,
+    q: 'Which native trees do best in South Florida?',
+    a: 'Live oak, gumbo limbo, southern magnolia, slash pine, mahogany, pigeon plum and dwarf poinciana all handle the heat, humidity and local soil well, and being native they need less water and shrug off pests better than imports. The bigger question is placement: mature spread, root habit and distance from the house and service drop decide whether a tree is an asset in twenty years. See <a href="/tree-planting">tree planting</a>.',
+  },
+  {
+    category: CAT.care,
+    q: 'What happens to the wood chips after stump grinding?',
+    a: 'Your choice, decided before we start. They can stay on site as mulch, be shovelled back into the void to break down, or leave with us at no extra charge. One caveat we always mention: do not dig fresh chips into a planting bed — as they decompose they tie up nitrogen and whatever you plant will struggle. On top as a surface mulch they are excellent.',
+  },
+  {
+    category: CAT.care,
+    q: 'Will the tree grow back if I only cut the stump?',
+    a: 'In a good number of South Florida species, yes — ficus especially will keep throwing up suckers from the root system indefinitely. Grinding below grade and taking out the visible root flare is what stops it. It also removes a trip hazard and a termite food source sitting a few feet from the house.',
+  },
+  {
+    category: CAT.care,
+    q: 'Can I plant or lay sod where the stump was?',
+    a: 'Yes, once the void is backfilled with soil rather than grindings. Decaying chips settle and lock up nitrogen, so sod or new planting laid straight over them struggles. See <a href="/sod">sod installation</a> if you want the lawn put back at the same time.',
+  },
+
+  // ── Working with us ───────────────────────────────────────────────────────
+  {
+    category: CAT.working,
+    q: 'Do you offer service in Spanish?',
+    a: 'Yes — bilingual support in English and Spanish for scheduling, quotes and on site. Just say which you prefer when you call, text or email.',
+  },
+  {
+    category: CAT.working,
+    q: 'How should I prepare my yard before the crew arrives?',
+    a: 'Move furniture, toys and cars clear of the work area, keep pets and children indoors while we are cutting, and make sure any locked gate is open or we have the code. If the trees are near a power drop, a septic field, an irrigation line or anything else we would not see, tell us at scheduling — it changes how we set up.',
+  },
+  {
+    category: CAT.working,
+    q: 'Who actually does the work — is it subcontracted?',
+    a: 'It is our own crew. Rafael quotes every job personally and works alongside the team he trained. There is no call centre in between and no commissioned salesman deciding what your tree needs, which is why customers name him by first name in more than half our reviews.',
+  },
+  {
+    category: CAT.working,
+    q: 'Do you work with HOAs, property managers and commercial properties?',
+    a: 'Yes. We run <a href="/tree-maintenance-contracts">scheduled maintenance contracts</a> and <a href="/urban-tree-management">urban tree management programmes</a> across Miami-Dade, with documented inspections for the board and priority response after a named storm — which is the single most valuable thing a contract buys you in this county.',
+  },
+  {
+    category: CAT.working,
+    q: 'What areas do you serve?',
+    a: 'All of Miami-Dade County from our yard in Cutler Bay — including <a href="/miami-fl">Miami</a>, <a href="/palmetto-bay-fl">Palmetto Bay</a>, <a href="/pinecrest-fl">Pinecrest</a>, <a href="/coral-gables-fl">Coral Gables</a>, <a href="/south-miami-fl">South Miami</a>, <a href="/kendall-fl">Kendall</a>, <a href="/homestead-fl">Homestead</a>, <a href="/redland-fl">Redland</a> and more. <a href="/service-area">See every area we cover</a>.',
+  },
+];
+
+const categories = Object.values(CAT);
+
+// Schema wants plain text, not the markup used for on-page links.
+const strip = (html: string) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: strip(f.a) },
+  })),
+};
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'FAQ', href: '/faq' }];
+---
+<BaseLayout
+  title={`Tree Service FAQs — Costs, Permits & Storm Prep in ${marketCity}-Dade | ${site.business_name}`}
+  description={`Straight answers on tree removal cost, Miami-Dade permits, hurricane trimming, stump grinding and emergency response — from a licensed, insured ${marketCity}-Dade crew. ${faqs.length} questions answered.`}
+  breadcrumbs={crumbs}
+  jsonLd={[faqLd]}
+  pagePath="/faq"
+>
+  <section class="faq-hero">
+    <div class="container">
+      <p class="eyebrow">Tree Service FAQs</p>
+      <h1>Tree Service Questions — {marketCity}-Dade County</h1>
+      <p class="lede">
+        Costs, permits, storm prep, stump grinding and what actually happens on the day.
+        {faqs.length} straight answers from a licensed and insured crew that has worked
+        {marketCity}-Dade since 2019 — and if yours is not here,
+        <a href={tel}>call {phone}</a> and Rafael will answer it directly.
+      </p>
+    </div>
+  </section>
+
+  <section class="faq-body">
+    <div class="container">
+      <FaqAccordion items={faqs} categories={categories} />
+    </div>
+  </section>
+
+  <section class="faq-outro">
+    <div class="container">
+      <SectionHead
+        eyebrow="Still Not Sure?"
+        heading="Ask Rafael directly"
+        subtitle={`He answers every enquiry personally, usually the same day — including the ones that end with "you don't need this work done".`}
+      />
+      <div class="outro-actions">
+        <a class="btn primary" href={tel}>Call {phone}</a>
+        <a class="btn ghost" href="/contact">Request a free quote</a>
+      </div>
+    </div>
+  </section>
+
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .faq-hero { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-5) 0; }
+  .faq-hero .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.85rem; font-weight: 700; color: var(--color-accent-on-dark); margin: 0 0 var(--space-1); }
+  .faq-hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.12; text-transform: uppercase; margin: 0 0 var(--space-2); }
+  .faq-hero .lede { max-width: 62ch; font-size: 1.08rem; line-height: 1.6; color: color-mix(in srgb, var(--color-on-primary) 88%, transparent); margin: 0; }
+  .faq-hero a { color: var(--color-accent); font-weight: 700; }
+
+  .faq-body { padding: var(--space-5) 0; }
+  .faq-outro { padding: 0 0 var(--space-5); }
+  .outro-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; }
+  .btn { display: inline-block; padding: 0.9rem 1.7rem; border-radius: var(--radius-sm); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; text-decoration: none; }
+  .btn.primary { background: var(--color-accent); color: var(--color-on-accent); }
+  .btn.ghost { border: 2px solid var(--color-primary); color: var(--color-primary); }
+  .btn:hover, .btn:focus-visible { filter: brightness(1.05); }
+</style>

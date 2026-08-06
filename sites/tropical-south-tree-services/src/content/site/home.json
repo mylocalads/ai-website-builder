@@ -126,6 +126,50 @@
       "cta_href": "/contact"
     }
   },
+  "owner_trust": {
+    "eyebrow": "Meet The Owner",
+    "headline": "Why Miami-Dade Homeowners Trust Tropical South Tree Services & Rafael",
+    "lede": "Rafael Quezada founded Tropical South in Cutler Bay in March 2019, and he still prices every job himself.",
+    "body": [
+      "In this trade the usual experience is a salesman on commission who quotes the work, a subcontracted crew you have never met who does it, and an invoice that does not match either. That is where most of the complaints about tree companies in Miami-Dade come from — not from bad cutting, but from nobody being accountable for the job end to end.",
+      "Rafael answers the phone. He walks your property, tells you what the tree actually needs — including when the honest answer is that it needs nothing — and writes the price down before anyone starts. The crew that turns up is the crew he trained and works alongside, and the number you were quoted is the number you pay.",
+      "That is also why he will tell you about a permit you would rather not hear about. Miami-Dade requires approval to remove protected and heritage species, and Coral Gables and Pinecrest run their own permitting on top of the county's. A quote that skips that conversation is not cheaper — it is the one that ends in a fine and a mandatory replanting order."
+    ],
+    "stats": [
+      {
+        "value": "2019",
+        "label": "Founded in Cutler Bay"
+      },
+      {
+        "value": "5.0★",
+        "label": "200+ Google reviews"
+      },
+      {
+        "value": "24/7",
+        "label": "Storm response"
+      },
+      {
+        "value": "Same day",
+        "label": "Free quotes, from Rafael"
+      }
+    ],
+    "checklist": [
+      "The owner quotes every job — no call centre, no commissioned salesman",
+      "Licensed and insured in Miami-Dade, documentation before work begins",
+      "County and city permit coordination handled for you",
+      "ISA certified arborist partners for reports, assessments and disputes",
+      "Bilingual service in English and Spanish",
+      "Full cleanup and debris haul-away included in every price"
+    ],
+    "photo": "/img/crew-pole-saw-palm.webp",
+    "photo_alt": "Tropical South crew member in a branded blue shirt using an extension pole saw on a palm beside a trimmed hedge",
+    "quote": {
+      "text": "Rafael and his crew are excellent. Professional, friendly and timely. Honest pricing and excellent work. Will recommend to friends and family.",
+      "author": "Nando — Google review"
+    },
+    "cta_text": "Talk to Rafael",
+    "cta_href": "/contact"
+  },
   "process_steps": {
     "headline": "How A Job Runs",
     "steps": [

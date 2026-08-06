@@ -11,8 +11,8 @@ const year = new Date().getFullYear();
   <div class="container">
     <div class="footer-grid">
       <div>
-        {site.logo_url ? (
-          <img src={site.logo_url} alt={site.business_name} class="footer-logo" />
+        {(site.footer_logo_url ?? site.logo_url) ? (
+          <img src={site.footer_logo_url ?? site.logo_url} alt={site.business_name} class="footer-logo" />
         ) : (
           <div class="brand">{site.business_name}</div>
         )}
@@ -28,6 +28,20 @@ const year = new Date().getFullYear();
           <div class="hours">
             <strong>Hours</strong>
             <ul>{Object.entries(site.hours).map(([day, hrs]) => <li><span class="day">{day}:</span> {hrs}</li>)}</ul>
+          </div>
+        )}
+        {site.profiles && site.profiles.length > 0 && (
+          <div class="footer-profiles">
+            <p class="profiles-label">Find us on</p>
+            <ul>
+              {site.profiles.map((p: any) => (
+                <li>
+                  <a href={p.url} rel="noopener noreferrer" target="_blank" class="profile-link" title={`${site.business_name} on ${p.name}`}>
+                    <img src={p.logo} alt={`${site.business_name} on ${p.name}`} loading="lazy" decoding="async" width="284" height="232" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
         {site.social && Object.entries(site.social).filter(([_, v]) => !!v).length > 0 && (
@@ -56,6 +70,7 @@ const year = new Date().getFullYear();
           <li><a href="/about">About</a></li>
           <li><a href="/our-work">Our Work</a></li>
           <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
@@ -74,6 +89,10 @@ const year = new Date().getFullYear();
   .site-footer { background: var(--color-surface); padding: var(--space-5) 0 var(--space-3); margin-top: var(--space-5); }
   .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
   .brand { font-family: var(--font-display); font-size: 1.15rem; }
+  /* footer_logo_url exists because the header logo was recoloured to a WHITE
+     wordmark to sit on the blue header — and this footer is white, so that
+     version renders the business name invisible. The footer falls back to
+     logo_url when a client has only one usable mark. */
   .footer-logo { max-height: 60px; width: auto; display: block; margin-bottom: var(--space-2); }
   h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-1); }
   ul { list-style: none; padding: 0; }
@@ -85,6 +104,27 @@ const year = new Date().getFullYear();
   .hours ul { list-style: none; padding: 0; margin: var(--space-1) 0 0; font-size: 0.9rem; }
   .hours li { padding: 0.15rem 0; color: var(--color-muted); }
   .hours .day { text-transform: capitalize; color: var(--color-text); font-weight: 500; }
+  /* Platform profile badges. These are the official marks the client already
+     uses on their own site rather than hand-drawn approximations of trademarked
+     logos — accurate, recognisable, and theirs to display. Sized by height so
+     the wide "yp" wordmark sits level with the square Google and Yelp tiles. */
+  .footer-profiles { margin-top: var(--space-3); }
+  .profiles-label { margin: 0 0 0.5rem; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-accent-ink); }
+  .footer-profiles ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+  .profile-link {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.35rem; border-radius: var(--radius-md);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 14%, transparent);
+    background: #fff;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .profile-link:hover, .profile-link:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 16px rgba(6,34,61,0.14);
+  }
+  .profile-link img { height: 34px; width: auto; display: block; }
+
   .footer-socials { display: flex; gap: 0.5rem; margin-top: var(--space-2); }
   .footer-socials .social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: var(--color-accent); color: var(--color-on-accent); transition: transform 0.15s ease, filter 0.15s ease; }
   .footer-socials .social-link:hover, .footer-socials .social-link:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
