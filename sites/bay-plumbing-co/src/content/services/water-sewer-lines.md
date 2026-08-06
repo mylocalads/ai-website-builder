@@ -1,12 +1,13 @@
 ---
 title: Water & Sewer Lines
 title_highlight: Water & Sewer
+audience: residential
 category: Plumbing
 seo_h1: Water & Sewer Line Repair and Replacement in Miami, FL
 short_description: Repaired, replaced, or connected to city sewer — dug, fixed and closed back up by one crew.
 long_description: We repair or replace water and sewer lines depending on what the line actually needs, and we tell you honestly which one you are looking at. Whether you are building new or finally connecting an older Miami property to the city sewer system, we make sure the connection is done right the first time so you do not have problems down the line.
 icon: hammer
-order: 5
+order: 4
 sub_services:
   - Water line repair and replacement
   - Sewer line repair and replacement

@@ -18,8 +18,26 @@
  * near-duplicate pages that compete with each other in search.
  */
 
-/** Service detail pages generated, and services shown in nav//services/grid. */
-export const SERVICE_LIMIT = 5;
+/**
+ * Service detail pages generated in total.
+ *
+ * Raised from 5 to 10 when the catalogue was split into residential and
+ * commercial sets. The guardrail this cap exists for has NOT been loosened —
+ * it moved to SERVICE_NAV_LIMIT below, which is still 5 per market. Ten thin
+ * pages would be just as bad as ten thin pages were before; what makes this
+ * safe is that the two sets describe genuinely different work (a homeowner's
+ * blocked toilet vs. a restaurant's grease trap), not the same work twice.
+ */
+export const SERVICE_LIMIT = 10;
+
+/**
+ * Services shown per market in the nav dropdown, the sub-index and the grid.
+ *
+ * This is the cap that actually protects against near-duplicate pages: it is
+ * per AUDIENCE, so neither menu can quietly grow past five even though the
+ * total is now ten.
+ */
+export const SERVICE_NAV_LIMIT = 5;
 
 /** Service-area pages generated, and areas shown in nav/grid. */
 export const AREA_LIMIT = 6;

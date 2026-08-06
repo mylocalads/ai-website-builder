@@ -31,11 +31,53 @@
       }
     ]
   },
+  "cert_badges": [
+    {
+      "src": "/badges/google-guaranteed.webp",
+      "alt": "Google Guaranteed Service Provider badge"
+    },
+    {
+      "src": "/badges/best-of-homeadvisor-2021.webp",
+      "alt": "Best of HomeAdvisor 2021 award badge"
+    },
+    {
+      "src": "/badges/best-of-homeadvisor-2020.webp",
+      "alt": "Best of HomeAdvisor 2020 Winner award badge"
+    },
+    {
+      "src": "/badges/best-of-homeadvisor-2019.webp",
+      "alt": "Best of HomeAdvisor 2019 Winner award badge"
+    },
+    {
+      "src": "/badges/best-of-homeadvisor-2018.webp",
+      "alt": "Best of HomeAdvisor 2018 Winner award badge"
+    },
+    {
+      "src": "/badges/best-of-homeadvisor-2017.webp",
+      "alt": "Best of HomeAdvisor 2017 Winner award badge"
+    },
+    {
+      "src": "/badges/best-of-homeadvisor-2016.webp",
+      "alt": "Best of HomeAdvisor 2016 Winner award badge"
+    }
+  ],
   "promise_bar": [
-    { "text": "Free Same-Day Quotes", "icon": "clock" },
-    { "text": "Licensed & Insured Since 2019", "icon": "shield" },
-    { "text": "24/7 Emergency Storm Response", "icon": "phone" },
-    { "text": "Full Cleanup Every Job", "icon": "broom" }
+    {
+      "text": "Free Same-Day Quotes",
+      "icon": "clock"
+    },
+    {
+      "text": "Licensed & Insured Since 2019",
+      "icon": "shield"
+    },
+    {
+      "text": "24/7 Emergency Storm Response",
+      "icon": "phone"
+    },
+    {
+      "text": "Full Cleanup Every Job",
+      "icon": "broom"
+    }
   ],
   "promise_band": {
     "eyebrow": "Our Promise",

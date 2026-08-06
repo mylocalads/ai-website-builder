@@ -1,12 +1,13 @@
 ---
 title: Backflow Testing & Certification
 title_highlight: Backflow
+audience: commercial
 category: Certification
 seo_h1: Certified Backflow Testing in Miami-Dade County
 short_description: Certified testing, usually done in 15 to 20 minutes, with most simple repairs handled the same visit.
 long_description: Annual backflow testing helps ensure that only clean, potable water flows through your plumbing into your home or business. Most Miami-Dade County businesses are required by County ordinance to have an up-to-date backflow preventer installed. Backflow Bob, Inc. — Bay Plumbing Co.'s certified backflow experts — is familiar with every type of preventer device and can usually complete a test in 15 to 20 minutes.
 icon: umbrella
-order: 4
+order: 1
 sub_services:
   - Annual backflow testing
   - Backflow certification paperwork

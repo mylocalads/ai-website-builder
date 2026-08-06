@@ -322,8 +322,14 @@ const moreAreas = areas.slice(PRIMARY_AREA_COUNT);
     display: block; text-decoration: none; border-radius: var(--radius-sm);
     padding: 0.25rem var(--space-2); margin-bottom: 0.35rem;
   }
+  /* These two headings are the only ones in either menu that are LINKS to a
+     page. They inherited .mega-heading's gold, which is the colour of the
+     non-clickable category labels in the Tree Services menu — so the one thing
+     you could click looked like the one thing you could not. Blue matches every
+     other clickable item in the panel; the uppercase weight still marks them as
+     the heading of their column. */
   a.mega-heading-link {
-    color: var(--color-accent-ink);
+    color: var(--color-primary);
     transition: background 0.18s ease, color 0.18s ease;
   }
   a.mega-heading-link:hover, a.mega-heading-link:focus-visible {

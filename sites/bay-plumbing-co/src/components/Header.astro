@@ -1,10 +1,30 @@
 ---
-import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
+import { AREA_LIMIT, SERVICE_NAV_LIMIT } from '../lib/limits';
 import { getIcon } from '../lib/icons';
 import { getEntry, getCollection } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const allServices = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const byAudience = (a: 'residential' | 'commercial') =>
+  allServices.filter((s) => s.data.audience === a).slice(0, SERVICE_NAV_LIMIT);
+// Nav labels are shortened from the page titles ("Residential Plumbing" vs
+// "Residential Plumbing Services") to keep the bar from crowding the two phone
+// buttons. The full name is the H1 on each index page and the accessible name
+// here, so nothing is lost to a screen reader or to search.
+const serviceMenus = [
+  { key: 'residential', label: 'Residential Plumbing', full: 'Residential Plumbing Services', href: '/services/residential', items: byAudience('residential') },
+  { key: 'commercial', label: 'Commercial Plumbing', full: 'Commercial Plumbing Services', href: '/services/commercial', items: byAudience('commercial') },
+].filter((m) => m.items.length > 0);
 const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
+
+// Built once and rendered in both the desktop nav and the mobile bar, so the
+// two can never drift. The secondary entry drops out cleanly when a client has
+// only one number — the stack then renders exactly as the single CTA did.
+const phones = [
+  { tel: site.phone, display: site.phone_display, label: site.phone_label ?? 'Give Us A Call!' },
+  ...(site.phone_secondary && site.phone_secondary_display
+    ? [{ tel: site.phone_secondary, display: site.phone_secondary_display, label: site.phone_secondary_label ?? '' }]
+    : []),
+];
 ---
 <header class="site-header">
   <div class="container header-row">
@@ -15,12 +35,15 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
     </a>
     <nav aria-label="Primary" class="primary-nav">
       <ul class="nav-list">
-        <li class="has-menu">
-          <a href="/services" aria-haspopup="true">Services <span aria-hidden="true">▾</span></a>
-          <ul class="submenu">
-            {services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
-          </ul>
-        </li>
+        {serviceMenus.map((m) => (
+          <li class="has-menu">
+            <a href={m.href} aria-haspopup="true" aria-label={m.full}>{m.label} <span aria-hidden="true">▾</span></a>
+            <ul class="submenu">
+              {m.items.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+              <li class="all"><a href={m.href}>All {m.label}</a></li>
+            </ul>
+          </li>
+        ))}
         <li class="has-menu">
           <a href="/service-area" aria-haspopup="true">Service Areas <span aria-hidden="true">▾</span></a>
           <ul class="submenu">
@@ -31,10 +54,26 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
-        <li class="phone-cta-item"><a href={`tel:${site.phone}`} class="phone-cta"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a></li>
+        <li class="phone-cta-item">
+          <div class="phone-stack">
+            {phones.map((ph) => (
+              <a href={`tel:${ph.tel}`} class="phone-cta" aria-label={`Call our ${ph.label} line on ${ph.display}`}>
+                <span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span>
+                <span class="phone-copy"><span class="phone-label">{ph.label}</span><span class="phone-number">{ph.display}</span></span>
+              </a>
+            ))}
+          </div>
+        </li>
       </ul>
     </nav>
-    <a href={`tel:${site.phone}`} class="phone-cta mobile-phone"><span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span><span class="phone-copy"><span class="phone-label">Give Us A Call!</span><span class="phone-number">{site.phone_display}</span></span></a>
+    <div class="phone-stack mobile-phone">
+      {phones.map((ph) => (
+        <a href={`tel:${ph.tel}`} class="phone-cta" aria-label={`Call our ${ph.label} line on ${ph.display}`}>
+          <span class="phone-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor" set:html={getIcon("phone")!} /></span>
+          <span class="phone-copy"><span class="phone-label">{ph.label}</span><span class="phone-number">{ph.display}</span></span>
+        </a>
+      ))}
+    </div>
     <details class="mobile-nav">
       <summary aria-label="Open menu">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -43,17 +82,20 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
       </summary>
       <nav aria-label="Mobile primary">
         <ul>
-          <li class="group">
-            <details class="mobile-submenu">
-              <summary class="group-heading">
-                <span>Services</span>
-                <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </summary>
-              <ul class="sub">
-                {services.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
-              </ul>
-            </details>
-          </li>
+          {serviceMenus.map((m) => (
+            <li class="group">
+              <details class="mobile-submenu">
+                <summary class="group-heading">
+                  <span>{m.label}</span>
+                  <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </summary>
+                <ul class="sub">
+                  {m.items.map((s) => <li><a href={`/services/${s.slug}`}>{s.data.title}</a></li>)}
+                  <li><a class="all" href={m.href}>All {m.label}</a></li>
+                </ul>
+              </details>
+            </li>
+          ))}
           <li class="group">
             <details class="mobile-submenu">
               <summary class="group-heading">
@@ -116,7 +158,11 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .submenu li a { display: block; padding: 0.5rem var(--space-2); }
   /* Icon badge + stacked label/number, rather than a solid pill. The number is
      the emphasis; the badge carries the accent colour. */
-  .phone-cta { display: inline-flex; align-items: center; gap: 0.6rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: #ffffff; }
+  /* Two numbers stacked. Everything below is scaled down from the single-CTA
+     sizing so the pair occupies roughly the height one used to — the bar does
+     not grow, and the logo still sets the header height. */
+  .phone-stack { display: flex; flex-direction: column; gap: 0.3rem; }
+  .phone-cta { display: inline-flex; align-items: center; gap: 0.55rem; background: none; padding: 0; border-radius: 0; text-decoration: none; color: #ffffff; }
   /* The badge was a 16% tint of --color-accent with an accent-ink glyph — both
      disappear against a red bar.
 
@@ -130,13 +176,13 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   .phone-icon {
     position: relative;
     display: inline-flex; align-items: center; justify-content: center;
-    width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 50%;
+    width: 2.05rem; height: 2.05rem; flex-shrink: 0; border-radius: 50%;
     background: rgba(255, 255, 255, 0.22);
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.85);
     color: #ffffff;
     transition: background 0.18s ease, box-shadow 0.18s ease;
   }
-  .phone-icon svg { width: 1.35rem; height: 1.35rem; position: relative; z-index: 1; }
+  .phone-icon svg { width: 1.1rem; height: 1.1rem; position: relative; z-index: 1; }
 
   /* Owl's signature call-button pulse, matched to owlroofing.com: TWO concentric
      rings that fade in and out on a stagger, not one halo growing outward.
@@ -157,9 +203,12 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25), 0 0 0 6px rgba(255, 255, 255, 0.5);
     animation: pulseffect2 2s ease-in-out infinite;
   }
-  .phone-copy { display: flex; flex-direction: column; line-height: 1.15; }
-  .phone-label { font-size: 0.72rem; font-weight: 600; color: #ffffff; }
-  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; color: #ffffff; white-space: nowrap; }
+  .phone-copy { display: flex; flex-direction: column; line-height: 1.1; }
+  /* The label now carries the LOCATION, which is the only thing distinguishing
+     the two buttons — so unlike the old "Give Us A Call!" it is load-bearing and
+     is never hidden, including on mobile. */
+  .phone-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.02em; color: #ffffff; }
+  .phone-number { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; color: #ffffff; white-space: nowrap; }
   /* Hover used to darken to accent-ink; on red that is barely a change and
      fails contrast. Underline the number and lift the badge instead. */
   .phone-cta:hover .phone-number, .phone-cta:focus-visible .phone-number { text-decoration: underline; }
@@ -205,12 +254,15 @@ const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order
   @media (max-width: 900px) {
     .primary-nav { display: none; }
     .mobile-nav { display: inline-flex; }
-    .mobile-phone { display: inline-flex; margin: 0 auto; }
+    .mobile-phone { display: flex; margin: 0 auto; }
     /* The pulse used to be declared HERE, inside max-width:900px, so desktop
        had no animation at all — only a hover state. It now lives on
        .phone-icon itself and runs at every breakpoint, matching owlroofing.com,
-       where .btn--phone .icon pulses unconditionally. */
-    .mobile-phone .phone-label { display: none; }
+       where .btn--phone .icon pulses unconditionally.
+
+       The old rule hid .phone-label on mobile, which was right when it read
+       "Give Us A Call!" and wrong now that it reads "Miami" / "Key Biscayne" —
+       hiding it would leave two identical-looking buttons. */
     .brand { flex: 0 1 auto; }
     .brand-logo { max-height: 69px; }   /* 81px - 15%, trims the mobile header bar */
   }

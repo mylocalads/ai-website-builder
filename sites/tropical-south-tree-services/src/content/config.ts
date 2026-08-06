@@ -291,6 +291,15 @@ const site = defineCollection({
           review_count: z.number().optional(),
         }).optional(),
       }),
+      /**
+       * Award / certification seals for the scrolling strip under the hero.
+       * Empty by default — a client with no awards renders no band rather than
+       * an empty one, and nothing here is ever inherited from another site.
+       */
+      cert_badges: z.array(z.object({
+        src: z.string(),
+        alt: z.string(),
+      })).default([]),
       promise_bar: z.array(z.union([
         z.string(),
         z.object({ text: z.string(), icon: z.string().optional() }),

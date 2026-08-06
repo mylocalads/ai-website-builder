@@ -1,0 +1,105 @@
+---
+/**
+ * Continuously scrolling strip of award / certification badges.
+ *
+ * TWO identical tracks sit side by side in a flex row, each translating by
+ * -100% of its OWN width. That is what makes the loop seamless: when track one
+ * has slid a full width off to the left, track two is sitting exactly where
+ * track one began, so the frame at the end of the cycle is pixel-identical to
+ * the frame at the start and the reset is invisible.
+ *
+ * -100% is specifically tied to this two-element layout. The other common
+ * marquee shape — ONE track holding the list twice — wants -50% instead. Mixing
+ * the two up leaves the strip jumping backwards once per cycle with a gap, which
+ * is exactly what happened here first time round.
+ *
+ * `width: max-content` + `flex: none` keep each track sized to its content, so
+ * the percentage stays honest however many badges the client has.
+ *
+ * The duplicate is aria-hidden and the whole strip is a single labelled region,
+ * so a screen reader hears each award once rather than twice.
+ *
+ * Motion is opt-out in two ways: hovering (or focusing a badge) pauses it so a
+ * reader can actually look at one, and `prefers-reduced-motion` stops it dead
+ * and lets the strip scroll manually instead. An endlessly moving band is
+ * exactly the kind of thing that makes a page unusable for someone with a
+ * vestibular disorder, and it sits directly under the hero where it cannot be
+ * avoided.
+ */
+export interface Badge { src: string; alt: string }
+export interface Props {
+  badges?: Badge[];
+  heading?: string;
+  /** Seconds for one full pass. Longer = slower. */
+  duration?: number;
+}
+const { badges = [], heading = 'Awarded & verified', duration = 42 } = Astro.props;
+---
+{badges.length > 0 && (
+  <section class="certs" aria-label="Awards and certifications">
+    <div class="container">
+      <p class="eyebrow">{heading}</p>
+    </div>
+    <div class="viewport" style={`--marquee-duration:${duration}s`}>
+      <ul class="track">
+        {badges.map((b) => (
+          <li><img src={b.src} alt={b.alt} loading="lazy" decoding="async" width="156" height="139" /></li>
+        ))}
+      </ul>
+      {/* Visual duplicate only — the list above is the accessible copy. */}
+      <ul class="track" aria-hidden="true">
+        {badges.map((b) => (
+          <li><img src={b.src} alt="" loading="lazy" decoding="async" width="156" height="139" /></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .certs { background: var(--color-surface); padding: var(--space-3) 0 var(--space-4); }
+  .eyebrow {
+    text-align: center; margin: 0 0 var(--space-3);
+    text-transform: uppercase; letter-spacing: 0.16em;
+    font-size: 0.8rem; font-weight: 700; color: var(--color-accent-ink);
+  }
+
+  /* Edges fade out so badges enter and leave rather than being chopped off at
+     the viewport boundary. */
+  .viewport {
+    display: flex; width: 100%; overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  }
+  .track {
+    display: flex; align-items: center; gap: clamp(2rem, 5vw, 4rem);
+    list-style: none; margin: 0; padding: 0 clamp(1rem, 2.5vw, 2rem) 0 0;
+    width: max-content; flex: none;
+    animation: cert-scroll var(--marquee-duration, 42s) linear infinite;
+  }
+  .viewport:hover .track,
+  .viewport:focus-within .track { animation-play-state: paused; }
+
+  .track li { display: flex; align-items: center; }
+  /* Sized by HEIGHT, not width: the badges are a mix of near-square HomeAdvisor
+     seals and a wider Google one, and matching heights is what makes a row of
+     mismatched logos look deliberate. */
+  .track img {
+    height: clamp(3.25rem, 7vw, 4.5rem); width: auto; display: block;
+    filter: saturate(0.92);
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+  .track li:hover img { transform: translateY(-3px) scale(1.04); filter: saturate(1); }
+
+  @keyframes cert-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    /* Stop entirely and hand scrolling back to the user. The duplicate track is
+       hidden so the list is not silently repeated when it is not moving. */
+    .track { animation: none; }
+    .viewport { overflow-x: auto; scrollbar-width: thin; }
+    .track[aria-hidden='true'] { display: none; }
+  }
+</style>

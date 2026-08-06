@@ -5,6 +5,15 @@ const services = defineCollection({
   schema: z.object({
     title: z.string(),
     title_highlight: z.string().optional(),
+    // Which market this service page is written for. Drives the two nav
+    // dropdowns, the two /services sub-indexes, and the grouping on the home
+    // grid and in the footer.
+    //
+    // REQUIRED on purpose — no default. A service that silently fell back to
+    // one audience would vanish from the other menu with nothing failing at
+    // build time, which is the same class of bug as the sliced-collection 404
+    // documented in lib/limits.ts.
+    audience: z.enum(['residential', 'commercial']),
     category: z.string().optional(),
     seo_h1: z.string().optional(),
     short_description: z.string(),
@@ -140,6 +149,14 @@ const site = defineCollection({
       tagline: z.string(),
       phone: z.string(),
       phone_display: z.string(),
+      // Bay Plumbing has run two published numbers for decades — a Miami line
+      // and a Key Biscayne line — and the client treats both as primary. The
+      // header stacks them; everywhere else (footer, JSON-LD, CTA copy) still
+      // uses `phone`, so an unset secondary changes nothing.
+      phone_label: z.string().optional(),
+      phone_secondary: z.string().optional(),
+      phone_secondary_display: z.string().optional(),
+      phone_secondary_label: z.string().optional(),
       email: z.string().email().optional(),
       address: z.object({
         street: z.string().optional(),
