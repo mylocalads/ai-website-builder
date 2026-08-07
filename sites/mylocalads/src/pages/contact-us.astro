@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BottomCTA from '../components/BottomCTA.astro';
+
+// Mirrors booking-page.astro: same two-column grid, same left-column rhythm
+// (eyebrow → short h1 → lead → perks → bordered contact list → note), and the
+// GHL widget sitting bare on the page background rather than inside a card.
 ---
 <BaseLayout
   title="Contact Us! | My Local Ads"
@@ -11,15 +15,27 @@ import BottomCTA from '../components/BottomCTA.astro';
       <div class="contact-grid">
         <div class="contact-info">
           <span class="eyebrow">Contact Us</span>
-          <h1>We're here to assist you with your digital marketing &amp; advertising needs.</h1>
+          <h1>Get In Touch With Our Team!</h1>
+          <p class="lead">We're here to assist you with your digital marketing &amp; advertising needs.</p>
+
+          <ul class="perks">
+            <li><span class="check">✓</span> <strong>24/7 Email Support!</strong></li>
+            <li><span class="check">✓</span> <strong>Talk To Advertising Experts!</strong></li>
+            <li><span class="check">✓</span> <strong>Most Tickets Resolved In Under 12 Hours!</strong></li>
+          </ul>
+
           <ul class="contact-list">
             <li><strong>Sales (Phone):</strong> <a href="tel:+18664511915">(866) 451-1915</a></li>
             <li><strong>Email:</strong> <a href="mailto:support@mylocalads.co">support@mylocalads.co</a></li>
           </ul>
+
           <p class="muted">We aim to respond to all inbound inquiries within one business day.</p>
         </div>
 
-        <div class="contact-form-frame">
+        {/* GHL form widget — client-supplied snippet, do not modify the src or
+            the loader URL. form_embed.js resizes the iframe via postMessage, so
+            the min-height below only holds space until that runs. */}
+        <div class="contact-embed">
           <iframe
             src="https://links.mylocalads.info/widget/form/SBI2UVSanngNWiB81x8r"
             id="inline-SBI2UVSanngNWiB81x8r"
@@ -37,7 +53,6 @@ import BottomCTA from '../components/BottomCTA.astro';
             title="Contact Us Form"
             class="ghl-form-iframe"
           ></iframe>
-          <script src="https://links.mylocalads.info/js/form_embed.js"></script>
         </div>
       </div>
     </div>
@@ -46,24 +61,45 @@ import BottomCTA from '../components/BottomCTA.astro';
   <BottomCTA />
 </BaseLayout>
 
+{/* is:inline keeps Astro from bundling this — GHL's loader must be fetched
+    from their domain at runtime to talk to the iframe. Matches booking-page. */}
+<script src="https://links.mylocalads.info/js/form_embed.js" type="text/javascript" is:inline></script>
+
 <style>
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-5); align-items: start; }
-  .contact-list { list-style: none; padding: 0; margin: var(--space-3) 0; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-5);
+    align-items: start;
+  }
+  .lead { font-size: 1.2rem; color: var(--color-text-muted); margin: 0 0 var(--space-3); }
+  .perks { list-style: none; padding: 0; margin: var(--space-3) 0; }
+  .perks li { padding: 0.5rem 0; display: flex; gap: 0.75rem; align-items: center; font-size: 1.05rem; }
+  .check { color: var(--color-green); font-weight: 900; flex-shrink: 0; }
+  .contact-list {
+    list-style: none;
+    padding: var(--space-3) 0 0;
+    margin: var(--space-3) 0 0;
+    border-top: 1px solid var(--color-border);
+  }
   .contact-list li { padding: 0.4rem 0; font-size: 1.05rem; }
-  .contact-form-frame {
-    background: var(--color-bg-elev);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: 0;
-    overflow: hidden;
-    min-height: 1700px;
+  .muted { color: var(--color-text-muted); font-size: 0.95rem; margin-top: var(--space-3); }
+
+  /* Bare on the page background — no card, no border. min-height only holds
+     layout space until GHL's loader sizes the iframe. */
+  .contact-embed {
+    background: transparent;
+    min-height: 700px;
   }
   .ghl-form-iframe {
     width: 100%;
+    min-height: 700px;
     height: 1678px;
     border: none;
-    border-radius: 20px;
     display: block;
   }
-  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
 </style>
