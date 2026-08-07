@@ -27,6 +27,21 @@ export default defineConfig({
       filter: (page) => !isDuplicateCaseStudyPath(new URL(page).pathname),
     }),
   ],
+  // Legacy URLs from the GoHighLevel site that lived at mylocalads.co before
+  // the cutover. Each returned 200 there and would 404 here, breaking any live
+  // ad, email or bookmark pointing at them.
+  //   /home                        duplicate of the homepage
+  //   /google-ads-bundle           offer page, superseded by the pricing section
+  //   /facebook-google-ads-bundle  "Facebook + Google Leads Plan" offer page
+  //   /facebook-ads                offer page
+  // /thank-you is NOT redirected — it is a real destination for form
+  // submissions, so it exists as its own page.
+  redirects: {
+    '/home': '/',
+    '/google-ads-bundle': '/#pricing',
+    '/facebook-google-ads-bundle': '/#pricing',
+    '/facebook-ads': '/#pricing',
+  },
   build: { format: 'directory' },
   compressHTML: true,
 });
