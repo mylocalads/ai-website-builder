@@ -4148,3 +4148,47 @@ real domain, zero `.vercel.app` strings left in the home HTML or sitemap.
 attached Vercel serves both apex and www, but `site` names only one, so a form posted from
 the other host would have been rejected as cross-site. It now accepts the sibling host in
 both directions.
+
+**DNS cutover COMPLETE 2026-07-29.** whitmanlawncare.com is live on Vercel.
+
+Operator built the GoDaddy zone as specified. Verified by querying ns75.domaincontrol.com
+directly rather than trusting propagation or the control panel:
+
+| Record | Value | Purpose |
+|---|---|---|
+| A `@` | 76.76.21.21 | Vercel |
+| CNAME `www` | whitmanlawncare.com. | resolves through to Vercel |
+| A `mail` | 72.52.212.85 | old host — gives MX a target that is not Vercel |
+| MX `@` | mail.whitmanlawncare.com (pri 0) | mail stays on the old server |
+| TXT `@` | v=spf1 +mx +ip4:72.52.212.85 ~all | `+a` dropped, apex is no longer a sender |
+
+**GoDaddy blocks an A record at `www` if a CNAME already exists** — that is the DNS rule
+that a CNAME cannot coexist with any other record at the same name, not a GoDaddy quirk.
+The pre-existing `CNAME www → apex` already chains to Vercel, so the A record was
+unnecessary. Preferable too: only the apex A needs changing if Vercel's IP ever moves.
+
+**Vercel did NOT auto-provision the TLS certificate.** DNS resolved correctly and the site
+served fine over HTTP (`Server: Vercel`), but HTTPS failed for 5+ minutes with
+`SSL_ERROR_SYSCALL` — the edge rejecting the handshake because no cert matched the SNI.
+`vercel certs ls` confirmed no cert existed for the domain while other domains in the team
+had them, so the mechanism worked and this one had simply stalled. Fixed with an explicit
+`vercel certs issue whitmanlawncare.com www.whitmanlawncare.com` (18s). **If a cutover
+looks right but HTTPS hangs, check `vercel certs ls` before assuming propagation.**
+
+Note `openssl s_client` is useless from this sandbox — raw TCP sockets are blocked, so it
+returns empty and looks like a server fault. Only curl HTTP(S) gets out. An earlier port
+scan of the client's mail host reported every port closed for the same reason; that reading
+was worthless and was retracted rather than acted on.
+
+**Final verification, all against https://whitmanlawncare.com:**
+- Valid cert (`ssl_verify_result: 0`), HTTP/2, HSTS `max-age=63072000`, http → 308 → https.
+- Both apex and www serve 200.
+- 20/20 legacy `/website/*` URLs → 308 → 200.
+- 21/21 new routes 200, including `/online-payments` with the PayPal SDK present.
+- Canonicals on the real domain, 31 sitemap URLs, zero stale `.vercel.app` references.
+
+Still open and unchanged by the cutover: `/api/estimate` has no delivery destination
+(`vercel env ls production` empty) so lead forms capture nothing — now live traffic; no
+captcha on that endpoint; no live PayPal test transaction has confirmed funds routing; and
+`/free-estimates`, `/promos`, `/employment` are redirects to near-equivalents rather than
+real rebuilt pages.
