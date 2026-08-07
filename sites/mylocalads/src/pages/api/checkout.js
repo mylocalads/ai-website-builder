@@ -26,6 +26,7 @@ const priceIds = () => ({
   'ai-agents': process.env.STRIPE_PRICE_AI_AGENTS,
   'seo-plan': process.env.STRIPE_PRICE_SEO_PLAN,
   'website': process.env.STRIPE_PRICE_WEBSITE,
+  'social-media': process.env.STRIPE_PRICE_SOCIAL_MEDIA,
   'ppl-ads-3mo': process.env.STRIPE_PRICE_ADS_SETUP,
   'ppl-ads-6mo': process.env.STRIPE_PRICE_ADS_SETUP,
   'ppl-ads-12mo': process.env.STRIPE_PRICE_ADS_SETUP,

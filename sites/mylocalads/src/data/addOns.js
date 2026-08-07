@@ -123,6 +123,31 @@ export const addOns = [
     ],
     fallbackHref: 'https://start.mylocalads.co/all-in-one-website',
   },
+  {
+    // Stripe: prod_Ofc09o5VTOisFu / price_1NsGmPGGPbkO0XrM90gBCQn5, exposed to
+    // the checkout endpoint as STRIPE_PRICE_SOCIAL_MEDIA.
+    id: 'social-media',
+    section: 'addons',
+    planLabel: 'Social Media Plan',
+    title: 'Social Media Management',
+    subtitle: 'Stay in front of local homeowners with consistent, done-for-you posting.',
+    priceCents: 50000,
+    priceLabel: '$500/mo',
+    wasPriceLabel: null,
+    priceNote: 'Up to 12 posts monthly.',
+    billing: 'recurring',
+    trialDays: null,
+    requires: [],
+    group: null,
+    shipping: false,
+    includes: [
+      'Up to 12 posts per month',
+      'Content created for you',
+      'Scheduled & published for you',
+      'Backed by AI agents',
+    ],
+    fallbackHref: '/booking-page',
+  },
 
   // Ads Plan — one Stripe product (the setup fee) offered at three commitment
   // terms. Same price for all three; the term is what the customer is choosing,

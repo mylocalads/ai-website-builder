@@ -2,10 +2,24 @@ import { describe, it, expect } from 'vitest';
 import { addOns, byId, bySection } from '../src/data/addOns.js';
 
 describe('addOns data', () => {
-  it('has seven entries: four add-ons plus three Ads Plan commit terms', () => {
-    expect(addOns).toHaveLength(7);
-    expect(bySection('addons')).toHaveLength(4);
+  it('has eight entries: five add-ons plus three Ads Plan commit terms', () => {
+    expect(addOns).toHaveLength(8);
+    expect(bySection('addons')).toHaveLength(5);
     expect(bySection('ppl')).toHaveLength(3);
+  });
+
+  it('carries the Social Media Plan', () => {
+    const social = byId('social-media');
+    expect(social).toBeTruthy();
+    expect(social.priceCents).toBe(50000);
+    expect(social.priceLabel).toBe('$500/mo');
+    expect(social.billing).toBe('recurring');
+    expect(social.section).toBe('addons');
+    // Standalone: no dependency on CRM, and not mutually exclusive with anything.
+    expect(social.requires).toEqual([]);
+    expect(social.group).toBeNull();
+    // Only a lone-item trial cart gets trial treatment; this plan has none.
+    expect(social.trialDays).toBeNull();
   });
 
   it('gives every add-on the required fields', () => {
