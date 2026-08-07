@@ -52,7 +52,13 @@ function sameSite(request: Request): boolean {
   const add = (v?: string | null) => {
     if (!v) return;
     try {
-      allowed.add(new URL(v.startsWith('http') ? v : `https://${v}`).host);
+      const h = new URL(v.startsWith('http') ? v : `https://${v}`).host;
+      allowed.add(h);
+      // Once a custom domain is attached, Vercel serves BOTH the apex and www.
+      // `site` only names one of them, so a form posted from the other host
+      // would be rejected as cross-site. Accept the sibling of whichever we
+      // were given, in both directions.
+      allowed.add(h.startsWith('www.') ? h.slice(4) : `www.${h}`);
     } catch { /* ignore malformed */ }
   };
   add(import.meta.env.SITE);

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/website{/}?", "destination": "/", "permanent": true },
+
+    { "source": "/website/fertilization{/}?", "destination": "/services/fertilization", "permanent": true },
+    { "source": "/website/weed-control{/}?", "destination": "/services/weed-control", "permanent": true },
+    { "source": "/website/grub-control{/}?", "destination": "/services/grub-control", "permanent": true },
+    { "source": "/website/lime{/}?", "destination": "/services/lime", "permanent": true },
+    { "source": "/website/flea-tick-control{/}?", "destination": "/services/flea-tick-control", "permanent": true },
+    { "source": "/website/core-aeration{/}?", "destination": "/services/core-aeration", "permanent": true },
+    { "source": "/website/soil-testing{/}?", "destination": "/services/soil-testing", "permanent": true },
+    { "source": "/website/pest-control{/}?", "destination": "/services/pest-control", "permanent": true },
+    { "source": "/website/organic-fertilizer{/}?", "destination": "/services/organic-fertilizer", "permanent": true },
+    { "source": "/website/tree-and-shrub{/}?", "destination": "/services/tree-and-shrub", "permanent": true },
+
+    { "source": "/website/online-payments{/}?", "destination": "/online-payments", "permanent": true },
+    { "source": "/website/contact{/}?", "destination": "/contact", "permanent": true },
+
+    { "source": "/website/free-estimates{/}?", "destination": "/book", "permanent": true },
+    { "source": "/website/promos{/}?", "destination": "/pricing", "permanent": true },
+    { "source": "/website/employment{/}?", "destination": "/contact", "permanent": true },
+
+    { "source": "/website/sample-page{/}?", "destination": "/", "permanent": true },
+    { "source": "/website/2025/10/29/hello-world{/}?", "destination": "/blog", "permanent": true },
+    { "source": "/website/category/uncategorized{/}?", "destination": "/blog", "permanent": true },
+    { "source": "/website/author/wtmnlw2025{/}?", "destination": "/", "permanent": true },
+
+    { "source": "/website/:path*", "destination": "/", "permanent": true }
+  ]
+}

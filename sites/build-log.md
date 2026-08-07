@@ -3868,3 +3868,283 @@ Sewer Jetting" are the one genuine overlap in the split. The copy differentiates
 blockage vs. grease-laden shared commercial lines, preventive intervals and out-of-hours scheduling —
 but they are the two pages most likely to compete with each other in search. Worth watching once
 there is ranking data.
+
+### 2026-08-06 — firefly-cd: swapped GHL booking calendar widget site-wide
+
+Deploy `firefly-2352v0xuf`. Snapshot `.site-edit-history/2026-08-07T01:01:26Z-c4v7n8/`.
+
+Operator pasted a new GHL booking snippet. Booking id `J4EfjuMK45J9Yqx54csv` →
+`n9qMfgZ9DjXJ5ETyTHaf`, iframe id `A02mxvDgWoqPZgbsPZ1v_1784767364982` →
+`KMD91vGgtSPfUcKDZc8G_1786064413346`, and the new snippet adds `allow="payment"` — the old one had
+no `allow` attribute, so this calendar can take payment at booking where the previous one could not.
+
+**One field changed.** The widget lives in `crm.calendar_embed_snippet` and is consumed by
+`Hero.astro`, `book.astro`, and `pricing.astro`, so a single config edit reaches every page that
+renders it. Pasted verbatim per the paste-only rule — no loader URL synthesized, no reformatting.
+Verified by parsing before/after JSON and diffing flattened key paths: exactly one field differs,
+and the stored value is a byte-exact match for the operator's paste.
+
+**Renders on 16 of 24 pages** — home, `/book/`, `/pricing/`, all 6 area pages, and all 7 service
+pages. It does NOT appear on `/about/`, `/contact/`, `/our-work/`, `/services/`, `/service-areas/`,
+`/privacy/`, `/terms/`, `/accessibility/` — those templates never included a calendar. "On all pages"
+was read as *replace it everywhere it currently appears*, not *add it to pages that never had one*.
+If the latter was intended, that is a template change, not a config change.
+
+Pre-deploy, both the new widget URL and `form_embed.js` were checked for 200 — a dead booking id
+would have shipped an empty iframe that still passes every HTML-level check. Post-deploy sweep of all
+16 live pages: 16/16 carry the new booking id, 0 retain the old booking id, 0 retain the old iframe
+id.
+
+### 2026-08-06 — firefly-cd: phone number switched site-wide
+
+Deploy `firefly-gcyty7gey`. Snapshot `.site-edit-history/2026-08-07T01:16:05Z-h8t2y5/`.
+
+`(509) 590-4604` / `+15095904604` → `+1 509-295-9346` / `+15092959346`. Two fields in
+`config.json` (`phone`, `phone_display`); before/after JSON key-path diff confirms exactly those two
+changed and nothing else.
+
+**Only one phone number has ever existed on this site.** A regex sweep of `src/content/` throws a
+pile of false positives — Unsplash photo ids (`photo-1516216628859-…`), `our-work.json` longitudes
+(`-117.4224898`), the Facebook profile id (`61563790073217`), and the GHL calendar iframe id
+(`…_1786064413346`) all match a naive phone pattern. The real number lived in exactly two config
+fields. Verified there is no second line (no claims dept, no separate tracking number) and no phone
+inside the pasted CRM snippets or `code_injection`, so nothing paste-only had to be touched.
+
+Render counts are identical before and after — 82 display strings, 76 `tel:` hrefs, 24 E.164
+(schema.org JSON-LD), across all 24 pages. Old number: zero occurrences in `dist/` and zero across a
+17-page live sweep.
+
+**Display format changed, deliberately but flagged.** The operator wrote the display string as
+`+1 509-295-9346`, so that is what was stored, verbatim. The site's prior convention was the
+parenthesised `(509) 590-4604`. If the intent was only to change the digits and keep the house style,
+the one-line fix is `phone_display: "(509) 295-9346"` — `phone` stays as is either way.
+
+Note for anyone diffing a live sweep loop: `for p in $PAGES` with a space-joined variable did not
+word-split here and silently fetched a single bogus URL, reporting 0/17. Inline the list in the
+`for` statement instead of building it in a variable.
+
+---
+
+## GreenTree Inc. — 2026-08-07
+
+| | |
+|---|---|
+| Slug | `greentree-inc` |
+| Template | `owl` (standard caps) |
+| Old site | https://greentreeinc.com/ (WordPress 6.5.9, Total theme v5.19) |
+| Live | https://greentree-inc.vercel.app |
+| Pages | 22 static + `/book` and `/api/estimate` as SSR functions — 4 services, 3 service areas, 3 blog posts |
+| Vertical | Commercial landscape maintenance |
+| Market | Miami-Dade, Broward and Palm Beach Counties, FL |
+| Cost this run | **$0.00** |
+
+> Operator asked for this "following the Tropical South Tree Services template".
+> Same template (`owl`) and same three-token accent problem, but **not** Tropical's
+> raised caps: that client published 20 services and 16 areas with real permitting
+> differences per city. GreenTree publishes 4 services and claims 3 counties. Caps
+> left at stock; forcing 20 pages here would manufacture exactly the thin
+> near-duplicate pages `src/lib/limits.ts` exists to prevent.
+
+### Identity
+
+GreenTree Inc., founded 1984. (305) 665-8128 · landscape@greentreeinc.com ·
+Mon–Fri 8:00 AM – 4:30 PM. Family owned and run, **Minority Certified**, commercial
+clients only, landscape maintenance only. No street address is published anywhere.
+
+### Both paid data sources were unavailable — and it cost nothing
+
+- **No `.env` in the kit root**, so `APIFY_TOKEN` is unset and `/find-business`
+  could not run. Same condition as the Tropical build. No GBP means no verified
+  address, no geo, no rating, no review count.
+- **Firecrawl was blocked outright** — all engines failed
+  (`fire-engine;chrome-cdp;stealth`) on greentreeinc.com. Fell back to direct HTTP
+  fetch, which succeeded on every page. Reddit is also unreachable both ways now
+  (WebSearch blocks the domain, Firecrawl returns "we do not support this site"),
+  so `local-research` was built from Firecrawl *search snippets* plus two
+  commercial-landscape trade sources.
+
+Net effect: full intake, zero spend, but `address.street`, `geo`, `rating` and
+`review_count` ship unset. `LocalBusiness` JSON-LD emits without a street address.
+
+### Three things the client should be told regardless of whether they buy
+
+1. **Another company's website is live inside theirs.** `/193-2/`, titled "ABOUT",
+   serves complete marketing copy for **Fluidity Funding Solutions**, a Denver
+   small-business lender — its logo, its Denver address, its phone number, and an
+   "APPY NOW" typo. Unlinked from nav but publicly reachable and indexable.
+2. **The homepage has no `h1` at all**, and no page has a meta description.
+3. **The phone number is not a link anywhere on the site.** Zero `tel:` elements.
+   For a business whose only conversion path is a phone call, that is the costliest
+   single defect on the old site.
+
+### Content decisions
+
+**Testimonials excluded.** The old site carries ten reviews signed Rachel Patel,
+James Kim, Jessica Lee, Michael Brown, Emily Thompson, Robert Stevens, Melissa
+Williams, David Peterson, Sarah Kim and John Smith — a stock-name roster, uniformly
+AI-flavoured prose, and not one company name on a **commercial-only** contractor's
+testimonial page. Tagged `_suspect_placeholder` in `intake-scraped.json` and kept
+out of `home.json`. `Testimonials.astro` guards on `items.length > 0`, so the band
+self-hides cleanly. **Do not ship these without the client vouching for them.**
+
+**No licensed / insured / bonded claims.** The client asserts none of the three
+anywhere, and procurement buyers verify. All three are `false`.
+
+**No rating, no review count, no published prices.** Nothing verifiable exists for
+the first two; the client publishes none of the third. `/pricing` therefore ships
+the *variables that drive a quote* shape of `cost_table` (as `raircon` does) rather
+than an invented rate card.
+
+**Copy is aimed at property managers, not homeowners.** This is the whole
+positioning: the buyer is a commercial property manager, HOA board or facility
+manager buying predictability and reputation protection. Every "free estimate" call
+site was rewritten to "request a proposal", matching the client's own "Request A
+Quote" language.
+
+**GO GREENTREE** — the client's own nine-letter acrostic, buried at the bottom of
+their services page — became the `signature_system` section. It is a genuine brand
+property and the template's own guidance says to use the client's own name for that
+section, never another company's.
+
+### Design
+
+Brand greens taken from the client's stylesheet: `#275304` (20 occurrences, the
+logo mark) and `#6da716` (21 occurrences, links/accents). Textbook owl three-token
+split, same shape as Tropical:
+
+| Token | Value | Measured |
+|---|---|---|
+| `--color-primary` | `#275304` | white on it = **9.03:1** |
+| `--color-accent` (fill only) | `#6da716` unmodified | `#10230a` on it = **5.68:1**; as text on bg it is 2.71:1, hence never text |
+| `--color-accent-ink` | `#3d6b08` | **5.91:1** on bg, **6.35:1** on surface |
+| `--color-accent-on-dark` | `#a8d95f` | **5.49:1** on primary (fill green would be 3.09:1) |
+
+Every text pair clears WCAG AA. Fonts: **PT Sans** for both display and body — the
+client's actual brand font and the only family detected, so owl's Montserrat/Inter
+default was overridden rather than blended.
+
+Imagery: 8 photos from the client's own site, each opened and inspected. Three
+rejected — a visibly blurry upscaled hedge, a 3D-rendered turf clipart, and the
+Fluidity Funding logo. **Caveat: every surviving photo is temperate-climate stock**
+(spruce, hostas, begonia borders); the hero is plainly a northern office park. A
+South Florida commercial landscaper whose site shows no South Florida is a weak
+proof point, and real crew photos are the single biggest upgrade available.
+
+### Three template defects inherited, all previously known
+
+All three were fixed locally in `sites/greentree-inc/`. **None of them are fixed in
+`astro-templates/owl`.**
+
+1. **`/contact`, `/blog` and `/service-area` shipped with no `h1`.** `SectionHead`
+   always emits `h2`, and on those three pages it *is* the primary heading. This is
+   the identical defect fixed in `sites/tropical-south-tree-services` on
+   2026-08-06 — the `as` prop fix was never back-ported, so every owl site
+   scaffolded since has re-inherited it. Ported the same fix (default stays `h2`;
+   also brought across the `--section-head-*` inheritable colour overrides).
+2. **Service tiles clip long titles.** `aspect-ratio: 16/10` plus an absolutely
+   positioned `.body` means the caption cannot influence tile height, so it grows
+   upward past the top edge and `overflow: hidden` eats it — with a green build.
+   Tropical's log called this the *second* client in a row to hit it and said it
+   was "worth fixing in `astro-templates/owl` itself". **This is the third**
+   ("Landscape Maintenance" plus three chips). Ported Tropical's content-sized
+   `min-height` fix.
+3. **NEW — the hero trust-badge row is hard-coded for exactly two badges.** The
+   `@media (max-width: 560px)` rule pins `flex-wrap: nowrap` *and*
+   `white-space: nowrap`, correct for a Google + BBB pair and broken for any other
+   count: the row can no longer wrap and its text can no longer break, so the
+   list's min-content width becomes the sum of every badge. Three badges produced a
+   **410px floor inside a 375px viewport** and pushed the entire document into
+   horizontal scroll — hero container, `main` and the cookie bar all stretched with
+   it. Fixed by keeping `wrap` and dropping the `nowrap` on the labels, which is
+   count-agnostic; a two-badge pair still fits on one row at the reduced sizes, so
+   the case the rule was written for is unchanged.
+
+A fourth, milder issue was content-level rather than structural: `/services/`
+hard-codes `"What we do for {city} homeowners."` and `WhyChooseUs` hard-codes
+`"Reasons homeowners pick us"`. Both are wrong for any commercial-only client and
+were rewritten here.
+
+### Verification
+
+22/22 static pages have exactly one `h1`. All titles unique, all meta descriptions
+present, 0 broken internal links, no horizontal overflow at 375px on home, pricing
+or service pages. JSON-LD emits LocalBusiness, Service, FAQPage, BreadcrumbList and
+Organization. Live: all 22 routes plus `/book` return 200; canonical, robots and
+sitemap all resolve to `https://greentree-inc.vercel.app`.
+
+### Outstanding — needs operator / client
+
+| Field | Status |
+|---|---|
+| `address.street` / `postal` / `geo` | **unset — genuinely ambiguous.** Nothing on the client's site. Directories split: 8313 NW 70th St, Miami FL 33166 (Manta, Yellow Pages) vs 9920 SW 77th Dr, Miami FL 33173 (ZoomInfo). Needs the client or a GBP lookup. |
+| `rating` / `review_count` | unset — needs `APIFY_TOKEN` restored in `.env` |
+| `crm.*` (chat, reviews, calendar, contact form, call tracking) | empty — GHL paste-in |
+| `crm.form_action_url` / `captcha_snippet` | unset. The native EstimateForm posts to `/api/estimate`, which needs `LEAD_WEBHOOK_URL` **or** `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL` in Vercel env, or submissions fail with `?error=unavailable`. **The form is live and cannot deliver a lead until this is set.** |
+| `code_injection.head` / `body_end` (Pixel, GTM) | empty — operator |
+| `licensed` / `insured` / `bonded` | all `false` — ask the client; a commercial contractor almost certainly carries GL, they just never published it |
+| `team_members` | empty — nobody is named publicly |
+| `testimonials` | deliberately empty — see above |
+| Custom domain | not attached |
+| Short link | not created |
+| Back-port of the three owl fixes | **not done — template still ships all three** |
+
+### 2026-07-29 — DNS cutover prep: domain attached, legacy redirects, canonicals
+
+Operator is moving whitmanlawncare.com nameservers to GoDaddy. Attached
+`whitmanlawncare.com` and `www.whitmanlawncare.com` to the Vercel project, repointed
+canonicals, and covered every legacy URL.
+
+**DNS snapshot taken BEFORE the switch** (old nameservers ns1/ns2.uneedevisions.com, host
+72.52.212.85 = host2.uneedevisions.com):
+
+| Record | Value |
+|---|---|
+| A (apex) | 72.52.212.85 |
+| www | CNAME → apex |
+| **MX** | **`0 whitmanlawncare.com`** — mail is on the same box as the site |
+| TXT | `v=spf1 +a +mx +ip4:72.52.212.85 ~all` |
+| mail / webmail / autodiscover / ftp / cpanel | all → 72.52.212.85 |
+
+**The trap:** MX points at the apex. Repoint the apex A record at Vercel without changing
+MX and every @whitmanlawncare.com address starts resolving to Vercel, which runs no mail
+server — inbound mail dies silently. Fix is to give MX its own host: `mail` A →
+72.52.212.85, MX → mail.whitmanlawncare.com, and drop `+a` from SPF (the apex will no
+longer be a mail sender). whitmanlawncare.**net** is a separate domain on the same host
+with the same self-referencing MX — the client's actual address (dan@whitmanlawncare.net)
+lives there, so leave .net alone unless it is being moved too.
+
+**Legacy redirects — the trailing slash nearly ate this.** All 20 URLs in the client's
+WordPress sitemap live under `/website/` and all end in a slash. Astro's `redirects` config
+emits route regexes anchored `^…$`, so `/website/core-aeration` matched and
+`/website/core-aeration/` returned 404 — i.e. the form that actually exists would have
+broken. Verified against a real deployment, not assumed.
+
+Tested three candidate syntaxes on throwaway paths in one deploy:
+
+| Syntax | `/x` | `/x/` |
+|---|---|---|
+| `/x` | 307 | **404** |
+| `/x{/}?` | 307 | **307** |
+| `/x/:rest*` | 307 | **404** |
+| `/x/?` | — | rejected at deploy: invalid source pattern |
+
+So `{/}?` is the one. Also confirmed **vercel.json redirects and the Astro Vercel adapter's
+build output apply together** — adding vercel.json did not clobber the adapter's routes and
+normal pages kept serving. All redirects therefore now live in `vercel.json` as the single
+source of truth (removed from astro.config). Trade-off: vercel.json does not apply to
+`astro dev`/`astro preview`, so legacy redirects only resolve on a deployment.
+
+All 20 verified live: 308 → 200, zero failures. `/website/free-estimates/` → `/book`,
+`/website/promos/` → `/pricing`, `/website/employment/` → `/contact` are judgement calls
+(no 1:1 page exists yet); everything else is a true equivalent. A `/website/:path*`
+catch-all sends anything unlisted to the home page.
+
+**Canonicals repointed** to `https://whitmanlawncare.com` in astro.config `site`,
+`robots.txt` and `config.json` `site_url` — done now so nothing needs rewriting after
+propagation. Verified: canonical and og:url on the real domain, 31 sitemap URLs all on the
+real domain, zero `.vercel.app` strings left in the home HTML or sitemap.
+
+**Origin allowlist widened** in `src/pages/api/estimate.ts`: once a custom domain is
+attached Vercel serves both apex and www, but `site` names only one, so a form posted from
+the other host would have been rejected as cross-site. It now accepts the sibling host in
+both directions.
