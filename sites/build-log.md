@@ -3665,6 +3665,16 @@ than expected:
 | Yellow Pages | `/nationwide/mip/tropical-south-tree-service-576110523` | Search returns the landscaping listing on Marine Dr first |
 | Google | Maps search-by-query URL | No verifiable place-ID link is public — **swap in the real profile link when the client supplies it** |
 
+**Facebook and Instagram added** (operator-supplied, both 200):
+`facebook.com/profile.php?id=61583598667693` and
+`instagram.com/tropicalsouthtreeservices`. These live in `site.social` rather
+than `site.profiles` — the Footer already carries inline glyphs for them, and
+they are social feeds rather than review listings, which is the distinction the
+two fields draw. Trailing `#` stripped from the Facebook URL (address-bar
+artifact). The glyph row is pulled up under the badges so the footer reads as one
+"Find us on" group. Social links now announce the business name in their
+aria-label instead of just "facebook".
+
 This owner runs two brands out of one entity, so all four directories carry BOTH
 records. Linking the wrong one puts a conflicting phone number one click from the
 footer, which is a genuine NAP-consistency problem for local SEO.
