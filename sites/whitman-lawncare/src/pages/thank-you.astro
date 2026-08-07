@@ -16,9 +16,17 @@ const site = (await getEntry('site', 'config')).data as any;
       <h1>Thanks — we've got it</h1>
       <p class="lede">
         Your request is with the {site.business_name.split(' ')[0]} team. We'll call you back to
-        confirm the details and book a time to come out and look at the job properly.
+        confirm the details and book a time to walk the property, identify what's actually
+        growing, and pull a soil sample.
       </p>
-      <p class="sub">In a hurry, or dealing with an active leak?</p>
+
+      <ol class="next" aria-label="What happens next">
+        <li><strong>We call you back</strong> to confirm the details and pick a time.</li>
+        <li><strong>We walk the property</strong> and take a soil sample — no charge, no obligation.</li>
+        <li><strong>You get a written program and price</strong> before anything goes down.</li>
+      </ol>
+
+      <p class="sub">Rather talk it through now?</p>
       <a class="btn" href={`tel:${site.phone}`}>Call {site.phone_display}</a>
       <p class="back"><a href="/">Back to the homepage</a></p>
     </div>
@@ -31,6 +39,16 @@ const site = (await getEntry('site', 'config')).data as any;
   .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--color-accent-ink); margin: 0 0 var(--space-1); }
   h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; margin: 0 0 var(--space-3); color: var(--color-text); }
   .lede { font-size: 1.1rem; line-height: 1.7; color: var(--color-muted); margin: 0 0 var(--space-4); }
+  .next { list-style: none; counter-reset: step; margin: 0 0 var(--space-4); padding: 0; text-align: left; display: grid; gap: var(--space-2); }
+  .next li { counter-increment: step; position: relative; padding-left: 2.75rem; line-height: 1.6; color: var(--color-muted); }
+  .next li::before {
+    content: counter(step); position: absolute; left: 0; top: 0;
+    width: 1.9rem; height: 1.9rem; border-radius: 50%;
+    background: var(--color-accent); color: var(--color-on-accent);
+    font-family: var(--font-display); font-weight: 700; font-size: 0.95rem;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .next li strong { color: var(--color-text); }
   .sub { font-weight: 600; margin: 0 0 var(--space-2); color: var(--color-text); }
   .btn { display: inline-block; background: var(--color-accent); color: var(--color-on-accent); padding: 0.95rem 2rem; border-radius: var(--radius-sm); font-weight: 700; font-size: 1.25rem; text-decoration: none; text-transform: uppercase; }
   .back { margin: var(--space-4) 0 0; }

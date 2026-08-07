@@ -4192,3 +4192,172 @@ Still open and unchanged by the cutover: `/api/estimate` has no delivery destina
 captcha on that endpoint; no live PayPal test transaction has confirmed funds routing; and
 `/free-estimates`, `/promos`, `/employment` are redirects to near-equivalents rather than
 real rebuilt pages.
+
+---
+
+| Business | Slug | Template | Pages | Vercel URL | Date |
+|----------|------|----------|-------|------------|------|
+| Wolfpack Construction | `wolfpack-construction` | owl | 24 | https://wolfpack-construction.vercel.app | 2026-08-07 |
+
+**Source:** https://www.wolfpackfl.com/ — Orlando, FL (Orange County / Central Florida).
+Family-owned general contractor. Florida Certified GC **CGC1531295**, BBB A+ accredited since
+2024-03-20, Top 20 Home Depot contractor, 4.9 stars from 63 Google reviews, business started
+2021-04-08. Office at 2302 Mercator Dr, Orlando FL 32807. Spanish spoken.
+
+**GBP caveat:** the kit has no `.env`, so `APIFY_TOKEN` is unset and `/find-business` could not
+run. Identity was confirmed instead from the client's own site, which publishes the exact GBP
+review URL the operator supplied and the matching Maps CID (15908017895484243462). Rating and
+review count came from a public directory mirror of the listing. `business_profile.json`
+records the provenance — **re-run `/find-business` once the token is restored** to replace it
+with a first-party GBP snapshot.
+
+**Brand direction (operator brief: "really aggressive", claw marks as the highlight,
+personalization as the theme):**
+- Accent `#EA0A2A` sampled directly from the claw streaks in `logo-dark.png` — the dominant
+  non-black colour in the mark. The old site used a duller `#AD1B1E` on buttons and dressed
+  everything else in navy, which is why it read as a generic agency template.
+- The claw ships as `public/img/claw.svg` — four tapered streaks raked 19.5° from vertical,
+  widths thin/thick/thick/thin — used as a **CSS mask** so one asset tints per surface.
+  Placements: hero rake, section seams above the black bands, mirrored pair on the crimson
+  guarantee band, per-tile watermark on the process steps, sweep-on-hover on service cards,
+  eyebrow glyph on every section head, footer watermark, favicon.
+- Personalization: `about_block` promoted the seven-person "Meet The Pack" team onto the home
+  page (it was a third-level nav item on the old site), signature system renamed **The Wolfpack
+  Way** around a named project manager, and `CGC1531295` printed in plain sight.
+
+**Deviations from `site-generate`'s letter, all client-scoped (`astro-templates/` untouched):**
+- Component copies under `sites/wolfpack-construction/src/components/` were edited to place the
+  claw motif. Section order per page type is unchanged.
+- `Footer.astro` reversed to the black band with the white lockup, and given a `google_maps`
+  map-pin mark — the template had no SVG for that platform key, so the social tile rendered as
+  an empty red square for any client listing a GBP URL. **Worth upstreaming.**
+- `AboutSection.astro` now splits `body` on blank lines; the template rendered a multi-paragraph
+  `/about` story into one `<p>`, collapsing it into a 200-word wall. **Worth upstreaming.**
+- `BaseLayout.astro` font link swapped to Montserrat 600–900 + Source Sans 3 (the client's own
+  brand faces, and 900 is needed for the display weight), plus a favicon link and theme-color.
+
+**Contrast:** all seven owl README token pairs PASS AA —
+text/bg 19.01, muted/bg 6.85, on-primary/primary 19.01, on-accent/accent 4.59,
+accent-ink/bg 6.24, accent-ink/surface 5.73, accent-on-dark/primary 6.28.
+
+**Still needs paste-in (sections self-hide until then):** all five GHL widgets
+(chat, reviews, calendar, contact form, estimate form embed), `crm.form_action_url` and
+`crm.captcha_snippet` for the native estimate form — **the form currently captures nothing** —
+call-tracking number and snippet, `code_injection.head` (Meta Pixel / GTM), and a custom
+domain. Business hours were not published anywhere public, so `hours` is unset and the
+LocalBusiness JSON-LD omits `openingHoursSpecification`.
+
+---
+
+## Manley Ohana Flooring & Demolition — `manley-ohana-flooring`
+
+| Field | Value |
+|---|---|
+| Business | Manley Ohana Flooring & Demolition (MANLEYOHANA, LLC) |
+| Owner | Kalani K. Manley (MGR) |
+| Template | owl |
+| Pages | 24 |
+| Vercel URL | https://manley-ohana-flooring.vercel.app |
+| Custom domain | — none attached |
+| Date | 2026-08-07 |
+
+**Sources.** No prior website of the client's own. Business identity confirmed from Florida
+Sunbiz (MANLEYOHANA, LLC, doc L16000141911, ACTIVE, principal address 1796 N. Hiawassee Rd,
+Orlando FL 32818, MGR MANLEY KALANI K) and from Instagram `@manley_ohana_flooring` (bio,
+158 posts, 743 followers). Email `Manleyohanaflooring@gmail.com` came from the IG bio.
+Service areas (Orlando, Windermere, Merritt Island, Cocoa Beach, Rockledge) and the
+"Clean, fast and efficient" positioning are quoted from Kalani's own post captions.
+All 12 site images are his own Instagram work photos, downloaded to `public/img/` — no stock.
+
+**Entity conflict — recorded deliberately.** The Facebook page supplied at intake
+(`facebook.com/OhanaFlooring`) and the site `ohanaflooringinc.com` belong to a DIFFERENT
+company: Ohana Flooring Inc., Deltona FL, phone (407) 324-6603, officers Jason Gentile (CEO)
+and Kerri Corley (VP) per BBB. Nothing from that entity — phone, email, photos or copy — was
+used. `social` therefore lists Instagram only.
+
+**BLOCKER — phone number.** No phone number is published anywhere for MANLEYOHANA, LLC.
+`phone` / `phone_display` are set to the reserved-fictional `(407) 555-0142` so that no caller
+can be misrouted to the unrelated Deltona company. **This must be replaced with the GHL
+tracking number before the site is shown to the client.** It appears in the header, the
+footer and the LocalBusiness JSON-LD.
+
+**Also unset (sections self-hide):** all five GHL widgets (chat, reviews, calendar, contact
+form, estimate form embed), `crm.form_action_url` + `crm.captcha_snippet` — **the native
+estimate form captures nothing until these are pasted in** — `code_injection.head`
+(Meta Pixel / GTM), and a custom domain. No GBP listing was found and `APIFY_TOKEN` is absent
+from `.env`, so `rating`, `review_count`, `hours` and `geo` are unset and the JSON-LD omits
+`aggregateRating` and `openingHoursSpecification`. `testimonials` is an empty array — the
+section self-hides rather than carry invented reviews. `licensed` / `insured` / `bonded` are
+all `false`: no badge or public record verified any of them.
+
+**Update 2026-08-07 (post-build revisions).**
+
+*Logo.* Generated with Higgsfield (`nano_banana_pro`, 3 variants, 2 credits). Selected variant:
+circular badge with a monstera leaf and palm frond over a laid tile/plank floor, lava orange on
+basalt black, beside a heavy all-caps wordmark. Higgsfield's own background remover ghosted the
+type, so the cream background was chroma-keyed out locally instead and every visible pixel snapped
+to the two brand hexes (#14110F / #E24A0F) — which also cut the file from 396KB to 67KB. Shipped as
+`public/img/logo.png` (800x280, transparent) and wired to `config.logo_url`. Renders correctly on
+both the sand header and the white footer. Source variants kept in `logo-src/`.
+
+*Copy — Kalani de-emphasised.* The H1 was `Kalani Takes The Floor Out.` and is now
+`Flooring Removal & Demolition In Orlando, FL`, leading with the head keyword and the city.
+The hero eyebrow moved from `Orlando, FL` to `Serving Orlando & The Space Coast`. Kalani was
+removed from the promise band (now "A family shop, not a call centre"), the signature-system
+intro, both process-step lists, the closing CTA, `why_choose_us`, the /our-work intro, the last
+home FAQ, and the blog sign-off — all rewritten to "we"/"the owner" without losing the
+owner-operator angle. He now appears ONLY in the home-page about block, the /about story, the
+`team_members` bio, two image alt texts, and the blog author bylines.
+
+*Still outstanding:* the `(407) 555-0142` placeholder phone (see BLOCKER above), all GHL widgets,
+`form_action_url` + `captcha_snippet`, code injection, and a custom domain. The owl template has
+no favicon `<link>`, so the site ships without one — that is a template-level gap, not a
+per-site one.
+
+### 2026-07-29 — lead delivery wired to Make.com, submit feedback, placeholder removal
+
+`LEAD_WEBHOOK_URL` set in Vercel production (encrypted) to the operator's Make.com hook.
+Deliberately an env var, not `config.json` — anyone holding that URL can inject records into
+their scenario, so it does not belong in the repo.
+
+Verified end-to-end against the live domain, twice: a real form POST to
+`/api/estimate` returns `303 → /thank-you`, which only happens after the webhook accepts
+(a failure returns `?error=delivery`, an unset destination `?error=unavailable`). The
+webhook itself was confirmed to accept the exact payload shape first, in isolation.
+
+Guard rails re-tested live and all hold:
+
+| Case | Result |
+|---|---|
+| No TCPA consent | `?error=consent` — rejected |
+| Malformed email | `?error=email` |
+| Service not in the allowlist | `?error=service` |
+| Missing required fields | `?error=missing` |
+| Honeypot filled (bot) | `303 → /thank-you`, lead NOT delivered — no signal to retry |
+| Cross-site POST | `403` |
+
+**Submission feedback.** The form is a plain POST, so the page sat inert while the function
+called the webhook and people would press again, double-posting the lead. Added a spinner +
+"Sending your request…" status, a `submitting` flag that cancels a second submit, and a
+`pageshow` reset so a back-navigation out of the bfcache does not restore a permanently
+disabled button. Two details worth keeping: the button is disabled on the NEXT TICK, not
+synchronously (a disabled control is omitted from the submission and disabling mid-dispatch
+can cancel the navigation), and the handler defers to `checkValidity()` first so a failed
+browser validation leaves the button usable. Verified in-page on the live site: spinner
+`none → block`, status text set, button disabled, second submit `defaultPrevented: true`,
+and a simulated `pageshow` restoring everything.
+
+**Removed the customer-facing placeholders on /book and /contact.** These were requested
+pre-launch, but with the domain live they printed *"Paste the snippet into
+crm.calendar_embed_snippet in src/content/site/config.json"* to real visitors — on /book,
+which is the target of every primary CTA on the site, and with no way to submit a lead.
+Both now fall back to the working native form; the GHL embed still takes priority the moment
+its snippet is set. **When a site goes from staging to a live domain, re-audit every
+developer-facing placeholder.** Confirmed live: both pages carry the form, zero occurrences
+of the setup text.
+
+Thank-you page also de-roofed — it asked whether the visitor was "dealing with an active
+leak" — and given a numbered three-step "what happens next".
+
+Remaining open: no captcha on `/api/estimate` (honeypot is the only bot defence), and no
+live PayPal transaction has confirmed funds routing.

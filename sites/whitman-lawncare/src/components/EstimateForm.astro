@@ -127,12 +127,71 @@ const SERVICES = [
       <p class="captcha-missing">DEV ONLY — add <code>crm.captcha_snippet</code> to the site config.</p>
     )}
 
-    <button type="submit" class="btn">Get My Free Estimate</button>
+    <button type="submit" class="btn">
+      <span class="btn-label">Get My Free Estimate</span>
+      <span class="btn-spinner" aria-hidden="true"></span>
+    </button>
+    <p class="submit-status" role="status" aria-live="polite"></p>
     <p class="fallback-note">Prefer to talk? Call <a href={`tel:${phone}`}>{phoneDisplay}</a>.</p>
   </form>
 </div>
 
+<script>
+  // This is a plain form POST, so the browser does a full navigation and the
+  // page sits there looking inert while the serverless function calls the
+  // webhook. Without feedback people assume it did nothing and press the button
+  // again, which posts the lead twice.
+  document.querySelectorAll<HTMLFormElement>('.estimate-form form').forEach((form) => {
+    const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const label = form.querySelector<HTMLElement>('.btn-label');
+    const status = form.querySelector<HTMLElement>('.submit-status');
+    if (!btn || !label || !status) return;
+
+    const original = label.textContent ?? '';
+
+    form.addEventListener('submit', (event) => {
+      // Second press while the first is still in flight — swallow it.
+      if (form.dataset.submitting === 'true') {
+        event.preventDefault();
+        return;
+      }
+
+      // Let the browser's own required/type validation run first; if it fails
+      // there is no navigation and the button must stay usable.
+      if (!form.checkValidity()) return;
+
+      form.dataset.submitting = 'true';
+      btn.classList.add('is-submitting');
+      status.textContent = 'Sending your request…';
+
+      // Disabling on the next tick, not synchronously: a disabled control is
+      // omitted from the submission, and disabling mid-dispatch can cancel the
+      // navigation outright in some browsers.
+      setTimeout(() => { btn.disabled = true; }, 0);
+    });
+
+    // Back-button restores this page from the bfcache with the button still
+    // disabled and spinning, which looks broken. Reset it.
+    window.addEventListener('pageshow', () => {
+      form.dataset.submitting = 'false';
+      btn.disabled = false;
+      btn.classList.remove('is-submitting');
+      label.textContent = original;
+      status.textContent = '';
+    });
+  });
+</script>
+
 <style>
+  .btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; }
+  .btn-spinner { display: none; width: 1.05em; height: 1.05em; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin 0.6s linear infinite; }
+  .btn.is-submitting .btn-spinner { display: inline-block; }
+  .btn.is-submitting { cursor: progress; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  /* Respect reduced-motion: keep the state change, drop the animation. */
+  @media (prefers-reduced-motion: reduce) { .btn-spinner { animation: none; } }
+  .submit-status { margin: var(--space-1) 0 0; font-size: 0.9rem; color: var(--color-muted); min-height: 1.2em; }
+
   .estimate-form { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.12); }
   .estimate-form.compact { padding: var(--space-3); }
   .estimate-form.compact .form-heading { font-size: 1.25rem; margin-bottom: var(--space-1); }

@@ -6,7 +6,7 @@ import { getEntry } from 'astro:content';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
-import PlaceholderSlot from '../components/PlaceholderSlot.astro';
+import EstimateForm from '../components/EstimateForm.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const calendarSnippet = site.crm?.calendar_embed_snippet;
@@ -23,13 +23,17 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
       <SectionHead eyebrow="Free Lawn Analysis" heading="Get a 100% FREE lawn analysis & soil test" />
       <div class="book-grid">
         <div class="cal-col">
+          {/* The GHL calendar takes over the moment its snippet is pasted into
+              crm.calendar_embed_snippet. Until then this falls back to the
+              working native form rather than a placeholder: /book is where every
+              primary CTA on the site points, so it has to be able to take a lead.
+              The placeholder that used to sit here also printed setup
+              instructions to real customers once the domain went live. */}
           {calendarSnippet
             ? <div class="cal-wrap"><Fragment set:html={calendarSnippet} /></div>
-            : <PlaceholderSlot
-                variant="calendar"
-                height="700px"
-                label="Booking calendar goes here"
-                note="Placeholder for the GHL booking calendar embed. Paste the snippet into crm.calendar_embed_snippet in src/content/site/config.json and it replaces this block."
+            : <EstimateForm
+                heading="Request Your Free Lawn Analysis"
+                intro="Tell us where the lawn is and what you've noticed. We'll call to confirm a time, walk the property, and pull a soil sample — no charge."
               />}
         </div>
         <aside class="info-col">
