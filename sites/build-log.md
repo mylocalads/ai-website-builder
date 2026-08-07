@@ -3731,6 +3731,16 @@ Avatar and date are the real ones from Nando's May 2026 review, taken from the
 client's own review widget and self-hosted rather than hotlinked off
 googleusercontent.
 
+**Stat row removed** (2019 · 5.0★ · 24/7 · Same day). Every figure was already on
+the page — "founded 2019" opens this section's own lede, the rating and review
+count are in the hero trust badge, and 24/7 response plus same-day quotes are
+both in the promise bar directly above it. A fourth repetition added height, not
+credibility.
+
+Removed the data, markup, `Stat` type, schema field and CSS rather than blanking
+the array: the component guarded on length, so leaving it would have meant ~25
+lines that could never render. `git revert 8480043` restores it.
+
 **If sub-service pages are wanted later** (`/mowing`, `/sod-installation`), say
 so — they would need real, differentiated content rather than a split of the
 parent page, and the reserved-slug guard in `urls.ts` will catch any collision.
