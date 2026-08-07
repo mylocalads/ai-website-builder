@@ -14,21 +14,49 @@ const { title, description, canonical, ogImage } = Astro.props;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
 const defaultOg = ogImage ?? 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/646f73501647a84ed22f6a8d.png';
 
-const orgLd = {
+// One @graph rather than separate blocks, so Organization and WebSite are
+// linked by @id and search engines resolve them as the same entity. Pages add
+// their own schema (FAQPage, Service/Offer) through the `head` slot below.
+const siteLd = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'My Local Ads',
-  legalName: 'My Local Ads LLC',
-  url: 'https://mylocalads.co',
-  logo: 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/646f73501647a84ed22f6a8d.png',
-  telephone: '+18664511915',
-  email: 'support@mylocalads.co',
-  sameAs: [
-    'https://www.facebook.com/MyLocalAds.Co',
-    'https://www.instagram.com/mylocalads/',
-    'https://twitter.com/mylocalads_co',
-    'https://www.linkedin.com/company/my-local-ads/',
-    'https://www.youtube.com/channel/UCY5ZP4nrdWAp18OTy4JjU9g',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://mylocalads.co/#organization',
+      name: 'My Local Ads',
+      legalName: 'My Local Ads LLC',
+      url: 'https://mylocalads.co',
+      logo: 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/646f73501647a84ed22f6a8d.png',
+      image: 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/646f73501647a84ed22f6a8d.png',
+      telephone: '+18664511915',
+      email: 'support@mylocalads.co',
+      description:
+        'Marketing supplier for home service contractors — exclusive pay-per-lead advertising, local SEO, websites, CRM, and AI agents.',
+      areaServed: { '@type': 'Country', name: 'United States' },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+18664511915',
+        email: 'support@mylocalads.co',
+        contactType: 'sales',
+        areaServed: 'US',
+        availableLanguage: 'en',
+      },
+      sameAs: [
+        'https://www.facebook.com/MyLocalAds.Co',
+        'https://www.instagram.com/mylocalads/',
+        'https://twitter.com/mylocalads_co',
+        'https://www.linkedin.com/company/my-local-ads/',
+        'https://www.youtube.com/channel/UCY5ZP4nrdWAp18OTy4JjU9g',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://mylocalads.co/#website',
+      url: 'https://mylocalads.co',
+      name: 'My Local Ads',
+      inLanguage: 'en-US',
+      publisher: { '@id': 'https://mylocalads.co/#organization' },
+    },
   ],
 };
 ---
@@ -37,6 +65,7 @@ const orgLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-language" content="en-us" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
@@ -59,7 +88,10 @@ const orgLd = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap" />
 
-    <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(siteLd)} />
+
+    {/* Pages inject their own structured data and agent summaries here. */}
+    <slot name="head" />
   </head>
   <body>
     <a href="#main" class="skip-nav">Skip to content</a>

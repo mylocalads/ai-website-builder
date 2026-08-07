@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
+# Agent-readable summaries of this site (llmstxt.org convention).
+# /llms.txt is the short index; /index.md is the long-form version.
+# Both are generated from the product catalog, so pricing stays current.
+
 Sitemap: https://mylocalads.co/sitemap-index.xml
