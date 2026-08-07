@@ -30,7 +30,10 @@
   "insured": true,
   "bonded": false,
   "years_in_business": 7,
-  "social": {},
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=61583598667693",
+    "instagram": "https://www.instagram.com/tropicalsouthtreeservices/"
+  },
   "profiles": [
     {
       "name": "Google Business Profile",

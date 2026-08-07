@@ -45,9 +45,9 @@ const year = new Date().getFullYear();
           </div>
         )}
         {site.social && Object.entries(site.social).filter(([_, v]) => !!v).length > 0 && (
-          <div class="footer-socials">
+          <div class={`footer-socials ${site.profiles && site.profiles.length > 0 ? 'joined' : ''}`}>
             {Object.entries(site.social).filter(([_, v]) => !!v).map(([platform, url]) => (
-              <a href={url as string} rel="noopener" target="_blank" aria-label={platform} class="social-link">
+              <a href={url as string} rel="noopener noreferrer" target="_blank" aria-label={`${site.business_name} on ${platform}`} title={`${site.business_name} on ${platform}`} class="social-link">
                 {platform === 'facebook' && <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.3-1.5 1.6-1.5h1.7V3.6C16.5 3.6 15.5 3.5 14.4 3.5c-2.2 0-3.7 1.3-3.7 3.8v2.6H8v3.1h2.7V21h2.8z"/></svg>}
                 {platform === 'youtube' && <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2c-.2-.9-.9-1.6-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4c-.9.2-1.6.9-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.8c.2.9.9 1.6 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5 3-5 3z"/></svg>}
                 {platform === 'instagram' && <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4 1 .5.5.7.9 1 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9 0 3.2 0 3.6-.1 4.9-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-1 1.4-.5.5-.9.7-1.4 1-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1-3.2 0-3.6 0-4.9-.1-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-1-.5-.5-.7-.9-1-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9 0-3.2 0-3.6.1-4.9.1-1.2.3-1.8.4-2.2.2-.6.5-1 1-1.4.5-.5.9-.7 1.4-1 .4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 5.4c-2.4 0-4.4 2-4.4 4.4s2 4.4 4.4 4.4 4.4-2 4.4-4.4-2-4.4-4.4-4.4zm0 7.2c-1.5 0-2.8-1.3-2.8-2.8s1.3-2.8 2.8-2.8 2.8 1.3 2.8 2.8-1.3 2.8-2.8 2.8zm5.7-7.4c0 .6-.5 1-1 1s-1-.5-1-1 .5-1 1-1 1 .5 1 1z"/></svg>}
@@ -125,7 +125,12 @@ const year = new Date().getFullYear();
   }
   .profile-link img { height: 34px; width: auto; display: block; }
 
-  .footer-socials { display: flex; gap: 0.5rem; margin-top: var(--space-2); }
+  /* `joined` pulls the icon row up under the profile badges so the two read as
+     one "Find us on" group rather than two stacked, unrelated clusters. The
+     badges are platform artwork and these are glyphs, so they cannot share a
+     list — but they can share a row. */
+  .footer-socials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: var(--space-2); }
+  .footer-socials.joined { margin-top: 0.75rem; }
   .footer-socials .social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: var(--color-accent); color: var(--color-on-accent); transition: transform 0.15s ease, filter 0.15s ease; }
   .footer-socials .social-link:hover, .footer-socials .social-link:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
   @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
