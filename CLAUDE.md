@@ -116,6 +116,51 @@ If a Maps lookup has already been run, you can re-download results from Apify wi
 
 ---
 
+## SEO & Agent-Discoverability — INVARIANT
+
+Every generated site ships these as standard. They are not optional polish, and
+**no edit may leave them stale or broken**:
+
+| Artifact | Source | Where |
+|---|---|---|
+| `LocalBusiness` + `WebSite` JSON-LD (linked by `@id`) | `src/content/site/config.json` | `BaseLayout.astro` |
+| `BreadcrumbList`, `Service`, `FAQPage` JSON-LD | page frontmatter via the `jsonLd` prop | per page |
+| `/llms.txt` — short, link-first index | content collections | `src/pages/llms.txt.js` |
+| `/index.md` — long-form markdown mirror | content collections | `src/pages/index.md.js` |
+| `agent-site-summary` (`<script type="text/markdown">`) | content collections | `BaseLayout.astro`, homepage only |
+| `robots.txt` + `sitemap-index.xml` | build | `public/`, `@astrojs/sitemap` |
+| `canonical`, OG, Twitter, `content-language`, `hreflang` | `BaseLayout.astro` | every page |
+
+**The rule that keeps this true: these are GENERATED, never hand-written.**
+`src/lib/agent-docs.js` derives every one of them from the same content
+collections the pages render. Change a phone number, a service, or a service
+area and all of it follows automatically — there is no second copy to update.
+
+Three things that WILL break it, so check them on any edit:
+
+1. **Hand-editing `llms.txt`, `index.md`, or the summary into a static file.**
+   Never do this. A confidently wrong `llms.txt` is worse than none, because an
+   LLM quotes it verbatim to a customer. Fix the content collection instead.
+2. **Changing a route's slug, path, or cap without updating `src/lib/limits.ts`.**
+   The agent docs import `SERVICE_LIMIT` / `AREA_LIMIT` / the reserved-slug set
+   from that module *specifically* so they cannot advertise a URL that
+   `getStaticPaths` never built. Raising a cap in a route file alone reintroduces
+   the drift the module exists to prevent.
+3. **Removing or renaming a page listed in the `## Pages` block of
+   `agent-docs.js`.** Those paths are literals — they are the one part not
+   derived from a collection.
+
+After ANY site edit, verify before calling it done:
+
+```bash
+cd sites/{slug} && npm run build
+curl -s localhost:PORT/llms.txt   # or read dist/llms.txt
+```
+
+Confirm: the business details are current, every service and area listed is one
+that actually built, and no link 404s. `docs/seo-baseline.md` has the full
+checklist and the link-resolution script.
+
 ## Key Behaviors
 
 - **One Astro project per site** — `sites/{slug}/` is a full Astro project, not a single HTML file

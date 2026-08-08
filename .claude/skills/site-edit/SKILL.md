@@ -34,7 +34,7 @@ Every edit run has the same six gates:
 2. **Technical diff spec** — rewrite the request into a numbered list of `SET path → value` lines, wait for "yes".
 3. **Snapshot** — copy every file the batch will touch into a timestamped history entry under `.site-edit-history/`.
 4. **Apply** — write ONLY the listed changes, atomically. Never edit anything not in the spec.
-5. **Validate** — run `npx astro sync` + `npm run build`. On failure, revert every edit and mark the history entry as failed.
+5. **Validate** — run `npx astro sync` + `npm run build`, then the SEO check in Step 5a. On failure, revert every edit and mark the history entry as failed.
 6. **Deploy** — delegate to `vercel-deploy` so the change is live. Record the deploy URL + Vercel deployment ID in the history entry.
 
 Rollback runs a matching six-gate flow with the snapshot as the source of truth for what to restore.
@@ -297,6 +297,36 @@ If `npm run build` fails:
 4. Print the build error verbatim, best-guess the offending line by matching the error's file path to the edited files (if unclear, say so).
 
 Note: `npm install` is NOT run by this skill. If `node_modules` is missing, tell the operator to run `npm install` inside `sites/{slug}/` first and abort.
+
+### 5a. SEO regression check (runs on every edit, no exceptions)
+
+Every site ships `/llms.txt`, `/index.md`, an `agent-site-summary` block, and
+`LocalBusiness` + `WebSite` JSON-LD. All of it is GENERATED from the content
+collections — see `docs/seo-baseline.md`.
+
+Because it is generated, a normal content edit (phone, service, area, hours)
+propagates automatically and needs no extra work. The check exists to catch the
+cases where it does NOT:
+
+```bash
+cat dist/llms.txt        # firefly: dist/ · owl: dist/client/
+```
+
+Confirm, and revert the batch if any fails:
+
+- The edited value actually appears (a phone change must show in `llms.txt` too).
+- No `undefined` anywhere.
+- Every service and area listed built a real page — run the link-resolution
+  script in `docs/seo-baseline.md` when the edit added, removed, renamed, or
+  reordered a service or service area.
+
+**Never "fix" a stale agent doc by editing it directly.** `llms.txt`, `index.md`,
+and the summary have no source files to edit — they are route handlers reading
+the collections. A wrong value there means the collection is wrong; fix that.
+
+**A cap or slug change is an SEO change.** If the edit touches `src/lib/limits.ts`
+or a route's slug pattern, re-run the link check: the agent docs import those
+limits precisely so they cannot advertise a page `getStaticPaths` never built.
 
 ### 6. Deploy
 
