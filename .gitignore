@@ -39,3 +39,8 @@ sites/**/.firecrawl/
 
 # Unlighthouse reports (regenerated per run)
 .unlighthouse/
+
+# site-edit rollback snapshots. Kept on disk so 'site-edit rollback' works,
+# but not committed: they are before/after copies of files git already
+# versions, and they added ~7,000 lines and 130+ files per edit batch.
+.site-edit-history/
