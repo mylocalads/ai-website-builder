@@ -52,8 +52,11 @@ const resultsCollections = collections.map((c) => ({
           <li class="mobile-has-submenu">
             <a href="/results">Results</a>
             <ul class="mobile-submenu">
+              {/* Use the precomputed href. Building `/results/${c.slug}` here
+                  produced a 404: category pages exist only as
+                  /results/{category}/{client}, never as a bare category path. */}
               {resultsCollections.map((c) => (
-                <li><a href={`/results/${c.slug}`}>{c.name}</a></li>
+                <li><a href={c.href}>{c.name}</a></li>
               ))}
             </ul>
           </li>
