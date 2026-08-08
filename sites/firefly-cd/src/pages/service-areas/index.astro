@@ -1,4 +1,5 @@
 ---
+import { imageUrl } from '../../lib/images.ts';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import { AREA_LIMIT } from '../../lib/limits.ts';
@@ -8,6 +9,7 @@ import CTA from '../../components/CTA.astro';
 const site = (await getEntry('site', 'config')).data as any;
 const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/service-areas' }];
+const heroBgUrl = await imageUrl(site.default_hero_photo, { width: 1600 });
 ---
 <BaseLayout
   title={`Service Areas — ${site.business_name}`}
@@ -16,7 +18,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/se
   pagePath="/service-areas"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="areas-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
+  <section class="areas-hero" style={heroBgUrl && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${heroBgUrl});`}>
     <div class="container">
       <h1>Service Areas</h1>
       <p>Where {site.business_name} shows up.</p>

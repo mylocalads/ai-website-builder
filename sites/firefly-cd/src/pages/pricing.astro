@@ -1,4 +1,5 @@
 ---
+import { imageUrl } from '../lib/images.ts';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -22,6 +23,7 @@ const roofCostRows = [
   { type: 'Cedar Shake', per_sq: '$8–$14', avg_2000: '$16,000–$28,000' },
   { type: 'Tile', per_sq: '$10–$18', avg_2000: '$20,000–$36,000' },
 ];
+const heroBgUrl = await imageUrl(site.default_hero_photo, { width: 1600 });
 ---
 <BaseLayout
   title={`Pricing — ${site.business_name}`}
@@ -30,7 +32,7 @@ const roofCostRows = [
   pagePath="/pricing"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="pricing-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
+  <section class="pricing-hero" style={heroBgUrl && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${heroBgUrl});`}>
     <div class="container">
       <h1>Pricing</h1>
       <p>{pricing.intro}</p>

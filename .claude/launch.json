@@ -2,16 +2,34 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "tropical-south-tree-services",
+      "name": "greentree-inc",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/tropical-south-tree-services", "--", "--port", "4333"],
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/greentree-inc", "--", "--port", "4331"],
+      "port": 4331
+    },
+    {
+      "name": "wolfpack-construction",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/wolfpack-construction", "--", "--port", "4332"],
+      "port": 4332
+    },
+    {
+      "name": "manley-ohana-flooring",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/manley-ohana-flooring", "--", "--port", "4333"],
       "port": 4333
     },
     {
-      "name": "bay-plumbing-co",
+      "name": "trc-home-improvements",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/bay-plumbing-co", "--", "--port", "4331"],
-      "port": 4331
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/trc-home-improvements", "--", "--port", "4334"],
+      "port": 4334
+    },
+    {
+      "name": "firefly-cd",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "sites/firefly-cd", "--", "--port", "4335"],
+      "port": 4335
     }
   ]
 }

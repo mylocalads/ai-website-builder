@@ -4486,3 +4486,71 @@ https://mylocalads.co, so canonical and og:url on every www page already point
 at the apex — verified live. A 308 is still tidier and is a Vercel
 dashboard-only setting (Project → Settings → Domains → www → Redirect to
 mylocalads.co); the CLI exposes no flag for it.
+
+### 2026-08-08 — firefly-cd: build-time image pipeline (astro:assets + sharp)
+
+Deploy `firefly-b5dkdhgy7`. Snapshot `.site-edit-history/2026-08-08T21:34:12Z-img9pl/`.
+
+**Homepage image payload: ~4.3 MB → 195 KB on mobile** (1,023 KB summing every default `src`;
+195 KB summing the smallest srcset candidate, which is what a 375px viewport actually fetches).
+
+Root cause was not "unoptimised images" — it was that **every image was a remote URL string in a
+content collection, so Astro never saw it.** sharp was installed the whole time and doing nothing.
+Two files were half the site: `team_photo` at **2,181 KB** (GHL filesafe CDN) and `them_photo` at
+**946 KB** hotlinked from `elmersroofing.b-cdn.net` — another roofing company's CDN. Now 107 KB and
+294 KB respectively, and served from our own origin.
+
+Pipeline:
+- `scripts/localize-images.mjs` pulls every remote image referenced by the collections into
+  `src/assets/images/` (49 references → 22 unique files, then 7 more for project-map photos) and
+  rewrites content to bare filenames. Idempotent; re-run after adding content.
+- `src/lib/images.ts` — `resolveAsset()` for `<Image>`, `imageUrl()` for CSS backgrounds and the
+  video poster.
+- `src/components/SmartImage.astro` — `<Image>` for local assets (srcset, WebP, intrinsic
+  width/height, lazy by default, `priority` for the one above-fold image), plain `<img>` fallback so
+  a missing image can never fail a live build.
+- 17 schema fields moved from `z.string().url()` to `imageRef`. Link fields (`site_url`, `social`,
+  `link_url`, form embeds, `default_hero_video`) deliberately keep URL validation.
+
+Result: 106 optimised WebP variants, all 13 homepage `<img>` tags carry srcset + width + height
+(was 0), zero broken images, zero unresolved references across 116 `/_astro` refs.
+
+#### Three traps, all of which drew blood
+
+1. **`| head` truncated a content file to zero bytes.** Running
+   `node scripts/localize-images.mjs | head -25` makes `head` exit early, close the pipe, and
+   SIGPIPE the script — which died between `writeFile` truncating `our-work.json` and writing it
+   back. Restored from the pre-batch snapshot, byte-identical to HEAD. The script now writes via
+   temp-file + `rename()` (atomic) and refuses any write that would shrink a file by more than half.
+   **Never pipe a file-writing script into `head`.**
+2. **Converting the hero to `<img>` broke the video poster.** The homepage hero renders a *video*,
+   not a photo; `poster={heroPhoto}` silently became a bare filename and would have 404'd. Poster now
+   resolves through `getImage()`. On a throttled phone the poster IS the LCP element.
+3. **Six CSS `background-image` usages were invisible to an `<img>` sweep** — `OurServices` cards
+   plus four page heroes — and emitted bare filenames, giving 7 live 404s caught only in the browser
+   console. A grep for `<img` does not find your images; grep for `background-image` too.
+
+Remaining, deliberately untouched: the favicon and apple-touch-icon still point at `img1.wsimg.com`.
+They live inside the operator-pasted `code_injection.head` block, which is paste-only, and they are
+227×136.
+
+### 2026-08-08 — tooling: Unlighthouse + fleet-audit skill
+
+- `unlighthouse@0.18.0` as a root devDependency, `unlighthouse.config.ts` (mobile, sitemap-driven,
+  every page, concurrency 2), `npm run audit` / `npm run audit:ci`, `.unlighthouse/` gitignored.
+- `.claude/skills/ai-website-fleet-audit/SKILL.md` — read-only fleet audit: Unlighthouse per site,
+  optional PSI and Search Console, dated JSON snapshots under `audits/`, diffed against the previous
+  run. Explicitly cannot edit or deploy; fixes go through `site-edit`.
+- `.env.example` documents `PAGESPEED_API_KEY`, `GSC_SERVICE_ACCOUNT_JSON`, `GSC_PROPERTY`.
+
+**First site-wide run (fireflycd.com, 24 pages): average performance 88**, best 98, worst 60
+(homepage). 17 of 24 pages ≥ 85. PSI had reported 48 for the homepage alone — which is the argument
+for site-wide auditing in one number: the homepage was never representative.
+
+Best-practices is 69 on every page carrying a GHL widget and 100 on every page without one. That is
+the CRM's cost, not a defect, and it is not fixable from this repo.
+
+**The install first failed with `ENOSPC` — the volume was 100% full** (1.1 GiB free of 460 GiB).
+Reclaimed ~7 GB with `npm cache clean --force`. Part of `~/.npm` is root-owned and could not be
+cleared without sudo; the repo itself is 8.1 GB, almost entirely `node_modules` across 33 sites.
+Worth a periodic prune — an inactive site's `node_modules` is fully regenerable with `npm install`.

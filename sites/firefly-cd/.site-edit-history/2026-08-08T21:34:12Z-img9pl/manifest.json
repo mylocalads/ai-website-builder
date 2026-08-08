@@ -1,0 +1,65 @@
+{
+  "batch_id": "2026-08-08T21:34:12Z-img9pl",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "astro + sharp handle images/videos at build time so they're optimized, lazy loaded etc.",
+  "diff_spec": [
+    {
+      "op": "CREATE",
+      "path": "scripts/localize-images.mjs",
+      "note": "pulls 49 remote images into src/assets/images so astro:assets can see them; atomic writes"
+    },
+    {
+      "op": "CREATE",
+      "path": "src/components/SmartImage.astro",
+      "note": "<Image> for local assets, <img> fallback for remote"
+    },
+    {
+      "op": "CREATE",
+      "path": "src/lib/images.ts",
+      "note": "resolveAsset + imageUrl for CSS backgrounds and video poster"
+    },
+    {
+      "op": "SET",
+      "path": "src/content/config.ts",
+      "field": "17 image fields",
+      "value": "imageRef (was z.string().url())"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/Hero.astro",
+      "note": "CSS background-image -> <SmartImage priority>; video poster resolved via getImage"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/OurServices.astro",
+      "note": "card backgrounds resolved via imageUrl"
+    },
+    {
+      "op": "SET",
+      "path": "10 components/pages",
+      "note": "<img> -> <SmartImage>; 4 page hero backgrounds resolved"
+    }
+  ],
+  "files_touched": [
+    "scripts/localize-images.mjs",
+    "src/components/SmartImage.astro",
+    "src/lib/images.ts",
+    "src/content/config.ts",
+    "src/content/site/*.json",
+    "src/content/services/*.md",
+    "src/content/service_areas/*.md",
+    "src/components/*.astro",
+    "src/pages/*.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_url": "https://firefly-b5dkdhgy7-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://fireflycd.com",
+    "page_count": 24
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

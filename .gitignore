@@ -36,3 +36,6 @@ sites/*/raw/photos/
 # Caches
 .firecrawl/
 sites/**/.firecrawl/
+
+# Unlighthouse reports (regenerated per run)
+.unlighthouse/

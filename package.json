@@ -2,14 +2,17 @@
   "name": "website-builder-kit",
   "version": "1.0.0",
   "type": "module",
-  "description": "Automated website builder pipeline: find → scrape → research → audit → redesign → deploy",
+  "description": "Automated website builder pipeline: find \u2192 scrape \u2192 research \u2192 audit \u2192 redesign \u2192 deploy",
   "scripts": {
-    "screenshot": "node scripts/screenshot.js"
+    "screenshot": "node scripts/screenshot.js",
+    "audit": "unlighthouse",
+    "audit:ci": "unlighthouse-ci --build-static"
   },
   "dependencies": {
     "playwright": "^1.49.0"
   },
   "devDependencies": {
+    "unlighthouse": "^0.18.0",
     "vercel": "^50.34.3"
   }
 }
