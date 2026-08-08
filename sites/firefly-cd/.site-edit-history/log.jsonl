@@ -17,3 +17,6 @@
 {"batch_id": "2026-08-03T17:46:34Z-k7n3x1", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "add Kootenai County ID service area; area cap 5->6; 2 self-hosted photos"}
 {"batch_id": "2026-08-03T17:58:07Z-p2m8q4", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "swap Kootenai County hero to kcgov.us aerial CdA photo"}
 {"batch_id": "2026-08-05T01:20:57Z-d5w9r2", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "add Decking service (7th); service cap 6->7; fix /services/ grid cap 5->7 (flooring was hidden)"}
+{"batch_id": "2026-08-07T01:01:26Z-c4v7n8", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "swap GHL booking calendar snippet on all 16 pages that render it"}
+{"batch_id": "2026-08-07T01:16:05Z-h8t2y5", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "phone -> +15092959346 / '+1 509-295-9346' site-wide (24 pages)"}
+{"batch_id": "2026-08-08T13:49:18Z-s3o9b1", "mode": "edit", "slug": "firefly-cd", "status": "deployed", "summary": "backport SEO/agent-discoverability baseline; caps centralised in limits.ts at 7/6"}

@@ -1,8 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import { AREA_LIMIT } from '../lib/limits.ts';
 import SectionHead from './SectionHead.astro';
-const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
 ---
 <section id="areas" class="areas" aria-label="Service areas">
   <div class="container">

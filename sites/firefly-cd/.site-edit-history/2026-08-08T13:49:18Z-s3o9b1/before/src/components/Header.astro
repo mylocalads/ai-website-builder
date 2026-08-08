@@ -1,9 +1,8 @@
 ---
 import { getEntry, getCollection } from 'astro:content';
-import { SERVICE_LIMIT, AREA_LIMIT } from '../lib/limits.ts';
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
-const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 7);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
 ---
 <header class="site-header">
   <div class="container header-row">

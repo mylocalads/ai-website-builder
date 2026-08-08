@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
-import { AREA_LIMIT } from '../../lib/limits.ts';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import CTA from '../../components/CTA.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
-const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Service Areas', href: '/service-areas' }];
 ---
 <BaseLayout

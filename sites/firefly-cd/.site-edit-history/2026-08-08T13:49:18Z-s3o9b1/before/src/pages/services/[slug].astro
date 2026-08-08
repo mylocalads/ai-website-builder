@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, getEntry } from 'astro:content';
-import { SERVICE_LIMIT } from '../../lib/limits.ts';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Hero from '../../components/Hero.astro';
 import PartnerBadges from '../../components/PartnerBadges.astro';
@@ -20,7 +19,7 @@ export async function getStaticPaths() {
   const services = await getCollection('services');
   return services
     .sort((a, b) => a.data.order - b.data.order)
-    .slice(0, SERVICE_LIMIT)
+    .slice(0, 7)
     .map((s) => ({ params: { slug: s.slug }, props: { service: s } }));
 }
 

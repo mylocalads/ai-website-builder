@@ -1,7 +1,6 @@
 ---
 import { getEntry, getCollection } from 'astro:content';
-import { SERVICE_LIMIT } from '../lib/limits.ts';
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 7);
 const site = (await getEntry('site', 'config')).data as any;
 const section = site.services_section ?? { eyebrow: 'Our Services' };
 ---

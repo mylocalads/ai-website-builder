@@ -1,5 +1,6 @@
 | Business | Slug | Pages | Vercel URL | Date |
 |----------|------|-------|------------|------|
+| TRC Home Improvements | trc-home-improvements | 26 | https://trc-home-improvements.vercel.app | 2026-08-07 |
 | Raircon Corporation | raircon | 24 | https://raircon.vercel.app | 2026-08-04 |
 | Prezkop Builders | prezkop-builders | 25 | https://prezkop-builders.vercel.app | 2026-08-03 |
 | Stubbs Landscaping | stubbs-landscaping | 25 | https://stubbs-landscaping.vercel.app | 2026-08-03 |
@@ -4361,3 +4362,49 @@ leak" — and given a numbered three-step "what happens next".
 
 Remaining open: no captcha on `/api/estimate` (honeypot is the only bot defence), and no
 live PayPal transaction has confirmed funds routing.
+
+### 2026-08-08 — firefly-cd: SEO + agent-discoverability baseline backported (handoff complete)
+
+Deploy `firefly-rf4nlw8df`. Snapshot `.site-edit-history/2026-08-08T13:49:18Z-s3o9b1/`.
+Completes `docs/handoffs/2026-08-06-fireflycd-seo-backport.md`.
+
+Live now: `/llms.txt` (200, `text/plain`), `/index.md` (200, `text/markdown`), `WebSite` JSON-LD
+linked to `LocalBusiness` by `@id`, `agent-site-summary` on the homepage only,
+`content-language` on every page, and a `robots.txt` with no placeholder. Caps are no longer
+hardcoded anywhere — all ten call sites import `SERVICE_LIMIT` / `AREA_LIMIT` from the new
+`src/lib/limits.ts`.
+
+**Zero URLs lost.** New `sitemap-0.xml` diffed against the live one: 24 vs 24, nothing added,
+nothing removed. Full sweep of all 24 live URLs after deploy: 24/24 return 200. Link-resolution
+script from `docs/seo-baseline.md`: `broken: NONE`.
+
+#### Four things in the handoff were wrong or stale — worth fixing there before the other 26 sites
+
+1. **It lists six cap call sites. There are eight** (ten slice expressions; `Header` and `Footer`
+   carry both collections). Missing from the handoff: `src/pages/services/index.astro` and
+   `src/pages/service-areas/index.astro`. Following it literally would have left those two
+   hardcoded — reintroducing exactly the drift `limits.ts` exists to prevent, and the same bug that
+   already hid `flooring` from `/services/` for a week (see the 2026-08-04 entry).
+2. **It claims dropping to 5/5 would delete `/services/siding/` and `/services/windows/`.** It would
+   not — by `order`, siding=2 and windows=3. The pages actually at risk are **`flooring` (6) and
+   `decking` (7)**, plus `kootenai-county-id` (area 6). Right conclusion, wrong reasoning, and the
+   wrong reasoning would mislead anyone spot-checking the wrong two URLs.
+3. **The phone in the verification checklist is stale.** It says `(509) 590-4604`; the number was
+   changed to `+1 509-295-9346` on 2026-08-06. `llms.txt` correctly carries the new one.
+4. **"Mirror BaseLayout" is load-bearing — do not copy it.** firefly-cd's `BaseLayout.astro` has a
+   `<slot name="head" />` (project-map) that the template does **not**. `/our-work/` fills it via
+   `<Fragment slot="head">` and renders 5 map assets through it. Copying the template's BaseLayout
+   over it would silently break the project map. The three edits were applied surgically instead.
+
+#### Other notes
+
+`limits.ts` carries a comment block explaining why it reads 7/6 rather than the template's 5/5, so a
+future re-copy from the template has to make that choice consciously.
+
+Pre-existing data issue, not introduced here and not fixed here: `business_name` in `config.json` is
+`Firefly Contractors ＆ Design` using a **fullwidth ampersand** (U+FF06), not `&`. It already renders
+that way in every `<title>` site-wide, and now also in `llms.txt`, `/index.md` and the agent summary.
+Worth a one-line fix in a future batch.
+
+**Remaining from the handoff:** the commit, and the other 26 sites. Per the handoff's own warning,
+each has its own caps — audit per site, never assume the template's 5/5.
