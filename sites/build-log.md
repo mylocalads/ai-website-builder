@@ -4554,3 +4554,51 @@ the CRM's cost, not a defect, and it is not fixable from this repo.
 Reclaimed ~7 GB with `npm cache clean --force`. Part of `~/.npm` is root-owned and could not be
 cleared without sudo; the repo itself is 8.1 GB, almost entirely `node_modules` across 33 sites.
 Worth a periodic prune — an inactive site's `node_modules` is fully regenerable with `npm install`.
+
+### 2026-08-08 — firefly-cd: render-blocking pass (PSI 48 → 75 → pending re-test)
+
+Deploy `firefly-q1a2yozrm`. Snapshot `.site-edit-history/2026-08-08T22:18:28Z-rb4kz7/`.
+
+The image pipeline took PSI mobile from **48 → 75** and **LCP 19.2 s → 3.6 s**; image savings fell
+from 2,407 KiB to 121 KiB, so images stopped being the lever. The remaining drag was
+**render-blocking, 1,270 ms**, from four resources: two of our own stylesheets and two third-party
+`<script src>` tags with no `async`/`defer`.
+
+Three changes:
+
+1. **`build.inlineStylesheets: 'always'`.** The site's CSS is ~15 KB across two files, both blocking
+   first paint on two extra connections. Inlined — live homepage now has **zero** `<link
+   rel="stylesheet">`.
+2. **`vercel.json` cache headers.** `/_astro/*` was served `max-age=0, must-revalidate` despite every
+   filename carrying a content hash — that was Lighthouse's "efficient cache lifetimes, 348 KiB",
+   and it was ours, not a third party's. Now `max-age=31536000, immutable`, verified live.
+   `/images/*` deliberately gets only 1 day + revalidate: those filenames are **not** hashed, so
+   immutable would pin a stale image for a year with no way to bust it.
+3. **Chat and reviews widgets deferred.** Both pasted snippets are reproduced **byte for byte** in a
+   `<template>` — not edited, per the paste-only rule — and moved into the DOM later: chat on first
+   interaction or idle, reviews on `IntersectionObserver` with 420 px of reserved height so nothing
+   shifts.
+
+**The calendar was deliberately left eager.** It is the hero conversion element and above the fold;
+`form_embed.js` is the largest blocking script but deferring it would risk booked leads to win a
+score. That trade was not worth making silently.
+
+#### Notes
+
+- **`vercel.json` rejects `"//"` comment keys.** The first deploy failed with `Schema verification
+  failed … should NOT have additional property //`. The rationale now lives in
+  `vercel.json.README.md` beside it. `vercel.json` is schema-validated; it is not a place for
+  comments.
+- **Cloned `<script>` elements are inert.** A script inside a `<template>` never executes when
+  cloned — each one has to be recreated as a fresh element with its attributes copied. Both deferred
+  widgets do this; verified mounting live (reviews 1 iframe, chat 4 scripts, calendar 1 iframe).
+- **IntersectionObserver could not be exercised in the verification browser.** A fresh, independent
+  observer on the same element never delivered even its initial callback, and page scroll stayed
+  pinned at 63 px — the pane renders headless/hidden, so IO is inert there. The mount logic itself
+  was proven by running it manually. Because that left the trigger unverifiable, the reviews widget
+  now also carries a **6 s backstop plus interaction listeners**, so a context where IO never fires
+  degrades to loading slightly early rather than never showing reviews at all.
+
+Still outstanding and mostly not ours: unused JS 445 KiB and TBT 320 ms (GHL widget SDKs), the
+">4 preconnect" warning (injected by those SDKs at runtime, not present in our HTML), 7
+non-composited animations, and CLS 0.093.
