@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trc-home-improvements.vercel.app/sitemap-index.xml

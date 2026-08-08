@@ -1,0 +1,32 @@
+{
+  "slug": "wolfpack-construction",
+  "url": "https://www.wolfpackfl.com",
+  "screenshot": "screenshots/wolfpack-construction.png",
+  "captured_at": "2026-08-07",
+  "platform": "Scorpion (agency CMS) — footer credit and form host confirm it",
+  "page_height_px": 8235,
+  "purpose": "OPERATOR REFERENCE ONLY. Not design DNA. The owl template is the sole source of layout and structure.",
+  "strengths": [
+    "Genuinely deep, well-written service copy — roofing, commercial, and remediation pages each carry real substance, not filler.",
+    "Real trust assets already in hand: Florida CGC licence number published, BBB A+, Top 20 Home Depot contractor, award badges, three named reviews.",
+    "Named leadership team with headshots — seven people, roles listed.",
+    "Own project photography for both commercial and residential work, plus before/after sets."
+  ],
+  "weaknesses": [
+    "The brand is invisible. The claw mark — the one thing that makes this identity memorable — appears once, at roughly 40px, in the header logo and nowhere else on 8,235px of page.",
+    "Chrome is navy/slate, not the brand's black-and-crimson. The claw red shows up only as small button fills and inline link colour, so the page reads as a generic agency template with a red accent rather than as Wolfpack.",
+    "Hero is centered light-weight all-caps text over a photo of the company's own building and van — low contrast, no CTA hierarchy beyond a single small button, and it sells 'design-build excellence' rather than a reason to call.",
+    "The people are buried. 'Meet The Pack' is a third-level nav item; the homepage never shows a face, despite the fact that named-humans is this business's strongest differentiator against ghosting competitors.",
+    "No visible process, no timeline, no 'here is what happens after you call' — which is precisely the anxiety Orlando homeowners report.",
+    "Reviews render as a plain unstyled quote list with no rating, no source, no count. 4.9 across 63 Google reviews is never stated.",
+    "Very long single-column scroll with repeated identical value-prop blocks (the same five 'Why Wolfpack' bullets appear verbatim on home, about, and residential pages).",
+    "Heavy cookie-consent and third-party widget load (reCAPTCHA, Roomvo assistant, Scorpion analytics) on every page."
+  ],
+  "opportunities_for_rebuild": [
+    "Make the four-streak claw the structural signature of the site — section dividers, hero rake, hover states, numbered process steps — not a logo detail.",
+    "Go black and crimson. Kill the navy. The identity is already high-contrast and aggressive; the site should match it.",
+    "Put the pack on the homepage. Faces, names, roles, above the fold or immediately below it.",
+    "State 4.9 / 63 Google reviews and the CGC licence number in the hero trust row.",
+    "Replace the repeated bullet blocks with one named process ('The Wolfpack Way') and one guarantee ('One Quality. One Price.')."
+  ]
+}

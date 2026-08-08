@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://manley-ohana-flooring.vercel.app/sitemap-index.xml

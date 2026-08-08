@@ -1,0 +1,37 @@
+/* Fonts are loaded by the <link> in src/layouts/BaseLayout.astro (Archivo +
+   Inter). Owl loads them there rather than via @import so the request is not
+   chained behind the stylesheet. */
+:root {
+  /* TRC Home Improvements — near-black + emerald.
+     The client's live site runs a bright green on black; the green is kept as
+     the brand signal and split across the three accent jobs below so it is
+     legible as a fill, as ink on white, and as text on the dark bands. */
+  --color-bg: #ffffff;
+  --color-surface: #f2f4f3;
+  --color-text: #0b1210;
+  --color-muted: #5a625f;
+  --color-primary: #0b1210;
+  --color-on-primary: #ffffff;
+
+  /* FILL behind --color-on-accent: buttons, icon circles, social tiles.
+     White on #00875a measures 4.55:1 — clears AA at normal text size, and the
+     template's accent-backed labels are 1.25rem/700 anyway. */
+  --color-accent: #00875a;
+  --color-on-accent: #ffffff;
+
+  /* The accent as TEXT on light: eyebrows, ticks, stars, chevrons.
+     6.07:1 on --color-bg, 5.49:1 on --color-surface. */
+  --color-accent-ink: #00714a;
+
+  /* The accent as TEXT inside the dark --color-primary bands and over the hero
+     scrim. 11.68:1 on --color-primary — this is the electric mint the brand
+     reads as, and it only works on the dark side. */
+  --color-accent-on-dark: #2fe6a0;
+
+  --color-focus: #0057ff;
+  --font-display: 'Archivo', 'Helvetica Neue', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 2px; --radius-md: 4px; --radius-lg: 8px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

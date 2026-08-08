@@ -44,3 +44,13 @@ sites/**/.firecrawl/
 # but not committed: they are before/after copies of files git already
 # versions, and they added ~7,000 lines and 130+ files per edit batch.
 .site-edit-history/
+
+# Artifacts from scripts interpolating an unset variable into a path.
+# Not content — if these reappear, the script that wrote them has a bug.
+undefined/
+$SP/
+
+# Intermediate logo exports (v1, v2-crop, v2-keyed, v2-nobg...). The shipped
+# logo lives in the site's public/img/. These are scratch from an editing
+# session and ran to 18 MB in one site; they stay on disk, out of git.
+logo-src/

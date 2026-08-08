@@ -1,0 +1,43 @@
+---
+import { getIcon } from '../lib/icons';
+
+type Item = string | { text: string; icon?: string };
+export interface Props { items?: Item[]; }
+const { items = [] } = Astro.props;
+
+// Accepts plain strings (legacy content) or { text, icon } objects.
+const normalized = items.map((i) => (typeof i === 'string' ? { text: i, icon: undefined } : i));
+---
+{normalized.length > 0 && (
+  <section class="promise-bar" aria-label="What sets us apart">
+    <span class="claw-seam" aria-hidden="true"></span>
+    <div class="container">
+      <ul>
+        {normalized.map((item) => {
+          const svg = getIcon(item.icon);
+          return (
+            <li>
+              {svg && (
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" set:html={svg} />
+                </span>
+              )}
+              <span class="label">{item.text}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .promise-bar { position: relative; background: var(--color-primary); color: var(--color-on-primary); padding: calc(var(--space-3) + 6px) 0 var(--space-3); }
+  .claw-seam { position: absolute; top: 0; left: 0; right: 0; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-2) var(--space-3); }
+  li { display: flex; align-items: center; justify-content: center; gap: 0.75rem; text-align: left; }
+  /* Raked slab, matching the process-step badges. */
+  .icon { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: 0; background: var(--color-accent); color: var(--color-on-accent); transform: skewX(-11deg); }
+  .icon svg { width: 1.5rem; height: 1.5rem; transform: skewX(11deg); }
+  .label { font-family: var(--font-display); font-weight: 800; letter-spacing: 0.01em; font-size: clamp(0.9rem, 1.4vw, 1.05rem); line-height: 1.25; text-transform: uppercase; }
+  @media (max-width: 700px) { li { justify-content: flex-start; } }
+</style>

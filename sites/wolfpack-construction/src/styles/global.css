@@ -1,0 +1,61 @@
+@import './tokens.css';
+@import './a11y.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-body); line-height: 1.5; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 var(--space-2); }
+a { color: inherit; text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-3); }
+
+/* ---------------------------------------------------------------------------
+   Wolfpack brand layer.
+
+   The identity is a wolf's claw raking a heavy black wordmark in crimson, and
+   the operator's brief was that the claw should be the highlight of the site,
+   not a 40px logo detail the way it is on the old one. Everything below is the
+   mechanism for that: one masked SVG, tinted per surface.
+
+   Deliberately global rather than per-component so a single change to the rake
+   angle or streak asset propagates everywhere instead of drifting between the
+   header, the section seams and the process tiles.
+   ------------------------------------------------------------------------ */
+
+/* Heavier display type than the template default. Montserrat 800/900 uppercase
+   with negative tracking is the closest Google-hosted approximation of the
+   condensed wordmark in the logo. */
+h1, h2 { font-weight: 900; letter-spacing: -0.02em; }
+h3, h4 { font-weight: 800; letter-spacing: -0.01em; }
+
+::selection { background: var(--color-accent); color: var(--color-on-accent); }
+
+/* The claw as a tintable mask. `currentColor` paints it, so the same element
+   works on white, on the grey surface, and inside the black bands. */
+.claw {
+  display: block;
+  background-color: currentColor;
+  -webkit-mask: var(--claw) no-repeat center / contain;
+  mask: var(--claw) no-repeat center / contain;
+  flex-shrink: 0;
+}
+
+/* Small four-streak glyph that replaces the rule or bullet above a section
+   eyebrow. 1.15rem tall, sits inline with the eyebrow text. */
+.claw-tick { width: 1.5rem; height: 1.15rem; }
+
+/* Full-bleed rake used on the seam between bands. Tiled horizontally so it
+   reads as a swipe across the whole page rather than one centred graphic.
+
+   Height is load-bearing: the asset is square and tiles at `auto 100%`, so a
+   short seam packs four streaks into a few pixels and degrades into a dotted
+   rule. At 24px each streak lands around 5-6px wide and the shape reads. */
+.claw-seam {
+  height: 24px;
+  background-color: var(--color-accent);
+  -webkit-mask: var(--claw) repeat-x center / auto 100%;
+  mask: var(--claw) repeat-x center / auto 100%;
+}

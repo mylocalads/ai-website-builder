@@ -1,0 +1,41 @@
+{
+  "slug": "trc-home-improvements",
+  "template": "owl",
+  "brief": "Aggressive, high-contrast branding — near-black bands with an electric emerald that pops. Owner-forward, portfolio-heavy.",
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f2f4f3",
+    "text": "#0b1210",
+    "muted": "#5a625f",
+    "primary": "#0b1210",
+    "on_primary": "#ffffff",
+    "accent": "#00875a",
+    "on_accent": "#ffffff",
+    "accent_ink": "#00714a",
+    "accent_on_dark": "#2fe6a0",
+    "focus": "#0057ff"
+  },
+  "contrast_check": {
+    "text/bg": 18.95, "muted/bg": 6.27, "on-primary/primary": 18.95,
+    "on-accent/accent": 4.55, "accent-ink/bg": 6.07, "accent-ink/surface": 5.49,
+    "accent-on-dark/primary": 11.68, "all_pass_aa": true
+  },
+  "typography": { "display": "Archivo", "display_weights": [500, 600, 700, 800, 900], "body": "Inter" },
+  "radius": { "sm": "2px", "md": "4px", "lg": "8px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "brand_derivation": {
+    "source": "Client's live Wix site runs a bright green (#10E698 family) on black. That signal was kept and split across the three accent jobs; the near-black primary comes from the same site. The BBB-listed blue/silver logo raster was NOT used — it is low resolution and contains a typo ('TRC - Home Improvents').",
+    "logo": "New typographic wordmark authored for this site: public/logo.svg (2x2 tile-grid mark + Archivo 900 wordmark). Favicon: public/favicon.svg."
+  },
+  "anti_patterns_enforced": [
+    "No gradient hero backgrounds",
+    "No glass morphism / backdrop blur",
+    "No bento grids",
+    "No purple / indigo accents",
+    "No rows of outline icons",
+    "No stock 'handshake' or 'team pointing at a laptop' photography — every project image is the client's own work",
+    "No 'Trusted by N customers' without a sourced number",
+    "No randomized section order"
+  ],
+  "_notes": { "generated_at": "2026-08-07" }
+}

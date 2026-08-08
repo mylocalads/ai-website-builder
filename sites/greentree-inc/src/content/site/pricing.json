@@ -1,0 +1,20 @@
+{
+  "kind": "pricing",
+  "intro": "GreenTree does not publish a rate card, and we would rather explain why than print a number we cannot stand behind. No two commercial properties price the same way — turf area, plant material, access, irrigation zones and service frequency all move the figure, and a contractor who quotes before walking the site is either guessing or leaving room to rebuild the price in change orders later. We walk the property first, then give you a written scope and one number against it.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What a maintenance proposal is priced on",
+    "lede": "These are the factors that actually move the number on a commercial landscape maintenance contract in South Florida.",
+    "columns": ["Factor", "Why it changes the price"],
+    "rows": [
+      ["Turf area and access", "Open lawn mows fast; narrow islands, slopes, bollards and parked-car obstacles do not. Access dictates equipment, and equipment dictates crew hours."],
+      ["Service frequency", "Growing season in South Florida is long. Weekly, fortnightly and seasonal-adjusted schedules produce materially different annual figures."],
+      ["Plant material and bed area", "Hedges, ornamentals and seasonal colour need pruning cycles and hand weeding. Beds are usually the difference between two properties with identical lawn area."],
+      ["Irrigation zones", "The number of zones sets how long a scheduled inspection takes. Repairs are quoted separately, so the inspection cost stays predictable."],
+      ["Pest and disease pressure", "Integrated Pest Management is diagnosis-led. A property with chronic chinch bug or fungal pressure needs a different programme than one without."],
+      ["Debris volume and disposal", "Palm fronds, storm litter and heavy seasonal drop all carry haul-away cost that varies by property and time of year."]
+    ],
+    "footnote": "Planting, seasonal colour changes and irrigation repairs are quoted as separate line items rather than folded into the maintenance figure, so you can see what you are approving."
+  },
+  "notes": "GreenTree serves commercial clients only. If you are looking for residential lawn care, we are not the right fit and will say so on the first call."
+}

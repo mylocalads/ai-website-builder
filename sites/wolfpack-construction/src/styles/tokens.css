@@ -1,0 +1,47 @@
+/* Wolfpack Construction — brand tokens.
+   Accent sampled straight out of the claw marks in the logo (#EA0A2A). The
+   palette is deliberately three colours: wordmark black, white, and that one
+   crimson. The old site's navy chrome is the thing being replaced. */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f6;
+  --color-text: #101012;
+  --color-muted: #5a5a60;
+  --color-primary: #101012;
+  --color-on-primary: #ffffff;
+
+  /* THREE accent tokens, one per job — see the owl README. The claw crimson is
+     the textbook case the template comment describes: a saturated red that
+     works as a fill but not as text on either background.
+
+       --color-accent          #EA0A2A  fill. White on it measures 4.59:1 (AA).
+       --color-accent-ink      #C4001B  accent as TEXT on light. 6.24:1 on bg,
+                                        5.73:1 on surface. The fill itself is
+                                        only 4.59:1 on white and fails on the
+                                        surface grey at small sizes.
+       --color-accent-on-dark  #FF5A6E  accent as TEXT inside the black bands
+                                        and over the hero scrim. 6.28:1 on
+                                        --color-primary; the fill crimson gets
+                                        just 3.8:1 there and the ink 2.1:1. */
+  --color-accent: #ea0a2a;
+  --color-on-accent: #ffffff;
+  --color-accent-ink: #c4001b;
+  --color-accent-on-dark: #ff5a6e;
+  --color-focus: #0057ff;
+
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+
+  /* Square. The client's own buttons are 0px and sharp corners are the point —
+     rounding softens exactly the thing the brand is trying to say. */
+  --radius-sm: 0px; --radius-md: 0px; --radius-lg: 2px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+
+  /* The claw, as a mask. Four tapered streaks raked ~19.5deg from vertical,
+     widths thin/thick/thick/thin to match the logo. Used as a mask-image so a
+     single asset can be tinted per surface instead of shipping a red copy, a
+     white copy and a black copy. */
+  --claw: url('/img/claw.svg');
+  --claw-rake: -19.5deg;
+}

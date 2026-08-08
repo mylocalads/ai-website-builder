@@ -1,0 +1,219 @@
+{
+  "slug": "greentree-inc",
+  "business_name": "GreenTree Inc.",
+  "legal_name": null,
+  "tagline": "Quality. Service. Dependability.",
+  "phone": "+13056658128",
+  "phone_display": "(305) 665-8128",
+  "email": "landscape@greentreeinc.com",
+  "address": {
+    "street": null,
+    "city": "Miami",
+    "state": "FL",
+    "postal": null,
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": null,
+  "hours": {
+    "monday": "8:00am-4:30pm",
+    "tuesday": "8:00am-4:30pm",
+    "wednesday": "8:00am-4:30pm",
+    "thursday": "8:00am-4:30pm",
+    "friday": "8:00am-4:30pm"
+  },
+  "rating": null,
+  "review_count": null,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 42,
+  "founded_year": 1984,
+  "credentials": [
+    "Minority Certified business",
+    "Family owned and operated since 1984",
+    "Dedicated solely to commercial landscape maintenance"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/GreentreeincFL/"
+  },
+  "site_url": "https://greentreeinc.com",
+  "logo_url": "https://greentreeinc.com/wp-content/uploads/2023/07/logo-main-1-1.png",
+  "default_hero_photo": "https://greentreeinc.com/wp-content/uploads/2023/07/slide01-1.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://greentreeinc.com/wp-content/uploads/2023/07/commercial-head-1-1.jpg",
+  "brand": {
+    "fonts": {
+      "display": "PT Sans",
+      "body": "PT Sans"
+    },
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#333333",
+      "accent": "#275304",
+      "accent_bright": "#6da716",
+      "muted": "#656565",
+      "surface": "#eeeeee",
+      "candidates": [
+        "#6da716",
+        "#275304",
+        "#507f0e",
+        "#1e3a00",
+        "#1b3a01",
+        "#eeeeee",
+        "#dddddd",
+        "#f7b82f"
+      ]
+    }
+  },
+  "services": [
+    {
+      "title": "Landscape Maintenance",
+      "short_description": "Scheduled mowing, edging, weeding and turf care that keeps a commercial property presentable every week of the year.",
+      "long_description": "Maintenance is the core of what GreenTree does. Crews run a fixed schedule so grounds staff and property managers know exactly when the site is serviced, and the work is documented so nothing quietly slips. Lawn mowing, edging, weeding of beds and hardscape joints, and Integrated Pest Management are all handled under one contract by one crew that knows the property.",
+      "sub_services": [
+        "Lawn Mowing",
+        "Weeding",
+        "Integrated Pest Management (IPM)"
+      ],
+      "hero_photo": "https://greentreeinc.com/wp-content/uploads/2023/07/slide01-1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Pruning",
+      "short_description": "Hedge, shrub and ornamental pruning on a cycle that keeps sightlines clear and plantings healthy.",
+      "long_description": "Pruning on a commercial site is as much about liability and appearance as it is about plant health — blocked signage, overgrown walkways and hedges pushing into parking stalls are the complaints property managers hear first. GreenTree prunes on a cycle rather than on demand, cutting to the plant's growth habit so the shape holds between visits instead of forcing a hard cutback later.",
+      "sub_services": [
+        "Hedge Pruning"
+      ],
+      "hero_photo": "https://greentreeinc.com/wp-content/uploads/2016/07/pruning.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Irrigation",
+      "short_description": "Irrigation system inspections that catch broken heads, misaimed spray and wasted water before they show up on the lawn or the bill.",
+      "long_description": "In South Florida an irrigation fault does not stay hidden for long — dry patches, washed-out beds and runoff across a parking lot all trace back to the same handful of causes. GreenTree inspects zones on a schedule, checks head coverage and arc, and reports what needs repair rather than letting a failing system quietly kill the turf that the maintenance contract is meant to protect.",
+      "sub_services": [
+        "Irrigation System Inspections"
+      ],
+      "hero_photo": "https://greentreeinc.com/wp-content/uploads/2016/07/irrigation.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Planting",
+      "short_description": "Plant and seasonal colour installation that refreshes entrances, medians and common areas without disrupting the property.",
+      "long_description": "Planting is where a commercial property gets its character back. Whether it is refreshing the colour at a building entrance, replacing plant material that has aged out, or filling in beds after a storm, GreenTree installs to the site's light, drainage and salt exposure rather than to a catalogue — because the plant that survives the first summer is the one that was chosen for the spot.",
+      "sub_services": [
+        "Planting"
+      ],
+      "hero_photo": "https://greentreeinc.com/wp-content/uploads/2016/07/rose.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Miami-Dade County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "miami-dade-county-fl",
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Broward County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "broward-county-fl",
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Palm Beach County",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "palm-beach-county-fl",
+      "local_context": null,
+      "neighborhoods": [],
+      "_source": "scraped"
+    }
+  ],
+  "testimonials": [
+    { "name": "Rachel Patel", "location": null, "text": "GreenTree Inc. has been taking care of our commercial landscape for years, and their dedication to quality and attention to detail is unmatched. Our property always looks stunning, and their expertise has helped us create a beautiful and inviting environment for our clients.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "James Kim", "location": null, "text": "We rely on GreenTree Inc. to handle all our landscaping needs, and they consistently deliver exceptional results. Their team is reliable, professional, and goes above and beyond to ensure our property is well-maintained and visually appealing.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "Jessica Lee", "location": null, "text": "Choosing GreenTree Inc. was the best decision we made for our commercial property. Their extensive knowledge and experience have transformed our landscape into a thriving and vibrant space that impresses our clients and boosts employee morale.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "Michael Brown", "location": null, "text": "GreenTree Inc. truly understands the importance of sustainability and eco-friendly practices. They have implemented innovative solutions on our property, such as water management techniques and native plant installations, that have not only reduced our environmental impact but also saved us on maintenance costs.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "Emily Thompson", "location": null, "text": "We trust GreenTree Inc. with the ongoing maintenance of our commercial landscape, and they consistently exceed our expectations. Their team is professional, responsive, and proactive in addressing any issues or concerns that arise.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "Robert Stevens", "location": null, "text": "GreenTree Inc. has been instrumental in enhancing our property's curb appeal. Their skilled landscapers have an eye for design and consistently create stunning arrangements of plants and flowers that leave a lasting impression on our visitors.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "Melissa Williams", "location": null, "text": "We appreciate GreenTree Inc.'s commitment to communication and transparency. They provide us with regular updates, reports, and recommendations for our landscape, ensuring that we are always informed and involved in the decision-making process.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "David Peterson", "location": null, "text": "GreenTree Inc.'s expertise extends beyond routine maintenance. They have helped us with tree care and pruning, ensuring the health and longevity of our trees. Their arborists are highly knowledgeable and offer valuable insights.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "Sarah Kim", "location": null, "text": "GreenTree Inc. takes safety seriously. We are impressed by their adherence to strict safety protocols, both for their team and our property. It gives us peace of mind knowing that our landscape is in capable and responsible hands.", "rating": null, "_source": "scraped", "_suspect_placeholder": true },
+    { "name": "John Smith", "location": null, "text": "Working with GreenTree Inc. has been a true partnership. They listen to our specific needs and tailor their services accordingly. Their flexibility and willingness to accommodate our requests have made them an invaluable asset to our business.", "rating": null, "_source": "scraped", "_suspect_placeholder": true }
+  ],
+  "team_members": [],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2023/07/slide01-1.jpg", "alt": "Crew member mowing a commercial lawn on a zero-turn mower beside a glass office building", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2023/07/commercial-head-1-1.jpg", "alt": "Manicured commercial lawn with curved flower beds and mixed plantings", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2023/07/tree-care-head-1.jpg", "alt": "Broad open lawn framed by mature shade trees and shrub borders", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2016/07/irrigation.jpg", "alt": "Irrigation head spraying across a green lawn", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2016/07/pruning.jpg", "alt": "Hand pruners making a cut on a rose cane", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2016/07/rose.jpg", "alt": "Close-up of an apricot-coloured rose in bloom", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2023/07/landscape-head-1-1-500x350.jpg", "alt": "Curving lawn path bordered by dense red and white flower beds", "title": null, "location": null },
+    { "photo": "https://greentreeinc.com/wp-content/uploads/2023/07/about-head-1-1-500x350.jpg", "alt": "Formal garden with symmetrical planting beds and a central fountain", "title": null, "location": null }
+  ],
+  "_rejected_images": {
+    "https://greentreeinc.com/wp-content/uploads/2023/07/maintenance.png": "visibly blurry upscale — hedge wall, unusable at any size",
+    "https://greentreeinc.com/wp-content/uploads/2023/07/left-1.jpg": "3D-rendered clipart turf patch on white, not a photograph",
+    "https://greentreeinc.com/wp-content/uploads/2023/04/fULIDITY-fUNDING-sOLUTIONS-LOGO-white.png": "belongs to an unrelated business (Fluidity Funding Solutions) left on the client's WordPress install"
+  },
+  "brand_voice_sample": "Since 1984, GreenTree Inc., has been providing high-quality landscape maintenance services to some of the most well-known properties throughout South Florida. We are a local Minority Certified family owned and run business dedicated solely to landscape maintenance. With a specific focus on commercial clients, we bring landscapes to life, nurturing their environment and enhancing the natural beauty of their surroundings. Our diligent approach, emphasis on safety, and meticulous care for your property set us apart as an industry leader.",
+  "go_greentree_acrostic": {
+    "_source": "scraped",
+    "_note": "The client's own brand device on /services. Real, distinctive copy — worth keeping.",
+    "items": [
+      { "letter": "G", "text": "Garden and lawn management at competitive pricing" },
+      { "letter": "R", "text": "Results — An incomparable and professional image for your business" },
+      { "letter": "E", "text": "Environmentally healthy habitats" },
+      { "letter": "E", "text": "Experience — 40 years of in depth knowledge giving us a competitive edge" },
+      { "letter": "N", "text": "New ways to minimize your costs and maximize efficiency" },
+      { "letter": "T", "text": "Trust — A company and team you can trust" },
+      { "letter": "R", "text": "Responsibility — Delegating responsibly to a partner with an:" },
+      { "letter": "E", "text": "Established system for project success, which yields" },
+      { "letter": "E", "text": "Excellence at every stage in terms of service, creativity and value" }
+    ]
+  },
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "No third-party CRM detected. The existing contact form is a native WordPress form (Contact Form 7 style). Operator: paste the client's own GHL snippets during site-generate."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_skipped_reason": "No .env in kit root, so APIFY_TOKEN is unset and /find-business could not run. Address, geo, rating and review_count are therefore unpopulated.",
+    "firecrawl_blocked": true,
+    "firecrawl_error": "All scraping engines failed (fire-engine;chrome-cdp;stealth). Fell back to direct HTTP fetch, which succeeded on every page. No Firecrawl credits were consumed.",
+    "pages_scraped": ["/", "/services/", "/testimonials/", "/contact-2/", "/193-2/"],
+    "socials_scraped": [],
+    "generated_at": "2026-08-07",
+    "cost_estimate_usd": 0.0,
+    "warnings": [
+      "The orphaned page /193-2/ (titled ABOUT) contains content for an entirely unrelated company — Fluidity Funding Solutions, a Denver business lender — left behind by whoever built the WordPress site. Discarded; none of it is GreenTree content.",
+      "All ten testimonials use generic stock names and read as agency-written filler. Flagged _suspect_placeholder; do not ship without the client confirming they are real.",
+      "Every usable photo on the client's site is temperate-climate stock (spruce, hosta, begonia borders) — none of it is South Florida and none of it is a GreenTree job site. Usable, but real crew photos would be a large upgrade.",
+      "No street address is published anywhere on the client's site. Third-party directories disagree: 8313 NW 70th St, Miami FL 33166 (Manta, Yellow Pages) vs 9920 SW 77th Dr, Miami FL 33173 (ZoomInfo). Left null pending operator confirmation.",
+      "Accent #6da716 measures 2.92:1 on white and fails WCAG AA as text. #275304 measures 9.03:1 and is the correct accent-as-text token. This is the owl three-token accent split case.",
+      "Site footer reads 'Copyright 2026' and the services page claims '40 years' while the founding year of 1984 implies 42 — the client's own copy is internally inconsistent. Used 1984 as the anchor."
+    ]
+  }
+}

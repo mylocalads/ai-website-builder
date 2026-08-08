@@ -1,0 +1,42 @@
+{
+  "name": "Manley Ohana Flooring and Demolition",
+  "legal_name": "MANLEYOHANA, LLC",
+  "email": "Manleyohanaflooring@gmail.com",
+  "phone": null,
+  "address": "1796 N. Hiawassee Rd, Orlando, FL 32818",
+  "website": null,
+  "rating": null,
+  "reviewCount": null,
+  "category": "Flooring Contractor / Interior Demolition",
+  "hours": null,
+  "slug": "manley-ohana-flooring",
+  "reviews": [],
+  "_sources": {
+    "sunbiz": {
+      "url": "https://search.sunbiz.org/Inquiry/corporationsearch/SearchResultDetail?inquirytype=EntityName&directionType=Initial&searchNameOrder=MANLEYOHANA%20L160001419110&aggregateId=flal-l16000141911-8b5320c9-4e30-4833-b66a-e9d52710eb2a",
+      "document_number": "L16000141911",
+      "fei_ein": "81-4614113",
+      "date_filed": "2016-08-01",
+      "effective_date": "2015-10-30",
+      "status": "ACTIVE",
+      "principal_address": "1796 N. HIAWASSEE RD, ORLANDO, FL 32818",
+      "authorized_person": { "title": "MGR", "name": "MANLEY, KALANI K" },
+      "registered_agent": "GT CONSULTING SERVICES GROUP LLC, 4700 MILLENIA BLVD STE 500, ORLANDO, FL 32839",
+      "last_annual_report": "2026-03-09"
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/manley_ohana_flooring/",
+      "handle": "manley_ohana_flooring",
+      "display_name": "Manley Ohana Flooring and Demolition",
+      "followers": 743,
+      "posts": 158,
+      "bio": "Flooring and demolition services\nTile, Hardwood, Laminate, Vinyl, Drywall, Kitchen Cabinets .\n12 years in business \nManleyohanaflooring@gmail.com",
+      "highlights": ["Vinyl removal", "Hardwood", "Tile removal"]
+    }
+  },
+  "_warnings": [
+    "No Google Business Profile found. APIFY_TOKEN is not present in .env, so the paid Maps lookup could not run. rating, review_count, hours and geo are therefore null rather than guessed.",
+    "NO PUBLIC PHONE NUMBER exists for this entity. Kalani publishes an email only. Operator must supply the GHL tracking number before this site goes to the client.",
+    "The Facebook page supplied by the operator (facebook.com/OhanaFlooring) belongs to a DIFFERENT company: 'Ohana Flooring Inc.', Deltona FL, phone (407) 324-6603, officers Jason Gentile (CEO) and Kerri Corley (VP) per BBB, posts authored by Jason Gentile. The website ohanaflooringinc.com is that company's, not Kalani's. None of its contact details, photos or copy were used on this site."
+  ]
+}

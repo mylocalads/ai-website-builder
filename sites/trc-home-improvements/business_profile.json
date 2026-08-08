@@ -1,0 +1,44 @@
+{
+  "slug": "trc-home-improvements",
+  "business_name": "TRC Home Improvements",
+  "legal_name": "TRC Home Improvement Services",
+  "owner": "Vincent \"Vince\" Taylor",
+  "category": "Bathroom Remodeler / General Contractor",
+  "address": { "street": "1646 Hwy 160 W, Ste 105", "city": "Fort Mill", "state": "SC", "postal": "29708", "country": "US" },
+  "phone": "+19806350166",
+  "phone_display": "(980) 635-0166",
+  "email": "info@trchomeimprovements.com",
+  "website_url": "https://www.trchomeimprovements.com/",
+  "hours": {
+    "monday": "8:00 AM – 6:00 PM", "tuesday": "8:00 AM – 6:00 PM", "wednesday": "8:00 AM – 6:00 PM",
+    "thursday": "8:00 AM – 6:00 PM", "friday": "6:00 AM – 4:00 PM", "saturday": "9:00 AM – 3:00 PM"
+  },
+  "ratings": [
+    { "source": "HomeGuide", "rating": 5.0, "review_count": 24, "note": "Top Pro badge" },
+    { "source": "Yelp", "rating": 5.0, "review_count": 2 },
+    { "source": "Client site widget", "rating": 5.0, "review_count": 10 }
+  ],
+  "credentials": {
+    "nc_general_contractor": "106823",
+    "sc_license": "60594",
+    "bbb": { "accredited": true, "since": "2024-10-04", "rating": "A+" },
+    "entity_type": "Sole Proprietorship",
+    "business_started": "2017-01-01",
+    "years_in_business": 9,
+    "employees": 3
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Trcpropertyservices",
+    "youtube": "https://www.youtube.com/@trchomeimprovements191",
+    "yelp": "https://www.yelp.com/biz/trc-home-improvements-fort-mill-2",
+    "bbb": "https://www.bbb.org/us/sc/fort-mill/profile/bathroom-remodelers/trc-home-improvement-services-0473-92034160",
+    "homeguide": "https://homeguide.com/sc/rock-hill/bathroom-remodeling/trc-home-improvements",
+    "linkedin": "https://www.linkedin.com/in/trchomeimprovents"
+  },
+  "payment_methods": ["Credit card", "Cash", "Check", "PayPal", "Zelle", "Stripe"],
+  "_notes": {
+    "source": "Firecrawl scrapes of the client site, BBB profile, Yelp profile and HomeGuide profile",
+    "gbp_apify_lookup": "SKIPPED — no APIFY_TOKEN in the workspace (.env absent, only .env.example). NAP, hours and ratings were sourced from BBB + Yelp + HomeGuide instead.",
+    "generated_at": "2026-08-07"
+  }
+}

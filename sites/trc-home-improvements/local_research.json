@@ -1,0 +1,41 @@
+{
+  "slug": "trc-home-improvements",
+  "market": "Fort Mill / Rock Hill SC and South Charlotte NC",
+  "vertical": "Bathroom remodeling / custom tiled showers",
+  "sources": [
+    "r/Charlotte — Bathroom Remodel Recommendations?",
+    "r/Charlotte — Good Bathroom Remodelers?",
+    "r/Charlotte — Kitchen / Bathroom Remodel",
+    "r/Charlotte — Bathroom remodel recommendations",
+    "Client's own Yelp / HomeGuide / site reviews"
+  ],
+  "pain_points": [
+    "Fear of hiring a bad contractor — several homeowners describe being scammed or having to pay twice to fix shoddy work. The client's own reviews echo it verbatim ('Twice before I have been scammed by contractors').",
+    "No visible portfolio — a top-voted request in r/Charlotte was literally 'Anyone with a website that has a portfolio would be awesome.'",
+    "Price opacity and sticker shock — a Charlotte remodeler in-thread put full baths at 25K and up, and homeowners repeatedly ask what drives the number.",
+    "Timeline uncertainty — 4 to 8 weeks quoted in-thread depending on scope; homeowners with one bathroom need to plan around it.",
+    "Rotating subcontractors — homeowners value knowing who is actually in their house each day."
+  ],
+  "what_customers_value": [
+    "The owner personally on site rather than a salesman plus subs",
+    "Daily clean-up and protected floors",
+    "Detail orientation on tile layout, niches and grout lines",
+    "Communication — being told what happens next and when",
+    "Real finished-project photos they can inspect"
+  ],
+  "differentiators_for_this_client": [
+    "Vincent Taylor is a third-generation contractor with 30+ years in the trade and is on every job himself with a two-man crew",
+    "Licensed in BOTH Carolinas (NC GC #106823, SC #60594) — most local competitors are single-state",
+    "BBB Accredited A+ with a 5.0 average across 24 verified reviews",
+    "Has personally rebuilt dozens of failed showers, so waterproofing is the pitch not an afterthought",
+    "Offers both full custom tile AND a two-day acrylic option, so the timeline objection has an answer"
+  ],
+  "copy_angles_used": [
+    "HERO: 'The guy who quotes your bathroom is the guy who builds it' — directly answers the bad-contractor fear",
+    "PROMISE BAND: 'You're hiring Vince, not a call center'",
+    "PRICING: Vince's own 'price doesn't equal value' position, published rather than hidden",
+    "GALLERY: captioned finished projects with city names, answering the 'show me a portfolio' request",
+    "BLOG: cost drivers, tile-vs-acrylic, and aging-in-place — the three questions the threads keep asking"
+  ],
+  "_notes": { "generated_at": "2026-08-07", "note": "Reddit threads surfaced via Firecrawl search; reddit.com itself is not scrapable by Firecrawl, so findings come from search-result excerpts plus the client's own review corpus." }
+}

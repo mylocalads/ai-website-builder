@@ -1,0 +1,167 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Orlando, FL",
+    "headline": "The Pack Shows Up",
+    "subheadline": "Roofing, construction, remodeling and 24/7 storm and water damage response across Orlando — from a family-owned, Florida-certified general contractor who answers the phone.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/hero-home.jpg",
+    "trust_badges": [
+      { "mark": "google", "rating": 4.9, "label": "4.9 Stars", "sublabel": "63 Google reviews" },
+      { "mark": "bbb", "label": "A+ Accredited", "sublabel": "BBB since 2024" }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Licensed GC — CGC1531295", "icon": "shield" },
+    { "text": "Free Estimates", "icon": "clipboard" },
+    { "text": "24/7 Emergency Response", "icon": "clock" },
+    { "text": "Financing Available", "icon": "wallet" }
+  ],
+  "promise_band": {
+    "eyebrow": "One Quality. One Price.",
+    "headline": "The number we quote is the number you pay",
+    "body": "No hourly sales presentation, no discount that expires tonight, no surprise line items halfway through. We walk the job, we write the scope, we price it once — and that is the price. Orlando has enough contractors who work the other way.",
+    "cta_text": "Get a straight number",
+    "cta_href": "/book"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "The Wolfpack Way",
+    "intro": "The most common complaint Orlando homeowners have about contractors is not the work — it is not being able to reach anyone. Every job we take runs the same way, whether it is a single roof repair or a ground-up commercial build.",
+    "blocks": [
+      {
+        "title": "One name on your job, all the way through",
+        "body": "A named project manager owns your build from the walkthrough to the final punch list. Same person, same number, whoever happens to be on the roof that day. You never have to explain your project twice.",
+        "icon": "handshake"
+      },
+      {
+        "title": "Emergency and rebuild under one licence",
+        "body": "Most mitigation companies dry the property out and hand you back a list of contractors to go find. We are a Florida Certified General Contractor, so the crew that boards it up is the crew that rebuilds it.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What transparent communication actually means here",
+    "steps_icon": "clipboard",
+    "steps": [
+      { "title": "You hear from us before you have to ask", "body": "Schedule, delays, and what happens next — sent, not chased." },
+      { "title": "Choices explained, good and bad", "body": "Including the option that costs us money and saves you some." },
+      { "title": "A final walk together", "body": "We look at the work with you before we call it finished." }
+    ],
+    "guarantee": {
+      "title": "One quality, one price — guaranteed",
+      "body": "The same standard on a single bathroom as on a ground-up build, at the price we agreed before the first demo day. Free estimates, no obligation, and financing if the timing is not ideal.",
+      "cta_text": "Book a walkthrough",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "From First Call To Final Walk",
+    "steps": [
+      { "label": "Step 01", "title": "The Call", "body": "You reach a person, not a queue. We take the details, and for storm or water damage we move the same day.", "icon": "phone" },
+      { "label": "Step 02", "title": "The Walk", "body": "We come out, get on the roof or into the space, and look at the actual condition — free, and with no obligation attached.", "icon": "clipboard" },
+      { "label": "Step 03", "title": "The Number", "body": "A written scope and one price, with the choices explained. Financing options if you want them. No expiring discounts.", "icon": "wallet" },
+      { "label": "Step 04", "title": "The Build", "body": "A named project manager, permits handled, and updates you do not have to chase. Then we walk the finished work together.", "icon": "hammer" }
+    ],
+    "cta_text": "Start With A Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "Meet The Pack",
+    "headline": "Family-Owned. Orlando-Based. Seven People You Can Name.",
+    "body": "Wolfpack Construction was started by the descendants of a long line of construction professionals, and it still runs that way. Eric Roman leads it. Josh runs projects. Jonathan and Juan run the sites. Michelle, Heidi and Kailey run everything that keeps a build on schedule. We are at 2302 Mercator Drive in Orlando — a real address, not a dispatch centre in another state — and we speak Spanish.",
+    "checklist": [
+      "Florida Certified General Contractor — CGC1531295",
+      "BBB Accredited, A+ rated since 2024",
+      "Named a Top 20 contractor by The Home Depot",
+      "4.9 stars across 63 Google reviews",
+      "Free estimates and financing options",
+      "English and Spanish spoken on every job"
+    ],
+    "photo": "/img/about.jpg",
+    "photo_alt": "Wolfpack Construction crew on an Orlando framing job",
+    "cta_text": "Meet the whole pack",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "General Contractors In Orlando",
+    "headline": "Roofing, Construction & Remodeling Across Central Florida",
+    "paragraphs": [
+      "Orlando is a hard place to own a building. Afternoon storms in summer, hurricane season from June, and a humidity level that lets mold take hold within 24 to 48 hours of any moisture getting in. A roof here does not just keep the rain out — it controls the interior climate and carries part of the structural load, and when it fails, it usually fails fast.",
+      "Wolfpack Construction is a Florida Certified General Contractor (CGC1531295) working across Orlando, Winter Park, Dr. Phillips, College Park, Baldwin Park and Lake Nona. We handle asphalt, metal, tile and flat roofing; residential and commercial construction; kitchen, bathroom and whole-home remodels; and 24/7 water, mold, storm and fire remediation with the reconstruction that follows.",
+      "Holding the general contractor's licence is what lets us do all of that under one roof. We pull the permits, we coordinate with the City of Orlando and Orange County, and we stay on the job through final inspection — so there is never a point where the work stops because it has crossed into someone else's scope."
+    ],
+    "checklist": [
+      "Asphalt, metal, tile and flat roofing",
+      "Residential and commercial construction",
+      "Kitchen, bathroom and whole-home remodels",
+      "Water, mold, storm and fire remediation — then the rebuild",
+      "Permitting and code compliance handled for you"
+    ],
+    "image": "/img/work/commercial-framing.jpg",
+    "image_alt": "Commercial framing underway on a Wolfpack Construction project in Orlando",
+    "image_position": "right",
+    "review": {
+      "name": "Jennifer J.",
+      "text": "The level of service was top notch and we were treated like family. Words cannot express how blessed we were during such an incredibly stressful time. I highly recommend Wolfpack for any of your residential construction projects!",
+      "rating": 5,
+      "source": "Google Review"
+    },
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Jennifer J.",
+      "location": "Orlando, FL",
+      "text": "The level of service was top notch and we were treated like family. Words cannot express how blessed we were during such an incredibly stressful time. I highly recommend Wolfpack for any of your residential construction projects!",
+      "rating": 5
+    },
+    {
+      "name": "Kristine S.",
+      "location": "Orlando, FL",
+      "text": "Strong communication and a willingness to explain things to me in layman terms. Would recommend and use again. They worked tirelessly to get us back home.",
+      "rating": 5
+    },
+    {
+      "name": "Kristen K.",
+      "location": "Orlando, FL",
+      "text": "From consulting us during every stage of the project, to providing clear pricing and parameters, to identifying good and bad choices, to offering suggestions, to their constant professionalism and compassion, to the overall quality of their work — we had a great experience.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Wolfpack Construction is a Certified General Contractor in the State of Florida, licence number CGC1531295, and we carry insurance on every job. The licence is public — you can look it up before you call us. We are also BBB Accredited with an A+ rating."
+    },
+    {
+      "q": "Are estimates really free?",
+      "a": "Yes, and there is no obligation attached. We come out, look at the actual condition of your roof or space, and give you a written scope and one price. There is no hour-long presentation to sit through and no discount that expires if you do not sign that day."
+    },
+    {
+      "q": "Do you handle insurance claims after storm damage?",
+      "a": "We document the damage properly and provide the assessment and scope your carrier needs. Because we hold the general contractor's licence, we can also carry the job straight through from emergency board-up and drying into the full rebuild, rather than stopping at mitigation and handing you off."
+    },
+    {
+      "q": "How fast can you respond to an emergency?",
+      "a": "We respond 24/7 across Orlando and Central Florida for water, storm, fire and mold emergencies. For water intrusion, speed matters more than most people realise — Orlando's humidity means mold can establish within 24 to 48 hours of the moisture getting in."
+    },
+    {
+      "q": "Do you pull the permits, or do I?",
+      "a": "We do. As a certified general contractor we manage permitting with the City of Orlando and Orange County and carry the project through final inspection and code compliance. Our roots here mean we know the local timelines and plan schedules around them."
+    },
+    {
+      "q": "Do you offer financing or payment plans?",
+      "a": "Yes. Roofs and rebuilds rarely arrive at a convenient moment, so we offer payment plan and financing options. Ask when we quote and we will walk you through what is available."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Orlando and the surrounding Central Florida communities, including Winter Park, Dr. Phillips, College Park, Baldwin Park and Lake Nona. Our office is at 2302 Mercator Drive in Orlando — we are not a national franchise dispatching crews from out of state."
+    },
+    {
+      "q": "Do you speak Spanish?",
+      "a": "Yes. We speak Spanish, and you can have the whole conversation — estimate, scope, schedule and final walkthrough — in Spanish if that is easier for you."
+    }
+  ]
+}

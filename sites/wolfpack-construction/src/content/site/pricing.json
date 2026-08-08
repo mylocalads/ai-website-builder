@@ -1,0 +1,22 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a rate card, and we would be lying if we did — a roof repair on a 1970s Colonialtown bungalow and a tile re-roof in Dr. Phillips are not the same job, and no honest number covers both. What we will commit to is this: estimates are free, there is no obligation, and the price we write down after walking your property is the price you pay. One quality, one price. Below is exactly what moves that number, so you can see the logic before anyone quotes you — ours or anyone else's.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What actually drives your number",
+    "lede": "Every quote we write comes out of these variables. Ask any contractor to walk you through them; if they will not, that tells you something.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      ["Roof repair", "Size and cause of the failure, roof material, pitch and access, whether decking underneath is wet or rotted, and how long the intrusion has been going."],
+      ["Roof replacement", "Squares of roof area, material (asphalt, metal, tile or flat), pitch and number of penetrations, condition of the decking once the old roof is off, and disposal."],
+      ["New roof installation", "Roof geometry and material spec, underlayment and ventilation requirements, and Florida wind-uplift code compliance for the structure."],
+      ["Kitchen or bathroom remodel", "Whether plumbing or electrical moves, cabinetry and surface selections, floor area, and what is found once the walls are open."],
+      ["Home addition or renovation", "Square footage, foundation and structural work, whether the roofline changes, permitting scope, and utility runs."],
+      ["New home construction", "Lot conditions and site prep, square footage, finish level, and the permitting path with Orange County and the City of Orlando."],
+      ["Commercial construction or build-out", "Occupancy type and code requirements, MEP scope, permitting and inspection timeline, and whether the business stays open during the work."],
+      ["Storm, water or fire damage", "Extent and category of the damage, how fast we got to it, drying and containment required, and how much of the rebuild is structural."]
+    ],
+    "footnote": "Financing and payment plan options are available on most project types — ask when we quote. Estimates are always free and never obligate you to anything."
+  },
+  "notes": "If a contractor gives you a firm price for a re-roof over the phone without seeing the decking, they are quoting a guess and the real number arrives later. We would rather come out."
+}

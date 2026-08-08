@@ -1,0 +1,19 @@
+{
+  "kind": "pricing",
+  "intro": "TRC does not publish a rate card, because a bathroom is not a product with a sticker on it. What a job costs comes down to the size of the shower, the tile and fixtures you choose, and whether plumbing or electrical has to move. What we will tell you up front is where we sit: not the cheapest bid you will get, and nowhere near the most expensive. Vince's own view, in his own words — the cheapest price definitely has no value and most likely won't last, and the other end of the spectrum often just means overpaying a large company that subs everything out. The middle ground is usually where price equals the greatest value, and that is generally where we fall. You get a free design consultation, a written scope, and a real number before anything comes off the wall.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What Moves The Number On A Bathroom Quote",
+    "lede": "These are the variables Vince prices around during the consultation. Bring photos or measurements and he can narrow the range on the first visit.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      ["Custom tiled shower", "Shower footprint, tile size and material, pan style (tiled pan vs. pre-formed base), bench seats, niches, and glass — frameless costs more than a fixed panel."],
+      ["Tub-to-shower conversion", "Whether the new base is pre-formed or custom-built, how much plumbing has to move, and whether grab bars need blocking added inside the wall."],
+      ["Two-day acrylic system", "Wall system chosen, shower size, door or panel hardware, and how much of the old surround has to come out."],
+      ["Complete bathroom remodel", "Room size, whether the layout changes, vanity and countertop selections, flooring area, lighting and exhaust work, and any plumbing or electrical relocation."],
+      ["Freestanding tub installation", "Tub model, filler type (floor-mounted vs. wall-mounted), and the plumbing rough-in required for either."],
+      ["Flooring installation", "Square footage, material (LVP, laminate or hardwood), subfloor condition, and how much existing flooring and trim has to be removed."]
+    ],
+    "footnote": "Consultations and written estimates are free, with no deposit required to book one. Credit card, cash, check, PayPal and Zelle accepted."
+  }
+}

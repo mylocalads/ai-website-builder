@@ -1,0 +1,210 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Fort Mill, SC · Licensed in NC & SC",
+    "headline": "The Guy Who Quotes Your Bathroom Is The Guy Who Builds It",
+    "subheadline": "I'm Vince Taylor — third-generation contractor, 30 years in the trade, licensed in both Carolinas. Custom tiled showers, tub-to-shower conversions and full bathroom remodels across Fort Mill, Rock Hill and South Charlotte.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/black-porcelain-walk-in-shower.jpg",
+    "video_link_text": "See what 30 years of tile work looks like",
+    "video_link_href": "/our-work",
+    "trust_badges": [
+      { "rating": 5, "label": "5.0 Rating", "sublabel": "24 verified reviews" },
+      { "mark": "bbb", "label": "A+ Rated", "sublabel": "BBB Accredited Business" }
+    ],
+    "quote_card": {
+      "quote": "Twice before I have been scammed by contractors and or poor quality of work, so when I had to get my bathroom done, I was very apprehensive. I'm so glad I found Vince and his crew. They did an amazing job.",
+      "author": "Denise H. — Yelp Review, Fort Mill",
+      "cta_text": "Get My Free Estimate!",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 24
+    }
+  },
+  "promise_bar": [
+    { "text": "3rd-generation contractor, 30 years in the trade", "icon": "hammer" },
+    { "text": "NC GC #106823 · SC #60594", "icon": "shield" },
+    { "text": "Free design consultation & written estimate", "icon": "clipboard" }
+  ],
+  "promise_band": {
+    "eyebrow": "Why It Matters Who Shows Up",
+    "headline": "You're Hiring Vince, Not A Call Center",
+    "body": "TRC is Vince Taylor and a two-man crew. That is the whole company, on purpose. Vince walks your bathroom, prices it himself, and is on site every day it is being built — so there is no salesman who vanishes after the contract, no rotating parade of subs, and nobody to pass the blame to when a detail is wrong. Brian in Rock Hill said it plainly after his 1980s master and hall baths were rebuilt: Vince and his two assistants were on site each day, not a random parade of workers.",
+    "cta_text": "Talk To Vince",
+    "cta_href": "/contact",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Build",
+    "headline": "The TRC Effect",
+    "intro": "Same approach on a small guest bath as on a full master suite: get the parts you never see right, and the parts you do see take care of themselves.",
+    "blocks": [
+      {
+        "title": "Waterproofing before anything pretty happens",
+        "body": "Every custom shower gets a waterproof membrane, a properly sloped pan and full substrate prep before the first tile goes up. It is the least photogenic day of the job and the one that decides whether your shower is still sound in twenty years.",
+        "icon": "umbrella",
+        "image": "/img/tiled-shower-detail.jpg"
+      },
+      {
+        "title": "Only tile that belongs in a wet space",
+        "body": "Not every tile is built for a shower. We specify porcelain and ceramic with low water absorption, seal the grout properly, and show you how to keep it that way. No guesswork on materials, and no surprises two winters later.",
+        "icon": "shield",
+        "image": "/img/corner-shower-brushed-bronze.jpg"
+      }
+    ],
+    "steps_title": "The part most contractors leave out of the quote",
+    "steps_icon": "broom",
+    "steps": [
+      { "title": "One crew, start to finish", "body": "Vince and the same two sets of hands every day — never a rotating cast of subs." },
+      { "title": "Cleaned up daily", "body": "Floors protected, debris carried out, and the room left usable wherever the stage of work allows." },
+      { "title": "A written scope before demo starts", "body": "You know what is included, what it costs, and roughly how long it takes before anything comes off the wall." }
+    ],
+    "guarantee": {
+      "title": "Done right the first time",
+      "body": "Vince has personally torn out and rebuilt dozens of showers that other contractors got wrong. That is the entire reason TRC works the way it does — the cheapest bid is almost never the cheapest job. If something is not right on ours, we come back and make it right.",
+      "cta_text": "Talk To Vince",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A TRC Bathroom Gets Built",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free design consultation",
+        "icon": "clipboard",
+        "body": "Vince walks the space, talks through layout, tile and fixtures, and shows you how each choice moves the budget. No pressure, and no deposit to book it."
+      },
+      {
+        "label": "Step Two",
+        "title": "Scheduling & materials",
+        "icon": "calendar",
+        "body": "Once the design is locked in, materials are ordered and delivered before demo starts — so the job never stalls waiting on a tile order."
+      },
+      {
+        "label": "Step Three",
+        "title": "Build, clean, walk through",
+        "icon": "hammer",
+        "body": "Same crew every day, cleaned up daily, and a final walkthrough with you before anyone calls it finished."
+      }
+    ],
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "Meet Vince",
+    "headline": "Third Generation. Thirty Years. One Phone Number.",
+    "body": "Vince Taylor grew up in the trade — a third-generation contractor who spent childhood weekends on his family's job sites, with uncles and cousins teaching him tile, framing and finish work. He started TRC in 2017 and has kept it deliberately small: himself and a two-man crew, licensed as a general contractor in both North and South Carolina, with continuing education and testing every year to keep those licenses in good standing. The pitch has not changed since day one — he prices it, he builds it, and he answers the phone.",
+    "checklist": [
+      "Vincent Taylor, owner — on the job site, every day",
+      "Third-generation contractor with 30+ years in the trade",
+      "NC General Contractor #106823 · SC #60594",
+      "BBB Accredited, A+ rated, 5.0 across 24 verified reviews",
+      "Free design consultations and written estimates"
+    ],
+    "photo": "/img/rock-hill-after.jpg",
+    "photo_alt": "White subway tile shower with a full bench seat and river-rock pan, built by TRC in Rock Hill, SC",
+    "photo_cutout": false,
+    "cta_text": "Talk To Vince",
+    "cta_href": "/contact"
+  },
+  "seo_body": {
+    "eyebrow": "Bathroom Remodeling In The Carolinas",
+    "headline": "Custom Tiled Showers In Fort Mill & Rock Hill",
+    "paragraphs": [
+      "Most of what we get called for starts the same way: a builder-grade tub-and-surround nobody actually uses, or a garden tub eating half the room. Taking it out and building a proper walk-in shower in its place changes how the entire bathroom works — and it is the single upgrade homeowners here tell us they wish they had done sooner.",
+      "We build custom tiled showers to any size, shape or slope, from a 48-inch square in a guest bath to a full master with a freestanding soaker and a separate glass enclosure. When the timeline matters more than the tile, acrylic and composite wall systems go in over about two days with almost no dust and no weeks of demo."
+    ],
+    "checklist": [
+      "Custom tiled showers to any size, shape or slope",
+      "Tub-to-shower conversions, including low-entry and grab-bar layouts",
+      "Frameless glass, door-less panels, bench seats and recessed niches",
+      "Two-day acrylic and composite systems when time is the constraint"
+    ],
+    "image": "/img/azul-porcelain-antique-brass.jpg",
+    "image_alt": "Marbled azul porcelain tiled shower with a corner bench seat, mosaic pan and antique brass fixtures",
+    "image_position": "left",
+    "review": {
+      "name": "Brian A.",
+      "source": "Yelp Review, Rock Hill",
+      "rating": 5,
+      "text": "Before choosing someone to do our renovations, we thoroughly researched reviews, visited finished projects and did in person interviews. Vincent Taylor and TRC Home Improvements came out on top and we were not disappointed. From start to finish, Vince and his 2 assistants were on the site each day — not a random parade of workers."
+    },
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Denise H.",
+      "location": "Fort Mill, SC",
+      "text": "Twice before I have been scammed by contractors and or poor quality of work, so when I had to get my bathroom done, I was very apprehensive. I'm so glad I found Vince and his crew. They did an amazing job. They were very detail oriented. Kept the area clean and tidy. Communicated! They did what they said they were going to do. I will most definitely be using his company again.",
+      "rating": 5
+    },
+    {
+      "name": "Julio G.",
+      "text": "Working with Vince and TRC Home Improvements was wonderful. They communicated with us every step of the way, and our tiled shower is the most beautiful feature in our home now. The team's cleanliness, efficiency, and attention to detail made all the difference. We would choose them again in a heartbeat!",
+      "rating": 5
+    },
+    {
+      "name": "Monica S.",
+      "text": "Vince has a fantastic eye for design, and it really shows in our new bathroom. We asked for a spa-like shower, and he delivered something far beyond our expectations. The entire crew was respectful and careful, and the cleanup was impeccable. If you want a beautiful renovation without the hassle, call TRC!",
+      "rating": 5
+    },
+    {
+      "name": "Sarah Timmons",
+      "text": "Hired a terrible contractor through a neighbor recommendation to renovate our bathroom, which quickly became a regretful disaster. Thankfully, we found TRC while searching online, who was more than happy to get our project back on track and completed in time for the holidays. Our bathroom came out beautiful, we greatly appreciate what TRC had done for us!",
+      "rating": 5
+    },
+    {
+      "name": "Maurice G.",
+      "text": "Our bathroom remodel was done faster than expected, and the craftsmanship is flawless. Vince's team was respectful and thorough, leaving no mess behind. The new tiled shower has a real wow factor, and we can't believe how elegant it turned out.",
+      "rating": 5
+    },
+    {
+      "name": "Kyle Jessip",
+      "text": "When we purchased our home last year we knew this would be our forever home. That being said, we wanted to be certain we hired the right contractor to renovate our bathroom and not cut any corners. Can honestly say, these guys are top notch and know their craft — from the installation to the completion the craftsmanship was impressive. There was never the feeling of anything being rushed or skipped over!",
+      "rating": 5
+    },
+    {
+      "name": "Arthur O.",
+      "text": "From the first meeting with Vince to the finishing touches, we knew we were in good hands. The TRC team took great care to protect our floors, cleaned up daily, and the final result is absolutely stunning. The tile work in the shower is a piece of art, and we are so proud to show off our new bathroom.",
+      "rating": 5
+    },
+    {
+      "name": "Betty J.",
+      "text": "We couldn't be happier with our bathroom renovation from TRC. Vince's crew was so skilled and respectful, leaving our home clean and organized every single day. The shower looks like something you'd see in a luxury spa. We will absolutely be calling TRC for our next project!",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does a bathroom remodel with a custom tiled shower take?",
+      "a": "Most bathroom remodels with a custom tiled shower run a few weeks, and the exact schedule depends on the size of the room, the materials you pick and how much plumbing or electrical has to move. You get a realistic timeline in writing before demo starts, and updates as the job moves."
+    },
+    {
+      "q": "Can I get a written estimate before any work begins?",
+      "a": "Yes. Vince comes out, walks the space, talks through your ideas and puts a recommended scope of work in writing so you can make decisions with real numbers. There is no pressure and no deposit required to book the consultation."
+    },
+    {
+      "q": "What's the difference between a custom-tiled shower and an acrylic system?",
+      "a": "A custom-tiled shower gives you full control over size, shape, tile and finish — it is the right call when you want the bathroom to be a feature. An acrylic or composite wall system is quicker to install and lower maintenance, with a non-porous surface that resists mold and mildew. We will price both so you can compare honestly."
+    },
+    {
+      "q": "How does the two-day tub-to-shower conversion work?",
+      "a": "We pull the old tub or surround, prep the space, and install the new low-entry base and wall system — typically over about two days with virtually no dust or mess. It is the option most people choose when they want the bathroom back quickly without weeks of construction."
+    },
+    {
+      "q": "What keeps a custom tile shower from leaking down the line?",
+      "a": "Waterproof membranes, a properly sloped pan and careful substrate prep before a single tile goes up. Those three things direct water where it should go and protect the framing behind the walls — and they are exactly where a cheap bid usually cuts corners."
+    },
+    {
+      "q": "Can you build a shower for accessibility or aging in place?",
+      "a": "Yes, and it is a large part of what we do. Low-entry and curbless bases, built-in bench seats, grab bars set into blocked walls, handheld fixtures and slip-resistant pan tile can all be designed in from the start rather than added on later."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "We work out of Fort Mill and serve Rock Hill, Tega Cay, Indian Land and Lancaster on the South Carolina side, plus Ballantyne, Waxhaw, Weddington, Indian Trail, Mint Hill, Matthews and Pineville across the North Carolina line. Licensed in both states, so the line is not a problem."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "kind": "config",
+  "business_name": "Wolfpack Construction",
+  "legal_name": "Wolfpack Construction LLC",
+  "tagline": "Built Right. Built to Last.",
+  "phone": "+14074498228",
+  "phone_display": "(407) 449-8228",
+  "address": {
+    "street": "2302 Mercator Dr.",
+    "city": "Orlando",
+    "state": "FL",
+    "postal": "32807",
+    "country": "US"
+  },
+  "geo": { "lat": 28.5768755, "lng": -81.3000478 },
+  "site_url": "https://wolfpack-construction.vercel.app",
+  "rating": 4.9,
+  "review_count": 63,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 5,
+  "social": {
+    "facebook": "https://www.facebook.com/WolfpackConstructionFL",
+    "instagram": "https://www.instagram.com/wolfpack_construction/",
+    "google_maps": "https://g.page/r/CQY-5dz9ocTcEAE/review"
+  },
+  "logo_url": "/img/logo.png",
+  "default_hero_photo": "/img/hero-home.jpg",
+  "about_photo": "/img/about.jpg",
+  "team_members": [
+    { "name": "Eric Roman", "role": "CEO", "photo": "/img/team/eric-roman.png" },
+    { "name": "Kailey Gordon", "role": "Director of Business Operations", "photo": "/img/team/kailey-gordon.webp" },
+    { "name": "Heidi Vold", "role": "Director of Sales & Business Development", "photo": "/img/team/heidi-vold.webp" },
+    { "name": "Michelle Renner", "role": "Sales Manager", "photo": "/img/team/michelle-renner.png" },
+    { "name": "Josh Rueckert", "role": "Project Manager", "photo": "/img/team/josh-rueckert.png" },
+    { "name": "Jonathan Liranzo", "role": "Superintendent", "photo": "/img/team/jonathan-liranzo.png" }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "why_choose_us": [
+    {
+      "title": "You get a name, not a call centre",
+      "description": "Every Wolfpack job has one person on it who owns it end to end. You will know whose truck is in your driveway, and you will have their number."
+    },
+    {
+      "title": "One licence, start to finish",
+      "description": "Florida Certified General Contractor CGC1531295. Emergency response, remediation and the full rebuild all run under it — you are never handed off to a third party when the hard part starts."
+    },
+    {
+      "title": "One quality, one price",
+      "description": "The number we agree is the number you pay. Free, no-obligation estimates, financing available, and no hourly sales pitch to sit through first."
+    },
+    {
+      "title": "Family-owned, and local",
+      "description": "We are on Mercator Drive in Orlando, not dispatching crews in from another state. Five years under this name, and generations of trade behind it."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "Financing available",
+    "description": "Roofs and rebuilds rarely arrive at a convenient time. We offer payment plans and financing options so the right repair is not held up waiting on the right month. Ask us when we quote.",
+    "cta_text": "Ask about financing",
+    "cta_href": "/contact"
+  },
+  "gallery": [
+    { "title": "Commercial build, handed over", "location": "Orlando, FL", "photo": "/img/work/commercial-finished.jpg", "alt": "Completed commercial building exterior in Orlando" },
+    { "title": "Commercial interior, complete", "location": "Orlando, FL", "photo": "/img/work/commercial-finished-1.jpg", "alt": "Finished commercial interior with new ceiling and lighting" },
+    { "title": "Commercial fit-out", "location": "Orlando, FL", "photo": "/img/work/commercial-finished-2.jpg", "alt": "Completed commercial space ready for handover" },
+    { "title": "Commercial framing", "location": "Orlando, FL", "photo": "/img/work/commercial-framing.jpg", "alt": "Steel and timber framing on a commercial project in progress" },
+    { "title": "Residential remodel, complete", "location": "Orlando, FL", "photo": "/img/work/residential-finished.jpg", "alt": "Finished residential remodel interior" },
+    { "title": "Finished living space", "location": "Orlando, FL", "photo": "/img/work/residential-finished-2.jpg", "alt": "Completed residential living space after remodel" },
+    { "title": "Kitchen, complete", "location": "Orlando, FL", "photo": "/img/work/residential-finished-3.jpg", "alt": "Completed residential kitchen after remodel" },
+    { "title": "Residential build in progress", "location": "Orlando, FL", "photo": "/img/work/residential-framing.jpg", "alt": "Residential framing underway on an Orlando build" }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "One pack.",
+    "heading_rest": "Every trade.",
+    "subtitle": "Roofing, residential and commercial construction, remodels and 24/7 emergency remediation — all under one Florida general contractor's licence, so no part of your project gets handed to a stranger."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate",
+    "services": [
+      "Roof repair",
+      "Roof replacement",
+      "New roof installation",
+      "Roof inspection",
+      "Kitchen or bathroom remodel",
+      "Home addition or renovation",
+      "New home construction",
+      "Commercial construction or build-out",
+      "Storm, water or fire damage",
+      "Other"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Let's get your project moving",
+    "body": "Free estimates, financing available, and a Florida Certified General Contractor (CGC1531295) on every job. Serving Orlando, Winter Park, Dr. Phillips, College Park, Baldwin Park and Lake Nona since 2021.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Building & Roofing Advice",
+    "description": "Straight answers on roofing, remodeling and storm season from the Wolfpack Construction team in Orlando."
+  }
+}

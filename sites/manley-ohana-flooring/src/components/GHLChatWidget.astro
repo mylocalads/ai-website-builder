@@ -1,0 +1,6 @@
+---
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const snippet = site.crm?.chat_widget_snippet;
+---
+{snippet && <Fragment set:html={snippet} />}

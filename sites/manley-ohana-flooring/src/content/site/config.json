@@ -1,0 +1,148 @@
+{
+  "kind": "config",
+  "business_name": "Manley Ohana Flooring & Demolition",
+  "legal_name": "MANLEYOHANA, LLC",
+  "tagline": "Old Floor Out. Slab Ready. Orlando & the Space Coast.",
+  "phone": "+14075550142",
+  "phone_display": "(407) 555-0142",
+  "email": "Manleyohanaflooring@gmail.com",
+  "address": {
+    "street": "1796 N. Hiawassee Rd",
+    "city": "Orlando",
+    "state": "FL",
+    "postal": "32818",
+    "country": "US"
+  },
+  "site_url": "https://manley-ohana-flooring.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 12,
+  "social": {
+    "instagram": "https://www.instagram.com/manley_ohana_flooring/"
+  },
+  "logo_url": "/img/logo.png",
+  "default_hero_photo": "/img/hero-home.jpg",
+  "about_photo": "/img/about-kalani.jpg",
+  "team_members": [
+    {
+      "name": "Kalani Manley",
+      "role": "Owner & Operator",
+      "photo": "/img/work/wood-look-tile-removal.jpg",
+      "bio": "Kalani runs the machine. Twelve years pulling tile, hardwood, laminate, vinyl and commercial glue-down carpet out of Central Florida homes and buildings — and the person who walks your job and quotes it is the same person you will find on the ride-on scraper the morning it starts. That is the whole point of a family shop."
+    }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "why_choose_us": [
+    {
+      "title": "The owner is on the machine",
+      "description": "The person who quotes your job is the person running the scraper. No sales rep, no subcontracted crew you have never met, no phone tree. Twelve years, one set of hands."
+    },
+    {
+      "title": "We fight the dust, not just the tile",
+      "description": "Ripping 200 square feet of ceramic loose makes over a hundred pounds of silica dust. We run shrouded, vacuum-fed equipment and we seal the rooms we are not in, because the dust is what you actually live with afterwards."
+    },
+    {
+      "title": "Removal is the whole job, not a side hustle",
+      "description": "Most flooring companies treat demo as the annoying part before the money. It is all we do. That is why we are faster at it, and why installers keep calling us back."
+    },
+    {
+      "title": "Orlando to the Atlantic",
+      "description": "Orlando, Windermere, Merritt Island, Cocoa Beach and Rockledge. Beach condos, Windermere estates, occupied offices — we have taken floors out of all of them."
+    }
+  ],
+  "financing": { "enabled": false },
+  "gallery": [
+    {
+      "title": "Checkerboard tile, coming up",
+      "location": "Orlando, FL",
+      "photo": "/img/work/tile-removal-checkerboard.jpg",
+      "alt": "Ride-on floor scraper lifting black and white checkerboard tile in an Orlando kitchen",
+      "description": "Ride-on scraper under a chandelier, taking a black-and-white checkerboard floor down to slab in one pass."
+    },
+    {
+      "title": "Ceramic tile, room by room",
+      "location": "Orlando, FL",
+      "photo": "/img/work/tile-removal-ceramic.jpg",
+      "alt": "Kalani Manley in respirator and hearing protection breaking up ceramic tile with a ride-on scraper",
+      "description": "Respirator, ears, gloves, and a bin staged in the room. Cream ceramic breaking clean off the slab."
+    },
+    {
+      "title": "Wood-look porcelain, stripped",
+      "location": "Windermere, FL",
+      "photo": "/img/work/wood-look-tile-removal.jpg",
+      "alt": "Ride-on scraper removing dark wood-look porcelain plank tile down a hallway",
+      "description": "Wood-look plank porcelain is some of the most stubborn tile there is. This is what it looks like losing."
+    },
+    {
+      "title": "Commercial carpet, no downtime",
+      "location": "Orlando, FL",
+      "photo": "/img/work/commercial-carpet-removal.jpg",
+      "alt": "Ride-on scraper rolling up glue-down commercial carpet along an office corridor",
+      "description": "Glue-down commercial broadloom peeling off a corridor in strips. Offices do not get to close for this."
+    },
+    {
+      "title": "Oceanfront slab prep",
+      "location": "Cocoa Beach, FL",
+      "photo": "/img/work/oceanfront-floor-prep.jpg",
+      "alt": "Grinding and vacuum dust extraction on a bare condo slab with the Atlantic visible through the sliders",
+      "description": "Vacuum-fed grinder taking the last of the adhesive off an oceanfront condo slab. Ready to cover."
+    },
+    {
+      "title": "Great room, floor out",
+      "location": "Merritt Island, FL",
+      "photo": "/img/work/great-room-floor-out.jpg",
+      "alt": "Two-story great room with a coffered wood ceiling and the flooring removed to bare slab",
+      "description": "Coffered ceiling, arched windows, and a floor that had to come out without touching any of it."
+    },
+    {
+      "title": "Entry and threshold",
+      "location": "Orlando, FL",
+      "photo": "/img/work/carved-door-entry.jpg",
+      "alt": "Hand-carved arched wood front door with tile removed cleanly at the threshold",
+      "description": "A hand-carved door you do not get to scratch. Tile out to the threshold, jamb untouched."
+    },
+    {
+      "title": "Double-door entry, ready",
+      "location": "Orlando, FL",
+      "photo": "/img/work/front-entry-tile.jpg",
+      "alt": "Open black double front doors of an Orlando home with the entry floor cleared",
+      "description": "Doors open, mat down, floor cleared. The house is still liveable while we work."
+    }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "What We Tear Out",
+    "heading_lead": "We take the old floor out.",
+    "heading_rest": "All of it.",
+    "subtitle": "Tile, hardwood, laminate, vinyl, commercial carpet, drywall and kitchen cabinets — removed clean, hauled off, and the slab left flat enough for whatever goes down next."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Removal Quote",
+    "services": [
+      "Tile removal",
+      "Hardwood floor removal",
+      "Laminate or vinyl removal",
+      "Carpet removal",
+      "Commercial carpet or glue-down removal",
+      "Floor prep, grinding and adhesive removal",
+      "Drywall removal",
+      "Kitchen cabinet removal",
+      "Whole-house interior demolition",
+      "Other"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Send us a photo of your floor",
+    "body": "Twelve years of flooring removal and interior demolition across Orlando, Windermere, Merritt Island, Cocoa Beach and Rockledge. Free quotes, no obligation — text or email a photo of the floor and the square footage and you will get a real number back.",
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Flooring Removal Advice",
+    "description": "Straight answers on tile removal, silica dust, slab prep and what it really costs — from Manley Ohana Flooring & Demolition in Orlando."
+  }
+}

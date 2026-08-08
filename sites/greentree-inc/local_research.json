@@ -1,0 +1,142 @@
+{
+  "slug": "greentree-inc",
+  "vertical": "Commercial landscape maintenance",
+  "market": "Miami-Dade, Broward and Palm Beach Counties, FL",
+  "buyer": "Commercial property managers, HOA and condo boards, facility and asset managers — not homeowners. This changes the entire copy strategy: the reader is buying predictability and reputation protection, not curb appeal for their own house.",
+  "method": {
+    "note": "Reddit is not directly fetchable by either WebSearch (blocked user agent) or Firecrawl (unsupported site). Pain points were gathered from Reddit search-result snippets via Firecrawl search, plus two commercial-landscape trade sources that enumerate the same complaints in the buyer's own words.",
+    "sources": [
+      "https://www.reddit.com/r/PropertyManagement/comments/1uxlpco/landscaping_questions/",
+      "https://www.reddit.com/r/landscaping/comments/38g2wu/tips_to_land_a_property_management_account/",
+      "https://www.reddit.com/r/lawncare/comments/1vcm6tz/north_florida_hoa_has_asked_me_for_the_impossible/",
+      "https://www.reddit.com/r/Entrepreneur/comments/1rwquoo/landscaping_might_be_the_most_obvious_rollup_in/",
+      "https://www.reddit.com/r/landscaping/comments/161pevc/every_landscaping_job_ive_had_has_been_terrible_i/",
+      "https://www.monarchlm.com/blog/candid-reasons-people-fire-commercial-landscapers",
+      "https://www.outbacklandscapeinc.com/blog/is-it-too-late-to-fire-commercial-landscaper-steps-hiring-during-season"
+    ]
+  },
+  "pain_points": [
+    {
+      "pain": "The honeymoon period ends and quality quietly decays",
+      "detail": "The first 90 days are crisp. Then edges get sloppy, beds go unweeded, and communication dries up — but the invoice does not change. This is the single most-cited reason commercial landscapers get fired.",
+      "greentree_answer": "42 years of contracts that renewed. A company that churns clients does not survive four decades on the same properties."
+    },
+    {
+      "pain": "Nobody answers, and nobody owns the account",
+      "detail": "Bids for extra work take weeks. Calls go unreturned. The named contact turns out to be one person covering forty properties. Property managers describe being left to babysit a vendor they already paid.",
+      "greentree_answer": "Family owned and run — the people answering are the people responsible."
+    },
+    {
+      "pain": "The crew is subcontracted, and it shows",
+      "detail": "An unmarked truck arrives, the crew wears another company's shirts, and nobody on site knows the property's history. Buyers discover after signing that most of the work was farmed out.",
+      "greentree_answer": "One company, one crew, one scope — dedicated solely to landscape maintenance."
+    },
+    {
+      "pain": "The signed scope was not the whole scope",
+      "detail": "Change orders start arriving the moment work begins, for things the buyer assumed were included. The low bid stops being the low bid by month three.",
+      "greentree_answer": "Lead with a clear scope. 'Competitive pricing' in the client's own GO GREENTREE copy should be framed as priced-once, not priced-low."
+    },
+    {
+      "pain": "Crew turnover means nobody learns the property",
+      "detail": "Industry turnover is brutal and widely discussed. A different crew every few weeks means the irrigation quirk, the shady corner, and the board's pet hedge get rediscovered every visit — or never.",
+      "greentree_answer": "Four decades of continuity is the differentiator most competitors structurally cannot claim."
+    },
+    {
+      "pain": "South Florida turf punishes generic mowing practice",
+      "detail": "St. Augustine cut too short stresses and browns out; chinch bug pressure and thatch get blamed on the landscaper regardless of cause. Boards see brown spots and issue deadlines.",
+      "greentree_answer": "Integrated Pest Management is already on the client's service list — surface it as diagnosis-before-spray rather than a line item."
+    },
+    {
+      "pain": "Irrigation faults get discovered by the dry patch, not the inspection",
+      "detail": "Broken heads, misaimed arcs and runoff across parking lots are found after the damage, then charged as a separate repair.",
+      "greentree_answer": "The client already sells Irrigation System Inspections on a schedule. That is a proactive-versus-reactive story and it is theirs to tell."
+    },
+    {
+      "pain": "Private-equity roll-ups are consuming the trade",
+      "detail": "Landscaping is openly discussed as an obvious roll-up target. Buyers feel the effect: the local company they hired becomes a regional brand with a call centre and a new account manager every year.",
+      "greentree_answer": "Independent and family-run since 1984 is the strongest available counter-position, and it is verifiable."
+    }
+  ],
+  "what_buyers_value": [
+    "A named human who answers the phone and owns the property",
+    "A written scope that survives contact with the first invoice",
+    "The same crew, visit after visit",
+    "Proactive reporting — being told about the failing irrigation zone before the turf dies",
+    "Insurance, safety compliance and clean documentation (procurement will ask)",
+    "Supplier-diversity credentials for corporate, institutional and public-sector buyers"
+  ],
+  "differentiators": [
+    {
+      "claim": "Since 1984 — 42 years",
+      "strength": "strong",
+      "why": "Verifiable, rare, and the direct antidote to the decay-and-churn pain point. Should be the loudest number on the site."
+    },
+    {
+      "claim": "Minority Certified",
+      "strength": "strong",
+      "why": "Not a soft badge. Corporate, institutional and public-sector buyers carry supplier-diversity targets, and certification is a procurement filter GreenTree passes and most competitors do not. Under-used on the current site — it appears once, mid-paragraph."
+    },
+    {
+      "claim": "Dedicated solely to landscape maintenance",
+      "strength": "strong",
+      "why": "Reframes a limitation as focus. Design-build firms treat maintenance as the low-margin afterthought; GreenTree treats it as the whole business."
+    },
+    {
+      "claim": "Commercial only",
+      "strength": "medium",
+      "why": "Signals crews, equipment and scheduling built for properties, not driveways. Also sets buyer expectations correctly and filters out residential enquiries."
+    },
+    {
+      "claim": "Family owned and run",
+      "strength": "medium",
+      "why": "Counter-positions against the roll-up trend, but only lands when paired with the 1984 date."
+    },
+    {
+      "claim": "GO GREENTREE",
+      "strength": "medium",
+      "why": "The client's own acrostic. Genuinely distinctive brand property, currently buried at the bottom of the services page. Worth a dedicated section rather than deletion."
+    }
+  ],
+  "copy_angles": [
+    {
+      "angle": "Forty-two years on the same properties",
+      "use": "Hero headline / stat row",
+      "line": "South Florida's commercial landscapes have changed a lot since 1984. Our standards haven't."
+    },
+    {
+      "angle": "Maintenance is not our side business",
+      "use": "Why-choose-us or promise band",
+      "line": "Most landscape companies treat maintenance as what they do between installs. It's the only thing we've done since 1984."
+    },
+    {
+      "angle": "The company you hire is the company that shows up",
+      "use": "Why-choose-us tile",
+      "line": "No subcontractors, no unmarked trucks, no rotating account manager. Family owned and run since 1984."
+    },
+    {
+      "angle": "Minority Certified — procurement-ready",
+      "use": "Trust badge + a dedicated line in the about block",
+      "line": "A Minority Certified vendor that meets supplier-diversity requirements without costing you a step down in quality."
+    },
+    {
+      "angle": "Scheduled, not summoned",
+      "use": "Process steps",
+      "line": "Irrigation inspected on a cycle. Pruning on a cycle. You find out about the problem from us, not from your board."
+    },
+    {
+      "angle": "Built for South Florida turf",
+      "use": "SEO body",
+      "line": "St. Augustine cut to the wrong height browns out, and chinch bug pressure never really stops down here. Integrated Pest Management means we diagnose before we spray."
+    }
+  ],
+  "anti_angles": [
+    "Do not use residential curb-appeal language ('love coming home to your yard') — the buyer is a property manager.",
+    "Do not claim licensed / insured / bonded. Nothing on the client's site or in any public record reviewed asserts it, and procurement buyers verify.",
+    "Do not publish a star rating or review count. No GBP lookup was possible and no rating is asserted anywhere on the client's own site.",
+    "Do not publish pricing. The client publishes none, and 'competitive pricing' is the only pricing claim they make."
+  ],
+  "_notes": {
+    "generated_at": "2026-08-07",
+    "cost_usd": 0.0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "manley-ohana-flooring",
+  "template": "owl",
+  "generated_at": "2026-08-07",
+  "reference_source": "reference-libraries/default.json + owl template baseline. The client has no existing website of their own, so no brand tokens were auto-detectable; the palette below is authored from the brand's own meaning (Ohana / Hawaiian, volcanic) and the operator's brief for aggressive, high-contrast branding.",
+  "palette": {
+    "bg": "#f7f3ed",
+    "surface": "#ffffff",
+    "text": "#14110f",
+    "muted": "#5e564c",
+    "primary": "#14110f",
+    "on_primary": "#ffffff",
+    "accent": "#e24a0f",
+    "on_accent": "#14110f",
+    "accent_ink": "#a33308",
+    "accent_on_dark": "#f4712e",
+    "focus": "#0057ff"
+  },
+  "palette_rationale": "Volcanic. Lava orange (#e24a0f) as the single loud accent against a near-black basalt (#14110f) and a warm sand ground (#f7f3ed) — Hawaiian in reference, hazard-orange in effect, which suits a demolition trade. Three colours only, so the accent never has to compete.",
+  "contrast_measured": {
+    "text/bg": 17.0,
+    "muted/bg": 6.53,
+    "on-primary/primary": 18.8,
+    "on-accent/accent": 4.68,
+    "accent-ink/bg": 6.26,
+    "accent-ink/surface": 6.92,
+    "accent-on-dark/primary": 6.49
+  },
+  "typography": {
+    "display": "Archivo",
+    "display_weights": "600;700;800;900",
+    "body": "Inter",
+    "body_weights": "400;500;600;700",
+    "rationale": "Archivo at 800/900 is heavy and slightly condensed — it hits hard at hero scale without the readability loss of a single-weight poster face. Inter carries the body."
+  },
+  "radius": { "sm": "2px", "md": "4px", "lg": "6px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "anti_patterns": [
+    "No gradient hero backgrounds.",
+    "No glass morphism / backdrop blur.",
+    "No bento grids.",
+    "No purple / indigo / violet accents.",
+    "No rows of outline icons — one icon per section maximum.",
+    "No stock photography. Every image on this site is the client's own work, pulled from their Instagram.",
+    "No 'Stunning' / 'Beautiful' / 'Seamless' section headers.",
+    "No invented review counts, ratings, or customer numbers.",
+    "No randomized section order — owl's fixed home order applies."
+  ]
+}

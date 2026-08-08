@@ -1,0 +1,107 @@
+{
+  "slug": "wolfpack-construction",
+  "vertical": "General contractor / roofing / remodeling",
+  "metro": "Orlando, FL (Orange County, Central Florida)",
+  "generated_at": "2026-08-07",
+  "method": "Reddit search via Firecrawl across r/orlando, r/homeowners, r/HomeImprovement, r/Roofing, r/Contractor and r/Insurance. Thread bodies are gated to unauthenticated fetches, so findings are drawn from thread titles and search-result excerpts rather than full comment threads — themes are solid, individual quotes are short.",
+  "pain_points": [
+    {
+      "theme": "Contractors simply never call back",
+      "detail": "The single loudest complaint in the Orlando and homeowner subs. One r/orlando thread is titled outright 'Construction Subcontractors Not Even Returning Calls'; an r/homeowners thread reports 'Contact them all. 50% of the contacts fail, even with repeated calls, texts, webforms. They just will not respond.'",
+      "sources": [
+        "https://www.reddit.com/r/orlando/comments/q0nn1r/construction_subcontractors_not_even_returning/",
+        "https://www.reddit.com/r/homeowners/comments/1dtjilx/is_it_just_me_or_are_contractors_just_not/",
+        "https://www.reddit.com/r/HomeImprovement/comments/96n9u4/why_dont_contractors_ever_call_me_back/"
+      ]
+    },
+    {
+      "theme": "No timeline, no status, no idea what is happening",
+      "detail": "Homeowners describe going silent-dark mid-project — r/homeowners: 'Is it normal for contractors to not provide timelines, status...'. The top reply reframes it as bad communication rather than bad intent, which is exactly the gap a contractor can win on.",
+      "sources": ["https://www.reddit.com/r/homeowners/comments/171goy2/is_it_normal_for_contractors_to_not_provide/"]
+    },
+    {
+      "theme": "Florida roofing scams and hard-close sales pitches",
+      "detail": "Orlando has its own long-running thread on how roofing scams work and why they persist. Adjacent r/Roofing threads describe door-knockers and one-hour high-pressure presentations: 'They sounded like used car salesmen.' Orlando homeowners arrive at a roofer's website already braced for a con.",
+      "sources": [
+        "https://www.reddit.com/r/orlando/comments/wiqu02/how_do_the_roofing_scams_work_and_if_they_are_so/",
+        "https://www.reddit.com/r/Roofing/comments/1gfqnc5/why_all_the_high_pressure_sales_pitch/"
+      ]
+    },
+    {
+      "theme": "Insurance denies the claim and the homeowner is stuck between two experts",
+      "detail": "Repeated across r/Insurance and r/homeowners: contractor says wind damage, carrier says wear and tear, claim denied, nobody advocates for the homeowner. Central Florida storm season makes this a yearly ritual.",
+      "sources": [
+        "https://www.reddit.com/r/Insurance/comments/1nrbpvu/insurance_denied_my_roof_claim_contractor_says/",
+        "https://www.reddit.com/r/Roofing/comments/16juurl/insurance_said_no_contractor_is_not_happy/"
+      ]
+    },
+    {
+      "theme": "A different crew every day and nobody in charge",
+      "detail": "Contractors themselves confirm the model in r/Contractor: 'Residential and commercial focused contractors have no incentive to employ their workers. Subcontracting is cheaper and carries less risk.' Homeowners experience that as strangers in the house and no single person accountable.",
+      "sources": [
+        "https://www.reddit.com/r/Contractor/comments/1m33jon/so_what_percentage_of_people_here_are_general/",
+        "https://www.reddit.com/r/Construction/comments/11f3hm9/gc_supers_do_you_let_subs_work_without_someone_on/"
+      ]
+    },
+    {
+      "theme": "Price shock with no explanation of what drives it",
+      "detail": "r/HomeImprovement: 'Why does a tiny bathroom remodel cost as much as a car?' — the anger is not really at the number, it is at getting a number with no breakdown behind it.",
+      "sources": ["https://www.reddit.com/r/HomeImprovement/comments/1rx58jw/why_does_a_tiny_bathroom_remodel_cost_as_much_as/"]
+    },
+    {
+      "theme": "Getting handed off after the emergency is over",
+      "detail": "Mitigation companies dry the property out and then disappear, leaving the homeowner to find a separate general contractor for the rebuild — a second search, a second contract, at the worst possible moment.",
+      "sources": ["https://www.reddit.com/r/Insurance/comments/w2w8ii/my_roof_claim_was_denied_even_though_i_provided/"]
+    }
+  ],
+  "what_customers_value": [
+    "A human being who answers and keeps answering",
+    "Being told the schedule before they have to ask for it",
+    "One accountable name attached to the job, not a rotating cast",
+    "Pricing they can see the logic of",
+    "A licence number they can actually verify",
+    "Someone local who can be physically found if it goes wrong"
+  ],
+  "how_this_business_stands_out": [
+    "Family-owned with a named, photographed leadership team — Eric Roman (CEO) down to the superintendents on site. Directly answers the 'who is actually in charge of my job' anxiety.",
+    "Florida Certified General Contractor CGC1531295 — a verifiable licence, not a vague 'licensed and insured' claim.",
+    "Remediation AND reconstruction under one licence: no hand-off to a third party when the hard part starts. This is the single strongest differentiator against the mitigation-only franchises.",
+    "'One quality, one price' guarantee plus free estimates and financing — a direct answer to price-shock and hard-close fatigue.",
+    "Physically local at 2302 Mercator Dr, Orlando — not a national franchise dispatching crews from another state.",
+    "BBB A+ accredited, Top 20 Home Depot contractor, 4.9 stars across 63 Google reviews, Spanish-speaking team."
+  ],
+  "copy_angles": [
+    {
+      "angle": "Personalization — you get a name, not a call center",
+      "rationale": "Ghosting is the #1 documented complaint. Wolfpack has seven named, photographed staff. Lead with the people.",
+      "example_lines": [
+        "You'll know whose truck is in your driveway.",
+        "Meet the pack that's actually on your job.",
+        "One name, one number, from first call to final walkthrough."
+      ]
+    },
+    {
+      "angle": "One pack, start to finish — no hand-offs",
+      "rationale": "Answers both the mitigation-hand-off problem and the rotating-subcontractor problem in one line.",
+      "example_lines": [
+        "Emergency response through final rebuild. Same licence, same crew, same phone number.",
+        "We don't hand you off when the hard part starts."
+      ]
+    },
+    {
+      "angle": "One quality, one price — the client's own guarantee",
+      "rationale": "Directly counters price shock and used-car-salesman pitch fatigue. It is the client's existing promise, so it is safe to headline.",
+      "example_lines": ["One quality. One price. Written down before we start."]
+    },
+    {
+      "angle": "The licence number, out loud",
+      "rationale": "Orlando homeowners are primed for scams. Publishing CGC1531295 on the page is a trust shortcut most competitors bury.",
+      "example_lines": ["Florida Certified General Contractor CGC1531295. Go ahead and look it up."]
+    },
+    {
+      "angle": "Storm season built into the copy",
+      "rationale": "Hurricane and wind damage is the seasonal demand spike and the moment insurance disputes start.",
+      "example_lines": ["Central Florida knows storms. So do we — 24/7."]
+    }
+  ]
+}

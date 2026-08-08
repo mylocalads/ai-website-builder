@@ -1,0 +1,150 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving Orlando & The Space Coast",
+    "headline": "Flooring Removal & Demolition In Orlando, FL",
+    "subheadline": "Tile, hardwood, laminate, vinyl and commercial carpet — pulled up, hauled off, and the slab ground flat and ready to cover. Twelve years of removal and interior demolition across Central Florida.",
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book",
+    "photo": "/img/hero-home.jpg",
+    "quote_card": {
+      "quote": "Send us a message for a free quote to remove your old flooring.",
+      "author": "Manley Ohana Flooring & Demolition",
+      "cta_text": "Get My Free Quote!",
+      "cta_href": "/book"
+    }
+  },
+  "promise_bar": [
+    { "text": "12 Years, Owner-Operated", "icon": "handshake" },
+    { "text": "Free Quotes", "icon": "clipboard" },
+    { "text": "Dust-Controlled Removal", "icon": "broom" },
+    { "text": "Orlando & Space Coast", "icon": "home" }
+  ],
+  "promise_band": {
+    "eyebrow": "'Ohana Means Family",
+    "headline": "A family shop, not a call centre",
+    "body": "No sales rep, no dispatcher, no crew of strangers arriving in an unmarked van. The person who walks your job and prices it is the same person running the machine the morning it starts. Twelve years of Central Florida floors have come out that way, and every photograph on this site is one of them — not a stock library.",
+    "cta_text": "About Our Shop",
+    "cta_href": "/about",
+    "image": "/img/work/tile-removal-ceramic.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Clean, Fast, Efficient",
+    "intro": "Three words go on every job we post, so they are the standard the work gets held to. Here is what each one actually costs us to deliver — and what it saves you.",
+    "blocks": [
+      {
+        "title": "Clean — we fight the dust, not just the tile",
+        "body": "Breaking 200 square feet of ceramic loose throws off more than a hundred pounds of silica dust. Untarped, it goes everywhere: the HVAC returns, the closets, the rooms nobody worked in. We run shrouded, vacuum-fed equipment and we seal off what we are not touching, because the dust is the part you live with after we leave.",
+        "icon": "broom"
+      },
+      {
+        "title": "Fast — a ride-on scraper, not a crew with chisels",
+        "body": "Hand demo on a thousand square feet of tile is days of labour and a mountain of debris. A ride-on scraper does the same floor in a fraction of the time, and it does not get tired and start chipping baseboard on hour nine. Removal is all we do, so the machine is already on the trailer.",
+        "icon": "home"
+      },
+      {
+        "title": "Efficient — you get a slab, not a mess",
+        "body": "The job is not finished when the tile is up. Old thinset, glue and mortar ridges will telegraph straight through new LVP and will void most installers' warranties. We grind the slab flat and clean, sweep it, and hand it over ready for whatever goes down next.",
+        "icon": "shield"
+      }
+    ],
+    "steps_title": "What you can expect from the first message",
+    "steps_icon": "clipboard",
+    "steps": [
+      { "title": "Send a photo and the square footage", "body": "Text or email. We price from what is actually on your floor, not a generic rate." },
+      { "title": "You get a real number, free", "body": "No walkthrough fee, no obligation, no sitting through a pitch." },
+      { "title": "We protect the house before anything comes up", "body": "Plastic on the openings, paths covered, dust contained to the room we are in." },
+      { "title": "Floor out, debris gone, slab swept", "body": "We haul it. You do not end up with a pile in the driveway." }
+    ],
+    "guarantee": {
+      "title": "Your installer will not send it back",
+      "body": "The slab gets left flat, glue-free and swept — the condition the next trade actually needs it in. If your flooring installer finds something they cannot cover, we come back and fix it before they lay a single plank.",
+      "cta_text": "Get My Free Quote!",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "From Photo To Bare Slab",
+    "steps": [
+      { "label": "01", "title": "Send Us A Photo", "body": "A photo of the floor and rough square footage is enough to start. Text or email — whichever is faster for you.", "icon": "phone" },
+      { "label": "02", "title": "Free quote back", "body": "A real number for removal, haul-off and prep. No obligation and nothing to sit through.", "icon": "clipboard" },
+      { "label": "03", "title": "We seal and protect", "body": "Openings plastic'd, walkways covered, dust contained before a single tile moves.", "icon": "shield" },
+      { "label": "04", "title": "Floor out, slab prepped", "body": "Machine removal, adhesive ground off, debris hauled, floor swept and ready to cover.", "icon": "broom" }
+    ],
+    "cta_text": "Start With A Photo",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "Meet The Owner",
+    "headline": "Kalani Manley has been doing this for twelve years",
+    "body": "MANLEYOHANA, LLC has been a registered Florida company out of Orlando since 2015, and Kalani has been on the machine longer than that. 'Ohana means family, and it is not decoration on the truck — this is a family shop where the owner is also the operator, the estimator and the person who answers you. Beach condos on Cocoa Beach, estates in Windermere, occupied offices in Orlando, a great room in Merritt Island with a coffered ceiling nobody was allowed to touch. Same person on every one of them.",
+    "checklist": [
+      "Owner-operated — the person who quotes it runs the machine",
+      "Registered Florida company since 2015 (MANLEYOHANA, LLC)",
+      "Tile, hardwood, laminate, vinyl, carpet, drywall and cabinets",
+      "Residential and commercial, occupied buildings included",
+      "Orlando, Windermere, Merritt Island, Cocoa Beach and Rockledge"
+    ],
+    "photo": "/img/about-kalani.jpg",
+    "photo_alt": "Kalani Manley operating a ride-on floor scraper, removing checkerboard tile from an Orlando home",
+    "cta_text": "More About Kalani",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Flooring Removal In Orlando",
+    "headline": "Why removal is its own trade",
+    "paragraphs": [
+      "Almost every flooring company in Central Florida sells you the new floor and treats getting the old one out as the annoying part beforehand. It gets handed to whoever is free, priced as an afterthought, and done with hand tools — which is exactly why so many Orlando homeowners end up with dust in the air handler and a slab their installer refuses to work over.",
+      "Manley Ohana does the opposite. Removal and interior demolition are the entire business. That means the ride-on scraper is already loaded, the vacuum shrouds are already on it, and the person operating it has twelve years on that specific machine instead of twelve jobs. It also means we have no reason to talk you into a floor — we are not selling one.",
+      "The deliverable is a clean slab: old covering gone, thinset and adhesive ground off, ridges taken down, debris hauled away and the floor swept. That is the condition your installer needs it in for their warranty to mean anything, and it is the condition we leave every job in — from a single Cocoa Beach condo to a whole house in Windermere."
+    ],
+    "checklist": [
+      "Ceramic, porcelain and wood-look plank tile",
+      "Hardwood, engineered wood and laminate",
+      "Sheet vinyl, LVP and glue-down commercial carpet",
+      "Thinset, mastic and adhesive grinding",
+      "Drywall, kitchen cabinets and full interior demo"
+    ],
+    "image": "/img/work/commercial-carpet-removal.jpg",
+    "image_alt": "Ride-on scraper rolling up glue-down commercial carpet along an occupied office corridor",
+    "image_position": "right",
+    "cta_text": "Get My Free Quote!",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "How much does tile removal cost in Orlando?",
+      "a": "It is priced by the square foot, and the number moves with what is under the tile and how it was set. Thinset on a concrete slab is the straightforward case; tile set over a wood subfloor, over a second layer of old tile, or with mortar beds runs higher because there is more to take off. Send a photo of the floor and the rough square footage and you will get a real number back, free and with no obligation."
+    },
+    {
+      "q": "How bad is the dust really?",
+      "a": "Bad, if it is not controlled. Removing roughly 200 square feet of ceramic tile releases over a hundred pounds of silica dust, and on an untarped job that dust ends up in your HVAC returns, your closets and rooms nobody worked in — which is why the cleanup can outlast the demolition. We run shrouded, vacuum-fed equipment and seal off the areas we are not working in so the dust stays where the work is."
+    },
+    {
+      "q": "Do I need to move out while you work?",
+      "a": "Usually not. Most of our jobs are done in occupied homes and occupied commercial buildings — we contain the work area, keep a clean path in and out, and take the floor out in stages where that makes sense. If a job genuinely needs the space empty for a day we will tell you that when we quote it, not after we have started."
+    },
+    {
+      "q": "Do you haul the debris away?",
+      "a": "Yes. Removal, load-out and disposal are part of the job. You do not end up with a pile of broken tile in the driveway or a dumpster you have to arrange yourself, unless you would rather supply one."
+    },
+    {
+      "q": "Will the slab be ready for my new floor?",
+      "a": "That is the point of hiring us. We grind off leftover thinset, mastic and adhesive and take down the ridges, then sweep the slab clean. Leaving that residue is what causes LVP and laminate to telegraph and what voids most installers' warranties — so if your installer finds something they cannot cover, we come back and correct it before they start."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "Orlando and Windermere on the metro side, and Merritt Island, Cocoa Beach and Rockledge out on the Space Coast. We work both residential and commercial across all of them. If you are just outside that band, ask — it is often still worth the drive."
+    },
+    {
+      "q": "Do you do anything besides floors?",
+      "a": "Yes. Interior demolition is the other half of the business: drywall, kitchen cabinets and general tear-out ahead of a remodel. If the whole interior is coming out, one crew can take all of it rather than coordinating two."
+    },
+    {
+      "q": "How do I get a quote?",
+      "a": "Message us a photo of the floor with the approximate square footage. That is genuinely how most of our jobs start — it is faster than scheduling a walkthrough and it costs you nothing. Larger or more complicated jobs get an on-site look before the number is final."
+    }
+  ]
+}

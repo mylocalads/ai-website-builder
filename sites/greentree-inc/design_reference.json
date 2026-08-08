@@ -1,0 +1,69 @@
+{
+  "slug": "greentree-inc",
+  "template": "owl",
+  "vertical": "default",
+  "reference_library": "reference-libraries/default.json",
+  "reference_urls": [],
+  "_reference_note": "No designer-supplied reference URLs and no vertical library exists for landscape maintenance. The owl template is the sole structural authority; brand tokens below are derived from colours and fonts detected on the client's own site, per intake-scraped.json. No layout, component or CSS beyond fonts and colours was taken from the client's site.",
+  "palette": {
+    "--color-bg": "#f6f7f3",
+    "--color-surface": "#ffffff",
+    "--color-text": "#17200f",
+    "--color-muted": "#5a6152",
+    "--color-primary": "#275304",
+    "--color-on-primary": "#ffffff",
+    "--color-accent": "#6da716",
+    "--color-on-accent": "#10230a",
+    "--color-accent-ink": "#3d6b08",
+    "--color-accent-on-dark": "#a8d95f",
+    "--color-focus": "#0057ff"
+  },
+  "palette_derivation": {
+    "source_colors": {
+      "#275304": "deep forest green — 20 occurrences in the client's stylesheet; the logo mark colour",
+      "#6da716": "bright leaf green — 21 occurrences; the client's link/accent colour",
+      "#507f0e": "mid green — secondary, not used directly",
+      "#1e3a00": "near-black green — informed --color-text",
+      "#eeeeee": "the client's surface grey — replaced with a warmer neutral"
+    },
+    "three_token_accent_split": "This is the owl three-token case, same shape as Tropical South Tree Services. The client's bright #6da716 measures 2.71:1 on the page background — unusable as text — but 5.68:1 against a near-black green ink, so it is kept completely unmodified as the button fill. A darkened #3d6b08 carries the accent as text on light backgrounds (5.91:1 / 6.35:1), and a lightened #a8d95f carries it inside the deep-green bands (5.49:1), where both the fill green (3.09:1) and the ink green would fail. The colour the eye reads as 'the GreenTree green' is unchanged site-wide.",
+    "wcag_check": {
+      "text_on_bg": "15.61:1",
+      "text_on_surface": "16.80:1",
+      "muted_on_bg": "5.98:1",
+      "muted_on_surface": "6.43:1",
+      "on_primary_on_primary": "9.03:1",
+      "on_accent_on_accent": "5.68:1",
+      "accent_ink_on_bg": "5.91:1",
+      "accent_ink_on_surface": "6.35:1",
+      "accent_on_dark_on_primary": "5.49:1",
+      "verdict": "Every text pair clears WCAG AA. --color-accent at 2.71:1 on bg is a FILL only and is never rendered as text — that is the reason the split exists, not a defect."
+    }
+  },
+  "typography": {
+    "--font-display": "'PT Sans', 'Trebuchet MS', system-ui, sans-serif",
+    "--font-body": "'PT Sans', system-ui, sans-serif",
+    "rationale": "PT Sans is the client's actual brand font, already loaded from Google Fonts on their existing site, and it is the only family detected. Using it for both display and body keeps brand fidelity and ships one font file instead of two. Owl's Montserrat/Inter default is overridden rather than blended — mixing in a family the brand does not use would be invention.",
+    "weights": [400, 700],
+    "scale": "template default (owl)"
+  },
+  "spacing": "template default (owl) — --space-1 through --space-5, --max-width 1200px",
+  "radii": "template default (owl) — 4 / 8 / 14px",
+  "motion": "template default (owl)",
+  "anti_patterns": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography",
+    "residential curb-appeal imagery or language — the buyer is a property manager, not a homeowner",
+    "star ratings or review counts — none are verifiable for this client",
+    "licensed / insured / bonded badges — the client asserts none of these anywhere",
+    "published pricing — the client publishes none",
+    "invented testimonials — the ten on the client's current site are flagged as suspect placeholders and are excluded"
+  ],
+  "_notes": {
+    "generated_at": "2026-08-07",
+    "cost_usd": 0.0
+  }
+}

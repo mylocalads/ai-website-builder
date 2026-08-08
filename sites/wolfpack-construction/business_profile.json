@@ -1,0 +1,36 @@
+{
+  "name": "Wolfpack Construction",
+  "email": null,
+  "phone": "+1-407-449-8228",
+  "address": "2302 Mercator Dr, Orlando, FL 32807",
+  "website": "https://www.wolfpackfl.com",
+  "rating": 4.9,
+  "reviewCount": 63,
+  "category": "General Contractor",
+  "hours": null,
+  "slug": "wolfpack-construction",
+  "reviews": [
+    {
+      "text": "The level of service was top notch and we were treated like family. Words cannot express how blessed we were during such an incredibly stressful time. I highly recommend Wolfpack for any of your residential construction projects!",
+      "author": "Jennifer J.",
+      "rating": 5
+    },
+    {
+      "text": "Strong communication and a willingness to explain things to me in layman terms. Would recommend and use again.",
+      "author": "Kristine S.",
+      "rating": 5
+    },
+    {
+      "text": "From consulting us during every stage of the project, to providing clear pricing and parameters, to identifying good and bad choices, to offering suggestions, to their constant professionalism and compassion, to the overall quality of their work.",
+      "author": "Kristen K.",
+      "rating": 5
+    }
+  ],
+  "_notes": {
+    "source": "GBP data recovered WITHOUT the Apify actor — the kit has no .env, so APIFY_TOKEN is unset and /find-business could not run. Rating + review count come from a public directory mirror of the listing (serviceagent.ai, 4.9 / 63 Google reviews); NAP, geo and CID come from the client's own site and the Google Maps link it publishes; reviews are the three the client displays on their homepage. Re-run /find-business once APIFY_TOKEN is restored to replace this with a first-party GBP snapshot.",
+    "gbp_cid": "15908017895484243462",
+    "gbp_review_url": "https://g.page/r/CQY-5dz9ocTcEAE/review",
+    "geo": { "lat": 28.5768755, "lng": -81.3000478 },
+    "generated_at": "2026-08-07"
+  }
+}

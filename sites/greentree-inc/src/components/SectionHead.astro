@@ -1,0 +1,39 @@
+---
+/**
+ * `as` exists because this component is used in two different roles.
+ *
+ * On most pages it introduces a section partway down and `h2` is correct. But on
+ * /contact, /blog and /service-area it is the page's PRIMARY heading, and those
+ * three shipped with no `h1` at all — every other page on the site had one, so
+ * the omission was invisible until the built HTML was audited. A page with no h1
+ * is a real ranking and accessibility defect, not a cosmetic one: screen-reader
+ * users navigating by heading level find nothing at the top of the document.
+ *
+ * Default stays `h2` so every existing call site is unchanged.
+ *
+ * NOTE: this is the same fix applied to sites/tropical-south-tree-services on
+ * 2026-08-06. It was never back-ported to astro-templates/owl, so every owl site
+ * scaffolded since has re-inherited the defect. It belongs in the template.
+ */
+export interface Props {
+  eyebrow?: string;
+  heading: string;
+  subtitle?: string;
+  align?: 'center' | 'left';
+  as?: 'h1' | 'h2';
+}
+const { eyebrow, heading, subtitle, align = 'center', as: Tag = 'h2' } = Astro.props;
+---
+<div class={`section-head ${align}`}>
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Tag class="head">{heading}</Tag>
+  {subtitle && <p class="subtitle">{subtitle}</p>}
+</div>
+<style>
+  .section-head { max-width: 780px; margin: 0 auto var(--space-3); }
+  .section-head.center { text-align: center; }
+  .section-head.left { text-align: left; margin: 0 0 var(--space-3); }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.9rem; font-weight: 600; color: var(--section-head-eyebrow, var(--color-accent-ink)); margin: 0 0 var(--space-1); }
+  .head { font-family: var(--font-display); font-weight: 700; color: var(--section-head-ink, var(--color-text)); font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; margin: 0 0 var(--space-2); text-transform: uppercase; letter-spacing: 0.01em; }
+  .subtitle { color: var(--section-head-subtitle, var(--color-muted)); font-size: 1.05rem; margin: 0; }
+</style>

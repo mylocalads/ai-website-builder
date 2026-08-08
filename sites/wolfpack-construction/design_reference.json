@@ -1,0 +1,84 @@
+{
+  "slug": "wolfpack-construction",
+  "template": "owl",
+  "generated_at": "2026-08-07",
+  "brief": "Aggressive. The identity is a wolf's claw raking across a heavy black wordmark in hot crimson — the site should feel like that, not like the navy agency template currently in front of it. Two things carry the whole design: the four-streak claw as a structural motif, and personalization (named, photographed humans instead of an anonymous call centre).",
+  "sources": [
+    { "url": "https://www.wolfpackfl.com/images/brand/logo-dark.2602021608583.png", "role": "primary", "used_for": "accent colour sampled from the claw itself (#EA0A2A, 1369 opaque pixels), wordmark black, claw geometry" },
+    { "url": "https://www.wolfpackfl.com", "role": "brand-tokens-only", "used_for": "font families (Montserrat display / Source Sans Pro body), 0px radius convention", "anti_pattern_lock": "no layout, section rhythm, component styling, or screenshot was taken from this source" },
+    { "file": "reference-libraries/default.json", "role": "template-baseline", "used_for": "owl section order and component inventory" }
+  ],
+  "palette": {
+    "bg": "#FFFFFF",
+    "surface": "#F5F5F6",
+    "text": "#101012",
+    "muted": "#5A5A60",
+    "primary": "#101012",
+    "on_primary": "#FFFFFF",
+    "accent": "#EA0A2A",
+    "on_accent": "#FFFFFF",
+    "accent_ink": "#C4001B",
+    "accent_on_dark": "#FF5A6E",
+    "focus": "#0057FF"
+  },
+  "contrast_audit": {
+    "note": "All measured with the owl README method. AA text threshold 4.5:1.",
+    "on_accent #FFFFFF over accent #EA0A2A": 4.59,
+    "accent_ink #C4001B on bg": 6.24,
+    "accent_ink #C4001B on surface": 5.73,
+    "accent_on_dark #FF5A6E on primary #101012": 6.28,
+    "text #101012 on bg": 19.01,
+    "muted #5A5A60 on bg": 6.85,
+    "muted #5A5A60 on surface": 6.29,
+    "on_primary #FFFFFF on primary": 19.01,
+    "why_three_accents": "The claw crimson is the textbook case the owl tokens.css comment describes: #EA0A2A clears AA as a button fill under white text (4.59) but is only 4.59 as text on white and would be unreadable inside the black bands. #C4001B is the text-on-light variant, #FF5A6E the text-on-black variant. The fill colour never changes, so the red the eye reads as 'the Wolfpack red' is identical site-wide."
+  },
+  "typography": {
+    "display": "Montserrat",
+    "display_weights": [700, 800, 900],
+    "body": "Source Sans Pro",
+    "body_weights": [400, 600, 700],
+    "rationale": "Both are the client's own brand fonts. Montserrat at 800/900, uppercase, with tight negative tracking approximates the heavy condensed wordmark in the logo and carries the aggression without importing a novelty face.",
+    "treatment": "Headings uppercase, weight 800-900, letter-spacing -0.02em. Eyebrows uppercase, weight 700, letter-spacing 0.14em, in accent_ink on light and accent_on_dark on black."
+  },
+  "radius": { "sm": "0px", "md": "0px", "lg": "2px", "rationale": "The client's existing buttons are square (0px). Sharp corners read as aggressive; rounding would soften exactly the wrong thing." },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "motion": {
+    "allowed": "Short, decisive transitions (120-180ms, ease-out). Claw streaks may sweep in on scroll where the CSS is cheap.",
+    "banned": "Parallax, autoplaying carousels, anything longer than 300ms, bounce easing."
+  },
+  "signature_motif": {
+    "name": "The Claw",
+    "spec": "Four parallel bars, raked 20deg from vertical, tapered at both ends, in #EA0A2A. Widths run 6px / 10px / 10px / 6px so the outer two read as the thinner outside claws, matching the logo.",
+    "placements": [
+      "Section divider between every major band — a full-bleed rake of four streaks on the seam.",
+      "Hero: an oversized, low-opacity claw raked across the right side of the dark hero, behind the headline.",
+      "Numbered process steps: the step number sits inside a claw slash instead of a circle.",
+      "Card hover: the four streaks sweep across the top edge of a service card.",
+      "Section eyebrows: a miniature four-streak glyph replaces the usual bullet or rule."
+    ],
+    "restraint": "It is a rake, not wallpaper. Never more than one large claw per viewport, and never behind body copy at an opacity that costs contrast."
+  },
+  "personalization_direction": {
+    "why": "Ghosting and rotating anonymous crews are the #1 and #5 documented complaints in the local research. Wolfpack has seven named, photographed staff and a family-owned story — the strongest available counter.",
+    "how": [
+      "A named-team band ('Meet The Pack') on the home page, not buried three levels into the nav.",
+      "Hero quote card attributed to a real reviewer with the 4.9 / 63 rating attached.",
+      "Process copy written in first person plural with a named point of contact promise.",
+      "The CGC licence number printed in plain sight rather than implied."
+    ]
+  },
+  "anti_patterns": [
+    "No gradient hero backgrounds — flat black with a photo scrim only.",
+    "No glass morphism or backdrop-blur panels.",
+    "No bento grids.",
+    "No purple/indigo/violet anywhere — the palette is black, white, and one crimson.",
+    "No rows of outline icons; at most one icon per section and only where it carries meaning.",
+    "No stock handshake / hardhat-closeup / team-pointing-at-laptop photography — the client's own project and staff photos only.",
+    "No 'Stunning', 'Beautiful', 'Powerful', 'Seamless', 'Effortless' in headings.",
+    "No invented review counts, prices, or project totals.",
+    "No navy. The old site's slate-blue chrome is the specific thing being replaced.",
+    "No rounded pill buttons — square edges only.",
+    "No randomized section order; owl's fixed order is authoritative."
+  ]
+}

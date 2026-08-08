@@ -1,0 +1,177 @@
+{
+  "slug": "wolfpack-construction",
+  "business_name": "Wolfpack Construction",
+  "legal_name": "Wolfpack Construction LLC",
+  "tagline": "Built Right. Built to Last.",
+  "phone": "+14074498228",
+  "phone_display": "(407) 449-8228",
+  "email": null,
+  "address": {
+    "street": "2302 Mercator Dr.",
+    "city": "Orlando",
+    "state": "FL",
+    "postal": "32807",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 28.5768755, "lng": -81.3000478 },
+  "hours": null,
+  "rating": 4.9,
+  "review_count": 63,
+  "licensed": true,
+  "license_number": "CGC1531295",
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 5,
+  "social": {
+    "facebook": "https://www.facebook.com/WolfpackConstructionFL",
+    "instagram": "https://www.instagram.com/wolfpack_construction/",
+    "google_maps": "https://g.page/r/CQY-5dz9ocTcEAE/review"
+  },
+  "site_url": "https://www.wolfpackfl.com",
+  "logo_url": "https://www.wolfpackfl.com/images/brand/logo-dark.2602021608583.png",
+  "default_hero_photo": "https://www.wolfpackfl.com/assets/mainstage/mainstage-s4-bg.2602021002119.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://www.wolfpackfl.com/assets/pack/foreground/content-s1-img.2602021042028.jpg",
+  "brand": {
+    "fonts": { "display": "Montserrat", "body": "Source Sans Pro" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#2E2E2E",
+      "accent": "#EA0A2A",
+      "muted": "#5A5A5E",
+      "surface": "#F4F4F5",
+      "candidates": ["#EA0A2A", "#AD1B1E", "#1C1B1A", "#2E2E2E", "#FFFFFF"],
+      "_note": "#EA0A2A sampled directly from the claw marks in logo-dark.png (1,369 opaque pixels — the dominant non-black colour in the mark). #AD1B1E is the darker brick red the current site uses on buttons. The claw red is the brand's real signature and the aggressive direction the operator asked for, so it leads; #1C1B1A is the wordmark black."
+    }
+  },
+  "brand_marks": {
+    "claw": {
+      "description": "Four parallel diagonal slash marks in #EA0A2A, raked roughly 20-25deg from vertical, tapering at both ends, slicing across/behind the WOLFPACK wordmark. The single most recognisable element of the identity.",
+      "streak_count": 4,
+      "source": "https://www.wolfpackfl.com/images/brand/logo-dark.2602021608583.png"
+    }
+  },
+  "services": [
+    {
+      "title": "Roofing",
+      "category": "Roofing",
+      "short_description": "Repair, replacement, installation and inspection for asphalt, metal, tile and flat roofs across Orlando.",
+      "long_description": "Your roof is not just weather cover in Central Florida - it controls your interior climate, keeps pests out, and carries a real part of the structural load. Wolfpack Construction is licensed and insured for every category of residential and commercial roofing, from a single-slope leak repair to a full tear-off and rebuild in asphalt, metal, tile or flat systems.",
+      "sub_services": ["Roof Repair", "Roof Replacement", "Roof Installation", "Roof Inspections", "Roof Coating & Maintenance", "Commercial Roofing"],
+      "hero_photo": "https://www.wolfpackfl.com/assets/pack/background/roofing.2602021345116.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Residential Construction",
+      "category": "Residential",
+      "short_description": "Custom homes, additions, and whole-home upgrades built by a family-owned Orlando general contractor.",
+      "long_description": "Whether you are building a custom home for a growing family or reworking an existing property to fit how you actually live, Wolfpack handles the full residential scope - framing, drywall, flooring, granite, windows, painting, gutters and solar - under one certified general contractor.",
+      "sub_services": ["New Home Construction", "Renovations & Additions", "Gutter Installation", "Solar Panel Installation", "Siding Services"],
+      "hero_photo": "https://www.wolfpackfl.com/assets/pack/background/residential-construction.2602061553310.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Commercial Construction",
+      "category": "Commercial",
+      "short_description": "Design-build, construction management and build-outs for Orlando businesses, permits included.",
+      "long_description": "From ground-up builds to expanding an operating business, Wolfpack manages commercial projects start to finish - including City of Orlando and Orange County permitting and code compliance. Longstanding local roots mean realistic schedules and less disruption to the business next door.",
+      "sub_services": ["Construction Design", "Construction Management", "Build-Outs & Tenant Improvements", "Commercial Roofing", "Permitting & Code Compliance"],
+      "hero_photo": "https://www.wolfpackfl.com/assets/pack/background/commercial-construction.2602021354273.jpg",
+      "_source": "scraped"
+    },
+    {
+      "title": "Remodeling & Additions",
+      "category": "Residential",
+      "short_description": "Kitchen, bathroom and whole-home remodels plus room additions, on schedule and on budget.",
+      "long_description": "Kitchens, bathrooms, flooring, granite, build-outs and full room additions. One quality, one price - the same standard on a single bathroom as on a ground-up build, with clear pricing agreed before the first demo day.",
+      "sub_services": ["Kitchen Remodeling", "Bathroom Remodeling", "Home Additions", "Flooring & Granite", "Windows & Doors"],
+      "hero_photo": "https://www.wolfpackfl.com/images/remodel.jpg.2604271138236.webp",
+      "_source": "scraped"
+    },
+    {
+      "title": "Remediation & Emergency",
+      "category": "Emergency",
+      "short_description": "24/7 water, mold, storm and fire response - then the rebuild, from the same licensed contractor.",
+      "long_description": "The storm passed, the pipe burst, the smoke cleared. Wolfpack responds across Orlando and Central Florida with emergency board-up, water extraction, drying, mold remediation and fire and smoke restoration - then rebuilds. One licensed general contractor, one point of contact, no hand-off to a third party when the hard part starts.",
+      "sub_services": ["Water Damage Mitigation & Drying", "Mold Remediation", "Storm & Wind Damage Response", "Fire & Smoke Restoration", "Emergency Board-Up", "Reconstruction After Remediation"],
+      "hero_photo": "https://www.wolfpackfl.com/assets/pack/background/mainstage-s2-bg.2602021021460.jpg",
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Orlando", "state": "FL", "state_abbr": "fl", "slug": "orlando-fl", "county": "Orange County", "_source": "scraped" },
+    { "name": "Winter Park", "state": "FL", "state_abbr": "fl", "slug": "winter-park-fl", "county": "Orange County", "_source": "scraped" },
+    { "name": "Dr. Phillips", "state": "FL", "state_abbr": "fl", "slug": "dr-phillips-fl", "county": "Orange County", "_source": "scraped" },
+    { "name": "College Park", "state": "FL", "state_abbr": "fl", "slug": "college-park-fl", "county": "Orange County", "_source": "scraped" },
+    { "name": "Baldwin Park", "state": "FL", "state_abbr": "fl", "slug": "baldwin-park-fl", "county": "Orange County", "_source": "scraped" },
+    { "name": "Lake Nona", "state": "FL", "state_abbr": "fl", "slug": "lake-nona-fl", "county": "Orange County", "_source": "scraped" }
+  ],
+  "testimonials": [
+    { "name": "Jennifer J.", "location": "Orlando, FL", "text": "The level of service was top notch and we were treated like family. Words cannot express how blessed we were during such an incredibly stressful time. I highly recommend Wolfpack for any of your residential construction projects!", "rating": 5, "_source": "scraped" },
+    { "name": "Kristine S.", "location": "Orlando, FL", "text": "Strong communication and a willingness to explain things to me in layman terms. Would recommend and use again.", "rating": 5, "_source": "scraped" },
+    { "name": "Kristen K.", "location": "Orlando, FL", "text": "From consulting us during every stage of the project, to providing clear pricing and parameters, to identifying good and bad choices, to offering suggestions, to their constant professionalism and compassion, to the overall quality of their work.", "rating": 5, "_source": "scraped" }
+  ],
+  "team_members": [
+    { "name": "Eric Roman", "role": "CEO", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Eric-Romam-CEO.2503041045032.png" },
+    { "name": "Kailey Gordon", "role": "Director of Business Operations", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Kailey.jpg.2607151247434.webp" },
+    { "name": "Heidi Vold", "role": "Director of Sales and Business Development", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Heidi.jpg.2607151252590.webp" },
+    { "name": "Michelle Renner", "role": "Sales Manager", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Michelle-Renner-Sales-Manager.2503041048079.png" },
+    { "name": "Josh Rueckert", "role": "Project Manager", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Josh-Rueckert-Project-Manager.2503041047336.png" },
+    { "name": "Jonathan Liranzo", "role": "Superintendent", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Jonathan-Liranzo-Superintendent.2503041046408.png" },
+    { "name": "Juan Canizalez", "role": "Superintendent", "photo": "https://www.wolfpackfl.com/cms/thumbnails/34/415x0/images/staff/Juan-Canizalez.jpg.2603180948381.webp" }
+  ],
+  "credentials": {
+    "florida_certified_general_contractor": "CGC1531295",
+    "bbb": { "accredited": true, "rating": "A+", "accredited_since": "2024-03-20" },
+    "home_depot": "Top 20 Contractor",
+    "awards": ["Orlando's Best General Contractor", "Benchmark Best of 2026", "Best of Business 2025"],
+    "business_started": "2021-04-08",
+    "entity": "Limited Liability Company (LLC)",
+    "principals": ["Eric Roman, CEO", "Michael Graham, Qualifying Partner"],
+    "languages": ["English", "Spanish"]
+  },
+  "values": [
+    { "title": "Results-Driven", "description": "We take initiative, move fast, and follow through so your project keeps progressing." },
+    { "title": "Humbly Confident", "description": "You get experienced guidance: we listen, collaborate, and make smart decisions." },
+    { "title": "We Treat Everyone Like Family", "description": "We lead with respect, kindness, and care for your home, business, and everyone involved." },
+    { "title": "Professional", "description": "Competent team, clean presentation, accountable work, and strong communication every step of the way." },
+    { "title": "Transparent Communication", "description": "Clear updates, honest answers, and full context so you always know what's happening and why." }
+  ],
+  "gallery": [
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/commercial/commercial-finished.2601071113256.jpg", "alt": "Completed commercial build in Orlando" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/commercial/commercial-finished-1.2601071113254.jpg", "alt": "Finished commercial interior" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/commercial/commercial-finished-2.2601071113252.jpg", "alt": "Commercial project handover" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/residential/Finished-residential.2601071102284.jpg", "alt": "Completed residential remodel" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/residential/Finished-residential-4.2601071101134.jpg", "alt": "Finished residential interior" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/residential/Finished-residential-5.2601071101131.jpg", "alt": "Finished residential kitchen" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/residential/Residential-2.2601071106485.jpg", "alt": "Residential construction in progress" },
+    { "photo": "https://www.wolfpackfl.com/images/photo-gallery/residential/Residential-4.2601071106488.jpg", "alt": "Residential framing work" }
+  ],
+  "brand_voice_sample": "We come from a long line of experienced construction workers and home contractors, and we grew up learning how to take care of customers through quality workmanship and honest service. Meet our wolf pack today.",
+  "differentiators": [
+    "Family-owned and operated",
+    "One quality, one price guarantee",
+    "Free, no-obligation estimates",
+    "Payment plans and financing available",
+    "One-stop-shop contractors - roofing, construction and remediation under one license",
+    "Named a Top 20 contractor by The Home Depot",
+    "We speak Spanish"
+  ],
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The current site runs on Scorpion with a native reCAPTCHA-protected form and a Roomvo assistant widget. Neither is the operator's GHL account - nothing auto-populated into crm.*."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_note": "APIFY_TOKEN is unset (no .env in the kit root) so /find-business could not run. Identity was confirmed instead from the client's own site, which links the exact GBP the operator supplied (g.page/r/CQY-5dz9ocTcEAE/review) and the same CID Google Maps resolves to. See business_profile.json for the rating/review-count provenance.",
+    "pages_scraped": ["/", "/about-us", "/about-us/meet-the-pack", "/roofing", "/residential-construction", "/commercial-construction", "/remediation-emergency", "/contact-us", "/projects", "/projects/commercial", "/projects/residential", "/projects/before-and-after"],
+    "socials_scraped": [],
+    "socials_note": "Instagram and Facebook both gate profile content behind a login wall for unauthenticated fetches; neither returned usable bio, team or review text. Their URLs are still recorded in social{} and link out from the footer.",
+    "other_sources": ["bbb.org profile (credentials, entity, years in business)"],
+    "generated_at": "2026-08-07",
+    "cost_estimate_usd": 0.28
+  }
+}

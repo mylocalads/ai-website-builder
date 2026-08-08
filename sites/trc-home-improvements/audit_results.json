@@ -1,0 +1,24 @@
+{
+  "slug": "trc-home-improvements",
+  "audited_url": "https://www.trchomeimprovements.com/",
+  "screenshot": "screenshots/trc-home-improvements.png",
+  "platform": "Wix",
+  "strengths": [
+    "Genuinely excellent project photography — dozens of real finished showers",
+    "Strong credential set already on the page (BBB seal, NC/SC licence numbers, 30 years)",
+    "Deep FAQ content and a large blog archive",
+    "Service-area subpages already exist for both Carolinas"
+  ],
+  "weaknesses": [
+    "Low-contrast green-on-photo text in the header and hero; several strings fail WCAG AA",
+    "No owner presence anywhere — Vince is the strongest asset and is invisible on his own site",
+    "Hero headline is a slogan, not a differentiator; no single clear primary CTA above the fold",
+    "Reviews sit in an unstyled widget at the very bottom, truncated with 'Show More'",
+    "Typography is inconsistent (Playfair, Avenir, Futura and Enriqueta all loaded)",
+    "Wix chrome and stray characters render at the top of the page ('Γ', 'top of page', 'BESbswy')",
+    "Copy has repeated grammatical breaks ('we in creating stunning bathrooms')",
+    "Stale promotional banner — '10% Off All Projects Until July 1st!'"
+  ],
+  "used_as_design_dna": false,
+  "_notes": { "generated_at": "2026-08-07", "note": "OPERATOR REFERENCE ONLY. Per the kit's anti-pattern lock, no layout, component or CSS pattern from this site was carried into the generated site. Brand tokens (colour direction) and business context only." }
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "trc-home-improvements",
+  "business_name": "TRC Home Improvements",
+  "legal_name": "TRC Home Improvement Services",
+  "tagline": "Bathroom Remodeling Contractors in Fort Mill, SC",
+  "phone": "+19806350166",
+  "phone_display": "(980) 635-0166",
+  "email": "info@trchomeimprovements.com",
+  "address": { "street": "1646 Hwy 160 W, Ste 105", "city": "Fort Mill", "state": "SC", "postal": "29708", "country": "US" },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": null,
+  "hours": { "monday": "8:00 AM – 6:00 PM", "tuesday": "8:00 AM – 6:00 PM", "wednesday": "8:00 AM – 6:00 PM", "thursday": "8:00 AM – 6:00 PM", "friday": "6:00 AM – 4:00 PM", "saturday": "9:00 AM – 3:00 PM" },
+  "rating": 5.0,
+  "review_count": 24,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 9,
+  "social": {
+    "facebook": "https://www.facebook.com/Trcpropertyservices",
+    "youtube": "https://www.youtube.com/@trchomeimprovements191"
+  },
+  "site_url": "https://www.trchomeimprovements.com/",
+  "logo_url": null,
+  "default_hero_photo": "/img/black-porcelain-walk-in-shower.jpg",
+  "default_hero_video": null,
+  "about_photo": "/img/custom-tile-shower-hero.jpg",
+  "brand": {
+    "fonts": { "display": null, "body": null, "detected_on_client_site": ["Playfair Display", "Avenir LT", "Futura LT", "Enriqueta"] },
+    "colors": { "bg": "#ffffff", "text": "#000000", "accent": "#10E698", "muted": null, "surface": null, "candidates": ["#10E698", "#1B5B3F", "#000000", "#FFFFFF"] }
+  },
+  "services": [
+    { "title": "Custom Tiled Showers", "_source": "scraped" },
+    { "title": "Tub-to-Shower Conversions", "_source": "scraped" },
+    { "title": "Walk-In Showers", "_source": "scraped" },
+    { "title": "Bathroom Remodeling", "_source": "scraped" },
+    { "title": "Flooring Installation", "_source": "scraped" }
+  ],
+  "service_areas": [
+    { "name": "Fort Mill", "state": "SC", "state_abbr": "sc", "slug": "fort-mill-sc", "_source": "scraped" },
+    { "name": "Rock Hill", "state": "SC", "state_abbr": "sc", "slug": "rock-hill-sc", "_source": "scraped" },
+    { "name": "Ballantyne", "state": "NC", "state_abbr": "nc", "slug": "ballantyne-nc", "_source": "scraped" },
+    { "name": "Indian Land", "state": "SC", "state_abbr": "sc", "slug": "indian-land-sc", "_source": "scraped" },
+    { "name": "Waxhaw", "state": "NC", "state_abbr": "nc", "slug": "waxhaw-nc", "_source": "scraped" },
+    { "name": "Indian Trail", "state": "NC", "state_abbr": "nc", "slug": "indian-trail-nc", "_source": "scraped" }
+  ],
+  "team_members": [
+    { "name": "Vincent \"Vince\" Taylor", "role": "Owner", "photo": null, "bio": "Third-generation contractor with 30+ years in the trade. Fully licensed general contractor in NC (#106823) and SC (#60594). Started TRC in 2017.", "_source": "bbb+homeguide", "_blocked": "No photo of the owner exists on any public profile — team_members left empty in config.json because the schema requires a photo." }
+  ],
+  "brand_voice_sample": "I was steeped in construction at an early age...I am a 3rd generation contractor who spent his childhood weekends working in the family business with all my cousins and uncles teaching me the trades that they had perfected!",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "Client's existing site uses Wix native forms + a Wix chat widget. Nothing carried over — GHL snippets are an operator paste-in."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_skipped_reason": "No APIFY_TOKEN present in the workspace (.env absent). Identity confirmed instead via BBB business profile (Mr. Vincent Taylor, Owner), Yelp and HomeGuide — all three list the same phone, address and website.",
+    "pages_scraped": ["/", "/bathrooms", "/flooring", "/contact-us", "/tubtoshower", "/walk-in-shower", "/customtile", "/faqs"],
+    "external_profiles_scraped": ["bbb.org", "yelp.com", "homeguide.com", "youtube.com"],
+    "socials_scraped": [],
+    "blocked": ["linkedin.com (Firecrawl unsupported)", "facebook.com (Firecrawl unsupported)", "reddit.com (Firecrawl unsupported)"],
+    "generated_at": "2026-08-07",
+    "cost_estimate_usd": 0.26
+  }
+}

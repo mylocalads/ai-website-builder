@@ -1,0 +1,19 @@
+{
+  "kind": "pricing",
+  "intro": "Flooring removal is priced by the square foot, and anyone who gives you a firm rate before seeing the floor is guessing. What is under the covering is what moves the number — thinset on a clean slab is the straightforward case, and tile over a mortar bed, tile over a second layer of old tile, or glue-down over a wood subfloor are all considerably more work. So rather than publish a rate card we cannot honour on your particular floor, here is exactly what we look at when we price one. Send a photo and the rough square footage and you will get a real number back, free and with no obligation.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What Your Quote Depends On",
+    "lede": "Five things move the price on a removal job. If you tell us about them up front, the number you get is the number you pay.",
+    "columns": ["What we look at", "Why it changes the price"],
+    "rows": [
+      ["What the covering is", "Ceramic and porcelain take more machine time than carpet or floating laminate. Large-format and wood-look plank tile are the most stubborn of all."],
+      ["What is underneath it", "Thinset on a bare slab is the easy case. A mortar bed, a second layer of old tile, or a wood subfloor each add labour that cannot be seen from the surface."],
+      ["Square footage and layout", "Open living areas run faster per foot than a house full of small rooms, closets and tight thresholds where the machine cannot reach."],
+      ["How much prep the slab needs", "Leftover adhesive, mastic and high spots have to be ground off before anything new goes down. Some slabs need very little; some need a full pass."],
+      ["Access and occupancy", "Ground-floor with a driveway is straightforward. Third-floor condo with elevator-only access, association hours and shared corridors is not — and neither is a house or office you are still living and working in."]
+    ],
+    "footnote": "Removal, adhesive grinding, debris haul-off and disposal are quoted as one price. There is no separate charge for the dust containment — it is how we work, not an upgrade."
+  },
+  "notes": "Quotes are free and carry no obligation. Prep-only jobs are welcome if another company already pulled your floor and left you with a slab your installer will not work over."
+}

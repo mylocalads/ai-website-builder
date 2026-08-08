@@ -1,0 +1,86 @@
+{
+  "slug": "greentree-inc",
+  "url": "https://greentreeinc.com",
+  "audited_at": "2026-08-07",
+  "platform": "WordPress 6.5.9 · Total theme v5.19 · WPBakery Page Builder 6.13.0",
+  "page_count": 4,
+  "pages": ["/", "/services/", "/testimonials/", "/contact-2/"],
+  "screenshot": "screenshots/greentree-inc.png",
+  "_screenshot_note": "Captured in the browser pane at 1280px. Operator reference ONLY — never design DNA. The generated site follows the owl template.",
+  "strengths": [
+    "Real brand mark — the GreenTree oak logo is distinctive and the deep-green palette is coherent and ownable.",
+    "Honest, specific positioning: commercial-only, maintenance-only, since 1984, Minority Certified. Most competitors in this vertical say far less.",
+    "The GO GREENTREE acrostic is a genuine brand property, not filler.",
+    "Loads fast — there is almost nothing on it.",
+    "Viewport meta present; the Total theme is responsive out of the box."
+  ],
+  "weaknesses": [
+    {
+      "issue": "The homepage has no <h1> at all",
+      "severity": "high",
+      "detail": "document.querySelectorAll('h1') returns zero elements on /. The page's only headings are two h2s. This is both a ranking defect and a screen-reader defect on the single most important page."
+    },
+    {
+      "issue": "No meta description on any page",
+      "severity": "high",
+      "detail": "Confirmed null on / and /services/. Google is writing their search snippet for them."
+    },
+    {
+      "issue": "The phone number is not a link anywhere on the site",
+      "severity": "high",
+      "detail": "Zero a[href^='tel:'] elements on / or /services/. On mobile the number cannot be tapped to call — for a business whose only conversion path is a phone call, this is the costliest single defect."
+    },
+    {
+      "issue": "No structured data",
+      "severity": "medium",
+      "detail": "Zero JSON-LD blocks. No LocalBusiness, no Service, no FAQPage. Nothing for Google to build a knowledge panel from."
+    },
+    {
+      "issue": "No street address published anywhere",
+      "severity": "medium",
+      "detail": "Contact page lists only 'Miami, FL USA'. Third-party directories disagree on the real address, which suggests the listings are unmanaged."
+    },
+    {
+      "issue": "Another company's website is live inside this one",
+      "severity": "high",
+      "detail": "/193-2/ is titled ABOUT and serves complete marketing copy for Fluidity Funding Solutions — a Denver business lender — including its logo, its Denver address, its phone number, and an 'APPY NOW' typo. Unlinked from nav but publicly reachable and indexable. Left behind by whoever built the site."
+    },
+    {
+      "issue": "The four homepage service tiles do not link anywhere",
+      "severity": "medium",
+      "detail": "MAINTENANCE / PRUNING / IRRIGATION / PLANTING are presented as the core offering but there are no service pages behind them — everything collapses into one /services/ page."
+    },
+    {
+      "issue": "No service-area pages",
+      "severity": "medium",
+      "detail": "Three counties are claimed in the header banner and nowhere else. No local landing surface at all."
+    },
+    {
+      "issue": "Testimonials are not credible",
+      "severity": "high",
+      "detail": "Ten reviews under generic stock names with no company attribution, on a commercial-only contractor's site. Reads as agency filler. For a B2B buyer who will check, this actively damages trust."
+    },
+    {
+      "issue": "Imagery is all temperate-climate stock",
+      "severity": "medium",
+      "detail": "Spruce, hostas and begonia borders — the hero is plainly a northern office park. A South Florida commercial landscaper showing no South Florida undercuts the local claim. Two assets are outright unusable: a blurry upscaled hedge and a 3D-rendered turf clipart."
+    },
+    {
+      "issue": "The hero carries no headline, no value proposition and no CTA",
+      "severity": "medium",
+      "detail": "The first viewport is a photograph with nothing on it. The 'Quality. Service. Dependability.' line and the welcome copy sit below the fold."
+    },
+    {
+      "issue": "Contact form has no visible spam protection and no confirmed destination",
+      "severity": "low",
+      "detail": "Native WordPress form, one on the homepage and one on /contact-2/. No captcha detected."
+    },
+    {
+      "issue": "Duplicate and orphaned pages in the CMS",
+      "severity": "low",
+      "detail": "/home/, /home-2/, /contact/ and /contact-2/ all exist. Nav points at /contact-2/ while /contact/ also resolves."
+    }
+  ],
+  "summary": "A tidy but nearly empty four-page WordPress brochure with strong underlying positioning that the site does almost nothing with. Three defects are urgent regardless of whether a rebuild happens: the homepage has no h1, the phone number is not tappable, and a Denver lending company's marketing site is live at /193-2/. The material for a much stronger site already exists in the client's own copy — 42 years, commercial-only, maintenance-only, Minority Certified, and the GO GREENTREE acrostic — it is simply buried.",
+  "_notes": { "cost_usd": 0.0 }
+}

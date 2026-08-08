@@ -1,0 +1,152 @@
+{
+  "kind": "config",
+  "business_name": "TRC Home Improvements",
+  "legal_name": "TRC Home Improvement Services",
+  "tagline": "Bathroom Remodeling Contractors in Fort Mill, SC",
+  "phone": "+19806350166",
+  "phone_display": "(980) 635-0166",
+  "email": "info@trchomeimprovements.com",
+  "address": {
+    "street": "1646 Hwy 160 W, Ste 105",
+    "city": "Fort Mill",
+    "state": "SC",
+    "postal": "29708",
+    "country": "US"
+  },
+  "hours": {
+    "monday": "8:00 AM – 6:00 PM",
+    "tuesday": "8:00 AM – 6:00 PM",
+    "wednesday": "8:00 AM – 6:00 PM",
+    "thursday": "8:00 AM – 6:00 PM",
+    "friday": "6:00 AM – 4:00 PM",
+    "saturday": "9:00 AM – 3:00 PM"
+  },
+  "site_url": "https://trc-home-improvements.vercel.app",
+  "rating": 5,
+  "review_count": 24,
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 9,
+  "social": {
+    "facebook": "https://www.facebook.com/Trcpropertyservices",
+    "youtube": "https://www.youtube.com/@trchomeimprovements191"
+  },
+  "logo_url": "/logo.svg",
+  "default_hero_photo": "/img/black-porcelain-walk-in-shower.jpg",
+  "about_photo": "/img/custom-tile-shower-hero.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "You deal with Vince, not a salesman",
+      "description": "Vincent Taylor owns TRC, prices the job himself, and is on site while it gets built. The person who quotes your bathroom is the person answerable for it."
+    },
+    {
+      "title": "The waterproofing you never see",
+      "description": "Every custom shower gets a waterproof membrane, a properly sloped pan and full prep before a single tile goes up. That is the part that decides whether a shower lasts twenty years or two."
+    },
+    {
+      "title": "Licensed in both Carolinas",
+      "description": "NC General Contractor #106823 and SC #60594, BBB Accredited with an A+ rating. One crew that can legally work either side of the state line."
+    },
+    {
+      "title": "A two-day option when you want one",
+      "description": "Not every bathroom needs weeks of demo. Acrylic and composite wall systems go in over a couple of days with virtually no dust or mess."
+    }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": { "enabled": false, "us_label": "US", "them_label": "THEM", "rows": [] },
+  "gallery": [
+    {
+      "title": "Black Porcelain Walk-In Shower",
+      "location": "Fort Mill, SC",
+      "photo": "/img/black-porcelain-walk-in-shower.jpg",
+      "alt": "Black porcelain tiled walk-in shower with a full-height glass enclosure, matte black rainfall heads and a hexagon mosaic floor",
+      "description": "Full-height black porcelain slabs, twin rainfall heads, extra-large bench seat and a recessed soap niche behind frameless glass."
+    },
+    {
+      "title": "Calacatta Porcelain Walk-In Shower",
+      "location": "Fort Mill, SC",
+      "photo": "/img/custom-tile-shower-hero.jpg",
+      "alt": "Walk-in shower tiled in Calacatta-look porcelain with gold veining and a black hexagon mosaic floor",
+      "description": "Book-matched Calacatta-look porcelain walls set against a black hex pan, with a single frameless glass panel and no door to clean."
+    },
+    {
+      "title": "Subway Tile & Freestanding Tub",
+      "location": "Ballantyne, NC",
+      "photo": "/img/ballantyne-bathroom-after.jpg",
+      "alt": "Remodeled bathroom with a white subway tile shower, matte black fixtures and a freestanding soaking tub under plantation shutters",
+      "description": "A dated garden tub came out, a tiled shower and a freestanding soaker went in — with wainscot subway running the full room."
+    },
+    {
+      "title": "Azul Porcelain & Antique Brass",
+      "location": "Rock Hill, SC",
+      "photo": "/img/azul-porcelain-antique-brass.jpg",
+      "alt": "Marbled azul porcelain tiled shower with antique brass fixtures, a corner bench seat and a mosaic pan",
+      "description": "Large-format marbled porcelain with a corner bench, matching mosaic pan and floor, finished in antique brass."
+    },
+    {
+      "title": "Marble-Look Shower With Full Bench",
+      "location": "Fort Mill, SC",
+      "photo": "/img/custom-tiled-shower-bench-niche.jpg",
+      "alt": "Marble-look tiled shower with a full-length bench seat, basketweave mosaic floor and frameless glass door",
+      "description": "A full-length bench, basketweave mosaic pan and a recessed niche, built into a sloped-ceiling master bath."
+    },
+    {
+      "title": "Subway Tile & Patterned Pan",
+      "location": "Rock Hill, SC",
+      "photo": "/img/subway-tiled-shower-rock-hill.jpg",
+      "alt": "White subway tile shower with black grout accents, a patterned encaustic-look floor and matte black fixtures",
+      "description": "Stacked white subway walls with a patterned encaustic-look pan and niche — a small footprint that does not read small."
+    },
+    {
+      "title": "Door-Less Wave-Tile Shower",
+      "location": "Indian Land, SC",
+      "photo": "/img/doorless-glass-shower.jpg",
+      "alt": "Door-less walk-in shower with textured wave tile walls, a single glass panel and a mosaic pan",
+      "description": "One fixed glass panel instead of a door — nothing to clean, nothing in the way, and the room feels twice the size."
+    },
+    {
+      "title": "Freestanding Tub & Double Vanity",
+      "location": "Waxhaw, NC",
+      "photo": "/img/freestanding-tub-wall-faucet.jpg",
+      "alt": "Remodeled master bathroom with a freestanding soaking tub, wall-mounted tub filler and a double vanity",
+      "description": "The unused garden tub became a freestanding soaker with a wall-mounted filler, opening the floor back up."
+    }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "What We Build",
+    "heading_lead": "Showers and bathrooms",
+    "heading_rest": "built to outlast the house",
+    "subtitle": "Custom tile, tub-to-shower conversions, walk-in showers and full bathroom renovations across Fort Mill, Rock Hill and South Charlotte."
+  },
+  "estimate_form": {
+    "heading": "Free Design Consultation & Written Estimate",
+    "services": [
+      "Custom Tiled Shower",
+      "Tub-to-Shower Conversion",
+      "Walk-In Shower",
+      "Complete Bathroom Remodel",
+      "2-Day Acrylic Shower System",
+      "Freestanding Tub Installation",
+      "Flooring Installation",
+      "Other"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Let's Talk About Your Bathroom",
+    "body": "Free design consultation, a written estimate, and no deposit to book it. Vince does the walkthrough himself across Fort Mill, Rock Hill, Ballantyne, Indian Land, Waxhaw and Indian Trail.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Bathroom Remodeling Advice",
+    "description": "Straight answers on showers, tile, timelines and budgets from a licensed Carolinas bathroom contractor."
+  }
+}

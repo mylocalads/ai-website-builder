@@ -1,0 +1,164 @@
+{
+  "kind": "config",
+  "business_name": "GreenTree Inc.",
+  "legal_name": "GreenTree, Inc.",
+  "tagline": "Commercial landscape maintenance across Miami-Dade, Broward and Palm Beach — since 1984",
+  "phone": "+13056658128",
+  "phone_display": "(305) 665-8128",
+  "email": "landscape@greentreeinc.com",
+  "address": {
+    "city": "Miami",
+    "state": "FL",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "hours": {
+    "monday": "8:00 AM - 4:30 PM",
+    "tuesday": "8:00 AM - 4:30 PM",
+    "wednesday": "8:00 AM - 4:30 PM",
+    "thursday": "8:00 AM - 4:30 PM",
+    "friday": "8:00 AM - 4:30 PM"
+  },
+  "site_url": "https://greentree-inc.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": 42,
+  "social": {
+    "facebook": "https://www.facebook.com/GreentreeincFL/"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/commercial-mowing-office-lawn.jpg",
+  "about_photo": "/img/manicured-grounds-flower-beds.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Forty-two years on South Florida properties",
+      "description": "GreenTree has maintained commercial grounds here since 1984. In a trade where service quietly decays after the first ninety days, four decades of renewed contracts is the only proof that actually means anything."
+    },
+    {
+      "title": "Maintenance is the whole business, not the side business",
+      "description": "Most landscape companies treat maintenance as what the crews do between installations. It is the only thing GreenTree has done since 1984 — which is why the schedule holds and the details do not slip."
+    },
+    {
+      "title": "Family owned and run — no rotating account manager",
+      "description": "The trade is consolidating fast, and buyers keep watching the local company they hired turn into a regional brand with a call centre. GreenTree is still independent, still family run, and the people answering are the people responsible."
+    },
+    {
+      "title": "A Minority Certified vendor your procurement team can approve",
+      "description": "If your organisation carries supplier-diversity requirements, GreenTree meets them without asking you to trade down on quality — a certification most commercial landscape contractors in South Florida cannot offer."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Scheduled mowing on a commercial site",
+      "location": "South Florida",
+      "photo": "/img/commercial-mowing-office-lawn.jpg",
+      "alt": "Crew member in a high-visibility vest mowing a commercial lawn on a zero-turn mower beside a glass office building",
+      "description": "Grounds run on a fixed schedule, so your team knows exactly when the property is serviced."
+    },
+    {
+      "title": "Beds and turf held to one standard",
+      "location": "South Florida",
+      "photo": "/img/manicured-grounds-flower-beds.jpg",
+      "alt": "Manicured commercial lawn with curved planting beds, mixed shrubs and seasonal colour",
+      "description": "Clean bed edges and weed-free borders are what a visitor reads as a well-run property."
+    },
+    {
+      "title": "Mature trees and open lawn",
+      "location": "South Florida",
+      "photo": "/img/open-lawn-mature-trees.jpg",
+      "alt": "Broad open lawn framed by mature shade trees and dense shrub borders",
+      "description": "Large open turf and mature plantings need different attention in the same visit — that is what a maintenance-only crew is built for."
+    },
+    {
+      "title": "Irrigation checked on a cycle",
+      "location": "South Florida",
+      "photo": "/img/irrigation-head-spraying.jpg",
+      "alt": "Irrigation head spraying water in an arc across a green lawn",
+      "description": "Heads, arcs and coverage inspected on schedule, so a fault is found before the turf shows it."
+    },
+    {
+      "title": "Pruning cut to the plant, not the calendar",
+      "location": "South Florida",
+      "photo": "/img/pruning-shears-rose-cane.jpg",
+      "alt": "Hand pruners making a clean cut on a rose cane above an outward-facing bud",
+      "description": "Cutting to the growth habit is what keeps the shape between visits instead of forcing a hard cutback later."
+    },
+    {
+      "title": "Seasonal colour at the entrance",
+      "location": "South Florida",
+      "photo": "/img/rose-in-bloom.jpg",
+      "alt": "Close-up of an apricot-coloured rose in full bloom against dark foliage",
+      "description": "Entrance plantings are the first thing a tenant, client or inspector sees."
+    },
+    {
+      "title": "Defined edges through common areas",
+      "location": "South Florida",
+      "photo": "/img/lawn-path-flower-borders.jpg",
+      "alt": "Curving lawn path bordered by dense red and white flower beds",
+      "description": "Edging is the cheapest thing on a maintenance contract and the first thing anyone notices when it stops happening."
+    },
+    {
+      "title": "Formal beds kept in shape",
+      "location": "South Florida",
+      "photo": "/img/formal-garden-planting-beds.jpg",
+      "alt": "Formal garden with symmetrical planting beds, clipped borders and a central fountain",
+      "description": "Structured plantings need a crew that returns on the same cycle — not one that visits when someone complains."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Commercial landscape",
+    "heading_rest": "maintenance, and only that",
+    "subtitle": "Maintenance, pruning, irrigation and planting for commercial properties across Miami-Dade, Broward and Palm Beach Counties — one company, one crew, one scope."
+  },
+  "estimate_form": {
+    "heading": "Request a proposal",
+    "services": [
+      "Landscape Maintenance",
+      "Lawn Mowing",
+      "Hedge & Shrub Pruning",
+      "Weeding",
+      "Integrated Pest Management (IPM)",
+      "Irrigation System Inspection",
+      "Planting & Seasonal Colour",
+      "Full-property maintenance contract",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Ask us for a proposal on your property",
+    "body": "GreenTree has maintained commercial grounds across Miami-Dade, Broward and Palm Beach Counties since 1984 — family owned, Minority Certified, and dedicated solely to landscape maintenance.",
+    "cta_text": "Request a proposal",
+    "cta_href": "/contact"
+  },
+  "blog_section": {
+    "heading": "Grounds Management Notes",
+    "description": "Practical guidance for South Florida property managers, HOA boards and facility teams on turf, irrigation, pruning cycles and what a maintenance contract should actually cover."
+  }
+}
