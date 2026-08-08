@@ -4408,3 +4408,49 @@ Worth a one-line fix in a future batch.
 
 **Remaining from the handoff:** the commit, and the other 26 sites. Per the handoff's own warning,
 each has its own caps — audit per site, never assume the template's 5/5.
+
+## 2026-08-09 — mylocalads.co DNS cutover COMPLETE
+
+Apex A record moved 162.159.140.166 (GoHighLevel behind Cloudflare) → 76.76.21.21
+(Vercel). Propagated to all four public resolvers immediately; authoritative
+(Google Cloud DNS, managed via Squarespace) confirms.
+
+**TLS needed a manual nudge.** Vercel served the site over plain HTTP within
+seconds but did not auto-issue a certificate — ~10 minutes of polling returned
+SSL_ERROR_SYSCALL. DNS was clean (single A record, no CAA, no AAAA), so nothing
+was blocking ACME; Vercel simply had not re-run verification since the domain was
+attached 9 days earlier. `vercel certs issue mylocalads.co` resolved it in 9s.
+Worth trying first on the next cutover rather than waiting.
+
+Verified on the live domain: 17 core routes 200, all 3 case-study routes 200,
+all 4 legacy GHL redirects 301 to their intended targets, llms.txt / index.md /
+robots.txt / sitemap all 200, checkout creates a live Stripe session, and the
+webhook answers 400 to unsigned and 405 to GET.
+
+### Mobile Results menu was linking to 404s (fixed, 83adb5c)
+
+Found while sweeping links post-cutover, NOT reported by any build error. The
+mobile submenu built `/results/${c.slug}` while the desktop dropdown used the
+precomputed `/results#${c.slug}`. Bare category paths were never routes — only
+/results/{category}/{client} exists — so all four mobile Results links 404'd.
+
+Desktop was always correct, which is exactly why it survived this long: nobody
+testing at desktop width would ever see it. Now sweeping every internal link
+across all built pages after a change (13 unique, all resolve).
+
+### Site-wide tracking added (37097f9)
+
+Wicked Reports + Meta Pixel in <head>, Elfsight in body-end, injected via
+set:html because Astro rewrites any <script> it can parse. Wrapped in
+tracking:head / tracking:body_end markers. Emitted HTML verified byte-identical
+to the operator's paste.
+
+### Outstanding
+
+- `www.mylocalads.co` still CNAMEs to GoHighLevel (sites.ludicrous.cloud), which
+  301s to the apex, so it works — but it breaks if that GHL site is ever
+  disconnected. Vercel wants `A www.mylocalads.co 76.76.21.21`; the existing
+  CNAME must be deleted first, since a host cannot have both.
+- Stripe webhook endpoint URL updated to the new domain by the operator.
+- Local/ISP resolvers may still cache the old IP for up to the previous TTL —
+  verification here pinned 76.76.21.21 with curl --resolve.
