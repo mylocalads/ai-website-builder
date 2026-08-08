@@ -4406,8 +4406,15 @@ Pre-existing data issue, not introduced here and not fixed here: `business_name`
 that way in every `<title>` site-wide, and now also in `llms.txt`, `/index.md` and the agent summary.
 Worth a one-line fix in a future batch.
 
-**Remaining from the handoff:** the commit, and the other 26 sites. Per the handoff's own warning,
-each has its own caps — audit per site, never assume the template's 5/5.
+**Handoff closed.** Committed as `a0eb2cb` on `feat/firefly-cd-seo-backport`, pushed to origin. The
+handoff doc itself was corrected in `fc0f10d` — it had four errors that would have caused damage if
+followed literally (six cap call sites listed instead of eight; the wrong two service pages named as
+at-risk; a stale phone in the checklist; "mirror BaseLayout" understating that copying it breaks
+`/our-work/`'s project map).
+
+**The other 26 pre-`556acef` sites are explicitly out of scope** — not scheduled, not started. Only
+`firefly-cd` was on a customer domain. If that rollout is ever picked up it needs its own handoff,
+because every site has its own caps — audit per site, never assume the template's 5/5.
 
 ## 2026-08-09 — mylocalads.co DNS cutover COMPLETE
 
