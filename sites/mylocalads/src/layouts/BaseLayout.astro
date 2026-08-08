@@ -17,6 +17,36 @@ const defaultOg = ogImage ?? 'https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJe
 // One @graph rather than separate blocks, so Organization and WebSite are
 // linked by @id and search engines resolve them as the same entity. Pages add
 // their own schema (FAQPage, Service/Offer) through the `head` slot below.
+// ---------------------------------------------------------------------------
+// THIRD-PARTY TRACKING — operator-supplied snippets, pasted verbatim.
+//
+// Injected with set:html rather than written as <script> tags, because Astro
+// bundles and rewrites scripts it can see, which breaks vendor loaders. Do NOT
+// reformat, minify, or "tidy" these — replace them only with a new paste.
+// ---------------------------------------------------------------------------
+const TRACKING_HEAD = `<script type="text/javascript" src="https://widget.wickedreports.com/v2/5190/wr-5428f92e8384390e48e540c5689af517.js" async></script>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4884245638348257');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4884245638348257&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->`;
+
+const TRACKING_BODY_END = `<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-758cee4e-8c47-4f74-86f8-d6b939486119" data-elfsight-app-lazy></div>`;
+
 const siteLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -92,6 +122,8 @@ const siteLd = {
 
     {/* Pages inject their own structured data and agent summaries here. */}
     <slot name="head" />
+
+    <Fragment set:html={`<!-- tracking:head -->\n${TRACKING_HEAD}\n<!-- /tracking:head -->`} />
   </head>
   <body>
     <a href="#main" class="skip-nav">Skip to content</a>
@@ -112,5 +144,7 @@ const siteLd = {
         });
       });
     </script>
+
+    <Fragment set:html={`<!-- tracking:body_end -->\n${TRACKING_BODY_END}\n<!-- /tracking:body_end -->`} />
   </body>
 </html>
