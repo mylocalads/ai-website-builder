@@ -4454,3 +4454,28 @@ to the operator's paste.
 - Stripe webhook endpoint URL updated to the new domain by the operator.
 - Local/ISP resolvers may still cache the old IP for up to the previous TTL —
   verification here pinned 76.76.21.21 with curl --resolve.
+
+### www repointed to Vercel (2026-08-09)
+
+CNAME to sites.ludicrous.cloud (GoHighLevel) deleted; replaced with
+`A www.mylocalads.co 76.76.21.21`. Propagated to all resolvers, authoritative
+confirms, no CNAME remains.
+
+TLS did NOT auto-issue again — same as the apex. `vercel certs issue
+www.mylocalads.co` resolved it in 14s. **Treat this as the expected step on any
+Vercel domain attached before its DNS is pointed**, not an anomaly: Vercel
+verifies at attach time and does not appear to re-check when the record changes
+later.
+
+Both certs now on file (90d, auto-renew): `mylocalads.co`, `www.mylocalads.co`.
+
+Verified on www: 6 routes 200 including a case-study route and llms.txt; apex
+unaffected. The dependency on the GoHighLevel site is gone — www no longer
+relies on GHL's redirect to reach us.
+
+**www serves 200 directly rather than redirecting to the apex.** Not a
+duplicate-content problem in practice: `Astro.site` is pinned to
+https://mylocalads.co, so canonical and og:url on every www page already point
+at the apex — verified live. A 308 is still tidier and is a Vercel
+dashboard-only setting (Project → Settings → Domains → www → Redirect to
+mylocalads.co); the CLI exposes no flag for it.
