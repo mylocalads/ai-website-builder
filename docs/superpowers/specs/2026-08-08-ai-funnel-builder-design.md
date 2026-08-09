@@ -52,7 +52,7 @@ Recorded so the implementation does not relitigate them.
 | D7 | Google Maps key | **One MLA key, referrer-restricted per deploy** | Contractors will not have their own key; one billing account we control |
 | D8 | Legal | **Footer-only Privacy + Terms, same domain** | Meta/Google ad review generally wants a crawlable privacy URL |
 | D9 | MLA house CTA | **Ships on every funnel, default ON** | It is the agency's own lead source and belongs on every funnel we deploy |
-| D10 | Pipeline gating | **Zero gates before deploy** | The operator wants one command in, a live URL out |
+| D10 | Pipeline gating | **One combined cost + business-match confirmation, then zero gates through deploy** | Per-step pauses cost the operator seven interruptions to answer two questions that fit on one card |
 | D11 | Tracking phone + pixel | **Mandatory request, delivered post-deploy** | They cannot gate the build, but the run is not complete without them |
 
 ---
@@ -216,52 +216,67 @@ fires so attribution survives the hop.
 
 ---
 
-## 6. Pipeline — zero-gate
+## 6. Pipeline — one confirmation, then straight through
 
 ```
 /build-funnel {url}
-  → intake-from-web → find-business → scrape-content (conditional)
+  → find-business (GBP lookup, ~$0.004)
+  → ►► THE ONE CONFIRMATION ◄◄   business match + projected spend
+  → intake-from-web → scrape-content (conditional)
   → local-research → design-reference → funnel-generate → vercel-deploy
   → short-link (only with --short-link {days})
   → POST-DEPLOY HANDBACK
 ```
 
-**The pipeline does not pause.** There is no per-step approval, no design-approval gate, no
-config-summary confirmation. One command in, a live URL out. This is the deliberate inverse
-of `ai-website-builder`'s pause-after-every-step default, and `CLAUDE.md` in the new repo
-must say so explicitly, because the parent kit's instincts are the opposite.
+**The pipeline pauses exactly once**, immediately after the GBP lookup and before any
+Firecrawl spend. After that single card is confirmed it runs straight through to a live URL
+with no further approval, no design gate, and no config-summary confirmation. This is the
+deliberate inverse of `ai-website-builder`'s pause-after-every-step default, and `CLAUDE.md`
+in the new repo must say so explicitly, because the parent kit's instincts are the opposite.
 
-Two consequences follow, and both need an explicit rule rather than a prompt:
+### 6.1 The one confirmation
 
-### 6.1 Cost pre-authorization (replaces per-step cost approval)
+The parent kit's pauses were load-bearing for two things: cost approval and business-match
+correctness. Both are answerable from the GBP result alone, so both collapse onto one card,
+shown before a cent of Firecrawl spend:
 
-The parent kit stops and asks before every paid action. That is incompatible with D10, so
-the funnel kit pre-authorizes a ceiling instead:
+```
+Matched from {supplied-url}:
 
-> Invoking `/build-funnel` authorizes up to **$0.40** of paid intake (GBP lookup ~$0.004 +
-> Firecrawl homepage ~$0.02 + inner-page batch ~$0.10–0.20 + up to 2 socials ~$0.04).
-> A run projected to exceed the ceiling — an unusually large site, many social profiles, a
-> retry after a failed batch — **stops and asks**, naming the projected figure.
+  {Business Name}
+  {street}, {city}, {state} {postal}
+  {phone}    ★ {rating} ({review_count} reviews)
+  GBP website: {gbp-website}          ✓ domain matches supplied URL
 
-The ceiling is stated in the new `CLAUDE.md` and echoed in the post-deploy handback with
-actual spend.
+Proceeding will spend up to $0.36 on intake:
+  Firecrawl homepage         ~$0.02
+  Inner pages (up to 8)      ~$0.16–0.30
+  Social profiles (up to 2)  ~$0.04
+Already spent: $0.004 (GBP lookup)
 
-### 6.2 Business-match confidence (replaces the GBP confirmation card)
+Build and deploy the funnel?  [y/N]
+```
 
-The parent kit hard-stops on a GBP confirmation card. Without it, a wrong match silently
-produces a funnel for the wrong business. Rule:
+The GBP lookup itself (~$0.004) is authorized by invoking the command — it is what produces
+the card, and it is two orders of magnitude below the batch it gates.
 
-- The command's input is a **URL**, so the top GBP result is auto-accepted when its listed
-  website domain matches the supplied domain (registrable domain, `www` ignored).
-- **No domain match, or multiple GBP results with the same domain → stop and ask.** This is
-  a correctness gate, not an approval gate, and is the one permitted interruption.
+The card always shows whether the GBP-listed website domain matches the supplied URL
+(registrable domain, `www` ignored). A mismatch, or multiple GBP hits on the same domain,
+renders as `⚠ no domain match — verify this is the right business` rather than a separate
+prompt: the operator is already reading this card, so an ambiguous match is information on
+it, not a second interruption.
 
-### 6.3 Skill changes vs the parent kit
+**Cost overrun does not re-prompt.** The figure on the card is a ceiling, not an estimate.
+A site large enough to exceed it has its inner-page batch trimmed to fit, and the handback
+reports what was trimmed. Stopping mid-run to ask about pennies would break the one thing
+D10 is for.
+
+### 6.2 Skill changes vs the parent kit
 
 | Skill | Change |
 |---|---|
-| `intake-from-web` | GBP **reviews become load-bearing** — they are the step-1 carousel, not a nice-to-have. Confirmation card replaced by §6.2. |
-| `find-business` | Unchanged; invoked internally. |
+| `intake-from-web` | GBP **reviews become load-bearing** — they are the step-1 carousel, not a nice-to-have. No longer owns a confirmation card; it starts already-confirmed (§6.1). |
+| `find-business` | Unchanged, but **hoisted out** of `intake-from-web` to run first as its own step, because its result is what the one confirmation card is built from. |
 | `scrape-content` | Unchanged; still conditional on a blocked/thin Firecrawl pass. |
 | `local-research` | Kept. Copy angles drive the step-1 headline, the timeline options, and the step-2 FAQ. |
 | `design-reference` | Kept. New `reference-libraries/booking-funnel.json` with the Firefly funnel as `role: "primary"`. |
@@ -280,7 +295,8 @@ operator-supplied config it deliberately did not block on** (D11). `funnel-gener
 prints them as the last thing the operator sees:
 
 ```
-DEPLOYED — https://{slug}.vercel.app        Intake spend: $0.NN
+DEPLOYED — https://{slug}.vercel.app        Intake spend: $0.NN of $0.36
+                                            (inner-page batch trimmed: N pages)
 
 NOT YET LIVE-READY. Three items are required before sending traffic:
 
@@ -335,5 +351,5 @@ a `webhook.site` URL and confirm both fires land with the expected payload shape
 | Phase | Scope | Done when |
 |---|---|---|
 | 1 | Repo scaffold, `booking-funnel` template, `funnel-generate`, `vercel-deploy` | A funnel builds and deploys from hand-written content |
-| 2 | `intake-from-web`, `find-business`, `scrape-content`, `local-research`, `design-reference` ports; `/build-funnel` orchestrator | One URL in, live funnel out, zero gates |
+| 2 | `intake-from-web`, `find-business`, `scrape-content`, `local-research`, `design-reference` ports; `/build-funnel` orchestrator | One URL in, one confirmation, live funnel out |
 | 3 | `funnel-edit`, `verify-funnel.mjs`, `pending-config.json` handback | A run refuses to report complete with config outstanding |
