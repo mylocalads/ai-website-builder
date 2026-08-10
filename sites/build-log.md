@@ -4602,3 +4602,36 @@ score. That trade was not worth making silently.
 Still outstanding and mostly not ours: unused JS 445 KiB and TBT 320 ms (GHL widget SDKs), the
 ">4 preconnect" warning (injected by those SDKs at runtime, not present in our HTML), 7
 non-composited animations, and CLS 0.093.
+
+### 2026-08-10 — firefly-cd: fix "Why Choose Us" printing PNG filenames as text
+
+Deploy `firefly-qw0dts2vz`. Snapshot `.site-edit-history/2026-08-10T14:35:18Z-icn5wq/`.
+
+**A regression from the image-localisation pass, live on the homepage and reported by the operator,
+not caught by any check I ran.**
+
+`WhyChooseUs.astro` supports two kinds of icon and branched on `isUrl(i.icon)`: an absolute URL
+rendered as a CSS mask, anything else printed as text (the component is built to accept an emoji).
+Localising images rewrote those icons from `https://assets.cdn.filesafe.space/…png` to bare
+filenames — which are not URLs — so all four fell through to the emoji branch and the site displayed
+`685b1f5239b665cae31aaf60-86c1046c.png` to customers.
+
+Fixed by detecting an image by *shape* rather than by protocol: absolute URL **or** an image file
+extension, then resolving through `imageUrl()`. Only a resolved absolute path renders as a mask, so
+anything that fails to resolve degrades to text rather than emitting a `url()` that 404s.
+
+**Why the earlier verification missed it.** Every check was aimed at images that render as `<img>` or
+as `background-image`: broken-image counts, missing width/height, unresolved `/_astro` refs, bare
+filenames in `src=`/`poster=`/`url()`. This icon is none of those — it is a CSS **custom property**
+(`--mask`) consumed by `mask-image`, and the failure mode was not a broken image but *correct text
+rendering of the wrong string*. A grep for `<img` and `background-image` cannot see it.
+
+The generalisable lesson: after changing the *shape* of a content value, audit every consumer of that
+field, not every consumer of the obvious HTML tag. `grep -rn "\.icon"` would have found this;
+`grep -rn "<img"` never could.
+
+Swept the other components for the same pattern — only `WhyChooseUs.astro` branched on a URL test;
+the remaining `https?:` matches are schema.org context strings and real links.
+
+Verified live: zero filenames rendered as text, 4 masks emitted, all 4 mask assets 200, icons render
+60×60 in brand teal, all 24 routes still 200.
