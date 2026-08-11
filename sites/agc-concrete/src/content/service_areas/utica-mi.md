@@ -1,15 +1,12 @@
 ---
 name: Utica
+county: Macomb County
 state: Michigan
 state_abbr: mi
-county: Macomb County
-neighborhoods: []
-local_context: Utica is one of AGC Concrete's listed Macomb County service areas, with the same residential and commercial concrete work as the rest of our footprint.
-hero_photo: https://storage.googleapis.com/msgsndr/mjp4bpTt1mVBXcb46nzY/media/68687db463f9ecb2385d738d.png
-landmark_photo: https://upload.wikimedia.org/wikipedia/commons/6/63/Uticamiwelcome.jpg
-landmark_alt: Welcome to Utica, Michigan sign
-order: 5
+order: 4
+local_context: "Utica homeowners call us for driveways, patios, and stamped concrete work year-round."
+about_body: "We serve Utica as part of our regular Macomb County coverage, within about 30 miles of our Clinton Township office."
 gallery: []
 ---
 
-Concrete driveways, patios, and sidewalks for Utica, MI homeowners and businesses.
+AGC Concrete pours driveways, patios, and foundations for homeowners and businesses throughout Utica, MI — licensed, insured, and backed by a workmanship warranty.

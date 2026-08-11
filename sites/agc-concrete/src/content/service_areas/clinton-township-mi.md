@@ -1,15 +1,12 @@
 ---
 name: Clinton Township
+county: Macomb County
 state: Michigan
 state_abbr: mi
-county: Macomb County
-neighborhoods: []
-local_context: Clinton Township is home to AGC Concrete's own office on Garfield Road, so it's where our crews start and end nearly every workday — residential driveways and patios alongside commercial and industrial concrete work.
-hero_photo: https://storage.googleapis.com/msgsndr/mjp4bpTt1mVBXcb46nzY/media/68687db40ea4e13696b76882.png
-landmark_photo: https://upload.wikimedia.org/wikipedia/commons/c/cd/Clinton_Township_Michigan_Township_Office.JPG
-landmark_alt: Clinton Township, Michigan township office building
 order: 2
+local_context: "Clinton Township is home to our office on Garfield Road, so it's some of the most frequent work on our schedule."
+about_body: "AGC Concrete is based in Clinton Township, which means faster scheduling and site visits for driveway, patio, and foundation projects here than almost anywhere else we serve."
 gallery: []
 ---
 
-AGC Concrete is based in Clinton Township, MI, serving residential, commercial, and industrial concrete projects locally.
+AGC Concrete is based in Clinton Township, MI, pouring driveways, patios, and foundations for homeowners and businesses right around our own office.

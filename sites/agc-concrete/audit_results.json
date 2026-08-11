@@ -1,0 +1,9 @@
+{
+  "slug": "agc-concrete",
+  "website": "http://www.agcconcrete.com/",
+  "screenshotPath": null,
+  "assessment": "ERROR: Could not capture screenshot — Playwright headless Chromium failed to launch in this runner environment (missing shared library libatk-1.0.so.0, no root access to install it). Content was still gathered via WebFetch for intake purposes; this is an operator-reference gap only, not a build blocker.",
+  "strengths": [],
+  "weaknesses": [],
+  "overall": "Not assessed — screenshot capture unavailable in this environment. Business content and services list were still captured via WebFetch (see intake-scraped.json)."
+}

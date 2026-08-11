@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHead from '../components/SectionHead.astro';
-import CTA from '../components/CTA.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
+import EstimateForm from '../components/EstimateForm.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const formSnippet = site.crm?.contact_form_snippet;
@@ -18,13 +18,19 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact'
   breadcrumbs={crumbs}
   pagePath="/contact"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="contact-page">
     <div class="container">
       <SectionHead eyebrow="Get In Touch" heading="Send us a message" />
       <div class="contact-grid">
         <div class="form-col">
-          {formSnippet && <div class="form-wrap"><Fragment set:html={formSnippet} /></div>}
+          {formSnippet
+            ? <div class="form-wrap"><Fragment set:html={formSnippet} /></div>
+            : <EstimateForm
+                heading="Send us a message"
+                intro="Tell us about the project and we'll get back to you."
+                rating={site.rating}
+                review_count={site.review_count}
+              />}
         </div>
         <aside class="info-col">
           <h3>Additional Info</h3>
@@ -76,7 +82,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact'
       </div>
     </div>
   </section>
-  <CTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
+  <ClosingCTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
   <GHLChatWidget />
 </BaseLayout>
 <style>
@@ -84,7 +90,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact'
   .contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); align-items: start; }
   .form-col { min-width: 0; }
   .form-wrap iframe { width: 100%; min-height: 1391px; border: 0; }
-  .info-col h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-2); }
+  .info-col h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-2); text-transform: capitalize; }
   .phone-large { font-size: 1.35rem; font-weight: 600; margin: 0 0 var(--space-3); }
   .phone-large a { text-decoration: none; }
   .row { margin-bottom: var(--space-2); font-size: 0.95rem; line-height: 1.65; }
@@ -95,7 +101,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact'
   .row ul .day { text-transform: capitalize; color: var(--color-text); font-weight: 500; }
   .biz-info { margin-top: var(--space-3); padding-top: var(--space-2); border-top: 1px solid var(--color-surface); font-size: 0.95rem; color: var(--color-muted); }
   .socials { display: flex; gap: var(--space-1); margin-top: var(--space-3); }
-  .social-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: var(--color-accent); color: white; transition: transform 0.15s ease, filter 0.15s ease; }
+  .social-link { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 8px; background: var(--color-accent); color: var(--color-on-accent); transition: transform 0.15s ease, filter 0.15s ease; }
   .social-link:hover, .social-link:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
   @media (max-width: 900px) {
     .contact-grid { grid-template-columns: 1fr; }

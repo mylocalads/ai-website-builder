@@ -1,15 +1,12 @@
 ---
 name: Shelby Township
+county: Macomb County
 state: Michigan
 state_abbr: mi
-county: Macomb County
-neighborhoods: []
-local_context: Shelby Township is one of AGC Concrete's listed Macomb County service areas, with crews regularly out for driveway, patio, and garage floor projects.
-hero_photo: https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6c3e12842861a3d059d4.png
-landmark_photo: https://upload.wikimedia.org/wikipedia/commons/3/38/Welcome_to_Shelby.jpg
-landmark_alt: Welcome to Shelby Township, Michigan sign
 order: 3
+local_context: "Shelby Township is a regular stop for us — driveways, patios, and garage floor slabs across the township."
+about_body: "We serve Shelby Township as part of our regular Macomb County coverage, within about 30 miles of our Clinton Township office."
 gallery: []
 ---
 
-Concrete driveways, patios, and garage floors for Shelby Township, MI homeowners and businesses.
+AGC Concrete pours driveways, patios, and foundations for homeowners and businesses throughout Shelby Township, MI — licensed, insured, and backed by a workmanship warranty.

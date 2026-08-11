@@ -2,33 +2,111 @@
   "kind": "home",
   "hero": {
     "eyebrow": "Macomb, MI",
-    "headline": "Your Trusted Concrete Contractor For Residential, Commercial & Industrial Projects",
-    "subheadline": "Driveways, patios, and foundations installed by a professional crew — rated 4.9 stars across 149 Google reviews.",
+    "headline": "Concrete Driveways, Patios & Foundations Done Right In Macomb, MI",
+    "subheadline": "AGC Concrete pours driveways, patios, and foundations across Macomb County — licensed, insured, backed by a workmanship warranty, and rated 4.9 stars across 149 Google reviews.",
     "cta_text": "Get Your Free Estimate!",
     "cta_href": "/book",
-    "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6b83a7f70d627a86e172.png"
+    "video_link_text": "See our recent work",
+    "video_link_href": "/our-work",
+    "trust_badges": [
+      { "mark": "google", "rating": 4.9, "label": "4.9 out of 5", "sublabel": "149 Google Reviews" },
+      { "label": "Licensed & Insured", "sublabel": "AGC Concrete Inc" }
+    ]
+  },
+  "promise_bar": ["Licensed & Insured", "Free Estimates", "Workmanship Warranty"],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "No Surprise Change Orders",
+    "body": "We price the job before we start and stand behind what we quote. You'll know the cost of your driveway, patio, or foundation before a single yard of concrete gets poured — and if something changes, we tell you instead of just adding it to the bill.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "A Concrete Process Built Around A Written Estimate",
+    "intro": "Concrete projects go wrong when the price changes mid-job or nobody stands behind the work afterward. Here's how we avoid both.",
+    "blocks": [
+      {
+        "title": "Free Site Inspection Before Any Number",
+        "body": "Every project starts with a free, no-obligation site inspection and design consultation — a $150 value — so your estimate reflects your actual yard, not a generic price list."
+      },
+      {
+        "title": "Licensed, Insured, And It Shows In Writing",
+        "body": "AGC Concrete is fully licensed and insured and compliant with all local and state requirements. Ask and we'll show you."
+      },
+      {
+        "title": "Backed By A Workmanship Warranty",
+        "body": "Every driveway, patio, and foundation we pour is covered by our best-in-class workmanship warranty — if something isn't right, we make it right."
+      }
+    ],
+    "steps_title": "What To Expect",
+    "steps": [
+      { "title": "Free Estimate", "body": "We inspect your property and give you a written estimate — no pressure, no obligation." },
+      { "title": "Schedule & Prep", "body": "We schedule the pour and prep the site, protecting your lawn and landscaping along the way." },
+      { "title": "The Pour", "body": "Our crew pours and finishes the concrete to spec, whether it's a driveway, patio, or foundation." },
+      { "title": "Final Walkthrough", "body": "We walk the finished job with you before we call it done." }
+    ],
+    "guarantee": {
+      "title": "Best-In-Class Workmanship Warranty",
+      "body": "Every project AGC Concrete completes is backed by our workmanship warranty. If an issue comes up that's on us, we come back and fix it.",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Concrete Project With AGC Runs",
+    "steps": [
+      { "label": "Step One", "title": "Free Estimate", "body": "Call or request an estimate online — we'll come take a look and give you a written price." },
+      { "label": "Step Two", "title": "Design & Scheduling", "body": "We finalize the scope — driveway, patio, or foundation — and get you on the schedule." },
+      { "label": "Step Three", "title": "The Pour", "body": "Our crew pours and finishes the concrete, whether it's a plain, exposed-aggregate, or stamped finish." },
+      { "label": "Step Four", "title": "Walkthrough & Warranty", "body": "We walk the job with you when it's done, backed by our workmanship warranty." }
+    ],
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About AGC Concrete",
+    "headline": "A Macomb County Concrete Contractor",
+    "body": "AGC Concrete is a Southwest Michigan-based concrete contractor serving Macomb County and the surrounding area. Our team specializes in residential and commercial concrete work — driveways, patios, walkways, stamped concrete, garage floors, and foundations — using quality materials and backing every job with our workmanship warranty. We're fully licensed and insured, and we offer financing so a driveway or patio doesn't have to be paid for all at once.",
+    "checklist": [
+      "Fully licensed and insured",
+      "Rated 4.9 stars across 149 Google reviews",
+      "Free site inspection & estimate before you commit",
+      "Workmanship warranty on every project",
+      "Financing available for larger projects"
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why Macomb County Homeowners Choose AGC",
+    "headline": "Concrete Contractor Serving Macomb, Clinton Township & Beyond",
+    "paragraphs": [
+      "Michigan's freeze-thaw winters are hard on concrete. Water gets into hairline cracks, freezes, expands, and turns a small crack into a broken slab within a few seasons. AGC Concrete pours and finishes every driveway, patio, and foundation with that in mind — proper base prep, control joints, and quality materials — rather than racing to the next job.",
+      "We handle residential and commercial concrete work: driveways, patios and porches, sidewalks and walkways, pool decks, garage floors, and foundations and footings, plus decorative finishes like exposed aggregate, stamped, and colored concrete. Every project starts with a free site inspection and a written estimate, and every project is backed by our workmanship warranty.",
+      "If you're comparing quotes, get us out to look at the job first. The inspection is free, and you'll get a real number for your project instead of a rough guess over the phone."
+    ],
+    "checklist": [
+      "Driveways, patios, porches & walkways",
+      "Foundations and footings",
+      "Garage floors & pool decks",
+      "Exposed aggregate, stamped & colored concrete",
+      "Commercial & industrial concrete"
+    ],
+    "image": "/img/exposed-aggregate-walkway.png",
+    "image_alt": "Exposed aggregate concrete walkway and steps leading to a front porch",
+    "image_position": "left",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
   },
   "testimonials": [],
   "faqs": [
-    {
-      "q": "Why should I work with AGC Concrete?",
-      "a": "AGC Concrete stands out for high-quality work, reliable scheduling, and attention to detail — backed by a 4.9-star rating across 149 Google reviews. The team is responsive and experienced across residential, commercial, and industrial concrete projects."
-    },
-    {
-      "q": "What type of projects does AGC Concrete do, and how long do they take?",
-      "a": "AGC Concrete handles residential, commercial, and industrial concrete work, including driveways, patios, sidewalks, garage floors, and foundations. Timelines vary by scope, but most projects are completed in 1-3 days."
-    },
-    {
-      "q": "Does AGC Concrete offer financing?",
-      "a": "Yes. AGC Concrete offers financing options, including promotional 0% APR on eligible services, with a quick and secure application process and no impact on your credit score to check offers."
-    },
-    {
-      "q": "Does AGC Concrete offer warranties?",
-      "a": "Yes — every project is backed by labor and materials warranties. Contact us directly for the specifics on your project type."
-    },
-    {
-      "q": "What certifications does AGC Concrete have?",
-      "a": "AGC Concrete is fully licensed and insured, and compliant with local and state requirements for concrete work. The team is trained in industry best practices, job site safety, and quality standards."
-    }
+    { "q": "How much does a concrete driveway or patio cost?", "a": "It depends on size, site prep, and the finish you choose — plain, exposed aggregate, stamped, or colored. We give you a written estimate after a free, no-obligation site inspection, not a guess over the phone." },
+    { "q": "Do you offer financing?", "a": "Yes. We offer promotional 0% APR financing options so a driveway, patio, or foundation project doesn't have to be paid for all at once. Ask about it when we come out for your estimate." },
+    { "q": "Are you licensed and insured?", "a": "Yes. AGC Concrete is fully licensed and insured and compliant with all local and state requirements." },
+    { "q": "What if something goes wrong with my new concrete?", "a": "Every project is backed by our workmanship warranty. If something isn't right, we come back and make it right." },
+    { "q": "How long before I can use my new driveway or patio?", "a": "It depends on the mix, the weather, and the finish, so we'll walk you through the cure schedule for your specific project when we finish the pour and tell you exactly when it's ready for use." },
+    { "q": "What areas do you serve?", "a": "We serve Macomb, Clinton Township, Shelby Township, Utica, Washington Township, Sterling Heights, and the surrounding communities within about 30 miles." },
+    { "q": "Do you do commercial concrete work?", "a": "Yes — parking lots, driveways and approaches, sidewalks, curbs and gutters, and foundations for apartments, offices, and commercial buildings, in addition to residential work." }
   ]
 }

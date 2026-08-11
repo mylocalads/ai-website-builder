@@ -1,26 +1,30 @@
 ---
 title: Driveways
 title_highlight: Driveways
+category: Residential Concrete
 seo_h1: Concrete Driveway Installation & Replacement in Macomb, MI
-short_description: Durable, visually appealing concrete driveways built to withstand Michigan weather and heavy traffic — installed by a 4.9-star rated crew.
-long_description: AGC Concrete installs durable, visually appealing driveways that withstand Michigan weather and heavy traffic while boosting curb appeal and longevity. Every driveway is backed by our labor and materials workmanship warranty, and most projects are completed in 1-3 days. We also offer exposed aggregate, stamped, and colored concrete finishes for homeowners who want more than a plain gray slab.
+short_description: "Durable, visually appealing concrete driveways built to withstand Michigan weather and heavy daily traffic."
+long_description: "We pour and finish driveways for proper drainage, control-jointed to handle Michigan's freeze-thaw cycles, in plain, exposed aggregate, stamped, or colored finishes. Every driveway is backed by our workmanship warranty and starts with a free site inspection and written estimate."
+hero_photo: /img/driveway-with-sign-2.png
+about_photo: /img/driveway-pour-with-sign.png
+about_photo_alt: "Freshly poured concrete driveway with AGC Concrete job sign"
 order: 1
 sub_services:
-  - New Driveway Installation
   - Driveway Replacement
+  - New Driveway Installation
   - Driveway Widening
-  - Exposed Aggregate & Stamped Finishes
-hero_photo: https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6c3e12842861a3d059d4.png
-gallery:
-  - photo: https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d70ea78e60c6be0e6ac9d.png
-    alt: Detail of a finished decorative concrete edge and border
-  - photo: https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6f0078e60c25c6e6871f.png
-    alt: Freshly poured residential concrete surface
+  - Exposed Aggregate Driveways
+  - Stamped & Colored Driveways
 faqs:
-  - q: How long does a new driveway take to install?
-    a: Most driveway installations are completed in 1-3 days, depending on size and site prep. We'll give you a firm timeline at your free estimate.
-  - q: Do you offer decorative driveway finishes?
-    a: Yes — exposed aggregate, stamped concrete, and colored concrete are all available if you want more than a standard gray finish.
+  - q: "How long before I can drive on my new driveway?"
+    a: "It depends on the mix and the weather, so we'll give you the exact timeline for your driveway when the pour is finished — we'd rather tell you the real number than a generic one."
+  - q: "Can you widen my existing driveway instead of replacing all of it?"
+    a: "In many cases, yes. We'll look at your existing slab and control joints during the free inspection and tell you honestly whether a widening ties in cleanly or whether a full replacement makes more sense."
+gallery:
+  - photo: /img/driveway-pour-with-sign.png
+    alt: "Freshly poured concrete driveway with AGC Concrete job sign in front of a brick ranch home"
+  - photo: /img/driveway-with-sign-2.png
+    alt: "Wide concrete driveway replacement in progress with AGC Concrete job sign"
 ---
 
-Durable, visually appealing driveways built to withstand Michigan weather and heavy traffic — boosting curb appeal and longevity.
+Concrete driveways that hold up to Michigan winters, poured and finished by a licensed, insured local crew — backed by our workmanship warranty.

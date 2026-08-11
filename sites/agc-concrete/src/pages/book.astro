@@ -1,10 +1,12 @@
 ---
+// Reads ?error= from the estimate endpoint redirect, so it renders per request.
+export const prerender = false;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SectionHead from '../components/SectionHead.astro';
-import CTA from '../components/CTA.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
+import EstimateForm from '../components/EstimateForm.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const calendarSnippet = site.crm?.calendar_embed_snippet;
@@ -16,13 +18,16 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
   breadcrumbs={crumbs}
   pagePath="/book"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
   <section class="book-page">
     <div class="container">
       <SectionHead eyebrow="Free Inspection" heading="Get a 100% FREE estimate & book your inspection" />
       <div class="book-grid">
         <div class="cal-col">
-          {calendarSnippet && <div class="cal-wrap"><Fragment set:html={calendarSnippet} /></div>}
+          {calendarSnippet
+            ? <div class="cal-wrap"><Fragment set:html={calendarSnippet} /></div>
+            : <EstimateForm
+                intro="Tell us about the project and we'll come out, look at it properly, and put a written number in your hand."
+              />}
         </div>
         <aside class="info-col">
           <h3>What's next after you book?</h3>
@@ -57,7 +62,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
       </div>
     </div>
   </section>
-  <CTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
+  <ClosingCTA headline="Prefer to talk right now?" cta_text={site.phone_display} cta_href={`tel:${site.phone}`} />
   <GHLChatWidget />
 </BaseLayout>
 <style>
@@ -65,10 +70,10 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Book', href: '/book' }];
   .book-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); align-items: start; }
   .cal-col { min-width: 0; }
   .cal-wrap iframe { width: 100%; min-height: 700px; border: 0; }
-  .info-col h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-2); line-height: 1.2; }
+  .info-col h3 { font-family: var(--font-display); font-size: 1.75rem; margin: 0 0 var(--space-2); line-height: 1.2; text-transform: capitalize; }
   .info-col .lede { color: var(--color-muted); line-height: 1.65; margin: 0 0 var(--space-3); font-size: 1rem; }
   .phone-large { font-size: 1.35rem; font-weight: 600; margin: 0.25rem 0 0; }
-  .phone-large a { text-decoration: none; color: var(--color-accent); }
+  .phone-large a { text-decoration: none; color: var(--color-accent-ink); }
   .row { margin-bottom: var(--space-2); font-size: 0.95rem; line-height: 1.65; }
   .row strong { display: block; margin-bottom: 0.25rem; }
   .row address { font-style: normal; color: var(--color-muted); }

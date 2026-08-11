@@ -4556,3 +4556,60 @@ payload) was NOT attached — this is the known parked DNS limitation in
 `docs/parked-preview-domain.md` (Squarespace-managed `mylocalads.co` has no DNS
 API), not specific to this build. `https://agc-concrete.vercel.app` returns 200
 with no SSO wall, so that is the public stagingUrl reported to the portal.
+
+---
+
+| Business | Slug | Template | Pages | Vercel URL | Date |
+|----------|------|----------|-------|------------|------|
+| AGC Concrete | `agc-concrete` | owl | 22 | https://agc-concrete.vercel.app | 2026-08-11 |
+
+Re-run of the same portal build (`job: initial`, slug `agc-concrete`) from earlier today. The
+prior entry above this one built on `firefly` — CLAUDE.md now defaults new builds to `owl`
+because `firefly` ships no native `<form>`, and an unattended build has no operator to paste
+a GHL embed into it. This run scaffolds fresh from `astro-templates/owl/`, superseding the
+firefly build at the same Vercel project (`prj_se1pEv5AMyn3JhOS6nj23swjCe1Y`, reused).
+
+Same environment limitations as the prior run: no `FIRECRAWL` credential/MCP tool available,
+and Playwright's headless Chromium cannot launch in this sandbox (missing `libatk-1.0.so.0`,
+no root to install it) — `site-audit`'s screenshot and `scrape-content`'s Playwright pass both
+failed per their documented failure modes (`screenshotPath: null`, continue). Substituted a
+plain `curl` fetch of `agcconcrete.com`'s raw HTML to read real brand tokens: accent red
+`#ff143d` traced to the site's own `--color-*` custom properties and corroborated visually
+against the "AGC CONCRETE" wordmark logo; `Outfit` (display) + `Roboto` (body) traced to the
+site's Google Fonts `<link>` tags. `--color-accent-ink` / `--color-accent-on-dark` were
+re-derived and verified with the owl template's own contrast-check script (all pairs ≥4.5:1
+except `on-accent/accent` at 3.87:1, which the template's README documents as acceptable for
+this template's 1.25rem/700 buttons — 3:1 large-text threshold, not 4.5:1).
+
+7 real project photos (driveway pours with the client's own job-site yard signs, a
+patio/pergola, a pool deck, an exposed-aggregate walkway, two stamped patios) and the logo
+were downloaded from the client's live site into `public/img/` and `public/logo/` rather than
+hotlinked from the GHL/funnel CDN that served them, so they can't vanish out from under the
+build. No landmark photos for the 6 service areas — omitted rather than sourced from Unsplash,
+since a real website already existed for this client (the no-website fallback's Unsplash path
+does not apply here) and no per-area photography was available; `AboutSection` collapses to
+text-only when `landmark_photo` is unset, which is the template's documented behavior, not a
+gap.
+
+Reddit searches (4 query variants, plus 2 broadened) returned no crawlable Reddit threads for
+"concrete contractor" + Macomb/Michigan; `local_research.json` is synthesized from general
+contractor-complaint web search instead and says so explicitly in `_notes`. No GBP review text
+was returned by Apify despite `maxReviews: 5`, and the client's own site has no testimonial
+quotes with attribution — `home.json` testimonials is intentionally `[]`, not fabricated.
+Services scoped to exactly the 3 the client chose during portal onboarding (Driveways, Patios,
+Foundations) rather than the 11 services listed on their own site — operator/client-supplied
+scope wins per CLAUDE.md. Service areas (6, at the `owl` cap): Macomb (marketing city, HQ),
+Clinton Township (registered office city), Shelby Township, Utica, Washington Township,
+Sterling Heights — all pulled from the 22-city list on the client's own site and within the
+30mi radius given in the portal intake.
+
+No GHL CRM snippets or code-injection blocks were supplied (unattended run, no operator to
+paste them in) — those sections self-hide. The native `EstimateForm` → `/api/estimate` is the
+lead-capture path; whether it delivers (via `LEAD_WEBHOOK_URL` or `RESEND_API_KEY` +
+`LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`) depends on env vars set on the Vercel project, not on
+this build. The phone CTA works regardless.
+
+Branded preview host `agc-concrete.preview.mylocalads.co` (given in the portal payload) was
+NOT attached — parked per `docs/parked-preview-domain.md` (Squarespace-managed `mylocalads.co`
+has no DNS API). `https://agc-concrete.vercel.app` is the public stagingUrl reported to the
+portal instead.

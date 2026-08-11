@@ -1,27 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Hero from '../components/Hero.astro';
-import PartnerBadges from '../components/PartnerBadges.astro';
-import AboutSection from '../components/AboutSection.astro';
-import OurServices from '../components/OurServices.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
-import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
-import Financing from '../components/Financing.astro';
-import UsVsThem from '../components/UsVsThem.astro';
-import ServiceAreaGrid from '../components/ServiceAreaGrid.astro';
-import Gallery from '../components/Gallery.astro';
+import HeroOwl from '../components/HeroOwl.astro';
+import PromiseBar from '../components/PromiseBar.astro';
+import ServicesGridOwl from '../components/ServicesGridOwl.astro';
+import Testimonials from '../components/Testimonials.astro';
+import PromiseBand from '../components/PromiseBand.astro';
+import SignatureSystem from '../components/SignatureSystem.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import AboutOwl from '../components/AboutOwl.astro';
+import SeoBody from '../components/SeoBody.astro';
 import FAQ from '../components/FAQ.astro';
-import CTA from '../components/CTA.astro';
+import BlogCards from '../components/BlogCards.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+// One CTA string reused across every section so the page never drifts.
+const CTA_TEXT = 'Get My Free Estimate!';
+const CTA_HREF = '/book';
 
 const site = (await getEntry('site', 'config')).data as any;
 const home = (await getEntry('site', 'home')).data as any;
-const aboutEntry = await getEntry('site', 'about').catch(() => null);
-const aboutStory = aboutEntry?.data?.story ?? site.tagline;
-
-// Prefer estimate form on the hero if provided; fall back to contact form
-const heroFormUrl = site.crm?.estimate_form_embed_url ?? site.crm?.contact_form_embed_url;
 
 const faqJsonLd = home.faqs && home.faqs.length > 0 ? {
   '@context': 'https://schema.org', '@type': 'FAQPage',
@@ -31,32 +30,46 @@ const faqJsonLd = home.faqs && home.faqs.length > 0 ? {
   })),
 } : null;
 ---
+<!--
+  FIXED section order for the owl template. Do not reorder or randomize.
+  hero → promise-bar → services-grid → testimonials → promise-band →
+  signature-system → process-steps → about → seo-body → faq → blog-cards →
+  closing-cta → footer
+-->
 <BaseLayout
   title={`${site.business_name} — ${site.tagline}`}
   description={home.hero?.subheadline || site.tagline}
   jsonLd={faqJsonLd ? [faqJsonLd] : undefined}
   pagePath="/"
 >
-  <Hero
+  <HeroOwl
     eyebrow={home.hero.eyebrow}
     headline={home.hero.headline}
     subheadline={home.hero.subheadline}
     cta_text={home.hero.cta_text}
     cta_href={home.hero.cta_href}
-    photo={home.hero.photo}
-    form_embed_url={heroFormUrl}
-    form_title="Get a free estimate"
+    photo={home.hero.photo ?? site.default_hero_photo}
+    video={home.hero.video ?? site.default_hero_video}
+    video_link_text={home.hero.video_link_text}
+    video_link_href={home.hero.video_link_href}
+    quote_card={home.hero.quote_card}
+    trust_badges={home.hero.trust_badges}
+    show_form
   />
-  <PartnerBadges />
-  <AboutSection eyebrow="About Us" heading="About us" body={aboutStory} photo={site.team_photo} photo_alt={`${site.business_name} team`} />
-  <OurServices />
-  <WhyChooseUs />
-  <GHLReviewsWidget />
-  <Financing />
-  <UsVsThem />
-  <ServiceAreaGrid />
-  <Gallery items={site.gallery ?? []} heading="Craftsmanship that speaks for itself" />
-  <FAQ items={home.faqs ?? []} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <PromiseBar items={home.promise_bar} />
+  <ServicesGridOwl cta_text={CTA_TEXT} cta_href={CTA_HREF} />
+  <Testimonials items={home.testimonials ?? []} cta_text={CTA_TEXT} cta_href={CTA_HREF} />
+  <PromiseBand data={home.promise_band} />
+  <SignatureSystem data={home.signature_system} />
+  <ProcessSteps data={home.process_steps} />
+  <AboutOwl
+    data={home.about_block}
+    fallback_photo={site.about_photo ?? site.team_photo}
+    business_name={site.business_name}
+  />
+  <SeoBody data={home.seo_body} />
+  <FAQ items={home.faqs ?? []} cta_text={CTA_TEXT} cta_href={CTA_HREF} />
+  <BlogCards cta_text={CTA_TEXT} cta_href={CTA_HREF} />
+  <ClosingCTA />
   <GHLChatWidget />
 </BaseLayout>

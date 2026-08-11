@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroOwl from '../components/HeroOwl.astro';
 import AboutSection from '../components/AboutSection.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
-import CTA from '../components/CTA.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -21,7 +21,16 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
   breadcrumbs={crumbs}
   pagePath="/about"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
+
+  <HeroOwl
+    eyebrow={`About ${site.business_name}`}
+    headline={`About ${site.business_name}`}
+    subheadline={story.slice(0, 190)}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.about_photo ?? site.default_hero_photo}
+    show_form
+  />
 
   {teamHero && (
     <section class="team-hero">
@@ -58,7 +67,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
 
   <TrustBadges />
   <GHLReviewsWidget />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA />
   <GHLChatWidget />
 </BaseLayout>
 <style>
@@ -73,6 +82,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
   .member img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
   .member figcaption { padding: var(--space-2); }
   .member h3 { margin: 0 0 0.25rem; font-size: 1.1rem; }
-  .role { color: var(--color-accent); font-size: 0.9rem; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+  .role { color: var(--color-accent-ink); font-size: 0.9rem; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
   .bio { color: var(--color-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; }
 </style>

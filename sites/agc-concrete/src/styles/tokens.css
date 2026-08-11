@@ -1,15 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
   --color-bg: #ffffff;
-  --color-text: #101828;
-  --color-muted: #667085;
-  --color-accent: #c81030;
-  --color-surface: #f5f5f5;
+  --color-surface: #f5f7f7;
+  --color-text: #1a1a1a;
+  --color-muted: #666666;
+  --color-primary: #1f2124;
+  --color-on-primary: #ffffff;
+  --color-accent: #ff143d;
+  --color-on-accent: #ffffff;
+  /* THREE accent tokens, one per job. --color-accent alone cannot do all three:
+     a value that is legible as a fill is rarely legible as text on white AND on
+     the dark bands. Every client re-derives all three from their brand colour —
+     see the button-contrast section of the README for the check to run.
+
+       --color-accent          FILL behind --color-on-accent (buttons, icon
+                               circles, badges). Never used as body text.
+       --color-accent-ink      the accent as TEXT on a LIGHT background
+                               (eyebrows, tick marks, stars, pins, chevrons).
+       --color-accent-on-dark  the accent as TEXT inside the dark
+                               --color-primary bands and over the hero scrim.
+
+     AGC Concrete's real brand red (#ff143d, traced to the client's own site
+     CSS custom properties and the "AGC CONCRETE" wordmark logo) is the
+     standard hard case documented here: 6.6:1-class red-on-white makes a
+     correct button fill (white-on-accent measures 3.87:1 — under 4.5:1 but
+     clears the 3:1 large-bold-button threshold this template's buttons use),
+     but the same red is too dark to read on the dark primary band and too
+     light once darkened enough for body text on white. So accent-ink is a
+     darkened red for light-background text (5.70:1 on --color-bg, 5.30:1 on
+     --color-surface) and accent-on-dark is a lightened red for the dark bands
+     (5.39:1 on --color-primary). Fills keep --color-accent everywhere, so the
+     colour the eye reads as "the button colour" never changes. */
+  --color-accent-ink: #cc1031;
+  --color-accent-on-dark: #ff5b77;
   --color-focus: #0057ff;
   --font-display: 'Outfit', system-ui, sans-serif;
   --font-body: 'Roboto', system-ui, sans-serif;
-  --radius-sm: 4px; --radius-md: 8px;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
   --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
   --max-width: 1200px;
 }

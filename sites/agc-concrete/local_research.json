@@ -2,34 +2,34 @@
   "slug": "agc-concrete",
   "category": "Concrete contractor",
   "location": "Macomb, MI",
-  "source_note": "Reddit-restricted web searches (site:reddit.com, 6 query variants at city/state/general level) returned no crawlable Reddit threads in this environment. Findings below are synthesized from general contractor-review web search results (BBB complaint patterns, HomeAdvisor/Angi review excerpts, contractor-scam advisories) rather than specific Reddit threads. threads_analyzed reflects distinct external sources read, not Reddit posts.",
   "threads_analyzed": 0,
+  "_notes": "No indexed Reddit threads specific to 'concrete contractor' + Macomb/Michigan surfaced via WebSearch (site:reddit.com filter returned HomeAdvisor/Yelp/Angi/Trustpilot directory pages instead of Reddit threads, even after broadening to state-level and category-only queries). Findings below are synthesized from the contractor-complaint patterns that DID surface (HomeAdvisor/Trustpilot review threads for concrete driveway/patio contractors) and cross-referenced against AGC Concrete's own verified business data. Treat pain_points/what_customers_value as category-general signal, not Macomb-specific quotes.",
   "pain_points": [
-    "Contractors who ghost mid-job or never return to finish punch-list work (extensions, cleanup, warranty fixes)",
-    "Verbal or lowball quotes that balloon once work starts, or extra charges sprung on the homeowner to 'finish the job'",
-    "Cracking or settling within the first year with no clear warranty process, forcing homeowners to pay again for a soil expert or repair",
-    "Unsolicited door-knocker/driveway-scam contractors demanding cash or large upfront deposits with no fixed business address",
-    "Difficulty getting multiple contractors to even show up and quote a job in a reasonable window"
+    "Contractors demanding extra money mid-job after the old driveway/slab is already torn out, leaving homeowners with a hole and no leverage to say no",
+    "Concrete cracking within days or weeks of the pour, with no contractor follow-up to repair it",
+    "Job sites left uncleaned — excess concrete, equipment damage to lawns/walkways, debris not hauled away",
+    "No clear warranty or written guarantee backing the work, so problems become the homeowner's cost",
+    "Vague or verbal-only quotes that change once the job starts"
   ],
   "what_customers_value": [
-    "A real, established local business with a fixed address and a track record — not a door-knocker",
-    "Clear, itemized estimates before any work starts, honored at time of billing",
-    "Crews that show up on schedule and see the job through to completion, including cleanup",
-    "Proof of quality via reviews/photos of finished work (driveways, patios, garage floors) rather than promises",
-    "Responsiveness — someone answers the phone and follow-up questions get addressed"
+    "A real workmanship warranty stated up front, not just verbally promised",
+    "Being licensed and insured, with that fact easy to find rather than buried",
+    "Free, no-obligation estimates before committing to a project",
+    "Financing options for larger jobs (driveways, foundations) rather than requiring full payment up front",
+    "A crew that shows up, finishes, and cleans the site — reliability over the lowest bid"
   ],
   "business_differentiators": [
-    "4.9 average rating across 149 Google reviews — well above the trust bar homeowners are shown to be worried about (per business_profile.json)",
-    "Google reviewer tags show deep repeat evidence of core services actually delivered: patio work (45 mentions), professional crew (35), driveway replacement (24), garage floor replacement (10), walkway replacement (9) — this directly answers the 'will they actually show up and do this specific job well' concern",
-    "Listed as a Concrete contractor with a fixed commercial address (42211 Garfield Rd #330, Clinton Township, MI) rather than an unlisted/mobile operation, addressing the door-knocker-scam concern",
-    "'Professional crew' called out 35 times in review tags — directly counters the ghosting/no-show pain point",
-    "Exposed aggregate and concrete finish work called out in review tags, evidencing finish-quality beyond basic flatwork"
+    "4.9 rating across 149 Google reviews (145 five-star, only 3 one-star) — well above the noise level of complaint-driven categories like this one",
+    "Publishes a 'best-in-class workmanship warranty' on the homepage — directly answers the 'who fixes it when it cracks' pain point",
+    "Acorn Finance partnership offers 0% APR promotional financing — addresses the up-front-cost objection for driveway/patio/foundation jobs",
+    "States 'fully licensed and insured' and 'compliant with all local and state requirements' explicitly, rather than leaving it implied",
+    "Offers a free site inspection & design consultation (a $150 value per their own site) before any commitment"
   ],
   "copy_angles": [
-    "Lead the hero with the 4.9-star / 149-review trust signal — it's the single strongest counter to 'will this contractor actually show up and finish'",
-    "Feature 'professional crew' language prominently (e.g., in an about/why-us section) since it's the most-repeated review theme and it directly rebuts the ghosting/no-show fear",
-    "Structure services around the three highest-volume, best-evidenced offerings — driveways, patios, and garage floors/foundations — rather than a generic service list, since those are what reviewers actually confirm was delivered well",
-    "Use a fixed local address + service-area framing (Macomb, MI + ~30mi radius) in the footer/contact section to reinforce 'real local business' over 'traveling crew'",
-    "Keep the primary CTA simple and low-friction (call or request a free estimate) since the top pain point is contractors being hard to reach or slow to quote"
+    "Lead the hero with the workmanship warranty + 4.9-star / 149-review proof — the category's biggest fear is cracking with no recourse, and AGC has an answer plus the receipts",
+    "Put 'Licensed & Insured' and 'Free Estimate' above the fold, not buried in the footer — removes the two most common hesitations before a homeowner scrolls",
+    "Mention financing (Acorn Finance, 0% APR) near the driveway/patio/foundation service descriptions — those are the highest-ticket jobs where cost is the objection",
+    "Use 'no surprise change orders' or similar clean-quote language near the estimate CTA to preempt the mid-job upcharge complaint",
+    "Feature the review count (149) and rating prominently in the trust badges / quote card — social proof is the strongest lever in a trade with this much horror-story noise"
   ]
 }

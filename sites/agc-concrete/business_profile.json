@@ -1,36 +1,28 @@
 {
   "name": "AGC Concrete Inc",
   "email": null,
-  "phone": "(586) 800-3066",
+  "phone": "+15868003066",
+  "phone_display": "(586) 800-3066",
   "address": "42211 Garfield Rd #330, Clinton Township, MI 48038",
   "website": "http://www.agcconcrete.com/",
   "rating": 4.9,
   "reviewCount": 149,
   "category": "Concrete contractor",
-  "hours": "Open 24 hours (service calls); office hours not separately listed",
+  "hours": "Open 24 hours",
   "slug": "agc-concrete",
-  "socials": {
+  "geo": { "lat": 42.606935, "lng": -82.9536635 },
+  "social": {
     "facebook": "https://www.facebook.com/profile.php?id=61557382465487",
     "instagram": "https://www.instagram.com/agcconcrete",
     "twitter": "https://x.com/AGCconcrete",
-    "tiktok": "https://www.tiktok.com/@agcconcrete"
+    "tiktok": "https://www.tiktok.com/@agcconcrete",
+    "google_maps": "https://www.google.com/maps/search/?api=1&query=AGC%20Concrete%20Inc&query_place_id=ChIJ4UUbGFPeJIgRn36P0uJlMf8"
   },
-  "reviewsTags": [
-    {"title": "driveway replacement", "count": 24},
-    {"title": "garage floor replacement", "count": 10},
-    {"title": "walkway replacement", "count": 9},
-    {"title": "professional crew", "count": 35},
-    {"title": "patio", "count": 45},
-    {"title": "front sidewalk replacement", "count": 3},
-    {"title": "driveway widening", "count": 4},
-    {"title": "concrete removal", "count": 4},
-    {"title": "exposed aggregate", "count": 3},
-    {"title": "concrete finish", "count": 2}
-  ],
   "reviews": [],
-  "portalContact": {
-    "contact_name": "Marcellus G",
-    "contact_email": "marcellus@turnkeymate.com",
-    "contact_phone": "3057737134"
+  "_notes": {
+    "source": "Apify google-maps-with-contact-details",
+    "run_id": "pqFAYOgGR2HBl9Pg2",
+    "scraped_at": "2026-08-11T19:24:19.177Z",
+    "review_tags": ["driveway replacement", "garage floor replacement", "walkway replacement", "professional crew", "patio", "front sidewalk replacement", "driveway widening", "concrete removal", "exposed aggregate", "concrete finish"]
   }
 }

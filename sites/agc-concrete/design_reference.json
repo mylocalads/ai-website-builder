@@ -1,66 +1,40 @@
 {
-  "slug": "agc-concrete",
-  "template": "firefly",
-  "vertical": "concrete",
-  "generated_at": "2026-08-11",
-  "reference_set": [
-    {
-      "url": "https://firefly-cd.vercel.app/",
-      "role": "primary",
-      "used_for": "Structural patterns only — fixed section order, two-column hero, editorial eyebrow + serif display H2s, service tiles, WhyChooseUs CSS-mask icons, UsVsThem, sub-service check bullets."
-    }
-  ],
-  "excluded_from_reference_set": [
-    {
-      "url": "https://agcconcrete.com/",
-      "role": "secondary (per reference-libraries/concrete.json)",
-      "reason": "This is the CLIENT'S OWN existing website for this build. CLAUDE.md invariant: 'Client website is brand-only, never design DNA' — the client's site may only ever contribute fonts/colors/logo/business-context text, never layout or section rhythm, and site-audit screenshots of it are operator-reference-only. Using it as a structural/photography reference for its own redesign would violate that rule, so it was dropped from the reference set entirely rather than scraped for rhythm/photography direction."
-    }
-  ],
-  "brand_inputs": {
-    "source": "Firecrawl was unavailable (no FIRECRAWL_API_KEY / MCP tool configured) and the Playwright fallback could not launch (sandbox missing libatk/libgbm/libasound system libraries, no sudo to install). As a brand-only substitute (fonts/colors/logo — never layout, per the client-site-is-brand-only invariant), fetched the raw homepage HTML via curl and decoded the logo PNG's pixel data with a small inline zlib-based decoder (no Firecrawl/Playwright/PIL required).",
-    "detected_colors": ["#ff143d", "#101828", "#667085", "#ffffff"],
-    "detected_fonts": { "display": "Outfit", "body": "Roboto" },
-    "logo_is_monochrome": false,
-    "detection_notes": "Red (#ff143d / logo-sampled #ff123c, effectively the same ink) is corroborated by two independent sources: a GHL page-builder custom-color swatch applied as inline-colors on page content, AND the dominant non-white pixel color in the logo PNG itself (3,524 of the top-20 sampled pixels) — high confidence this is the real brand color, not template-default noise. #101828/#667085 are a coherent text/muted gray pair used for real body copy (dialog/label text), not builder chrome. #188bf6 and #3b82f6 were excluded — grep context showed they're GoHighLevel page-builder UI chrome (drag-handle borders, sortable-ghost highlight), not site content. Outfit/Roboto came from the page's own Google Fonts @import (Outfit loaded with the full 100-900 weight range, consistent with a chosen display face; Roboto as the paired body face)."
+  "sources": {
+    "mode": "library",
+    "library": "concrete",
+    "urls": ["ai-website-builder/astro-templates/owl/", "https://agcconcrete.com/"]
   },
-  "tokens": {
-    "color": {
-      "bg": "#ffffff",
-      "surface": "#f5f5f5",
-      "text": "#101828",
-      "muted": "#667085",
-      "primary": "#101828",
-      "on_primary": "#ffffff",
-      "accent": "#c81030",
-      "on_accent": "#ffffff",
-      "accent_ink": "#c81030",
-      "focus": "#0057ff"
-    },
-    "typography": {
-      "display": "'Outfit', system-ui, sans-serif",
-      "body": "'Roboto', system-ui, sans-serif",
-      "display_weights": [500, 600, 700, 800],
-      "body_weights": [400, 500, 600, 700]
-    },
-    "radius": { "sm": "4px", "md": "8px" },
-    "spacing": { "1": "0.5rem", "2": "1rem", "3": "1.5rem", "4": "2.5rem", "5": "4rem" },
-    "max_width": "1200px"
+  "structure_source": "astro-templates/owl/ (role: primary) — fixed section order: hero -> promise-bar -> services-grid -> testimonials -> promise-band -> signature-system -> process-steps -> about -> seo-body -> faq -> blog-cards -> closing-cta -> footer. Native EstimateForm lead capture, no paste-in required.",
+  "brand_source": "https://agcconcrete.com/ (role: secondary, client's real live site) — logo wordmark + CSS custom properties read directly from page source (no Firecrawl/Playwright available in this run; raw HTML fetched via curl and grepped for --color-* custom properties, font <link> tags, and the alt=\"Brand Logo\" image). NOT used for layout/section rhythm per the anti-pattern lock — only color + font + logo + real photography.",
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f5f7f7",
+    "text": "#1a1a1a",
+    "muted": "#666666",
+    "primary": "#1f2124",
+    "on_primary": "#ffffff",
+    "accent": "#ff143d",
+    "on_accent": "#ffffff",
+    "accent_ink": "#cc1031",
+    "accent_on_dark": "#ff5b77",
+    "_notes": "accent (#ff143d) traced directly to the client's own CSS custom properties (--color-mcc49iue / --color-FF143D family, 7 occurrences) and matches the red in the 'AGC CONCRETE' wordmark logo. text/muted/surface traced to the site's dominant #000000 / #666666 / #f1f6f6-f3f8fb neutrals. accent_ink and accent_on_dark are derived (darkened / lightened) from the real accent to clear WCAG AA per astro-templates/owl/README.md's three-token contrast rule — verified with the template's own contrast-check script: text/bg 17.40, muted/bg 5.74, on-primary/primary 16.14, on-accent/accent 3.87 (passes the 3:1 large-bold-button threshold the template documents), accent-ink/bg 5.70, accent-ink/surface 5.30, accent-on-dark/primary 5.39 — all PASS."
   },
-  "rationale": {
-    "palette": "Real detected brand red is #ff143d/#ff123c (see detected_colors) — but the firefly template (unlike owl) has NO --color-on-accent token: every component that fills a background with var(--color-accent) hardcodes color: white on the button text (checked Hero.astro, CTA.astro, OurServices.astro, Header.astro, Financing.astro, PricingTable.astro, CookieConsent.astro, Footer.astro), and the same var(--color-accent) is reused directly as TEXT color elsewhere (SectionHead eyebrow, ServiceAreaGrid pin, AboutSection check, FAQ chevron). One token has to satisfy both directions. White-on-#ff143d only measures 3.87:1 (fails AA 4.5:1 for normal-weight button text), and #ff143d-as-text-on-white is the same 3.87:1 by symmetry. Darkened the real red to #c81030 — same hue, deepened until white-on-fill AND fill-as-text-on-white both clear AA. accent_ink is set equal to accent since firefly has only the one accent variable, not a separate ink token. text/muted (#101828/#667085) and surface (#f5f5f5) are real values pulled from the page's own CSS, not invented.",
-    "typography": "Outfit promoted to the template's display slot (replacing EB Garamond) and Roboto to body (replacing Inter) because both were confirmed as the client's actual loaded webfonts, not template placeholders.",
-    "contrast_verified": "text on bg 17.75:1 (AAA), muted on bg 4.97:1 (AA), white on accent(#c81030) 5.88:1 (AA), accent(#c81030) as text on bg(#ffffff) 5.88:1 (AA), accent as text on surface(#f5f2ee) 5.27:1 (AA)."
+  "typography": {
+    "display": "Outfit",
+    "body": "Roboto",
+    "_notes": "Both traced directly to <link> tags to fonts.googleapis.com on agcconcrete.com (family=Outfit and family=Roboto) and to explicit font-family: Outfit declarations in the page's own inline styles. Both are real Google Fonts, no substitution needed."
   },
-  "anti_patterns": [
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "avoid": [
     "gradient hero background",
     "glass morphism / backdrop-blur panels",
     "bento grid section layout",
-    "purple / indigo / violet accents (unless explicitly requested)",
+    "purple / indigo / violet accents (client brand is red, not purple)",
     "generic construction stock photo (handshake, diverse team in hardhats)",
     "Lucide icon rows (max 1 outline icon per section, semantic only)",
-    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP (use the real 4.9 / 149 reviews instead)",
     "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
-    "randomized section order — always use the fixed order from the template"
+    "randomized section order — always use the fixed owl order from the template"
   ]
 }

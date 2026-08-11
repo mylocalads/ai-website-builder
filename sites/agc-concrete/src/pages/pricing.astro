@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
+import HeroOwl from '../components/HeroOwl.astro';
 import PricingTable from '../components/PricingTable.astro';
 import Financing from '../components/Financing.astro';
 import FAQ from '../components/FAQ.astro';
-import CTA from '../components/CTA.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
 import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
@@ -16,46 +16,53 @@ const faqs = (homeEntry?.data as any)?.faqs ?? [];
 const calendarSnippet = site.crm?.calendar_embed_snippet;
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Pricing', href: '/pricing' }];
 
-const roofCostRows = [
-  { type: 'Asphalt Shingle (3-tab or architectural)', per_sq: '$4–$7', avg_2000: '$8,000–$14,000' },
-  { type: 'Metal Roof (standing seam)', per_sq: '$10–$16', avg_2000: '$20,000–$32,000' },
-  { type: 'Cedar Shake', per_sq: '$8–$14', avg_2000: '$16,000–$28,000' },
-  { type: 'Tile', per_sq: '$10–$18', avg_2000: '$20,000–$36,000' },
-];
+// Client-supplied cost table (pricing.json -> cost_table). The template ships
+// no rows of its own: numbers here are a price the client has to honour, and a
+// table inherited from another trade quotes work this business does not do.
+// Unset, the section does not render.
+const costTable = pricing.cost_table;
+const marketCity = site.marketing_city ?? site.address.city;
+const marketState = site.marketing_state ?? site.address.state;
 ---
 <BaseLayout
   title={`Pricing — ${site.business_name}`}
-  description={`Transparent pricing for roofing, siding, windows, kitchens, and baths across ${site.address.city}, ${site.address.state}.`}
+  description={`How ${site.business_name} prices its work across ${marketCity}, ${marketState} — and what a written estimate covers.`}
   breadcrumbs={crumbs}
   pagePath="/pricing"
 >
-  <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="pricing-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
-    <div class="container">
-      <h1>Pricing</h1>
-      <p>{pricing.intro}</p>
-    </div>
-  </section>
+  <HeroOwl
+    eyebrow="Transparent Pricing"
+    headline="Pricing"
+    subheadline={pricing.intro}
+    cta_text="Get Your Free Estimate!"
+    cta_href="/book"
+    photo={site.default_hero_photo}
+    show_form
+  />
 
-  <section class="roof-cost">
-    <div class="container">
-      <h2>Average roof costs in {site.address.city}, {site.address.state}</h2>
-      <p class="lede">Every job is quoted based on your specific roof, but here's the market range for a typical single-family home. Free on-site estimate is the only way to know your number.</p>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr><th>Roof type</th><th>Per square (100 sq ft)</th><th>Typical 2,000 sq ft home</th></tr>
-          </thead>
-          <tbody>
-            {roofCostRows.map((r) => (
-              <tr><td>{r.type}</td><td>{r.per_sq}</td><td>{r.avg_2000}</td></tr>
-            ))}
-          </tbody>
-        </table>
+  {costTable && (
+    <section class="cost-table">
+      <div class="container">
+        <h2>{costTable.heading}</h2>
+        {costTable.lede && <p class="lede">{costTable.lede}</p>}
+        {costTable.rows.length > 0 && (
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>{costTable.columns.map((c: string) => <th>{c}</th>)}</tr>
+              </thead>
+              <tbody>
+                {costTable.rows.map((row: string[]) => (
+                  <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {costTable.footnote && <p class="factors">{costTable.footnote}</p>}
       </div>
-      <p class="factors"><strong>What drives the price up or down:</strong> pitch and complexity of the roof, tear-off vs. overlay, permits, gutter and flashing condition, and material choice.</p>
-    </div>
-  </section>
+    </section>
+  )}
 
   {pricing.packages.length > 0 && <PricingTable packages={pricing.packages} />}
   {pricing.notes && (
@@ -68,7 +75,7 @@ const roofCostRows = [
     <section class="book">
       <div class="container">
         <h2>Book your free on-site estimate</h2>
-        <p class="lede">Pick a time that works — we come out, measure the roof, and give you a written quote on the spot.</p>
+        <p class="lede">Pick a time that works — we come out, look at the job properly, and give you a written quote.</p>
         <div class="calendar-wrap"><Fragment set:html={calendarSnippet} /></div>
       </div>
     </section>
@@ -76,22 +83,22 @@ const roofCostRows = [
 
   <Financing />
   <FAQ items={faqs} />
-  <CTA headline="Need a roof inspection? Book a free inspection now!" cta_text="Get Your Free Estimate!" cta_href="/book" />
+  <ClosingCTA />
   <GHLChatWidget />
 </BaseLayout>
 <style>
   .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
   .pricing-hero h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,0.3); }
   .pricing-hero p { color: rgba(255,255,255,0.9); font-size: 1.15rem; max-width: 45rem; }
-  .roof-cost { padding: var(--space-5) 0; background: var(--color-surface); }
-  .roof-cost h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
-  .roof-cost .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
+  .cost-table { padding: var(--space-5) 0; background: var(--color-surface); }
+  .cost-table h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
+  .cost-table .lede { color: var(--color-muted); max-width: 45rem; margin: 0 0 var(--space-3); }
   .table-wrap { overflow-x: auto; margin: var(--space-2) 0; }
-  .roof-cost table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
-  .roof-cost th, .roof-cost td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
-  .roof-cost th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
-  .roof-cost tbody tr:last-child td { border-bottom: 0; }
-  .roof-cost .factors { margin-top: var(--space-3); color: var(--color-muted); }
+  .cost-table table { width: 100%; border-collapse: collapse; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .cost-table th, .cost-table td { padding: var(--space-2); text-align: left; border-bottom: 1px solid var(--color-surface); }
+  .cost-table th { background: var(--color-text); color: white; font-family: var(--font-display); font-weight: 600; }
+  .cost-table tbody tr:last-child td { border-bottom: 0; }
+  .cost-table .factors { margin-top: var(--space-3); color: var(--color-muted); }
   .pricing-notes { padding: var(--space-3) 0; color: var(--color-muted); font-size: 0.95rem; }
   .book { padding: var(--space-5) 0; }
   .book h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }

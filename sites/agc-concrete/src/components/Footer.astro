@@ -1,8 +1,9 @@
 ---
+import { AREA_LIMIT, SERVICE_LIMIT } from '../lib/limits';
 import { getEntry, getCollection } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
-const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 5);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -46,7 +47,7 @@ const year = new Date().getFullYear();
       </div>
       <div>
         <h3>Service Areas</h3>
-        <ul>{areas.map((a) => <li><a href={`/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
+        <ul>{areas.map((a) => <li><a href={`/service-area/${a.slug}`}>{a.data.name}, {a.data.state}</a></li>)}</ul>
       </div>
       <div>
         <h3>Company</h3>
@@ -84,7 +85,7 @@ const year = new Date().getFullYear();
   .hours li { padding: 0.15rem 0; color: var(--color-muted); }
   .hours .day { text-transform: capitalize; color: var(--color-text); font-weight: 500; }
   .footer-socials { display: flex; gap: 0.5rem; margin-top: var(--space-2); }
-  .footer-socials .social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: var(--color-accent); color: white; transition: transform 0.15s ease, filter 0.15s ease; }
+  .footer-socials .social-link { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: var(--color-accent); color: var(--color-on-accent); transition: transform 0.15s ease, filter 0.15s ease; }
   .footer-socials .social-link:hover, .footer-socials .social-link:focus-visible { transform: translateY(-2px); filter: brightness(1.1); }
   @media (max-width: 780px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }

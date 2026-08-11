@@ -16,12 +16,12 @@ export const abs = (siteUrl, path = '/') =>
 // Shared with the route files. If these ever diverge from what getStaticPaths
 // builds, the agent docs start advertising URLs that do not exist — which is
 // why they are imported, not restated.
-import {
-  SERVICE_LIMIT,
-  AREA_LIMIT,
-  RESERVED_AREA_SLUGS,
-  AREA_SLUG_PATTERN,
-} from './limits.ts';
+import { SERVICE_LIMIT, AREA_LIMIT } from './limits';
+
+// owl nests areas under /service-area/, so only "index" can collide.
+// Mirrors src/pages/service-area/[slug].astro.
+const RESERVED_AREA_SLUGS = new Set(['index']);
+const AREA_SLUG_PATTERN = /^[a-z0-9-]+-[a-z]{2}$/;
 
 /**
  * Collection entries -> the plain objects these documents render, carrying the
@@ -95,7 +95,7 @@ ${
 
 ${
   areas.length
-    ? areas.map((a) => `- [${areaTitle(a)}](${u(`/${a.slug}`)})`).join('\n')
+    ? areas.map((a) => `- [${areaTitle(a)}](${u(`/service-area/${a.slug}`)})`).join('\n')
     : '- ' + (where || 'See the site')
 }
 
@@ -106,6 +106,7 @@ ${
 - [Our work](${u('/our-work')})
 - [Pricing](${u('/pricing')})
 - [Book a free estimate](${u('/book')})
+- [Blog](${u('/blog')})
 - [Contact](${u('/contact')})
 
 ## Optional
@@ -152,7 +153,7 @@ ${services
   .join('\n')}
 ## Service areas
 
-${areas.length ? areas.map((a) => `- ${areaTitle(a)} — ${u(`/${a.slug}`)}`).join('\n') : where}
+${areas.length ? areas.map((a) => `- ${areaTitle(a)} — ${u(`/service-area/${a.slug}`)}`).join('\n') : where}
 
 ## Hours
 
