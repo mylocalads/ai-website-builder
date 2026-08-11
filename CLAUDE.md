@@ -75,6 +75,49 @@ So, on a queued build:
 An operator running the pipeline by hand may still delegate freely — there is a session
 there to receive the result.
 
+### Report progress after every step
+
+The client watches this build happen. Their page shows the step name and a counter, and if
+that counter never moves for twenty-five minutes it reads as broken — they ask whether it
+is stuck, and the honest answer is that nobody told them otherwise.
+
+After finishing **each** step, post it. `BUILD_ID` is the `id` field of
+`/tmp/mla-build-payload.json`; the other two are in `.env`:
+
+```bash
+BUILD_ID=$(python3 -c "import json;print(json.load(open('/tmp/mla-build-payload.json'))['id'])")
+
+report() {   # report <index> "<client-facing step name>"
+  curl -s -o /dev/null -X POST \
+    "$MLA_PORTAL_URL/api/builds/$BUILD_ID/progress" \
+    -H "Authorization: Bearer $BUILD_API_SECRET" \
+    -H "Content-Type: application/json" \
+    -d "{\"step\":\"$2\",\"stepIndex\":$1,\"stepTotal\":9}" || true
+}
+```
+
+Use these names, in this order. **Write for the client, not for us** — they have never
+heard of Firecrawl, and `design-reference` means nothing to them:
+
+| # | Report this | After |
+|---|---|---|
+| 1 | `Starting your build` | (already sent by n8n) |
+| 2 | `Finding your business online` | intake-from-web / find-business |
+| 3 | `Reading your current website` | scrape-content |
+| 4 | `Researching your local market` | local-research |
+| 5 | `Reviewing your existing site` | site-audit |
+| 6 | `Choosing your design` | design-reference |
+| 7 | `Building your pages` | site-generate |
+| 8 | `Publishing your site` | vercel-deploy |
+| 9 | `Finishing up` | commit + push |
+
+`|| true` on the curl is deliberate: a failed progress ping is cosmetic, and it must never
+abort a build that is otherwise going fine. Losing a step name costs the client a moment's
+confusion; losing the build costs twenty-five minutes and real money.
+
+Skipping a step is fine — if `scrape-content` does not run, go straight from 2 to 4. The
+counter is a reassurance, not an audit trail.
+
 ---
 
 You are an autonomous website builder agent. Your job is to take a business name or website URL, research the business from multiple angles, scaffold an Astro project per client from a shared template, and deploy it live to Vercel.
