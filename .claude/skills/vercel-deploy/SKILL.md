@@ -157,7 +157,65 @@ Append/update the row for this slug with:
   find sites/{slug}/dist -name 'index.html' | wc -l
   ```
 
-### 9. Print summary
+### 9. Commit and push the generated site
+
+Without this, a site built on the runner droplet exists **only on that droplet's
+disk**. It never reaches GitHub, never reaches the operator's Mac, and cannot be
+edited or redeployed from anywhere else. If the droplet is rebuilt, the Astro
+project is gone — the deployed site survives on Vercel, but the source that made
+it does not.
+
+Run from the **repo root**, not from `sites/{slug}`:
+
+```bash
+cd ~/ai-website-builder
+pwd | grep -Eq "/ai-website-builder$" || { echo "not at repo root — aborting commit"; exit 1; }
+
+# Land on top of anything the operator pushed while this build was running.
+git pull --rebase -q origin master
+
+# STAGE ONLY GENERATED OUTPUT.
+# Never `git add -A`, never `git add .`. An unattended run must not be able to
+# commit a change to a skill, a template or CLAUDE.md — that is a run quietly
+# editing how every future run behaves, with nobody watching.
+git add sites/{slug} sites/build-log.md
+
+# Nothing to commit is a valid outcome — a relaunch may change no files.
+git diff --cached --quiet && { echo "no generated changes to commit"; exit 0; }
+
+# Refuse if anything outside sites/ crept into the index.
+if git diff --cached --name-only | grep -qv '^sites/'; then
+  echo "staged files outside sites/ — refusing to commit:"
+  git diff --cached --name-only
+  exit 1
+fi
+
+git commit -q -m "feat(sites): build {slug}
+
+Generated unattended from the portal build queue.
+Live: {final_url}"
+
+git push -q origin master || {
+  # Someone pushed between the pull and now. Rebase once and retry.
+  git pull --rebase -q origin master && git push -q origin master
+} || {
+  echo "push failed after retry — the site is built and live, but its source is only on this box"
+  exit 1
+}
+
+echo "pushed sites/{slug}"
+```
+
+**Never `git push --force`, and never resolve a conflict by discarding.** The
+operator's own work is on the other side of that push.
+
+`.env` is gitignored so credentials cannot be swept in — but the explicit staging
+above is what makes that a guarantee rather than a hope.
+
+**On an operator's own Mac this step is optional**: commit when you normally
+would. It is mandatory on the droplet, which has no human to do it.
+
+### 10. Print summary
 
 Show the user:
 - Business name, slug, final URL
