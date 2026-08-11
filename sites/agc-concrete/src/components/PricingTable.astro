@@ -1,0 +1,29 @@
+---
+export interface Package { name: string; price: string; unit?: string; includes: string[]; cta_text: string; cta_href: string; }
+export interface Props { packages: Package[]; }
+const { packages } = Astro.props;
+---
+<section class="pricing" aria-label="Pricing">
+  <div class="container">
+    <div class="grid">
+      {packages.map((p) => (
+        <article class="tier">
+          <h3>{p.name}</h3>
+          <p class="price">{p.price}<span>{p.unit ? ` / ${p.unit}` : ''}</span></p>
+          <ul>{p.includes.map((line) => <li>{line}</li>)}</ul>
+          <a href={p.cta_href} class="cta">{p.cta_text}</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  .pricing { padding: var(--space-5) 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
+  .tier { padding: var(--space-3); background: var(--color-surface); border-radius: var(--radius-md); display: flex; flex-direction: column; }
+  .price { font-family: var(--font-display); font-size: 2rem; margin: var(--space-1) 0; }
+  .price span { font-size: 1rem; color: var(--color-muted); }
+  ul { flex: 1; list-style: none; padding: 0; margin: 0 0 var(--space-2); }
+  ul li { padding: 0.25rem 0; }
+  .cta { display: inline-block; text-align: center; background: var(--color-accent); color: white; padding: 0.75rem 1.25rem; border-radius: var(--radius-sm); text-decoration: none; }
+</style>

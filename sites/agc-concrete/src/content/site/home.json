@@ -1,0 +1,34 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Macomb, MI",
+    "headline": "Your Trusted Concrete Contractor For Residential, Commercial & Industrial Projects",
+    "subheadline": "Driveways, patios, and foundations installed by a professional crew — rated 4.9 stars across 149 Google reviews.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6b83a7f70d627a86e172.png"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "Why should I work with AGC Concrete?",
+      "a": "AGC Concrete stands out for high-quality work, reliable scheduling, and attention to detail — backed by a 4.9-star rating across 149 Google reviews. The team is responsive and experienced across residential, commercial, and industrial concrete projects."
+    },
+    {
+      "q": "What type of projects does AGC Concrete do, and how long do they take?",
+      "a": "AGC Concrete handles residential, commercial, and industrial concrete work, including driveways, patios, sidewalks, garage floors, and foundations. Timelines vary by scope, but most projects are completed in 1-3 days."
+    },
+    {
+      "q": "Does AGC Concrete offer financing?",
+      "a": "Yes. AGC Concrete offers financing options, including promotional 0% APR on eligible services, with a quick and secure application process and no impact on your credit score to check offers."
+    },
+    {
+      "q": "Does AGC Concrete offer warranties?",
+      "a": "Yes — every project is backed by labor and materials warranties. Contact us directly for the specifics on your project type."
+    },
+    {
+      "q": "What certifications does AGC Concrete have?",
+      "a": "AGC Concrete is fully licensed and insured, and compliant with local and state requirements for concrete work. The team is trained in industry best practices, job site safety, and quality standards."
+    }
+  ]
+}

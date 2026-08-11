@@ -1,0 +1,36 @@
+{
+  "name": "AGC Concrete Inc",
+  "email": null,
+  "phone": "(586) 800-3066",
+  "address": "42211 Garfield Rd #330, Clinton Township, MI 48038",
+  "website": "http://www.agcconcrete.com/",
+  "rating": 4.9,
+  "reviewCount": 149,
+  "category": "Concrete contractor",
+  "hours": "Open 24 hours (service calls); office hours not separately listed",
+  "slug": "agc-concrete",
+  "socials": {
+    "facebook": "https://www.facebook.com/profile.php?id=61557382465487",
+    "instagram": "https://www.instagram.com/agcconcrete",
+    "twitter": "https://x.com/AGCconcrete",
+    "tiktok": "https://www.tiktok.com/@agcconcrete"
+  },
+  "reviewsTags": [
+    {"title": "driveway replacement", "count": 24},
+    {"title": "garage floor replacement", "count": 10},
+    {"title": "walkway replacement", "count": 9},
+    {"title": "professional crew", "count": 35},
+    {"title": "patio", "count": 45},
+    {"title": "front sidewalk replacement", "count": 3},
+    {"title": "driveway widening", "count": 4},
+    {"title": "concrete removal", "count": 4},
+    {"title": "exposed aggregate", "count": 3},
+    {"title": "concrete finish", "count": 2}
+  ],
+  "reviews": [],
+  "portalContact": {
+    "contact_name": "Marcellus G",
+    "contact_email": "marcellus@turnkeymate.com",
+    "contact_phone": "3057737134"
+  }
+}

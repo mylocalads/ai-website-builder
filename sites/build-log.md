@@ -4523,3 +4523,36 @@ Paste-in fields still blank (sections self-hide): every `crm.*` GHL snippet,
 `LEAD_WEBHOOK_URL`, or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`, set in the
 Vercel project, or the form returns an error to the visitor instead of capturing the lead.**
 The phone CTA works regardless.
+| AGC Concrete | agc-concrete | 21 | https://agc-concrete.vercel.app | 2026-08-11 |
+
+Unattended portal build (job: initial, kind: website). GBP found a real listed
+website (agcconcrete.com) even though the portal intake's `website` field was
+null — used it as the source for brand tokens (colors/fonts/logo) and real
+project photography, never as layout/design DNA (kit invariant). Firecrawl was
+unconfigured and the Playwright fallback couldn't launch in this sandbox
+(missing libatk/libgbm/libasound, no sudo) — substituted plain `curl` +
+Google Fonts `@import` parsing + a hand-rolled PNG decoder to pull real brand
+red (`#ff143d`, corroborated by both a GHL custom-color swatch and the logo's
+own dominant pixel color) and Outfit/Roboto fonts. Accent was darkened to
+`#c81030` for the actual build because the `firefly` template hardcodes white
+button text with no `--color-on-accent` token — `#ff143d` under white text
+only measures 3.87:1.
+
+Reddit-restricted local-research searches (6 query variants) returned no
+crawlable Reddit threads in this environment; local_research.json is
+synthesized from general contractor-review web search instead and says so.
+
+Client's own site (agcconcrete.com) supplied 11 verified real project photos
+(visually confirmed, not just size-heuristic) used across the hero, about,
+gallery, and all 5 service/area pages — no stock or placeholder imagery.
+Service-area landmark photos are real Wikimedia Commons photos of the actual
+Macomb-County municipalities. No GBP review text was returned by Apify despite
+`maxReviews: 5`, so `home.json` testimonials is intentionally empty — flagged,
+not fabricated. No GHL CRM snippets or code-injection blocks were supplied
+(unattended run, no operator to paste them in), so those sections self-hide.
+
+Branded preview host `agc-concrete.preview.mylocalads.co` (given in the portal
+payload) was NOT attached — this is the known parked DNS limitation in
+`docs/parked-preview-domain.md` (Squarespace-managed `mylocalads.co` has no DNS
+API), not specific to this build. `https://agc-concrete.vercel.app` returns 200
+with no SSO wall, so that is the public stagingUrl reported to the portal.

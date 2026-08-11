@@ -1,0 +1,27 @@
+---
+import SectionHead from './SectionHead.astro';
+export interface Testimonial { name: string; location?: string; text: string; rating?: number; }
+export interface Props { items: Testimonial[]; }
+const { items } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="testimonials" aria-label="Testimonials">
+    <div class="container">
+      <SectionHead eyebrow="Testimonials" heading="What clients say" />
+      <div class="grid">
+        {items.map((t) => (
+          <blockquote class="quote">
+            <p>{t.text}</p>
+            <footer>— {t.name}{t.location && `, ${t.location}`}</footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+<style>
+  .testimonials { padding: var(--space-5) 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-3); }
+  .quote { margin: 0; padding: var(--space-3); border-left: 3px solid var(--color-accent); font-family: var(--font-display); font-style: italic; }
+  .quote footer { font-family: var(--font-body); font-style: normal; font-size: 0.9rem; color: var(--color-muted); margin-top: var(--space-2); }
+</style>

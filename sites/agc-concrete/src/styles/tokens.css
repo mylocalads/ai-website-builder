@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #101828;
+  --color-muted: #667085;
+  --color-accent: #c81030;
+  --color-surface: #f5f5f5;
+  --color-focus: #0057ff;
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Roboto', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

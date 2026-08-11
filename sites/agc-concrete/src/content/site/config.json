@@ -1,0 +1,104 @@
+{
+  "kind": "config",
+  "business_name": "AGC Concrete",
+  "legal_name": "AGC Concrete Inc",
+  "logo_url": "https://msgsndr-private.storage.googleapis.com/locationPhotos/39c82c0b-1eeb-477e-8070-19517afe234e.png",
+  "default_hero_photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6b83a7f70d627a86e172.png",
+  "about_photo": "https://storage.googleapis.com/msgsndr/mjp4bpTt1mVBXcb46nzY/media/68687db44f6d5cc27741c43a.png",
+  "team_members": [],
+  "tagline": "Macomb County's Trusted Concrete Contractor",
+  "phone": "+15868003066",
+  "phone_display": "(586) 800-3066",
+  "address": {
+    "street": "42211 Garfield Road, Suite 330",
+    "city": "Clinton Township",
+    "state": "MI",
+    "postal": "48038",
+    "country": "US"
+  },
+  "marketing_city": "Macomb",
+  "marketing_state": "MI",
+  "hours": {
+    "monday": "9:00 AM - 7:00 PM",
+    "tuesday": "9:00 AM - 7:00 PM",
+    "wednesday": "9:00 AM - 7:00 PM",
+    "thursday": "9:00 AM - 7:00 PM",
+    "friday": "9:00 AM - 7:00 PM",
+    "saturday": "9:00 AM - 5:00 PM"
+  },
+  "site_url": "https://agc-concrete.vercel.app",
+  "rating": 4.9,
+  "review_count": 149,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=61557382465487",
+    "instagram": "https://www.instagram.com/agcconcrete",
+    "tiktok": "https://www.tiktok.com/@agcconcrete"
+  },
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "icon": "🛡️",
+      "title": "Labor & Materials Warranty",
+      "description": "Every project comes with reliable labor and materials warranties for your peace of mind."
+    },
+    {
+      "icon": "⚡",
+      "title": "Fast Installation",
+      "description": "Most projects are completed in 1-3 days."
+    },
+    {
+      "icon": "📐",
+      "title": "Free 3D Design & Inspection",
+      "description": "Free 3D design and a complimentary on-site inspection to make sure your concrete project runs smoothly."
+    },
+    {
+      "icon": "📅",
+      "title": "Priority Scheduling",
+      "description": "Priority scheduling for any additional services or renovations throughout the year."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "Flexible Financing Now Available",
+    "description": "Upgrading your home or business? We offer flexible financing, including 0% APR on eligible services with a quick and secure application process. There's no impact on your credit score to check offers, and funds can be available within days.",
+    "cta_text": "Apply Now",
+    "cta_href": "/contact"
+  },
+  "us_vs_them": {
+    "enabled": true,
+    "headline": "What Makes Our Product Better?",
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": [
+      { "label": "Personalized Design", "us": true, "them": false },
+      { "label": "Seamless Project Flow", "us": true, "them": false },
+      { "label": "Material Quality", "us": true, "them": false },
+      { "label": "Communication", "us": true, "them": false },
+      { "label": "Clean Job Site", "us": true, "them": false },
+      { "label": "Guaranteed Work", "us": true, "them": false }
+    ]
+  },
+  "gallery": [
+    { "title": "Exposed aggregate & stamped concrete patios", "location": "Macomb County, MI", "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6c3e12842861a3d059d4.png", "alt": "Collage of commercial concrete ramp, foundation forms, stamped concrete detail, and a commercial sidewalk pour" },
+    { "title": "Residential backyard patio", "location": "Macomb County, MI", "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d6f0112842841d1d09e9d.png", "alt": "Finished concrete patio behind a two-story home" },
+    { "title": "Sidewalk & walkway replacement", "location": "Macomb County, MI", "photo": "https://storage.googleapis.com/msgsndr/mjp4bpTt1mVBXcb46nzY/media/68687db40ea4e13696b76882.png", "alt": "New concrete sidewalk leading to a brick home entrance" },
+    { "title": "Foundation & footing forms", "location": "Macomb County, MI", "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d70ea12842851e0d0c3c5.png", "alt": "Concrete block foundation footing forms ready for pour" },
+    { "title": "Industrial floor slab", "location": "Macomb County, MI", "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/689d71b8fe9ec944773ed135.png", "alt": "Crew finishing a large industrial concrete floor slab with rebar mesh" },
+    { "title": "Stamped concrete patio", "location": "Macomb County, MI", "photo": "https://storage.googleapis.com/msgsndr/mjp4bpTt1mVBXcb46nzY/media/68687db463f9ecb2385d738d.png", "alt": "Large stamped concrete patio behind a brick home" },
+    { "title": "Patio with pergola", "location": "Macomb County, MI", "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/685f434fa8f9d301a7e210e3.png", "alt": "Concrete patio with outdoor furniture and pergola" },
+    { "title": "Concrete pool deck", "location": "Macomb County, MI", "photo": "https://assets.cdn.filesafe.space/mjp4bpTt1mVBXcb46nzY/media/685f438b92d1451a941d5b1d.png", "alt": "Concrete pool deck surrounding an in-ground pool" }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "For all your",
+    "heading_rest": "concrete needs"
+  }
+}
