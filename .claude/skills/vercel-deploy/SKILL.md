@@ -91,21 +91,60 @@ blank frame there and a sign-in page if they click through, so every build must 
 URL the client can actually open. That URL is reported as `stagingUrl` on
 `POST /api/builds/{id}/complete`.
 
-**Turn deployment protection OFF for client site projects**, and rely on the host-scoped
-`X-Robots-Tag: noindex` the template ships (see §Deployment Protection). The `*.vercel.app`
-URL then serves publicly, and `staging_url` is simply the deploy URL from Step 3.
+**Turn deployment protection OFF for this project**, then rely on the host-scoped
+`X-Robots-Tag: noindex` the template ships (see §Deployment Protection).
+
+New projects inherit the team's protection default, so a fresh client site comes out
+protected unless something changes it. Nothing does that automatically — do it explicitly:
 
 ```bash
 cd sites/{slug}
-# Confirm it actually serves to an anonymous visitor. 200 is the requirement;
-# 401 means protection is still on and the client would hit a login wall.
-curl -s -o /dev/null -w '%{http_code}\n' "$interim_url"
+PROJECT_ID=$(python3 -c "import json;print(json.load(open('.vercel/project.json'))['projectId'])")
+
+curl -s -X PATCH \
+  -H "Authorization: Bearer $VERCEL_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"ssoProtection": null}' \
+  "https://api.vercel.com/v9/projects/$PROJECT_ID?teamId=team_pZ4lsW05bOEjG4wgazLzUhRH" \
+  -o /dev/null -w 'disable protection -> HTTP %{http_code}\n'
 ```
 
-**A 401 here is a failure, not a warning.** Do not report success, and do not hand that URL
-to the portal.
+`{"ssoProtection": null}` is the documented disable payload. An object with a
+`deploymentType` re-enables it — do not pass one here.
 
-Set `staging_url = $interim_url`.
+**Then verify the URL YOU ARE ABOUT TO REPORT, not any other URL.**
+
+A project has several: the deployment-specific
+`{project}-{hash}-{scope}.vercel.app` and the clean alias `{project}.vercel.app`. They do
+not necessarily share a protection state — the alias can serve publicly while the
+deployment URL redirects to a login. Checking the wrong one proves nothing about what the
+client will see.
+
+```bash
+STAGING_URL="https://{project}.vercel.app"   # the exact value you will report
+
+# -L follows redirects, because SSO does not announce itself with an error code:
+# it answers 302 and sends you to vercel.com/login, which then returns a healthy 200.
+# A bare status check sees "200" and concludes all is well.
+FINAL=$(curl -sL -o /tmp/probe.html -w '%{url_effective}' "$STAGING_URL")
+CODE=$(curl -sL -o /dev/null -w '%{http_code}' "$STAGING_URL")
+
+case "$FINAL" in
+  *vercel.com/login*|*vercel.com/sso-api*)
+    echo "FAIL: $STAGING_URL lands on a Vercel login page — the client would see a sign-in form"
+    exit 1;;
+esac
+[ "$CODE" = "200" ] || { echo "FAIL: $STAGING_URL returned $CODE"; exit 1; }
+grep -qi "<title" /tmp/probe.html || { echo "FAIL: no HTML title — not the site"; exit 1; }
+
+echo "OK: $STAGING_URL is publicly viewable"
+```
+
+**Three checks, because each misses something the others catch.** The status code alone
+passes on a login page. The final URL alone passes on a 404 that never redirected. The
+title alone passes on Vercel's own error page. Report success only when all three agree.
+
+Set `staging_url = $STAGING_URL`.
 
 **Branded preview URLs (`{slug}.preview.mylocalads.co`) are PARKED, not abandoned.**
 They need a DNS record created per client, and `mylocalads.co` DNS is currently
