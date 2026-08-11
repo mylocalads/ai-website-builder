@@ -1,0 +1,28 @@
+{
+  "batch_id": "2026-08-10T14:35:18Z-icn5wq",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "Why Choose Us section shows png file names",
+  "diff_spec": [
+    {
+      "op": "SET",
+      "path": "src/components/WhyChooseUs.astro",
+      "field": "icon detection",
+      "value": "looksLikeImage() + imageUrl() resolution, replacing isUrl()",
+      "note": "regression from image localisation: filenames failed the isUrl() test and fell through to the emoji branch, printing the filename as page text"
+    }
+  ],
+  "files_touched": [
+    "src/components/WhyChooseUs.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_url": "https://firefly-qw0dts2vz-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://fireflycd.com",
+    "page_count": 24
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

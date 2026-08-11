@@ -1,0 +1,110 @@
+{
+  "slug": "mnm-roofing-professionals",
+  "category": "Roofing contractor",
+  "city": "Greentown, PA",
+  "region": "Poconos / Northeast Pennsylvania (Pike, Wayne, Monroe, Lackawanna, Luzerne, Lehigh counties)",
+  "_evidence_note": "reddit.com blocks both the WebSearch user agent and Firecrawl, so thread bodies were not obtainable. Findings below come from (a) search-result titles and roofing-contractor page copy for the Poconos/Monroe County market, which evidence the questions homeowners in this market ask, and (b) MNM's own review corpus and third-party profiles (GuildQuality 4.8/43, Birdeye 4.8/264, BBB A+). Directional, not a read of thread comments.",
+  "pain_points": [
+    {
+      "claim": "Subcontracted crews are the norm, so the company that sold the job is not the company on the roof — and accountability disappears when something goes wrong.",
+      "evidence": "MNM's own site returns to 'no subcontracting' six separate times across the home, about, residential and commercial pages — a differentiator is only worth repeating that often if the opposite is what customers keep encountering.",
+      "source": "client site + review corpus"
+    },
+    {
+      "claim": "Storm-chasing outfits appear after weather events, push an insurance claim, and are gone before the warranty matters.",
+      "evidence": "Recurring search-result titles across the PA roofing market: 'What is the risk in using a stormchasing roofing company?', 'Is this roofer trying to rope me into an insurance scam?'",
+      "source": "search-result titles"
+    },
+    {
+      "claim": "Poconos and Lake Wallenpaupack homeowners are frequently second-home or seasonal owners who cannot supervise the work and need documentation they can trust remotely.",
+      "evidence": "MNM's completed-project addresses cluster on Woodloch Drive, Boulder Drive, Clark Drive and Lenape Trail — lake and resort-community roads. MNM's answer is photo-documented projects mapped by address.",
+      "source": "client project map"
+    },
+    {
+      "claim": "Homeowners cannot picture what they are buying — shingle line, colour, panel profile — until it is already installed.",
+      "evidence": "MNM built a physical showroom in Greentown with shingle, metal, gutter and colour samples, and pushes clients toward it on two location pages.",
+      "source": "client site"
+    },
+    {
+      "claim": "Being left to argue with the insurance adjuster alone after storm damage.",
+      "evidence": "Local contractor copy across the Poconos market leads with ice dams, wind-driven rain and tree damage; MNM's /resources page is dedicated to storm documentation and claim support.",
+      "source": "market copy + client site"
+    },
+    {
+      "claim": "Roof replacement cost is a barrier and financing is opaque.",
+      "evidence": "MNM publishes a full GoodLeap FAQ — rates, terms, limits, payment mechanics — rather than a 'financing available' badge.",
+      "source": "client site"
+    }
+  ],
+  "what_customers_value": [
+    "The crew on the roof works for the company that sold the job",
+    "A named owner who runs the estimate himself",
+    "Warranty length stated in numbers, not adjectives",
+    "Someone who documents the damage to the standard the adjuster wants",
+    "Being able to see and touch the shingle and the metal panel before choosing",
+    "Local offices close enough that a callback is a short drive, not a regional dispatch"
+  ],
+  "business_differentiators": [
+    "Zero subcontracting — every installer is MNM's own, personally trained by the owner",
+    "10-year workmanship warranty plus a 15-year craftsman warranty on full replacements",
+    "Miguel Cornejo, the owner, personally oversees every free estimate",
+    "Three offices — Greentown, Nanticoke and Whitehall Township — covering the Poconos to the Lehigh Valley",
+    "A physical roofing showroom with shingle, metal, gutter and colour samples",
+    "BBB accredited with an A+ rating; PA licensed (PA154140), bonded and insured",
+    "Every completed project photographed and mapped by address on a public project map",
+    "$250 referral rewards, veteran roof giveaways, youth sports sponsorships",
+    "BusinessRate 'Best of 2026' award winner for Pike County roofing"
+  ],
+  "copy_angles": [
+    {
+      "angle": "Nobody subcontracts your roof — our crew, every time",
+      "use": "hero headline / promise band",
+      "why": "Their single most-repeated claim, and the direct answer to the accountability gap that defines this market. Concrete and checkable."
+    },
+    {
+      "angle": "10-year workmanship + 15-year craftsman warranty",
+      "use": "promise bar / signature system",
+      "why": "A number beats an adjective, and it is longer than what a subcontracting competitor can honestly offer."
+    },
+    {
+      "angle": "Miguel runs your estimate himself",
+      "use": "about block / process step one",
+      "why": "Puts a name and a face on a purchase homeowners are afraid to make. Verified on BBB as principal contact."
+    },
+    {
+      "angle": "See it before you buy it — visit the Greentown showroom",
+      "use": "signature system / service-area pages",
+      "why": "Almost no roofer in NEPA has one. It converts an abstract, high-anxiety spend into a physical decision."
+    },
+    {
+      "angle": "We document the storm damage the way your adjuster needs it",
+      "use": "storm-damage service page / process step two",
+      "why": "Turns the scariest part of a claim into a service they perform, and it is the whole point of their /resources page."
+    },
+    {
+      "angle": "Three offices, from the Poconos to the Lehigh Valley",
+      "use": "service-area grid / footer",
+      "why": "Justifies the six area pages honestly — these are real staffed addresses, not invented coverage."
+    }
+  ],
+  "recommended_hero": {
+    "eyebrow": "Greentown, PA — Serving NEPA Since 2018",
+    "headline": "Your Roof, Our Crew — Never a Subcontractor",
+    "support": "Family-owned roofing across Northeast Pennsylvania, from the Poconos to the Lehigh Valley. Every shingle and every panel goes on by MNM's own in-house crew, backed by a 10-year workmanship warranty."
+  },
+  "_sources": {
+    "searches": [
+      "\"MNM Roofing Professionals\" Greentown PA Google reviews rating",
+      "reddit Poconos Pennsylvania roofer recommendations storm chaser roof replacement problems"
+    ],
+    "scraped": [
+      "mnmroofingllc.com (10 pages)",
+      "bbb.org MNM Roofing Professionals profile",
+      "guildquality.com/profile/mnm-roofing-professionals",
+      "reviews.birdeye.com/m-n-m-roofing-professionals",
+      "chamberofcommerce.com Greentown roofing-contractor listing",
+      "projectmapit.com/mnm-roofing-professionals"
+    ],
+    "retrieved": "2026-08-10"
+  }
+}

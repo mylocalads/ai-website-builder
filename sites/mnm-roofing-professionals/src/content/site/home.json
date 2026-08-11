@@ -1,0 +1,231 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Greentown, PA — Serving NEPA Since 2018",
+    "headline": "Your Roof, Our Crew — Never A Subcontractor",
+    "subheadline": "Family-owned roofing across Northeast Pennsylvania, from the Poconos to the Lehigh Valley. Every shingle and every metal panel goes on by MNM's own in-house team, backed by a 10-year workmanship warranty.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "photo": "/img/hero-poconos-shingle-roof.jpg",
+    "video_link_text": "Why homeowners pick MNM",
+    "video_link_href": "/about",
+    "quote_card": {
+      "quote": "Words cannot express how happy I am with the top-notch, professional job that MNM roofing did.",
+      "author": "Vin — MNM customer",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book",
+      "rating": 4.8,
+      "review_count": 264
+    },
+    "trust_badges": [
+      {
+        "rating": 4.8,
+        "label": "4.8 Rating",
+        "sublabel": "264 verified reviews"
+      },
+      {
+        "mark": "bbb",
+        "label": "A+ Rated",
+        "sublabel": "BBB accredited since 2023"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Never subcontracted — our own crew", "icon": "hammer" },
+    { "text": "10-year workmanship warranty", "icon": "shield" },
+    { "text": "Free estimates, run by the owner", "icon": "clipboard" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "The Crew On Your Roof Works For Us",
+    "body": "Most roofing companies in this region sell the job and then hand it to whichever subcontractor is free that week. We have never worked that way. Every installer at MNM is on our payroll and was trained by Miguel, and every job is his responsibility from the estimate through the final sweep of the yard. That is why we can put a 10-year workmanship warranty in writing — there is nobody else to point at if something is not right.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Doing It Right Beats Doing It Fast",
+    "intro": "Whether it is a full metal roof on a lake house or a single storm repair in Nanticoke, every MNM job runs the same way — the same crew, the same warranty, and the same person accountable for it.",
+    "blocks": [
+      {
+        "title": "We document the storm damage properly",
+        "body": "Storms hide their damage. We assess the whole roof — including structural weakness and leaks you cannot see from the ground — and write the detailed report your insurer will ask for. We work directly with adjusters, and we will tarp during the storm if it cannot wait.",
+        "icon": "umbrella"
+      },
+      {
+        "title": "See the materials before you commit",
+        "body": "Our Greentown office has a full roofing showroom — premium shingle lines, metal panel profiles, gutter systems and colour samples all on display. Come look at what is going on your house instead of picking it off a screen. Whatever you choose, the replacement carries a 10-year workmanship warranty plus our 15-year craftsman warranty.",
+        "icon": "home"
+      }
+    ],
+    "steps_title": "We leave the property the way we found it",
+    "steps_icon": "broom",
+    "steps": [
+      {
+        "title": "Tear-off cleared as we go",
+        "body": "Debris goes straight into our trailer, not into a pile on your lawn."
+      },
+      {
+        "title": "Magnet sweep for nails",
+        "body": "Driveway, walkways and yard, before the trucks leave."
+      },
+      {
+        "title": "A final walk-through with you",
+        "body": "We look at the finished roof together before we call it done."
+      }
+    ],
+    "guarantee": {
+      "title": "Free estimates, overseen by the owner",
+      "body": "Miguel personally handles every estimate — so the number you get is accurate, itemised, and comes from the person who is accountable for the work. No pressure, no obligation, and no charge.",
+      "cta_text": "Talk to Miguel",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Roof Replacement Goes",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free inspection and written estimate",
+        "icon": "clipboard",
+        "body": "Miguel gets on the roof, documents what he finds, and puts an itemised number in your hand."
+      },
+      {
+        "label": "Step Two",
+        "title": "Materials chosen, claim handled",
+        "icon": "umbrella",
+        "body": "Pick your shingle or panel at the Greentown showroom. If insurance is involved, we deal with the adjuster."
+      },
+      {
+        "label": "Step Three",
+        "title": "Our crew installs it",
+        "icon": "hammer",
+        "body": "Stripped to the deck, rotten sheathing replaced, and rebuilt to manufacturer spec by our own installers."
+      },
+      {
+        "label": "Step Four",
+        "title": "Clean-up and walk-through",
+        "icon": "broom",
+        "body": "Debris hauled, yard swept for nails, and a final look at the finished roof together."
+      }
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About MNM Roofing",
+    "headline": "Family-Owned, Built On Not Cutting Corners",
+    "body": "Before Miguel Cornejo opened MNM, he spent years subcontracting for large regional roofing companies — learning the best of what each one did, and seeing plenty of what he would never do himself. He founded MNM in Nanticoke in 2018. Today the main hub is in Greentown serving the Poconos, with a second office back in Nanticoke for Luzerne County and a growing Lehigh Valley presence in Whitehall Township. Every installer is a qualified craftsman personally trained by Miguel, working alongside him on the job.",
+    "checklist": [
+      "Family-owned and operated since 2018",
+      "PA licensed (PA154140), bonded and insured",
+      "BBB accredited with an A+ rating",
+      "Never subcontracted — every job is our own crew",
+      "Residential, commercial and agricultural work"
+    ],
+    "photo": "/img/crew-branded-trailer.jpg",
+    "photo_alt": "MNM Roofing crew unloading materials from the company's own branded trailer",
+    "photo_cutout": false,
+    "cta_text": "Meet The Team",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Why NEPA Homeowners Choose Us",
+    "headline": "Roofing Built For Northeast Pennsylvania Weather",
+    "paragraphs": [
+      "Roofs in this part of Pennsylvania take a beating that roofs further south never see. Freeze-thaw cycles work at flashing all winter, ice dams push water back up under the shingles, heavy snow loads sit on low-slope sections for weeks, and summer storms come through the Poconos with enough wind to lift a poorly nailed course clean off.",
+      "We install shingle systems fortified by Owens Corning warranties, energy-efficient metal roofing including Tilcor stone-coated steel, and rubber membrane for flat and low-slope structures — each specified for those conditions rather than for a catalogue. Gutters are sized to the roof's actual pitch and area so meltwater has somewhere to go before it reaches your foundation."
+    ],
+    "checklist": [
+      "Shingle, metal, rubber and agricultural panel systems",
+      "Storm and leak repair with full insurance documentation",
+      "Seamless gutters, downspouts and leaf guards",
+      "Free leaf guards when you book a roof and gutters together",
+      "Senior and military discounts available"
+    ],
+    "image": "/img/crew-tear-off.jpg",
+    "image_alt": "MNM Roofing crew stripping an old roof down to the deck before rebuilding it",
+    "image_position": "left",
+    "review": {
+      "name": "Heather",
+      "source": "MNM customer",
+      "rating": 5,
+      "text": "I had an excellent experience! Every interaction was friendly, professional, and easy."
+    },
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Vin",
+      "location": "MNM customer",
+      "rating": 5,
+      "text": "Words cannot express how happy I am with the top-notch, professional job that MNM roofing did."
+    },
+    {
+      "name": "Timothy",
+      "location": "MNM customer",
+      "rating": 5,
+      "text": "Great communication. Work was exceptional."
+    },
+    {
+      "name": "Heather",
+      "location": "MNM customer",
+      "rating": 5,
+      "text": "I had an excellent experience! Every interaction was friendly, professional, and easy."
+    },
+    {
+      "name": "Aaron",
+      "location": "MNM customer",
+      "rating": 5,
+      "text": "We are super happy how our roof turned out."
+    },
+    {
+      "name": "Shirley",
+      "location": "MNM customer",
+      "rating": 5,
+      "text": "I would highly recommend MNM. Very happy."
+    },
+    {
+      "name": "John",
+      "location": "MNM customer",
+      "rating": 5,
+      "text": "The roof is 10/10."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How do I get a free estimate?",
+      "a": "Request one through this site or call (570) 793-5715. Miguel, the owner, personally oversees every estimate — he gets on the roof, documents what he finds, and gives you an itemised written number. There is no charge and no obligation."
+    },
+    {
+      "q": "Do you use subcontractors?",
+      "a": "No. Every installer on your roof is on MNM's payroll and was personally trained by Miguel. That is the whole reason we can back the work with a written workmanship warranty — there is no third party to hand the blame to."
+    },
+    {
+      "q": "What warranty comes with a full roof replacement?",
+      "a": "A 10-year workmanship warranty covering labour and installation, plus our 15-year craftsman warranty from the in-house team. The manufacturer's material warranty sits on top of that — Owens Corning on shingle systems, and 50-year coverage on Tilcor stone-coated steel."
+    },
+    {
+      "q": "Do you handle insurance claims for storm damage?",
+      "a": "Yes, routinely. We assess the full extent of the damage including hidden leaks and structural weakness, produce the detailed report insurers require, and work directly with your adjuster. If the roof cannot wait, we will tarp it first."
+    },
+    {
+      "q": "Are you licensed and insured in Pennsylvania?",
+      "a": "Yes. MNM Roofing Professionals is licensed in Pennsylvania under PA154140, and we are bonded and insured. We are also BBB accredited with an A+ rating."
+    },
+    {
+      "q": "Do you install gutters as well as roofs?",
+      "a": "Yes — seamless gutters, downspouts and leaf guards for both homes and commercial buildings. Book a full roof and gutters together and the leaf guards are included free."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "All of Northeast Pennsylvania from three offices: Greentown for the Poconos and Pike, Wayne, Monroe and Lackawanna counties; Nanticoke for Luzerne County; and Whitehall Township for the Lehigh Valley. Whitehall sits outside our core counties, so call that office to confirm availability for your address."
+    },
+    {
+      "q": "Is financing available?",
+      "a": "Yes. We work with outside lending partners, applications take under ten minutes, and you get a decision straight away. We also offer senior and military discounts, and a $250 reward for every referral who signs with us."
+    }
+  ]
+}

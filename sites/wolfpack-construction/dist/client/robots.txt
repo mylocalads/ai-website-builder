@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wolfpack-construction.vercel.app/sitemap-index.xml

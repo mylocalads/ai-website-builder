@@ -1,0 +1,194 @@
+[
+  {
+    "path": "/",
+    "score": 0.8,
+    "performance": 0.6,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/about/",
+    "score": 0.86,
+    "performance": 0.82,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/accessibility/",
+    "score": 0.96,
+    "performance": 0.88,
+    "accessibility": 0.96,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/book/",
+    "score": 0.82,
+    "performance": 0.68,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/contact/",
+    "score": 0.83,
+    "performance": 0.68,
+    "accessibility": 0.96,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/kootenai-county-id/",
+    "score": 0.89,
+    "performance": 0.94,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/liberty-lake-wa/",
+    "score": 0.9,
+    "performance": 0.97,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/otis-orchards-wa/",
+    "score": 0.89,
+    "performance": 0.95,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/our-work/",
+    "score": 0.86,
+    "performance": 0.81,
+    "accessibility": 0.93,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/post-falls-id/",
+    "score": 0.89,
+    "performance": 0.96,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/pricing/",
+    "score": 0.88,
+    "performance": 0.89,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/privacy/",
+    "score": 0.96,
+    "performance": 0.88,
+    "accessibility": 0.96,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/service-areas/",
+    "score": 0.96,
+    "performance": 0.86,
+    "accessibility": 0.96,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/services/",
+    "score": 0.95,
+    "performance": 0.85,
+    "accessibility": 0.96,
+    "best-practices": 1,
+    "seo": 1
+  },
+  {
+    "path": "/services/bathroom-remodels/",
+    "score": 0.9,
+    "performance": 0.98,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/services/decking/",
+    "score": 0.86,
+    "performance": 0.84,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/services/flooring/",
+    "score": 0.9,
+    "performance": 0.97,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/services/kitchen-remodels/",
+    "score": 0.89,
+    "performance": 0.95,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/services/roofing/",
+    "score": 0.9,
+    "performance": 0.98,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/services/siding/",
+    "score": 0.89,
+    "performance": 0.94,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/services/windows/",
+    "score": 0.9,
+    "performance": 0.98,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/spokane-valley-wa/",
+    "score": 0.89,
+    "performance": 0.95,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/spokane-wa/",
+    "score": 0.89,
+    "performance": 0.95,
+    "accessibility": 0.92,
+    "best-practices": 0.69,
+    "seo": 1
+  },
+  {
+    "path": "/terms/",
+    "score": 0.96,
+    "performance": 0.86,
+    "accessibility": 0.96,
+    "best-practices": 1,
+    "seo": 1
+  }
+]

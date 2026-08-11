@@ -1,0 +1,156 @@
+{
+  "slug": "mnm-roofing-professionals",
+  "business_name": "MNM Roofing Professionals",
+  "legal_name": "M-N-M Roofing Professionals, LLC",
+  "tagline": "There When You Need Us",
+  "phone": "+15707935715",
+  "phone_display": "(570) 793-5715",
+  "email": "info@mnmroofingllc.com",
+  "address": {
+    "street": "106 Pfeuffer Ct",
+    "city": "Greentown",
+    "state": "PA",
+    "postal": "18426",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": { "lat": 41.31983, "lng": -75.30493 },
+  "hours": {
+    "monday": "8:00 AM - 5:00 PM",
+    "tuesday": "8:00 AM - 5:00 PM",
+    "wednesday": "8:00 AM - 5:00 PM",
+    "thursday": "8:00 AM - 5:00 PM",
+    "friday": "8:00 AM - 5:00 PM",
+    "saturday": "8:00 AM - 2:00 PM"
+  },
+  "rating": 4.8,
+  "review_count": 264,
+  "licensed": true,
+  "insured": true,
+  "bonded": true,
+  "years_in_business": 8,
+  "social": {
+    "facebook": "https://www.facebook.com/MnMroofs/"
+  },
+  "site_url": "https://mnmroofingllc.com",
+  "logo_url": "https://mnmroofingllc.com/wp-content/uploads/2025/01/Logo_Final-removebg-preview-1.png",
+  "default_hero_photo": "https://mnmroofingllc.com/wp-content/uploads/2025/01/solitto-2.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://storage.googleapis.com/pmi-photos/full-a210e62b-1b13-4b09-8b8f-52f02f9cb173.jpg",
+  "brand": {
+    "fonts": { "display": "Red Rose", "body": "DM Sans" },
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#0A0A0A",
+      "accent": "#CF152D",
+      "muted": "#5C5F56",
+      "surface": "#F7F7F6",
+      "candidates": ["#CF152D", "#0A0A0A", "#0038F0", "#2EA3F2", "#FFFFFF"],
+      "_note": "#2EA3F2 and #0038F0 are Divi theme defaults left unchanged on the client's WordPress build, not brand colours. The logo is red (#CF152D) over a black-to-silver gradient wordmark — red + near-black is the real brand pair."
+    }
+  },
+  "services": [
+    {
+      "title": "Residential Roofing",
+      "short_description": "Shingle, metal and rubber roofing for homes across Northeast Pennsylvania, installed by MNM's own crews.",
+      "long_description": "Shingle roofing fortified by Owens Corning warranties, energy-efficient metal systems, and rubber membrane for flat and low-slope sections. Every residential replacement carries a 10-year workmanship warranty plus MNM's 15-year craftsman warranty.",
+      "sub_services": ["Full roof replacement", "Asphalt shingle roofing", "Metal roofing", "Rubber / flat roofing", "Emergency roof repair"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Commercial Roofing",
+      "short_description": "Flat, metal and rolled roofing systems for NEPA businesses, with no subcontracting.",
+      "long_description": "Durable shingle and metal roofing systems, commercial rolled roofing for industrial and flat-roofed buildings, and seamless gutters sized for higher water volume. Every project is handled by MNM's in-house crew and backed by the 15-year craftsman warranty.",
+      "sub_services": ["Flat roof systems", "Commercial rolled roofing", "Metal and metal shingle roofing", "Full commercial replacement", "Commercial seamless gutters"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Metal Roofing",
+      "short_description": "Standing seam, corrugated, agricultural panel and Tilcor stone-coated steel systems.",
+      "long_description": "MNM installs and supplies Master Rib, 1-1/4\" and 2-1/2\" corrugated, 5V, PBR, IR, R-Panel and ValuRib panels for residential, commercial, post-frame and agricultural buildings — plus Tilcor stone-coated steel, backed by a 50-year manufacturer warranty.",
+      "sub_services": ["Tilcor stone-coated steel", "Master Rib wide-rib panel", "Corrugated panel (1-1/4\" and 2-1/2\")", "5V, PBR, IR and R-Panel", "Agricultural roofing and wall panels"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair & Storm Damage",
+      "short_description": "Emergency repairs, tarping and full insurance claim documentation after NEPA storms.",
+      "long_description": "MNM assesses the full extent of storm damage — including hidden leaks and structural weakness — and provides the detailed report insurers require. Tarping during the storm, prompt repairs after it, and direct work with your adjuster so you are not chasing the claim.",
+      "sub_services": ["Emergency leak repair", "Storm and wind damage repair", "Emergency tarping", "Insurance claim documentation", "Hail and snow damage assessment"],
+      "_source": "scraped"
+    },
+    {
+      "title": "Gutter Installation",
+      "short_description": "Seamless residential and commercial gutters, downspouts and leaf guards.",
+      "long_description": "Gutters sized to your roof's pitch, area and the local climate — aluminium for low maintenance, copper where the look matters. Sign up for a full roof and gutters and MNM includes leaf guards free.",
+      "sub_services": ["Seamless gutter installation", "Downspout installation and repair", "Leaf guards", "Commercial high-volume gutters", "Gutter repair"],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    { "name": "Greentown", "county": "Pike County", "state": "PA", "state_abbr": "pa", "slug": "greentown-pa", "local_context": "Main hub and roofing showroom at 106 Pfeuffer Ct.", "_source": "scraped" },
+    { "name": "Hawley", "county": "Wayne County", "state": "PA", "state_abbr": "pa", "slug": "hawley-pa", "local_context": "Lake Wallenpaupack-area homes; multiple completed roofs on Woodloch Drive and Boulder Drive.", "_source": "scraped" },
+    { "name": "Nanticoke", "county": "Luzerne County", "state": "PA", "state_abbr": "pa", "slug": "nanticoke-pa", "local_context": "Where MNM started in 2018; office at 136 W Main St, by appointment.", "_source": "scraped" },
+    { "name": "Wilkes-Barre", "county": "Luzerne County", "state": "PA", "state_abbr": "pa", "slug": "wilkes-barre-pa", "local_context": "Served from the Nanticoke office.", "_source": "scraped" },
+    { "name": "Scranton", "county": "Lackawanna County", "state": "PA", "state_abbr": "pa", "slug": "scranton-pa", "local_context": "Lackawanna County is a named core service county; recent work in South Abington Township.", "_source": "scraped" },
+    { "name": "Whitehall Township", "county": "Lehigh County", "state": "PA", "state_abbr": "pa", "slug": "whitehall-township-pa", "local_context": "Lehigh Valley location at 1133 3rd St; direct line (610) 360-6820.", "_source": "scraped" }
+  ],
+  "testimonials": [
+    { "name": "Timothy", "text": "Great communication. Work was exceptional.", "rating": 5, "_source": "scraped" },
+    { "name": "Aaron", "text": "We are super happy how our roof turned out.", "rating": 5, "_source": "scraped" },
+    { "name": "John", "text": "The roof is 10/10", "rating": 5, "_source": "scraped" },
+    { "name": "Heather", "text": "I had an excellent experience! Every interaction was friendly, professional, and easy.", "rating": 5, "_source": "scraped" },
+    { "name": "Vin", "text": "Words cannot express how happy I am with the top-notch, professional job that MNM roofing did.", "rating": 5, "_source": "scraped" },
+    { "name": "Shirley", "text": "I would highly recommend MNM. Very happy.", "rating": 5, "_source": "scraped" }
+  ],
+  "team_members": [
+    { "name": "Miguel Cornejo", "role": "Owner", "photo": null, "bio": "Founded MNM Roofing in Nanticoke in 2018 after years subcontracting for large regional roofing companies. Personally oversees every free estimate and trains every installer on the crew.", "_source": "scraped" },
+    { "name": "Megan Cornejo", "role": "Office Manager", "photo": null, "bio": null, "_source": "scraped" }
+  ],
+  "faqs": [
+    { "q": "How can I get a free estimate for a roof replacement?", "a": "You can request a free, no-obligation estimate via the website or by calling the office. The owner personally oversees each estimate to ensure accuracy and clarity." },
+    { "q": "What warranty do you offer on full re-roof installations?", "a": "All full roof replacements come with a 10-year workmanship warranty, plus the 15-year craftsman warranty from the in-house team — covering labor and workmanship." },
+    { "q": "Do you install gutters as part of a roofing job?", "a": "Yes — in addition to roofing, MNM offers full gutter and downspout installations or repairs to protect your home's drainage system." },
+    { "q": "Are you licensed and insured in Pennsylvania?", "a": "Yes. MNM Roofing is fully licensed, bonded, and insured in Pennsylvania (PA154140)." },
+    { "q": "Do you offer discounts or special pricing for seniors or military?", "a": "Yes. Discounts are available for senior citizens and military personnel — mention it when scheduling your estimate." },
+    { "q": "How do you handle storm damage repairs or emergency leaks?", "a": "MNM offers prompt roof repair for storm or wind damage, responds quickly, and guides you through the insurance claim process." },
+    { "q": "What areas do you serve around the Poconos?", "a": "All of Northeast Pennsylvania from three locations: Greentown (Poconos — Pike, Wayne, Monroe, Lackawanna), Nanticoke (Luzerne County), and Whitehall Township (Lehigh Valley)." }
+  ],
+  "gallery": [
+    { "photo": "https://mnmroofingllc.com/wp-content/uploads/2025/01/solitto-2.jpg", "alt": "Aerial view of a completed architectural shingle roof on a large Poconos home" },
+    { "photo": "https://mnmroofingllc.com/wp-content/uploads/2025/01/alex-myack-gutter-2.jpg", "alt": "Log cabin with a new green metal roof and matching seamless gutters" },
+    { "photo": "https://mnmroofingllc.com/wp-content/uploads/2025/01/GetAttachmentThumbnail-6.jpg", "alt": "Drone view of a finished shingle roof with skylights and ridge vent" },
+    { "photo": "https://storage.googleapis.com/pmi-photos/full-a210e62b-1b13-4b09-8b8f-52f02f9cb173.jpg", "alt": "MNM Roofing crew unloading materials from the company's branded dump trailer" },
+    { "photo": "https://storage.googleapis.com/pmi-photos/full-743b0f5b-7aa7-4a32-a1bc-61fd0e592a69.jpg", "alt": "MNM crew tearing off an old roof and setting new decking" },
+    { "photo": "https://storage.googleapis.com/pmi-photos/full-e96f24a3-587a-4261-9157-22416187a49a.jpg", "alt": "Completed shingle roof and new drip edge on a residential home" }
+  ],
+  "financing": {
+    "partners": ["GoodLeap", "HFS Financial", "GreenSky"],
+    "detail": "Loans from $1,000 up to $55,000 through GoodLeap; standard 12.99% APR over 5–15 year terms, promotional 0% for 12 months. Applications take under 10 minutes with an instant decision.",
+    "_source": "scraped"
+  },
+  "specials": [
+    "Free leaf guards when you sign up for a full roof and gutters",
+    "$250 referral reward for every referral that signs — no cap",
+    "Senior and military discounts",
+    "Veteran roof giveaways and youth sports sponsorships"
+  ],
+  "brand_voice_sample": "In the End, It's Better with MNM. We stand out from the crowd with our dedication to doing things right rather than quickly, and we never outsource — every job is handled by our skilled in-house team.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The client's existing site uses a CGI Digital / Divi form with reCAPTCHA, a UserWay accessibility widget, a GTranslate widget, and a CGI Communications survey pop-up. None of these are MLA's GHL widgets — do not copy them. GHL snippets remain paste-in from the operator."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_note": "APIFY_TOKEN is not set in this environment, so the Apify Google Maps lookup could not run. Identity was confirmed instead against the Better Business Bureau profile (accredited, A+, PA154140), GuildQuality, Birdeye and Chamber of Commerce listings — all of which agree on the name, address, and phone.",
+    "pages_scraped": ["/", "/about", "/residential", "/commercial", "/gutter-installation", "/resources", "/contact-us", "/greentown-location", "/nanticoke-location", "/whitehall-township-location"],
+    "socials_scraped": [],
+    "conflicts_found": [
+      "The /commercial page names the owner as 'Joe'; the homepage, /about and the BBB record all name Miguel Cornejo. Miguel is used.",
+      "Site hours read 8-5 Mon-Fri / 8-2 Sat; Birdeye lists 8-6 Mon-Fri / 9-3 Sat. The client's own site is used."
+    ],
+    "generated_at": "2026-08-10",
+    "cost_estimate_usd": 0.32
+  }
+}

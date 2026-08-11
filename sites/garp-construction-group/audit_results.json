@@ -1,0 +1,39 @@
+{
+  "slug": "garp-construction-group",
+  "audited_url": "https://www.garpconstructiongroup.com",
+  "screenshot": "screenshots/garp-construction-group.png",
+  "audited_at": "2026-08-10",
+  "platform": "Wix (free/legacy template, footer reads '©2020 por GARP CONSTRUCTION GROUP INC. Creada con Wix.com')",
+  "purpose": "OPERATOR REFERENCE ONLY — not design DNA. No layout, component or styling pattern from this site was carried into the generated site.",
+  "strengths": [
+    "Real, ownable project photography — drone shots of completed roofs, a craned commercial rooftop AC unit, finished pools and impact window installs. This was the single most valuable asset on the old site and is now the imagery on the new one.",
+    "All four state licence numbers are stated on the page (CGC1520370, CAC1817062, CCC1329807, CFC1429344), which is the strongest differentiator the business has.",
+    "Clear About copy with a genuine positioning line — 'we take great pride in our unique ability to understand our own capabilities and not promise more than we can deliver'."
+  ],
+  "weaknesses": [
+    "Unfinished template placeholder is live above the fold: the H1 reads 'WELCOME' followed by 'Welcome visitors to your site with a short, engaging introduction. Double click to edit and add your own text.'",
+    "The primary CTA button still reads 'Start Now' and does nothing meaningful.",
+    "Mixed-language chrome — the footer and several UI strings are in Spanish ('Más', 'Creada con Wix.com') on an otherwise English site. 'Suscription Form' is misspelled on every page.",
+    "Service pages are effectively empty. /plumbing has no content at all below the nav; /general-contractor is a bare image grid with no copy; /air-condition and /copia-de-windows have one line each.",
+    "The Pools page URL is 'copia-de-windows' — a literal 'copy of windows' Wix duplicate slug, which is both unindexable and visible to anyone reading the nav link.",
+    "All four services are crammed into two run-on paragraphs inside image captions on the home page, so no service has a rankable page of its own.",
+    "No service-area pages, no structured data, no sitemap, no llms.txt — nothing targeting 'Miami', 'Hialeah' or any other city the business serves.",
+    "No permitting, NOA or code content, despite that being the highest-intent search topic in this market and an area where the business has genuine expertise.",
+    "Two separate photo sets on /general-contractor carry a visible 'SWFLMLS' watermark — third-party MLS listing photos rather than the company's own work. These were deliberately EXCLUDED from the new site.",
+    "Copyright notice frozen at 2020."
+  ],
+  "load_notes": "Slow to settle — the page needed roughly six seconds before the hero carousel and lazy images resolved, and `networkidle` never fired within 60s on the first capture attempt.",
+  "carried_forward": [
+    "NAP: 8290 NW 66th St, Miami, FL 33166 · (305) 602-0400 · garp_construction@live.com",
+    "Four licence numbers",
+    "About copy and the 'we don't promise more than we can deliver' positioning",
+    "21 first-party project photos (all f85a36_* Wix uploads), downloaded to public/img/ rather than hotlinked",
+    "Facebook and Instagram profile URLs, Google Maps CID"
+  ],
+  "deliberately_not_carried_forward": [
+    "Every layout, section arrangement and component style — the owl template is the sole source of design",
+    "The 10 SWFLMLS-watermarked MLS photos",
+    "The 'copia-de-windows' URL",
+    "The Wix stock photography (generic filenames: 'Empty Room', 'Couple and Architect', 'Wooden Stairs', 'Techo negro')"
+  ]
+}

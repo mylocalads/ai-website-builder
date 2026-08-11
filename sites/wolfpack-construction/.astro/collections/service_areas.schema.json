@@ -1,0 +1,86 @@
+{
+  "$ref": "#/definitions/service_areas",
+  "definitions": {
+    "service_areas": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "state_abbr": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 2
+        },
+        "neighborhoods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "about_body": {
+          "type": "string"
+        },
+        "local_context": {
+          "type": "string"
+        },
+        "hero_photo": {
+          "type": "string"
+        },
+        "landmark_photo": {
+          "type": "string"
+        },
+        "landmark_alt": {
+          "type": "string"
+        },
+        "landmark_credit": {
+          "type": "string"
+        },
+        "landmark_credit_href": {
+          "type": "string",
+          "format": "uri"
+        },
+        "order": {
+          "type": "number",
+          "default": 0
+        },
+        "gallery": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "photo": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "photo",
+              "alt"
+            ],
+            "additionalProperties": false
+          },
+          "default": []
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "state"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

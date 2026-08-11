@@ -1,5 +1,7 @@
 | Business | Slug | Pages | Vercel URL | Date |
 |----------|------|-------|------------|------|
+| NEPA Roofing Pros | nepa-roofing-pros | 24 + /book (SSR) | https://nepa-roofing-pros.vercel.app | 2026-08-11 |
+| MNM Roofing Professionals | mnm-roofing-professionals | 24 | https://mnm-roofing-professionals.vercel.app | 2026-08-10 |
 | Raircon Corporation | raircon | 24 | https://raircon.vercel.app | 2026-08-04 |
 | Prezkop Builders | prezkop-builders | 25 | https://prezkop-builders.vercel.app | 2026-08-03 |
 | Stubbs Landscaping | stubbs-landscaping | 25 | https://stubbs-landscaping.vercel.app | 2026-08-03 |
@@ -4361,3 +4363,163 @@ leak" — and given a numbered three-step "what happens next".
 
 Remaining open: no captcha on `/api/estimate` (honeypot is the only bot defence), and no
 live PayPal transaction has confirmed funds routing.
+
+## MNM Roofing Professionals — `mnm-roofing-professionals` — 2026-08-10
+
+Template: **owl**. Live: https://mnm-roofing-professionals.vercel.app — 24 pages
+(5 services, 6 service areas, 1 blog post).
+
+Source: `mnmroofingllc.com` (WordPress / Divi, CGI Digital child theme). Ten pages
+Firecrawled; brand tokens taken from the client's own CSS and logo.
+
+**No Apify Google Maps lookup.** `APIFY_TOKEN` is not set in this environment, so
+`/find-business` could not run. Identity, credentials and rating were confirmed instead
+against BBB (accredited 2023-01-02, A+, PA154140, owner Miguel Cornejo), GuildQuality
+(4.8 / 43 verified surveys), Birdeye (4.8 / 264, claimed profile) and the Chamber of
+Commerce listing (4.9 / 41). `rating: 4.8` / `review_count: 264` reflects the Birdeye
+claimed-profile aggregate; the hero badge is labelled "264 verified reviews" rather than
+attributed to Google, since no single Google figure was obtainable.
+
+Two conflicts on the client's own site, resolved in `intake-scraped.json._notes`:
+the `/commercial` page names the owner "Joe" (every other source says Miguel — Miguel
+used), and Birdeye lists wider hours than the client's own site (client's site used).
+
+Imagery is the client's own project photography, copied into `public/img/` rather than
+hotlinked off their WordPress uploads. Service-area landmarks are Wikimedia Commons
+images, downloaded locally with `landmark_credit` / `landmark_credit_href` attribution
+preserved (CC BY-SA 3.0/4.0 and CC0). Greentown has no Commons image, so it uses an
+MNM project photo.
+
+Accent is the brand red `#cf152d` — the case the owl README calls out. Fill is
+5.53:1 under white, but only 3.19:1 as text on the dark band, so
+`--color-accent-on-dark` is `#e8636f` (5.41:1). All seven token pairs pass AA.
+
+Paste-in fields still blank (sections self-hide): every `crm.*` GHL snippet,
+`code_injection.*`, `default_hero_video`, `marketing_city` / `marketing_state`,
+custom domain. `crm.form_action_url` is unset, so `/api/estimate` is the native
+endpoint rather than a GHL post.
+
+## GARP Construction Group — `garp-construction-group` — 2026-08-10
+
+Template: **owl**. Live: https://garp-construction-group.vercel.app — 26 pages
+(5 services, 6 service areas, 3 blog posts).
+
+Source: `garpconstructiongroup.com` (Wix, unfinished template). All 7 pages Firecrawled.
+The old site is largely a stock Wix shell — the H1 still reads "WELCOME / Welcome visitors
+to your site with a short, engaging introduction. Double click to edit", the CTA reads
+"Start Now", `/plumbing` has no body content at all, and the Pools page lives at the
+literal slug `/copia-de-windows`. What was genuinely there: the NAP, four licence numbers,
+strong About copy, and 21 first-party project photos.
+
+**No Apify Google Maps lookup.** `APIFY_TOKEN` is not set. Identity and credentials were
+confirmed against BBB (Fernando Arias Jr., President; incorporated 2011-11-08; started
+2012-03-01; 14 years in business; licences CGC1520370 / CCC1329807 / CAC1817062), the
+client's own site (adds CFC1429344 and the NAP), Facebook ("Serving all of South Florida")
+and a Nominatim geocode of the street address.
+
+**No rating is displayed anywhere.** The three public sources disagree — HomeAdvisor 5.0,
+BBB C+ (failure to respond to one complaint), Yelp mixed — and none is a Google figure, so
+`rating` and `review_count` are null and `testimonials` is an empty array. The Testimonials
+section self-hides rather than carrying invented reviews. Hero trust badges show the two
+headline licence numbers instead of stars. See `business_profile.json._notes.rating_note`.
+
+Positioning is built on the one thing that is both verifiable and rare: **four separate
+Florida state certifications in-house** — general contracting, roofing, HVAC and plumbing.
+Most South Florida GCs hold the GC licence only. That drives the H1, the signature-system
+block and the why-choose-us tiles, and it answers the top local pain point found in
+research (multi-trade jobs stalling between subcontractors).
+
+Imagery is the client's own work, downloaded into `public/img/` rather than hotlinked off
+Wix. **Ten photos on `/general-contractor` were rejected**: they carry a visible SWFLMLS
+watermark and are third-party MLS listing photos, not GARP's. Service-area landmarks are
+Wikimedia Commons images downloaded locally with `landmark_credit` /
+`landmark_credit_href` preserved (CC BY 2.0/3.0, CC BY-SA 4.0). Note that Wikimedia's
+`/thumb/` paths 404 from this environment — fetch the original and downscale with `sips`.
+
+No photograph of plumbing work exists in the client's set, so `plumbing.md` has **no**
+`hero_photo` and its tile uses the template's deliberate no-photo treatment. A photo from
+another trade there would have read as a claim about work not pictured. Worth requesting
+from the client.
+
+Accent is a derived construction orange `#c2410c` — the logo is monochrome grey (#808080)
+and supplies no hue. Dark enough to carry WHITE button labels (5.18:1), so
+`--color-on-accent` is white rather than the owl default's near-black;
+`--color-accent-on-dark` is `#fb923c` (6.90:1). All eight token pairs pass AA.
+
+`/pricing` publishes no numbers — `cost_table` lists the variables that drive a quote,
+per the raircon precedent.
+
+Paste-in fields still blank (sections self-hide): every `crm.*` GHL snippet,
+`code_injection.*`, `default_hero_video`, `partners`, `financing`, `team_members`,
+custom domain. `crm.form_action_url` is unset, so `/api/estimate` is the native endpoint —
+**it needs `LEAD_WEBHOOK_URL`, or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` +
+`LEAD_FROM_EMAIL`, set in the Vercel project or leads are logged and dropped.**
+
+## NEPA Roofing Pros — nepa-roofing-pros — 2026-08-11 (owl)
+
+Source site `neparoofingpros.com` is **functionally a one-page site**. Every URL except
+`/` returns HTTP 403 to curl and Firecrawl, and renders the site's own 404 in a real
+browser before redirecting to root — that is all seven service pages, every nav item
+including Contact, and roughly 100 city landing pages still listed in its sitemap. Its
+homepage hero also paints as repeated narrow strips across half the viewport. **All
+content therefore came from the homepage alone**, which turned out to be enough: it
+carries the services, the counties, the address, the licence, seven named Google reviews
+and the project photography.
+
+**Flag to the client before any outreach:** the homepage contains an injected hidden spam
+link — a `position:absolute; left:-10909px` div inside the Home nav item pointing at
+`califarmacia.com`. Cloaked outbound links are a manual-action risk in Search, and
+combined with the site-wide 403/404 failure this reads as a compromised WordPress install
+rather than a misconfiguration. None of it was carried into the generated site.
+
+`/find-business` was **skipped** — still no `APIFY_TOKEN` in this repo. Substituted the BBB
+profile (owner **Byron Read**, NOT BBB accredited, file opened 3/28/2024) and the wheree.com
+listing (confirms the address). **No rating or review count is asserted anywhere on the
+site** and no `aggregateRating` is emitted: no two sources published a matching figure, and
+wheree's `00:00–11:59` hours are a directory default, so `hours` is null too. `geo` IS set —
+Nominatim returned a house-level match (place_rank 30) for 36 Luzerne Avenue.
+
+Palette is **sampled from the client's logo PNG by pixel frequency**, not from the theme:
+navy `#2d317c` (777k px), teal `#5e97ae`, gold `#ffc50e`. Firecrawl's `--format branding`
+endpoint reported a red primary `#9E0000` — **rejected**, there is no red in the logo, and
+the client's own logo file is named `...-no-red.png`. The gold is LIGHT, so unlike the owl
+default `--color-on-accent` is the near-navy ink `#151833` (10.94:1) rather than white
+(1.59:1, fails). All nine token pairs computed and passing AA. The navy trips the
+reference-library "no indigo" anti-pattern; documented as a brand-derived exception in
+`design_reference.json` rather than overridden.
+
+Nine of the client's pages are one service with product variants (SL-16, PBR Panel, Lok
+Seam, Classic Rib…) — **merged into Metal Roofing sub-services**; asphalt and architectural
+shingle likewise merged, both being Owens Corning Duration Series. Roof Repair is included
+on review evidence (an EPDM low-pitch leak job described in detail) plus the homepage's own
+"expert and emergency" line. Sister brands (NEPA Painting/Landscaping/Cleaning Pros) and the
+"Our Network" partner roofers are other companies and were **not** treated as services.
+
+All imagery is the client's own, downscaled into `public/img/` rather than hotlinked off a
+site that 403s. Six before/after commercial frames are a real recent job; the building's
+signage identifies a third party, so projects are titled by work type and located as
+"Northeastern PA" rather than trading on that name. No stock photography, and no service-area
+landmark photos this build.
+
+Copy is anchored on **ice dams and freeze-thaw** — the documented NEPA failure mode — rather
+than the hail language national roofing templates default to. `/pricing` publishes no
+numbers; `cost_table` lists the eight variables that drive a quote, per the raircon
+precedent.
+
+Verified live: 24 static pages + `/book` (SSR), 623 internal links checked with **zero**
+broken, `llms.txt` / `index.md` / `agent-site-summary` generated, LocalBusiness + WebSite
+linked by `@id`, canonicals on the final host, and the `DEV ONLY` captcha notice confirmed
+absent from the production build.
+
+Preview host `nepa-roofing-pros.preview.mylocalads.co` **was not attached** — `gcloud` is not
+installed on this machine and `MLA_DNS_ZONE` is unset, so Step 4 could not run. Not needed
+here: `https://nepa-roofing-pros.vercel.app` returns 200, so SSO is off on the project alias
+and it is publicly viewable. Attach the preview host on a machine with DNS access if the
+client portal needs it.
+
+Paste-in fields still blank (sections self-hide): every `crm.*` GHL snippet,
+`code_injection.*`, `default_hero_video`, `partners`, `team_members`, custom domain.
+`crm.form_action_url` is unset, so `/api/estimate` is the native endpoint — **it needs
+`LEAD_WEBHOOK_URL`, or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`, set in the
+Vercel project, or the form returns an error to the visitor instead of capturing the lead.**
+The phone CTA works regardless.

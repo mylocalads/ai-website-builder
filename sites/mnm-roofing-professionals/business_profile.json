@@ -1,0 +1,60 @@
+{
+  "name": "MNM Roofing Professionals",
+  "email": "info@mnmroofingllc.com",
+  "phone": "+1-570-793-5715",
+  "address": "106 Pfeuffer Ct, Greentown, PA 18426",
+  "website": "https://mnmroofingllc.com",
+  "rating": 4.8,
+  "reviewCount": 264,
+  "category": "Roofing contractor",
+  "hours": "Mon-Fri 8am-5pm, Sat 8am-2pm",
+  "slug": "mnm-roofing-professionals",
+  "geo": { "lat": 41.31983, "lng": -75.30493 },
+  "locations": [
+    {
+      "label": "Greentown (main hub + showroom)",
+      "address": "106 Pfeuffer Ct, Greentown, PA 18426",
+      "phone": "(570) 793-5715",
+      "serves": "Poconos — Pike, Wayne, Monroe, Lackawanna counties"
+    },
+    {
+      "label": "Nanticoke (by appointment)",
+      "address": "136 W Main St, Nanticoke, PA 18634",
+      "phone": "(570) 793-5715",
+      "serves": "Luzerne County"
+    },
+    {
+      "label": "Whitehall Township",
+      "address": "1133 3rd St, Whitehall Township, PA 18052",
+      "phone": "(610) 360-6820",
+      "serves": "Lehigh Valley / Lehigh County"
+    }
+  ],
+  "credentials": {
+    "bbb_accredited_since": "2023-01-02",
+    "bbb_rating": "A+",
+    "pa_license": "PA154140",
+    "business_started": "2018-04-10",
+    "entity": "Limited Liability Company (LLC)",
+    "owner": "Miguel Cornejo",
+    "office_manager": "Megan Cornejo",
+    "awards": ["BusinessRate Best of 2026 — Roofing Contractor, Pike County, PA"]
+  },
+  "reviews": [
+    { "text": "Great communication. Work was exceptional.", "author": "Timothy", "rating": 5 },
+    { "text": "We are super happy how our roof turned out.", "author": "Aaron", "rating": 5 },
+    { "text": "The roof is 10/10", "author": "John", "rating": 5 },
+    { "text": "I had an excellent experience! Every interaction was friendly, professional, and easy.", "author": "Heather", "rating": 5 },
+    { "text": "Words cannot express how happy I am with the top-notch, professional job that MNM roofing did.", "author": "Vin", "rating": 5 },
+    { "text": "I would highly recommend MNM. Very happy.", "author": "Shirley", "rating": 5 }
+  ],
+  "_notes": {
+    "source": "APIFY_TOKEN is not configured in this environment, so the Apify Google Maps actor (/find-business) could not be run. Profile assembled instead from the client's own site plus Better Business Bureau, GuildQuality, Birdeye and Chamber of Commerce listings — all scraped 2026-08-10.",
+    "rating_sources": [
+      "Birdeye (claimed profile): 4.8 across 264 reviews",
+      "GuildQuality (third-party verified surveys): 4.8 across 43 reviews, 40 of 43 would recommend",
+      "Chamber of Commerce listing: 4.9 across 41 reviews"
+    ],
+    "retrieved": "2026-08-10"
+  }
+}

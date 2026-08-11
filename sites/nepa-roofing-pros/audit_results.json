@@ -1,0 +1,54 @@
+{
+  "slug": "nepa-roofing-pros",
+  "url_audited": "https://neparoofingpros.com/",
+  "screenshot": "screenshots/nepa-roofing-pros.png",
+  "purpose": "OPERATOR REFERENCE ONLY. Per the pipeline's anti-pattern lock, nothing in this file may be used as design DNA for the generated site. The owl template is the sole source of design and structure.",
+  "strengths": [
+    "Strong, distinctive logo — navy wordmark with a sun, house and wave mark. It carries a real palette (navy / gold / teal) that the generated site can build on.",
+    "Seven genuine, detailed Google reviews republished on the page, several naming the owner directly.",
+    "Real before/after project photography from a recent commercial job, plus good residential shingle and metal roof photos.",
+    "Concrete credentials on the page: PA HIC #180500, Owens Corning Duration Series with SureNail Technology, an eight-county service footprint, and Wisetack financing already live."
+  ],
+  "weaknesses": [
+    {
+      "issue": "The site is functionally a one-page site — every other page is dead",
+      "detail": "Every URL except '/' returns HTTP 403 to automated clients and renders the site's own 404 page in a real browser before redirecting to the root. That includes every nav item (Roofing, Service Area, Blog, Financing, Contact), all seven service pages, and roughly 100 city landing pages still listed in the sitemap. There is currently no way for a visitor to reach a contact page.",
+      "severity": "critical"
+    },
+    {
+      "issue": "The homepage hero renders broken",
+      "detail": "The hero slider paints as a set of narrow repeated vertical strips filling only the left half of the viewport, leaving the right half blank. This is the first thing a visitor sees.",
+      "severity": "critical"
+    },
+    {
+      "issue": "Signs of a compromised WordPress install",
+      "detail": "A hidden spam link is injected into the 'Home' nav item — a div positioned at left:-10909px linking to califarmacia.com, an unrelated offshore pharmacy site. Cloaked outbound links like this are a manual-action risk in Google Search and, together with the site-wide 403/404 failure, point at a compromise rather than a configuration slip.",
+      "severity": "critical"
+    },
+    {
+      "issue": "Content architecture is blog posts pretending to be pages",
+      "detail": "Services and service areas are WordPress posts — they carry author bylines, post dates and 'No Comments' labels. Nine near-identical pages exist for what is really one metal roofing service, and roughly 100 thin city pages differ only in the town name.",
+      "severity": "high"
+    },
+    {
+      "issue": "No structured data, no agent-readable surface",
+      "detail": "No LocalBusiness or Service JSON-LD, no llms.txt, no markdown mirror. Nothing tells a search engine or an AI assistant what this business does or where.",
+      "severity": "high"
+    },
+    {
+      "issue": "No visible primary conversion path",
+      "detail": "There is no working contact form, no booking flow, and no chat. The only route to contact is a tel: link, and the Contact nav item 404s.",
+      "severity": "high"
+    },
+    {
+      "issue": "Mixed HTTP and HTTPS asset references",
+      "detail": "The logo and several project photos are referenced over plain http:// on an https:// page.",
+      "severity": "medium"
+    }
+  ],
+  "assessment": "This is a business with genuinely good raw material — real reviews, real project photography, real credentials, a strong logo — sitting behind a website that is broken at every level below the homepage and shows evidence of being hacked. The rebuild does not need to invent anything. It needs to take content that already exists and put it on pages that actually load.",
+  "_notes": {
+    "generated_at": "2026-08-11",
+    "method": "Firecrawl full-page screenshot plus direct browser navigation to '/', '/our-services/', and '/our-service-area/'; HTTP status checks via curl against six inner URLs."
+  }
+}

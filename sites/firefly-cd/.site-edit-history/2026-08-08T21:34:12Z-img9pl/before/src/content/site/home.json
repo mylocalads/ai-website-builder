@@ -1,0 +1,57 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Spokane, WA",
+    "headline": "Your Premier Spokane Remodeling Contractor",
+    "subheadline": "Roofing, siding, windows, kitchens, baths — done right by a local team.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=900&fit=crop&q=80"
+  },
+  "testimonials": [
+    {
+      "name": "Sarah M.",
+      "location": "Spokane Valley, WA",
+      "text": "Firefly re-roofed our home and the crew was professional from start to finish. Fair pricing, quality materials, and they left the yard cleaner than they found it.",
+      "rating": 5
+    },
+    {
+      "name": "James R.",
+      "location": "Liberty Lake, WA",
+      "text": "We had them redo our kitchen and two baths. Communication was excellent, the timeline was accurate, and the craftsmanship speaks for itself.",
+      "rating": 5
+    },
+    {
+      "name": "Lauren K.",
+      "location": "Spokane, WA",
+      "text": "Great local company. They quoted a competitive number on new siding and windows and delivered exactly what they promised.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long do your projects usually take?",
+      "a": "Timelines vary by project type. Roof replacements typically finish in 1–3 days depending on size and material. Siding runs 3–7 days. Windows are usually 1–2 days for a full-house replacement. Kitchen and bathroom remodels typically take 3–6 weeks depending on scope and material lead times. We give you a firm written schedule at estimate."
+    },
+    {
+      "q": "Do you handle permits and inspections?",
+      "a": "Yes. We pull all required permits with the city or county, coordinate the inspection schedule, and handle any corrections. You never need to deal with the permit office."
+    },
+    {
+      "q": "What kind of warranty do you provide?",
+      "a": "Every project comes with a written workmanship warranty in addition to the manufacturer's material warranty. Roof replacements carry a 5-year workmanship warranty; siding, windows, kitchen, and bathroom projects carry a 2-year workmanship warranty. Manufacturer material warranties vary by product and are provided at signing."
+    },
+    {
+      "q": "Do you help with insurance claims?",
+      "a": "Yes. We meet your adjuster on-site, document damage with photos and measurements, and provide the paperwork your carrier needs. We work with all major insurers in Washington and Idaho and handle supplement requests when the initial scope misses items."
+    },
+    {
+      "q": "Do you offer financing?",
+      "a": "Yes — we work with several financing partners so you can spread the cost over time with competitive rates. Ask for financing options at estimate and we'll walk you through what's available for your project."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Spokane, Spokane Valley, Liberty Lake, Otis Orchards, and Post Falls, ID — plus the surrounding communities. If you're outside that footprint, call us — we take on select projects further out."
+    }
+  ]
+}

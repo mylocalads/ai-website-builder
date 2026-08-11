@@ -1,0 +1,68 @@
+---
+import { getEntry } from 'astro:content';
+import SectionHead from './SectionHead.astro';
+const site = (await getEntry('site', 'config')).data as any;
+const u = site.us_vs_them ?? { enabled: false, rows: [] };
+---
+{u.enabled && u.rows.length > 0 && (
+  <section class="us-vs-them" aria-label="Comparison">
+    <div class="container">
+      <SectionHead eyebrow="Us vs Them" heading={u.headline ?? 'Why us'} />
+      <div class="grid">
+        <div class="labels" aria-hidden="true">
+          <div class="col-header spacer"></div>
+          {u.rows.map((row: any) => <div class="row-label">{row.label}</div>)}
+        </div>
+        <div class="col us-col">
+          <div class="col-header">
+            {u.us_photo && <img src={u.us_photo} alt="" class="col-photo" loading="lazy" />}
+            <span class="col-title-overlay">{u.us_label ?? 'US'}</span>
+          </div>
+          {u.rows.map((row: any) => (
+            <div class="cell" data-label={row.label}>{row.us ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
+          ))}
+        </div>
+        <div class="col them-col">
+          <div class="col-header">
+            {u.them_photo && <img src={u.them_photo} alt="" class="col-photo" loading="lazy" />}
+            <span class="col-title-overlay">{u.them_label ?? 'THEM'}</span>
+          </div>
+          {u.rows.map((row: any) => (
+            <div class="cell" data-label={row.label}>{row.them ? <span class="check" aria-label="Yes">✅</span> : <span class="x" aria-label="No">❌</span>}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+<style>
+  .us-vs-them { padding: var(--space-5) 0; }
+  .grid { display: grid; grid-template-columns: minmax(180px, 1.2fr) 1fr 1fr; gap: 0; align-items: stretch; max-width: 1000px; margin: 0 auto; }
+  .col-header { position: relative; height: 260px; overflow: hidden; border-radius: var(--radius-md); }
+  .col-header.spacer { height: 260px; background: transparent; border-radius: 0; }
+  .col-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .col-title-overlay {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700;
+    color: white; letter-spacing: 0.06em;
+    background: linear-gradient(rgba(15,20,25,0.15), rgba(15,20,25,0.6));
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+  }
+  .labels { display: flex; flex-direction: column; }
+  .row-label { padding: 0 var(--space-2); font-weight: 500; border-bottom: 1px solid var(--color-surface); display: flex; align-items: center; height: 68px; }
+  .col { display: flex; flex-direction: column; margin: 0 var(--space-1); }
+  .cell { padding: 0 var(--space-2); text-align: center; border-bottom: 1px solid var(--color-surface); height: 68px; display: flex; align-items: center; justify-content: center; }
+  .cell:last-child { border-bottom: 0; }
+  .row-label:last-child { border-bottom: 0; }
+  .check, .x { font-size: 1.75rem; line-height: 1; }
+  @media (max-width: 780px) {
+    .grid { grid-template-columns: 1fr; max-width: 480px; }
+    .labels { display: none; }
+    .col { margin: var(--space-2) 0; }
+    .col-header { height: 200px; }
+    .col-header.spacer { display: none; }
+    .cell { justify-content: space-between; padding: 0 var(--space-3); text-align: left; height: 56px; }
+    .cell::before { content: attr(data-label); font-weight: 500; flex: 1; }
+    .cell .check, .cell .x { flex-shrink: 0; }
+  }
+</style>

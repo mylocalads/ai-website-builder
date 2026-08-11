@@ -1,0 +1,38 @@
+{
+  "slug": "mnm-roofing-professionals",
+  "url": "https://mnmroofingllc.com",
+  "screenshot": "screenshots/mnm-roofing-professionals.png",
+  "captured": "2026-08-10",
+  "viewport": "1280x7748 (full page)",
+  "_purpose": "OPERATOR REFERENCE ONLY. Not design DNA. The owl template is the sole source of layout, component and section design for the generated site.",
+  "platform": {
+    "cms": "WordPress",
+    "theme": "Divi child theme — 'CGI Digital Divi Child v.1.0.0'",
+    "builder": "Divi page builder"
+  },
+  "strengths": [
+    "Genuinely strong, specific copy — the no-subcontracting promise, the warranty numbers and the owner's name are all stated plainly rather than hedged.",
+    "Real project photography, including drone shots and crew-at-work images, rather than stock.",
+    "Three location pages with real addresses, hours and phone numbers — good local-SEO instinct.",
+    "A public project map with photographed, address-tagged completed jobs — unusual and persuasive.",
+    "Financing is explained in detail instead of reduced to a badge."
+  ],
+  "weaknesses": [
+    "No dedicated per-service pages. Roofing is split only into Residential / Commercial / Gutters, so metal roofing and storm damage — both substantial offerings — have no page to rank.",
+    "Third-party widget load is heavy: UserWay accessibility, GTranslate, a CGI Communications survey pop-up, ProjectMapIt, Google Maps static tiles and multiple GreenSky iframes all load on the home page.",
+    "The GreenSky financing block dumps several hundred words of lender legal text straight onto the home page, dominating a full screen of scroll.",
+    "The residential page buries eight paragraphs of metal-panel spec copy (Master Rib, PBR, IR, ValuRib) mid-page, where it reads as a supplier catalogue rather than a homeowner's decision aid.",
+    "Home page hero is a muted autoplay video with a thin text overlay; there is no visible phone CTA or form above the fold.",
+    "Accent colour is inconsistent — the brand red (#CF152D) competes with two untouched Divi defaults (#2EA3F2 link blue, #0038F0).",
+    "The /commercial page names the owner as 'Joe'; every other source says Miguel. A live factual error.",
+    "No structured data, no llms.txt, no service-level FAQ markup.",
+    "No testimonials carry a location or a source platform, weakening them."
+  ],
+  "load_notes": "Full-page render is 7,748px tall at 1280px wide. A large share of that height is lender legal disclosure and an embedded map widget rather than content the visitor came for.",
+  "carry_forward": [
+    "Keep every fact: no subcontracting, 10-year workmanship + 15-year craftsman warranty, Miguel personally on estimates, three offices, showroom, $250 referral, free leaf guards.",
+    "Promote metal roofing and storm damage to their own service pages.",
+    "Keep financing as a short band with a link out — not an inline lender iframe.",
+    "Use the real project photos; drop the Divi blues and run a single red accent."
+  ]
+}

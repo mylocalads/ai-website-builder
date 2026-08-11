@@ -1,0 +1,76 @@
+{
+  "kind": "our-work",
+  "intro": "Recent work across Northeastern Pennsylvania. These are our own photographs from our own jobs — nothing here is stock.",
+  "projects": [
+    {
+      "title": "Commercial flat roof — before",
+      "location": "Northeastern PA",
+      "photo": "/img/commercial-before-1.jpg",
+      "alt": "Aerial view of an aging commercial flat roof with visible weathering and ponding before replacement",
+      "description": "A distribution building whose low-slope membrane had reached the end of its life — chalked, patched and holding water."
+    },
+    {
+      "title": "Commercial flat roof — after",
+      "location": "Northeastern PA",
+      "photo": "/img/commercial-after-1.jpg",
+      "alt": "The same commercial building photographed from the air after a new low-slope roof system was installed",
+      "description": "The same building with a new low-slope system installed and the drainage corrected, phased so the business kept trading throughout."
+    },
+    {
+      "title": "Low-slope membrane — before",
+      "location": "Northeastern PA",
+      "photo": "/img/commercial-before-2.jpg",
+      "alt": "Close aerial view of a worn low-slope roof membrane with seam repairs before tear-off",
+      "description": "Seams opening up across the field, with previous patch repairs no longer holding."
+    },
+    {
+      "title": "Low-slope membrane — after",
+      "location": "Northeastern PA",
+      "photo": "/img/commercial-after-2.jpg",
+      "alt": "Newly installed dark low-slope roof membrane on a commercial building",
+      "description": "New membrane down, clean and uniform across the whole field."
+    },
+    {
+      "title": "Full commercial replacement — before",
+      "location": "Northeastern PA",
+      "photo": "/img/commercial-before-3.jpg",
+      "alt": "Wide aerial view of a large commercial roof showing extensive weathering before work began",
+      "description": "The full extent of the job before we started — a large single-span roof with no serviceable life left in it."
+    },
+    {
+      "title": "Full commercial replacement — after",
+      "location": "Northeastern PA",
+      "photo": "/img/commercial-after-3.jpg",
+      "alt": "Wide aerial view of the completed commercial roof replacement and the surrounding parking area",
+      "description": "Completed, with the parking area and grounds left as we found them."
+    },
+    {
+      "title": "Architectural shingle roof",
+      "location": "Northeastern PA",
+      "photo": "/img/service-asphalt-shingle.jpg",
+      "alt": "Dark architectural shingle roof with two dormer windows on a residential home",
+      "description": "Owens Corning Duration Series shingles, with the dormer and valley detailing that decides whether a roof like this leaks."
+    },
+    {
+      "title": "Residential shingle replacement",
+      "location": "Northeastern PA",
+      "photo": "/img/hero-shingle-home.jpg",
+      "alt": "A residential home with a newly installed architectural shingle roof",
+      "description": "A single-day residential tear-off and replacement."
+    },
+    {
+      "title": "Standing seam metal roof",
+      "location": "Northeastern PA",
+      "photo": "/img/metal-roof-residential.jpg",
+      "alt": "Blue standing seam metal roof with a dormer on a residential home",
+      "description": "Standing seam panels — the option homeowners pick when they would rather not think about the roof again."
+    },
+    {
+      "title": "Seamless gutter installation",
+      "location": "Northeastern PA",
+      "photo": "/img/service-gutter-installation.jpg",
+      "alt": "A roofer installing a section of seamless gutter against a blue sky",
+      "description": "Seamless gutter, sized and pitched to carry the water away from the wall. Five-year workmanship warranty."
+    }
+  ]
+}

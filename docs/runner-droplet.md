@@ -43,9 +43,10 @@ has to be changed in both places.
 | `CLAUDE_CODE_OAUTH_TOKEN` | `claude setup-token`, run **on this box** |
 | `VERCEL_TOKEN` | Same value as the Mac's `.env` |
 | `APIFY_TOKEN` | Same value as the Mac's `.env` |
-| `SHORTIO_API_KEY` | Same value as the Mac's `.env` — optional |
-| `MLA_DNS_ZONE` | Cloud DNS zone name holding `mylocalads.co` |
-| `GOOGLE_APPLICATION_CREDENTIALS` | Path to the service-account JSON on this box |
+| `SHORTIO_API_KEY` | Same value as the Mac's `.env` — optional, currently unset |
+
+No DNS credential lives here. Branded preview URLs are parked until
+`mylocalads.co` moves off Squarespace — see `parked-preview-domain.md`.
 
 ### Adding or changing a key
 

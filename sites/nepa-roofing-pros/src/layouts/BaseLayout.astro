@@ -1,0 +1,147 @@
+---
+import '../styles/global.css';
+import { getEntry, getCollection } from 'astro:content';
+import { agentSiteSummary, publishedServices, publishedAreas } from '../lib/agent-docs.js';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SkipNav from '../components/SkipNav.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+  breadcrumbs?: Array<{ name: string; href: string }>;
+  ogImage?: string;
+  pagePath?: string;
+}
+
+const { title, description, canonical, jsonLd, breadcrumbs, ogImage, pagePath } = Astro.props;
+const site = (await getEntry('site', 'config')).data as any;
+const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+
+// Code injection: site-wide + optional per-page override (per_page keyed by pathname without trailing slash)
+const pathKey = (pagePath ?? Astro.url.pathname).replace(/\/$/, '') || '/';
+const perPage = site.code_injection?.per_page?.[pathKey] ?? {};
+const injection = {
+  head: perPage.head ?? site.code_injection?.head ?? '',
+  body_start: perPage.body_start ?? site.code_injection?.body_start ?? '',
+  body_end: perPage.body_end ?? site.code_injection?.body_end ?? '',
+};
+
+// SEO JSON-LD
+const localBusinessLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site.site_url}#localbusiness`,
+  name: site.business_name,
+  legalName: site.legal_name,
+  telephone: site.phone,
+  email: site.email,
+  url: site.site_url,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.state,
+    postalCode: site.address.postal,
+    addressCountry: site.address.country,
+  },
+  geo: site.geo ? { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng } : undefined,
+  openingHoursSpecification: site.hours
+    ? Object.entries(site.hours).map(([dayOfWeek, hours]) => ({
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: dayOfWeek.charAt(0).toUpperCase() + dayOfWeek.slice(1).toLowerCase(),
+        description: hours,
+      }))
+    : undefined,
+  sameAs: Object.values(site.social ?? {}).filter(Boolean),
+  aggregateRating: site.rating && site.review_count
+    ? { '@type': 'AggregateRating', ratingValue: site.rating, reviewCount: site.review_count }
+    : undefined,
+};
+
+// Agent summary, homepage only. It restates the business in markdown, so
+// repeating it on every page would be duplicate weight for no gain.
+const agentSummary =
+  pathKey === '/'
+    ? agentSiteSummary({
+        site,
+        services: publishedServices(await getCollection('services')),
+        areas: publishedAreas(await getCollection('service_areas')),
+      })
+    : null;
+
+// Links the site itself to the business by @id, so a crawler resolves the two
+// as one entity rather than two unrelated nodes.
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${site.site_url}#website`,
+  url: site.site_url,
+  name: site.business_name,
+  inLanguage: 'en-US',
+  publisher: { '@id': `${site.site_url}#localbusiness` },
+};
+
+const breadcrumbLd = breadcrumbs && breadcrumbs.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((b, i) => ({
+    '@type': 'ListItem', position: i + 1, name: b.name, item: new URL(b.href, Astro.site).toString(),
+  })),
+} : null;
+
+const ldPayloads = [localBusinessLd, websiteLd, breadcrumbLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])].filter(Boolean);
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-language" content="en-us" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content={site.business_name} />
+    {ogImage && (
+      <>
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:image" content={ogImage} />
+      </>
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    {ldPayloads.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, '\\u003c')} />)}
+    {/* Inert to browsers (type is not JS), readable to agents parsing the DOM. */}
+    {agentSummary && (
+      <script type="text/markdown" id="agent-site-summary" set:html={agentSummary.replace(/</g, '\\u003c')} />
+    )}
+    {injection.head && <Fragment set:html={`<!-- code-injection:head -->\n${injection.head}\n<!-- /code-injection:head -->`} />}
+  </head>
+  <body>
+    {injection.body_start && <Fragment set:html={`<!-- code-injection:body_start -->\n${injection.body_start}\n<!-- /code-injection:body_start -->`} />}
+    <SkipNav />
+    <Header />
+    <main id="main" tabindex="-1"><slot /></main>
+    <Footer />
+    {site.compliance?.gdpr && <CookieConsent />}
+    {injection.body_end && <Fragment set:html={`<!-- code-injection:body_end -->\n${injection.body_end}\n<!-- /code-injection:body_end -->`} />}
+  </body>
+</html>

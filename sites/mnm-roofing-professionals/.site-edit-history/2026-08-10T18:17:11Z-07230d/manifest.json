@@ -1,0 +1,34 @@
+{
+  "batch_id": "2026-08-10T18:17:11Z-07230d",
+  "mode": "edit",
+  "slug": "mnm-roofing-professionals",
+  "operator_request": "make the top header menu dark / black: #161a1b and the menu items font white #ffffff",
+  "diff_spec": [
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..site-header --header-bg", "value": "#161a1b" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..site-header --header-ink", "value": "#ffffff" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..site-header background", "value": "var(--header-bg)" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..site-header a / .nav-list a / .submenu li a color", "value": "var(--header-ink)" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..site-header border-bottom", "value": "1px solid rgba(255,255,255,0.12)", "note": "the previous --color-surface (#ffffff) border was invisible against the dark bar" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..submenu background / border / box-shadow", "value": "var(--header-bg) / rgba(255,255,255,0.14) / rgba(0,0,0,0.35)", "note": "required consequence: the desktop dropdown hangs off the header and inherits white link text" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..phone-cta color, .phone-number color", "value": "var(--header-ink)", "note": "required consequence: was --color-text (#14161a), unreadable on #161a1b" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..phone-label color", "value": "rgba(255,255,255,0.72)", "note": "required consequence: was --color-muted" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..phone-icon color + background mix", "value": "var(--color-accent-on-dark) / accent at 26%", "note": "required consequence: --color-accent-ink is the light-background red, 1.86:1 on the dark bar" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..phone-cta:hover .phone-number color", "value": "var(--color-accent-on-dark)" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..mobile-nav summary color", "value": "var(--header-ink)", "note": "required consequence: hamburger icon" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..mobile-nav[open] > nav background / border / box-shadow", "value": "var(--header-bg) / rgba(255,255,255,0.14) / rgba(0,0,0,0.35)", "note": "required consequence: mobile menu panel" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css..mobile-submenu border-bottom, .sub border-left, .sub li a, .sub .all, .chev colors", "value": "white at 0.14 / 0.18 / 0.78 / var(--header-ink) / 0.72 + accent-on-dark", "note": "required consequence: mobile submenu internals" }
+  ],
+  "files_touched": ["src/components/Header.astro"],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_2dZTXMFvwdhquS3LMdHyo2SvBUyX",
+    "url": "https://mnm-roofing-professionals-ona09holz.vercel.app",
+    "canonical_url": "https://mnm-roofing-professionals.vercel.app",
+    "at": "2026-08-10T18:19:00Z"
+  },
+  "notes": "Scoped to this site's Header.astro rather than tokens.css: the header background read --color-bg, which is the page background site-wide. Two new locally-scoped custom properties (--header-bg / --header-ink) are declared on .site-header so every surface that hangs off the header stays in sync. White on #161a1b measures 17.6:1. No other component, no token, and no content file was touched.",
+  "rolls_back_to": null,
+  "reverted_by": null
+}

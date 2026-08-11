@@ -1,0 +1,46 @@
+{
+  "batch_id": "2026-08-08T22:18:28Z-rb4kz7",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "PSI improved to 75 but still not ideal \u2014 reduce remaining render-blocking",
+  "diff_spec": [
+    {
+      "op": "SET",
+      "path": "astro.config.mjs",
+      "field": "build.inlineStylesheets",
+      "value": "always",
+      "note": "~15KB CSS inlined; removes 2 render-blocking requests"
+    },
+    {
+      "op": "CREATE",
+      "path": "vercel.json",
+      "note": "/_astro immutable 1y (was max-age=0 must-revalidate = the 348KiB finding); /images 1d revalidate since not hashed"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/GHLChatWidget.astro",
+      "note": "snippet verbatim in <template>, mounted on first interaction or idle"
+    },
+    {
+      "op": "SET",
+      "path": "src/components/GHLReviewsWidget.astro",
+      "note": "snippet verbatim in <template>, mounted on IntersectionObserver + 6s backstop; 420px reserved"
+    }
+  ],
+  "files_touched": [
+    "astro.config.mjs",
+    "vercel.json",
+    "src/components/GHLChatWidget.astro",
+    "src/components/GHLReviewsWidget.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_url": "https://firefly-q1a2yozrm-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://fireflycd.com",
+    "page_count": 24
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "pricing",
+  "intro": "We don't publish a rate card, because on the work we do a published number would be a guess. What a Miami-Dade project costs depends on the condition of what is already there, what the drawings call for, what the county requires, and how much of the job we self-perform. Rather than quote a range we would have to walk back, we come out, look at the actual conditions, and put a written scope and price in your hands at no charge. Below is what we look at when we price a job — so you can see where the money in a quote actually goes before you get one.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What drives the price of a job",
+    "lede": "The variables below are what change a number the most on the work we do across Miami-Dade. We go through all of them on the site visit.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      [
+        "Roof replacement",
+        "Roof size and pitch, the system you choose (shingle, flat, concrete tile or metal), the condition of the deck once the old roof comes off, and the permit and inspection schedule."
+      ],
+      [
+        "Roof repair or leak",
+        "Whether the failure is localised or systemic. We will tell you when a repair is the right answer even though a replacement is worth more to us."
+      ],
+      [
+        "Impact windows and doors",
+        "Opening count and sizes, whether openings are being altered, the frame and glazing spec, and the Miami-Dade NOA the product has to carry."
+      ],
+      [
+        "Air conditioning",
+        "Tonnage and system type, condition of the existing duct work, whether the equipment is ground-set or has to be craned to a roof, and electrical requirements."
+      ],
+      [
+        "Plumbing",
+        "Whether the work is a rough-in, a repair or a full re-pipe, what the existing pipe material and routing are, and how much has to be opened up to reach it."
+      ],
+      [
+        "Remodels, additions and build-outs",
+        "The drawings, the structural and mechanical scope, how many trades the job needs, and the permit path for that municipality."
+      ],
+      [
+        "Pool construction",
+        "Pool size and depth, finish and tile selection, deck and equipment specification, and site access for excavation."
+      ]
+    ],
+    "footnote": "Estimates are free and there is no obligation. Call (305) 602-0400 or request one through the form on this site."
+  }
+}

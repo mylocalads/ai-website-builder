@@ -1,0 +1,167 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Miami, FL",
+    "headline": "One Licensed Contractor For The Whole Job",
+    "subheadline": "GARP Construction Group holds Florida certifications in general contracting, roofing, air conditioning and plumbing — so a Miami-Dade remodel, re-roof or build-out runs on one schedule, one contract and one point of contact.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/roof-1.jpg",
+    "video_link_text": "What we build",
+    "video_link_href": "/our-work",
+    "trust_badges": [
+      {
+        "label": "CGC1520370",
+        "sublabel": "Certified General Contractor"
+      },
+      {
+        "label": "CCC1329807",
+        "sublabel": "Certified Roofing Contractor"
+      },
+      {
+        "label": "Licensed & insured",
+        "sublabel": "Florida DBPR, since 2012"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Licensed general contractor since 2012", "icon": "home" },
+    { "text": "GC, roofing, HVAC and plumbing in-house", "icon": "award" },
+    { "text": "Residential and commercial", "icon": "wallet" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Philosophy",
+    "headline": "We Don't Promise More Than We Can Deliver",
+    "body": "That sentence has been on our website since the company started, and it is the part we are most serious about. We take great pride in understanding our own capabilities — what we self-perform, what we sub out, and what a job will actually take. It is why the scope gets written down before anyone starts, and why we would rather lose a bid than win it on a number we cannot build to.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Four Licenses, One Contract",
+    "intro": "Most general contractors in South Florida hold a GC license and subcontract everything else. GARP holds four separate state certifications, which changes how a multi-trade job runs.",
+    "blocks": [
+      {
+        "title": "The trades that matter are in-house",
+        "body": "General contracting (CGC1520370), roofing (CCC1329807), air conditioning (CAC1817062) and plumbing (CFC1429344) are all held by this company. When a re-roof turns up a rotted deck over a bathroom, the plumbing and the roofing are the same contract — not a change order and a two-week wait for another company's schedule.",
+        "icon": "shield"
+      },
+      {
+        "title": "Miami-Dade permitting is our job, not yours",
+        "body": "We pull the permits, deal with the inspectors, and build to High-Velocity Hurricane Zone requirements. Unpermitted work in Miami-Dade catches up with a property at resale or at recertification, and we will not do it.",
+        "icon": "document"
+      }
+    ],
+    "steps_title": "Where the schedule usually goes wrong, and what we do about it",
+    "steps_icon": "calendar",
+    "steps": [
+      {
+        "title": "Permit timing is quoted honestly",
+        "body": "We tell you what the county review is realistically running before you sign, not after."
+      },
+      {
+        "title": "Trade handoffs are ours to manage",
+        "body": "Roofing, HVAC and plumbing crews sequence against one schedule we control."
+      },
+      {
+        "title": "You get one number to call",
+        "body": "Questions go to us, not to whichever sub happens to be on site that day."
+      }
+    ]
+  },
+  "process_steps": {
+    "headline": "How A Project Starts",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Free site visit and estimate",
+        "icon": "clipboard",
+        "body": "We look at the property, talk through what you want, and put a written scope and price in your hands."
+      },
+      {
+        "label": "Step Two",
+        "title": "Permits and scheduling",
+        "icon": "document",
+        "body": "We prepare the permit package, pull it through Miami-Dade, and set the trade sequence before mobilising."
+      },
+      {
+        "label": "Step Three",
+        "title": "Build, inspect, close out",
+        "icon": "hammer",
+        "body": "We build it, meet the inspectors, and hand you a permit that closes out clean."
+      }
+    ],
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About GARP Construction Group",
+    "headline": "A South Florida General Contractor Since 2012",
+    "body": "GARP Construction Group Inc. is a general contractor based in Miami, serving Miami-Dade and Southeast Florida. Renovations, remodeling and maintenance are our specialties, with a focus on never sacrificing quality because of the size or scope of a project. Commercial or residential, we work closely with you to build what you actually asked for — and we manage projects throughout Southeast Florida from our Miami office.",
+    "checklist": [
+      "Florida Certified General Contractor — CGC1520370",
+      "Certified Roofing Contractor — CCC1329807",
+      "Certified Air Conditioning Contractor — CAC1817062",
+      "Certified Plumbing Contractor — CFC1429344",
+      "Residential and commercial projects across Miami-Dade",
+      "Free estimates, permits pulled and closed out by us"
+    ],
+    "photo": "/img/ac-4.jpg",
+    "photo_alt": "GARP crew craning a packaged rooftop air conditioning unit onto a commercial building in Miami",
+    "photo_cutout": false,
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Building In Miami-Dade",
+    "headline": "General Contracting Built For South Florida Code",
+    "paragraphs": [
+      "Miami-Dade is a High-Velocity Hurricane Zone, and it builds like one. Roof assemblies need product approvals, impact windows and doors need an NOA, and inspectors check for both. A contractor who works elsewhere in Florida and treats Miami-Dade as the same jurisdiction finds that out at inspection — with your project stopped.",
+      "We have built here since 2012 and hold the roofing, air conditioning and plumbing certifications alongside the general contractor's license. That means a re-roof, an AC changeout and a bathroom rough-in can run under one permit package and one schedule instead of three companies coordinating around each other."
+    ],
+    "checklist": [
+      "Re-roofs in shingle, flat and concrete tile, and metal",
+      "Impact-rated windows and doors with Miami-Dade NOA",
+      "Residential and commercial air conditioning",
+      "Plumbing rough-in, repair and re-pipe",
+      "Additions, remodels, build-outs and pool construction"
+    ],
+    "image": "/img/roof-tile.jpg",
+    "image_alt": "New charcoal flat concrete tile roof installed on a Miami-Dade home, seen from above",
+    "image_position": "left",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "What licenses does GARP Construction Group hold?",
+      "a": "Four Florida state certifications: Certified General Contractor CGC1520370, Certified Roofing Contractor CCC1329807, Certified Air Conditioning Contractor CAC1817062, and Certified Plumbing Contractor CFC1429344. All four can be looked up on the Florida DBPR licence portal."
+    },
+    {
+      "q": "Do you handle the permits?",
+      "a": "Yes. We prepare the permit package, pull it through Miami-Dade or the relevant municipality, meet the inspectors, and close the permit out. Unpermitted work causes real problems at resale and at building recertification, so we do not take jobs on the basis of skipping it."
+    },
+    {
+      "q": "Do you take commercial work as well as residential?",
+      "a": "Both. We run residential remodels, re-roofs and pool builds alongside commercial build-outs and rooftop mechanical work, and have managed projects throughout Southeast Florida since 2012."
+    },
+    {
+      "q": "Are estimates free?",
+      "a": "Yes. We come out to the property, look at the actual conditions, and give you a written scope and price at no charge. Call (305) 602-0400 or request one through the form on this site."
+    },
+    {
+      "q": "Do my new windows have to be impact rated?",
+      "a": "In Miami-Dade, replacement windows and doors have to meet High-Velocity Hurricane Zone requirements and carry a Miami-Dade Notice of Acceptance — impact glazing or approved shutters. We only install units that carry the NOA the inspector will ask for."
+    },
+    {
+      "q": "How long does a re-roof take?",
+      "a": "Most single-family re-roofs run a few days on the roof itself, but the permit and the inspection schedule usually drive the calendar more than the labour does. We quote the realistic permit timeline up front rather than after you have signed."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "Miami-Dade County and Southeast Florida generally, from our Miami office — including Miami, Hialeah, Miami Springs, Doral, Coral Gables and Miami Beach."
+    }
+  ]
+}

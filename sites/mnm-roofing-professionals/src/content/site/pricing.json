@@ -1,0 +1,21 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a rate card, because no honest roofer can. What your roof costs depends on things we have to see first — how many layers are already up there, what condition the decking is in underneath, how steep and how cut-up the roof is, and which system you choose. What we can promise is that the estimate is free, that Miguel writes it himself after getting on the roof, and that the number he gives you is itemised so you can see exactly what you are paying for.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What drives the price of your roof",
+    "lede": "These are the variables Miguel is looking at when he prices your job. Bring them up when you call and you will get a much closer ballpark over the phone.",
+    "columns": ["What we look at", "Why it moves the number"],
+    "rows": [
+      ["Roof size and pitch", "Square footage sets the material order; a steep pitch slows installation and needs additional fall protection."],
+      ["Layers already on the roof", "A second or third layer means more tear-off labour and more disposal weight."],
+      ["Condition of the decking", "Rotten or soft sheathing is only visible once the old roof is off. We replace it rather than shingle over it, and it is priced per sheet."],
+      ["Complexity — valleys, dormers, skylights", "Every penetration and valley needs its own flashing detail. A cut-up roof takes longer than a simple gable of the same area."],
+      ["System you choose", "Architectural shingle, standing-seam or corrugated metal, Tilcor stone-coated steel and rubber membrane all sit at different price points and carry different warranties."],
+      ["Gutters and leaf guards", "Seamless gutters are priced by the foot. Book them with a full roof and the leaf guards are included free."],
+      ["Insurance involvement", "If a claim is covering storm damage, the scope is set with your adjuster and we document it for you at no extra cost."]
+    ],
+    "footnote": "Senior and military discounts are available — mention it when you book. Financing through our lending partners takes under ten minutes to apply for and gives a decision right away."
+  },
+  "notes": "Estimates are free and carry no obligation. We will quote repair alongside replacement wherever repair is genuinely an option, so you can make the call with both numbers in front of you."
+}

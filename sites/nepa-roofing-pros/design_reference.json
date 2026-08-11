@@ -1,0 +1,70 @@
+{
+  "slug": "nepa-roofing-pros",
+  "template": "owl",
+  "vertical": "roofing",
+  "reference_urls": [
+    { "url": "https://owlroofing.com/", "role": "primary", "used_for": "Section order and structure only. The owl template already encodes it; no re-scrape was needed and none of Owl's brand program names are used." }
+  ],
+  "brand_source": "Client logo pixel sampling (primary) + client homepage stylesheet (corroborating). See intake-scraped.json → brand.colors._source.",
+  "palette": {
+    "--color-bg": "#f3f5fa",
+    "--color-surface": "#ffffff",
+    "--color-text": "#151833",
+    "--color-muted": "#565d7a",
+    "--color-primary": "#2d317c",
+    "--color-on-primary": "#ffffff",
+    "--color-accent": "#ffc50e",
+    "--color-on-accent": "#151833",
+    "--color-accent-ink": "#7a5a00",
+    "--color-accent-on-dark": "#ffd75e",
+    "--color-focus": "#0057ff"
+  },
+  "contrast_audit": {
+    "method": "WCAG 2.1 relative-luminance ratio, computed rather than eyeballed.",
+    "results": [
+      { "pair": "text #151833 on bg #f3f5fa", "ratio": 15.91, "verdict": "AA" },
+      { "pair": "text #151833 on surface #ffffff", "ratio": 17.35, "verdict": "AA" },
+      { "pair": "muted #565d7a on bg #f3f5fa", "ratio": 5.94, "verdict": "AA" },
+      { "pair": "on-primary #ffffff on primary #2d317c", "ratio": 11.40, "verdict": "AA" },
+      { "pair": "primary #2d317c as text on bg #f3f5fa", "ratio": 10.45, "verdict": "AA" },
+      { "pair": "on-accent #151833 on accent fill #ffc50e", "ratio": 10.94, "verdict": "AA" },
+      { "pair": "white on accent fill #ffc50e", "ratio": 1.59, "verdict": "FAIL — which is why --color-on-accent is the dark ink, not white" },
+      { "pair": "accent-ink #7a5a00 as text on bg #f3f5fa", "ratio": 5.85, "verdict": "AA" },
+      { "pair": "accent-on-dark #ffd75e as text on primary #2d317c", "ratio": 8.22, "verdict": "AA" }
+    ],
+    "note": "The gold is a light colour, so unlike the template default it cannot carry white button text. --color-on-accent is therefore the near-navy ink. The three-token accent split (fill / ink / on-dark) is preserved as the template requires."
+  },
+  "typography": {
+    "--font-display": "'Montserrat', 'Inter', system-ui, sans-serif",
+    "--font-body": "'Inter', system-ui, sans-serif",
+    "rationale": "The client's site loads Open Sans + Roboto, and its theme also references Poppins/Archivo Black. None is a deliberate brand choice — they are theme defaults. Per the design-reference fallback rule the owl template's own stack is kept."
+  },
+  "spacing_motion": "Inherited unchanged from the owl template. Nothing was taken from the client's existing site — see the anti-pattern lock in intake-from-web.",
+  "anti_patterns_merged": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents (unless explicitly requested)",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template"
+  ],
+  "anti_pattern_exceptions": [
+    {
+      "rule": "purple / indigo / violet accents",
+      "exception": "--color-primary #2d317c is a deep indigo-navy. It is not an aesthetic pick: it is the dominant colour of the client's own logo, measured at 777,237 pixels of the wordmark. The rule exists to stop generic AI-purple creeping in; a brand-derived navy is the case it was never meant to catch."
+    },
+    {
+      "rule": "\"Trusted by N+ customers\" without a real number",
+      "compliance": "No rating, review count, customer count, or years-in-business figure appears anywhere on the generated site. None could be independently corroborated, so none is asserted — and no aggregateRating is emitted in JSON-LD."
+    }
+  ],
+  "imagery_policy": "Every photograph on the generated site is the client's own, downloaded from their WordPress uploads and served from /img/ rather than hotlinked. No stock photography is used. Service-area landmark photos are the only exception and carry explicit CC attribution where required.",
+  "_notes": {
+    "generated_at": "2026-08-11",
+    "cost_usd": 0.0,
+    "cost_note": "No reference URLs were re-scraped — the owl template already encodes the primary reference's structure, and brand tokens came from the logo file already downloaded during intake."
+  }
+}

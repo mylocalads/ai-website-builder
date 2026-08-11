@@ -1,0 +1,227 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Serving Lackawanna, Luzerne & Six More Counties",
+    "headline": "Same-Day Estimates On Scranton & Wilkes-Barre Roofs",
+    "subheadline": "A West Pittston roofing contractor installing Owens Corning Duration Series shingles, metal systems, and flat commercial roofs. We price it in writing, most homes are finished in a day, and we clean up like we were never there.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "photo": "/img/hero-shingle-home.jpg",
+    "video_link_text": "See a recent commercial job",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "Byron is very upfront on his pricing and provides a detailed estimate and invoice. Work is top quality.",
+      "author": "John Ferry — Google Review",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book"
+    },
+    "trust_badges": [
+      {
+        "label": "PA HIC #180500",
+        "sublabel": "Licensed & insured in Pennsylvania"
+      },
+      {
+        "label": "Owens Corning",
+        "sublabel": "Duration Series with SureNail Technology"
+      }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Same-day estimates", "icon": "clipboard" },
+    { "text": "Owens Corning Duration Series", "icon": "award" },
+    { "text": "Financing available", "icon": "wallet" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "You Get The Number Before We Get The Job",
+    "body": "The complaint we hear most from homeowners is that every contractor told them something different. So we do it the other way around: we get on the roof, we tell you what we actually found, and we put a written, itemised price in your hand — usually the same day you call. If a repair is the right answer instead of a replacement, we will say so, even though the replacement is worth more to us. What we quote is what you are invoiced.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Roofs Specified For Northeastern Pennsylvania",
+    "intro": "A roof in the Wyoming Valley does not fail the way a roof in Georgia fails. Ours come apart at the eaves in February, when meltwater refreezes and backs up under the shingle course. Everything we install is chosen with that in mind.",
+    "blocks": [
+      {
+        "title": "Built against ice dams and freeze-thaw",
+        "body": "The damage we get called out to most is water that never came through the field of the roof at all — it backed up under the bottom courses behind an ice dam and came in at the ceiling line. We detail the eaves, flashing and venting for that, because it is what actually happens here every winter.",
+        "icon": "umbrella"
+      },
+      {
+        "title": "Owens Corning Duration Series with SureNail",
+        "body": "We install Duration Series shingles. The SureNail fabric strip in the nailing zone is there so the fastener grips through a reinforced layer instead of the mat alone — it is the part of a shingle that decides whether the roof stays on in a wind event.",
+        "icon": "shield"
+      },
+      {
+        "title": "Permits pulled and materials specified for you",
+        "body": "On a low-slope or EPDM job the material choice is the job. We tell you what the roof needs and why, obtain the permits it requires, and come back after the work to make sure you are happy with it.",
+        "icon": "document"
+      }
+    ],
+    "steps_title": "Cleanup is part of the job, not a favour",
+    "steps_icon": "broom",
+    "steps": [
+      {
+        "title": "Tear-off cleared as we go",
+        "body": "Debris goes straight to the dumpster rather than sitting in your driveway overnight."
+      },
+      {
+        "title": "The yard swept for nails",
+        "body": "Driveway and lawn both, before anyone packs a truck."
+      },
+      {
+        "title": "A walk around with you at the end",
+        "body": "We look at the property together so nothing gets found after we have gone."
+      }
+    ],
+    "guarantee": {
+      "title": "5-year workmanship warranty on gutters",
+      "body": "Gutter installations carry a five-year workmanship warranty, and every roof we install is backed by the manufacturer's material warranty for the system you choose. Ask us to put the coverage in writing on the estimate — we would rather you read it before the work than after.",
+      "cta_text": "Talk to Byron",
+      "cta_href": "/contact"
+    }
+  },
+  "process_steps": {
+    "headline": "How A Roof Replacement Runs",
+    "steps": [
+      {
+        "label": "Step One",
+        "title": "Same-day estimate",
+        "icon": "clipboard",
+        "body": "We get on the roof, tell you what we found, and leave a written price."
+      },
+      {
+        "label": "Step Two",
+        "title": "Permits and materials",
+        "icon": "document",
+        "body": "We specify the system, pull what the township requires, and set a date."
+      },
+      {
+        "label": "Step Three",
+        "title": "Installation",
+        "icon": "hammer",
+        "body": "Most residential roofs go on in a single day, start to finish."
+      },
+      {
+        "label": "Step Four",
+        "title": "Cleanup and a final look",
+        "icon": "broom",
+        "body": "Debris gone, yard swept, and a walk around the property together."
+      }
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About NEPA Roofing Pros",
+    "headline": "A West Pittston Roofer, Not A Storm-Chaser",
+    "body": "NEPA Roofing Pros is a division of READCORP Inc., run by Byron Read out of a shop on Luzerne Avenue in West Pittston. We are registered Pennsylvania home improvement contractors — HIC #180500 — and we work across eight counties, from Scranton and Clarks Summit down through Pittston, Wilkes-Barre and Kingston. Byron prices the jobs himself, which is why our customers keep writing that the person who quoted the work is the person who came back to check on it.",
+    "checklist": [
+      "PA Home Improvement Contractor #180500",
+      "Licensed and insured, based at 36 Luzerne Avenue, West Pittston",
+      "Owens Corning Duration Series shingles with SureNail Technology",
+      "Residential and commercial — shingle, metal, flat and low-slope",
+      "Free same-day estimates and Wisetack financing available"
+    ],
+    "photo": "/img/aerial-shingle-roof.jpg",
+    "photo_alt": "Aerial view of a completed residential shingle roof in Northeastern Pennsylvania",
+    "photo_cutout": false,
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why Homeowners Choose Us",
+    "headline": "Roofing Contractors In Scranton & Wilkes-Barre",
+    "paragraphs": [
+      "Northeastern Pennsylvania is hard on roofs, and it is hard on them in a specific way. Snow sits, meltwater runs to a cold eave and refreezes, and the ice dam that forms there pushes water back up under the shingles until it finds the decking. Add the freeze-thaw cycling that works at every piece of flashing from November to March and you have the reason most roofs around here fail at the edges long before the field wears out.",
+      "We install Owens Corning Duration Series shingles, standing seam and rib panel metal, and flat and low-slope commercial systems including EPDM — specified for the roof in front of us rather than whatever is on the truck. Most residential replacements are finished in a single day. Commercial work is planned around your operation so the building keeps running while the roof goes on.",
+      "If you are weighing a repair against a replacement, get us out to look. The inspection and the estimate are free, we can usually come the same day you call, and you will get a written price that explains what drives the number."
+    ],
+    "checklist": [
+      "Asphalt and architectural shingle roofing, residential",
+      "Standing seam, shingle-look and rib panel metal systems",
+      "Flat, low-slope and EPDM commercial roofing",
+      "Emergency leak and storm damage repair",
+      "Seamless gutter installation with a 5-year workmanship warranty"
+    ],
+    "image": "/img/service-asphalt-shingle.jpg",
+    "image_alt": "Architectural shingle roof with dormers on a Northeastern Pennsylvania home",
+    "image_position": "left",
+    "review": {
+      "name": "Teresa Thomas",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "We reached out to multiple companies for a severe water leak on our low-pitch roof that required EPDM roofing. Bryan was prompt in responding to our calls and questions, provided valuable advice on the right materials, and ensured all necessary permits were obtained. He truly simplified the roof replacement process for me."
+    },
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Bryan Ruda",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "We highly recommend Byron, Bobby and the crew at NEPA Roofing Pros. They are highly skilled and great with communication. They respect your time and get the job scheduled and completed quickly. Our roof looks great and it is finally watertight!"
+    },
+    {
+      "name": "Paul Kerrigan",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "All of my inquiries and questions were answered promptly before, during, and after the job was completed. The replacement roof project was completed in a timely manner, the workmen were professional, and the site — with the exception of a new roof — looked the same after work was completed as it did before the project commenced. The price was very reasonable."
+    },
+    {
+      "name": "Gary Brower",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Did great work, did everything they said, done in one day. Cleaned up — it was like they weren't even there. Byron and Jame were great to work with."
+    },
+    {
+      "name": "Stephanie Ward",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Excellent communication and service from the start. Extremely easy and flexible to work with. Reasonable price and excellent workmanship. We are very happy with our roof! Thanks NEPA Roofing Pros."
+    },
+    {
+      "name": "Don Biggs",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Great work. Fast and reasonable. Nice job cleaning up. Extremely satisfied."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast can I get an estimate?",
+      "a": "Usually the same day you call. Ring (570) 299-1727, we come out, get on the roof, and leave you a written itemised price. There is no charge for the inspection or the estimate."
+    },
+    {
+      "q": "How long does a roof replacement take?",
+      "a": "Most residential roofs are torn off and replaced in a single day. Larger or more complex roofs, and commercial jobs, take longer — we tell you up front which yours is rather than discovering it on the day."
+    },
+    {
+      "q": "Do I need a full replacement, or will a repair do?",
+      "a": "An inspection is the only honest way to answer that. If a repair is the right call we will tell you so, even though a replacement would be worth more to us. Where it is genuinely end-of-life we will show you why."
+    },
+    {
+      "q": "What shingles do you install?",
+      "a": "Owens Corning Duration Series shingles with SureNail Technology. The reinforced nailing strip means the fastener grips through an engineered fabric layer rather than the shingle mat alone, which is what matters in a wind event."
+    },
+    {
+      "q": "Do you do flat and commercial roofs?",
+      "a": "Yes. Flat and low-slope commercial systems, including EPDM rubber, are a core part of what we do. We plan the work around your operation so the building keeps running while the roof goes on."
+    },
+    {
+      "q": "Can I finance the work?",
+      "a": "Yes — we offer financing through Wisetack. You can prequalify online in a couple of minutes without affecting your credit score. All financing is subject to credit approval and offers range from 0–35.9% APR based on creditworthiness."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. We are a registered Pennsylvania Home Improvement Contractor, HIC #180500, operating as a division of READCORP Inc. from 36 Luzerne Avenue in West Pittston, and we carry insurance. Ask and we will send the certificate."
+    },
+    {
+      "q": "Which towns do you cover?",
+      "a": "We work across Columbia, Lackawanna, Luzerne, Monroe, Wyoming, Wayne, Pike and Susquehanna counties — Scranton, Wilkes-Barre, Pittston, West Pittston, Kingston, Clarks Summit and the towns in between."
+    }
+  ]
+}

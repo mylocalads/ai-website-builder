@@ -1,0 +1,36 @@
+:root {
+  --color-bg: #f3f5fa;
+  --color-surface: #ffffff;
+  --color-text: #151833;
+  --color-muted: #565d7a;
+  --color-primary: #2d317c;
+  --color-on-primary: #ffffff;
+  --color-accent: #ffc50e;
+  /* The brand gold is LIGHT. White on it measures 1.59:1, so unlike the
+     template default this fill cannot carry white button text — the ink is the
+     near-navy text colour instead, at 10.94:1.
+
+     All three accent tokens are re-derived from the logo gold #ffc50e, sampled
+     from the sun in the client's own wordmark:
+
+       --color-accent          FILL behind --color-on-accent (buttons, icon
+                               circles, badges). 10.94:1 with the ink on top.
+       --color-accent-ink      the gold as TEXT on a LIGHT background. Raw
+                               #ffc50e is 1.45:1 on --color-bg, so eyebrows,
+                               ticks, stars and chevrons use this darker amber
+                               at 5.85:1 instead.
+       --color-accent-on-dark  the gold as TEXT inside the navy --color-primary
+                               bands. Raw gold already clears AA there at
+                               7.19:1; this lighter tint lifts it to 8.22:1 and
+                               keeps the small eyebrow/step-label type
+                               comfortably legible over the hero scrim. */
+  --color-on-accent: #151833;
+  --color-accent-ink: #7a5a00;
+  --color-accent-on-dark: #ffd75e;
+  --color-focus: #0057ff;
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

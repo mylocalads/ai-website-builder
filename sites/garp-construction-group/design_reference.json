@@ -1,0 +1,63 @@
+{
+  "slug": "garp-construction-group",
+  "template": "owl",
+  "vertical": "default (general contractor / multi-trade)",
+  "generated_at": "2026-08-10",
+  "reference_sources": [
+    "astro-templates/owl — sole source of layout, section order and component styling",
+    "reference-libraries/default.json — anti-patterns list",
+    "sites/garp-construction-group/intake-scraped.json — brand tokens (logo colour sample only)"
+  ],
+  "brand_input": {
+    "logo_dominant_color": "#808080",
+    "logo_note": "Monochrome grey skyline mark with a serif wordmark. Supplies a neutral, not a hue.",
+    "detected_fonts": null,
+    "detected_palette": null,
+    "conclusion": "No client brand hue and no client typeface could be traced to a real source, so the palette below was derived rather than extracted. The graphite primary echoes the logo mark; the accent is a single derived construction orange."
+  },
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f4f5f7",
+    "text": "#14181d",
+    "muted": "#565e68",
+    "primary": "#1c2430",
+    "on_primary": "#ffffff",
+    "accent": "#c2410c",
+    "on_accent": "#ffffff",
+    "accent_ink": "#9a3412",
+    "accent_on_dark": "#fb923c",
+    "focus": "#0057ff"
+  },
+  "contrast_check": {
+    "run": "astro-templates/owl/README.md button-contrast script",
+    "results": {
+      "text/bg": 17.82,
+      "muted/bg": 6.57,
+      "muted/surface": 6.02,
+      "on-primary/primary": 15.62,
+      "on-accent/accent": 5.18,
+      "accent-ink/bg": 7.31,
+      "accent-ink/surface": 6.7,
+      "accent-on-dark/primary": 6.9
+    },
+    "verdict": "All 8 pairs PASS WCAG AA at the 4.5:1 threshold.",
+    "note": "This accent is dark enough to carry WHITE button labels (5.18:1), so --color-on-accent is white rather than the owl default's near-black. As text on the dark primary bands the fill orange falls to 2.68:1, which is why accent-on-dark is a lighter tint of the same hue."
+  },
+  "typography": {
+    "display": "Archivo",
+    "body": "Inter",
+    "rationale": "No client typeface was detectable. Archivo is a grotesque with enough weight for the template's large uppercase headings; Inter carries the body. Loaded via the @import at the top of tokens.css, not via BaseLayout."
+  },
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "anti_patterns_enforced": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography — every project photo on this site is the client's own first-party work",
+    "fabricated ratings, review counts or testimonials",
+    "invented price ranges",
+    "randomized section order — owl's fixed order is unchanged"
+  ]
+}

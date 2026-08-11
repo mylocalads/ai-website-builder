@@ -1,0 +1,157 @@
+{
+  "kind": "config",
+  "business_name": "GARP Construction Group",
+  "legal_name": "GARP Construction Group Inc.",
+  "tagline": "General Contractor in Miami, FL",
+  "phone": "+13056020400",
+  "phone_display": "(305) 602-0400",
+  "email": "garp_construction@live.com",
+  "address": {
+    "street": "8290 NW 66th St",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33166",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "geo": {
+    "lat": 25.8327356,
+    "lng": -80.3318288
+  },
+  "site_url": "https://garp-construction-group.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 14,
+  "social": {
+    "facebook": "https://www.facebook.com/garpconstruction",
+    "instagram": "https://www.instagram.com/garp_construction/",
+    "google_maps": "https://maps.google.com/?cid=12585234304046901101"
+  },
+  "logo_url": "/logo-garp.png",
+  "default_hero_photo": "/img/roof-1.jpg",
+  "about_photo": "/img/ac-4.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Four state licenses, one company",
+      "description": "General contracting (CGC1520370), roofing (CCC1329807), air conditioning (CAC1817062) and plumbing (CFC1429344) are all held in-house. Most GCs sub all four out."
+    },
+    {
+      "title": "Building in South Florida since 2012",
+      "description": "Fourteen years of Miami-Dade permitting, inspections and High-Velocity Hurricane Zone code — on residential and commercial work alike."
+    },
+    {
+      "title": "The scope is written down first",
+      "description": "You get a written scope and a realistic permit timeline before anything starts. If a job needs a trade we don't self-perform, we say so up front instead of at rough-in."
+    },
+    {
+      "title": "One contract, one point of contact",
+      "description": "A re-roof that also needs new impact windows and an AC changeout is one schedule and one invoice — not three companies blaming each other."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Architectural shingle re-roof",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/roof-1.jpg",
+      "alt": "Aerial view of a finished grey architectural shingle roof on a single-storey waterfront home in Miami-Dade"
+    },
+    {
+      "title": "Flat concrete tile re-roof",
+      "location": "Hialeah, FL",
+      "photo": "/img/roof-tile.jpg",
+      "alt": "Aerial view of a new charcoal flat concrete tile roof between neighbouring barrel-tile roofs"
+    },
+    {
+      "title": "Standing seam metal roof",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/roof-metal.jpg",
+      "alt": "New metal roof panels installed on a South Florida home"
+    },
+    {
+      "title": "Commercial rooftop AC changeout",
+      "location": "Miami, FL",
+      "photo": "/img/ac-4.jpg",
+      "alt": "Crane lifting a packaged rooftop air conditioning unit onto a commercial building in Miami"
+    },
+    {
+      "title": "Impact window installation",
+      "location": "Miami, FL",
+      "photo": "/img/windows-after.jpg",
+      "alt": "Completed impact window installation on a South Florida home"
+    },
+    {
+      "title": "Impact windows and doors",
+      "location": "Miami-Dade County, FL",
+      "photo": "/img/windows-3.jpg",
+      "alt": "New impact-rated window and door units installed in a Miami residence"
+    },
+    {
+      "title": "New residential pool",
+      "location": "South Florida",
+      "photo": "/img/pool-2.jpg",
+      "alt": "Newly finished residential swimming pool with a tanning ledge and tile band"
+    },
+    {
+      "title": "Pool and deck build",
+      "location": "South Florida",
+      "photo": "/img/pool-3.jpg",
+      "alt": "Finished pool with surrounding stone deck on a South Florida property"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Five trades,",
+    "heading_rest": "one contract",
+    "subtitle": "Residential and commercial work across Miami-Dade and Southeast Florida — general contracting, roofing, impact windows, air conditioning and plumbing, all under our own licenses."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate Today!",
+    "services": [
+      "General contracting / remodel",
+      "Roofing — replacement",
+      "Roofing — repair or leak",
+      "Impact windows & doors",
+      "Air conditioning",
+      "Plumbing",
+      "Pool construction",
+      "Commercial project",
+      "Other"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Tell us what you're building",
+    "body": "GARP Construction Group has been a licensed South Florida general contractor since 2012, working on residential and commercial projects across Miami-Dade. Estimates are free, and we will tell you honestly whether a repair or a replacement is the right call.",
+    "cta_text": "Get My Free Estimate!",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Building & Permitting Advice",
+    "description": "Practical guidance on roofing, impact windows, permitting and building codes for South Florida property owners, from the licensed team at GARP Construction Group."
+  }
+}

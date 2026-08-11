@@ -1,0 +1,49 @@
+{
+  "slug": "garp-construction-group",
+  "business_name": "GARP Construction Group",
+  "legal_name": "GARP Construction Group Inc.",
+  "category": "General Contractor",
+  "address": {
+    "street": "8290 NW 66th St",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33166",
+    "country": "US"
+  },
+  "geo": { "lat": 25.8327356, "lng": -80.3318288 },
+  "phone": "+13056020400",
+  "phone_display": "(305) 602-0400",
+  "phone_alt": "(305) 506-5068",
+  "email": "garp_construction@live.com",
+  "website_url": "https://www.garpconstructiongroup.com",
+  "principal_contact": { "name": "Fernando Arias Jr.", "role": "President" },
+  "business_started": "2012-03-01",
+  "incorporated": "2011-11-08",
+  "years_in_business": 14,
+  "licenses": [
+    { "number": "CGC1520370", "type": "Certified General Contractor", "issuer": "Florida DBPR" },
+    { "number": "CCC1329807", "type": "Certified Roofing Contractor", "issuer": "Florida DBPR" },
+    { "number": "CAC1817062", "type": "Certified Air Conditioning Contractor", "issuer": "Florida DBPR" },
+    { "number": "CFC1429344", "type": "Certified Plumbing Contractor", "issuer": "Florida DBPR" }
+  ],
+  "rating": null,
+  "review_count": null,
+  "social": {
+    "facebook": "https://www.facebook.com/garpconstruction",
+    "instagram": "https://www.instagram.com/garp_construction/",
+    "google_maps": "https://maps.google.com/?cid=12585234304046901101"
+  },
+  "hours": null,
+  "_notes": {
+    "apify_gbp_skipped": true,
+    "apify_skip_reason": "APIFY_TOKEN is not set in this repo (.env.example only), so the /find-business Google Maps actor could not run. GBP-equivalent data was assembled from the sources below instead.",
+    "sources": [
+      "https://www.garpconstructiongroup.com/ — NAP, email, services, licence numbers, socials (Firecrawl, 2026-08-10)",
+      "https://www.bbb.org/us/fl/hialeah/profile/general-contractor/garp-construction-group-inc-0633-90319214 — principal contact, business start/incorporation dates, years in business, licence numbers CGC1520370 / CCC1329807 / CAC1817062, alternate phone",
+      "https://www.facebook.com/p/GARP-Construction-Group-Inc-61556938033612/ — 'Serving all of South Florida', trade list",
+      "https://nominatim.openstreetmap.org — geocode of 8290 NW 66th St, Miami FL 33166"
+    ],
+    "rating_note": "No verifiable aggregate rating was obtained. HomeAdvisor shows 5.0, BBB shows a C+ rating (not accreditation-related: 'failure to respond to 1 complaint'), and Yelp carries mixed sentiment. Because the three disagree and none is a Google Business Profile figure, rating and review_count were deliberately left null and NO rating is displayed anywhere on the generated site.",
+    "generated_at": "2026-08-10"
+  }
+}

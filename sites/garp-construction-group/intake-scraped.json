@@ -1,0 +1,90 @@
+{
+  "slug": "garp-construction-group",
+  "business_name": "GARP Construction Group",
+  "legal_name": "GARP Construction Group Inc.",
+  "tagline": "General Contractor in Miami, FL",
+  "phone": "+13056020400",
+  "phone_display": "(305) 602-0400",
+  "email": "garp_construction@live.com",
+  "address": {
+    "street": "8290 NW 66th St",
+    "city": "Miami",
+    "state": "FL",
+    "postal": "33166",
+    "country": "US"
+  },
+  "marketing_city": "Miami",
+  "marketing_state": "FL",
+  "geo": { "lat": 25.8327356, "lng": -80.3318288 },
+  "hours": null,
+  "rating": null,
+  "review_count": null,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 14,
+  "social": {
+    "facebook": "https://www.facebook.com/garpconstruction",
+    "instagram": "https://www.instagram.com/garp_construction/",
+    "google_maps": "https://maps.google.com/?cid=12585234304046901101"
+  },
+  "site_url": "https://www.garpconstructiongroup.com",
+  "logo_url": "/logo-garp.png",
+  "default_hero_photo": "/img/roof-1.jpg",
+  "default_hero_video": null,
+  "about_photo": "/img/ac-4.jpg",
+  "brand": {
+    "fonts": { "display": null, "body": null },
+    "colors": {
+      "bg": "#ffffff",
+      "text": null,
+      "accent": null,
+      "muted": null,
+      "surface": null,
+      "candidates": ["#808080", "#7f7f7f"],
+      "_note": "The logo is monochrome grey (#808080 dominant, sampled from the PNG) and the old site is an unmodified Wix template, so NO brand hue could be traced to a real source. Fonts likewise were not detectable — the Wix theme CSS carries no client-authored family. design_reference.json documents the palette that was derived instead."
+    }
+  },
+  "services": [
+    { "title": "General Contracting", "license": "CGC1520370", "_source": "scraped" },
+    { "title": "Roofing", "license": "CCC1329807", "sub_services": ["Shingle", "Tile", "Metal", "Flat"], "_source": "scraped" },
+    { "title": "Air Conditioning", "license": "CAC1817062", "_source": "scraped" },
+    { "title": "Plumbing", "license": "CFC1429344", "_source": "scraped" },
+    { "title": "Impact Windows & Doors", "_source": "scraped" },
+    { "title": "Pools", "_source": "scraped", "_note": "Folded into General Contracting sub_services — SERVICE_LIMIT is 5 in the owl template." }
+  ],
+  "service_areas": [],
+  "testimonials": [],
+  "team_members": [
+    { "name": "Fernando Arias Jr.", "role": "President", "photo": null, "_source": "bbb" }
+  ],
+  "faqs": [],
+  "gallery": [
+    { "photo": "/img/roof-1.jpg", "alt": "Aerial view of a finished grey architectural shingle roof on a single-storey waterfront home in Miami-Dade", "_source": "scraped" },
+    { "photo": "/img/roof-tile.jpg", "alt": "Aerial view of a new charcoal flat concrete tile roof", "_source": "scraped" },
+    { "photo": "/img/roof-metal.jpg", "alt": "New metal roof panels installed on a South Florida home", "_source": "scraped" },
+    { "photo": "/img/ac-4.jpg", "alt": "Crane lifting a packaged rooftop air conditioning unit onto a commercial building in Miami", "_source": "scraped" },
+    { "photo": "/img/windows-after.jpg", "alt": "Completed impact window installation on a South Florida home", "_source": "scraped" },
+    { "photo": "/img/windows-3.jpg", "alt": "New impact-rated window and door units installed in a Miami residence", "_source": "scraped" },
+    { "photo": "/img/pool-2.jpg", "alt": "Newly finished residential swimming pool with a tanning ledge and tile band", "_source": "scraped" },
+    { "photo": "/img/pool-3.jpg", "alt": "Finished pool with surrounding stone deck on a South Florida property", "_source": "scraped" }
+  ],
+  "brand_voice_sample": "GARP Construction Group Inc. is a General Contractor located in Hialeah, Florida who brings over 15 years combined experience and reputation for quality and client satisfaction in home improvement and design. We take great pride in our unique ability to understand our own capabilities and not promise more than we can deliver.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The old site runs Wix's built-in chat ('Let's Chat!') and a Wix 'Suscription Form'. Neither was copied — CRM widgets are paste-only from the operator's own GHL account."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_skip_reason": "APIFY_TOKEN unset — see business_profile.json _notes for the substitute sources used.",
+    "pages_scraped": ["/", "/general-contractor", "/air-condition", "/roofing", "/plumbing", "/windows", "/copia-de-windows"],
+    "socials_scraped": [],
+    "other_sources": ["bbb.org profile", "facebook.com/p/GARP-Construction-Group-Inc", "nominatim geocode"],
+    "images_downloaded": 21,
+    "images_rejected": 10,
+    "image_rejection_reason": "Ten photos on /general-contractor carry a visible SWFLMLS watermark (third-party MLS listing photos). Excluded on rights grounds.",
+    "generated_at": "2026-08-10",
+    "cost_estimate_usd": 0.2
+  }
+}

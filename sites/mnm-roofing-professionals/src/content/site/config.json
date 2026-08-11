@@ -1,0 +1,162 @@
+{
+  "kind": "config",
+  "business_name": "MNM Roofing Professionals",
+  "legal_name": "M-N-M Roofing Professionals, LLC",
+  "tagline": "There When You Need Us",
+  "phone": "+15707935715",
+  "phone_display": "(570) 793-5715",
+  "email": "info@mnmroofingllc.com",
+  "address": {
+    "street": "106 Pfeuffer Ct",
+    "city": "Greentown",
+    "state": "PA",
+    "postal": "18426",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 41.31983,
+    "lng": -75.30493
+  },
+  "hours": {
+    "monday": "8:00 AM - 5:00 PM",
+    "tuesday": "8:00 AM - 5:00 PM",
+    "wednesday": "8:00 AM - 5:00 PM",
+    "thursday": "8:00 AM - 5:00 PM",
+    "friday": "8:00 AM - 5:00 PM",
+    "saturday": "8:00 AM - 2:00 PM"
+  },
+  "site_url": "https://mnm-roofing-professionals.vercel.app",
+  "rating": 4.8,
+  "review_count": 264,
+  "licensed": true,
+  "insured": true,
+  "bonded": true,
+  "years_in_business": 8,
+  "social": {
+    "facebook": "https://www.facebook.com/MnMroofs/"
+  },
+  "logo_url": "/logo-mnm.png",
+  "default_hero_photo": "/img/hero-poconos-shingle-roof.jpg",
+  "about_photo": "/img/crew-branded-trailer.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "We never subcontract",
+      "description": "Every installer on your roof is on MNM's payroll and was trained by Miguel himself. The company that quotes the job is the company that does it."
+    },
+    {
+      "title": "10-year workmanship warranty",
+      "description": "Every full roof replacement carries a 10-year workmanship warranty on top of the manufacturer's material coverage, plus our 15-year craftsman warranty."
+    },
+    {
+      "title": "Three offices across NEPA",
+      "description": "Greentown for the Poconos, Nanticoke for Luzerne County, and Whitehall Township for the Lehigh Valley. We are local wherever you are."
+    },
+    {
+      "title": "A showroom you can walk into",
+      "description": "Premium shingles, metal panel profiles, gutter systems and colour samples on display in Greentown — see and feel the materials before you decide."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "Financing for your roof",
+    "description": "A roof is rarely a purchase you planned for. We work with outside lending partners so you can spread the cost — applications take under ten minutes and come back with a decision right away. Ask about it when we come out for your estimate.",
+    "cta_text": "Apply for financing",
+    "cta_href": "https://www.hfsfinancial.net/promo/680a3812b7ad4ede6b55b6ae/"
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Architectural shingle replacement",
+      "location": "Poconos, PA",
+      "photo": "/img/hero-poconos-shingle-roof.jpg",
+      "alt": "Aerial view of a large Poconos home with a newly completed architectural shingle roof",
+      "description": "A full tear-off and replacement across the main house, breezeway and detached garage."
+    },
+    {
+      "title": "Metal roof and seamless gutters",
+      "location": "Wayne County, PA",
+      "photo": "/img/metal-roof-log-cabin.jpg",
+      "alt": "Log cabin with a new green standing-seam metal roof and matching seamless gutters",
+      "description": "Standing-seam metal with colour-matched gutters and a covered-porch return."
+    },
+    {
+      "title": "Shingle roof with skylights",
+      "location": "Pike County, PA",
+      "photo": "/img/shingle-roof-aerial.jpg",
+      "alt": "Drone view of a finished shingle roof with skylights and continuous ridge vent",
+      "description": "Skylights reflashed and a continuous ridge vent added during the replacement."
+    },
+    {
+      "title": "Our crew, our trailer",
+      "location": "Luzerne County, PA",
+      "photo": "/img/crew-branded-trailer.jpg",
+      "alt": "MNM Roofing crew unloading materials from the company's branded dump trailer",
+      "description": "No subcontractors. The truck in your driveway is ours and so is the crew on the roof."
+    },
+    {
+      "title": "Tear-off and new decking",
+      "location": "Lackawanna County, PA",
+      "photo": "/img/crew-tear-off.jpg",
+      "alt": "MNM crew stripping an old roof and setting new decking from ladders",
+      "description": "Old layers stripped to the deck so rot and soft sheathing get found and replaced."
+    },
+    {
+      "title": "Drip edge and finished eaves",
+      "location": "Nanticoke, PA",
+      "photo": "/img/completed-shingle-drip-edge.jpg",
+      "alt": "Completed shingle roof with new drip edge along the eaves of a residential home",
+      "description": "New drip edge and starter course along every eave and rake."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "What We Do",
+    "heading_lead": "Roofing and gutters",
+    "heading_rest": "for NEPA homes and businesses",
+    "subtitle": "Shingle, metal and rubber systems, storm repairs and seamless gutters — installed from our three Northeast Pennsylvania offices by our own in-house crews."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate",
+    "services": [
+      "Roof replacement",
+      "Roof repair",
+      "Storm or wind damage",
+      "Metal roofing",
+      "Rubber / flat roofing",
+      "Commercial roofing",
+      "Gutter installation",
+      "Gutter repair or leaf guards",
+      "Roof inspection",
+      "Other"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Ready for a roof that was done right the first time?",
+    "body": "Estimates are free and Miguel, the owner, oversees every one of them himself. We have been roofing Northeast Pennsylvania since 2018 from offices in Greentown, Nanticoke and Whitehall Township — and we have never once handed a job to a subcontractor.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Roofing Advice for NEPA Homeowners",
+    "description": "Practical guidance on roofs, storms, insurance claims and gutters from MNM Roofing Professionals in Greentown, Pennsylvania."
+  }
+}

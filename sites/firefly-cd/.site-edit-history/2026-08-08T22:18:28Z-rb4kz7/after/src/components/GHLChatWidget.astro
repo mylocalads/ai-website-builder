@@ -1,0 +1,65 @@
+---
+/**
+ * GHL chat widget, mounted late.
+ *
+ * The pasted snippet is a plain <script src> with no async/defer, so rendering
+ * it into the initial HTML halts parsing while a third-party loader is fetched
+ * — and that loader then pulls a much larger chat SDK. It was a meaningful part
+ * of the 1,270 ms of render-blocking time on this page.
+ *
+ * The snippet itself is NOT modified — it is paste-only and reproduced byte for
+ * byte inside the <template> below. All that changes is when it enters the DOM:
+ * on the first real user interaction, or on idle if the visitor never touches
+ * the page. A chat bubble does not need to exist before first paint; nothing is
+ * captured by it in the first two seconds.
+ *
+ * Scripts inside a <template> are inert by design, so they are recreated as
+ * fresh <script> elements on mount — cloning alone would never execute them.
+ */
+import { getEntry } from 'astro:content';
+const site = (await getEntry('site', 'config')).data as any;
+const snippet = site.crm?.chat_widget_snippet;
+---
+{snippet && (
+  <>
+    <template data-deferred-widget="chat" set:html={snippet} />
+    <script>
+      (() => {
+        const tpl = document.querySelector('template[data-deferred-widget="chat"]');
+        if (!tpl) return;
+
+        let mounted = false;
+        const mount = () => {
+          if (mounted) return;
+          mounted = true;
+          cleanup();
+
+          const frag = (tpl as HTMLTemplateElement).content.cloneNode(true) as DocumentFragment;
+          // A cloned <script> never runs. Rebuild each one so the browser
+          // treats it as new and executes it.
+          frag.querySelectorAll('script').forEach((old) => {
+            const s = document.createElement('script');
+            for (const { name, value } of Array.from(old.attributes)) s.setAttribute(name, value);
+            s.textContent = old.textContent;
+            old.replaceWith(s);
+          });
+          document.body.appendChild(frag);
+        };
+
+        const events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+        const cleanup = () => {
+          events.forEach((e) => window.removeEventListener(e, mount));
+          if (timer) clearTimeout(timer);
+        };
+        events.forEach((e) => window.addEventListener(e, mount, { once: true, passive: true }));
+
+        // Backstop so a passive visitor still gets chat. requestIdleCallback is
+        // not in Safari, hence the timeout fallback.
+        let timer: ReturnType<typeof setTimeout> | undefined;
+        const idle = (window as any).requestIdleCallback;
+        if (typeof idle === 'function') idle(mount, { timeout: 4000 });
+        else timer = setTimeout(mount, 3000);
+      })();
+    </script>
+  </>
+)}

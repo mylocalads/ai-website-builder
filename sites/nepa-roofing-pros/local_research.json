@@ -1,0 +1,74 @@
+{
+  "slug": "nepa-roofing-pros",
+  "vertical": "roofing",
+  "metro": "Scranton / Wilkes-Barre, Northeastern Pennsylvania",
+  "method": "Firecrawl web search across r/Roofing, PA-region homeowner threads, and NEPA winter-roofing coverage. reddit.com is not scrapable by Firecrawl (the API explicitly refuses the domain), so findings come from search-result snippets plus corroborating regional sources rather than full thread text.",
+  "pain_points": [
+    {
+      "pain": "Every contractor tells the homeowner something different",
+      "evidence": "r/Roofing '[Southwest PA] First time replacing a roof': 'I've talked to several contractors and have received mixed info from each.' The same complaint anchors the top r/Roofing thread on choosing a contractor.",
+      "copy_implication": "Lead with a written, itemised estimate and a named person who explains the why. NEPA Roofing Pros already earns this in reviews — 'Byron is very upfront on his pricing and provides a detailed estimate and invoice.'"
+    },
+    {
+      "pain": "Ice dams and freeze-thaw are the specific NEPA failure mode",
+      "evidence": "Multiple Pennsylvania roofing sources document ice damming as the region's signature winter roof failure: meltwater refreezes at the eave, backs up under the shingle course, and rots decking and insulation. Wallenpaupack and Lancaster-area roofers both run dedicated ice-dam repair pages; a r/Roofing 'Ice Damming Roof leak' thread describes water working backwards up under shingles.",
+      "copy_implication": "Say the words 'ice dam' and 'freeze-thaw'. A national template that talks about hail says nothing to a homeowner in Lackawanna County looking at a stain on a bedroom ceiling in February."
+    },
+    {
+      "pain": "Fear the crew will vanish mid-job or leave the property wrecked",
+      "evidence": "Cleanup is the single most repeated theme in this client's own review set — four of seven reviews mention it unprompted ('cleaned up was like they weren't even there', 'the site... looked the same after work was completed as it did before').",
+      "copy_implication": "Make cleanup an explicit, named step of the process rather than an afterthought. It is already this business's strongest social proof."
+    },
+    {
+      "pain": "Storm-chasers and out-of-area outfits after weather events",
+      "evidence": "Recurring across r/Roofing contractor-selection threads: homeowners want to know the company is local, licensed in-state, and will still exist for a warranty claim.",
+      "copy_implication": "Front the PA HIC number (180500), the West Pittston address, and the county list. Verifiable local specifics beat adjectives."
+    },
+    {
+      "pain": "Cost shock and no clear way to spread the cost",
+      "evidence": "r/Roofing and r/povertyfinance replacement threads centre on sticker price; financing is what converts a deferred repair into a booked job.",
+      "copy_implication": "Financing is already offered through Wisetack — surface it as a prequalify link with the APR disclosure intact, not buried in a sub-nav."
+    }
+  ],
+  "what_customers_value": [
+    "One-day turnaround on residential replacements — named in two of the client's own reviews",
+    "The estimate matching the invoice, with no change-order surprise",
+    "Being called back promptly, before and after the sale",
+    "Permits pulled and materials specified by the contractor, not left to the homeowner",
+    "A site left clean enough that neighbours cannot tell work happened"
+  ],
+  "how_this_business_stands_out": [
+    "Owens Corning Duration Series shingles with SureNail Technology — a specific product commitment rather than 'quality materials'",
+    "PA HIC #180500, held under READCORP Inc., with a physical shop at 36 Luzerne Avenue in West Pittston",
+    "Owner Byron Read is named repeatedly in reviews as the person who prices and follows up on the job",
+    "Genuine commercial capability (flat, low-slope, EPDM) alongside residential — most local competitors do one or the other",
+    "Eight-county footprint: Columbia, Lackawanna, Luzerne, Monroe, Wyoming, Wayne, Pike, Susquehanna",
+    "Same-day estimates and Wisetack financing already in place"
+  ],
+  "copy_angles": [
+    {
+      "angle": "Same-day estimate, written price, and the invoice matches it",
+      "why": "Directly answers the #1 documented pain (mixed info from every contractor) with the thing the client's own reviewers already praise."
+    },
+    {
+      "angle": "Built for NEPA winters — ice dams, freeze-thaw, and snow load",
+      "why": "Localises the entire value proposition to the one failure mode homeowners in the Wyoming Valley and Lackawanna County actually experience."
+    },
+    {
+      "angle": "Most roofs done in a day, and you can't tell we were here",
+      "why": "Cleanup and speed are the two themes running through every single review. Lead with the proof that already exists."
+    },
+    {
+      "angle": "Licensed in Pennsylvania, based in West Pittston — not a storm-chaser",
+      "why": "PA HIC #180500 and a street address are verifiable trust signals that out-of-area competitors cannot match."
+    },
+    {
+      "angle": "Roofs and roofing systems for homes and businesses alike",
+      "why": "The commercial line is the newest addition to the client's site and is currently invisible — it deserves its own page and its own proof photos."
+    }
+  ],
+  "_notes": {
+    "generated_at": "2026-08-11",
+    "limitation": "Firecrawl cannot fetch reddit.com page bodies, so quotes above are from search-result snippets and named regional sources. No pain point is asserted that is not either quoted from a snippet or corroborated by the client's own published reviews."
+  }
+}

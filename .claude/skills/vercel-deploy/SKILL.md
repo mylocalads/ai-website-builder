@@ -1,6 +1,6 @@
 ---
 name: vercel-deploy
-description: Deploy an Astro project from sites/{slug}/ to Vercel. Runs local build as a fail-fast gate, deploys to Vercel, attaches the public preview host {slug}.preview.mylocalads.co (creating its CNAME in Google Cloud DNS), optionally attaches the client's custom domain via `vercel domains add`, rewrites the site URL in astro.config / robots.txt / site config.json, and redeploys so canonicals + JSON-LD + sitemap reference the final domain.
+description: Deploy an Astro project from sites/{slug}/ to Vercel. Runs local build as a fail-fast gate, deploys to Vercel, confirms the deployment is publicly viewable, optionally attaches the client's custom domain via `vercel domains add`, rewrites the site URL in astro.config / robots.txt / site config.json, and redeploys so canonicals + JSON-LD + sitemap reference the final domain.
 trigger: "vercel-deploy" or "deploy" or "publish site"
 ---
 
@@ -11,10 +11,8 @@ Takes a scaffolded Astro project at `sites/{slug}/` (produced by `site-generate`
 ## Inputs
 
 - `slug` — matches `sites/{slug}/` (Astro project directory)
-- Optional `--domain={custom-domain}` — attaches this domain via `vercel domains add`. If unset, the site is still publicly viewable at its preview host (Step 4); the `{project}.vercel.app` URL is SSO-gated and is never the answer.
-- Optional `--kind=website|funnel` (default `website`) — decides the preview host: `{slug}.preview…` vs `{slug}-funnel.preview…`. The two are separate Vercel projects and must not collide.
+- Optional `--domain={custom-domain}` — attaches this domain via `vercel domains add`. If unset, the site is still publicly viewable at its `*.vercel.app` URL, because protection is off for client projects (Step 4).
 - Requires Vercel CLI installed and logged in (`vercel login` prompt if needed).
-- Requires `gcloud` authenticated against a service account with DNS write on the `mylocalads.co` Cloud DNS zone, and `MLA_DNS_ZONE` set to that zone's name. Step 4 cannot run without it.
 
 ## Process
 
@@ -85,77 +83,36 @@ fi
 [ -f "$(pwd)/.vercel/project.json" ] || { echo "vercel link did not land in sites/{slug}/ — investigate"; exit 1; }
 ```
 
-### 4. Attach the preview host — every build, not optional
+### 4. Make the deployment publicly viewable — every build, not optional
 
-The `*.vercel.app` URL is SSO-gated (see §Deployment Protection), so it renders a login
-wall to a client and a blank frame inside the client portal's preview iframe. Every build
-therefore gets a public preview host on a domain MLA controls. This is what the portal
-shows under **Web → Website** / **Web → Funnels**, and what is reported back as
-`stagingUrl` on `POST /api/builds/{id}/complete`.
+The client portal shows this site to the client under **Web → Website** /
+**Web → Funnels**, inside an iframe. A deployment behind Vercel's login wall renders as a
+blank frame there and a sign-in page if they click through, so every build must end with a
+URL the client can actually open. That URL is reported as `stagingUrl` on
+`POST /api/builds/{id}/complete`.
 
-```
-website → {slug}.preview.mylocalads.co
-funnel  → {slug}-funnel.preview.mylocalads.co
-```
-
-The two surfaces are separate Vercel projects and must not request the same host — the
-second attach is rejected, and that surface ends up with no public URL at all.
-
-**`preview.mylocalads.co` is not a delegated zone, and cannot be made one.** Vercel
-refuses to hold a subdomain as a zone of its own:
-
-```
-$ vercel domains add preview.mylocalads.co
-{ "reason": "project_required_for_subdomain",
-  "message": "Only apex domains can be added without a project." }
-```
-
-So the DNS record is created directly in Google Cloud DNS, where `mylocalads.co` is
-authoritative. Do not re-propose NS delegation or a wildcard: a wildcard routes to a
-single project, and every client site is its own.
+**Turn deployment protection OFF for client site projects**, and rely on the host-scoped
+`X-Robots-Tag: noindex` the template ships (see §Deployment Protection). The `*.vercel.app`
+URL then serves publicly, and `staging_url` is simply the deploy URL from Step 3.
 
 ```bash
 cd sites/{slug}
-PREVIEW_HOST="{slug}.preview.mylocalads.co"   # {slug}-funnel.preview.mylocalads.co for funnels
-
-vercel domains add "$PREVIEW_HOST"
+# Confirm it actually serves to an anonymous visitor. 200 is the requirement;
+# 401 means protection is still on and the client would hit a login wall.
+curl -s -o /dev/null -w '%{http_code}\n' "$interim_url"
 ```
 
-Vercel replies with the record it requires. **Read the target out of that reply.** It is
-per PROJECT — `client.mylocalads.co` points at `6be47abb7ef38542.vercel-dns-017.com` — so
-a templated, guessed, or copied-from-another-site value silently never verifies, and the
-failure surfaces hours later as "still misconfigured" with nothing pointing at the cause.
+**A 401 here is a failure, not a warning.** Do not report success, and do not hand that URL
+to the portal.
 
-Then write it into Cloud DNS. Idempotent on purpose: a rebuild, or the relaunch that fires
-when a client connects their own domain, runs this again against a record that exists.
+Set `staging_url = $interim_url`.
 
-```bash
-ZONE="${MLA_DNS_ZONE:?set MLA_DNS_ZONE to the Cloud DNS zone name holding mylocalads.co}"
-TARGET="<the value Vercel just returned>."    # trailing dot required
-
-if gcloud dns record-sets describe "$PREVIEW_HOST." --zone="$ZONE" --type=CNAME >/dev/null 2>&1; then
-  gcloud dns record-sets update "$PREVIEW_HOST." --zone="$ZONE" --type=CNAME --ttl=300 --rrdatas="$TARGET"
-else
-  gcloud dns record-sets create "$PREVIEW_HOST." --zone="$ZONE" --type=CNAME --ttl=300 --rrdatas="$TARGET"
-fi
-```
-
-Verify before moving on — resolution first, then whether it actually serves:
-
-```bash
-dig +short CNAME "$PREVIEW_HOST"                                   # expect $TARGET
-curl -s -o /dev/null -w '%{http_code}\n' "https://$PREVIEW_HOST"   # expect 200, NOT 401
-```
-
-**A 401 here means the host did not attach** and you are still being served the SSO-gated
-deployment. Do not report success, and do not hand that URL to the portal — the client
-would be shown a login wall.
-
-Set `staging_url = https://$PREVIEW_HOST`.
-
-Requires a GCP service account with DNS write on that zone (`roles/dns.admin`, scoped to
-the `mylocalads.co` zone). Without it this step cannot run unattended, and a build with no
-preview host has nothing a client can be shown.
+**Branded preview URLs (`{slug}.preview.mylocalads.co`) are PARKED, not abandoned.**
+They need a DNS record created per client, and `mylocalads.co` DNS is currently
+Squarespace-managed with no API. The full plan, the prerequisite, and the two approaches
+already tested and rejected are in `docs/parked-preview-domain.md`. Read that before
+proposing anything involving the preview subdomain — a wildcard and an NS delegation have
+both been tried against the live account and neither works.
 
 ### 5. Attach custom domain (only if `--domain` provided)
 
@@ -210,37 +167,48 @@ Show the user:
 - Code injection slots status (head / body_start / body_end presence)
 - Reserved-slug warnings if `getStaticPaths` filtered any service_areas
 
-## Deployment Protection (SSO) — leave as default
+## Deployment Protection (SSO) — OFF for client sites
 
-Every MLA client Vercel project has `ssoProtection: {deploymentType: "all_except_custom_domains"}` set by default. This means:
+Client site projects run with deployment protection **disabled**, so the `*.vercel.app`
+URL is publicly viewable.
 
-- The raw `*.vercel.app` URL is behind Vercel SSO (only logged-in team members can view).
-- Any attached custom domain is public.
+**This reverses the old rule, deliberately.** Projects used to ship
+`ssoProtection: {deploymentType: "all_except_custom_domains"}`, and this section used to
+say never to turn it off. The reason it existed was duplicate-content SEO — stopping the
+vercel.app copy competing with the client's real site in search results.
 
-**This is the intended pattern.** Client sites are viewed through their real domain; the vercel.app URL is deliberately gated to avoid duplicate-content SEO issues and to keep in-progress work hidden.
+That reason is now handled directly, and better, by a host-scoped header in the template's
+`vercel.json`:
 
-**DO NOT disable SSO to "make the vercel.app URL public"** — it's not the way these are meant to be viewed. If the operator wants to see the site publicly without a custom domain, the answer is:
+```json
+{
+  "headers": [{
+    "source": "/(.*)",
+    "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
+    "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+  }]
+}
+```
 
-1. **Send them the preview host from Step 4** — `{slug}.preview.mylocalads.co`. It is a custom domain, so it is public by the same rule, and it is what the client portal already shows them. This is the answer in almost every case, and it is why Step 4 is not optional.
-2. Preview locally: `cd sites/{slug} && npm run preview` (returns a localhost URL).
-3. Or view the vercel.app URL logged into the Vercel dashboard (SSO passes the operator through automatically).
-4. Or attach the client's own custom domain (Step 5) — that URL is always public too.
+The header matches on the request host, so the vercel.app copy is never indexed and the
+client's own domain never carries the header at all. There is no flag to clear at launch
+and nothing to remember.
 
-The preview host is deliberately kept out of search results by a host-scoped
-`X-Robots-Tag: noindex` in the template's `vercel.json`. That header matches on the
-request host, so it never applies to the client's real domain — there is no flag to clear
-at launch. **Never add a static `<meta name="robots" content="noindex">` to the template**:
-it is baked into the HTML, is blind to which host served it, and would follow the site onto
-the client's own domain and de-index the thing they paid for.
+**Never add a static `<meta name="robots" content="noindex">` to the template.** It is
+baked into the HTML, blind to which host served it, and would follow the site onto the
+client's own domain and de-index the thing they paid for. The entire mechanism depends on
+the header being host-scoped.
 
-If the operator explicitly asks to disable SSO, confirm the ask ("this is a non-standard deviation from how every other MLA project is configured — proceed?") before flipping it.
+Protection stays ON for the client portal (`mla-starter-hub`) and for `mylocalads.co` —
+this exemption is for generated client sites only, whose whole purpose is being looked at
+by someone outside the team.
 
 ## Guardrails
 
-- Ask before running `vercel domains add` for a CLIENT's domain (Step 5) — it attaches a domain to the Vercel project and may fail if the domain is already used elsewhere. The preview host in Step 4 is MLA's own and needs no approval; it runs unattended on every build.
+- Ask before running `vercel domains add` for a CLIENT's domain (Step 5) — it attaches a domain to the Vercel project and may fail if the domain is already used elsewhere.
 - **Never template, guess, or reuse a CNAME target.** Vercel issues a different one per project. A copied value produces a record that looks right, resolves somewhere else, and never verifies — and the symptom appears hours later with nothing pointing at the cause.
-- **Never propose delegating `preview.mylocalads.co` to Vercel's nameservers, or a `*.preview` wildcard.** Both were tested and rejected: Vercel refuses to hold a subdomain as a zone (`only apex domains can be added without a project`), and a wildcard routes to a single project while every client site is its own. See Step 4.
-- Never point a client at a `*.vercel.app` URL. It is SSO-gated and shows them a login wall.
+- **Never propose delegating `preview.mylocalads.co` to Vercel's nameservers, or a `*.preview` wildcard.** Both were tested against the live account and rejected — see `docs/parked-preview-domain.md`. Branded preview URLs are parked pending a DNS move off Squarespace, which has no API.
+- Never report a build as succeeded while its URL returns 401. That means protection is still on and the client would hit a login wall where the portal expects a site.
 - If the Vercel CLI isn't installed or logged in, stop and instruct the user to `npm install -g vercel && vercel login`.
 - Never `--force`-attach domains.
 - Never overwrite `astro.config.mjs` template — only `site:` line changes.

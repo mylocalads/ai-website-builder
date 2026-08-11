@@ -1,0 +1,22 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a price list, because a roof is not a product off a shelf — the number depends on what is under the shingles. What we do publish is exactly what we look at when we work out your price, so nothing on the estimate is a surprise. Inspections and estimates are free, and we can usually be out the same day you call.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What Actually Drives The Price",
+    "lede": "These are the things we measure and check on the estimate visit. Every one of them moves the number, which is why an honest quote needs someone on the roof rather than a figure over the phone.",
+    "columns": ["What we price", "Why it changes the number"],
+    "rows": [
+      ["Roof size and pitch", "Square footage sets the materials. Pitch sets how the crew has to work — a steep roof is slower and needs staging that a walkable one does not."],
+      ["Layers to tear off", "One layer of old shingle is a different job from three. Tear-off labour and disposal both scale with it."],
+      ["Condition of the decking", "We only know once the old roof is off. Sound decking costs nothing extra; rotted sheathing has to be replaced, and we show it to you before we do."],
+      ["The roofing system you choose", "Owens Corning Duration Series shingle, standing seam or rib panel metal, and flat or EPDM systems sit at different price points and carry different warranties."],
+      ["Complexity — valleys, dormers, skylights, chimneys", "Every penetration and every valley is a detail that has to be flashed properly. Detail work is where roofs leak, and it is where the labour goes."],
+      ["Eave, flashing and ventilation detailing", "In this climate the eaves and flashing are what stop ice-dam water getting in. Where existing venting is inadequate, correcting it is part of the quote rather than an upsell later."],
+      ["Access and staging", "Tight lots, close neighbours and limited driveway space change how we stage the job and how long it takes."],
+      ["Gutters and extras", "Seamless gutter, downspouts and skylight work are quoted as separate lines so you can see what each one costs and decide."]
+    ],
+    "footnote": "Financing is available through Wisetack — you can prequalify in a couple of minutes without affecting your credit score. All financing is subject to credit approval; offers range from 0–35.9% APR based on creditworthiness."
+  },
+  "notes": "Estimates are free and itemised in writing. The price we quote is the price you are invoiced — if we find something under the old roof that changes it, such as rotted decking, we show you before we do the work rather than adding it to the bill afterwards."
+}

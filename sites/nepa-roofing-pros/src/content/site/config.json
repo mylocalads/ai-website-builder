@@ -1,0 +1,103 @@
+{
+  "kind": "config",
+  "business_name": "NEPA Roofing Pros",
+  "legal_name": "READCORP Inc.",
+  "tagline": "Scranton & Wilkes-Barre Roofing Contractors",
+  "phone": "+15702991727",
+  "phone_display": "(570) 299-1727",
+  "address": {
+    "street": "36 Luzerne Avenue",
+    "city": "West Pittston",
+    "state": "PA",
+    "postal": "18643",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": {
+    "lat": 41.3275637,
+    "lng": -75.7960932
+  },
+  "site_url": "https://nepa-roofing-pros.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "social": {},
+  "logo_url": "/logo-nepa.png",
+  "default_hero_photo": "/img/hero-shingle-home.jpg",
+  "about_photo": "/img/aerial-shingle-roof.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Owens Corning Duration Series shingles",
+      "description": "We install Duration Series shingles with SureNail Technology, and we come to the job with the certifications and training that go with them."
+    },
+    {
+      "title": "PA HIC #180500, based in West Pittston",
+      "description": "A registered Pennsylvania home improvement contractor with a shop on Luzerne Avenue — not an out-of-state crew following the weather."
+    },
+    {
+      "title": "The estimate is the invoice",
+      "description": "Byron prices the job in writing and explains what drives the number. Customers tell us the final bill matched the quote, which is the whole point."
+    },
+    {
+      "title": "We clean up like we were never here",
+      "description": "It is the single thing our customers mention most. Debris cleared, the yard swept, and a look at the property together before we pack up."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "Roofing project financing",
+    "description": "Prefer to pay over time rather than all at once? Prequalify through Wisetack in a couple of minutes — it will not affect your credit score to check — then call us to talk through the work. All financing is subject to credit approval and your terms may vary. Payment options through Wisetack are provided by our lending partners. For example, a $1,200 purchase could cost $104.89 a month for 12 months based on an 8.9% APR, or $400 a month for 3 months based on a 0% APR. Offers range from 0–35.9% APR based on creditworthiness. There are no other financing charges or participation fees.",
+    "cta_text": "Prequalify for financing",
+    "cta_href": "https://wisetack.us/#/jiln6by/prequalify"
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Roofing Built",
+    "heading_rest": "For NEPA Winters",
+    "subtitle": "Shingle, metal, flat and low-slope work for homes and businesses across Lackawanna, Luzerne and six more counties."
+  },
+  "estimate_form": {
+    "heading": "Get your free estimate",
+    "services": [
+      "Asphalt & Architectural Shingle Roofing",
+      "Metal Roofing",
+      "Commercial Roofing",
+      "Roof Repair & Leak Repair",
+      "Gutter Installation",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Need a roofing quote?",
+    "body": "Estimates are free, and we can usually get out to you the same day. Call (570) 299-1727 or send us the details and we will come take a look at the roof before we put a number on it.",
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Roofing Advice For NEPA Homeowners",
+    "description": "Straight answers about roofs in Northeastern Pennsylvania — ice dams, freeze-thaw, when a repair beats a replacement, and how to read an estimate."
+  }
+}

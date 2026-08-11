@@ -1,0 +1,179 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Miami, FL",
+    "headline": "Commercial landscape maintenance across South Florida since 1984",
+    "subheadline": "Maintenance, pruning, irrigation and planting for commercial properties in Miami-Dade, Broward and Palm Beach Counties — family owned, Minority Certified, and dedicated solely to landscape maintenance.",
+    "cta_text": "Request a proposal",
+    "cta_href": "/contact",
+    "photo": "/img/commercial-mowing-office-lawn.jpg",
+    "trust_badges": [
+      { "label": "Since 1984", "sublabel": "42 years in South Florida" },
+      { "label": "Minority Certified", "sublabel": "Supplier-diversity ready" },
+      { "label": "Commercial only", "sublabel": "No residential crews" }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Serving Miami-Dade, Broward & Palm Beach", "icon": "home" },
+    { "text": "Family owned and run since 1984", "icon": "handshake" },
+    { "text": "Dedicated solely to landscape maintenance", "icon": "award" },
+    { "text": "Mon–Fri 8:00 AM – 4:30 PM", "icon": "clock" }
+  ],
+  "promise_band": {
+    "eyebrow": "Why property managers stay",
+    "headline": "The service you were sold in month one is the service you get in year ten",
+    "body": "Ask any property manager why they replaced their last landscape contractor and you will hear the same story: the first ninety days were excellent, then the edges got sloppy, the calls stopped being returned, and the invoice stayed the same. GreenTree has held commercial grounds across South Florida since 1984. A company that lets standards slide does not keep the same properties for four decades.",
+    "cta_text": "Request a proposal",
+    "cta_href": "/contact"
+  },
+  "signature_system": {
+    "eyebrow": "Our standard",
+    "headline": "GO GREENTREE",
+    "intro": "Nine commitments, one per letter — the standard GreenTree has run commercial properties to since 1984.",
+    "blocks": [
+      {
+        "title": "Garden and lawn management at competitive pricing",
+        "body": "Priced once, against a written scope. The number you approve is the number you are invoiced — not an opening bid that gets rebuilt in change orders once the crews are on site.",
+        "icon": "document"
+      },
+      {
+        "title": "Results — an incomparable and professional image for your business",
+        "body": "Your grounds are the first thing a tenant, a client or an inspector sees. Maintaining that impression week after week is the entire job.",
+        "icon": "home"
+      },
+      {
+        "title": "Environmentally healthy habitats",
+        "body": "Integrated Pest Management means diagnosing what is actually wrong before anything is applied — the opposite of a blanket spray programme.",
+        "icon": "shield"
+      },
+      {
+        "title": "Experience — four decades of in-depth knowledge",
+        "body": "South Florida turf, salt exposure, storm season and pest pressure are not learned from a manual. GreenTree has worked them since 1984.",
+        "icon": "calendar"
+      },
+      {
+        "title": "New ways to minimise your costs and maximise efficiency",
+        "body": "Catching a failing irrigation zone during a scheduled inspection costs a repair. Finding it after the turf dies costs a replanting.",
+        "icon": "umbrella"
+      },
+      {
+        "title": "Trust — a company and a team you can rely on",
+        "body": "Family owned and run. No subcontracted crews, no unmarked trucks, no account manager who changes every year.",
+        "icon": "shield"
+      },
+      {
+        "title": "Responsibility — delegating to a partner, not a vendor",
+        "body": "You should not have to supervise your landscape contractor. Handing the grounds over should mean they stop being your problem.",
+        "icon": "document"
+      },
+      {
+        "title": "Established system for project success",
+        "body": "Fixed schedules, defined scopes and a cycle for pruning and irrigation inspections — so nothing waits on somebody noticing.",
+        "icon": "calendar"
+      },
+      {
+        "title": "Excellence at every stage — service, creativity and value",
+        "body": "Applied to the routine visit, not just the first one. That is the difference the fourth decade is built on.",
+        "icon": "broom"
+      }
+    ]
+  },
+  "process_steps": {
+    "headline": "How a GreenTree contract starts",
+    "steps": [
+      {
+        "label": "01",
+        "title": "Walk the property",
+        "body": "We visit the site, look at turf condition, irrigation coverage, plant material and access, and note what the property actually needs rather than quoting from a plan set."
+      },
+      {
+        "label": "02",
+        "title": "Agree a written scope",
+        "body": "You get a defined scope and a schedule — what is done, how often, and what is included. Anything outside it is quoted before it happens, not invoiced afterwards."
+      },
+      {
+        "label": "03",
+        "title": "Service on a fixed cycle",
+        "body": "Mowing, edging, weeding, pruning and irrigation inspections run to a schedule your team can plan around."
+      },
+      {
+        "label": "04",
+        "title": "Tell you before your board does",
+        "body": "Irrigation faults, pest pressure and failing plant material get reported when we find them — so you hear it from us first."
+      }
+    ],
+    "cta_text": "Request a proposal",
+    "cta_href": "/contact"
+  },
+  "about_block": {
+    "eyebrow": "About GreenTree",
+    "headline": "A local, family-run company that has only ever done one thing",
+    "body": "Since 1984, GreenTree Inc. has provided high-quality landscape maintenance to some of the most well-known properties throughout South Florida. We are a local, Minority Certified, family owned and run business dedicated solely to landscape maintenance. With a specific focus on commercial clients, we bring landscapes to life — nurturing their environment and enhancing the natural beauty of their surroundings. Our diligent approach, our emphasis on safety and our meticulous care for your property are what set us apart.",
+    "checklist": [
+      "Operating in South Florida since 1984",
+      "Minority Certified, family owned and run",
+      "Commercial clients only",
+      "Landscape maintenance only — not a design-build side line",
+      "Miami-Dade, Broward and Palm Beach Counties"
+    ],
+    "photo": "/img/open-lawn-mature-trees.jpg",
+    "photo_alt": "Broad open lawn framed by mature shade trees and dense shrub borders",
+    "cta_text": "More about GreenTree",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Built for South Florida",
+    "headline": "Grounds care that accounts for the climate it works in",
+    "paragraphs": [
+      "South Florida turf does not behave like turf anywhere else. St. Augustine cut too short stresses and browns out, thatch builds faster than most crews expect, and chinch bug pressure never really stops. A crew running a generic mowing height across every property will produce brown patches, and the property manager is the one who gets the email about it.",
+      "Irrigation is the other half of the same problem. A broken head, a misaimed arc or a zone that has quietly stopped running does not announce itself — it shows up weeks later as a dry patch, a washed-out bed or runoff across a parking lot, by which time the repair is the cheap part. GreenTree inspects irrigation on a cycle rather than on complaint, and reports what needs attention before the damage is visible.",
+      "Integrated Pest Management runs on the same principle. Identifying what is actually attacking a lawn, and treating that, protects the plant material and keeps applications proportionate — which matters on properties where tenants, residents and the public are on the grounds every day."
+    ],
+    "checklist": [
+      "Mowing heights set for the turf species, not the calendar",
+      "Irrigation zones inspected on a schedule",
+      "Integrated Pest Management — diagnose, then treat",
+      "Pruning cut to growth habit so the shape holds between visits"
+    ],
+    "image": "/img/irrigation-head-spraying.jpg",
+    "image_alt": "Irrigation head spraying water in an arc across a green lawn",
+    "image_position": "right",
+    "cta_text": "Request a proposal",
+    "cta_href": "/contact"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "Do you work with residential properties?",
+      "a": "No. GreenTree is committed solely to commercial clientele — office and industrial parks, condominium and HOA common areas, institutional campuses and retail properties. Our crews, equipment and scheduling are built around commercial sites."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "Miami-Dade County, Broward County and Palm Beach County. If your property sits near the edge of that footprint, call us and we will tell you honestly whether we can service it properly."
+    },
+    {
+      "q": "What is included in a maintenance contract?",
+      "a": "It depends on the property, which is why we walk the site before quoting. A typical contract covers scheduled mowing, edging and weeding, hedge and shrub pruning on a cycle, Integrated Pest Management, and irrigation system inspections. Planting and seasonal colour are usually quoted alongside it."
+    },
+    {
+      "q": "Do you subcontract the work?",
+      "a": "No. GreenTree is dedicated solely to landscape maintenance and performs the work with its own crews. The company you contract with is the company that shows up."
+    },
+    {
+      "q": "How long has GreenTree been in business?",
+      "a": "Since 1984 — 42 years serving commercial properties in South Florida, as an independent, family owned and run company."
+    },
+    {
+      "q": "Are you a Minority Certified vendor?",
+      "a": "Yes. GreenTree is a Minority Certified business, which matters if your organisation carries supplier-diversity requirements in its procurement process."
+    },
+    {
+      "q": "How often will crews be on our property?",
+      "a": "On a fixed schedule agreed before the contract starts, so your team knows exactly when the site is serviced. Frequency depends on the property, the plant material and the growing season."
+    },
+    {
+      "q": "What happens if something needs attention between visits?",
+      "a": "Call or email us. We would also rather tell you first — irrigation faults, pest pressure and failing plant material get reported when our crews find them, not after your board notices."
+    }
+  ]
+}

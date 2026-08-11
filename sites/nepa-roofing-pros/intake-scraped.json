@@ -1,0 +1,175 @@
+{
+  "slug": "nepa-roofing-pros",
+  "business_name": "NEPA Roofing Pros",
+  "legal_name": "READCORP Inc.",
+  "tagline": "Scranton & Wilkes-Barre Roofing Contractors",
+  "phone": "+15702991727",
+  "phone_display": "(570) 299-1727",
+  "email": null,
+  "address": {
+    "street": "36 Luzerne Avenue",
+    "city": "West Pittston",
+    "state": "PA",
+    "postal": "18643",
+    "country": "US"
+  },
+  "marketing_city": "Scranton",
+  "marketing_state": "PA",
+  "geo": null,
+  "hours": null,
+  "rating": null,
+  "review_count": null,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": null,
+  "license_number": "PA HIC #180500",
+  "social": {},
+  "site_url": "https://neparoofingpros.com",
+  "logo_url": "http://neparoofingpros.com/wp-content/uploads/2023/01/NEPA-Roofing-Pros-Horizontal-no-red.png",
+  "default_hero_photo": "https://neparoofingpros.com/wp-content/uploads/2022/12/trudefduration5.jpg",
+  "default_hero_video": null,
+  "about_photo": null,
+  "brand": {
+    "fonts": {
+      "display": "Poppins",
+      "body": "Roboto"
+    },
+    "_fonts_note": "The live site loads Google Fonts 'Open Sans' + 'Roboto'; Firecrawl's branding pass additionally reported Poppins/Montserrat/Archivo Black from the theme. Neither set is distinctive, so design-reference keeps the owl template defaults (Montserrat display / Inter body) rather than importing a generic theme stack.",
+    "colors": {
+      "bg": "#FFFFFF",
+      "text": "#2D317C",
+      "accent": "#FFC50E",
+      "muted": "#5E97AE",
+      "surface": "#FFFFFF",
+      "candidates": ["#2D317C", "#5E97AE", "#FFC50E", "#B5E0DA", "#226d7a"],
+      "_source": "Sampled directly from the client logo PNG (4492x1420) by pixel frequency: navy #2D317C (777,237 px), teal #5E97AE (129,397 px), gold #FFC50E (52,043 px), pale teal #B5E0DA (51,723 px). The homepage stylesheet's #226d7a teal corroborates the logo's wave colour. Firecrawl's branding endpoint reported a red primary (#9E0000) — rejected: no red appears in the logo, and the client's own logo file is named 'NEPA-Roofing-Pros-Horizontal-no-red'."
+    }
+  },
+  "services": [
+    {
+      "title": "Asphalt & Architectural Shingle Roofing",
+      "short_description": "Owens Corning Duration Series shingles with SureNail Technology, installed by a certified crew.",
+      "long_description": "NEPA Roofing Pros installs Owens Corning Duration Series shingles. With the patented SureNail Technology, strength and durability are built into every Duration Series shingle. We come prepared with certifications and training, ensuring your roof is installed the right way, the first time.",
+      "sub_services": ["Architectural Shingle Roofing", "Asphalt Shingle Roofing", "Full Tear-Off & Replacement"],
+      "hero_photo": "https://neparoofingpros.com/wp-content/uploads/2022/12/trudefduration8.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Metal Roofing",
+      "short_description": "Standing seam, shingle-look, and rib panel metal systems for residential, agricultural, and light commercial.",
+      "long_description": "Time for a new roof? You've reached the right place for metal roofing. Panel-Loc Plus gives residential, agricultural, and light commercial projects superior durability with an attractive appearance. Our CF Shingle has been specifically designed for shingle style with Concealed Fastening technology.",
+      "sub_services": ["Standing Seam Metal Roofing", "Shingle Look Metal Roofing", "Rib Panel Roofing", "Stone Coated Metal Roofing"],
+      "hero_photo": "https://neparoofingpros.com/wp-content/uploads/2023/01/1.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Commercial Roofing",
+      "short_description": "Flat and low-slope commercial roofing systems installed with minimal disruption to your operation.",
+      "long_description": "At NEPA Roofing Pros, we specialize in dependable commercial roofing solutions designed to protect your business, your property, and your long term investment. From blacktop roofing to a range of commercial roofing systems, our experienced team delivers quality workmanship with a focus on durability, performance, and reliability. We understand that commercial roofing projects require careful planning and efficient execution, which is why we work closely with property owners and managers to minimize disruption while ensuring every roof is installed or serviced to the highest standards.",
+      "sub_services": ["Flat & Low-Slope Roofing", "EPDM Rubber Roofing", "Blacktop Roofing Systems"],
+      "hero_photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/commercial-roofing-featured.png",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair & Leak Repair",
+      "short_description": "Emergency and scheduled repairs for leaks, storm damage, and failing low-slope roofs.",
+      "long_description": "We can provide expert and emergency roof installation and repair service. Where a repair is the right answer we say so. We handle leaks, flashing failures, storm damage, and low-slope EPDM problems, pull the permits the job needs, and advise on the right materials before any work starts.",
+      "sub_services": ["Emergency Leak Repair", "Storm Damage Repair", "Low-Slope & EPDM Repair"],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped",
+      "_evidence": "Homepage: 'We can provide expert and emergency roof installation service.' Google review republished on the homepage (Teresa Thomas) describes a severe water leak on a low-pitch roof requiring EPDM, permits obtained by the company. A second review references 'roof replacement or repair'."
+    },
+    {
+      "title": "Gutter Installation",
+      "short_description": "Seamless gutters backed by a 5-year workmanship warranty.",
+      "long_description": "5 year workmanship warranty! At NEPA Roofing Pros we pride ourselves on providing high-quality gutter installation, sized and pitched to move the water your roof sheds away from the house rather than down the wall behind it.",
+      "sub_services": ["Seamless Gutter Installation", "Downspouts"],
+      "hero_photo": "https://neparoofingpros.com/wp-content/uploads/2023/03/gutters.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "services_not_carried_forward": [
+    "The client's site splits Asphalt Shingle and Architectural Shingle into two near-identical pages (both are Owens Corning Duration Series) — merged into one service.",
+    "Standing Seam, Shingle Look Metal, Rib Panel, Stone Coated, SL-16, PBR Panel, Imperial Rib, Lok Seam, Classic Rib are nine separate pages for what is one service with product variants — merged into Metal Roofing sub_services.",
+    "Sister brands (NEPA Construction Pros, NEPA Painting Pros, NEPA Landscaping Pros, NEPA Cleaning Pros) and the 'Our Network' partner roofers (Stott, Royal, READCORP) are other companies, not services of this one."
+  ],
+  "service_areas": [
+    { "name": "West Pittston", "state": "Pennsylvania", "state_abbr": "pa", "county": "Luzerne County", "slug": "west-pittston-pa", "_source": "scraped" },
+    { "name": "Scranton", "state": "Pennsylvania", "state_abbr": "pa", "county": "Lackawanna County", "slug": "scranton-pa", "_source": "scraped" },
+    { "name": "Wilkes-Barre", "state": "Pennsylvania", "state_abbr": "pa", "county": "Luzerne County", "slug": "wilkes-barre-pa", "_source": "scraped" },
+    { "name": "Pittston", "state": "Pennsylvania", "state_abbr": "pa", "county": "Luzerne County", "slug": "pittston-pa", "_source": "scraped" },
+    { "name": "Clarks Summit", "state": "Pennsylvania", "state_abbr": "pa", "county": "Lackawanna County", "slug": "clarks-summit-pa", "_source": "scraped" },
+    { "name": "Kingston", "state": "Pennsylvania", "state_abbr": "pa", "county": "Luzerne County", "slug": "kingston-pa", "_source": "scraped" }
+  ],
+  "counties_served": ["Columbia", "Lackawanna", "Luzerne", "Monroe", "Wyoming", "Wayne", "Pike", "Susquehanna"],
+  "testimonials": [
+    { "name": "Don Biggs", "location": "Google Review", "text": "Great work. Fast and reasonable. Nice job cleaning up. Extremely Satisfied", "rating": 5, "_source": "scraped:homepage-google-widget" },
+    { "name": "Gary Brower", "location": "Google Review", "text": "Did great work did everything they said done in one day cleaned up was like they weren't even there Byron and Jame were great to work with", "rating": 5, "_source": "scraped:homepage-google-widget" },
+    { "name": "Teresa Thomas", "location": "Google Review", "text": "We reached out to multiple companies, including NEPA Roofing Pros, for a severe water leak issue on our low-pitch roof that required EPDM roofing. Bryan from NEPA Roofing Pros stood out by being prompt in responding to our calls and questions. He provided valuable advice on the right materials to use and ensured all necessary permits were obtained. The team arrived well-prepared and completed the work within the agreed time frame. After the job was done, Bryan came by to ensure we were satisfied with the results. He truly simplified the roof replacement process for me. If you're looking for a reliable team for roof replacement or repair, I highly recommend NEPA Roofing Pros.", "rating": 5, "_source": "scraped:homepage-google-widget" },
+    { "name": "Stephanie Ward", "location": "Google Review", "text": "Excellent communication and service from the start. Extremely easy and flexible to work with. Reasonable price and excellent workmanship. We are very happy with our roof! Thanks NEPA Roofing Pros", "rating": 5, "_source": "scraped:homepage-google-widget" },
+    { "name": "Paul Kerrigan", "location": "Google Review", "text": "All of my inquiries and questions were answered promptly before, during, and after the job was completed by NEPA Roofing Pros. The replacement roof project was completed in a timely manner, the workmen were professional, the site, with the exception of a new roof, looked the same after work was completed as it did before the project commenced, and the price was very reasonable.", "rating": 5, "_source": "scraped:homepage-google-widget" },
+    { "name": "John Ferry", "location": "Google Review", "text": "NEPA Roofing is awesome. Byron is very upfront on his pricing and provides a detailed estimate and invoice. Work is top quality.", "rating": 5, "_source": "scraped:homepage-google-widget" },
+    { "name": "Bryan Ruda", "location": "Google Review", "text": "We highly recommend Byron, Bobby and the crew at NEPA Roofing Pros. They are highly skilled and great with communication. They respect your time and get the job scheduled and completed quickly. Our roof looks great and it is finally watertight!", "rating": 5, "_source": "scraped:homepage-google-widget" }
+  ],
+  "team_members": [],
+  "team_names_referenced": ["Byron Read (owner — per BBB profile)", "Bobby", "Bryan"],
+  "faqs": [],
+  "gallery": [
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/herrs-roof-project-before1-scaled.jpg", "alt": "Aerial view of a failing commercial flat roof before replacement" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/herrs-roof-project-after1--scaled.jpg", "alt": "The same commercial building after a new flat roof system was installed" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/herrs-roof-project-before2-scaled.jpg", "alt": "Weathered low-slope roof membrane before tear-off" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/herrs-roof-project-after2-scaled.jpg", "alt": "New low-slope roof membrane after installation" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/herrs-roof-project-before3-scaled.jpg", "alt": "Aerial view of an aging commercial roof before work began" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2025/12/herrs-roof-project-after3-scaled.jpg", "alt": "Aerial view of the completed commercial roof replacement" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2022/09/85677a_3f36399814d248509603c5c7097e9e2c_mv2.webp", "alt": "Aerial view of a completed residential shingle roof" },
+    { "photo": "https://neparoofingpros.com/wp-content/uploads/2023/01/5.jpg", "alt": "Blue standing seam metal roof on a residential home" }
+  ],
+  "financing": {
+    "enabled": true,
+    "provider": "Wisetack",
+    "prequalify_url": "https://wisetack.us/#/jiln6by/prequalify",
+    "legacy_provider_url": "https://app.gethearth.com/financing/28585/46053/prequalify",
+    "disclosure": "All financing is subject to credit approval. Your terms may vary. Payment options through Wisetack are provided by our lending partners. For example, a $1,200 purchase could cost $104.89 a month for 12 months, based on an 8.9% APR, or $400 a month for 3 months, based on a 0% APR. Offers range from 0-35.9% APR based on creditworthiness. No other financing charges or participation fees. See additional terms at http://wisetack.com/faqs.",
+    "_source": "scraped"
+  },
+  "partners": [
+    { "name": "Owens Corning", "note": "Site states NEPA Roofing Pros installs Owens Corning Duration Series shingles with SureNail Technology. No certification tier (Preferred/Platinum) is claimed on the site, so none is claimed on the generated site." }
+  ],
+  "brand_voice_sample": "Are you in need of a new roof installation? Look no further than NEPA Roofing Pros, your trusted roofing experts. With years of experience and a commitment to quality, we offer top-notch roofing services that will protect your home for years to come. We understand the importance of a strong, durable roof. That's why we only use the highest-quality materials for our installations.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The /contact page could not be scraped — it returns HTTP 403 to every client tested (Firecrawl, curl, and a real browser). No CRM widgets were detected. GHL snippets remain a paste-in for the operator."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_skipped_reason": "APIFY_TOKEN unset — see business_profile.json for the substitute sources used.",
+    "pages_scraped": ["/"],
+    "pages_blocked": [
+      "/our-services/", "/our-service-area/", "/contact/", "/commercial-roofing/",
+      "/asphalt-shingle-roofing/", "/gutter-installation/"
+    ],
+    "blocked_reason": "Every URL other than the homepage returns HTTP 403 to curl/Firecrawl and renders the site's own 404 page in a real browser, redirecting back to the root. The client's site is effectively a one-page site right now: every nav link and all ~100 city landing pages in its sitemap are dead. Content was therefore taken from the homepage only.",
+    "security_finding": "The homepage contains an injected hidden spam link (a position:absolute; left:-10909px div linking to califarmacia.com) inside the 'Home' nav item. Combined with the site-wide 403/404 failure this is consistent with a compromised WordPress install. The injected markup was NOT carried into the generated site. Worth flagging to the client.",
+    "socials_scraped": [],
+    "socials_found": "None. No Facebook, Instagram, YouTube, Yelp, LinkedIn or TikTok links appear on the homepage.",
+    "generated_at": "2026-08-11",
+    "cost_estimate_usd": 0.24,
+    "warnings": [
+      "rating and review_count are null — no independently corroborated figure was found, so no aggregateRating is emitted.",
+      "hours are null — the only source (wheree.com) lists 00:00-11:59 every day, a directory default rather than real hours.",
+      "email is null — no mailto: or plain-text address on the homepage, and /contact 403s."
+    ]
+  }
+}

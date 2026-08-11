@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 108" width="460" height="108" role="img" aria-label="TRC Home Improvements">
+  <title>TRC Home Improvements</title>
+  <!-- tile mark: three squares, the grout-line motif of a custom tiled shower -->
+  <g>
+    <rect x="0" y="10" width="40" height="40" fill="#0b1210"/>
+    <rect x="46" y="10" width="40" height="40" fill="#00875a"/>
+    <rect x="0" y="56" width="40" height="40" fill="#00875a"/>
+    <rect x="46" y="56" width="40" height="40" fill="#0b1210"/>
+  </g>
+  <text x="106" y="60" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="900" font-size="58" letter-spacing="-2" fill="#0b1210">TRC</text>
+  <rect x="106" y="70" width="228" height="4" fill="#00875a"/>
+  <text x="106" y="94" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="700" font-size="16" letter-spacing="3.4" fill="#0b1210">HOME IMPROVEMENTS</text>
+</svg>

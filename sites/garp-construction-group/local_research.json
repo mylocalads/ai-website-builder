@@ -1,0 +1,79 @@
+{
+  "slug": "garp-construction-group",
+  "vertical": "general contractor / multi-trade",
+  "metro": "Miami-Dade County, FL",
+  "generated_at": "2026-08-10",
+  "method": "Firecrawl web search across Reddit (r/Miami, r/Contractor, r/Construction, r/GeneralContractor, r/RealEstate, r/homeowners) plus Miami-Dade County permitting and recertification pages. Apify/Reddit API not used.",
+  "pain_points": [
+    {
+      "point": "Permits skipped by a previous contractor or a previous owner surface later as violations, stop-work orders, after-the-fact permitting and forced remediation.",
+      "evidence": "r/Construction 'After the fact permitting' — Florida homeowner tagged by code enforcement for unpermitted kitchen work; r/Miami thread on a neighbour receiving a permit violation for work done by the previous owner and having to tear it out."
+    },
+    {
+      "point": "Contractor fraud and ghosting are a live, repeatedly-discussed concern in South Florida specifically.",
+      "evidence": "r/Miami 'Advice Re: building permits in Miami' — commenters tie house fires to fraudulent contractors and describe permitting as deliberately made to look harder than it is."
+    },
+    {
+      "point": "Homeowners cannot tell competing window quotes apart, because the product approval (Miami-Dade NOA) is what actually differentiates them and rarely appears on the quote.",
+      "evidence": "r/GeneralContractor 'Learning about Windows & Doors - Miami-Dade' — poster working exclusively in Miami-Dade struggling to get straight answers from window companies about NOA."
+    },
+    {
+      "point": "Miami-Dade permit review timelines are unpredictable and are the real driver of project schedule, not crew time.",
+      "evidence": "r/Contractor thread on Miami-Dade ePermitting; r/Miami thread asking whether the county is ramping up enforcement."
+    },
+    {
+      "point": "Structural recertification on older buildings surfaces expensive deferred roof, plumbing and mechanical work with little warning.",
+      "evidence": "r/Miami 'Building recertification as a new HOA president'; Miami-Dade County recertification programme page."
+    },
+    {
+      "point": "Multi-trade jobs stall in the gaps between subcontractors, with each blaming the other and no single accountable party.",
+      "evidence": "Recurring theme across r/Contractor and r/HomeImprovement threads on GC coordination; reinforced by the one public Yelp review of this business, which cites communication consistency rather than workmanship."
+    }
+  ],
+  "what_customers_value": [
+    "A contractor who pulls and closes out the permit as a matter of course, not as an upcharge",
+    "Being told honestly when a repair is sufficient instead of being sold a replacement",
+    "A written scope before work starts, and a realistic permit timeline quoted up front",
+    "Verifiable state licence numbers they can look up on the Florida DBPR portal",
+    "One accountable point of contact on a job that involves several trades",
+    "Proof of Miami-Dade NOA / product approval on opening protection"
+  ],
+  "how_this_business_stands_out": [
+    "Holds FOUR Florida state certifications in-house — CGC1520370 (general), CCC1329807 (roofing), CAC1817062 (HVAC), CFC1429344 (plumbing). Most South Florida GCs hold the GC licence only and subcontract the rest. This is verifiable and is the single strongest differentiator available.",
+    "Incorporated 2011, operating since 2012 — 14 years of Miami-Dade permitting and High-Velocity Hurricane Zone code.",
+    "Runs both residential and commercial work, including craned rooftop mechanical on commercial buildings.",
+    "Their own stated philosophy — 'we take great pride in our unique ability to understand our own capabilities and not promise more than we can deliver' — is unusually well-matched to the top customer complaint in this market (over-promising, then stalling)."
+  ],
+  "copy_angles": [
+    {
+      "angle": "One licensed contractor for the whole job",
+      "rationale": "Directly answers the multi-trade coordination pain point and is backed by four verifiable licence numbers. Used as the H1.",
+      "used_in": ["hero headline", "signature_system", "why_choose_us"]
+    },
+    {
+      "angle": "We pull the permit and close it out",
+      "rationale": "The most repeated South Florida homeowner fear. Turned into an explicit commitment rather than a claim.",
+      "used_in": ["process_steps", "home FAQ", "blog: why-unpermitted-work-costs-more"]
+    },
+    {
+      "angle": "We don't promise more than we can deliver",
+      "rationale": "The client's own words from their existing About copy, and a precise counter to the ghosting/over-promising complaint. Kept verbatim in spirit.",
+      "used_in": ["promise_band"]
+    },
+    {
+      "angle": "Ask which NOA your window quote is under",
+      "rationale": "High-intent, high-differentiation local knowledge that competitors' sites do not cover.",
+      "used_in": ["impact-windows service page", "blog: miami-dade-noa-impact-windows"]
+    },
+    {
+      "angle": "We'll tell you when a repair is the right answer",
+      "rationale": "Trust signal that costs the business money to say, which is why it reads as credible.",
+      "used_in": ["roofing service page FAQ", "pricing intro"]
+    }
+  ],
+  "deliberately_avoided": [
+    "Any star rating or review count — no verifiable aggregate figure exists (see business_profile.json _notes.rating_note).",
+    "Fabricated testimonials — the home testimonials array is empty and the section self-hides.",
+    "Any published price or cost range — /pricing lists quote variables instead."
+  ]
+}

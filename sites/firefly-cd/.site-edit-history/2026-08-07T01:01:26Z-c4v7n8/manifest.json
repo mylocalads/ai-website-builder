@@ -1,0 +1,28 @@
+{
+  "batch_id": "2026-08-07T01:01:26Z-c4v7n8",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "add this calendar widget instead of the current one (on all pages) - GHL booking iframe n9qMfgZ9DjXJ5ETyTHaf",
+  "diff_spec": [
+    {
+      "op": "SET",
+      "path": "src/content/site/config.json",
+      "field": "crm.calendar_embed_snippet",
+      "value": "operator-pasted GHL booking snippet, booking id n9qMfgZ9DjXJ5ETyTHaf, iframe id KMD91vGgtSPfUcKDZc8G_1786064413346, allow=payment",
+      "note": "pasted verbatim, not synthesized; replaces booking id J4EfjuMK45J9Yqx54csv"
+    }
+  ],
+  "files_touched": [
+    "src/content/site/config.json"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_url": "https://firefly-2352v0xuf-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://fireflycd.com",
+    "page_count": 24
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

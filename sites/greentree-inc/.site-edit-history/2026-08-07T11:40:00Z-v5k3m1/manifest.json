@@ -1,0 +1,32 @@
+{
+  "batch_id": "2026-08-07T11:40:00Z-v5k3m1",
+  "mode": "edit",
+  "slug": "greentree-inc",
+  "operator_request": "1) add icons to the service benefit section below the hero and make it appealing like Tropical South; 2) remove the image from the top of the 'why property managers stay' section, it's too small; 3) enhance the visual appeal of the 'Our Standard' section and tiles; 4) switch the 'about greentree' arrangement to image left, text right; 5) make the header menu #285304 with white fonts including the phone button, its icon and effect",
+  "diff_spec": [
+    { "op": "SET", "path": "src/content/site/home.json", "field": "promise_bar", "value": "4 items converted from plain strings to { text, icon } — home / handshake / award / clock" },
+    { "op": "SET", "path": "src/components/PromiseBar.astro", "field": "css..icon", "value": "accent halo (hard ring + blurred glow) + 2x2 mobile grid; ported from tropical-south-tree-services" },
+    { "op": "REMOVE", "path": "src/content/site/home.json", "field": "promise_band.image", "value": null },
+    { "op": "SET", "path": "src/components/SignatureSystem.astro", "field": "acrostic branch", "value": "letter-led grid; letter derived from each block title's first character" },
+    { "op": "SET", "path": "src/components/AboutOwl.astro", "field": "css..media", "value": "order:-1 desktop, order:0 under 780px" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "css", "value": "--color-header-bg #285304, white type/logo/phone, dark-green submenu + mobile panel, white pulse" }
+  ],
+  "files_touched": [
+    "src/content/site/home.json",
+    "src/components/PromiseBar.astro",
+    "src/components/SignatureSystem.astro",
+    "src/components/AboutOwl.astro",
+    "src/components/Header.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "greentree-cqcr3ogff",
+    "url": "https://greentree-cqcr3ogff-marcellus-mylocaladscs-projects.vercel.app",
+    "canonical_url": "https://greentree-inc.vercel.app",
+    "at": "2026-08-07T13:08:00Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

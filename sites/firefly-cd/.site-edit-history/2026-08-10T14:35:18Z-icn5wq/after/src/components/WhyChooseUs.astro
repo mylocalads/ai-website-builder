@@ -1,0 +1,69 @@
+---
+import { getEntry } from 'astro:content';
+import SectionHead from './SectionHead.astro';
+import { imageUrl } from '../lib/images.ts';
+const site = (await getEntry('site', 'config')).data as any;
+const items = site.why_choose_us ?? [];
+
+/**
+ * An icon is either an image or a literal emoji, and the two render very
+ * differently: an image becomes a CSS mask, an emoji is printed as text.
+ *
+ * The old test was `isUrl()`. That broke the moment images were localised —
+ * a filename like `685b1f52….png` is not a URL, so it fell through to the
+ * emoji branch and the filename was printed on the page verbatim.
+ *
+ * So: detect an image by shape (absolute URL *or* an image file extension),
+ * then resolve it to a real URL. Only a resolved absolute path is treated as
+ * an image, so anything that fails to resolve falls back to text rather than
+ * emitting `url(some-file.png)` that 404s.
+ */
+const looksLikeImage = (s: unknown): s is string =>
+  typeof s === 'string' && (/^https?:\/\//i.test(s) || /\.(png|jpe?g|webp|avif|gif|svg)$/i.test(s));
+
+// Resolved up front because a template cannot await inside .map().
+const iconUrls: (string | null)[] = await Promise.all(
+  items.map((i: any) =>
+    looksLikeImage(i.icon) ? imageUrl(i.icon, { width: 96 }) : Promise.resolve(null)
+  )
+);
+const maskUrl = (idx: number) => {
+  const u = iconUrls[idx];
+  return u && (u.startsWith('/') || /^https?:\/\//i.test(u)) ? u : null;
+};
+---
+{items.length > 0 && (
+  <section class="why-choose-us" aria-label="Why choose us">
+    <div class="container">
+      <SectionHead eyebrow="Why Choose Us" heading="Reasons homeowners pick us" />
+      <div class="grid">
+        {items.map((i: any, idx: number) => (
+          <article class="tile">
+            <div class="icon" aria-hidden="true">
+              {maskUrl(idx) ? (
+                <span class="icon-mask" style={`--mask: url(${maskUrl(idx)});`} aria-hidden="true"></span>
+              ) : (
+                <span class="emoji" aria-hidden="true">{i.icon}</span>
+              )}
+            </div>
+            <h3>{i.title}</h3>
+            <p>{i.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+<style>
+  .why-choose-us { padding: var(--space-5) 0; background: var(--color-text); color: white; }
+  .why-choose-us :global(.section-head h2) { color: white; }
+  .why-choose-us :global(.section-head .subtitle) { color: rgba(255,255,255,0.7); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-3); }
+  .tile { padding: var(--space-3); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; text-align: center; transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.2s ease; }
+  .tile:hover { transform: translateY(-5px); box-shadow: 0 18px 42px rgba(0, 207, 209, 0.28); border-color: rgba(0, 207, 209, 0.35); }
+  .icon { height: 72px; margin: 0 auto var(--space-2); display: flex; align-items: center; justify-content: center; }
+  .icon-mask { width: 60px; height: 60px; background-color: var(--color-accent); display: inline-block; -webkit-mask: var(--mask) no-repeat center / contain; mask: var(--mask) no-repeat center / contain; }
+  .icon .emoji { font-size: 3rem; }
+  .tile h3 { margin: 0 0 var(--space-1); font-size: 1.15rem; color: white; }
+  .tile p { color: rgba(255,255,255,0.75); margin: 0; }
+</style>

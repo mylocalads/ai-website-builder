@@ -1,0 +1,64 @@
+{
+  "slug": "mnm-roofing-professionals",
+  "template": "owl",
+  "vertical": "roofing",
+  "reference_urls": [
+    { "url": "https://owlroofing.com/", "role": "primary", "used_for": "section order and component shape, via astro-templates/owl" },
+    { "url": "https://firefly-cd.vercel.app/", "role": "primary", "used_for": "MLA house pattern cross-check" }
+  ],
+  "brand_source": {
+    "from": "mnmroofingllc.com CSS + logo",
+    "detected_colors": ["#CF152D", "#0A0A0A", "#0038F0", "#2EA3F2", "#FFFFFF"],
+    "detected_fonts": { "display": "Red Rose", "body": "DM Sans" },
+    "rejected": [
+      "#2EA3F2 — Divi default link blue, untouched theme value, not a brand colour",
+      "#0038F0 — Divi default, same reason"
+    ]
+  },
+  "palette": {
+    "bg": "#f7f6f4",
+    "surface": "#ffffff",
+    "text": "#14161a",
+    "muted": "#5a5e66",
+    "primary": "#17191c",
+    "on_primary": "#ffffff",
+    "accent": "#cf152d",
+    "on_accent": "#ffffff",
+    "accent_ink": "#c31228",
+    "accent_on_dark": "#e8636f",
+    "focus": "#0057ff"
+  },
+  "contrast_audit": {
+    "text/bg": 16.77,
+    "muted/bg": 6.02,
+    "on-primary/primary": 17.61,
+    "on-accent/accent": 5.53,
+    "accent-ink/bg": 5.66,
+    "accent-ink/surface": 6.11,
+    "accent-on-dark/primary": 5.41,
+    "verdict": "All seven pairs pass WCAG AA at 4.5:1.",
+    "note": "MNM's brand red is the case the owl README calls out: #cf152d is a correct button fill (5.53:1 under white) but only 3.19:1 as text on the near-black band, so --color-accent-on-dark is a lighter tint (#e8636f, 5.41:1). Fills stay #cf152d site-wide."
+  },
+  "typography": {
+    "display": "Red Rose",
+    "body": "DM Sans",
+    "source": "Both detected on the client's existing site; both available on Google Fonts."
+  },
+  "radius": { "sm": "3px", "md": "6px", "lg": "10px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "motion": "Template default only — no added transitions, no parallax, no scroll-triggered animation.",
+  "anti_patterns": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats, hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — the owl fixed order applies",
+    "the two Divi default blues from the client's old theme",
+    "inline lender iframes and lender legal walls (the old site's biggest layout problem)"
+  ],
+  "generated_at": "2026-08-10"
+}

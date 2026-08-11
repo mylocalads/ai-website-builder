@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* GARP's logo is a monochrome grey skyline mark (#808080) with a serif
+     wordmark — it supplies no brand hue, so the palette is built around the
+     graphite of the mark itself and a single construction-orange accent.
+     Neutral bg + grey surface keeps the emphasis on the project photography,
+     which is the only colour on most pages. */
+  --color-bg: #ffffff;
+  --color-surface: #f4f5f7;
+  --color-text: #14181d;
+  --color-muted: #565e68;
+  --color-primary: #1c2430;
+  --color-on-primary: #ffffff;
+
+  /* Three accent tokens, one per job — see the button-contrast section of the
+     template README. This accent is dark enough to carry WHITE button labels
+     (5.02:1 on the fill), which is why --color-on-accent is white here rather
+     than the template default's near-black. As text on the dark --color-primary
+     bands the fill orange collapses to 2.68:1, so accent-on-dark is a lighter
+     tint of the same hue. */
+  --color-accent: #c2410c;
+  --color-on-accent: #ffffff;
+  --color-accent-ink: #9a3412;
+  --color-accent-on-dark: #fb923c;
+
+  --color-focus: #0057ff;
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

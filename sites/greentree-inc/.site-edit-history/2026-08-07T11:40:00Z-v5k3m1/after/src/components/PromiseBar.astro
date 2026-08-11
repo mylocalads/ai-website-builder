@@ -1,0 +1,71 @@
+---
+import { getIcon } from '../lib/icons';
+
+type Item = string | { text: string; icon?: string };
+export interface Props { items?: Item[]; }
+const { items = [] } = Astro.props;
+
+// Accepts plain strings (legacy content) or { text, icon } objects.
+const normalized = items.map((i) => (typeof i === 'string' ? { text: i, icon: undefined } : i));
+---
+{normalized.length > 0 && (
+  <section class="promise-bar" aria-label="What sets us apart">
+    <div class="container">
+      <ul>
+        {normalized.map((item) => {
+          const svg = getIcon(item.icon);
+          return (
+            <li>
+              {svg && (
+                <span class="icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor" set:html={svg} />
+                </span>
+              )}
+              <span class="label">{item.text}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .promise-bar { background: var(--color-primary); color: var(--color-on-primary); padding: var(--space-3) 0; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-2) var(--space-3); }
+  li { display: flex; align-items: center; justify-content: center; gap: 0.75rem; text-align: left; }
+  /* The badge sits in a soft accent halo rather than flat on the green, which is
+     what lifts it off the band. Two rings of the same accent at different
+     opacities read as a glow without needing a filter. Ported from
+     sites/tropical-south-tree-services; astro-templates/owl still ships the
+     flat version. */
+  .icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2.75rem; height: 2.75rem; flex-shrink: 0; border-radius: 50%;
+    background: var(--color-accent); color: var(--color-on-accent);
+    /* A thin hard ring plus a BLURRED glow. Concentric hard rings of translucent
+       leaf green desaturate against the deep green and come out muddy; the blur
+       keeps the hue and reads as light coming off the badge. */
+    box-shadow:
+      0 0 0 3px color-mix(in srgb, var(--color-accent) 30%, transparent),
+      0 0 18px 2px color-mix(in srgb, var(--color-accent) 45%, transparent);
+  }
+  .icon svg { width: 1.5rem; height: 1.5rem; }
+  .label { font-weight: 600; letter-spacing: 0.02em; font-size: clamp(0.95rem, 1.5vw, 1.1rem); line-height: 1.3; text-transform: capitalize; }
+
+  /* Mobile: a strict 2x2 grid with the icon stacked above centred text.
+     `auto-fit minmax(220px, 1fr)` collapses to a single column at 375px, which
+     turned four short claims into a tall left-aligned list; two per row keeps
+     the whole band on screen next to the hero. */
+  @media (max-width: 700px) {
+    .promise-bar { padding: var(--space-4) 0; }
+    ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4) var(--space-2); }
+    li { flex-direction: column; justify-content: flex-start; text-align: center; gap: 0.6rem; }
+    .label { font-size: 0.9rem; }
+    .icon {
+      width: 3rem; height: 3rem;
+      box-shadow:
+        0 0 0 3px color-mix(in srgb, var(--color-accent) 32%, transparent),
+        0 0 22px 3px color-mix(in srgb, var(--color-accent) 50%, transparent);
+    }
+  }
+</style>

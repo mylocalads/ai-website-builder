@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
+
+:root {
+  --color-bg: #f7f6f4;
+  --color-surface: #ffffff;
+  --color-text: #14161a;
+  --color-muted: #5a5e66;
+  --color-primary: #17191c;
+  --color-on-primary: #ffffff;
+
+  /* MNM's brand red is exactly the case the owl README describes: it is a
+     correct button fill (5.53:1 under white) but only 3.19:1 as text on the
+     near-black band, so accent-on-dark is a lighter tint of the same red.
+     Fills stay #cf152d everywhere, so the colour the eye reads as "MNM red"
+     is unchanged site-wide.
+
+       --color-accent          #cf152d  fill behind --color-on-accent
+       --color-accent-ink      #c31228  the red as TEXT on light backgrounds
+       --color-accent-on-dark  #e8636f  the red as TEXT on --color-primary
+
+     Measured (see design_reference.json):
+       on-accent/accent      5.53   accent-ink/bg        5.66
+       accent-ink/surface    6.11   accent-on-dark/prim  5.41 */
+  --color-accent: #cf152d;
+  --color-on-accent: #ffffff;
+  --color-accent-ink: #c31228;
+  --color-accent-on-dark: #e8636f;
+
+  --color-focus: #0057ff;
+  --font-display: 'Red Rose', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'Inter', system-ui, sans-serif;
+  --radius-sm: 3px; --radius-md: 6px; --radius-lg: 10px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}
