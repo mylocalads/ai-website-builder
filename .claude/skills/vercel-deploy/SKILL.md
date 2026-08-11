@@ -210,8 +210,23 @@ Run from the **repo root**, not from `sites/{slug}`:
 cd ~/ai-website-builder
 pwd | grep -Eq "/ai-website-builder$" || { echo "not at repo root — aborting commit"; exit 1; }
 
-# Land on top of anything the operator pushed while this build was running.
-git pull --rebase -q origin master
+# COMMIT FIRST. DO NOT PULL YET.
+#
+# This order is not stylistic, it is the whole safety of the step. Pulling
+# first, with a freshly generated site sitting in the working tree over a
+# previous version that is already committed, makes git refuse:
+#
+#     error: cannot pull with rebase: You have unstaged changes.
+#
+# The obvious way out of that error is `git checkout -- .` or `git reset
+# --hard`, and BOTH DESTROY THE SITE THAT WAS JUST BUILT — restoring the old
+# committed version over twenty minutes of work. That happened on the
+# agc-concrete rebuild of 2026-08-11: the owl site was generated, the pull
+# failed, the tree was restored to the firefly version, and the run had to
+# rebuild from scratch.
+#
+# Committing first puts the work somewhere a pull cannot reach. NEVER add a
+# pull, checkout, stash or reset above this line.
 
 # STAGE ONLY GENERATED OUTPUT.
 # Never `git add -A`, never `git add .`. An unattended run must not be able to
@@ -234,8 +249,16 @@ git commit -q -m "feat(sites): build {slug}
 Generated unattended from the portal build queue.
 Live: {final_url}"
 
+# NOW it is safe to pull: the work is in a commit, so a rebase moves it rather
+# than risking it. This lands on top of anything the operator pushed while the
+# build was running.
+git pull --rebase -q origin master || {
+  echo "rebase hit a conflict — STOP. Do not checkout, reset or force."
+  echo "The site is built, live, and committed locally; only the push is pending."
+  exit 1
+}
+
 git push -q origin master || {
-  # Someone pushed between the pull and now. Rebase once and retry.
   git pull --rebase -q origin master && git push -q origin master
 } || {
   echo "push failed after retry — the site is built and live, but its source is only on this box"
@@ -246,7 +269,9 @@ echo "pushed sites/{slug}"
 ```
 
 **Never `git push --force`, and never resolve a conflict by discarding.** The
-operator's own work is on the other side of that push.
+operator's own work is on the other side of that push — and on this side, so is
+a site that took twenty minutes and real money to generate. A conflict here is
+an operator's problem to resolve, not something to clear with a reset.
 
 `.env` is gitignored so credentials cannot be swept in — but the explicit staging
 above is what makes that a guarantee rather than a hope.
