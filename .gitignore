@@ -1,5 +1,16 @@
 # Environment variables (contains API tokens)
+#
+# The glob, not just `.env`, because editors invent neighbours. nano left a
+# `.env.save` on the runner droplet -- a complete copy of the tokens -- and it
+# was NOT ignored, because `.env` does not match `.env.save`. It sat in the
+# working tree of a repo that an unattended process commits to.
+#
+# Nothing committed it: vercel-deploy stages only sites/ and refuses if anything
+# outside sites/ reaches the index. But that guard existed for a different
+# reason, and relying on it to also catch stray credentials is luck, not design.
 .env
+.env.*
+!.env.example
 
 # Vercel project config (created during deploy)
 .vercel/
