@@ -2,11 +2,10 @@
   "vertical": "roofing",
   "references": [
     {
-      "url": "https://firefly-cd.vercel.app/",
-      "role": "primary",
-      "notes": "Firefly Contractors & Design — the canonical MLA reference for roofing / home services. Everything about this site (fixed section order, two-column hero with calendar, editorial two-tone eyebrow + serif H2s, service tiles with background image + Learn More button, cyan #00cfd1 accent, WhyChooseUs dark-band with CSS-mask icons, UsVsThem with overlay labels + check/X grid, service page with SEO H1 + sub-services bullets, /book page with calendar + What's next info column) is the pattern. Clone this before anything else.",
-      "tags": ["primary", "editorial", "type-driven", "cyan-accent", "fixed-section-order", "hero-video-bg", "two-column-hero-calendar", "seo-service-h1", "css-mask-icons"],
-      "note_url_fragility": "This URL may move when the site is attached to a permanent domain. If the URL 404s, cross-reference the template repo directly at ai-website-builder/astro-templates/firefly/ for the current shape."
+      "url": "ai-website-builder/astro-templates/firefly/",
+      "role": "legacy",
+      "notes": "LEGACY — do not use for a new site. Retained only so sites already built on it still have their shape documented. firefly has no <form> anywhere in its source: it ships GHLFormEmbed alone and captures a lead only if a human pastes a GHL snippet during site-generate. On an unattended build nobody does, and the result is a complete, good-looking site that cannot capture a lead. Was `role: primary` here, which kept pulling builds back onto it after the skill default had already changed to owl.",
+      "tags": ["legacy", "no-native-form", "editorial", "fixed-section-order"]
     },
     {
       "url": "ai-website-builder/astro-templates/owl/",
