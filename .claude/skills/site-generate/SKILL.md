@@ -76,10 +76,25 @@ Templates live under `astro-templates/`. Two exist:
 
 | Name | Directory | Shape |
 |---|---|---|
-| `firefly` (default) | `astro-templates/firefly/` | Flat service-area URLs, no blog. Section order: hero → partner-badges → about → services → why-choose-us → testimonials → financing → us-vs-them → service-area-grid → gallery → faq → contact → CTA → footer |
-| `owl` | `astro-templates/owl/` | Nested `/service-area/{city-st}` URLs, blog collection. Section order: hero → promise-bar → services-grid → testimonials → promise-band → signature-system → process-steps → about → seo-body → faq → blog-cards → closing-cta → footer |
+| `owl` **(default)** | `astro-templates/owl/` | Nested `/service-area/{city-st}` URLs, blog collection, **a working native lead form**. Section order: hero → promise-bar → services-grid → testimonials → promise-band → signature-system → process-steps → about → seo-body → faq → blog-cards → closing-cta → footer |
+| `firefly` *(legacy — do not use for new sites)* | `astro-templates/firefly/` | Flat service-area URLs, no blog, **no native form**. Section order: hero → partner-badges → about → services → why-choose-us → testimonials → financing → us-vs-them → service-area-grid → gallery → faq → contact → CTA → footer |
 
-The operator selects one with `--template {name}`. When the flag is absent, use `firefly`. Confirm the resolved template name with the operator before copying — a mismatch is expensive to undo once content is written.
+The operator may still select one with `--template {name}`. **When the flag is absent, use
+`owl`.**
+
+**Why the default changed, and why `firefly` is legacy.** `firefly` ships `GHLFormEmbed`
+and nothing else — there is no `<form>` anywhere in its source, so it can only capture a
+lead if a human pastes a GHL embed during this skill. That is fine when an operator is
+sitting there. It is not fine for a build arriving from the portal queue, where nobody is,
+and the failure is silent: the first unattended build produced a complete, good-looking
+21-page site with **zero form tags and zero input fields**, and reported success.
+
+`owl` ships `EstimateForm.astro` posting to its own `/api/estimate` route, plus a
+`thank-you` page, so it captures leads with no paste-in at all. `GHLFormEmbed` is still
+there for clients who do supply a snippet.
+
+A site that looks finished and cannot capture a lead is worse than one that obviously is
+not finished, because nobody goes looking for the problem.
 
 Copy `astro-templates/{template}/` → `sites/{slug}/`, excluding `node_modules`, `dist`, `.astro`, `.vercel`, and any lockfile that would pin to the template's install path. Do not modify the template in place under any circumstance.
 

@@ -4,11 +4,9 @@ Reusable Astro scaffold cloned per client by the site-generate skill (`--templat
 Do not edit content collections or `src/styles/tokens.css` here — those are populated per site.
 Structural changes (layouts, components, page templates, schema plumbing) go here.
 
-Modeled on the structure of owlroofing.com. The **structure** is the reference —
-their copy and their branded program names ("We Give A Hoot", "Protect Your Nest
-System", "Get It Right Guarantee") are Owl Roofing's own brand assets and must
-never appear in a generated site. Every section here is content-driven so each
-client supplies its own naming.
+Only the structure of this template is reusable, never its words. Branded
+program names belong to whoever coined them; every block here reads its naming
+from this site's own content collection.
 
 ## Fixed home section order
 

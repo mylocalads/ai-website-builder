@@ -4,11 +4,21 @@ Reusable Astro scaffold cloned per client by the site-generate skill (`--templat
 Do not edit content collections or `src/styles/tokens.css` here — those are populated per site.
 Structural changes (layouts, components, page templates, schema plumbing) go here.
 
-Modeled on the structure of owlroofing.com. The **structure** is the reference —
-their copy and their branded program names ("We Give A Hoot", "Protect Your Nest
-System", "Get It Right Guarantee") are Owl Roofing's own brand assets and must
-never appear in a generated site. Every section here is content-driven so each
-client supplies its own naming.
+**Only the structure is reusable. Never the words.**
+
+This layout was derived by studying a third-party site. Section order, component
+shape and page composition are generic craft and are reused freely. Copy,
+taglines, and above all **branded program names** — the named "system",
+"guarantee" or "promise" blocks — belong to whoever coined them, and reproducing
+one in a client's site puts another company's trademark on a page that client
+pays for.
+
+Every section here is content-driven for exactly that reason: each block reads
+its naming from the client's own content collection, and ships with no default
+copy to fall back on. **If you find yourself writing a default string into a
+component, stop** — a template default is how borrowed copy reaches a live site
+without anyone deciding to put it there. `sites/build-log.md` records that
+happening twice before it was caught.
 
 ## Fixed home section order
 
