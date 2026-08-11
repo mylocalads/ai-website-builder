@@ -66,8 +66,8 @@ So, on a queued build:
 
 - Run every skill inline, in sequence, in this turn. Long is fine. Waiting is not.
 - Do not use background tasks, and do not "check back later" — there is no later.
-- Write `/tmp/mla-build-result.json` **yourself**, as the last thing you do, before your
-  final message. Not from a sub-agent, not "once the deploy finishes."
+- Write the **result file** yourself, as the last thing you do, before your final message.
+  Not from a sub-agent, not "once the deploy finishes."
 - If you genuinely cannot complete a step, write that file with `status: "failed"` and an
   `errorMessage` saying which step and why. A missing file is reported as a failure with
   no explanation, which is the least useful outcome available to you.
@@ -75,21 +75,30 @@ So, on a queued build:
 An operator running the pipeline by hand may still delegate freely — there is a session
 there to receive the result.
 
+### The payload and result paths are given to you — never assume them
+
+`~/bin/mla-build.sh` names both in your prompt, and exports them as
+`$MLA_BUILD_PAYLOAD`, `$MLA_BUILD_RESULT` and `$MLA_BUILD_ID`. **Use those.**
+
+They stopped being fixed paths when two builds became able to run at once. The queue
+trigger fires every two minutes and a build takes twenty-four, so two clients approved the
+same afternoon put two builds on this droplet together. `/tmp/mla-build-payload.json` is
+now either another build's payload or a stale one, and a result written to
+`/tmp/mla-build-result.json` is reported against the wrong client.
+
 ### Report progress after every step
 
 The client watches this build happen. Their page shows the step name and a counter, and if
 that counter never moves for twenty-five minutes it reads as broken — they ask whether it
 is stuck, and the honest answer is that nobody told them otherwise.
 
-After finishing **each** step, post it. `BUILD_ID` is the `id` field of
-`/tmp/mla-build-payload.json`; the other two are in `.env`:
+After finishing **each** step, post it. `MLA_BUILD_ID` is already in your environment; the
+other two are in `.env`:
 
 ```bash
-BUILD_ID=$(python3 -c "import json;print(json.load(open('/tmp/mla-build-payload.json'))['id'])")
-
 report() {   # report <index> "<client-facing step name>"
   curl -s -o /dev/null -X POST \
-    "$MLA_PORTAL_URL/api/builds/$BUILD_ID/progress" \
+    "$MLA_PORTAL_URL/api/builds/$MLA_BUILD_ID/progress" \
     -H "Authorization: Bearer $BUILD_API_SECRET" \
     -H "Content-Type: application/json" \
     -d "{\"step\":\"$2\",\"stepIndex\":$1,\"stepTotal\":9}" || true

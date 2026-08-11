@@ -68,6 +68,7 @@ const errorMessage = errorKey ? ERRORS[errorKey] ?? ERRORS.invalid : null;
   )}
 
   <form
+    data-attribution
     method="post"
     action={action ?? undefined}
     novalidate={false}
@@ -103,6 +104,19 @@ const errorMessage = errorKey ? ERRORS[errorKey] ?? ERRORS.invalid : null;
     </div>
 
     <input type="hidden" name="return_to" value={returnTo} />
+
+    {/* Filled by AttributionCapture from sessionStorage. Empty when the
+        visitor arrived with no campaign, which is a real answer, not a gap. */}
+    <input type="hidden" name="utm_source" value="" />
+    <input type="hidden" name="utm_medium" value="" />
+    <input type="hidden" name="utm_campaign" value="" />
+    <input type="hidden" name="utm_content" value="" />
+    <input type="hidden" name="utm_term" value="" />
+    <input type="hidden" name="gclid" value="" />
+    <input type="hidden" name="fbclid" value="" />
+    <input type="hidden" name="msclkid" value="" />
+    <input type="hidden" name="landing_page" value="" />
+    <input type="hidden" name="referrer" value="" />
 
     {/* Honeypot: hidden from people, catches naive bots. Not a captcha substitute. */}
     <div class="hp" aria-hidden="true">
