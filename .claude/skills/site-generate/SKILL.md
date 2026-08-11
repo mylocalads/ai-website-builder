@@ -6,9 +6,18 @@ trigger: "site-generate" or "generate site" or "scaffold site" or "build site" o
 
 ## What this skill does
 
-Takes a filled-in `docs/client-intake.md` (the operator-facing questionnaire) plus optional pipeline data and produces a complete Astro project at `sites/{slug}/` that matches the reference site at https://firefly-cd.vercel.app one-for-one on shape and quality.
+Takes a filled-in `docs/client-intake.md` (the operator-facing questionnaire) plus optional pipeline data and produces a complete Astro project at `sites/{slug}/` from the **`owl` template, which is the default** (see step 2).
 
-The canonical example of a completed site is `sites/firefly-cd/`. Every field this skill writes exists in that project — when in doubt about what a field should look like, read the equivalent file there. Do NOT invent example values that differ from Firefly.
+**The canonical example of a completed site is `sites/nepa-roofing-pros/`** — an `owl`
+build. Every field this skill writes exists in that project; when in doubt about what a
+field should look like, read the equivalent file there.
+
+`sites/firefly-cd/` is the **legacy** example and must not be used as the reference for a
+new site. It is a `firefly` build, and `firefly` has no `<form>` anywhere in its source —
+it captures a lead only if a human pastes in a GHL embed, which never happens on an
+unattended build. Two queued builds produced complete, good-looking sites with zero form
+fields because this section still pointed at Firefly while step 2 said the default was
+`owl`; an agent reads top-down and believes the first thing it is told.
 
 This skill only writes files under `sites/{slug}/`. Page composition, layouts, components, and section order live in the selected template under `astro-templates/` and are inherited unchanged. Structural changes to a template are a separate workflow; never edit `astro-templates/` from this skill.
 
@@ -44,7 +53,7 @@ The generated content, tokens, and copy MUST NOT include any of the following. I
 - Stock hero photography of "professionals shaking hands" or "diverse team pointing at a laptop / hardhat closeup."
 - Copy like "Trusted by 10,000+ customers" without a real number sourced from `business_profile.json` or client intake.
 - Section headers reading "Stunning", "Beautiful", "Powerful", "Seamless", or "Effortless".
-- Randomized section order. Page composition is FIXED (hero → partner-badges → about → services → why-choose-us → testimonials → financing → us-vs-them → service-area-grid → gallery → faq → contact → CTA → footer) and lives in the template. Do not touch it.
+- Randomized section order. Page composition is FIXED and lives in the SELECTED template — see the table in step 2 for each one's order. Do not reorder, and do not assume the other template's order: they differ, and the list that used to sit here was `firefly`'s.
 
 Section rhythm and reference_urls fields on the site config are deprecated — leave as empty arrays.
 
@@ -120,7 +129,7 @@ Then rewrite the two `REPLACE_SITE_URL` placeholders:
 
 ### 4. Write `src/content/site/config.json` (kind: "config")
 
-Populate from intake §1, §2, §8, §9, §10, §11, §12, §13, §15. Refer to `sites/firefly-cd/src/content/site/config.json` for the exact shape. Fields to set:
+Populate from intake §1, §2, §8, §9, §10, §11, §12, §13, §15. Refer to `sites/nepa-roofing-pros/src/content/site/config.json` for the exact shape — an `owl` build. Do NOT use `sites/firefly-cd/`; its config belongs to the legacy template and differs. Fields to set:
 
 Identity + credentials:
 
@@ -237,7 +246,7 @@ From intake §1, §3, §5 (hero copy), plus reviews from `business_profile.json`
 
 One file per service block in intake §5. Filename is the kebab-cased service name (e.g. `roofing.md`, `kitchen-remodels.md`, `bathroom-remodels.md`). The slug is derived from the filename — do NOT include a `slug:` frontmatter field.
 
-Frontmatter fields (all required unless marked optional — see `sites/firefly-cd/src/content/services/roofing.md` for the reference shape):
+Frontmatter fields (all required unless marked optional — see `sites/nepa-roofing-pros/src/content/services/roof-repair.md` for the reference shape):
 
 ```yaml
 ---
@@ -269,7 +278,7 @@ One-line body summary of the service (renders in the service tile subtitle). Kee
 
 One file per area block in intake §6. Filename MUST match the intake slug and pass `^[a-z0-9-]+-[a-z]{2}$`. Reject reserved-slug conflicts (see reserved slug list above).
 
-Frontmatter fields (see `sites/firefly-cd/src/content/service_areas/spokane-wa.md`):
+Frontmatter fields (see `sites/nepa-roofing-pros/src/content/service_areas/scranton-pa.md`):
 
 ```yaml
 ---
@@ -291,7 +300,7 @@ One-line body summary of what the business does in the area.
 
 ### 11. Write `src/styles/tokens.css`
 
-Replace the placeholder tokens.css copied from the template with real values from `design_reference.json` and intake §2. Reference `sites/firefly-cd/src/styles/tokens.css` for the exact shape.
+Replace the placeholder tokens.css copied from the template with real values from `design_reference.json` and intake §2. Reference `sites/nepa-roofing-pros/src/styles/tokens.css` for the exact shape.
 
 Contents:
 
