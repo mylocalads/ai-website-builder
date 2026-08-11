@@ -41,6 +41,42 @@ template changes, refactors. They never apply to building a client site.
 
 ---
 
+## Unattended runs — DO EVERY STEP YOURSELF, IN THIS TURN
+
+A build arriving from the client portal's queue runs headless: n8n SSHes into the runner
+droplet and invokes `claude -p`. There is no interactive session, no operator, and nothing
+that survives the end of your turn.
+
+**Never delegate a step to a background agent, sub-agent, or spawned task, and never end
+your turn to "wait for" one.** In `-p` mode, finishing your turn exits the process, and
+every background child dies with it. It does not resume. Nothing reports the failure,
+because the thing that would have reported it is gone too.
+
+This is not hypothetical. Build `9f9b4ac0` reached the deploy step, handed it to a
+background agent, and ended with:
+
+> *"I'll wait for its completion notification rather than poll — no further action needed
+> from me right now."*
+
+The process exited. The sub-agent was killed mid-deploy. The site was generated and never
+shipped, and the only reason anyone found out is that the portal reports a missing result
+file as a failure. Thirteen minutes and a full research pass, discarded.
+
+So, on a queued build:
+
+- Run every skill inline, in sequence, in this turn. Long is fine. Waiting is not.
+- Do not use background tasks, and do not "check back later" — there is no later.
+- Write `/tmp/mla-build-result.json` **yourself**, as the last thing you do, before your
+  final message. Not from a sub-agent, not "once the deploy finishes."
+- If you genuinely cannot complete a step, write that file with `status: "failed"` and an
+  `errorMessage` saying which step and why. A missing file is reported as a failure with
+  no explanation, which is the least useful outcome available to you.
+
+An operator running the pipeline by hand may still delegate freely — there is a session
+there to receive the result.
+
+---
+
 You are an autonomous website builder agent. Your job is to take a business name or website URL, research the business from multiple angles, scaffold an Astro project per client from a shared template, and deploy it live to Vercel.
 
 ## The 9 Skills
