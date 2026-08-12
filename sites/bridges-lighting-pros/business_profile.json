@@ -1,0 +1,47 @@
+{
+  "slug": "bridges-lighting-pros",
+  "business_name": "Bridges Lighting Pros",
+  "legal_name": "Bridges Lighting Pros LLC",
+  "category": "Lighting contractor / Outdoor lighting installer",
+  "address": {
+    "street": null,
+    "city": "Loganville",
+    "state": "GA",
+    "postal": null,
+    "country": "US"
+  },
+  "phone": "+17706304653",
+  "phone_display": "770-630-4653",
+  "email": "wbridges@bridgeselitelandscapes.com",
+  "website_url": "https://www.bridgeslightingpros.com/",
+  "rating": null,
+  "review_count": null,
+  "hours": null,
+  "geo": null,
+  "social": {
+    "facebook": "https://facebook.com/profile.php?id=61581132833269",
+    "instagram": "https://instagram.com/bridgeslightingpros"
+  },
+  "reviews": [],
+  "_notes": {
+    "apify_skipped": true,
+    "apify_skip_reason": "No APIFY_TOKEN in the environment (repo ships only .env.example), so the Apify Google Maps actor used by /find-business could not run. GBP-equivalent data was assembled from public sources instead and every field below is labelled with where it came from.",
+    "sources": {
+      "business_name / phone / email / socials": "bridgeslightingpros.com header, footer and /contact-us (scraped 2026-08-12)",
+      "city": "bridgeslightingpros.com/contact-us — 'Loganville, GA'; corroborated by the Facebook page ('Bridges Lighting Pros, Loganville') and a Bizapedia GA entity listing for BRIDGES LIGHTING PROS LLC in Loganville, GA",
+      "legal_name": "Bizapedia search result title 'BRIDGES LIGHTING PROS LLC in Loganville, GA' — the Bizapedia detail page itself is behind a bot check and could not be read, so the registration date and registered agent are unverified",
+      "owner": "wbridges@ email prefix + LinkedIn (Jaron Johnston, 'Supervisor at Bridges Elite Landscapes / Supervisor at Bridges Lighting Pros')"
+    },
+    "rating_deliberately_null": "Bridges Lighting Pros has no rating this build could verify. The sister/parent company Bridges Elite Landscapes (bridgeselitelandscapes.com, (770) 828-7571) publishes 4.8 from 118 ratings, and the two share ownership and the wbridges@bridgeselitelandscapes.com address — but that rating belongs to the landscaping entity, not the lighting brand. It is recorded here and NOT written into the generated site, because a review badge on the lighting site would be claiming reviews the lighting brand has not earned.",
+    "parent_company": {
+      "name": "Bridges Elite Landscapes",
+      "url": "https://www.bridgeselitelandscapes.com/",
+      "phone_display": "(770) 828-7571",
+      "rating": 4.8,
+      "review_count": 118,
+      "service_area_text": "Northeast Georgia"
+    },
+    "contact_page_phone_discrepancy": "The /contact-us body lists 770-630-3653, while the header, footer and tel: links on every other page list 770-630-4653. Treated the repeated 770-630-4653 as canonical; flag to the client.",
+    "generated_at": "2026-08-12"
+  }
+}

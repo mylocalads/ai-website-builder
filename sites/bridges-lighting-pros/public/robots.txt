@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Agent-readable summaries of this site (llmstxt.org convention).
+# /llms.txt is the short index; /index.md is the long form.
+# Both are generated from the content collections at build time, so they can
+# never disagree with the pages they describe.
+
+Sitemap: https://bridges-lighting-pros.vercel.app/sitemap-index.xml

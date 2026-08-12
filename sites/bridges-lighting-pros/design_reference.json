@@ -1,0 +1,69 @@
+{
+  "slug": "bridges-lighting-pros",
+  "generated_at": "2026-08-12",
+  "template": "owl",
+  "reference_library": "reference-libraries/roofing.json",
+  "references_used": [
+    {
+      "url": "ai-website-builder/astro-templates/owl/",
+      "role": "primary",
+      "how_used": "Sole source of structure and section order. Read locally — nothing was scraped for layout. Section order inherited unchanged: hero (full-bleed media + floating quote card) → promise bar → services grid → testimonials → promise band → signature system → 4-step process strip on a dark band → about with checklist → long-form SEO body → FAQ → recent articles → closing CTA."
+    },
+    {
+      "url": "https://www.bridgeslightingpros.com/",
+      "role": "brand-tokens-only",
+      "how_used": "Fonts, colours and logo ONLY, via Firecrawl's branding extractor. No layout, no component styling, no CSS beyond font-family and colour values. See the anti-pattern lock in intake-from-web."
+    }
+  ],
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f2f6fa",
+    "text": "#0f1a26",
+    "muted": "#5a6675",
+    "primary": "#0b1a2b",
+    "on_primary": "#ffffff",
+    "accent": "#3fa8f3",
+    "on_accent": "#0f1a26",
+    "accent_ink": "#1268a8",
+    "accent_on_dark": "#6cbef7",
+    "focus": "#0057ff",
+    "rationale": "#3fa8f3 is the client's own detected brand blue and is kept exactly as the button fill. The dark band colour #0b1a2b is a deep night navy rather than the template's default olive — the product this company sells is what a property looks like after dark, so the dark sections should read as night. The surface is a very faint blue-grey pulled from the same hue family so section fills relate to the accent instead of sitting beside it."
+  },
+  "contrast_audit": {
+    "method": "The contrast script in astro-templates/owl/README.md (WCAG 2.1 relative luminance, 4.5:1 threshold).",
+    "results": {
+      "text/bg": { "ratio": 17.56, "pass": true },
+      "muted/bg": { "ratio": 5.85, "pass": true },
+      "on-primary/primary": { "ratio": 17.55, "pass": true },
+      "on-accent/accent": { "ratio": 6.78, "pass": true },
+      "accent-ink/bg": { "ratio": 5.88, "pass": true },
+      "accent-ink/surface": { "ratio": 5.41, "pass": true },
+      "accent-on-dark/primary": { "ratio": 8.64, "pass": true }
+    },
+    "note": "The brand blue #3fa8f3 measures 2.59:1 against white, so it can never be body text — hence accent_ink at #1268a8. On the navy band the brand blue itself would pass at 6.77:1, but the eyebrows and step labels there run 0.75-0.95rem, so accent_on_dark is lifted to #6cbef7 for headroom."
+  },
+  "typography": {
+    "display": "Poppins",
+    "body": "Inter",
+    "rationale": "Poppins is the client's detected brand font and carries their existing identity; it is a geometric sans that reads clean and modern at display sizes. Poppins is poor at long-form body sizes, so Inter carries body text — the same split the template already assumes. Source Sans Pro appeared in the Duda fallback stack and was ignored as platform boilerplate, not brand.",
+    "weights": { "display": "600;700;800", "body": "400;500;700" }
+  },
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "motion": "Template default. No parallax, no scroll-jacking, no entrance animations added.",
+  "imagery_direction": "Use the client's own night photography throughout — it is the strongest asset they have and the whole product is a night-time effect. Hero and dark bands should be night shots; the about and SEO-body figures can be the landscape-lighting and café frames for tonal variety. No stock photography of any kind.",
+  "anti_patterns": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents (unless explicitly requested)",
+    "generic construction stock photo (handshake, diverse team in hardhats, generic hard-hat closeup)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "a star rating or review-count badge — Bridges Lighting Pros has no verified reviews, and the 4.8/118 belongs to Bridges Elite Landscapes",
+    "branded programme names lifted from another company — the signature-system block must be named by this client",
+    "any published per-foot or per-job price the client has not agreed to"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "slug": "bridges-lighting-pros",
+  "vertical": "permanent outdoor lighting / holiday lighting installation",
+  "metro": "North Georgia — Gwinnett, Walton, Barrow, Hall, Fulton and Clarke counties",
+  "method": "Firecrawl web search across r/Atlanta, r/Gwinnett, r/ChristmasLights, r/Lighting, r/landscaping, r/HomeImprovement. Reddit blocks direct page scraping, so findings come from indexed search snippets — each is quoted below with its thread URL rather than paraphrased.",
+  "generated_at": "2026-08-12",
+  "pain_points": [
+    {
+      "id": "insurance-yard-signs",
+      "summary": "Atlanta homeowners shopping for permanent lighting explicitly filter for an insured, verifiable company because the category is full of seasonal yard-sign operators.",
+      "evidence": "\"We are in search of a company to install permanent Christmas lights for our home in Atlanta. We want someone that has insurance. We've seen yard signs...\"",
+      "source": "https://www.reddit.com/r/Atlanta/comments/1o1favj/permanent_christmas_lights_installers_in_atlanta/"
+    },
+    {
+      "id": "price-opacity",
+      "summary": "The number one question is what it actually costs, and the number people trade is per linear foot. Roughly $20–25/ft, $2,500–$3,000 for a typical roofline, is the figure homeowners arrive with. A site that refuses to acknowledge how pricing works reads as evasive.",
+      "evidence": "\"$20 per foot on 'special'\"; \"Gemstone Lights and Trimlight both are around $2500 for everything (hardware, lights, installation) plus a warranty. Essentially, it's ~$25/ft\"; \"I paid $3k for about 200-250 feet ... installed under the soffit\"",
+      "source": "https://www.reddit.com/r/ChristmasLights/comments/10jlhfi/permanent_lighting_options/, https://www.reddit.com/r/HomeImprovement/comments/e72aga/permanent_exterior_led_lighting_xmas_lights/, https://www.reddit.com/r/Overlandpark/comments/1p3ycff/permanent_outdoor_holiday_light_installation_cost/"
+    },
+    {
+      "id": "post-install-failure-and-regret",
+      "summary": "The loudest negative experiences are not about looks — they are about the system failing after install and nobody coming back. Controllers, connections and apps are the named failure points, and the regret is about service, not aesthetics.",
+      "evidence": "\"30% of the customers kept having problems with the motherboard, connections or the app. installing Oelo has been our biggest regret\"",
+      "source": "https://www.reddit.com/r/ChristmasLights/comments/1fx4y2q/oelo_reviews_from_real_people/"
+    },
+    {
+      "id": "warranty-decides-the-brand",
+      "summary": "When buyers narrow to two national systems, the tiebreaker is the warranty and the published lifespan — not the fixture. Whoever answers the service question wins the job.",
+      "evidence": "\"It's down to these 2 companies. Prices are similar. Gemstone has the better warranty and the longer lifespan published\"",
+      "source": "https://www.reddit.com/r/Lighting/comments/15t9ebs/jellyfish_or_gemstone_lights/"
+    },
+    {
+      "id": "ladder-avoidance",
+      "summary": "In Gwinnett specifically, the trigger for hiring out holiday lighting is height and risk, not decorating taste. People are buying their way off a ladder.",
+      "evidence": "\"Wanting to put lights on the house this holiday season for our kids but we don't have the time or the nerves to go on a high ladder/roof.\"",
+      "source": "https://www.reddit.com/r/Gwinnett/comments/17n0bvm/affordable_holiday_light_installation/"
+    },
+    {
+      "id": "cheap-fixtures-fail",
+      "summary": "Homeowners who tried DIY or big-box landscape lighting report fixtures failing within a couple of years, which makes 'commercial-grade' a claim that lands rather than a throwaway.",
+      "evidence": "\"Fx makes alot of leaky fixtures. Big box store stuff is pretty bad. Those fixtures will fail after a couple years and you will sink money into ...\"",
+      "source": "https://www.reddit.com/r/landscaping/comments/kqlubd/best_landscape_lighting_brands/"
+    },
+    {
+      "id": "daylight-appearance",
+      "summary": "A recurring hesitation is whether the track is ugly in daylight — the objection that stops people from buying permanent lighting at all.",
+      "evidence": "Recurring across r/ChristmasLights permanent-lighting threads; matches the objection Bridges already answers in its own FAQ ('Will the permanent lighting be visible in the day?').",
+      "source": "https://www.reddit.com/r/ChristmasLights/comments/1nd8vy6/how_much_do_permanent_christmas_lights_cost_we/"
+    }
+  ],
+  "what_customers_value": [
+    "Proof of insurance and a real local business address, not a seasonal crew with a yard sign",
+    "Somebody who answers the phone after the install when a section goes out",
+    "Commercial-grade hardware that survives more than two seasons outdoors",
+    "Hidden wiring and color-matched track so the system disappears in daylight",
+    "Being told what drives the price before the salesperson is standing in the driveway",
+    "One company that can do the everyday architectural lighting AND the holiday display"
+  ],
+  "how_this_business_stands_out": [
+    "24-hour (next business day) maintenance response is stated on their own site — this is the exact gap the Oelo/regret threads describe, and almost nobody advertises a response window.",
+    "The holiday lease program: Bridges owns, stores and maintains the lights between seasons, so the homeowner never handles or stores anything. This removes the ladder AND the attic bin.",
+    "Backed by Bridges Elite Landscapes, an established North Georgia landscaping company with a real crew, real trucks and 118 published reviews — the antidote to the yard-sign concern.",
+    "Owner-operated, and the same company does permanent architectural lighting, landscape lighting, café/patio, weddings, events and holiday — a homeowner and a restaurant owner are both served by one relationship.",
+    "Custom design per property rather than a franchise kit — directly counters the Gemstone/Trimlight/Jellyfish 'which national brand' framing."
+  ],
+  "copy_angles": [
+    {
+      "angle": "Answer the ladder, not the decoration",
+      "use": "Hero and holiday-lighting copy. Gwinnett homeowners are buying their way off a roof in December, and the emotional payoff is the season without the risk."
+    },
+    {
+      "angle": "The system is only as good as who comes back",
+      "use": "Signature-system / guarantee block. Lead with the 24-hour maintenance response and the fact that Bridges owns and maintains the leased holiday lights. This is the single strongest differentiator against the failure-and-regret pattern."
+    },
+    {
+      "angle": "Invisible by day, anything you want by night",
+      "use": "Permanent-lighting page and FAQ. Named objection, already answered honestly on their existing site — surface it instead of burying it in an accordion."
+    },
+    {
+      "angle": "Say what drives the number",
+      "use": "Pricing page cost table. Do not publish a rate card they have not agreed to — publish the variables (linear footage, roofline complexity, single vs multi-storey, tree wraps, controller zones) so the page answers the question everyone is actually searching."
+    },
+    {
+      "angle": "A landscaping company that grew into lighting",
+      "use": "About page and closing CTA. Bridges Elite Landscapes has been shaping these same yards; the lighting is the night-time half of work they already do. That is a credibility story a franchise cannot tell."
+    },
+    {
+      "angle": "One company, house through venue",
+      "use": "Services grid. Residential permanent, commercial storefronts, restaurant patios, weddings and events all in one place — unusual in this vertical, where holiday installers and event lighting rental firms are separate businesses."
+    }
+  ],
+  "anti_claims": [
+    "Do not put a star rating or review count on the site — Bridges Lighting Pros has none this build could verify, and the 4.8/118 belongs to Bridges Elite Landscapes.",
+    "Do not claim 'licensed and insured' — the client's existing site never states it and it was not verifiable. Ask the client, then turn the flags on.",
+    "Do not claim a founding year or years-in-business — the lighting LLC appears to be new (Facebook page created 2025).",
+    "Do not publish per-foot prices. The $20–25/ft figure is what the market says, not what Bridges quotes."
+  ]
+}

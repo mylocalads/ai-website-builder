@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f2f6fa;
+  --color-text: #0f1a26;
+  --color-muted: #5a6675;
+  --color-primary: #0b1a2b;
+  --color-on-primary: #ffffff;
+  --color-accent: #3fa8f3;
+  --color-on-accent: #0f1a26;
+  /* Bridges Lighting Pros — brand blue #3fa8f3, detected from the client's own
+     site. Kept exactly as the button FILL. It measures 2.59:1 on white, so it
+     can never be text: --color-accent-ink is a darker blue of the same hue at
+     5.88:1 on bg and 5.41:1 on surface. On the navy band the brand blue itself
+     would pass at 6.77:1, but the eyebrows, step labels and star rows there run
+     0.75–0.95rem, so --color-accent-on-dark is lifted to #6cbef7 (8.64:1) for
+     headroom. Verified with the contrast script in the template README. */
+  --color-accent-ink: #1268a8;
+  --color-accent-on-dark: #6cbef7;
+  --color-focus: #0057ff;
+  --font-display: 'Poppins', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

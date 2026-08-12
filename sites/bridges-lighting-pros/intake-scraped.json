@@ -1,0 +1,168 @@
+{
+  "slug": "bridges-lighting-pros",
+  "business_name": "Bridges Lighting Pros",
+  "legal_name": "Bridges Lighting Pros LLC",
+  "tagline": "Permanent & Event Lighting in North Georgia",
+  "phone": "+17706304653",
+  "phone_display": "770-630-4653",
+  "email": "wbridges@bridgeselitelandscapes.com",
+  "address": {
+    "street": null,
+    "city": "Loganville",
+    "state": "GA",
+    "postal": null,
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": null,
+  "hours": null,
+  "rating": null,
+  "review_count": null,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "social": {
+    "facebook": "https://facebook.com/profile.php?id=61581132833269",
+    "instagram": "https://instagram.com/bridgeslightingpros"
+  },
+  "site_url": "https://www.bridgeslightingpros.com/",
+  "logo_url": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Bridges+Lighting+Pros-01+PNG-1920w.png",
+  "default_hero_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/PermLights1-1920w.jpg",
+  "default_hero_video": null,
+  "about_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/About+Us-1920w.jpeg",
+  "brand": {
+    "fonts": { "display": "Poppins", "body": "Poppins" },
+    "colors": {
+      "bg": "#ffffff",
+      "text": null,
+      "accent": "#3FA8F3",
+      "muted": null,
+      "surface": null,
+      "candidates": ["#3FA8F3", "#529ACE", "#999999", "#0000EE", "#000000", "#FFFFFF"]
+    },
+    "_source": "Firecrawl `branding` format on the homepage. Fonts reported as Poppins (body/paragraph) with a Source Sans Pro fallback stack. Accent and primary both #3FA8F3; #529ACE is the secondary. The reported background/textPrimary of #999999 is detection noise from the Duda wrapper and was not used."
+  },
+  "services": [
+    {
+      "title": "Permanent Outdoor Lighting",
+      "short_description": "Low-profile LED systems installed along the roofline, eaves and architectural features — controlled from an app, year round.",
+      "long_description": "Professionally installed permanent LED lighting that stays in place year round with discreet designs that blend into the roofline or exterior trim. Individually controlled lights, app or remote colour and scene control, energy-efficient and weather-resistant, installed with hidden wiring. Most residential installations complete in one to two days.",
+      "sub_services": ["Roofline & Architectural Lighting", "RGB Colour-Changing Systems", "App & Remote Control Setup", "Hidden-Wire Installation", "Ongoing Service & Upgrades"],
+      "hero_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Invisilight+4-1920w.jpg",
+      "gallery": [],
+      "faqs": [
+        { "q": "What is permanent outdoor lighting and how does it work?", "a": "Permanent outdoor lighting is a low-profile, year-round LED lighting system installed along your home's roofline, eaves, or architectural features. Each light is individually controlled through an app or remote, allowing you to choose colors, patterns, and brightness levels for any occasion." },
+        { "q": "What are the benefits of installing permanent lighting?", "a": "Permanent lighting offers convenience, efficiency, and year-round curb appeal. You'll never have to climb ladders or hang temporary lights again. These energy-efficient LEDs are long-lasting, weather-resistant, and fully customizable." },
+        { "q": "Can I control the lighting colors and patterns myself?", "a": "Yes. Bridges Lighting Pros installs smart, app-controlled lighting systems that give you complete control right from your smartphone or tablet. You can adjust brightness, set schedules, and change colors instantly." },
+        { "q": "How long does permanent lighting installation take?", "a": "Most residential installations are completed in one to two days, depending on the size and complexity of your home." }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Commercial Permanent Lighting",
+      "short_description": "Architectural and accent lighting for storefronts, restaurants, venues and business parks, changed instantly with smart controls.",
+      "long_description": "Permanent commercial lighting designed to enhance curb appeal, increase visibility and create a welcoming atmosphere. Slim, colour-matched tracks and concealed wiring keep the focus on the light rather than the hardware. Programmable scenes and schedules let a business hold a consistent brand look nightly and switch to colour for holidays, promotions and events.",
+      "sub_services": ["Retail & Storefront Lighting", "Restaurant & Patio Lighting", "HOA & Community Entrances", "Hotels & Event Venues", "Scheduled & Branded Scenes"],
+      "hero_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Shopping+Center-1920w.png",
+      "gallery": [],
+      "faqs": [
+        { "q": "Can commercial lighting be used for holiday lighting?", "a": "Yes. You can use clean, professional white lighting for daily operation and switch to colors or animations for holidays, promotions, and special events." },
+        { "q": "Will the permanent lighting be visible in the day?", "a": "No. The system is installed in a low-profile, color-matched track that blends into your building's roofline or architectural features. During the day it is discreet and barely visible." },
+        { "q": "Is commercial permanent lighting durable for all weather conditions?", "a": "Absolutely. The system is built for outdoor, year-round use and is designed to withstand rain, heat, cold, and wind." },
+        { "q": "Can the permanent lighting be customized for my business or brand?", "a": "Yes. Each installation is custom designed for your building and goals — highlight architectural features, create branded color schemes, light patios or entrances, and program unique displays." }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Holiday Lighting",
+      "short_description": "Full-service holiday displays on a lease program — we own, install, maintain, remove and store the lights.",
+      "long_description": "Professional holiday lighting installation using commercial-grade lights. Roofline lighting, tree and branch wraps, shrubs and landscaping, wreaths and garlands, custom colour schemes and RGB colour-changing options. Design, installation, in-season maintenance within 24 hours, takedown from January 1st, and off-season storage. On the lease program Bridges owns and maintains the lights.",
+      "sub_services": ["Roofline Lighting", "Tree & Branch Wraps", "Shrubs & Landscape Lighting", "Wreaths & Garlands", "Takedown & Storage"],
+      "hero_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Bridges+LL+1-1920w.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Wedding & Event Lighting",
+      "short_description": "Ceremony, reception and party lighting — designed, installed, run and removed around your timeline.",
+      "long_description": "Custom lighting for weddings, birthdays, corporate events and backyard celebrations. String and café lighting, soft uplighting for walls and trees, ceremony lighting for aisles, arches and backdrops, reception lighting for tents, dance floors and dining areas, plus accent and spotlighting. Indoor and outdoor, with professional installation and removal and experience working alongside venues and planners.",
+      "sub_services": ["Ceremony & Arch Lighting", "Reception & Tent Lighting", "Uplighting", "String & Fairy Lights", "Install & Removal"],
+      "hero_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Nightime+Wedding-23fedc7d-1920w.png",
+      "gallery": [],
+      "faqs": [
+        { "q": "Do you provide lighting for the ceremony and the reception?", "a": "Yes. We can design lighting for ceremonies, receptions, and the entire wedding day, including aisles, arches, dining areas, dance floors, tents, and outdoor spaces." },
+        { "q": "Can you work with my venue or wedding planner?", "a": "Absolutely. We regularly work with venues, wedding planners, and other vendors to ensure lighting is installed smoothly, safely, and on schedule." },
+        { "q": "How far in advance should I book?", "a": "We recommend booking as early as possible, ideally 2-3 months in advance, especially for peak wedding seasons." },
+        { "q": "Can you work with a specific budget and property limitations?", "a": "Absolutely. Our team is experienced in designing event lighting for all budgets and property types, including indoor venues, outdoor spaces, and unique layouts." }
+      ],
+      "_source": "scraped"
+    },
+    {
+      "title": "Outdoor Living & Café Lighting",
+      "short_description": "Patios, decks, gardens, walkways and dining areas lit so people stay out in them after dark.",
+      "long_description": "Custom outdoor lighting design and installation for patios, porches and decks, outdoor kitchens and dining areas, fire pit and seating areas, walkways, steps and entry points, and landscapes, gardens and water features. Commercial-grade, energy-efficient LED with hidden wiring, low-profile fixtures and precision placement — no harsh glare, no over-lighting. Also serves restaurants, cafés and outdoor dining rooms.",
+      "sub_services": ["Patio & Deck Lighting", "Landscape & Garden Lighting", "Path, Step & Entry Lighting", "Café & Bistro String Lighting", "Maintenance & Repairs"],
+      "hero_photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/5f52dc64-38c5-4df6-ac03-b9fe568770e3-1920w.png",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas_mentioned": [
+    "Alpharetta", "Athens", "Buford", "Hoschton", "Johns Creek", "Milton", "Oakwood",
+    "Roswell", "Snellville", "Sugar Hill", "Suwanee", "Tucker", "Loganville", "Grayson",
+    "Lawrenceville", "Dacula", "Duluth", "Winder", "Cumming", "Statham", "Lake Oconee",
+    "Sandy Springs", "Buckhead/Atlanta"
+  ],
+  "testimonials": [],
+  "team_members": [],
+  "faqs": [
+    { "q": "What areas do you serve?", "a": "Bridges Lighting Pros proudly serves North Georgia communities, including Cumming, Buford, Suwanee, Dacula, Lawrenceville, Duluth, Johns Creek, Grayson, Winder, and Athens." },
+    { "q": "What type of events benefit from special lighting?", "a": "Professional event lighting can enhance weddings, birthday parties, corporate events, backyard gatherings, bar mitzvahs, holiday parties, and more." },
+    { "q": "What type of lighting is available for special events?", "a": "Event lighting options include string lights, fairy lights, spotlights, uplighting, ground lights, and specialty custom fixtures. We can mix and match lighting types to fit your theme, venue, and budget." },
+    { "q": "How far in advance should I book for event lighting?", "a": "We recommend booking as early as possible — ideally 4-6 weeks before your event — to ensure availability and allow for a customized design plan." }
+  ],
+  "gallery": [
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3065-1920w.jpg", "alt": "Permanent roofline lighting on a North Georgia home at dusk" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3059-1920w.jpg", "alt": "Architectural permanent lighting picking out the eaves and gables of a house" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3055-1920w.jpg", "alt": "Warm white permanent lighting along a residential roofline at night" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3050-1920w.jpg", "alt": "Colour-changing permanent LED lighting on a two-storey home" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3048-a579f65b-1920w.jpg", "alt": "Evening view of a home with permanent lighting outlining the roof and dormers" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3036-3868c4ec-1920w.jpg", "alt": "Holiday lighting installation on a brick home in North Georgia" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3026-39e3dda0-1920w.jpg", "alt": "Permanent lighting along a covered porch and roofline" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3032-1920w.jpg", "alt": "Night view of a lit roofline and landscaped front yard" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_3003-1920w.jpg", "alt": "Residential permanent lighting installation seen from the driveway" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_2997-1920w.jpg", "alt": "Permanent LED lighting outlining a home's rooflines after dark" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/thumbnail_IMG_8789-1920w.jpg", "alt": "Completed outdoor lighting installation on a North Georgia property" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/bridges-elite-landscapes-LANDSCAPE-LIGHTING-gallery-01-1920w.jpg", "alt": "Landscape lighting washing a planting bed and stone walkway" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/bridges-elite-landscapes-LANDSCAPE-LIGHTING-gallery-03-1920w.jpg", "alt": "Outdoor living area lit with low-voltage landscape lighting" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Outdoor+Cafe+Lighting-1920w.png", "alt": "Café string lighting over an outdoor dining patio" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Wedding+Arch-1920w.png", "alt": "Lit wedding arch and trellis at an evening ceremony" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Nightime+Wedding+3-1920w.png", "alt": "Evening wedding reception under warm string lighting" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/Holiday+LIghting+Exterior+4-1920w.png", "alt": "Holiday roofline lighting and lit shrubs on a home at night" },
+    { "photo": "https://irp.cdn-website.com/71e0e7bc/dms3rep/multi/opt/5b62a572-0986-4451-942a-efbccc5dd7be-1920w.png", "alt": "Commercial building with permanent architectural accent lighting" }
+  ],
+  "brand_voice_sample": "At Bridges Lighting Pros, we transform ordinary outdoor spaces into unforgettable experiences with professionally installed permanent lighting and integrated outdoor sound. Designed for year-round beauty and durability, our solutions blend seamlessly into your home's architecture, delivering stunning illumination and high-quality audio without visible wires or temporary setups.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "The existing site uses Duda's native form plus Google reCAPTCHA — no GHL assets are present. Nothing to carry over; the operator must paste the client's own GHL snippets if they want them."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_skip_reason": "No APIFY_TOKEN in the environment — see business_profile.json._notes for the substitute sources used.",
+    "pages_scraped": ["/", "/permanent-outdoor-lighting", "/commercial-permanent-outdoor-lighting", "/event-lighting", "/wedding-lighting", "/outdoor-living-with-lighting", "/outdoor-and-cafe-lighting", "/Holiday-Lighting-Services", "/contact-us", "/lighting-service-areas", "/portfolio"],
+    "socials_scraped": [],
+    "extra_sources": ["https://www.bridgeselitelandscapes.com/ (parent company)", "https://www.bizapedia.com/ga/bridges-lighting-pros-llc.html (bot-blocked; search snippet only)"],
+    "generated_at": "2026-08-12",
+    "cost_estimate_usd": 0.28,
+    "warnings": [
+      "Detected accent #3FA8F3 is a light blue; it passes AA as a button FILL with near-black label text but fails as body text on white, so accent-ink and accent-on-dark are derived separately in design_reference.json.",
+      "No testimonials exist anywhere on the client's site or on their thin Facebook page. testimonials[] is empty rather than fabricated, and the Testimonials section will be omitted from the generated site.",
+      "The client merges wedding and event lighting into two near-identical pages, and landscape and café lighting into two more. They are merged into one service each here to stay inside SERVICE_LIMIT=5 and avoid thin duplicate pages."
+    ]
+  }
+}

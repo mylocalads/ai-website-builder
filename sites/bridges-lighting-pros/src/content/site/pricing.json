@@ -1,0 +1,21 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a price per foot, and we would be suspicious of anyone in this trade who does. Two houses with the same square footage can differ by a factor of two once you count gables, dormers, second-storey runs, tree wraps and how many zones you want to control separately. What we can do is tell you exactly what moves the number, so you can walk into a quote — ours or anyone else's — knowing what you are being charged for. Estimates are free, written, and given after somebody has stood in your driveway and looked at the roofline.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What drives a lighting quote",
+    "lede": "The variables below are what we measure on site. Nothing here is a price — it is the list of things that decide one.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      ["Permanent outdoor lighting (home)", "Total linear footage of roofline, number of gables and peaks, single vs multi-storey access, how many independently controlled zones you want, and whether landscape or column lighting is tied into the same controller."],
+      ["Commercial permanent lighting", "Building frontage and height, access equipment needed, number of elevations lit, scheduling requirements, and whether branded colour scenes and automated schedules are being programmed."],
+      ["Holiday lighting", "Roofline footage, number and size of trees or shrubs wrapped, wreaths and garlands, colour scheme, and whether you are on the lease program (we own, store and maintain the lights) or having your own lights hung."],
+      ["Wedding lighting", "Venue size and layout, indoor or outdoor, ceremony plus reception or one of the two, power availability on site, and the install and strike windows the venue allows."],
+      ["Event and party lighting", "Size of the space, lighting types used (string, uplighting, spotlights, ground lights), how long the setup stays up, and how much notice we have."],
+      ["Landscape & outdoor living lighting", "Number of fixtures and transformer runs, distance from the power source, trenching versus surface routing, and features being lit — trees, beds, walls, steps, water features, pergolas."],
+      ["Café & patio lighting", "Span lengths and what the catenary can attach to, whether posts or anchors have to be installed, number of circuits, and dimming or scheduling requirements."],
+      ["Service on an existing system", "What is failing and who installed it. We will tell you honestly whether it is worth repairing before we quote replacing it."]
+    ],
+    "footnote": "Estimates are free and there is no charge for the design consultation. Call 770-630-4653 and we will come out and look at the property."
+  }
+}

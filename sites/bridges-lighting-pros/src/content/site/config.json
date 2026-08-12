@@ -1,0 +1,147 @@
+{
+  "kind": "config",
+  "business_name": "Bridges Lighting Pros",
+  "legal_name": "Bridges Lighting Pros LLC",
+  "tagline": "Permanent & Event Lighting in North Georgia",
+  "phone": "+17706304653",
+  "phone_display": "770-630-4653",
+  "email": "wbridges@bridgeselitelandscapes.com",
+  "address": {
+    "city": "Loganville",
+    "state": "GA",
+    "country": "US"
+  },
+  "site_url": "https://bridges-lighting-pros.vercel.app",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://facebook.com/profile.php?id=61581132833269",
+    "instagram": "https://instagram.com/bridgeslightingpros"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/hero-permanent-lighting.jpg",
+  "about_photo": "/img/service-outdoor-living.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "24-hour response when something goes out",
+      "description": "If a section stops working between installation and December 23rd, we are back out within 24 hours — next business day. The install is the easy part of this trade. Coming back is the part most companies get wrong."
+    },
+    {
+      "title": "On the lease program, the lights are ours",
+      "description": "We own them, we install them, we maintain them, and from January 1st we take them down and store them until next season. Nothing goes in your attic and nothing is your problem in a year's time."
+    },
+    {
+      "title": "Commercial-grade LED, hidden wiring",
+      "description": "Slim, colour-matched track that follows the roofline and disappears in daylight, with the wiring concealed. It is built to stay outside through a Georgia summer and a Georgia ice storm without being re-hung."
+    },
+    {
+      "title": "Backed by Bridges Elite Landscapes",
+      "description": "We are the lighting arm of an established North Georgia landscaping company with a real shop, real crews and a phone number that has been answered for years. Not a seasonal truck with a yard sign."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "RGB roofline, Gwinnett County",
+      "photo": "/img/job-3059.jpg",
+      "alt": "Two-storey home with colour-changing permanent LED lighting along every roofline and porch column at night",
+      "description": "A full colour-changing system running a multicolour scene. The same track holds a single warm white the other 340 nights of the year."
+    },
+    {
+      "title": "Warm white on a craftsman front",
+      "photo": "/img/job-3026.jpg",
+      "alt": "Craftsman-style home lit with warm white roofline lighting and wrapped porch columns",
+      "description": "Warm white along the eaves, gables and porch columns — the setting most homeowners leave on year round."
+    },
+    {
+      "title": "Single-storey roofline",
+      "photo": "/img/job-3050.jpg",
+      "alt": "Ranch home at night with warm white lighting following the gables and roof edge",
+      "description": "Clean lines picked out on a ranch roof. No ladder comes out of the garage for this one again."
+    },
+    {
+      "title": "Evening drive-up",
+      "photo": "/img/job-3055.jpg",
+      "alt": "Front elevation of a North Georgia home with permanent roofline lighting seen from the driveway",
+      "description": "What the house looks like when you pull in, which is the only view most people ever judge it on."
+    },
+    {
+      "title": "Landscape lighting and hardscape",
+      "photo": "/img/landscape-lighting-01.jpg",
+      "alt": "Low-voltage landscape lighting washing a planting bed and stone walkway after dark",
+      "description": "Path, bed and wall lighting run at low voltage with the fixtures set back so you see the light, not the lamp."
+    },
+    {
+      "title": "Outdoor living, after dark",
+      "photo": "/img/service-outdoor-living.jpg",
+      "alt": "Backyard with a lit pergola, fire pit seating area, waterfall and uplit trees at dusk",
+      "description": "Pergola, fire pit, water feature and tree uplighting on one system, so the whole yard comes up together."
+    },
+    {
+      "title": "Café lighting over a patio",
+      "photo": "/img/cafe-lighting.jpg",
+      "alt": "Warm café string lighting suspended over an outdoor dining patio",
+      "description": "Catenary café lighting over a dining patio — the reason people stay for another course."
+    },
+    {
+      "title": "Wedding reception",
+      "photo": "/img/service-wedding-event.jpg",
+      "alt": "Couple dancing at an evening wedding reception beneath warm string lighting",
+      "description": "Reception lighting installed the day before and taken down the day after, around the venue's schedule."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Lighting Services",
+    "heading_lead": "Lighting That Stays Up",
+    "heading_rest": "And Keeps Working",
+    "subtitle": "Permanent architectural lighting for homes and businesses, plus holiday, wedding, event and outdoor living lighting across North Georgia."
+  },
+  "estimate_form": {
+    "heading": "Get your free lighting estimate",
+    "services": [
+      "Permanent Outdoor Lighting (Home)",
+      "Commercial Permanent Lighting",
+      "Holiday Lighting",
+      "Wedding Lighting",
+      "Event or Party Lighting",
+      "Landscape & Outdoor Living Lighting",
+      "Café & Patio Lighting",
+      "Service or Repair on an Existing System",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Ready to see the house lit?",
+    "body": "Estimates are free and start with someone standing in your driveway looking at the roofline, not with a price off a website. Call 770-630-4653 or send us the details and we will come design it around your property.",
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Outdoor Lighting Advice For North Georgia",
+    "description": "Straight answers about permanent and holiday lighting in North Georgia — what it costs, what makes a system last, and what to ask before you sign anything."
+  }
+}

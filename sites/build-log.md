@@ -4613,3 +4613,63 @@ Branded preview host `agc-concrete.preview.mylocalads.co` (given in the portal p
 NOT attached — parked per `docs/parked-preview-domain.md` (Squarespace-managed `mylocalads.co`
 has no DNS API). `https://agc-concrete.vercel.app` is the public stagingUrl reported to the
 portal instead.
+
+---
+
+## Bridges Lighting Pros — 2026-08-12
+
+| Business | Slug | Template | Pages | Vercel URL | Date |
+|---|---|---|---|---|---|
+| Bridges Lighting Pros | `bridges-lighting-pros` | owl | 25 | https://bridges-lighting-pros.vercel.app | 2026-08-12 |
+
+Permanent & holiday outdoor lighting contractor, Loganville GA. Source site
+`bridgeslightingpros.com` (Duda). Built on **owl** at the operator's request.
+
+**GBP step skipped — no `APIFY_TOKEN` in this checkout** (the repo ships only
+`.env.example`). NAP was assembled from the client's own site and corroborated against the
+Facebook page and a Bizapedia GA entity listing; every substitute source is recorded under
+`business_profile.json._notes`. Tell the client the Google Maps profile was never read.
+
+**No rating or review count is on the site, deliberately.** Bridges Lighting Pros has none
+that could be verified. The sister company **Bridges Elite Landscapes** publishes 4.8 from
+118 reviews and shares ownership and the `wbridges@bridgeselitelandscapes.com` address, but
+that rating belongs to the landscaping entity — putting it on the lighting site would be
+claiming reviews the lighting brand has not earned. Recorded in `business_profile.json`
+only. Same reason `testimonials: []` and the Testimonials band is absent: the client has no
+published reviews anywhere, and none were invented.
+
+`licensed` / `insured` / `bonded` are all `false` — the client's site never states them and
+they were not verifiable. Worth asking, because r/Atlanta homeowners shopping this category
+explicitly filter for an insured installer (see `local_research.json`).
+
+**NAP discrepancy to raise with the client:** their `/contact-us` page lists `770-630-3653`
+while the header, footer and every `tel:` link say `770-630-4653`. The repeated number was
+treated as canonical.
+
+29 of the client's own photographs were pulled into `public/img/` rather than hotlinked off
+the Duda CDN, converted from PNG to JPEG at 1920w (14 MB total, down from ~40 MB). Two CDN
+assets (`PermLights1`, `Bridges LL 1`) only ever serve a 206×206 placeholder and were
+dropped. One image (`Invisilight 4`) carries an **InvisiLights manufacturer watermark** and
+was deliberately excluded — it is another company's branding, not Bridges' own work.
+
+Services merged to fit `SERVICE_LIMIT=5`: the client runs wedding and event lighting as two
+near-identical pages, and landscape and café lighting as two more. Merged to
+`wedding-and-event-lighting` and `outdoor-living-and-cafe-lighting`.
+
+Tokens: brand blue `#3fa8f3` kept as the button fill, with `--color-accent-ink` `#1268a8`
+and `--color-accent-on-dark` `#6cbef7` derived separately. `--color-primary` is a deep night
+navy `#0b1a2b` rather than the template olive — the product this company sells is what a
+property looks like after dark. All seven contrast pairs pass AA.
+
+**Not configured — operator follow-up:**
+
+- No GHL snippets pasted (chat, reviews, forms, call tracking). The native `EstimateForm`
+  is live and posting to `/api/estimate`, so the site captures leads without them.
+- **`/api/estimate` has no delivery destination yet.** Set `LEAD_WEBHOOK_URL` (plus
+  `LEAD_WEBHOOK_SECRET`), or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`, on
+  the Vercel project. Until then a submission validates and redirects to `/thank-you` but
+  the lead is only logged. This is the one thing that must be done before the site is shown
+  to the client as a working funnel.
+- No captcha: `crm.captcha_snippet` unset and no `TURNSTILE_SECRET_KEY` /
+  `RECAPTCHA_SECRET_KEY` on the project. The honeypot and cross-site POST check are active.
+- No custom domain attached; no code injection (Meta Pixel / GTM).

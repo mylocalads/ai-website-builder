@@ -2,33 +2,87 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "bridges-lighting-pros",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/bridges-lighting-pros",
+        "--",
+        "--port",
+        "4341"
+      ],
+      "port": 4341
+    },
+    {
       "name": "nepa-roofing-pros",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/nepa-roofing-pros", "--", "--port", "4339"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/nepa-roofing-pros",
+        "--",
+        "--port",
+        "4339"
+      ],
       "port": 4339
     },
     {
       "name": "garp-construction-group",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/garp-construction-group", "--", "--port", "4337"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/garp-construction-group",
+        "--",
+        "--port",
+        "4337"
+      ],
       "port": 4337
     },
     {
       "name": "mnm-roofing-professionals",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/mnm-roofing-professionals", "--", "--port", "4335"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/mnm-roofing-professionals",
+        "--",
+        "--port",
+        "4335"
+      ],
       "port": 4335
     },
     {
       "name": "tropical-south-tree-services",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/tropical-south-tree-services", "--", "--port", "4333"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/tropical-south-tree-services",
+        "--",
+        "--port",
+        "4333"
+      ],
       "port": 4333
     },
     {
       "name": "bay-plumbing-co",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev", "--prefix", "sites/bay-plumbing-co", "--", "--port", "4331"],
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/bay-plumbing-co",
+        "--",
+        "--port",
+        "4331"
+      ],
       "port": 4331
     }
   ]

@@ -1,0 +1,153 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Loganville, GA",
+    "headline": "Permanent Outdoor Lighting, Installed Once And Left On",
+    "subheadline": "Architectural roofline lighting, landscape and café lighting, holiday displays, weddings and events — designed for your property and installed across North Georgia by Bridges Lighting Pros.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/hero-permanent-lighting.jpg",
+    "trust_badges": []
+  },
+  "promise_bar": [
+    { "text": "Invisible by day", "icon": "shield" },
+    { "text": "Any colour by night", "icon": "home" },
+    { "text": "24-hour service response", "icon": "clock" },
+    { "text": "We store the holiday lights", "icon": "calendar" }
+  ],
+  "promise_band": {
+    "eyebrow": "Why permanent",
+    "headline": "You will never get on the roof in December again",
+    "body": "A permanent system is a slim, colour-matched track fixed once along the roofline, eaves and architectural features. During the day it reads as trim. At night it is warm white for everyday, red and green in December, blue and red on game day, or off — from your phone. No ladder, no storage bins, no January afternoon spent pulling staples out of the fascia.",
+    "cta_text": "See how permanent lighting works",
+    "cta_href": "/services/permanent-outdoor-lighting",
+    "image": "/img/job-3059.jpg"
+  },
+  "signature_system": {
+    "eyebrow": "Our lease program",
+    "headline": "On the holiday lease program, the lights belong to us",
+    "intro": "Most holiday lighting companies sell you the lights, hang them, and hand you a box in January. Ours works the other way round. We own the lights, so their condition every season is our problem, not yours — and that changes what you get.",
+    "blocks": [
+      {
+        "title": "We own and store them",
+        "body": "The lights are ours. From January 1st we take them down and store them until next season, which means nothing goes into your attic and nothing comes out of it looking like it spent a year in your attic.",
+        "icon": "shield"
+      },
+      {
+        "title": "They arrive in pristine condition",
+        "body": "Because we maintain the inventory between seasons, what goes on your house in November is checked, matched and working — not last year's strand with three dark bulbs in the middle of it.",
+        "icon": "award"
+      },
+      {
+        "title": "Commercial-grade, not retail",
+        "body": "We install commercial-grade LED, which is what you have to use if the same lights are going back up next year and the year after. Retail strands are priced to be thrown away and they behave like it.",
+        "icon": "hammer"
+      },
+      {
+        "title": "One number when something goes out",
+        "body": "If a run goes dark between installation and December 23rd, you call us and we are out within 24 hours — next business day. No warranty claim, no shipping a controller somewhere.",
+        "icon": "phone"
+      }
+    ],
+    "steps_title": "How a holiday season runs",
+    "steps_icon": "calendar",
+    "steps": [
+      { "title": "Design your display", "body": "We walk the property with you and put together a plan for the roofline, trees, shrubs, wreaths and garlands, and settle the colour scheme — warm white, red and green, candy cane, or full RGB." },
+      { "title": "Professional installation", "body": "Our trained crew installs everything safely and efficiently, on ladders we own rather than yours, and leaves the property clean." },
+      { "title": "Maintenance through December 23rd", "body": "Anything that goes out gets fixed or replaced within 24 hours, next business day, for the whole run-up to Christmas." },
+      { "title": "Takedown and storage from January 1st", "body": "We come back, remove everything, and take the lights away with us to be stored and maintained until next season." }
+    ],
+    "guarantee": {
+      "title": "The 24-hour maintenance promise",
+      "body": "Between installation and December 23rd, if any part of your display stops working we respond within 24 hours — next business day. It is the single thing people wish they had asked about before they signed with somebody else.",
+      "cta_text": "Talk to us about a lease",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "How a permanent lighting install works",
+    "steps": [
+      { "label": "01", "title": "Consultation & design", "body": "We come to the property, talk through what you want lit, and build a plan around the architecture rather than a standard kit.", "icon": "clipboard" },
+      { "label": "02", "title": "Professional installation", "body": "Track fixed along the roofline and features with clean lines and concealed wiring. Most homes are done in one to two days.", "icon": "hammer" },
+      { "label": "03", "title": "Programming & setup", "body": "We set up the app, build your colours and scenes with you, and make sure you can drive it before we leave.", "icon": "phone" },
+      { "label": "04", "title": "Ongoing support", "body": "We are still here for service, adjustments and system upgrades — this is a system you own for years, not a transaction.", "icon": "shield" }
+    ],
+    "cta_text": "Start with a free design consultation",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "Who we are",
+    "headline": "The lighting arm of a North Georgia landscaping company",
+    "body": "Bridges Lighting Pros is the lighting side of Bridges Elite Landscapes, and that is not a marketing detail — it is why the lighting looks the way it does. We have spent years shaping the beds, walls, walkways and trees in these yards. Lighting them is the same job after dark: knowing which tree carries an uplight, where a path fixture stops being useful and starts being glare, and how the front of a house is actually read from the street. We are owner-operated, we work out of Loganville, and the crew that quotes your job is the crew that installs it.",
+    "checklist": [
+      "Owner-operated, based in Loganville, GA",
+      "Custom designs — never a pre-packaged franchise kit",
+      "Commercial-grade LED with concealed wiring",
+      "Residential, commercial, wedding and event work under one roof",
+      "Serving Gwinnett, Walton, Barrow, Hall, Fulton and Clarke counties"
+    ],
+    "photo": "/img/about-us.jpg",
+    "photo_alt": "Outdoor lighting installed on a North Georgia property at dusk",
+    "cta_text": "More about Bridges Lighting Pros",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Permanent lighting in North Georgia",
+    "headline": "What actually decides whether a lighting system is still working in five years",
+    "paragraphs": [
+      "Almost every quote you will get for permanent outdoor lighting looks similar on paper. A run of individually addressable LEDs, a controller, an app, a colour wheel with sixteen million options in it. The demo is the same in every driveway in Gwinnett County. What the demo cannot show you is the part that decides whether you are happy in year three.",
+      "Three things separate a system that lasts from one that becomes a running argument. The first is how the track is fixed and where the wiring goes. Done properly it follows the roofline in a colour-matched channel with the wire concealed, so in daylight the house looks like a house. Done quickly it is visible from the street at noon, and no amount of colour at night makes up for that.",
+      "The second is the hardware grade. Outdoor lighting in Georgia has to sit through summer heat that bakes a roofline all afternoon, thunderstorms, pollen season, and the occasional ice event that takes out half the county's power. Commercial-grade components are the difference between a system that shrugs at that and one that starts losing sections in its second winter. This is also why we install commercial-grade lights on the holiday lease program — they are going back up next year, so they have to survive being taken down.",
+      "The third is the one nobody asks about at the quote and everybody cares about later: what happens when a section goes out. Controllers fail. Connections corrode. A branch comes down. The honest question is not whether something will eventually need attention but who picks up the phone when it does. We respond within 24 hours — next business day — through the holiday season, and we are a local company you can drive to rather than a warranty department in another state.",
+      "If you are comparing us against the national permanent-lighting brands, that is the comparison worth making. The fixtures across all of them are more alike than the marketing suggests. The design judgement, the installation detail and the service response are not."
+    ],
+    "checklist": [
+      "Colour-matched track that disappears in daylight",
+      "Concealed wiring, no visible runs down the fascia",
+      "Commercial-grade LED rated for year-round exposure",
+      "App control for colours, scenes and schedules",
+      "24-hour maintenance response through the holiday season",
+      "A local crew in Loganville, not an out-of-state call centre"
+    ],
+    "image": "/img/job-3050.jpg",
+    "image_alt": "Ranch home in North Georgia at night with warm white permanent lighting along the gables and roof edge",
+    "image_position": "right",
+    "cta_text": "Get a free design consultation",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "What is permanent outdoor lighting and how does it work?",
+      "a": "It is a low-profile LED system installed along your roofline, eaves or architectural features and left in place year round. Each light is individually controlled through an app or remote, so you choose colours, patterns and brightness for any occasion — warm white for everyday, seasonal colours in December, team colours on game day."
+    },
+    {
+      "q": "Will I be able to see the track during the day?",
+      "a": "No. The system sits in a slim, colour-matched channel that follows the roofline or architectural feature, with the wiring concealed. In daylight it is discreet and reads as trim. At night it delivers bright, even illumination."
+    },
+    {
+      "q": "How long does installation take?",
+      "a": "Most residential installations are finished in one to two days depending on the size and complexity of the house. We give you a specific timeline at the consultation rather than on the morning of the install."
+    },
+    {
+      "q": "What does permanent lighting cost?",
+      "a": "It depends on linear footage, how many rooflines and gables the house has, whether it is single or multi-storey, and how many separately controlled zones you want. We do not quote from a website — we look at the property and put a written number on it, and the estimate is free."
+    },
+    {
+      "q": "What happens if part of the system stops working?",
+      "a": "You call us and we come out. Through the holiday season, from installation to December 23rd, we respond within 24 hours — next business day. Outside that we schedule service as quickly as we can get to you."
+    },
+    {
+      "q": "What is the holiday lease program?",
+      "a": "On the lease program we own the lights rather than selling them to you. We install them, maintain them through the season, take them down from January 1st, and store them until next year. Nothing goes in your attic and the display always looks new."
+    },
+    {
+      "q": "Do you do weddings and events, or only houses?",
+      "a": "Both. We design, install and remove lighting for weddings, receptions, corporate events, birthdays and backyard celebrations, and we regularly work alongside venues and planners. For weddings we recommend booking two to three months out; for other events, four to six weeks."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "North Georgia — Loganville, Lawrenceville, Snellville, Grayson, Dacula, Buford, Suwanee, Sugar Hill, Duluth, Johns Creek, Winder, Statham, Hoschton, Oakwood, Alpharetta, Milton, Roswell, Tucker, Athens and Lake Oconee, plus the surrounding communities."
+    }
+  ]
+}
