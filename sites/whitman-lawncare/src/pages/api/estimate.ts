@@ -161,14 +161,43 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const notifyTo = process.env.LEAD_NOTIFY_EMAIL;
   const notifyFrom = process.env.LEAD_FROM_EMAIL;
 
+  // LEAD_WEBHOOK_URL accepts a comma-separated list, so a second destination
+  // (a CRM alongside an automation platform, say) is an env-var change rather
+  // than a code change. A lead is considered delivered if AT LEAST ONE
+  // destination accepts it — losing a copy to a secondary system is bad, but
+  // rejecting the whole submission and telling the customer to call because a
+  // secondary was down would be worse. Every failure is logged by name.
+  const webhooks = (webhook ?? '')
+    .split(',')
+    .map((u) => u.trim())
+    .filter(Boolean);
+
   try {
-    if (webhook) {
-      const res = await fetch(webhook, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(lead),
+    if (webhooks.length) {
+      const results = await Promise.allSettled(
+        webhooks.map(async (url) => {
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(lead),
+          });
+          if (!res.ok) throw new Error(`${res.status}`);
+          return url;
+        }),
+      );
+
+      results.forEach((r, i) => {
+        if (r.status === 'rejected') {
+          // Host only — never log the full URL, these carry their own secret path.
+          let host = 'unknown';
+          try { host = new URL(webhooks[i]).host; } catch { /* keep default */ }
+          console.error(`[estimate] webhook failed (${host}):`, r.reason);
+        }
       });
-      if (!res.ok) throw new Error(`webhook ${res.status}`);
+
+      if (!results.some((r) => r.status === 'fulfilled')) {
+        throw new Error(`all ${webhooks.length} webhook destination(s) failed`);
+      }
     } else if (resendKey && notifyTo && notifyFrom) {
       const rows = Object.entries(lead)
         .map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${v ?? ''}</td></tr>`)

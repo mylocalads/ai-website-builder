@@ -104,4 +104,4 @@ Doing it in that order is the difference between a lawn that holds its color thr
 August and one that gets fertilized faithfully for years and never quite comes in.
 
 If you want to know where your soil actually stands, that is what the free lawn analysis
-is for — call **(570) 451-3683** and we will walk the property and pull a sample.
+is for — call **(570) 354-6298** and we will walk the property and pull a sample.

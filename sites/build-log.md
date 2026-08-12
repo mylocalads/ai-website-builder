@@ -4673,3 +4673,42 @@ property looks like after dark. All seven contrast pairs pass AA.
 - No captcha: `crm.captcha_snippet` unset and no `TURNSTILE_SECRET_KEY` /
   `RECAPTCHA_SECRET_KEY` on the project. The honeypot and cross-site POST check are active.
 - No custom domain attached; no code injection (Meta Pixel / GTM).
+
+### 2026-07-29 — phone number swap + lead delivery moved to GoHighLevel
+
+**Phone swapped** to `(570) 354-6298` / `+15703546298`. Four source files, not just the
+config: `config.json` (phone + phone_display), and three places the old number was written
+into prose — `home.json` FAQ, `pricing.json` intro, and the blog post's closing line.
+**A phone change is a content search, not a config edit** — grep the whole tree, because
+copy written months earlier will still be quoting the old one. Verified live: zero
+occurrences of the old number across 12 pages, `"telephone":"+15703546298"` in the
+LocalBusiness JSON-LD, and every `tel:` link updated.
+
+**Lead delivery repointed** from the Make.com hook to the client's GoHighLevel /
+LeadConnector webhook. Confirmed the endpoint accepts the exact payload first
+(`200 {"status":"Success: test request received"}`), then set `LEAD_WEBHOOK_URL` and
+verified end-to-end: live form POST → `303 /thank-you`.
+
+Kept as a **server-side forward, not the form's `action`**. Pointing the form directly at
+the webhook would navigate the browser to the CRM's JSON response — no `/thank-you`, no
+submit spinner — and would bypass the TCPA consent gate, the honeypot and all validation.
+The endpoint stays the single place where a lead is checked before it leaves.
+
+`LEAD_WEBHOOK_URL` now accepts a **comma-separated list**. A lead counts as delivered if at
+least one destination accepts: losing a copy to a secondary system is bad, but rejecting the
+submission and telling a real customer to phone instead because a secondary was down is
+worse. Failures are logged by **host only** — these URLs carry their own secret path and
+must never be written to logs in full.
+
+Replaced rather than added, deliberately, though the operator said "add": two live
+destinations means a real lead can be contacted twice by two systems, which is a
+client-visible error, whereas a stopped Make scenario is noticed immediately during testing.
+Re-adding is now an env-var change with no redeploy of code logic:
+`LEAD_WEBHOOK_URL="<ghl>,<make>"`.
+
+Guard rails re-verified after the refactor: no-consent → `?error=consent`, honeypot →
+fake `/thank-you` with no delivery, cross-site → `403`.
+
+**Open:** the GHL response said *"test request received"*, which is what an inbound webhook
+trigger returns while it is still capturing its payload schema. The operator needs to finish
+the field mapping inside the GHL workflow, or leads will arrive and not create contacts.
