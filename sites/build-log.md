@@ -4712,3 +4712,35 @@ fake `/thank-you` with no delivery, cross-site → `403`.
 **Open:** the GHL response said *"test request received"*, which is what an inbound webhook
 trigger returns while it is still capturing its payload schema. The operator needs to finish
 the field mapping inside the GHL workflow, or leads will arrive and not create contacts.
+
+### 2026-07-29 — LEAD_WEBHOOK_URL reclassified as Sensitive
+
+The GHL webhook is a **capability URL**: the unguessable path IS the credential, because a
+LeadConnector inbound trigger has no other auth. It was stored as Vercel's default
+`Encrypted`, which is encrypted at rest but still **readable back** by anyone with project
+access via the dashboard or `vercel env pull`. Re-added with `--sensitive --force`, making
+it write-only — it can never be read back, only replaced.
+
+Exposure audited before changing anything, and all clean: zero occurrences of the URL or the
+`leadconnectorhq` host across 7 live pages' HTML, zero in any served JS asset, zero in
+git-tracked source, zero in the deployed build output, no stray `.env`, and `.env` is
+gitignored. The value is read only at runtime inside the serverless function.
+
+**`vercel env ls` is not a reliable indicator** — it prints `Encrypted` for both classes, so
+the flag looked like it had not applied. The definitive test is `vercel env pull`: a
+Sensitive variable comes down as `LEAD_WEBHOOK_URL=""` rather than its value. Confirmed
+that way.
+
+Redeployed and re-tested end-to-end afterwards, because overriding the variable could have
+broken delivery: live form POST still returns `303 → /thank-you`, so the runtime reads
+Sensitive variables normally.
+
+Risk framing for the next site: leaking this URL is an **abuse** vector, not a data breach —
+it is write-only into the CRM, so an attacker can inject junk leads, fire automations and
+burn SMS credits, but cannot read anything out. The realistic leak path is not an attacker
+but `vercel env pull` writing it into a local `.env` that later gets committed, which is
+exactly what Sensitive prevents. **Default every CRM/webhook URL to `--sensitive`.**
+
+Trade-off accepted: the value can no longer be retrieved from Vercel. It is recoverable from
+the GHL workflow, and if it ever leaks the only real remedy is regenerating it there — the
+storage flag is a containment measure, not a substitute for rotation.
