@@ -4744,3 +4744,37 @@ exactly what Sensitive prevents. **Default every CRM/webhook URL to `--sensitive
 Trade-off accepted: the value can no longer be retrieved from Vercel. It is recoverable from
 the GHL workflow, and if it ever leaks the only real remedy is regenerating it there — the
 storage flag is a containment measure, not a substitute for rotation.
+
+### 2026-07-29 — live chat widget, hero CTA wrap fix, placeholder reviews removed
+
+**Chat widget** (`crm.chat_widget_snippet`) installed and moved into `BaseLayout` rather
+than left as a per-page import. It was being rendered by 9 of 17 pages — missing from the
+blog, `/services`, `/service-area` and `/thank-you`, which are exactly the pages a search
+visitor lands on cold. Rendering it in the layout means a page cannot be built without it.
+Verified in the built output: 30/30 pages, and the bubble greets on the live site.
+
+**Hero CTA wrapped on mobile.** "Get My Free Lawn Analysis" broke across two lines at
+1.25rem/375px. Reduced ~15% to 1.0625rem with `white-space: nowrap`, tighter letter-spacing,
+and a 400px breakpoint that trims padding instead of shrinking type further so the tap
+target stays over 44px. Measured live at 375px: 1 line, 284×51px, no viewport overflow.
+
+**Placeholder review cards removed.** Operator asked for the section to "look like real
+reviews pulled from the GBP". There is no GBP: a third Apify Maps lookup (this one
+county-wide, run `ePdAALqXYDQBoUfEK`) returned zero results, matching the Scranton and Avoca
+runs, and the Yelp listing is unclaimed. So there was nothing to pull.
+
+**Fabricated testimonials were not an option and should not be for any client.** Inventing
+customer names and quotes for a real business deceives the homeowner reading them and is
+prohibited by the FTC Rule on Consumer Reviews and Testimonials (16 CFR Part 465), which
+carries per-violation civil penalties reaching the agency as well as the client.
+
+What shipped instead: the placeholder branch was deleted from `Testimonials.astro` outright
+so it cannot reappear, and `GHLReviewsWidget` now sits in that slot on the home page. The
+component reads `crm.reviews_widget_snippet` and renders nothing while unset, so the moment
+a GBP exists and is connected in GHL, pasting the widget snippet fills the slot with genuine
+reviews — no code change. `WhyChooseUs` continues to carry credibility on facts that are
+actually true (25+ years, locally owned, soil-test-first, organic options).
+
+**The real fix is upstream:** this business has no Google Business Profile at all. That is a
+bigger miss than the review section — it is free, it is the primary driver of local-pack
+ranking, and no review widget anywhere can show reviews that do not exist.

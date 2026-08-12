@@ -6,7 +6,6 @@ import PricingTable from '../components/PricingTable.astro';
 import Financing from '../components/Financing.astro';
 import FAQ from '../components/FAQ.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
-import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const pricingEntry = await getEntry('site', 'pricing').catch(() => null);
@@ -83,7 +82,6 @@ const priceFactors = [
   <Financing />
   <FAQ items={faqs} />
   <ClosingCTA />
-  <GHLChatWidget />
 </BaseLayout>
 <style>
   .pricing-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }

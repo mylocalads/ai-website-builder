@@ -6,7 +6,6 @@ import AboutSection from '../components/AboutSection.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
-import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const aboutEntry = await getEntry('site', 'about').catch(() => null);
@@ -69,7 +68,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
   <TrustBadges />
   <GHLReviewsWidget />
   <ClosingCTA />
-  <GHLChatWidget />
 </BaseLayout>
 <style>
   .team-hero { position: relative; height: 420px; overflow: hidden; }

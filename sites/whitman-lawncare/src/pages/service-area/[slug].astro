@@ -13,7 +13,6 @@ import Financing from '../../components/Financing.astro';
 import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
 import FAQ from '../../components/FAQ.astro';
 import ClosingCTA from '../../components/ClosingCTA.astro';
-import GHLChatWidget from '../../components/GHLChatWidget.astro';
 
 export async function getStaticPaths() {
   // Defined inside getStaticPaths because Astro extracts this function into its
@@ -99,5 +98,4 @@ const serviceLd = {
   <ServiceAreaGrid />
   <FAQ items={homeFaqs} />
   <ClosingCTA />
-  <GHLChatWidget />
 </BaseLayout>

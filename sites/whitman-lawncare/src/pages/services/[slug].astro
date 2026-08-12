@@ -13,7 +13,6 @@ import Financing from '../../components/Financing.astro';
 import ServiceAreaGrid from '../../components/ServiceAreaGrid.astro';
 import FAQ from '../../components/FAQ.astro';
 import ClosingCTA from '../../components/ClosingCTA.astro';
-import GHLChatWidget from '../../components/GHLChatWidget.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -91,5 +90,4 @@ const faqLd = service.data.faqs.length > 0 ? {
   <ServiceAreaGrid />
   <FAQ items={service.data.faqs ?? []} />
   <ClosingCTA />
-  <GHLChatWidget />
 </BaseLayout>

@@ -74,7 +74,8 @@
     "a2p": true
   },
   "crm": {
-    "provider": "ghl"
+    "provider": "ghl",
+    "chat_widget_snippet": "<script src=\"https://widgets.leadconnectorhq.com/loader.js\" data-resources-url=\"https://widgets.leadconnectorhq.com/chat-widget/loader.js\" data-widget-id=\"6a79ef37d79119e66154b35d\"></script>"
   },
   "payments": {
     "provider": "paypal",

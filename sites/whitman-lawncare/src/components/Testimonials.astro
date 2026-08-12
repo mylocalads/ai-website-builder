@@ -1,45 +1,17 @@
 ---
-import PlaceholderSlot from './PlaceholderSlot.astro';
 export interface Testimonial { name: string; location?: string; text: string; rating?: number; }
 export interface Props {
   items: Testimonial[];
   eyebrow?: string;
   cta_text?: string;
   cta_href?: string;
-  /** Render wireframe cards when there are no reviews yet, rather than omitting
-   *  the band. Never invent reviewer names or ratings to fill it. */
-  placeholder?: boolean;
 }
-const { items, eyebrow = 'Real Customer Experiences', cta_text, cta_href, placeholder = false } = Astro.props;
+const { items, eyebrow = 'Real Customer Experiences', cta_text, cta_href } = Astro.props;
 // Full-width band carrying one lead quote, then the remainder as a supporting
 // row. The band is the point: it breaks the light page and gives the social
 // proof its own moment rather than burying it in a text grid.
 const [lead, ...rest] = items;
 ---
-{items.length === 0 && placeholder && (
-  <section class="testimonials" aria-label="Testimonials">
-    <div class="container">
-      <p class="eyebrow">{eyebrow}</p>
-      <ul class="rest ph-row">
-        {[0, 1, 2].map(() => (
-          <li>
-            <PlaceholderSlot
-              variant="review"
-              height="150px"
-              label="Customer review goes here"
-            />
-          </li>
-        ))}
-      </ul>
-      <p class="ph-caption">
-        Placeholder cards — replace with real Google or Facebook reviews once the client supplies them.
-      </p>
-      {cta_text && cta_href && (
-        <div class="section-cta"><a class="btn" href={cta_href}>{cta_text}</a></div>
-      )}
-    </div>
-  </section>
-)}
 {items.length > 0 && (
   <section class="testimonials" aria-label="Testimonials">
     <div class="container">
@@ -105,12 +77,4 @@ const [lead, ...rest] = items;
   .rest blockquote p { margin: 0; color: var(--color-on-primary); opacity: 0.85; line-height: 1.6; font-size: 0.98rem; }
   .who { margin: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; align-items: center; font-size: 0.9rem; }
 
-  /* Placeholder variant. The band background is dark, so the slot's own light
-     surface and dark-green label would disappear — restate both against it. */
-  .ph-row li { padding: var(--space-2); }
-  .ph-row :global(.ph) { background: transparent; border-color: rgba(255,255,255,0.3); min-height: 0; padding: var(--space-2); }
-  .ph-row :global(.ph-label) { color: rgba(255,255,255,0.85); }
-  .ph-row :global(.ph-panel) { fill: rgba(255,255,255,0.06); stroke: rgba(255,255,255,0.22); }
-  .ph-row :global(.ph-line), .ph-row :global(.ph-cell) { fill: rgba(255,255,255,0.18); }
-  .ph-caption { margin: var(--space-3) 0 0; text-align: center; font-size: 0.88rem; color: var(--color-on-primary); opacity: 0.7; }
 </style>

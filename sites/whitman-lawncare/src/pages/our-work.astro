@@ -4,7 +4,6 @@ import { getEntry, getCollection } from 'astro:content';
 import HeroOwl from '../components/HeroOwl.astro';
 import SectionHead from '../components/SectionHead.astro';
 import ClosingCTA from '../components/ClosingCTA.astro';
-import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 const site = (await getEntry('site', 'config')).data as any;
 const workEntry = await getEntry('site', 'our-work').catch(() => null);
@@ -49,7 +48,6 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   })}
 
   <ClosingCTA />
-  <GHLChatWidget />
 </BaseLayout>
 <style>
   .ow-hero { padding: var(--space-5) 0; background-size: cover; background-position: center; background-repeat: no-repeat; color: white; }
