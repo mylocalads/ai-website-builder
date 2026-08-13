@@ -4778,3 +4778,17 @@ actually true (25+ years, locally owned, soil-test-first, organic options).
 **The real fix is upstream:** this business has no Google Business Profile at all. That is a
 bigger miss than the review section — it is free, it is the primary driver of local-pack
 ranking, and no review widget anywhere can show reviews that do not exist.
+
+### 2026-07-29 — phone reverted to (570) 451-3683
+
+Operator asked to put the previous number back. Reverse substitution across the same four
+files the swap touched: `config.json` (phone + phone_display), `home.json` FAQ,
+`pricing.json` intro, and the blog post's closing line. Verified live: zero occurrences of
+(570) 354-6298 across 14 pages, `"telephone":"+15704513683"` in the LocalBusiness JSON-LD,
+and every `tel:` link back on the original number.
+
+Same lesson as the forward swap, worth repeating because it caught me out once already:
+**a phone change is a content search, not a config edit.** Three of the four files were
+prose written weeks apart, and none of them would have been caught by editing config alone.
+Grepping for the digits in several formats (`451-3683`, `4513683`, `+1570…`) is the only
+reliable check, in both source and the built HTML.
