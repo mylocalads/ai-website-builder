@@ -4792,3 +4792,24 @@ Same lesson as the forward swap, worth repeating because it caught me out once a
 prose written weeks apart, and none of them would have been caught by editing config alone.
 Grepping for the digits in several formats (`451-3683`, `4513683`, `+1570…`) is the only
 reliable check, in both source and the built HTML.
+
+---
+
+| Business | Slug | Template | Pages | Vercel URL | Date |
+|----------|------|----------|-------|------------|------|
+| AGC Concrete | `agc-concrete` | owl | 22 | https://agc-concrete.vercel.app | 2026-08-17 |
+
+Portal `job: edit` build (`26c4fb72-1d18-49ac-9578-953a8568219e`), unattended, via the
+`site-edit` skill. Single instructed change: reduced the home hero `<h1>` font-size in
+`src/components/HeroOwl.astro` by 10% (`clamp(2.2rem, 5.6vw, 4.2rem)` →
+`clamp(1.98rem, 5.04vw, 3.78rem)`). Snapshotted before/after to
+`sites/agc-concrete/.site-edit-history/2026-08-17T00-00-00Z-h1font/`. `astro sync` and
+`npm run build` both passed; verified the built CSS bundle carries the new clamp value
+before and after deploy.
+
+Also set `LEAD_WEBHOOK_URL`, `LEAD_WEBHOOK_AUTH_HEADER`, and `LEAD_WEBHOOK_SECRET` on the
+Vercel project (`prj_se1pEv5AMyn3JhOS6nj23swjCe1Y`) from the payload's `leadWebhook` object,
+so estimate-form submissions post to the client portal. Redeployed after setting them so the
+new env vars are live in production. No domain change — payload `domain` was `null` and none
+was attached previously; the public URL remains `https://agc-concrete.vercel.app` (SSO
+protection off, verified 200 + non-login final URL both before and after this deploy).

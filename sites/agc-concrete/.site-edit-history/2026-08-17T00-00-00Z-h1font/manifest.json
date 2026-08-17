@@ -1,0 +1,29 @@
+{
+  "batch_id": "2026-08-17T00-00-00Z-h1font",
+  "mode": "edit",
+  "slug": "agc-concrete",
+  "operator_request": "Reduce the font size of the H1 headline in the hero section on the home page by 10%.",
+  "diff_spec": [
+    {
+      "op": "SET",
+      "path": "src/components/HeroOwl.astro",
+      "field": "css.h1.font-size",
+      "value": "clamp(1.98rem, 5.04vw, 3.78rem)",
+      "note": "10% reduction from clamp(2.2rem, 5.6vw, 4.2rem)"
+    }
+  ],
+  "files_touched": [
+    "src/components/HeroOwl.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_Dxwt2MtKMbe3tVrgTrz8fQSxxKyh",
+    "url": "https://agc-concrete.vercel.app",
+    "canonical_url": "https://agc-concrete.vercel.app",
+    "at": "2026-08-17T00:00:00Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}
