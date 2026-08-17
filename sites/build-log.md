@@ -4999,3 +4999,64 @@ noted in the prior batch, unresolved since then and not caused by this edit. `st
 reported as the `.vercel.app` alias. No domain change — payload `domain` was `null`.
 
 Screenshot capture not attempted (no site-audit step in a site-edit job).
+
+---
+
+## Core Concrete Construction — 2026-08-17
+
+| Business | Slug | Template | Pages | Vercel URL |
+|---|---|---|---|---|
+| Core Concrete Construction LLC | `core-concrete-construction` | owl | 26 | https://core-concrete-construction.vercel.app |
+
+**Old site:** https://www.coreconcreteconstruction.com/ (GoHighLevel funnel builder)
+
+**Pipeline deviations**
+
+- `/find-business` **skipped** — there is still no `.env` in this repo, so `APIFY_TOKEN`
+  is unset and the Apify Google Maps actor cannot run. NAP, rating and review count were
+  read instead from the GoHighLevel reviews widget payload embedded on the client's own
+  site (5.00 across 69 reviews, `1907 Crown Plaza Boulevard, Plainfield, IN 46168`,
+  `(317) 939-8590`). Recorded under `_notes` in `business_profile.json`, and the rating is
+  labelled on the new site as a customer-review figure rather than as a Google Business
+  Profile read.
+- `/local-research` ran on Firecrawl **search excerpts only** — Firecrawl refuses
+  reddit.com page fetches, so thread bodies were unavailable. Findings came from search
+  snippets across r/indianapolis, r/Concrete and r/homeowners plus indy.gov and Hendricks
+  County permit pages.
+- `/site-audit` screenshot capture failed; the audit is a DOM/markdown assessment.
+- `SERVICE_LIMIT` raised 5 → 6 in this site's `src/lib/limits.ts`. Deliberate: the client
+  sells seven distinct services. Stamp and Texture were merged into one page, which lands
+  on six. `AREA_LIMIT` left at 6.
+
+**Template bug found and worked around**
+
+`ServicesGridOwl.astro` positions `.body` absolutely at `bottom: 0` inside a fixed
+`aspect-ratio: 16/10` tile with `overflow: hidden`. A two-line title plus three long
+sub-service chips overflows the top of the tile and the first line of the service name is
+silently clipped. Reproduced on the first deploy with titles like "Concrete Driveways &
+Flatwork".
+
+Worked around in content — service `title` values shortened to one or two words with the
+long form kept in `seo_h1`, and the first three `sub_services` shortened so the chip row
+wraps to two lines instead of three. **The template was not modified.** The real fix
+belongs upstream in `astro-templates/owl/` — the tile should grow or the body should be
+laid out in normal flow rather than absolutely positioned.
+
+**Outstanding — the site cannot capture a lead until this is set**
+
+`src/pages/api/estimate.ts` has no delivery destination configured, so it returns
+`?error=unavailable` and tells the visitor to call instead. Set on the Vercel project
+`core-concrete-construction`:
+
+- `LEAD_WEBHOOK_URL` — the client's GoHighLevel inbound webhook, plus
+  `LEAD_WEBHOOK_SECRET` if the endpoint expects a credential.
+- or `RESEND_API_KEY` + `LEAD_NOTIFY_EMAIL` + `LEAD_FROM_EMAIL`.
+
+Then redeploy. Nothing else is blocking.
+
+**Also not supplied (sections self-hide, nothing is broken)**
+
+GHL chat widget, GHL reviews widget, GHL calendar/booking embed, call-tracking snippet and
+number, Meta Pixel / GTM code injection, custom domain, social profile URLs, business
+hours, and any licensed/insured/bonded claim (left `false` — the old site makes no such
+claim and it was not verified).

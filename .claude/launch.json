@@ -2,6 +2,19 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "dm-construction",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--",
+        "--port",
+        "4332"
+      ],
+      "port": 4332,
+      "cwd": "sites/dm-construction-co"
+    },
+    {
       "name": "bridges-lighting-pros",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
@@ -84,6 +97,20 @@
         "4331"
       ],
       "port": 4331
+    },
+    {
+      "name": "core-concrete-construction",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/core-concrete-construction",
+        "--",
+        "--port",
+        "4343"
+      ],
+      "port": 4343
     }
   ]
 }

@@ -1,0 +1,172 @@
+{
+  "kind": "config",
+  "business_name": "Core Concrete Construction",
+  "legal_name": "Core Concrete Construction LLC",
+  "tagline": "Indianapolis Concrete & Asphalt Contractors",
+  "phone": "+13179398590",
+  "phone_display": "(317) 939-8590",
+  "address": {
+    "street": "1907 Crown Plaza Boulevard",
+    "city": "Plainfield",
+    "state": "IN",
+    "postal": "46168",
+    "country": "US"
+  },
+  "marketing_city": "Indianapolis",
+  "marketing_state": "IN",
+  "site_url": "https://core-concrete-construction.vercel.app",
+  "rating": 5,
+  "review_count": 69,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "social": {},
+  "logo_url": "/logo-core-concrete.webp",
+  "default_hero_photo": "/img/curved-driveway-red-barn.webp",
+  "about_photo": "/img/crew-finishing-driveway-pour.webp",
+  "team_members": [
+    {
+      "name": "Jason",
+      "role": "Managing Member",
+      "photo": "/img/team-jason.webp",
+      "bio": "Jason runs the day-to-day operations of the company. He keeps every department moving and holds the same standard across all of them."
+    },
+    {
+      "name": "Dean",
+      "role": "Managing Member",
+      "photo": "/img/team-dean.webp",
+      "bio": "Dean leads on efficiency, quality and teamwork. He oversees daily operations and keeps each department aligned so projects stay on schedule."
+    },
+    {
+      "name": "Nick",
+      "role": "Project Manager & Estimator",
+      "photo": "/img/team-nick.webp",
+      "bio": "Nick writes the estimates and then follows the job through to the finish, checking that what gets installed matches the scope you agreed to."
+    },
+    {
+      "name": "Connor",
+      "role": "Project Manager & Estimator",
+      "photo": "/img/team-connor.webp",
+      "bio": "Connor gets quotes back to customers quickly and oversees installations from the first day to the last, start to finish."
+    },
+    {
+      "name": "Megan",
+      "role": "Permitting Manager",
+      "photo": "/img/team-megan.webp",
+      "bio": "Megan handles the permits. She knows the local ordinances county by county and gets approvals through so the pour date does not slip."
+    },
+    {
+      "name": "Landen",
+      "role": "Project & Marketing Manager",
+      "photo": "/img/team-landen.webp",
+      "bio": "Landen splits his time between the office and the job site — he leads the marketing team and manages projects to make sure the install is done right."
+    }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Most driveways poured in a single day",
+      "description": "Tear-out, prep and pour in one day is normal for us. Customers regularly tell us the crew arrived in the morning and was gone by evening — one job covered two neighbouring driveways in the same day."
+    },
+    {
+      "title": "We pull the permits",
+      "description": "We have a full-time permitting manager. Marion County, Hendricks County, Town of Plainfield — we file it, we chase it, and you do not have to learn how any of it works."
+    },
+    {
+      "title": "5.00 average across 69 customer reviews",
+      "description": "Reviewers name the people who showed up — Nick, Connor, Landen — because it is the same crew every time, not a rotating list of subcontractors."
+    },
+    {
+      "title": "The yard gets left the way we found it",
+      "description": "Concrete work is messy while it happens and should not be messy afterwards. Debris cleared, forms out, the site swept, and a walk-through with you before we load up."
+    }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": { "enabled": false, "us_label": "US", "them_label": "THEM", "rows": [] },
+  "gallery": [
+    {
+      "title": "Stamped patio, wood-plank pattern",
+      "photo": "/img/stamped-wood-plank-patio.webp",
+      "alt": "Stamped concrete patio finished in a grey wood-plank pattern with a curved edge",
+      "description": "A stamped pour finished to read as timber planking, with the joint lines running the length of the slab."
+    },
+    {
+      "title": "Coloured stamped patio with steps",
+      "photo": "/img/stamped-patio-steps-fenced-yard.webp",
+      "alt": "Large tan stamped concrete patio with two shallow steps in a fenced back yard",
+      "description": "A full-width rear patio with integral colour and a pair of poured steps down into the yard."
+    },
+    {
+      "title": "Broom-finish driveway",
+      "photo": "/img/broom-driveway-control-joints.webp",
+      "alt": "Broom-finish concrete driveway with cut control joints leading to an attached garage",
+      "description": "Standard broom finish with control joints laid out to steer where the slab cracks as it moves."
+    },
+    {
+      "title": "Curved drive to a pole barn",
+      "photo": "/img/curved-driveway-red-barn.webp",
+      "alt": "Curved concrete driveway sweeping up to the doors of a red pole barn",
+      "description": "A curved approach poured to line up with two bay doors on a detached shop."
+    },
+    {
+      "title": "Rear patio off the back door",
+      "photo": "/img/stamped-patio-rear-door.webp",
+      "alt": "Tan stamped concrete patio poured against the rear wall of a home beside the back door",
+      "description": "A coloured patio taken right up to the threshold so there is no step down at the door."
+    },
+    {
+      "title": "Exposed aggregate patio",
+      "photo": "/img/aggregate-patio-pond.webp",
+      "alt": "Exposed aggregate concrete patio overlooking a pond, with the stone texture visible across the surface",
+      "description": "Washed back to bring the stone up through the surface — grippy underfoot and it hides dirt well."
+    },
+    {
+      "title": "Asphalt driveway",
+      "photo": "/img/asphalt-driveway-autumn.webp",
+      "alt": "Newly laid asphalt driveway edged with landscape stone, surrounded by autumn trees",
+      "description": "A fresh asphalt drive edged and compacted, laid on a rebuilt base."
+    },
+    {
+      "title": "Front walkway and entry step",
+      "photo": "/img/brick-home-walkway-step.webp",
+      "alt": "New concrete walkway and entry step leading to the front door of a brick home",
+      "description": "A replacement front walk poured with a single step up to the entry landing."
+    }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Concrete That Survives",
+    "heading_rest": "An Indiana Winter",
+    "subtitle": "Driveways, patios, walkways, decorative finishes, leveling, sealing and asphalt — residential and commercial, across the Indianapolis metro."
+  },
+  "estimate_form": {
+    "heading": "Get your free estimate",
+    "services": [
+      "Concrete driveway",
+      "Patio",
+      "Sidewalk or walkway",
+      "Stamped or textured concrete",
+      "Exposed aggregate",
+      "Concrete leveling or repair",
+      "Concrete sealing",
+      "Asphalt paving",
+      "Garage floor or slab",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Ready for a number on your project?",
+    "body": "Estimates are free and there is no obligation. We are based on Crown Plaza Boulevard in Plainfield and work across the Indianapolis metro. Call (317) 939-8590 or send us the details and one of our estimators will come out and measure it properly.",
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Concrete Advice For Indiana Homeowners",
+    "description": "Straight answers about concrete in central Indiana — freeze-thaw cracking, what a fair driveway quote looks like, permits, curing times and when sealing is worth it."
+  }
+}

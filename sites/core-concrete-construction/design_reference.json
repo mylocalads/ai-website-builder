@@ -1,0 +1,39 @@
+{
+  "source": "Brand tokens auto-detected from coreconcreteconstruction.com via Firecrawl branding extraction, merged with the owl primary reference template (reference-libraries/concrete.json role: primary).",
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f4f2ee",
+    "text": "#17191d",
+    "muted": "#5a5f66",
+    "primary": "#17191d",
+    "on_primary": "#ffffff",
+    "accent": "#f58922",
+    "on_accent": "#14100a",
+    "accent_ink": "#9a4600",
+    "accent_on_dark": "#f58922",
+    "focus": "#0057ff"
+  },
+  "contrast_measured": {
+    "on_accent_vs_accent": 7.66,
+    "accent_ink_vs_bg": 6.46,
+    "accent_ink_vs_surface": 5.78,
+    "accent_on_dark_vs_primary": 7.11,
+    "text_vs_bg": 17.6,
+    "muted_vs_surface": 5.76
+  },
+  "typography": { "display": "Archivo", "body": "Inter" },
+  "radius": { "sm": "3px", "md": "6px", "lg": "10px" },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "anti_patterns": [
+    "no gradient hero backgrounds",
+    "no glass morphism / backdrop blur",
+    "no bento grids",
+    "no purple / indigo / violet accents",
+    "no rows of outline icons",
+    "no handshake or hardhat stock photography",
+    "no invented customer counts",
+    "no 'Stunning' / 'Seamless' / 'Effortless' section headers",
+    "no randomized section order — owl order is fixed"
+  ],
+  "_notes": "Client site is brand-only. Fonts, colours and logo were taken from it; no layout, section rhythm or component styling was copied. The old site's zero-radius orange buttons informed the small radius scale only."
+}

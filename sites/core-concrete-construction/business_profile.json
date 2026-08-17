@@ -1,0 +1,48 @@
+{
+  "business_name": "Core Concrete Construction LLC",
+  "slug": "core-concrete-construction",
+  "category": "Concrete contractor",
+  "phone_display": "(317) 939-8590",
+  "phone": "+13179398590",
+  "website": "https://www.coreconcreteconstruction.com/",
+  "address": {
+    "street": "1907 Crown Plaza Boulevard",
+    "city": "Plainfield",
+    "state": "IN",
+    "postal": "46168",
+    "country": "US"
+  },
+  "marketing_city": "Indianapolis",
+  "marketing_state": "IN",
+  "rating": 5.0,
+  "review_count": 69,
+  "credentials": [
+    "HomeAdvisor Partner of the Year",
+    "HomeAdvisor Super Service Award 2022, 2023, 2024",
+    "Member, Builders Association of Greater Indianapolis"
+  ],
+  "services_listed": [
+    "Broom Finish Concrete",
+    "Stamp Finish Concrete",
+    "Texture Concrete",
+    "Exposed Aggregate Concrete",
+    "Concrete Leveling",
+    "Concrete Sealer",
+    "Asphalt Services",
+    "Hardscaping",
+    "Culvert replacement",
+    "Drainage installation"
+  ],
+  "service_areas_listed": [
+    "Indianapolis","Plainfield","Avon","Brownsburg","Zionsville","Carmel","Fishers",
+    "Noblesville","Westfield","Whitestown","Fortville","McCordsville","Greenfield",
+    "Greenwood","Southport","Beech Grove","Cumberland","New Palestine","Whiteland",
+    "Mooresville","Decatur","Bloomington","Lafayette","Anderson","Terre Haute"
+  ],
+  "_notes": {
+    "gbp_lookup": "SKIPPED — no .env in this repo, so APIFY_TOKEN is unset and /find-business could not run.",
+    "rating_source": "The 5.00 / 69 reviews figure is the aggregate published by the GoHighLevel reviews widget embedded on coreconcreteconstruction.com, which syndicates the company's Google reviews. It is NOT a direct Google Business Profile API read and is labelled on the new site as a customer-review rating, not as a Google Business Profile figure.",
+    "nap_source": "Name, address and phone were read from the reviews widget payload and the site header on coreconcreteconstruction.com (Firecrawl, 2026-08-17).",
+    "tracking_number_seen": "+1 463-232-6932 appears in the old site's meta description. The number shown on-page everywhere is (317) 939-8590, so that is the one used."
+  }
+}

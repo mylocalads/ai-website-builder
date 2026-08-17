@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f4f2ee;
+  --color-text: #17191d;
+  --color-muted: #5a5f66;
+  --color-primary: #17191d;
+  --color-on-primary: #ffffff;
+
+  /* Brand accent scraped from coreconcreteconstruction.com: #F58922.
+     Measured against this palette (see README button-contrast section):
+       --color-accent      #f58922  fill only
+       --color-on-accent   #14100a  7.66:1 on the accent fill (white is 2.48:1 — fails)
+       --color-accent-ink  #9a4600  6.46:1 on --color-bg, 5.78:1 on --color-surface
+       --color-accent-on-dark #f58922  7.11:1 on --color-primary — the brand orange
+                            is already legible on the dark bands, so no tint needed */
+  --color-accent: #f58922;
+  --color-on-accent: #14100a;
+  --color-accent-ink: #9a4600;
+  --color-accent-on-dark: #f58922;
+
+  --color-focus: #0057ff;
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 3px; --radius-md: 6px; --radius-lg: 10px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

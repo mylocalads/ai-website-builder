@@ -1,0 +1,22 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a rate card, because a concrete price that ignores your site is a price that changes later — and we would rather not do that to you. Every quote we write is measured on site and put in writing before anything is booked. What we can be straight about is what actually moves the number, so you can compare our estimate against anyone else's on the same terms. Estimates are free and there is no obligation.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What drives the price of a concrete job",
+    "lede": "These are the things our estimator is looking at while measuring. If another contractor's quote is much cheaper, one of these is usually the reason.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      ["Driveway replacement", "Square footage, how much old slab has to come out and be hauled away, truck access, slab thickness, reinforcement, and whether the apron ties into a public street (which needs a permit)."],
+      ["New driveway over gravel", "How much excavation and fill the subgrade needs, drainage and slope, edge forming, and the length of the run from the street."],
+      ["Patio", "Square footage, whether there are steps, the finish you choose, integral colour, and how far the concrete has to be moved from the truck to the pour."],
+      ["Sidewalk or walkway", "Linear footage and width, curves versus straight runs, steps or landings, and removal of the existing walk."],
+      ["Stamped, textured or exposed aggregate", "The base cost of the flatwork plus the finish — pattern complexity, colour, release agent, and the extra labour a decorative pour takes over a broom finish."],
+      ["Concrete leveling", "How many slabs, how far they have settled, what caused the settling, and whether leveling is genuinely the right call rather than replacement."],
+      ["Concrete sealing", "Square footage, the condition and porosity of the existing surface, how much cleaning or prep it needs first, and the sealer specified."],
+      ["Asphalt paving", "Area, base condition, depth of the asphalt mat, drainage, and edge detail."]
+    ],
+    "footnote": "Permit fees, where a permit is required, are separate from labour and materials and are shown on your written estimate."
+  },
+  "notes": "Prices are always confirmed in writing before work is scheduled. If our number does not fit your budget, tell us — we would rather talk through the scope with you than lose the job over a figure you never had a chance to discuss."
+}

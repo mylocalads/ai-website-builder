@@ -1,0 +1,48 @@
+{
+  "metro": "Indianapolis, IN",
+  "vertical": "concrete contractor",
+  "method": "Firecrawl web search over r/indianapolis, r/Concrete, r/homeowners and local permitting sources. Reddit thread bodies could not be fetched directly (Firecrawl does not support reddit.com), so findings are drawn from search-result excerpts plus municipal permit pages.",
+  "pain_points": [
+    {
+      "point": "Contractors do not call back or no-show the estimate",
+      "evidence": "Repeated across r/homeowners threads: 'No shows, no follow up quote, no call backs, etc was all I got for weeks.' Named as the single biggest complaint about home-services contractors."
+    },
+    {
+      "point": "Quotes vary wildly and homeowners cannot tell which is fair",
+      "evidence": "r/indianapolis driveway threads describe collecting several quotes with a large spread; Angi lists Indianapolis concrete driveways at roughly $7-$12 per square foot, so homeowners are anchoring on a wide public range."
+    },
+    {
+      "point": "New concrete cracking or crumbling within a year or two",
+      "evidence": "r/Concrete threads on freeze-thaw cracking and 'Driveway crumbling after less than 18 months' — the fear is paying once and paying again. Central Indiana's freeze-thaw cycle makes this a live worry."
+    },
+    {
+      "point": "Permits are confusing and get pushed onto the homeowner",
+      "evidence": "Indy.gov requires driveway permits for any drive connecting to a city street; Hendricks County and the Town of Plainfield have their own driveway and patio approvals. Homeowners do not want to run this themselves."
+    },
+    {
+      "point": "Crews leave a mess or tear up the yard",
+      "evidence": "Cleanup and lawn damage come up in both Reddit contractor threads and in this company's own reviews — one 4-star review specifically cites tools washed out in the yard."
+    }
+  ],
+  "what_customers_value": [
+    "Same-day or next-day quote after the first call",
+    "One-day pours — driveway in, crew gone, no week-long disruption",
+    "Beating competitor pricing without the work looking cheap",
+    "The contractor pulling the permits",
+    "A clean site at the end of the day"
+  ],
+  "how_this_business_stands_out": [
+    "69 reviews at a 5.00 average — reviewers name Nick, Connor and Landen individually, which reads as a real crew rather than a call centre.",
+    "Multiple reviews report the whole driveway finished in one day, and one reports two neighbouring driveways done in a single day.",
+    "Reviewers explicitly say Core pulled the permits, including through Hendricks County.",
+    "HomeAdvisor Partner of the Year plus Super Service Awards in 2022, 2023 and 2024.",
+    "One reviewer reports Core returning at no charge to add a missing step."
+  ],
+  "copy_angles": [
+    "Quote the same day you call — this is what reviewers praise most and it is the exact gap Reddit complains about.",
+    "Most driveways poured in a single day.",
+    "We pull the permits, including Hendricks and Marion County.",
+    "The yard gets left the way we found it.",
+    "Built for Indiana freeze-thaw — proper base prep, control joints and sealing."
+  ]
+}

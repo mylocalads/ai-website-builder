@@ -1,0 +1,22 @@
+{
+  "url": "https://www.coreconcreteconstruction.com/",
+  "platform": "GoHighLevel funnel builder",
+  "screenshot": null,
+  "screenshot_note": "Full-page screenshot capture failed; the assessment below is from the rendered DOM and markdown extraction.",
+  "strengths": [
+    "Real project photography — roughly 40 unique job photos on /our-work.",
+    "Genuine team page with photos, names and roles for seven people.",
+    "Live Google-syndicated review widget showing 5.00 across 69 reviews.",
+    "Wide service-area coverage already built out (25 city pages)."
+  ],
+  "weaknesses": [
+    "Homepage runs the SAME 'About Us' block twice — once written for Indianapolis and once for Plainfield. It is a visible copy-paste error.",
+    "Body font resolves to Times New Roman with a 61px computed body size; heading sizes are 23px. Type hierarchy is inverted.",
+    "The review widget dumps raw markup into the page — addresses, phone numbers and review timestamps render as loose text.",
+    "Copy is near-identical across service pages; the stamped-concrete page still tells visitors to 'choose us for all your concrete broom finish needs'.",
+    "Contact and pricing pages are dominated by a Cloudflare Turnstile challenge and a full country-code list rendered as visible page text.",
+    "Privacy and Terms link off-domain to find.bestlocalcontractor.online.",
+    "No structured data, no llms.txt, no per-service FAQ schema."
+  ],
+  "verdict": "Content and photography are strong. The delivery is the problem: duplicated blocks, broken type scale, leaking widget markup and templated per-service copy. A rebuild keeps the assets and fixes the shell."
+}

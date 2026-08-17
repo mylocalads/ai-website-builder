@@ -1,0 +1,186 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Indianapolis, IN",
+    "headline": "Concrete Driveways & Patios, Poured Right The First Time",
+    "subheadline": "Driveways, patios, walkways, stamped and exposed aggregate finishes, leveling, sealing and asphalt — done by a local crew out of Plainfield.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "/img/curved-driveway-red-barn.webp",
+    "trust_badges": [
+      { "mark": "google", "rating": 5, "label": "5.00 average", "sublabel": "69 customer reviews" },
+      { "label": "Super Service Award", "sublabel": "HomeAdvisor, 2022–2024" }
+    ],
+    "quote_card": {
+      "quote": "Exceptional job installing our new patio. They completed the job in half a day and did not damage our yard in any way.",
+      "author": "Daniel Hagarty",
+      "cta_text": "Read our reviews",
+      "cta_href": "/about",
+      "rating": 5,
+      "review_count": 69
+    }
+  },
+  "promise_bar": [
+    "Free estimates, no obligation",
+    "Most driveways poured in a day",
+    "We pull the permits",
+    "Residential & commercial"
+  ],
+  "promise_band": {
+    "eyebrow": "Why homeowners call us back",
+    "headline": "We clean up like we were never here",
+    "body": "It is the thing our customers mention most. Forms out, debris hauled, the site swept, and a walk-through with you before the trucks leave. Concrete work is messy while it is happening. It should not still be messy the next morning.",
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book",
+    "image": "/img/crew-finishing-driveway-pour.webp"
+  },
+  "process_steps": {
+    "headline": "How a project runs with us",
+    "steps": [
+      {
+        "label": "01",
+        "title": "You call, we come measure",
+        "body": "Nick or Connor comes out, measures the area and talks through what you want. Customers regularly get their quote back the same day they called."
+      },
+      {
+        "label": "02",
+        "title": "We handle the permit",
+        "body": "If your drive ties into a public street, or your county wants a patio approval, our permitting manager files it and follows it through. You do not chase it."
+      },
+      {
+        "label": "03",
+        "title": "Tear-out and base prep",
+        "body": "The old slab comes out and the subgrade gets rebuilt and compacted. This is the step that decides whether the concrete is still flat in ten years."
+      },
+      {
+        "label": "04",
+        "title": "Pour, finish, joint",
+        "body": "We pour, finish to the texture you chose, and cut control joints so the slab cracks where we put the line instead of across the middle."
+      },
+      {
+        "label": "05",
+        "title": "Clean up and walk through",
+        "body": "Site cleared and swept, then we walk it with you. We tell you how long to stay off it and when it is ready for vehicles."
+      }
+    ],
+    "cta_text": "Start with a free estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Core Concrete Construction",
+    "headline": "A Plainfield crew working the whole Indianapolis metro",
+    "body": "Core Concrete Construction LLC handles residential and commercial concrete across central Indiana — general concrete installation, decorative finishes, sealing, leveling, hardscaping, culvert replacement, drainage and asphalt. We have picked up HomeAdvisor's Partner of the Year award and Super Service Awards in 2022, 2023 and 2024, and we are members of the Builders Association of Greater Indianapolis.",
+    "checklist": [
+      "5.00 average across 69 customer reviews",
+      "Residential and commercial work",
+      "Full-time permitting manager on staff",
+      "Free written estimates"
+    ],
+    "photo": "/img/broom-driveway-control-joints.webp",
+    "photo_alt": "Broom-finish concrete driveway with cut control joints running up to an attached garage",
+    "cta_text": "Meet the team",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Concrete in central Indiana",
+    "headline": "Why Indiana concrete fails early — and what we do about it",
+    "paragraphs": [
+      "Central Indiana runs through dozens of freeze-thaw cycles a year. Water gets into the slab, freezes, expands, and prises the concrete apart from the inside. That is why a driveway here can look fine at eighteen months and be spalling at three years. The weather is not the variable you can change — the base, the mix, the joints and the sealer are.",
+      "So we spend the time underneath the slab. The subgrade gets excavated and compacted properly rather than skimmed and poured over, because a slab bridging a soft spot will crack no matter how good the finish looks on day one. We cut control joints at the right spacing and depth so the inevitable movement shows up as a straight line in a joint instead of a jagged crack across the middle of your driveway.",
+      "Sealing is the other half. A penetrating sealer keeps water and de-icing salt out of the surface, and it is far cheaper to reseal a good slab every few years than to replace a bad one once. We will tell you honestly whether your existing concrete is worth sealing or whether you would be throwing money at something already past saving."
+    ],
+    "checklist": [
+      "Excavated and compacted subgrade, not a skim-and-pour",
+      "Control joints cut to depth and spacing",
+      "Finishes chosen for grip as well as looks",
+      "Sealing quoted separately so you can see what it costs"
+    ],
+    "image": "/img/cracked-driveway-before.webp",
+    "image_alt": "Badly cracked and heaved older concrete driveway in front of a brick ranch home, before replacement",
+    "image_position": "right",
+    "review": {
+      "name": "Raine Castle",
+      "text": "Fast and quality workmanship. We are getting compliments on our sidewalks and I recommend Core for projects like this. They got the necessary permits. I didn't have to do it.",
+      "rating": 5,
+      "source": "Google review"
+    },
+    "cta_text": "Get my free estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Daniel Hagarty",
+      "text": "Exceptional job installing our new patio. We expanded from a 12x12 to 12x30. They completed the job in half a day and did not damage our yard in any way. Workers were all professional and very polite. Would highly recommend them and will use them again for additional concrete work around my house.",
+      "rating": 5
+    },
+    {
+      "name": "Jason Gilman",
+      "text": "We (my neighbor and I) hired Core to work on our driveways. Our house had a gravel driveway for 60 years and our neighbor needed his old driveway taken out and redone. All the work was done in one day for both driveways and both of us are extremely pleased!",
+      "rating": 5
+    },
+    {
+      "name": "Melissa Strohl",
+      "text": "From the moment I hit send for a request for a quote, Core Construction was on top of it. I got the quote the same day they came out and scheduling to complete the project was awesome. I enjoyed working with Conner and everyone else from Core. I highly recommend Core and will definitely be my first call if I have any future projects.",
+      "rating": 5
+    },
+    {
+      "name": "Deborah Ackerman",
+      "text": "Conner, his foreman, and his crew were punctual and professional. They were able to complete our driveway in one day. The office staff were also very responsive. Very happy with the completed driveway and it was great to see the teamwork. Everyone knew what they had to do and went about it.",
+      "rating": 5
+    },
+    {
+      "name": "Phil Slavens",
+      "text": "We contacted Core Concrete to repair our broken garage floor. They not only repaired the floor, they did it at a great price and in only a few hours. They made sure we knew exactly what they were going to do and what we could expect as a result. Extremely pleasant and professional staff.",
+      "rating": 5
+    },
+    {
+      "name": "Steve Atherton",
+      "text": "I must say they treated me well. I had an issue with the lack of a step — they came back and installed it for free. Now I'm not worried about the high step issue. Thank you all so very much!",
+      "rating": 5
+    },
+    {
+      "name": "Terry Fisher",
+      "text": "Awesome company! Landen and the office crew are efficient, the construction crew were on time, easy to work with and clean up was great. Highly recommend Core Construction!",
+      "rating": 5
+    },
+    {
+      "name": "Josh Sousa",
+      "text": "They were friendly, beat out the competitor's pricing, and did great work. On top of that, they worked fast. I'm very happy with the job and would recommend them to anyone.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does a concrete driveway take?",
+      "a": "Most residential driveways are a one-day job — tear-out, base prep and pour all happen the same day. Larger or multi-stage projects run longer, and your estimator will tell you which one yours is before you book."
+    },
+    {
+      "q": "When can I drive on new concrete?",
+      "a": "Stay off it on foot for at least 24 hours. Vehicles should wait about 7 days, and heavy vehicles longer. Concrete keeps gaining strength for around 28 days, so avoid parking anything heavy near the edges in that first month."
+    },
+    {
+      "q": "Do I need a permit, and who gets it?",
+      "a": "Often yes. Indianapolis requires a driveway permit for any drive connecting to a city street, and Hendricks County and the Town of Plainfield have their own approvals for drives and patios. We have a permitting manager on staff who files and follows these for you."
+    },
+    {
+      "q": "Will my new concrete crack?",
+      "a": "All concrete moves, and control joints exist so it cracks along a line we chose rather than across the middle. What we can prevent is the structural cracking that comes from a poor base — which is why the excavation and compaction step matters more than the finish."
+    },
+    {
+      "q": "Do you do commercial work as well as residential?",
+      "a": "Yes. We handle both. Alongside flatwork we take on hardscaping, culvert replacement, drainage installation and asphalt paving."
+    },
+    {
+      "q": "How much does a driveway cost around Indianapolis?",
+      "a": "It depends on square footage, how much tear-out there is, access for the trucks, thickness, reinforcement and finish. That is why we measure on site rather than quoting over the phone. The estimate is free and there is no obligation."
+    },
+    {
+      "q": "Should I seal my concrete?",
+      "a": "In central Indiana it is usually worth it. A penetrating sealer keeps water and road salt out of the surface, which is what causes spalling after a few winters. We will tell you if your existing slab is too far gone to be worth sealing."
+    },
+    {
+      "q": "What areas do you cover?",
+      "a": "We are based in Plainfield and work across the Indianapolis metro — Indianapolis, Avon, Brownsburg, Carmel, Fishers and the surrounding towns, plus outlying areas including Greenwood, Westfield, Noblesville, Mooresville and Bloomington."
+    }
+  ]
+}
