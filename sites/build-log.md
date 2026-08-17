@@ -5060,3 +5060,31 @@ GHL chat widget, GHL reviews widget, GHL calendar/booking embed, call-tracking s
 number, Meta Pixel / GTM code injection, custom domain, social profile URLs, business
 hours, and any licensed/insured/bonded claim (left `false` — the old site makes no such
 claim and it was not verified).
+
+### 2026-08-17 — dark header + promise-bar icons
+
+Operator-requested changes, both scoped to `sites/core-concrete-construction/`.
+
+**Header bar is now `#17191e` with white nav.** Added `--color-header-bg`,
+`--color-header-menu-bg`, `--color-header-text`, `--color-header-muted` and
+`--color-header-line` to `tokens.css`, then pointed every colour in
+`Header.astro` at them — desktop nav, dropdown submenus, the phone CTA badge and
+number, the hamburger stroke, and the mobile slide-down panel including its
+sub-lists and chevrons. None of it is left to inherit: the surrounding page is
+light, so anything inherited landed as near-black on near-black. Measured on
+`#17191e` — white 17.4:1, the muted label 9.0:1, `--color-accent-on-dark` 7.1:1.
+
+The logo was left untouched as instructed. It is a transparent PNG whose only
+opaque marks are the orange glyph and light lettering, so it needed no plate and
+no recolour — the header renders a uniform `#17191e` behind it (verified by
+pixel-sampling the deployed page). It reads better on dark than it did on white,
+where the "CONCRETE CONSTRUCTION" lettering was nearly invisible.
+
+**Promise-bar icons now render.** `PromiseBar.astro` only draws an icon when the
+content item is an `{ text, icon }` object and `icon` is a key in
+`src/lib/icons.ts`. The items had been written as plain strings, which is a
+valid shape the schema accepts, so it built clean and silently rendered
+text-only. Rewritten as objects with `document` / `clock` / `clipboard` / `home`.
+
+Worth remembering for the next build: a bare string in `promise_bar` is not an
+error, it just quietly drops the icon.

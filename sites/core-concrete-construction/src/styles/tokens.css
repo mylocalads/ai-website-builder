@@ -20,6 +20,17 @@
   --color-accent-ink: #9a4600;
   --color-accent-on-dark: #f58922;
 
+  /* Dark header bar, per client direction. The logo is a transparent PNG whose
+     only opaque marks are the orange glyph and light lettering, so it sits on
+     the dark bar unchanged — no plate, no recolour.
+     Contrast on #17191e: header-text 17.4:1, header-muted ~9.0:1,
+     --color-accent-on-dark 7.1:1. */
+  --color-header-bg: #17191e;
+  --color-header-menu-bg: #212429;
+  --color-header-text: #ffffff;
+  --color-header-muted: rgba(255, 255, 255, 0.72);
+  --color-header-line: rgba(255, 255, 255, 0.14);
+
   --color-focus: #0057ff;
   --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;

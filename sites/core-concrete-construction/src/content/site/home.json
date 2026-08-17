@@ -21,10 +21,10 @@
     }
   },
   "promise_bar": [
-    "Free estimates, no obligation",
-    "Most driveways poured in a day",
-    "We pull the permits",
-    "Residential & commercial"
+    { "text": "Free estimates, no obligation", "icon": "document" },
+    { "text": "Most driveways poured in a day", "icon": "clock" },
+    { "text": "We pull the permits", "icon": "clipboard" },
+    { "text": "Residential & commercial", "icon": "home" }
   ],
   "promise_band": {
     "eyebrow": "Why homeowners call us back",
