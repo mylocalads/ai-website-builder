@@ -145,40 +145,12 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 
   try {
     if (webhook) {
-      /*
-       * Credential for a destination that requires one — the My Local Ads
-       * portal, which every build now deploys against, or a client's own n8n
-       * or Make endpoint behind a key. A GoHighLevel inbound-webhook trigger
-       * needs none of this and works with both unset.
-       *
-       * Header name is configurable because the schemes disagree: the portal
-       * wants `x-lead-api-key`, most intake APIs want `Authorization: Bearer`.
-       * When the header is not Authorization the secret is sent RAW, without a
-       * Bearer prefix, because those schemes do not use one.
-       */
-      const headers: Record<string, string> = { 'Content-Type': 'application/json' };
-      const secret = process.env.LEAD_WEBHOOK_SECRET;
-      const authHeader = process.env.LEAD_WEBHOOK_AUTH_HEADER || 'Authorization';
-      if (secret) {
-        const isBearerScheme = authHeader.toLowerCase() === 'authorization';
-        const alreadyPrefixed = /^(bearer|basic|token)\s/i.test(secret);
-        headers[authHeader] = isBearerScheme && !alreadyPrefixed ? `Bearer ${secret}` : secret;
-      }
-
-      const res = await fetch(webhook, { method: 'POST', headers, body: JSON.stringify(lead) });
-      if (!res.ok) {
-        let host = 'unknown-host';
-        try { host = new URL(webhook).host; } catch { /* reported below anyway */ }
-        const detail = (await res.text().catch(() => '')).replace(/\s+/g, ' ').trim().slice(0, 200);
-        throw new Error(
-          `webhook ${res.status} from ${host}${detail ? ` — said: ${detail}` : ''}` +
-          (res.status === 401 || res.status === 403
-            ? secret
-              ? ` | Sent credential as "${authHeader}". Set LEAD_WEBHOOK_AUTH_HEADER if the endpoint expects another.`
-              : ' | No credential was sent. Set LEAD_WEBHOOK_SECRET on the Vercel project.'
-            : ''),
-        );
-      }
+      const res = await fetch(webhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(lead),
+      });
+      if (!res.ok) throw new Error(`webhook ${res.status}`);
     } else if (resendKey && notifyTo && notifyFrom) {
       const rows = Object.entries(lead)
         .map(([k, v]) => `<tr><td><strong>${k}</strong></td><td>${v ?? ''}</td></tr>`)

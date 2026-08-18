@@ -1,0 +1,36 @@
+{
+  "batch_id": "2026-08-18T01-29-53Z-3a959d",
+  "mode": "edit",
+  "slug": "agc-concrete",
+  "operator_request": "Update the headline on the homepage to say 'Macomb Michigan' at the top instead of just 'Macomb, MI'. (portal build 3984b7d7-24a6-4065-9fc5-51cb80812acd; also wired lead-webhook secret/header support required by the same build to configure LEAD_WEBHOOK_SECRET/LEAD_WEBHOOK_AUTH_HEADER on the Vercel project)",
+  "diff_spec": [
+    {
+      "op": "SET",
+      "path": "src/content/site/home.json",
+      "field": "hero.eyebrow",
+      "value": "Macomb Michigan"
+    },
+    {
+      "op": "SET",
+      "path": "src/pages/api/estimate.ts",
+      "field": "webhook fetch headers",
+      "value": "adds LEAD_WEBHOOK_SECRET / LEAD_WEBHOOK_AUTH_HEADER support (ported from current owl template) so the portal's x-lead-api-key auth is sent",
+      "note": "prerequisite for build-required leadWebhook wiring; site predated header support"
+    }
+  ],
+  "files_touched": [
+    "src/content/site/home.json",
+    "src/pages/api/estimate.ts"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_3JPQER9QKh9yXWw6XPEfDzBQ1CHJ",
+    "url": "https://agc-concrete.vercel.app",
+    "canonical_url": "https://agc-concrete.vercel.app",
+    "at": "2026-08-18T01:31:00Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}
