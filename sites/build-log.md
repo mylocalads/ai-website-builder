@@ -4813,3 +4813,37 @@ so estimate-form submissions post to the client portal. Redeployed after setting
 new env vars are live in production. No domain change — payload `domain` was `null` and none
 was attached previously; the public URL remains `https://agc-concrete.vercel.app` (SSO
 protection off, verified 200 + non-login final URL both before and after this deploy).
+
+### 2026-08-18 — hero eyebrow → "Macomb Michigan", lead-webhook secret/header code gap fixed
+
+Portal `job: edit` build (`3984b7d7-24a6-4065-9fc5-51cb80812acd`), unattended, via the
+`site-edit` skill. Single instructed change: home hero `eyebrow` in
+`src/content/site/home.json` ("Macomb, MI" → "Macomb Michigan"), the small text that sits
+above the H1. Every other "Macomb, MI" occurrence on the page (subheadline, H1 itself,
+service-page H1s) was left untouched — not in scope. Snapshotted before/after to
+`sites/agc-concrete/.site-edit-history/2026-08-18T01-29-53Z-3a959d/`.
+
+**Found the lead webhook was set but silently inert.** The 2026-08-17 build above set
+`LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET` / `LEAD_WEBHOOK_AUTH_HEADER` on the Vercel
+project, but this site's `src/pages/api/estimate.ts` predates the owl template's
+secret/header support — it only ever read `LEAD_WEBHOOK_URL` and posted with no
+credential. Any real submission would have hit the portal's `x-lead-api-key` check and
+come back 401, and the old code's bare `throw new Error(\`webhook ${res.status}\`)` gave no
+signal why. Ported the current owl template's webhook block (credential header, verbose
+401/403 diagnostics naming the host and which header was sent) into this site's
+`estimate.ts` — the only file touched outside `src/content/**`, and only for this reason.
+Re-set all three env vars from this build's payload (overwriting whatever the prior build
+left, in case the portal rotates the secret per build) rather than trusting the existing
+values.
+
+`astro sync` and `npm run build` both passed. Verified in `dist/client/index.html`: the new
+eyebrow text present, all other "Macomb, MI" text unchanged (5 occurrences remain, as
+expected). `dist/client/llms.txt` and `dist/client/index.md` had no `undefined` and matched
+prior content. Redeployed (`dpl_3JPQER9QKh9yXWw6XPEfDzBQ1CHJ`); verified
+`https://agc-concrete.vercel.app` is public (200, non-login final URL, real `<title>`) and
+serves the new eyebrow text. No domain change — payload `domain` was `null`.
+
+Screenshot capture failed in this environment (bundled Chromium missing
+`libatk-1.0.so.0`, and non-interactive `sudo` has no password configured to install it) —
+not pursued further since the deploy was already verified by direct HTTP checks;
+`screenshotPath` reported as `null` for this build.
