@@ -1,0 +1,17 @@
+{
+  "batch_id": "2026-08-18T02-00-00Z-hdrmenu",
+  "mode": "edit",
+  "slug": "agc-concrete",
+  "operator_request": "Change the AGC Concrete website header menu background color to #1e2123 and set the menu font color to white.",
+  "diff_spec": [
+    { "op": "SET", "path": "src/components/Header.astro", "field": "style(.site-header background)", "value": "#1e2123" },
+    { "op": "SET", "path": "src/components/Header.astro", "field": "style(.nav-list a color)", "value": "#ffffff" }
+  ],
+  "files_touched": ["src/components/Header.astro"],
+  "status": "applied",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {},
+  "rolls_back_to": null,
+  "reverted_by": null
+}

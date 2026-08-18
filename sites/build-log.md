@@ -4847,3 +4847,30 @@ Screenshot capture failed in this environment (bundled Chromium missing
 `libatk-1.0.so.0`, and non-interactive `sudo` has no password configured to install it) —
 not pursued further since the deploy was already verified by direct HTTP checks;
 `screenshotPath` reported as `null` for this build.
+
+### 2026-08-18 — header menu background #1e2123, menu font white
+
+Portal `job: edit` build (`7fe29916-37d4-441c-8d51-055fb579e5a7`), unattended, via the
+`site-edit` skill. Single instructed change: `sites/agc-concrete/src/components/Header.astro`
+— `.site-header` background from `var(--color-bg)` (white) to `#1e2123`, and `.nav-list a`
+text color set to `#ffffff` so the top-nav links stay legible against the new dark bar.
+Scoped to the desktop nav only — mobile hamburger flyout and dropdown submenus were not
+mentioned in the request and were left untouched. Snapshotted before/after to
+`sites/agc-concrete/.site-edit-history/2026-08-18T02-00-00Z-hdrmenu/`.
+
+Re-set `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET` / `LEAD_WEBHOOK_AUTH_HEADER` on the Vercel
+project (`prj_se1pEv5AMyn3JhOS6nj23swjCe1Y`, production + preview) from this build's payload
+before the final deploy, per this build's task instructions. `LEAD_WEBHOOK_SECRET` was set
+`--sensitive`; the project appears to enforce Sensitive storage for all three regardless of
+flag (`vercel env pull` returns all three as `[SENSITIVE]`). Value never logged here or
+elsewhere — extracted from the payload file straight into the Vercel CLI via a shell
+variable, never printed.
+
+`astro sync` and `npm run build` both passed (owl template, `dist/client/`). Confirmed
+`1e2123` present in the built header CSS chunk; `dist/client/llms.txt` / `index.md` had no
+`undefined` and were unaffected (a style-only change). Redeployed
+(`dpl_CVttmH4yKFZ8wRzd9YcanqHymsnr`); verified `https://agc-concrete.vercel.app` is public
+(200, non-login final URL, real `<title>`). No domain change — payload `domain` was `null`.
+
+Screenshot capture again failed in this environment (same missing `libatk-1.0.so.0` as the
+prior build) — `screenshotPath` reported as `null`.
