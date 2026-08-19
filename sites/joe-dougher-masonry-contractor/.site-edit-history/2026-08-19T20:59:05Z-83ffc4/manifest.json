@@ -1,0 +1,42 @@
+{
+  "batch_id": "2026-08-19T20:59:05Z-83ffc4",
+  "mode": "edit",
+  "slug": "joe-dougher-masonry-contractor",
+  "operator_request": "Update all references to service areas on the website to include Old Forge as well, ensuring consistency and cleanliness for SEO purposes. (portal build 94f836a3-944b-4291-91df-5848136ba662)",
+  "diff_spec": [
+    { "op": "SET", "path": "src/content/site/our-work.json", "field": "intro", "value": "Recent masonry and concrete work across Scranton, Clarks Summit, Dunmore, Old Forge and the surrounding NEPA area — real photos from real jobs, not stock." },
+    { "op": "SET", "path": "src/content/site/pricing.json", "field": "notes", "value": "Free estimates for residential masonry and concrete work across Scranton, Clarks Summit, Dunmore, Old Forge and the surrounding NEPA area. Call or text (570) 815-3864." },
+    { "op": "SET", "path": "src/content/site/about.json", "field": "story", "value": "(inserted 'Old Forge,' before 'and the surrounding NEPA area' in the opening sentence)" },
+    { "op": "SET", "path": "src/content/site/config.json", "field": "why_choose_us[2].description", "value": "Real clients across Scranton, Clarks Summit, Dunmore and Old Forge, praising reliability, fair pricing and craftsmanship." },
+    { "op": "SET", "path": "src/content/site/config.json", "field": "services_section.subtitle", "value": "Concrete, pavers, retaining walls, stone and brick veneer, and fireplace masonry for Scranton, Clarks Summit, Dunmore, Old Forge and the surrounding NEPA area." },
+    { "op": "SET", "path": "src/content/site/config.json", "field": "closing_cta.body", "value": "Free estimates on concrete, pavers, retaining walls, and stone or brick work across Scranton, Clarks Summit, Dunmore, Old Forge and the surrounding NEPA area. Call (570) 815-3864 or send us the details and we'll come take a look before we put a number on it." },
+    { "op": "SET", "path": "src/content/site/home.json", "field": "hero.subheadline", "value": "Concrete, pavers, retaining walls, stone and brick veneer, and custom fireplaces — licensed, insured, and family-owned in Scranton, Clarks Summit, Dunmore and Old Forge for over 35 years." },
+    { "op": "SET", "path": "src/content/site/home.json", "field": "about_block.body", "value": "(inserted 'Old Forge,' before 'and the surrounding NEPA area' in the opening sentence)" },
+    { "op": "SET", "path": "src/content/site/home.json", "field": "faq[].a (Which areas do you serve?)", "value": "Scranton, Clarks Summit, Dunmore, Old Forge and the surrounding NEPA area." },
+    { "op": "SET", "path": "src/content/services/retaining-walls.md", "field": "#body", "value": "Retaining walls built to actually hold, from structural load-bearing walls to terraced garden walls — serving Scranton, Clarks Summit, Dunmore and Old Forge." },
+    { "op": "SET", "path": "src/content/service_areas/dunmore-pa.md", "field": "#frontmatter.local_context", "value": "Dunmore is one of the core areas Joe Dougher Masonry Contractor has served for over 35 years, right alongside Scranton, Clarks Summit and Old Forge." },
+    { "op": "SET", "path": "src/content/service_areas/clarks-summit-pa.md", "field": "#frontmatter.local_context", "value": "Clarks Summit is one of the core areas Joe Dougher Masonry Contractor has served for over 35 years, right alongside Scranton, Dunmore and Old Forge." }
+  ],
+  "files_touched": [
+    "src/content/site/our-work.json",
+    "src/content/site/pricing.json",
+    "src/content/site/about.json",
+    "src/content/site/config.json",
+    "src/content/site/home.json",
+    "src/content/services/retaining-walls.md",
+    "src/content/service_areas/dunmore-pa.md",
+    "src/content/service_areas/clarks-summit-pa.md"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_7vrz8cW6nrnDgH6KfgLTWgyZ9zj5",
+    "url": "https://joe-dougher-masonry-contractor-51vsic3a2-mylocalads-projects.vercel.app",
+    "canonical_url": "https://joe-dougher-masonry-contractor.vercel.app",
+    "at": "2026-08-19T21:03:44Z",
+    "note": "leadWebhook env vars (LEAD_WEBHOOK_URL/SECRET/AUTH_HEADER) updated on the Vercel project for build 94f836a3-944b-4291-91df-5848136ba662 before this deploy. Branded preview host joe-dougher-masonry-contractor.mylocalads-preview.co is still attached but TLS handshake fails (registrar-side DNSSEC DNSKEY missing) -- same pre-existing issue noted in batch 2026-08-19T20:43:46Z-72ad25, needs DS record removal at Squarespace. Not caused by this edit."
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

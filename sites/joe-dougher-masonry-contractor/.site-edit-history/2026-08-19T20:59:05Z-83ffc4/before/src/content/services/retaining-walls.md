@@ -27,4 +27,4 @@ faqs:
     a: "Built correctly — proper base prep, drainage, and materials suited to the wall's height and load — a retaining wall is a long-term structure, not a seasonal fix."
 ---
 
-Retaining walls built to actually hold, from structural load-bearing walls to terraced garden walls — serving Scranton, Clarks Summit, Dunmore and Old Forge.
+Retaining walls built to actually hold, from structural load-bearing walls to terraced garden walls — serving Scranton, Clarks Summit and Dunmore.

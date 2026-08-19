@@ -4949,3 +4949,53 @@ Vercel CLI. Not caused by this edit. `stagingUrl` reported as the `.vercel.app` 
 instead. No domain change — payload `domain` was `null`.
 
 Screenshot capture not attempted (no site-audit step in a site-edit job).
+
+## Joe Dougher Masonry Contractor — site-edit — 2026-08-19 (build `94f836a3-944b-4291-91df-5848136ba662`)
+
+Unattended queue edit job. Instructions: "Update all references to service areas on the
+website to include Old Forge as well, ensuring consistency and cleanliness for SEO
+purposes." The prior batch (`079b5ff8`, above) only created the Old Forge service-area page
+itself — it never touched the eight other places across the site that spell out the area
+list in prose, so Old Forge was missing from all of them.
+
+Grepped `src/content/` for every occurrence of `Scranton`, `Clarks Summit`, `Dunmore` and
+found 8 files still enumerating the area list without Old Forge: `site/config.json`
+(`why_choose_us[2].description`, `services_section.subtitle`, `closing_cta.body`),
+`site/home.json` (`hero.subheadline`, `about_block.body`, the "Which areas do you serve?"
+FAQ answer), `site/about.json#story`, `site/pricing.json#notes`, `site/our-work.json#intro`,
+and `services/retaining-walls.md` body copy — plus the sibling cross-references in
+`service_areas/dunmore-pa.md` and `service_areas/clarks-summit-pa.md#local_context`, which
+named each other but not Old Forge. Left `home.json#seo_body.headline` ("...In Scranton &
+Clarks Summit") alone — it already excluded Dunmore before this edit, so it isn't a
+service-area list to begin with, and touching it would have been scope creep. Left the three
+`service_areas/*.md#name` fields and each area's own `about_body` alone for the same reason.
+
+12 SET edits total, all inserting "Old Forge" into an existing area list in the same style
+already used on each page (no oxford comma before a 3-item "and", oxford comma once
+"and the surrounding NEPA area" follows). No copy was rewritten beyond that insertion.
+Snapshotted before/after to
+`sites/joe-dougher-masonry-contractor/.site-edit-history/2026-08-19T20:59:05Z-83ffc4/`.
+
+`astro sync` and `npm run build` both passed (owl template; a transient
+"duplicate id" warning on the first `astro sync` cleared on a second run — stale
+content-store cache, not a real collision, only one file per slug exists on disk).
+Confirmed `Old Forge` appears in `dist/client/llms.txt` service-area list and `grep -i
+undefined` found nothing in `llms.txt` / `index.md`.
+
+Re-set `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET` / `LEAD_WEBHOOK_AUTH_HEADER` on the Vercel
+project (`prj_MmnjXUP0svhHVgn75tuX0rf3GmR0`, production) from this build's payload before the
+final deploy — values were already present from the prior build but re-set to this build's
+payload values to guarantee they match, read straight from the payload file into the Vercel
+CLI, never logged.
+
+Redeployed (`dpl_7vrz8cW6nrnDgH6KfgLTWgyZ9zj5`); verified
+`https://joe-dougher-masonry-contractor.vercel.app` is public (200, non-login final URL,
+real `<title>`).
+
+**Branded preview host still not reachable.** `joe-dougher-masonry-contractor.mylocalads-preview.co`
+remains attached to the project (confirmed via `GET /v9/projects/{id}/domains`), but a direct
+HTTPS probe fails TLS handshake (`SSL_ERROR_SYSCALL`) — same registrar-side DNSSEC DNSKEY gap
+noted in the prior batch, unresolved since then and not caused by this edit. `stagingUrl`
+reported as the `.vercel.app` alias. No domain change — payload `domain` was `null`.
+
+Screenshot capture not attempted (no site-audit step in a site-edit job).
