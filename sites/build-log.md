@@ -20,6 +20,43 @@
 | AmeriStar Maids | ameristar-maids | 25 | https://ameristar-maids.vercel.app | 2026-08-03 |
 | Patriot Metal Products | patriot-metal-products | 24 | https://patriot-metal-products.vercel.app | 2026-08-03 |
 | Golden Business Machines | golden-business-machines | 24 | https://golden-business-machines.vercel.app | 2026-08-03 |
+| Joe Dougher Masonry Contractor | joe-dougher-masonry-contractor | 20 + /book (SSR) | https://joe-dougher-masonry-contractor.vercel.app | 2026-08-19 |
+
+## Joe Dougher Masonry Contractor — `joe-dougher-masonry-contractor` — 2026-08-19
+
+Template: **owl**. Full 9-step pipeline, `--auto`, unattended queue build (build ID
+`7bf169d2-56a9-4a5b-b1d5-f47f69409fa1`). Live: https://joe-dougher-masonry-contractor.vercel.app
+
+### Business
+
+Family-owned masonry & concrete contractor, Scranton PA (NEPA), in business since 1999,
+35+ years in the trade, licensed PA HIC #PA088400, insured, 4.9★/31 Google reviews. No
+public street address (service-area business) — city/state taken from the client's own
+marketing copy. Services: Concrete & Pavers, Retaining Walls, Stone/Brick/Stucco,
+Fireplaces & Chimneys. Areas: Scranton, Clarks Summit, Dunmore.
+
+### Notes for the next operator
+
+- **No reliable client brand colors/fonts.** masonryplus.net is a legacy GoDaddy
+  "Website Builder" (Starfield) site — its only color signal is ad-hoc inline WYSIWYG
+  text colors, not a real brand system. `design_reference.json` adopts the owl
+  template's own shipped default palette (warm stone/olive/gold) verbatim rather than
+  inventing one — see that file's `brand_source` note.
+- **Screenshot capture failed again** — same missing `libatk-1.0.so.0` system library
+  as prior builds on this runner (see agc-concrete's entry above). `audit_results.json`
+  substitutes a full HTML/CSS-based visual assessment instead of a rendered screenshot;
+  non-blocking per site-audit's own error handling.
+- **No Reddit coverage for this market.** 9 searches (city-level, subreddit-level,
+  state-level, and general category) returned zero Reddit threads — Scranton/NEPA
+  masonry is too small a market to be indexed. `local_research.json` documents this and
+  synthesizes pain points from general contractor-hiring guidance cross-checked against
+  the client's own real data instead.
+- Content was scraped via direct `curl` rather than Firecrawl — the client site is
+  plain server-rendered HTML with no JS rendering needed, so this avoided an
+  unnecessary paid Firecrawl call for identical results.
+- `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET` / `LEAD_WEBHOOK_AUTH_HEADER` set on the
+  Vercel project (production target) from the payload's `leadWebhook` object before the
+  final deploy, so `/api/estimate` posts leads to the MLA portal.
 
 ## Golden Business Machines — `golden-business-machines` — 2026-08-03
 

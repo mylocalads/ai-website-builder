@@ -1,0 +1,39 @@
+{
+  "slug": "joe-dougher-masonry-contractor",
+  "category": "Masonry / Concrete Contractor",
+  "location": "Scranton, PA (NEPA)",
+  "threads_analyzed": 0,
+  "pain_points": [
+    "Contractors who can't prove they're actually licensed and insured, or get evasive when asked for proof",
+    "Vague, undetailed bids that later balloon with change orders and hidden fees",
+    "Contractors who disappear mid-job or take large upfront cash payments with no contract",
+    "Concrete work that cracks or fails within a year or two because corners were cut on subbase prep or reinforcement",
+    "No local references or a real track record — just a phone number and a truck"
+  ],
+  "what_customers_value": [
+    "Verifiable licensing and insurance stated up front, not just claimed",
+    "A real, long-standing local track record rather than a fly-by-night operation",
+    "Detailed, fair pricing with no surprise costs",
+    "Word-of-mouth trust — people ask neighbors and family before hiring",
+    "Craftsmanship that's built to last through harsh winters, not just look good on install day"
+  ],
+  "business_differentiators": [
+    "Licensed (PA HIC #PA088400) and insured — stated directly on the client's own site, addresses the #1 verification concern",
+    "35+ years in the masonry trade, family-owned since 1999 — a real long-standing local track record, not a new operation",
+    "4.9 rating across 31 Google reviews — strong, verifiable word-of-mouth trust signal",
+    "8 real named client testimonials specifically praise reliability, fair pricing, and craftsmanship (e.g. Kimberly Klocko-Kramer: 'Clean, quality work at a fair price'; Roy Harrity: multiple repairs over 10 years with fair, well-executed proposals)",
+    "Concrete FAQ content on the client's own site explains real technique (control joints, rebar/wire mesh, subgrade compaction, sealing) — shows technical credibility beyond a generic sales pitch"
+  ],
+  "copy_angles": [
+    "Lead the hero with '35+ Years, Licensed & Insured' — directly answers the #1 verification concern before a visitor has to ask",
+    "Feature the 4.9-star / 31-review trust badge prominently near the top of the page, not buried in a testimonials section",
+    "Use real client quotes about fair pricing and reliability (Kimberly Klocko-Kramer, Craig Hendrix) as social proof next to the estimate CTA — counters the 'hidden fees' and 'no-show' fears directly",
+    "Turn the client's own concrete FAQ content (crack prevention, reinforcement, sealing) into an on-page FAQ section — demonstrates real expertise rather than generic contractor copy",
+    "Emphasize 'family owned and operated since 1999' and Joe's personal trade history (apprenticed at 12, 8 years in Bricklayers Union Local 5) to differentiate from anonymous crews"
+  ],
+  "_notes": {
+    "reddit_coverage": "No Reddit threads were found for this category/market after 9 searches: the 4 standard queries (site:reddit.com \"{category} in {city}\" / recommendations / best / avoid) for both \"masonry contractor\" and \"concrete contractor\" in Scranton, plus broadened queries at the r/scranton subreddit level, the Pennsylvania state level, and general category-only queries (contractor red flags, hiring tips, driveway complaints). Scranton/NEPA is too small a market to have indexed Reddit discussion for this trade.",
+    "synthesis_source": "pain_points and what_customers_value are synthesized from general, well-established contractor-hiring guidance that surfaced repeatedly across the broadened searches (licensing/insurance verification, upfront-cash red flags, vague bids, cracking concrete from cut corners) rather than from Reddit threads directly. Every differentiator and copy angle is cross-checked against this business's own real data (business_profile.json rating/license, intake-scraped.json testimonials and FAQ content) — nothing is fabricated.",
+    "generated_at": "2026-08-19"
+  }
+}

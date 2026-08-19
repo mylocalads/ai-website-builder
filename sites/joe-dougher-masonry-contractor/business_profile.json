@@ -1,0 +1,32 @@
+{
+  "slug": "joe-dougher-masonry-contractor",
+  "business_name": "Joe Dougher Masonry Contractor",
+  "legal_name": null,
+  "owner": "Joe Dougher",
+  "category": "Masonry contractor",
+  "categories": ["Masonry contractor", "Concrete contractor", "Retaining wall supplier", "Waterproofing service"],
+  "phone": "+15708153864",
+  "phone_display": "(570) 815-3864",
+  "email": "joedougher@ymail.com",
+  "address": {
+    "street": null,
+    "city": "Scranton",
+    "state": "PA",
+    "postal": null,
+    "country": "US"
+  },
+  "geo": { "lat": 41.4170145, "lng": -75.660381 },
+  "hours": null,
+  "rating": 4.9,
+  "review_count": 31,
+  "website_url": "http://masonryplus.net/",
+  "license": "PA088400",
+  "place_id": "ChIJ58mLTCfZxIkRlO6W2vb1FEE",
+  "_notes": {
+    "apify_gbp_lookup": "RAN — lukaskrivka~google-maps-with-contact-details, run jhLZT6xZSYUq2mk5a, 1 result for \"Joe Dougher Masonry\" near Scranton, PA.",
+    "no_public_address": "GBP returned address: null / city: null / state: null — this is a service-area business (no storefront). city/state above are taken from the client's own site copy (\"Scranton/Clarks Summit/Dunmore, PA and surrounding NEPA areas\"), not from a street address.",
+    "hours_not_asserted": "GBP returned 'Open 24 hours' for every day, which is a residential-contractor default rather than real posted hours — not adopted. hours is left null; the generated site should not display a 24/7 claim.",
+    "reviews_not_returned": "Apify returned reviewsCount: 31 / totalScore: 4.9 but an empty reviews[] array (this actor variant did not include review text in this run). Rating/review_count are used as a trust badge; testimonial TEXT for the site comes from the client's own /testimonials.html page instead (6 named, real reviews).",
+    "generated_at": "2026-08-19"
+  }
+}

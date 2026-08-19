@@ -1,0 +1,19 @@
+{
+  "kind": "pricing",
+  "intro": "We don't publish flat prices for concrete or masonry work, because the honest number depends on the size of the job, the finish you want, and what's actually underneath the surface. What we do is come out, look at the job, and give you a fair, written estimate before anything starts — free of charge. If a job is done right, we'd rather you hear about it from a neighbor than from an ad.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What Actually Drives The Price",
+    "lede": "These are the things that change the number on a real estimate, which is why an honest quote takes a look at the job rather than a figure over the phone.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      ["Concrete driveways, sidewalks & patios", "Square footage, subbase prep, and whether you want a plain flat finish, a decorative stamped pattern, or a color/stain treatment."],
+      ["Paver installation", "Area, layout complexity, and the paver material chosen."],
+      ["Retaining walls", "Wall height and length, whether it's structural/load-bearing or a decorative planter wall, and site access."],
+      ["Stone, brick & stucco veneer", "Square footage covered, material (stone, brick, or stucco), and whether it's a full exterior, an accent wall, or chimney/basement parging."],
+      ["Fireplaces & chimneys", "Scope of the build — a full custom fireplace is a different job from a chimney repair or parging."]
+    ],
+    "footnote": "Every estimate is written and explained before work begins — no surprises on the invoice."
+  },
+  "notes": "Free estimates for residential masonry and concrete work across Scranton, Clarks Summit, Dunmore and the surrounding NEPA area. Call or text (570) 815-3864."
+}

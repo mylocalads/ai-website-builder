@@ -1,0 +1,34 @@
+{
+  "slug": "joe-dougher-masonry-contractor",
+  "url": "http://masonryplus.net",
+  "screenshot": null,
+  "captured_at": "2026-08-19",
+  "purpose": "OPERATOR REFERENCE ONLY — never design DNA. The owl template is the sole source of layout and structure.",
+  "screenshot_error": "Playwright Chromium could not launch on this runner: chrome-headless-shell is missing a system shared library (libatk-1.0.so.0) and no full Chromium/system Chrome build is installed. No sudo/apt access available in this unattended session to install it. The site itself loaded fine over HTTP — this is a local tooling gap, not a site outage. Assessment below is derived from the raw HTML/CSS instead of a rendered screenshot.",
+  "stack": "Static server-rendered HTML from GoDaddy \"Website Builder\" (Starfield/wsb), not a modern framework. Every element is absolutely positioned with inline pixel coordinates (`position:absolute; top:...px; left:...px`), which is the classic GoDaddy drag-and-drop builder output.",
+  "assessment": "A circa-2015-era GoDaddy Website Builder site: fixed pixel-position layout, decorative script webfonts, and a dead 'View on Mobile' link — content is genuinely strong (35+ years, licensed, real reviews) but presentation reads as dated and not mobile-responsive.",
+  "strengths": [
+    "Strong real content: 35+ years experience, license number stated (PA088400), clear service breakdown across 4 categories",
+    "8 real, specific named client testimonials with genuine detail (not generic 5-star filler)",
+    "Genuine technical FAQ content about concrete (control joints, rebar, sealing) — shows real expertise",
+    "Clear phone number and email presented prominently in the header"
+  ],
+  "weaknesses": [
+    "No responsive/mobile layout: everything is absolutely positioned with hardcoded pixel coordinates typical of GoDaddy's legacy \"Website Builder\" (not its newer editor), and no <meta name=\"viewport\"> tag was found",
+    "'View on Mobile' link is dead — onclick=\"return false;\" — a leftover control that does nothing",
+    "No HTTPS on the primary domain (http://masonryplus.net); browsers will flag it as Not Secure",
+    "Decorative cursive/handwriting webfonts (Allura, Arizonia, Amatic SC) loaded alongside plain body text — inconsistent typographic system typical of a builder's default font library rather than an intentional brand choice",
+    "No schema.org / JSON-LD structured data found — invisible to AI answer engines and weak for local SEO",
+    "No dedicated service-area pages — service area is only mentioned as a text string in the header/footer",
+    "Native HTML contact form only, no CRM/lead-routing integration detected",
+    "Copyright footer still reads \"1999\" with no recent update, reinforcing a dated first impression"
+  ],
+  "anti_patterns_observed": [
+    "Absolute pixel-position layout instead of responsive flow",
+    "Decorative script fonts used inconsistently across headings",
+    "Dead/non-functional \"View on Mobile\" control",
+    "No structured data / JSON-LD"
+  ],
+  "overall": "Strong candidate for redesign — genuinely good, expert content trapped in a non-responsive 2015-era GoDaddy builder site with no HTTPS and no structured data.",
+  "_notes": "Screenshot capture failed due to a missing system library on this build runner, not a site problem. Assessment is based on live HTML/CSS fetched directly from masonryplus.net. Does not block the pipeline — informational only, per site-audit skill's own error-handling guidance."
+}

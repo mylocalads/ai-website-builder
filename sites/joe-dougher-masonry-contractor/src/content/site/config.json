@@ -1,0 +1,131 @@
+{
+  "kind": "config",
+  "business_name": "Joe Dougher Masonry Contractor",
+  "tagline": "Clean, Quality Work at a Fair Price",
+  "phone": "+15708153864",
+  "phone_display": "(570) 815-3864",
+  "email": "joedougher@ymail.com",
+  "address": {
+    "city": "Scranton",
+    "state": "PA",
+    "country": "US"
+  },
+  "geo": {
+    "lat": 41.4170145,
+    "lng": -75.660381
+  },
+  "site_url": "https://joe-dougher-masonry-contractor.vercel.app",
+  "rating": 4.9,
+  "review_count": 31,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 35,
+  "social": {},
+  "default_hero_photo": "https://nebula.wsimg.com/ae698155b0c594a171ac8834230598d1?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+  "about_photo": "https://nebula.wsimg.com/9f8d32c4d780a60c0a0a3e4023044bbc?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Licensed (PA HIC #PA088400) and insured",
+      "description": "A registered Pennsylvania home improvement contractor, not an unlicensed crew working out of a truck — ask and Joe will show you the number."
+    },
+    {
+      "title": "35+ years in the masonry trade",
+      "description": "Joe started in masonry at 12 years old and has been doing it professionally ever since — through the Bricklayers Union and now on his own."
+    },
+    {
+      "title": "4.9 stars across 31 Google reviews",
+      "description": "Real clients across Scranton, Clarks Summit and Dunmore, praising reliability, fair pricing and craftsmanship."
+    },
+    {
+      "title": "Family owned and operated since 1999",
+      "description": "No subcontracted crews and no franchise markup — Joe and his team do the work and stand behind it."
+    }
+  ],
+  "financing": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM"
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Brick masonry patio & foundation veneer",
+      "location": "Scranton, PA",
+      "photo": "https://nebula.wsimg.com/ae698155b0c594a171ac8834230598d1?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+      "alt": "Brick masonry veneer and paver patio on a home addition"
+    },
+    {
+      "title": "Segmental retaining wall cap detail",
+      "photo": "https://nebula.wsimg.com/9f8d32c4d780a60c0a0a3e4023044bbc?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+      "alt": "Close-up of a segmental block retaining wall cap"
+    },
+    {
+      "title": "Stamped concrete driveway",
+      "photo": "https://nebula.wsimg.com/1770d430704ca12f1363e3e606649dac?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+      "alt": "Textured stamped concrete driveway"
+    },
+    {
+      "title": "Segmental block retaining wall",
+      "photo": "https://nebula.wsimg.com/c4697726084a80c01e9d983188c96f62?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+      "alt": "Segmental block retaining wall along a residential backyard"
+    },
+    {
+      "title": "Stone veneer porch column",
+      "photo": "https://nebula.wsimg.com/d766c4364a476b6982d77d8e72b76876?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+      "alt": "Stone veneer porch column with white railing"
+    },
+    {
+      "title": "Stacked stone fireplace",
+      "photo": "https://nebula.wsimg.com/72eee2fcbae5ea601ba7b24921dbd07d?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+      "alt": "Stacked stone fireplace with wood mantel"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Masonry Built",
+    "heading_rest": "To Last Through NEPA Winters",
+    "subtitle": "Concrete, pavers, retaining walls, stone and brick veneer, and fireplace masonry for Scranton, Clarks Summit, Dunmore and the surrounding NEPA area."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate",
+    "services": [
+      "Concrete Driveways & Sidewalks",
+      "Paver Patios & Walkways",
+      "Retaining Walls",
+      "Stone, Brick & Stucco Veneer",
+      "Fireplaces & Chimneys",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Need a masonry or concrete quote?",
+    "body": "Free estimates on concrete, pavers, retaining walls, and stone or brick work across Scranton, Clarks Summit, Dunmore and the surrounding NEPA area. Call (570) 815-3864 or send us the details and we'll come take a look before we put a number on it.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Masonry & Concrete Advice For NEPA Homeowners",
+    "description": "Straight answers about concrete, masonry and retaining walls in Northeastern Pennsylvania — cracking, freeze-thaw, sealing, and what actually drives a quote."
+  }
+}

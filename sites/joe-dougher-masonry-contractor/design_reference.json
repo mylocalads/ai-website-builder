@@ -1,0 +1,47 @@
+{
+  "slug": "joe-dougher-masonry-contractor",
+  "template": "owl",
+  "vertical": "concrete",
+  "generated_at": "2026-08-19",
+  "sources": {
+    "mode": "library",
+    "library": "concrete",
+    "urls": ["ai-website-builder/astro-templates/owl/"]
+  },
+  "structure_source": "astro-templates/owl/ (role: primary) — fixed section order: hero -> promise-bar -> services-grid -> testimonials -> promise-band -> signature-system -> process-steps -> about -> seo-body -> faq -> blog-cards -> closing-cta -> footer. Native EstimateForm lead capture (posts to /api/estimate), which is why owl is used on this unattended queue build — no operator is present to paste a GHL form snippet.",
+  "brand_source": "intake-scraped.json → brand.fonts / brand.colors are both null. The client's live site (masonryplus.net) is a legacy GoDaddy Website Builder page whose only color signal is ad-hoc inline WYSIWYG text colors (#FF0000, #A52A2A, #00FFFF) and a font library of dozens of preloaded Google Fonts, neither of which reads as an intentional brand system — see intake-scraped.json _notes.warnings. agcconcrete.com (the vertical's secondary reference) was not re-scraped for this run: its direction is 'earth-tone palette, real photography', which the owl template's own shipped default already matches, so with no client override signal the template default is adopted verbatim rather than inventing a palette with no source to trace it to.",
+  "palette": {
+    "bg": "#f7f5f0",
+    "surface": "#ffffff",
+    "text": "#1a1c17",
+    "muted": "#5c5f56",
+    "primary": "#3f4531",
+    "on_primary": "#ffffff",
+    "accent": "#c8973f",
+    "on_accent": "#1a1c17",
+    "accent_ink": "#8a6420",
+    "accent_on_dark": "#dcb264",
+    "focus": "#0057ff",
+    "_notes": "Template shipped default, unmodified — already contrast-verified in astro-templates/owl/src/styles/tokens.css and its README (accent_ink 4.91:1/5.35:1 on bg/surface, accent_on_dark 5.03:1 on primary, on_primary 8.06:1+ on primary). Warm stone/olive/gold reads as a natural fit for a masonry & concrete trade with no conflicting client brand to override it."
+  },
+  "typography": {
+    "display": "Montserrat",
+    "body": "Inter",
+    "_notes": "Template default — no client font signal to override it with (see brand_source)."
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents",
+    "generic construction stock photo (handshake, diverse team in hardhats)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP (use the real 4.9 / 31 reviews instead)",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed owl order from the template",
+    "absolutely-positioned pixel layout / non-responsive design (client-specific: the exact failure mode of the site being replaced, see audit_results.json)",
+    "decorative cursive/script webfonts (client-specific: the mismatched font-library noise on the site being replaced)"
+  ]
+}

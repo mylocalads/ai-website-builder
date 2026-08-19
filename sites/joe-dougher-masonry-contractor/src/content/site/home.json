@@ -1,0 +1,207 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Scranton, PA",
+    "headline": "Masonry & Concrete Built To Last Through NEPA Winters",
+    "subheadline": "Concrete, pavers, retaining walls, stone and brick veneer, and custom fireplaces — licensed, insured, and family-owned in Scranton, Clarks Summit and Dunmore for over 35 years.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "https://nebula.wsimg.com/ae698155b0c594a171ac8834230598d1?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+    "video_link_text": "See our work",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "Provided a timely estimate and performed the required work when scheduled. Polite, personable and exceptional work! Clean, quality work at a fair price!!!",
+      "author": "Kimberly Klocko-Kramer — Google Review",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 31
+    }
+  },
+  "promise_bar": [
+    { "text": "35+ years experience", "icon": "award" },
+    { "text": "Licensed (PA088400) & insured", "icon": "shield" },
+    { "text": "Free estimates", "icon": "clipboard" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "Clean, Quality Work At A Fair Price",
+    "body": "That is not a slogan we picked — it is what our own clients keep telling other people. Joe prices every job in writing before work starts, does it himself rather than handing it off to a subcontracted crew, and stands behind it after he's gone. If a job is done right, a client tells one or two people. If it's done wrong, they tell ten — we would rather earn the first kind of word of mouth.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Masonry Specified For Northeastern Pennsylvania Winters",
+    "intro": "Concrete and masonry in NEPA fail for a specific reason: freeze-thaw cycling. Water gets into a crack, freezes, expands, and the crack gets worse every winter until the whole surface fails. Everything we build is done with that in mind, not just to look good on install day.",
+    "blocks": [
+      {
+        "title": "Built to control cracking, not just hide it",
+        "body": "A solid, compacted subbase, wire mesh or rebar, minimal water in the mix, and properly spaced control joints — sized at roughly a third of the concrete's depth and spaced at three times its thickness — let the material shrink and flex where we want it to instead of cracking at random.",
+        "icon": "shield"
+      },
+      {
+        "title": "Family craftsmanship, not a subcontracted crew",
+        "body": "Joe started in masonry at 12 years old, apprenticing with his stepfather, then spent 8 years in the Bricklayers Union Local 5 before going out on his own in 1999. He and his crew do the work — nothing gets handed off to a subcontractor.",
+        "icon": "hammer"
+      },
+      {
+        "title": "Sealed and finished to actually last",
+        "body": "Sealing protects concrete from salt, acid, water and UV damage and helps prevent the staining and surface wear that most acids and de-icing salts cause over a Pennsylvania winter.",
+        "icon": "document"
+      }
+    ],
+    "steps_title": "What Clients Say Sets Us Apart",
+    "steps_icon": "broom",
+    "steps": [
+      {
+        "title": "A fair estimate, explained upfront",
+        "body": "Free estimates with a fair price, explained before any work starts — it's the single thing clients mention most in their reviews."
+      },
+      {
+        "title": "Respect for your property",
+        "body": "Clients describe the crew as neat, organized, respectful and honest on the job, not just afterward in the finished result."
+      },
+      {
+        "title": "A finished job worth the wait",
+        "body": "\"Outstanding craftsmanship\" and work \"done right\" — jobs are torn down and redone if a detail is off, rather than left to pass inspection."
+      }
+    ]
+  },
+  "process_steps": {
+    "headline": "How A Masonry Project Runs",
+    "steps": [
+      { "label": "Step One", "title": "Free estimate", "icon": "clipboard", "body": "Call or text (570) 815-3864 and Joe comes out to look at the job and give you a fair, written price." },
+      { "label": "Step Two", "title": "Scope confirmed", "icon": "document", "body": "Materials, finish, and timeline get confirmed before any work starts — no surprises on the invoice." },
+      { "label": "Step Three", "title": "The work gets done", "icon": "hammer", "body": "Joe and his crew do the job themselves, built to hold up through NEPA freeze-thaw winters." },
+      { "label": "Step Four", "title": "A finished job you're proud of", "icon": "home", "body": "No job too big or small — done clean, done right, at a fair price." }
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Joe Dougher Masonry",
+    "headline": "35+ Years In The Masonry Trade, Family Owned Since 1999",
+    "body": "Joe Dougher Masonry Contractor is a family owned and operated masonry and concrete business serving Scranton, Clarks Summit, Dunmore and the surrounding NEPA area. Joe started in the trade at 12 years old, helping his stepfather Dave of Dave Jones Masonry, working summers and weekends through school. After graduation he worked with Jim Brunt Masonry, then Hudack Masonry Waterproofing, then spent 8 years in the Bricklayers Union Local 5 before going out on his own. Joe is a licensed (PA HIC #PA088400) and insured home improvement contractor with 35+ years in the field.",
+    "checklist": [
+      "PA Home Improvement Contractor #PA088400, licensed and insured",
+      "Family owned and operated since 1999",
+      "Joe and his crew do the work — nothing subcontracted out",
+      "Concrete, pavers, retaining walls, stone/brick/stucco and fireplaces",
+      "4.9 stars across 31 Google reviews"
+    ],
+    "photo": "https://nebula.wsimg.com/9f8d32c4d780a60c0a0a3e4023044bbc?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+    "photo_alt": "Segmental retaining wall cap detail by Joe Dougher Masonry",
+    "photo_cutout": false,
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why Homeowners Choose Us",
+    "headline": "Masonry & Concrete Contractor In Scranton & Clarks Summit",
+    "paragraphs": [
+      "Northeastern Pennsylvania is hard on concrete and masonry in a specific way: freeze-thaw cycling. Water works into any crack or joint, freezes, expands, and comes back the next winter to make it worse. A solid compacted subbase, correctly spaced control joints, wire mesh or rebar reinforcement, and sealing against water, salt and UV are what actually keep concrete and masonry sound through years of that cycle — not just at install.",
+      "We handle concrete driveways, sidewalks and patios, paver installations, structural and decorative retaining walls, stone, brick and stucco veneer, and custom fireplace and chimney masonry. Joe and his crew do the work themselves, priced fairly and explained in writing before anything starts.",
+      "If you're weighing a repair against a full replacement, or just want an honest read on what a project should cost, get us out to look. Estimates are free, and we'll tell you what we actually find."
+    ],
+    "checklist": [
+      "Concrete driveways, sidewalks, patios & decorative/stamped concrete",
+      "Paver installation",
+      "Structural & decorative retaining walls",
+      "Stone, brick & stucco veneer, including chimney and basement parging",
+      "Custom fireplace & chimney masonry"
+    ],
+    "image": "https://nebula.wsimg.com/d766c4364a476b6982d77d8e72b76876?AccessKeyId=A401A07A5CFCC0690B27&disposition=0&alloworigin=1",
+    "image_alt": "Stone veneer porch column with white railing",
+    "image_position": "left",
+    "review": {
+      "name": "Mark J. Cicerini",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "OUTSTANDING craftsmanship!! Neat, organized, respectful, dedicated, honest, detailed pride, hardworking and committed in exceeding the home owners expectations. Joe Dougher & his crew are a must hire for your masonry needs."
+    },
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "David Ward",
+      "location": "Google Review",
+      "text": "Joe and his team does fantastic work!! Very reliable.",
+      "rating": 5
+    },
+    {
+      "name": "Kimberly Klocko-Kramer",
+      "location": "Google Review",
+      "text": "Provided a timely estimate and performed the required work when scheduled. Polite, personable and exceptional work! Highly recommend!!!! Clean, quality work at a fair price!!!",
+      "rating": 5
+    },
+    {
+      "name": "Kristin Yeager",
+      "location": "Google Review",
+      "text": "We hired Joe to do the stone work on our fireplace. It was a big job but was completed in a very timely fashion. Extremely reliable, efficient and his level of professionalism is second to none. Our fireplace is absolutely gorgeous! Thank you Joe!!!",
+      "rating": 5
+    },
+    {
+      "name": "Glenn Lesh",
+      "location": "Google Review",
+      "text": "Joe and his crew from start to finish went above and beyond in everything they did here. Fantastic job! Highly recommend for your masonry work.",
+      "rating": 5
+    },
+    {
+      "name": "Mark J. Cicerini",
+      "location": "Google Review",
+      "text": "OUTSTANDING craftsmanship!! Neat, organized, respectful, dedicated, honest, detailed pride, hardworking and committed in exceeding the home owners expectations. Joe Dougher & his crew are a must hire for your masonry needs.",
+      "rating": 5
+    },
+    {
+      "name": "Liza Cheyenne Egloff",
+      "location": "Google Review",
+      "text": "We hired Joe Dougher to replace our crumbling sidewalks. After several years of searching for a good and affordable company to do the job, Joe came through for us. He was fast, efficient and we couldn't be happier with the outcome. Our sidewalks are beautiful!",
+      "rating": 5
+    },
+    {
+      "name": "Craig Hendrix",
+      "location": "Google Review",
+      "text": "Hired Joe to complete my patio/driveway project. Did a terrific job, looks better than I even imagined. Fair price and works tirelessly to get the job done and done right! Highly recommend and will reach out for future projects.",
+      "rating": 5
+    },
+    {
+      "name": "Patsy Williams Bell",
+      "location": "Google Review",
+      "text": "I hired Joe to replace crumbling steps leading to our garage, parking pads where we had only dirt enough for 4 cars, he also installed beautiful fencing. This added not only to the value of our home but made the walkways safer to walk on. He is a professional.",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How fast can I get an estimate?",
+      "a": "Call or text (570) 815-3864. Joe comes out, looks at the job, and gives you a fair price up front — that's the thing clients mention most in their reviews."
+    },
+    {
+      "q": "Can I get a color, stain, or pattern in the concrete?",
+      "a": "Yes — flat or textured finishes, stamped patterns, and custom color or stain options are all available. Ask about your own vision for the space."
+    },
+    {
+      "q": "How do you prevent concrete from cracking?",
+      "a": "Concrete does crack, but it's controlled with a solid compacted subbase, wire mesh or rebar, minimal water in the mix, and properly spaced control joints so the material shrinks and flexes where it's supposed to instead of cracking at random."
+    },
+    {
+      "q": "How do you care for concrete after it's installed?",
+      "a": "Concrete is durable and low-maintenance, but sealing protects it against salt, acid, water and UV damage — the things that actually deteriorate it over a Pennsylvania winter."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "Yes. Joe Dougher Masonry Contractor is a registered Pennsylvania Home Improvement Contractor, HIC #PA088400, and carries insurance."
+    },
+    {
+      "q": "Which areas do you serve?",
+      "a": "Scranton, Clarks Summit, Dunmore and the surrounding NEPA area."
+    },
+    {
+      "q": "Will the concrete be perfectly smooth?",
+      "a": "Concrete is not a manufactured product, so minor imperfections are normal — many clients are actually drawn to decorative concrete for that character."
+    }
+  ]
+}
