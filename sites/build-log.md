@@ -20,7 +20,7 @@
 | AmeriStar Maids | ameristar-maids | 25 | https://ameristar-maids.vercel.app | 2026-08-03 |
 | Patriot Metal Products | patriot-metal-products | 24 | https://patriot-metal-products.vercel.app | 2026-08-03 |
 | Golden Business Machines | golden-business-machines | 24 | https://golden-business-machines.vercel.app | 2026-08-03 |
-| Joe Dougher Masonry Contractor | joe-dougher-masonry-contractor | 20 + /book (SSR) | https://joe-dougher-masonry-contractor.vercel.app | 2026-08-19 |
+| Joe Dougher Masonry Contractor | joe-dougher-masonry-contractor | 21 + /book (SSR) | https://joe-dougher-masonry-contractor.vercel.app | 2026-08-19 |
 
 ## Joe Dougher Masonry Contractor — `joe-dougher-masonry-contractor` — 2026-08-19
 
@@ -4911,3 +4911,41 @@ variable, never printed.
 
 Screenshot capture again failed in this environment (same missing `libatk-1.0.so.0` as the
 prior build) — `screenshotPath` reported as `null`.
+
+## Joe Dougher Masonry Contractor — site-edit — 2026-08-19 (build `079b5ff8-c88d-4e95-b1f4-b5c3e5d69c33`)
+
+Unattended queue edit job. Instructions: "Add Old Forge as a new service area. Create a
+dedicated page for Old Forge following the same structure as the current Scranton page."
+
+Added `src/content/service_areas/old-forge-pa.md` (order 4, Lackawanna County, PA) using
+the shared service-area frontmatter schema and the same voice as the existing Dunmore /
+Clarks Summit pages. Did not invent specific Old Forge neighborhood names (Scranton's
+`neighborhoods` list is real, sourced data — Old Forge has none on file, so the field was
+left unset rather than fabricated). Reused an existing, previously-unused gallery photo
+(stone veneer porch column) for `hero_photo` / `landmark_photo` rather than inventing a URL.
+Snapshotted before/after to
+`sites/joe-dougher-masonry-contractor/.site-edit-history/2026-08-19T20:43:46Z-72ad25/`.
+
+`astro sync` and `npm run build` both passed (owl template). `/service-area/old-forge-pa`
+built; confirmed it appears in `dist/client/llms.txt` with no `undefined`. Area count is now
+4 of the 6-area `AREA_LIMIT`.
+
+Re-set `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET` / `LEAD_WEBHOOK_AUTH_HEADER` on the Vercel
+project (`prj_MmnjXUP0svhHVgn75tuX0rf3GmR0`, production) from this build's payload before the
+final deploy, per this build's task instructions. Value extracted from the payload file
+straight into the Vercel CLI via a Python subprocess piping stdin — never logged here or
+elsewhere.
+
+Redeployed (`dpl_D6LZkz2Ybh2aGzL2co931wZD4eXi`); verified `https://joe-dougher-masonry-contractor.vercel.app`
+is public (200, non-login final URL, real `<title>`) and serves the new Old Forge page.
+
+**Branded preview host NOT attached this run.** `vercel alias set … joe-dougher-masonry-contractor.mylocalads-preview.co`
+failed twice with a Let's Encrypt DNS-01 error: `DNSSEC: DNSKEY Missing` while validating
+`_acme-challenge.mylocalads-preview.co`, even though nameservers correctly show
+`ns1/ns2.vercel-dns.com`. This points at a stale DS record still published for
+`mylocalads-preview.co` at the registrar (Squarespace) that doesn't match a DNSSEC-signing
+zone at Vercel — a registrar-side fix (remove the DS record), not something fixable via the
+Vercel CLI. Not caused by this edit. `stagingUrl` reported as the `.vercel.app` alias
+instead. No domain change — payload `domain` was `null`.
+
+Screenshot capture not attempted (no site-audit step in a site-edit job).

@@ -1,0 +1,28 @@
+{
+  "batch_id": "2026-08-19T20:43:46Z-72ad25",
+  "mode": "edit",
+  "slug": "joe-dougher-masonry-contractor",
+  "operator_request": "Add Old Forge as a new service area. Create a dedicated page for Old Forge following the same structure as the current Scranton page.",
+  "diff_spec": [
+    {
+      "op": "CREATE",
+      "path": "src/content/service_areas/old-forge-pa.md",
+      "note": "new service-area page, order 4, fields matching existing service-area page structure"
+    }
+  ],
+  "files_touched": [
+    "src/content/service_areas/old-forge-pa.md"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_D6LZkz2Ybh2aGzL2co931wZD4eXi",
+    "url": "https://joe-dougher-masonry-contractor-846u1y2kj-mylocalads-projects.vercel.app",
+    "canonical_url": "https://joe-dougher-masonry-contractor.vercel.app",
+    "at": "2026-08-19T20:47:00Z",
+    "note": "Branded preview host joe-dougher-masonry-contractor.mylocalads-preview.co alias attach failed: registrar-side DNSSEC (DNSKEY missing) blocks ACME cert issuance for the mylocalads-preview.co zone. Not caused by this edit; needs DS record removal at the registrar (Squarespace)."
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}
