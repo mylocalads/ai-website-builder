@@ -131,7 +131,7 @@ counter is a reassurance, not an audit trail.
 
 You are an autonomous website builder agent. Your job is to take a business name or website URL, research the business from multiple angles, scaffold an Astro project per client from a shared template, and deploy it live to Vercel.
 
-## The 9 Skills
+## The 10 Skills
 
 | Skill | Trigger | What It Does | Cost |
 |-------|---------|-------------|------|
@@ -144,9 +144,21 @@ You are an autonomous website builder agent. Your job is to take a business name
 | `site-generate` | `/site-generate` | Scaffolds an Astro project per client from the shared template — populated with content collections, tokens, GHL widget snippets, and code-injection blocks | Free |
 | `vercel-deploy` | `/vercel-deploy` | Builds the Astro project locally, deploys to Vercel, optionally attaches a custom domain, and redeploys with the final canonicals | Free |
 | `short-link` | `/short-link` | Creates a disappearing link via Short.io with custom domain | Free |
+| `harvest-media` | `/harvest-media` | Picks up to 15 marketing-worthy images out of `intake-scraped.json` — logo, completed work, before/after, testimonials, team, owner — and uploads them into the client's portal Files page. Also serves `job: generate` requests, making one image from a prompt via Higgsfield. | **Free when `intake-scraped.json` already exists.** Only pays (~$0.20–0.35) if it has to run `intake-from-web` first |
 
 Full skill details: `.agent/skills/{skill-name}/SKILL.md`
 Full workflow: `.agent/workflows/website-builder.md`
+
+**`harvest-media` IS NOT PART OF THE BUILD PIPELINE.** It is not step 10 and it
+does not run after `short-link`. It is driven by the customer portal: a queue row
+appears in `image_harvests` (at approval, or when a client asks the assistant for
+an image), n8n's **MLA — Image Harvest Runner** claims it, and this skill does
+the work and posts the result back. Running it inside a build would scrape a
+business the build is already scraping.
+
+Its whole reason for existing is that `intake-from-web` ALREADY finds these
+images and then throws them away. If you are changing what that skill writes into
+`intake-scraped.json`, read `harvest-media` too — it reads those exact keys.
 
 ## Running the Pipeline
 
@@ -194,9 +206,17 @@ For multiple businesses, process each sequentially through the full pipeline wit
 - `/find-business` — ~$0.004 per lookup (5 places at $4/1,000). Before running, tell the user: "I'm about to search Google Maps for [business], which will cost approximately $0.004. OK to proceed?"
 - `/scrape-content` — Free when using Playwright. If Firecrawl fallback is triggered, warn the user: "Playwright didn't capture enough content. Firecrawl may have usage costs depending on your plan. OK to try Firecrawl?" Wait for approval.
 - `/design-reference` — ~$0.02 per reference URL (Firecrawl). Confirm the reference set with the user before scraping.
+- `/harvest-media` — **Free when `sites/{slug}/intake-scraped.json` already exists**, which is the normal case: it reuses the scrape the build already paid for. With no cache it needs `/intake-from-web` first, at that skill's ~$0.20–0.35. A `job: generate` request spends Higgsfield credits for one image.
 - All other skills — Free
 
 **Never run a paid action without stating the cost first.** If debugging requires re-running a paid step, explain why and ask again.
+
+**UNATTENDED RUNS CANNOT ASK, SO THEY MUST NOT SPEND.** `harvest-media` is
+normally driven by n8n with no operator watching, and "wait for approval" has no
+meaning there. So the rule becomes: with no cached scrape, an unattended run
+reports the cost and completes as failed rather than paying. The harvest stays
+recoverable — build the site, or run the skill attended — and nobody wakes up to
+a bill for a scrape they did not ask for.
 
 ### Reusing Previous Runs
 
