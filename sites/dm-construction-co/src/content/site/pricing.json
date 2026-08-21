@@ -1,0 +1,48 @@
+{
+  "kind": "pricing",
+  "intro": "Every construction project is different, so we do not publish flat prices we would have to walk back once we see your space. Instead we give you a free, no-obligation estimate after an on-site consultation \u2014 a real number based on your actual scope, materials and timeline. What follows is an honest look at what drives the cost of a project, so you know what we are pricing before we quote it. Financing is available through Acorn Finance if you would rather spread the cost out.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What drives the cost of your project",
+    "lede": "These are the variables we walk through with you during the consultation, before any number is quoted.",
+    "columns": [
+      "Type of work",
+      "What the quote depends on"
+    ],
+    "rows": [
+      [
+        "Kitchen & bathroom remodeling",
+        "Size of the space, cabinetry and countertop selections, whether plumbing or electrical is being moved, tile and fixture grade."
+      ],
+      [
+        "Whole home remodel",
+        "Square footage, how much is structural, how many rooms are in scope, and whether systems (electrical, plumbing, HVAC) are being updated."
+      ],
+      [
+        "Design & build",
+        "Complexity of the design, whether renderings and permit drawings are needed, and the length of the build phase."
+      ],
+      [
+        "Outdoor living spaces",
+        "Footprint, roof or screen structure, whether an outdoor kitchen is included, and site and drainage conditions."
+      ],
+      [
+        "Feature fireplace walls",
+        "Wall size, material selection (tile, stone, millwork), fireplace unit, and any lighting or electrical work."
+      ],
+      [
+        "Doors & windows",
+        "Number of openings, impact rating, frame material, and whether openings are being resized."
+      ],
+      [
+        "Commercial tenant buildouts",
+        "Square footage, code and accessibility requirements, mechanical and electrical scope, and landlord requirements."
+      ],
+      [
+        "Drywall, paint, flooring, siding & stucco",
+        "Area covered, condition of the existing surface, material grade, and prep or repair work required."
+      ]
+    ],
+    "footnote": "All work is backed by our 1-year workmanship warranty. Estimates are free and there is no obligation."
+  }
+}

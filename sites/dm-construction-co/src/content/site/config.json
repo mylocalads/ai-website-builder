@@ -1,0 +1,202 @@
+{
+  "kind": "config",
+  "business_name": "DM Construction Services",
+  "tagline": "Design. Build. Transform.",
+  "phone": "+12394707193",
+  "phone_display": "(239) 470-7193",
+  "email": "dmconstruction239@gmail.com",
+  "address": {
+    "street": "3515 Del Prado Blvd S #105B",
+    "city": "Cape Coral",
+    "state": "FL",
+    "postal": "33904",
+    "country": "US"
+  },
+  "hours": {
+    "monday": "9:00 AM - 5:00 PM",
+    "tuesday": "9:00 AM - 5:00 PM",
+    "wednesday": "9:00 AM - 5:00 PM",
+    "thursday": "9:00 AM - 5:00 PM",
+    "friday": "9:00 AM - 5:00 PM"
+  },
+  "site_url": "https://dm-construction-co.vercel.app",
+  "rating": 5.0,
+  "review_count": 54,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "logo_url": "/img/logo.webp",
+  "default_hero_photo": "/img/default.webp",
+  "about_photo": "/img/about.webp",
+  "team_members": [],
+  "social": {
+    "facebook": "https://www.facebook.com/dmconstructionsvc/"
+  },
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Florida Certified General Contractor",
+      "description": "License CGC1535031. Fully licensed and insured for both residential and commercial work across Southwest Florida."
+    },
+    {
+      "title": "One Team, Concept To Completion",
+      "description": "Our design-build approach keeps designers and builders under one roof, so there is no finger-pointing and no surprise change orders."
+    },
+    {
+      "title": "1-Year Workmanship Warranty",
+      "description": "Every service we perform is backed by a full one-year workmanship warranty, in writing."
+    },
+    {
+      "title": "500+ Projects Completed",
+      "description": "A top 3% rated contractor in Florida, with a 5.0 star rating across 54 customer reviews."
+    }
+  ],
+  "financing": {
+    "enabled": true,
+    "headline": "Competitive Financing Options",
+    "description": "We understand that upgrading your home or office is a significant investment, which is why we offer financing through Acorn Finance. Acorn Finance is a lending marketplace where premier online consumer lenders pre-qualify customers for personalized loan options in about 60 seconds, with no impact to your credit score. An initial soft credit inquiry gives you access to competitive, fixed-rate loans through a fast online process.",
+    "cta_text": "See Your Financing Options",
+    "cta_href": "https://your.acornfinance.com/calculator-cv-0005?d=JBT-22NX5mGjb9DP&mndSuffix=jbt&subPurpose=General+Contractor&loanAmount=24778&cname=DM+Construction+Services+CGC+1535031&utm_content=JBT-22NkGxVajrq7&utm_medium=JBT-22NX5mGjb9DP&utm_source=DM+Construction+Services+CGC+1535031&utm_term=www-to-your-dmsg"
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-01.webp",
+      "alt": "Tiled walk-in shower with pebble-stone floor, glass enclosure and a custom vanity by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-02.webp",
+      "alt": "Navy and white bathroom with subway tile, soaking tub and patterned floor tile by DM Construction Services"
+    },
+    {
+      "title": "Exterior Renovation",
+      "location": "Southwest Florida",
+      "photo": "/img/project-03.webp",
+      "alt": "Two-storey Southwest Florida home with new siding, windows and poolside entry doors by DM Construction Services"
+    },
+    {
+      "title": "Kitchen Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-04.webp",
+      "alt": "Contemporary kitchen with flat-panel cabinetry, waterfall island and integrated appliances by DM Construction Services"
+    },
+    {
+      "title": "Kitchen & Living Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-06.webp",
+      "alt": "Open-plan kitchen with dark island and hardwood floors, opening onto the living room by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-08.webp",
+      "alt": "Compact modern bathroom with matte-black fixtures and a glass walk-in shower by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-11.jpg",
+      "alt": "Marble-look tiled shower with sliding glass doors and a backlit mirror by DM Construction Services"
+    },
+    {
+      "title": "Kitchen Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-12.webp",
+      "alt": "Farmhouse kitchen with butcher-block island, white cabinetry and a reclaimed barn door by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-14.webp",
+      "alt": "Marble-look shower surround with pebble floor and sliding glass enclosure by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-15.webp",
+      "alt": "Renovated bathroom with quartz-top vanity, round mirror and walk-in shower by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-16.webp",
+      "alt": "Marble bathroom with twin vessel sinks, walk-in shower and heated towel rail by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-17.webp",
+      "alt": "Compact bathroom with built-in storage, walk-in shower and integrated laundry by DM Construction Services"
+    },
+    {
+      "title": "Kitchen Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-21.webp",
+      "alt": "Kitchen with marble waterfall island, dark cabinetry and polished stone floor by DM Construction Services"
+    },
+    {
+      "title": "Kitchen Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-22.webp",
+      "alt": "White shaker kitchen with a dark X-detail island and black range hood by DM Construction Services"
+    },
+    {
+      "title": "Bathroom Remodel",
+      "location": "Southwest Florida",
+      "photo": "/img/project-23.webp",
+      "alt": "Marble and penny-tile bathroom with backlit round mirror and wall-hung fixtures by DM Construction Services"
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Specialties",
+    "heading_lead": "Luxury",
+    "heading_rest": "design & build services",
+    "subtitle": "Expert craftsmanship in every project, from concept to completion."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate",
+    "services": [
+      "Kitchen & Bathroom Remodeling",
+      "Whole Home Remodel",
+      "Design & Build",
+      "Outdoor Living Space",
+      "Feature Fireplace Wall",
+      "Doors & Windows",
+      "Commercial Tenant Buildout",
+      "Drywall, Paint or Flooring",
+      "Other"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Let's kickstart your construction project together",
+    "body": "Our experts are ready to get your construction project completed. DM Construction Services is a Florida Certified General Contractor (CGC1535031) serving Cape Coral, Fort Myers, Naples and the rest of Southwest Florida, with a 1-year workmanship warranty on every job.",
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Remodeling & Construction Advice",
+    "description": "Practical guidance on remodeling, design-build and construction in Southwest Florida from DM Construction Services."
+  }
+}

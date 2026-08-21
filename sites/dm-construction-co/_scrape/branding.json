@@ -1,0 +1,170 @@
+{
+  "branding": {
+    "colorScheme": "light",
+    "fonts": [
+      {
+        "family": "Inter",
+        "role": "body"
+      },
+      {
+        "family": "Archivo",
+        "role": "heading"
+      },
+      {
+        "family": "Times New Roman",
+        "role": "unknown"
+      }
+    ],
+    "colors": {
+      "primary": "#0C9F9C",
+      "secondary": "#0000EE",
+      "accent": "#0C9F9C",
+      "background": "#FFFFFF",
+      "textPrimary": "#333333",
+      "link": "#009F9B"
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": "Inter",
+        "heading": "Archivo"
+      },
+      "fontStacks": {
+        "heading": [
+          "Archivo"
+        ],
+        "body": [
+          "Times New Roman"
+        ],
+        "paragraph": [
+          "Archivo"
+        ]
+      },
+      "fontSizes": {
+        "h1": "60px",
+        "h2": "40px",
+        "body": "35px"
+      }
+    },
+    "spacing": {
+      "baseUnit": 4,
+      "borderRadius": "8px"
+    },
+    "components": {
+      "buttonPrimary": {
+        "background": "#0C9F9C",
+        "textColor": "#FFFFFF",
+        "borderRadius": "0px",
+        "borderRadiusCorners": {
+          "topLeft": "0px",
+          "topRight": "0px",
+          "bottomRight": "0px",
+          "bottomLeft": "0px"
+        },
+        "shadow": "none"
+      },
+      "buttonSecondary": {
+        "background": "#333333",
+        "textColor": "#000000",
+        "borderRadius": "0px",
+        "borderRadiusCorners": {
+          "topLeft": "0px",
+          "topRight": "0px",
+          "bottomRight": "0px",
+          "bottomLeft": "0px"
+        },
+        "shadow": "none"
+      }
+    },
+    "images": {
+      "logo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/z3EkWHCfxj0adESFsfwp/media/665498a34215bcfe1820f7a8.png",
+      "favicon": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/z3EkWHCfxj0adESFsfwp/media/665498a34215bcfe1820f7a8.png",
+      "ogImage": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/666c67abbe9f762545d39fb9.png",
+      "logoHref": "https://dmconstructionco.com",
+      "logoAlt": "Brand Logo"
+    },
+    "__llm_logo_reasoning": {
+      "selectedIndex": 14,
+      "reasoning": "Selected #14 because it is visible, located in the header, links to the homepage, and matches the brand name 'DM Construction Services'.",
+      "confidence": 0.9,
+      "source": "llm"
+    },
+    "__llm_button_reasoning": {
+      "primary": {
+        "index": 11,
+        "text": "Ready to Transform Your Space",
+        "reasoning": "Button #8 has a vibrant green background (#0C9F9C), which is the brand color, and the text 'Ready to Transform Your Space' is action-oriented, making it the primary CTA."
+      },
+      "secondary": {
+        "index": 3,
+        "text": "Learn More",
+        "reasoning": "Button #0 has a neutral background color (#333333) and the text 'Learn More', which is less prominent and suitable for a secondary action."
+      },
+      "confidence": 0.95
+    },
+    "personality": {
+      "tone": "professional",
+      "energy": "medium",
+      "targetAudience": "homeowners and businesses seeking construction services"
+    },
+    "designSystem": {
+      "framework": "custom",
+      "componentLibrary": ""
+    },
+    "confidence": {
+      "buttons": 0.95,
+      "colors": 0.9,
+      "overall": 0.925
+    },
+    "__llm_metadata": {
+      "logoSelection": {
+        "llmCalled": true,
+        "llmSucceeded": true,
+        "finalSource": "llm",
+        "rawLogoSelection": {
+          "selectedLogoIndex": 14,
+          "selectedLogoReasoning": "Selected #14 because it is visible, located in the header, links to the homepage, and matches the brand name 'DM Construction Services'.",
+          "confidence": 0.9
+        }
+      },
+      "buttonClassification": {
+        "llmCalled": true,
+        "llmSucceeded": true
+      }
+    },
+    "brandName": "DM Construction Services",
+    "logo": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/z3EkWHCfxj0adESFsfwp/media/665498a34215bcfe1820f7a8.png"
+  },
+  "metadata": {
+    "ogDescription": "DM construction solutions in Florida and surrounding areas. Call +1 239-631-3543 to get your estimate today!",
+    "ogImage": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/666c67abbe9f762545d39fb9.png",
+    "keywords": "construction services",
+    "viewport": [
+      "width=device-width, initial-scale=1",
+      "width=device-width, initial-scale=1"
+    ],
+    "image": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/666c67abbe9f762545d39fb9.png",
+    "og:image": "https://assets.cdn.filesafe.space/HAFfXMpiLRzX1mJeWK5g/media/666c67abbe9f762545d39fb9.png",
+    "og:type": "website",
+    "og:description": "DM construction solutions in Florida and surrounding areas. Call +1 239-631-3543 to get your estimate today!",
+    "author": "DM Construction Services",
+    "og:title": "DM Construction Services",
+    "og:author": "DM Construction Services",
+    "ogTitle": "DM Construction Services",
+    "title": "DM Construction Services",
+    "language": "en",
+    "description": "DM construction solutions in Florida and surrounding areas. Call +1 239-631-3543 to get your estimate today!, Embedded customer reviews widget",
+    "twitter:type": "website",
+    "og:keywords": "construction services",
+    "favicon": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/z3EkWHCfxj0adESFsfwp/media/665498a34215bcfe1820f7a8.png",
+    "scrapeId": "01a00faf-8ea0-7242-ae25-1d55140ace25",
+    "sourceURL": "https://dmconstructionco.com",
+    "url": "https://dmconstructionco.com/",
+    "statusCode": 200,
+    "contentType": "text/html; charset=utf-8",
+    "timezone": "America/New_York",
+    "proxyUsed": "basic",
+    "indexId": "737362da-4240-46fd-ac6c-ead07b4fd7c9",
+    "creditsUsed": 1,
+    "concurrencyLimited": false
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Cape Coral, FL",
+    "headline": "Design. Build. Transform.",
+    "subheadline": "The #1 choice for residential and commercial construction in Southwest Florida \u2014 kitchen and bathroom remodels, whole-home renovations, outdoor living spaces and commercial buildouts, done right by a local team.",
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book",
+    "photo": "/img/default.webp",
+    "trust_badges": [
+      {
+        "mark": "google",
+        "rating": 5.0,
+        "label": "5.0 stars",
+        "sublabel": "54 Google reviews"
+      },
+      {
+        "label": "500+ projects completed",
+        "sublabel": "Across Southwest Florida"
+      },
+      {
+        "label": "CGC1535031",
+        "sublabel": "FL Certified General Contractor"
+      }
+    ]
+  },
+  "promise_bar": [
+    "500+ projects completed",
+    "Top 3% rated contractor in FL",
+    "1-year workmanship warranty",
+    "Licensed & insured \u2014 CGC1535031"
+  ],
+  "promise_band": {
+    "eyebrow": "Why DM Construction",
+    "headline": "One team owns your project from concept to completion",
+    "body": "Traditional remodeling splits responsibility between a designer and a contractor. Our design-build approach brings them together under one roof \u2014 which means no finger-pointing, no miscommunication, and no surprise change orders. Real-time budget feedback keeps your project on track from day one.",
+    "cta_text": "See how we work",
+    "cta_href": "/about"
+  },
+  "process_steps": {
+    "headline": "Our simple, seamless process",
+    "steps": [
+      {
+        "label": "1",
+        "title": "Consultation",
+        "body": "We meet at your home to understand your vision, lifestyle, and budget."
+      },
+      {
+        "label": "2",
+        "title": "Design",
+        "body": "Our designers create a custom plan with material selections tailored to your taste."
+      },
+      {
+        "label": "3",
+        "title": "Build",
+        "body": "Expert craftsmen execute the plan, with clear timelines and transparent communication throughout."
+      },
+      {
+        "label": "4",
+        "title": "Love it",
+        "body": "A final walkthrough makes sure every detail is right. Backed by our 1-year workmanship warranty."
+      }
+    ],
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Us",
+    "headline": "Southwest Florida's design-build specialists",
+    "body": "DM Construction Services is a Florida Certified General Contractor based in Cape Coral, serving homeowners and businesses across Southwest Florida. We handle kitchen and bathroom remodels, whole-home renovations, outdoor living spaces, feature fireplace walls, doors and windows, and commercial tenant buildouts \u2014 managing every detail from first consultation to final walkthrough.",
+    "checklist": [
+      "Florida Certified General Contractor \u2014 CGC1535031",
+      "Residential and commercial work",
+      "In-house renderings and trusted design partners",
+      "1-year workmanship warranty on all services",
+      "Financing available through Acorn Finance"
+    ],
+    "photo": "/img/about.webp",
+    "photo_alt": "DM Construction Services team at work in Southwest Florida",
+    "cta_text": "More about us",
+    "cta_href": "/about"
+  },
+  "seo_body": {
+    "eyebrow": "Serving Southwest Florida",
+    "headline": "General contracting in Cape Coral, Fort Myers, Naples and beyond",
+    "paragraphs": [
+      "DM Construction Services understands the importance of a well-maintained and beautiful home. With years of experience, our team of skilled professionals is dedicated to delivering exceptional craftsmanship and top-quality materials for every project.",
+      "Our comprehensive range of services includes kitchen remodeling, bathroom remodeling, painting, door and window installation, siding installation, trim installation, flooring installation, and drywall repair and installation.",
+      "Our commitment to customer satisfaction and attention to detail sets us apart, ensuring we complete your project on time and within budget. Contact us today for a consultation and experience the difference firsthand."
+    ],
+    "image": "/img/whole-home-remodel.webp",
+    "image_alt": "Whole home remodel completed by DM Construction Services in Southwest Florida",
+    "image_position": "right",
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "Teri Hankel",
+      "text": "We had our bathroom remodeled to better accommodate my tall husband with major back issues and DM Construction came to the rescue. David was fantastic at helping us design a beautiful bathroom and stay within our ideal budget. Daniel is an artist with his mad tiling skills and Patrick was a pleasure to work with keeping us up to date of what was happening each day. We are definitely using DM Construction Services again for our other projects.",
+      "rating": 5
+    },
+    {
+      "name": "Dianna long",
+      "text": "A special thanks to Steve from DM Construction to help with a repair. When I explained that this was a rush job due to insurance company demands, he was on it. He got my repairs done within a week. Steve communicated with me every step of the way. I appreciate what he and his team did all of this & from out of state. Huge thanks to him & this company. I cannot recommend them enough. In these days it\u2019s hard to find a good company for repairs let alone staff that provided helpful communications away kind & considerate. Thank you Steve.",
+      "rating": 5
+    },
+    {
+      "name": "Allison Hyde",
+      "text": "We had the opportunity to review the bathroom design drawings from this company, and we were really impressed. The renderings were clear, detailed, and made it easy to visualize what the finished space could look like. They created a design that felt both functional and stylish. The attention to detail in the plans gave us confidence in their design process. Based on our experience with the drawings alone, we\u2019d definitely recommend them for anyone looking for thoughtful bathroom design. Stephen is an absolute pleasure to deal with!",
+      "rating": 5
+    },
+    {
+      "name": "Peter D",
+      "text": "With sizeable repairs required to the kitchen, bathroom and bedroom of our Cape Coral home, I contacted three local companies for estumates.From the outset, I was impressed with David\u2019s approach to assessing the job and the work required etc. The detailed estimate from DM gave me the confidence to choose them, which turned out to be a very good decision.The work was carried out, on schedule as possible, but most importantly completed to a very high standard.Martial\u2019s work - drywall including application of texture and the wood trim is excellent. Mario supervised the work as if it was his personal property.There is always apprehension when you need a fair amount of work done in your home, but with DM Construction there was none.I am very pleased with their work - they delivered what they promised. I recommend them highly.",
+      "rating": 5
+    },
+    {
+      "name": "Marvet Davis",
+      "text": "I highly recommend DM construction, they provided an excellent experience from start to finish. Steve and team was professional, dependable, and committed to delivering high quality work. Steve has been the first hand communicator, and he did incredibly well at the job. His professionalism, attention and quick response make the entire process smooth, The overall communication was clear and deadline was met throughout the project. We have used them twice already and will use them in the future. We are very please with the result and would confidently recommend DM construction. Thank you everyone, Dave, Steve, Cody and the entire team. Job description: A concrete pad under each beam , (to strength the footer), siding, trim, soffit and gutters.",
+      "rating": 5
+    },
+    {
+      "name": "Tyler Young",
+      "text": "The team at DM Construction Services was fantastic to work with from start to finish. They are incredibly kind, professional, and genuinely care about the quality of their work. I would highly recommend them to anyone in SWFL.",
+      "rating": 5
+    },
+    {
+      "name": "Rich Johnson",
+      "text": "DM construction is the best. From start to finish, David , Steven and crew go above and beyond to make sure everything is done right. Very professional team with quality products. No question I would recommend them and plan on more projects with DM construction in the future.Rich and Stephanie Johnson",
+      "rating": 5
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Why is DM Construction Services the best choice for my project?",
+      "a": "Choosing DM Construction Services for your general contracting needs in Southwest Florida ensures a seamless, high-quality construction experience. With extensive local expertise, a skilled and dedicated team, and a comprehensive range of services, we prioritize your vision and satisfaction. Our commitment to using top-quality materials, staying on schedule and within budget, and employing sustainable practices guarantees exceptional results. Trust DM Construction Services to turn your project into a reality."
+    },
+    {
+      "q": "Do you do commercial and residential work?",
+      "a": "Yes, we provide both commercial and residential services. Whether you're looking to enhance your business premises or make improvements to your home, our team is equipped and experienced to handle projects of any scale. When choosing a commercial development site, it's crucial to evaluate factors such as accessibility, zoning regulations, market demand, and infrastructure. Conducting a thorough analysis of these aspects will help ensure the site aligns with your project goals and contributes to its long-term success. Contact us for more details on how we can meet your specific needs."
+    },
+    {
+      "q": "What materials do you use for your projects?",
+      "a": "We use only the best materials, renowned for their superior quality and durability. These materials come with a comprehensive warranty, ensuring long-lasting performance and giving you peace of mind. We guarantee that your project is completed with top-tier materials that stand the test of time."
+    },
+    {
+      "q": "What warranties do you offer?",
+      "a": "DM Construction Services offers a 1-year workmanship warranty on all our services."
+    },
+    {
+      "q": "How long do your projects take?",
+      "a": "The duration of a renovation project can vary depending on factors such as the size of your house, the extent of the work needed, and weather conditions. We strive to complete projects efficiently while maintaining high-quality standards. During your initial consultation, we can provide an estimate of the timeline specific to your project."
+    },
+    {
+      "q": "Do you have financing options available?",
+      "a": "Yes, we do! Our finance partner is Acorn Finance. They offer a range of flexible financing solutions tailored to meet your needs. For more details on how you can take advantage of these financing options, please contact our customer service team."
+    },
+    {
+      "q": "What types of lending options does Acorn Finance offer?",
+      "a": "PERSONAL LOANS: A personal loan is a financial product that allows a customer to borrow money now, and pay it back over time by making fixed monthly payments. Personal loans have fixed rates of interest and typically have terms ranging from 2 to 12 years. They also may be unsecured (no collateral) or secured (collateral required) depending on the specifics of the offer. PERSONAL LINE OF CREDIT: A line of credit is a financial product that customers can borrow from at any time based on a preset limit. As long as the customer's account is open and their credit remains in good standing, they can borrow up to the maximum amount and pay interest only on the amount you actually borrow. As it is paid off over time, that credit may once again become available for the customer to borrow from."
+    },
+    {
+      "q": "How much can you borrow with Acorn Finance?",
+      "a": "Acorn Finance's network of lenders extends loans from $2,000 up to $100,000 for qualified consumers."
+    },
+    {
+      "q": "How long does the loan approval process take?",
+      "a": "Qualified applicants can be approved quickly during business hours and may receive their funds as soon as within 1 business day."
+    }
+  ]
+}
