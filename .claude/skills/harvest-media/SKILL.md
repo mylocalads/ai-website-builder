@@ -258,7 +258,8 @@ storage becomes a broken thumbnail.
 Off by default and **not required for a working harvest.**
 
 Scraped images are often small, compressed, or a logo on a white rectangle. When
-`HIGGSFIELD_API_KEY` is set in `.env`, an image may be improved between step 6
+`HIGGSFIELD_API_KEY_ID` and `HIGGSFIELD_API_KEY_SECRET` are set in `.env`, an
+image may be improved between step 6
 and step 7:
 
 - **Logo** → background removal, so it can sit on any colour
