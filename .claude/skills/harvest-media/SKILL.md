@@ -139,15 +139,34 @@ them and still has to be hidden by hand.
    Both credentials are already in `.env` and therefore in your environment. The
    header really is one value: `Key <id>:<secret>`, colon-separated.
 
-   The response carries `request_id`, `status` (`queued` at first) and a
-   `status_url`. **Poll `status_url` with the same Authorization header** until
-   the status stops being queued or in-progress, then take the image URL out of
-   the finished payload and download it.
+   Submit returns:
 
-   Known responses, verified against the live API:
+   ```json
+   { "request_id": "466c9bad-…", "status": "queued",
+     "status_url": "https://platform.higgsfield.ai/requests/466c9bad-…/status" }
+   ```
+
+   **Poll `status_url` with the same Authorization header.** Status goes
+   `queued` → `in_progress` → `completed`. A whole generation took about
+   **18 seconds**, so poll every few seconds; do not sleep a minute between
+   checks and do not give up before a couple of minutes.
+
+   The finished payload puts the image at **`.images[0].url`**:
+
+   ```json
+   { "status": "completed", "request_id": "466c9bad-…",
+     "images": [ { "url": "https://d3u0tzju9qaucj.cloudfront.net/…/….png" } ] }
+   ```
+
+   Download that URL to a local file, then go to Step 5. **Download it, do not
+   pass the URL through** — Higgsfield keeps output for about seven days, and a
+   file in the client's archive has to outlive that.
+
+   Known responses, all verified against the live API:
 
    | HTTP | Body | What it means |
    |---|---|---|
+   | 200 | `{request_id, status, status_url}` | accepted; poll it |
    | 422 | `{"detail":[{"loc":["body","prompt"],...}]}` | your request body is wrong |
    | 403 | `{"detail":"not_enough_credits"}` | the account is out of API credits |
 
