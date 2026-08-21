@@ -1,0 +1,97 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Phoenix, AZ",
+    "headline": "Licensed Concrete Contractors Serving the Phoenix Area",
+    "subheadline": "Driveways, stamped patios, retaining walls, pavers, and sidewalks — done right by a licensed, insured, and bonded local crew.",
+    "cta_text": "Get Your Free Estimate!",
+    "cta_href": "/book",
+    "photo": "https://cdn.b12.io/client_media/bM2oDFSS/77e0d106-e96d-11ef-b19c-0242ac110002-jpeg-hero_image.jpeg"
+  },
+  "promise_bar": [
+    "Licensed, insured & bonded",
+    "5:00am-6:00pm, Mon-Sat",
+    "Five concrete specialties"
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "Licensed, Insured, and Bonded — Every Job",
+    "body": "Concrete work is a big investment, and it should come with real protection. Every project we take on, residential or commercial, is backed by proper licensing, insurance, and bonding. Ask to see proof before we ever break ground.",
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "signature_system": {
+    "eyebrow": "How We Work",
+    "headline": "Concrete Scheduled Around the Phoenix Heat",
+    "intro": "A pour that goes down at noon in July cures differently than one that goes down at dawn. We schedule around that.",
+    "blocks": [
+      {
+        "title": "Early starts, six days a week",
+        "body": "We're on site as early as 5:00am, Monday through Saturday, so forming and pouring happen before the day's heat sets in."
+      },
+      {
+        "title": "Five dedicated concrete specialties",
+        "body": "Driveways, stamped patios, retaining walls, pavers, and sidewalks each get their own approach — not one generic 'concrete work' quote for every job."
+      },
+      {
+        "title": "Licensed, insured, and bonded",
+        "body": "Residential and commercial clients both get the same protection: proper licensing, insurance, and bonding on every project."
+      }
+    ]
+  },
+  "process_steps": {
+    "headline": "How a Concrete Project Runs",
+    "steps": [
+      { "label": "Step One", "title": "Get in touch", "body": "Tell us what you're planning — driveway, patio, wall, pavers, or sidewalk — and we'll set up a time to take a look." },
+      { "label": "Step Two", "title": "Site prep & forming", "body": "We prepare the ground and set forms to the agreed design before any concrete is mixed." },
+      { "label": "Step Three", "title": "Pour & finish", "body": "Concrete is poured and finished early in the day, timed to beat the heat and cure properly." },
+      { "label": "Step Four", "title": "Cure & walkthrough", "body": "We let the work cure properly and walk the finished project with you before we call it done." }
+    ],
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Tena's Concrete LLC",
+    "headline": "Your Trusted Concrete Partner in the Phoenix Area",
+    "body": "Tena's Concrete LLC delivers high-quality concrete services across the Phoenix area, specializing in driveways, sidewalks, stamped patios, retaining walls, and paver installation for both residential and commercial clients. Our team is licensed, insured, and bonded, so you know exactly who's working on your property.",
+    "checklist": [
+      "Licensed, insured, and bonded",
+      "Residential and commercial concrete work",
+      "On site as early as 5:00am, Monday through Saturday",
+      "Driveways, stamped patios, retaining walls, pavers & sidewalks"
+    ],
+    "photo": "https://cdn.b12.io/client_media/bM2oDFSS/a68e5df4-e821-11ef-915a-0242ac110002-jpg-hero_image.jpeg",
+    "photo_alt": "Completed concrete project by Tena's Concrete LLC",
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Concrete Contractors in the Phoenix Area",
+    "headline": "Driveways, Patios, and Sidewalks Built for Arizona Conditions",
+    "paragraphs": [
+      "Concrete in the Phoenix area has to deal with extremes most parts of the country never see — triple-digit summer heat that can flash-cure a pour before it's properly finished, and the seasonal ground movement that comes with it. We schedule our work around that reality, starting as early as 5:00am so forming and finishing happen before the worst of the day's heat.",
+      "Tena's Concrete LLC handles driveways, stamped patios, retaining walls, paver installation, and sidewalks for residential and commercial properties. Every job is backed by licensing, insurance, and bonding, whether it's a single backyard patio or a commercial sidewalk project."
+    ],
+    "checklist": [
+      "Driveways — new pours and replacements",
+      "Stamped patios in a range of patterns and finishes",
+      "Retaining walls for elevation changes and erosion control",
+      "Paver installation for driveways, walkways, and patios",
+      "Concrete sidewalks for residential and commercial properties"
+    ],
+    "image": "https://cdn.b12.io/client_media/bM2oDFSS/21e08498-e8a2-11ef-a5ca-0242ac110002-jpeg-hero_image.jpeg",
+    "image_alt": "Residential concrete driveway installed by Tena's Concrete LLC",
+    "image_position": "left",
+    "cta_text": "Get Your Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    { "q": "Are you licensed, insured, and bonded?", "a": "Yes. Every project we take on, residential or commercial, is backed by proper licensing, insurance, and bonding — just ask and we'll show you." },
+    { "q": "What areas do you serve?", "a": "We serve the greater Phoenix, AZ area." },
+    { "q": "What hours are you available?", "a": "We're on site as early as 5:00am and work through 6:00pm, Monday through Saturday." },
+    { "q": "What concrete services do you offer?", "a": "Driveways, stamped patios, retaining walls, paver installation, and sidewalks — for both residential and commercial properties." },
+    { "q": "Why do you start so early in the day?", "a": "Arizona heat affects how concrete cures. Starting as early as 5:00am lets us form and pour before the day's heat sets in, which matters for a durable finish." },
+    { "q": "Do you work on commercial projects, not just residential?", "a": "Yes — we've completed both residential driveways and commercial sidewalk projects." }
+  ]
+}

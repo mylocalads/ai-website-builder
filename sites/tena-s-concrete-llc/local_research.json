@@ -1,0 +1,33 @@
+{
+  "slug": "tena-s-concrete-llc",
+  "category": "Concrete contractor",
+  "location": "Phoenix / Tonopah, AZ",
+  "threads_analyzed": 0,
+  "search_note": "site:reddit.com searches (city-level, state-level, and broadened category-only queries) returned no indexable Reddit threads via WebSearch in this session — results were dominated by HomeAdvisor/Yelp/Angi directory pages instead of Reddit discussions. Broadened to general concrete-contractor homeowner pain points and satisfaction drivers, which are consistently documented across contractor-review sources and homeowner forums nationally, then cross-referenced against this business's real data.",
+  "pain_points": [
+    "Contractors going silent after collecting a deposit, sometimes for weeks, leaving a half-finished or unstarted project",
+    "Lowball bids that turn into change-order surprises once the crew is on site",
+    "No-shows or vague scheduling — homeowners left waiting without a firm start date",
+    "Unlicensed or uninsured crews leaving homeowners exposed if work fails or someone is injured",
+    "Rushed pours and poor finishing that crack or discolor within a year or two, especially in Arizona heat"
+  ],
+  "what_customers_value": [
+    "Clear, proactive communication — reaching out first, answering questions promptly",
+    "Doing what they said they'd do, on the timeline they quoted",
+    "Licensed, insured, and bonded crews with proof readily available",
+    "Attention to detail and a clean, well-finished jobsite when the crew leaves",
+    "Real before/after photos of completed local work rather than stock imagery"
+  ],
+  "business_differentiators": [
+    "Explicitly licensed, insured, and bonded on their own site copy — directly answers the biggest trust gap in this trade",
+    "Open 5:00am-6:00pm, six days a week (Mon-Sat) — early-start availability that matters for beating Arizona daytime heat during a pour",
+    "Real completed-project photography already exists for driveways, sidewalks, and stamped patios (residential and commercial) — not stock construction photos",
+    "Five concrete-specific service lines already defined (driveways, stamped patios, retaining walls, pavers, sidewalks) rather than a generic 'concrete work' catch-all, which reads as more specialized to a homeowner comparing bids"
+  ],
+  "copy_angles": [
+    "Lead with 'Licensed, insured, and bonded' in the hero or promise bar — the single biggest fear (getting burned by an unlicensed crew) this business already answers",
+    "Emphasize early-morning scheduling (5am starts) as a heat-smart advantage for Phoenix-area pours, not just a generic hours listing",
+    "Feature real project photos (driveway, sidewalk, stamped patio) prominently instead of generic stock imagery — this is a documented trust signal and the business already has usable photography",
+    "Use 'no disappearing after the deposit' / reliability framing sparingly in FAQ or process-steps copy, grounded in the business's own licensed/insured claim rather than as a direct dig at competitors"
+  ]
+}

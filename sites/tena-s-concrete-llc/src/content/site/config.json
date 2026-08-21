@@ -1,0 +1,78 @@
+{
+  "kind": "config",
+  "business_name": "Tena’s Concrete LLC",
+  "tagline": "Quality Concrete Solutions in the Phoenix Area",
+  "phone": "+14808034333",
+  "phone_display": "(480) 803-4333",
+  "email": "tenas.concrete@yahoo.com",
+  "address": {
+    "city": "Tonopah",
+    "state": "AZ",
+    "postal": "85354",
+    "country": "US"
+  },
+  "marketing_city": "Phoenix",
+  "marketing_state": "AZ",
+  "site_url": "https://tena-s-concrete-llc.vercel.app",
+  "licensed": true,
+  "insured": true,
+  "bonded": true,
+  "hours": {
+    "monday": "5:00am-6:00pm",
+    "tuesday": "5:00am-6:00pm",
+    "wednesday": "5:00am-6:00pm",
+    "thursday": "5:00am-6:00pm",
+    "friday": "5:00am-6:00pm",
+    "saturday": "5:00am-6:00pm"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/tenasconcretellc"
+  },
+  "default_hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/77e0d106-e96d-11ef-b19c-0242ac110002-jpeg-hero_image.jpeg",
+  "about_photo": "https://cdn.b12.io/client_media/bM2oDFSS/a68e5df4-e821-11ef-915a-0242ac110002-jpg-hero_image.jpeg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    { "title": "Licensed, insured, and bonded", "description": "Every job, residential or commercial, is backed by proper licensing, insurance, and bonding — ask us for proof before we start." },
+    { "title": "Early starts, six days a week", "description": "We're on site as early as 5:00am Monday through Saturday, timing pours to beat the Phoenix-area heat instead of fighting it." },
+    { "title": "Five concrete specialties, not a generic catch-all", "description": "Driveways, stamped patios, retaining walls, pavers, and sidewalks — each is a dedicated specialty, not an afterthought." },
+    { "title": "Real completed work, residential and commercial", "description": "From backyard patios to commercial sidewalk projects, our photos are our own finished jobs." }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": { "enabled": false, "us_label": "US", "them_label": "THEM", "rows": [] },
+  "gallery": [
+    { "title": "Residential driveway installation", "description": "A beautiful new driveway that enhances curb appeal and durability.", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/d541ade4-e96c-11ef-aa0e-0242ac110002-jpeg-hero_image.jpeg", "alt": "Newly installed residential concrete driveway" },
+    { "title": "Commercial sidewalk construction", "description": "A functional and attractive sidewalk for a busy retail center.", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/21eb3b0c-e8c2-11ef-88b8-0242ac110002-png-hero_image.png", "alt": "Commercial concrete sidewalk at a retail center" },
+    { "title": "Stamped patio creation", "description": "An outdoor oasis featuring a beautifully stamped patio.", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/8cc6a128-e8c2-11ef-9210-0242ac110002-jpeg-hero_image.jpeg", "alt": "Stamped concrete patio in a backyard" },
+    { "photo": "https://cdn.b12.io/client_media/bM2oDFSS/40095a28-e9c7-11ef-b213-0242ac110002-png-hero_image.png", "alt": "Completed concrete project by Tena's Concrete LLC" },
+    { "photo": "https://cdn.b12.io/client_media/bM2oDFSS/3f685b64-e9c7-11ef-ae9f-0242ac110002-jpeg-hero_image.jpeg", "alt": "Completed concrete project by Tena's Concrete LLC" },
+    { "photo": "https://cdn.b12.io/client_media/bM2oDFSS/3f67bc2c-e9c7-11ef-afed-0242ac110002-jpeg-hero_image.jpeg", "alt": "Completed concrete project by Tena's Concrete LLC" },
+    { "photo": "https://cdn.b12.io/client_media/bM2oDFSS/596faa18-eaa2-11ef-a3b3-0242ac110002-jpeg-hero_image.jpeg", "alt": "Completed concrete project by Tena's Concrete LLC" },
+    { "photo": "https://cdn.b12.io/client_media/bM2oDFSS/17409d30-e96e-11ef-ade8-0242ac110002-jpeg-hero_image.jpeg", "alt": "Completed concrete project by Tena's Concrete LLC" }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Concrete work",
+    "heading_rest": "built for the Phoenix heat",
+    "subtitle": "Driveways, stamped patios, retaining walls, pavers, and sidewalks — poured and finished by a licensed, insured, and bonded local crew."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate Today!",
+    "services": ["Driveways", "Stamped Patios", "Retaining Walls", "Pavers", "Sidewalks", "Something else"]
+  },
+  "closing_cta": {
+    "headline": "Ready to start your concrete project?",
+    "body": "We're licensed, insured, and bonded, and we're on site as early as 5:00am, Monday through Saturday. Tell us what you're planning and we'll come take a look.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Concrete Advice for Phoenix-Area Homeowners",
+    "description": "Straight answers about concrete work in the Phoenix heat — curing, cracking, and what actually holds up."
+  }
+}

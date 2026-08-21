@@ -1,0 +1,67 @@
+{
+  "slug": "tena-s-concrete-llc",
+  "template": "owl",
+  "vertical": "concrete",
+  "reference_urls": [
+    { "url": "ai-website-builder/astro-templates/owl/", "role": "primary", "used_for": "Section order and structure only, read from the local template directory — no re-scrape needed." }
+  ],
+  "sources": {
+    "mode": "library",
+    "library": "concrete",
+    "urls": [],
+    "note": "reference-libraries/concrete.json's secondary entry (agcconcrete.com) was NOT scraped — the Firecrawl MCP tool is unavailable in this session. The primary structural reference (local owl template) needed no network access, so section order/structure is unaffected. Brand colors and fonts below come directly from the client's own site CSS (curl-fetched raw HTML/CSS), not from the unreached secondary inspiration site."
+  },
+  "brand_source": "Client site stylesheet (https://tenas-concrete.b12sites.com/) — dominant button/section colors and font-family declarations, sampled via curl + regex (Playwright/Firecrawl both unavailable this session).",
+  "palette": {
+    "--color-bg": "#ffffff",
+    "--color-surface": "#f2f2f2",
+    "--color-text": "#101111",
+    "--color-muted": "#686A6E",
+    "--color-primary": "#046878",
+    "--color-on-primary": "#ffffff",
+    "--color-accent": "#0693a9",
+    "--color-on-accent": "#101111",
+    "--color-accent-ink": "#057687",
+    "--color-accent-on-dark": "#c1e4ea",
+    "--color-focus": "#0057ff"
+  },
+  "contrast_audit": {
+    "method": "WCAG 2.1 relative-luminance ratio, computed rather than eyeballed.",
+    "results": [
+      { "pair": "text #101111 on bg #ffffff", "ratio": 18.91, "verdict": "AA" },
+      { "pair": "text #101111 on surface #f2f2f2", "ratio": 16.89, "verdict": "AA" },
+      { "pair": "muted #686A6E on bg #ffffff", "ratio": 5.42, "verdict": "AA" },
+      { "pair": "white on accent fill #0693a9", "ratio": 3.65, "verdict": "FAIL — which is why --color-on-accent is the dark ink, not white" },
+      { "pair": "on-accent #101111 on accent fill #0693a9", "ratio": 5.18, "verdict": "AA" },
+      { "pair": "on-primary white on primary #046878", "ratio": 6.45, "verdict": "AA" },
+      { "pair": "accent-ink #057687 on bg #ffffff", "ratio": 5.32, "verdict": "AA" },
+      { "pair": "accent-ink #057687 on surface #f2f2f2", "ratio": 4.75, "verdict": "AA" },
+      { "pair": "accent-on-dark #c1e4ea on primary #046878", "ratio": 4.78, "verdict": "AA" }
+    ],
+    "note": "Client's raw accent teal #0693a9 fails white-on-fill (3.65:1) and fails outright as text on the dark primary band (1.77:1). Per the owl template's three-token accent split: --color-accent stays the raw teal as a FILL (paired with dark ink text), --color-accent-ink is a darkened teal (20% toward black) for use as text on light backgrounds, and --color-accent-on-dark is a lightened teal (75% toward white) for use as text on the dark --color-primary band."
+  },
+  "typography": {
+    "--font-display": "'Oswald', Georgia, serif",
+    "--font-body": "'Quattrocento', system-ui, sans-serif",
+    "rationale": "Both fonts are the client's own deliberate choices, confirmed in their site CSS: Oswald on all headings (h1-h5, uppercase, letter-spaced) and on the wordmark; Quattrocento on all body copy. Kept as-is per the brand-tokens-only extraction rule."
+  },
+  "spacing_motion": "Inherited unchanged from the owl template. No layout, spacing, or motion values were taken from the client's existing site.",
+  "anti_patterns_merged": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "purple / indigo / violet accents (unless explicitly requested)",
+    "generic construction stock photo (handshake, diverse team in hardhats)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" without a real number from GBP",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — always use the fixed order from the template",
+    "generic system fonts / thin starter-template feel from audit_results.json's client-site weaknesses"
+  ],
+  "imagery_policy": "Hero and gallery photography uses the client's own project photos (hotlinked from their existing cdn.b12.io media library — verified 200 OK) rather than stock photography. No logo image exists on the client's site (text wordmark only), so the generated site also renders a text wordmark; no logo_url is set.",
+  "_notes": {
+    "generated_at": "2026-08-21",
+    "cost_usd": 0.0,
+    "cost_note": "No Firecrawl scrape performed (tool unavailable this session, and the primary reference is a local directory read). All tokens sourced from a free curl fetch of the client's own homepage CSS."
+  }
+}

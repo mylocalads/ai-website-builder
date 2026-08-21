@@ -5088,3 +5088,55 @@ text-only. Rewritten as objects with `document` / `clock` / `clipboard` / `home`
 
 Worth remembering for the next build: a bare string in `promise_bar` is not an
 error, it just quietly drops the icon.
+
+## Tena's Concrete LLC — 2026-08-21
+
+| Business | Slug | Template | Pages | Vercel URL | Date |
+|---|---|---|---|---|---|
+| Tena’s Concrete LLC | `tena-s-concrete-llc` | owl | 18 static + /book, /api/estimate (SSR) | https://tena-s-concrete-llc.vercel.app | 2026-08-21 |
+
+Concrete contractor, Tonopah/Phoenix AZ. Queued build from the client portal (unattended,
+`--auto`). Source site `tenas-concrete.b12sites.com` (B12 builder).
+
+**Neither Firecrawl MCP nor a working headless browser was available in this sandbox.**
+`libatk-1.0.so.0` is missing from the runner and there is no root to install it, so both
+Playwright (`scripts/screenshot.js`, `scrape-content`'s script) and any browser-based
+scrape failed at launch. Worked around by fetching raw HTML directly with `curl` — the B12
+site turned out to be server-rendered, not a JS SPA, so this recovered full page text,
+services, hours, location, contact info, and CSS (fonts + colors) with zero data loss.
+`site-audit`'s screenshot could not be produced; `audit_results.json.screenshotPath` is
+`null` with the reason recorded (informational-only step, does not block the pipeline).
+Flag to the operator: this droplet needs `libatk1.0-0` (and friends) installed via
+`playwright install --with-deps chromium`, or every future build pays this same tax.
+
+**No Google Business Profile listing found.** `find-business` via Apify was tried three
+times (Tonopah AZ, Phoenix AZ, Buckeye AZ) — the third search scanned 150+ Maps result
+pages with zero matches before being aborted. `business_profile.json` is assembled from the
+client's own site instead (`gbp_lookup.found: false`, reason recorded). No rating, review
+count, or GBP reviews exist on the generated site as a result — `home.json.testimonials` is
+intentionally empty rather than fabricated.
+
+**No Reddit threads surfaced either.** `site:reddit.com` searches (city, state, and
+category-only) returned only HomeAdvisor/Yelp/Angi directory pages — no indexable Reddit
+content via WebSearch this session. `local_research.json` is built from generally-documented
+concrete-industry pain points (deposit ghosting, lowball-then-change-order, no-shows) cross-
+referenced against this business's real data (licensed/insured/bonded, 5am-6pm Mon-Sat
+hours), with the gap noted in `search_note`.
+
+**Brand tokens are the client's own**, pulled from their live stylesheet: display font
+Oswald, body font Quattrocento, accent teal `#0693a9` (buttons) / `#046878` (section
+backgrounds, used here as `--color-primary`). Client has no image logo — text wordmark only
+— so `logo_url` is left unset and the site renders the business name as a text wordmark.
+Full WCAG contrast audit (all pairs AA) is in `design_reference.json.contrast_audit`.
+
+**Lead webhook set on Vercel, not in the repo.** `LEAD_WEBHOOK_URL`, `LEAD_WEBHOOK_SECRET`,
+`LEAD_WEBHOOK_AUTH_HEADER` were set as Vercel project env vars from the portal payload's
+`leadWebhook` object per the build instructions — the secret itself is not recorded here or
+anywhere in this repo.
+
+**Five of five services populated, zero service areas.** The client's site lists exactly
+five service pages (driveways, stamped patios, retaining walls, pavers, sidewalks) — fits
+the `SERVICE_LIMIT` cap with no slicing needed. Payload's `service_city`/`service_state`/
+`service_areas` were all `null` and the old site names no specific service-area cities
+beyond "Phoenix" (used as `marketing_city`), so no `service_areas/*.md` were written —
+`/service-area` self-hides with zero entries, which is correct here rather than a gap.

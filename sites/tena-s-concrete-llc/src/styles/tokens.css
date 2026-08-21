@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Quattrocento:wght@400;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f2f2f2;
+  --color-text: #101111;
+  --color-muted: #686A6E;
+  --color-primary: #046878;
+  --color-on-primary: #ffffff;
+  --color-accent: #0693a9;
+  /* THREE accent tokens, derived from the client's own button/section colors
+     (measured off their live site CSS, not chosen aesthetically):
+
+       --color-accent          FILL behind --color-on-accent (buttons, icon
+                               circles, badges). Raw client teal #0693a9.
+       --color-accent-ink      the accent as TEXT on a LIGHT background.
+                               Raw teal is 3.65:1 on white — fails AA — so this
+                               is the same hue darkened 20% toward black, 5.32:1.
+       --color-accent-on-dark  the accent as TEXT inside the dark --color-primary
+                               band. Raw teal is 1.77:1 there. This is the same
+                               hue lightened 75% toward white, 4.78:1.
+
+     White also fails as button text on the raw teal fill (3.65:1), which is
+     why --color-on-accent is the dark ink color, not white — same pattern as
+     a light-fill brand. See design_reference.json's contrast_audit for the
+     full set of computed ratios. */
+  --color-on-accent: #101111;
+  --color-accent-ink: #057687;
+  --color-accent-on-dark: #c1e4ea;
+  --color-focus: #0057ff;
+  --font-display: 'Oswald', Georgia, serif;
+  --font-body: 'Quattrocento', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

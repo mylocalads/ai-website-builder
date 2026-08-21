@@ -1,0 +1,18 @@
+{
+  "name": "Tena’s Concrete LLC",
+  "email": "tenas.concrete@yahoo.com",
+  "phone": "+14808034333",
+  "address": "Tonopah, AZ 85354, US",
+  "website": "https://tenas-concrete.b12sites.com/",
+  "rating": null,
+  "reviewCount": null,
+  "category": "Concrete contractor",
+  "hours": "Mon-Sat 5:00am-6:00pm",
+  "slug": "tena-s-concrete-llc",
+  "reviews": [],
+  "gbp_lookup": {
+    "attempted": true,
+    "found": false,
+    "note": "No Google Business Profile listing found via Apify google-maps-with-contact-details across three location attempts (Tonopah AZ, Phoenix AZ, Buckeye AZ) on 2026-08-21. Actor scanned 150+ search pages with 0 matches before being aborted. Proceeding with business data from the client's existing website (scraped via curl/HTML, Firecrawl MCP unavailable this session) and the portal intake payload."
+  }
+}

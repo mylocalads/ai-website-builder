@@ -1,0 +1,99 @@
+{
+  "slug": "tena-s-concrete-llc",
+  "source": "portal-payload + playwright/curl scrape (Firecrawl MCP unavailable this session)",
+  "business_name": "Tena’s Concrete LLC",
+  "contact_name": "Adrian Tena",
+  "phone": "+14808034333",
+  "phone_display": "(480) 803-4333",
+  "email": "tenas.concrete@yahoo.com",
+  "website_url": "https://tenas-concrete.b12sites.com/",
+  "address": {
+    "street": null,
+    "city": "Tonopah",
+    "state": "AZ",
+    "postal": "85354",
+    "country": "US"
+  },
+  "marketing_city": "Phoenix",
+  "marketing_state": "AZ",
+  "category": "Concrete contractor",
+  "hours": {
+    "monday": "5:00am-6:00pm",
+    "tuesday": "5:00am-6:00pm",
+    "wednesday": "5:00am-6:00pm",
+    "thursday": "5:00am-6:00pm",
+    "friday": "5:00am-6:00pm",
+    "saturday": "5:00am-6:00pm"
+  },
+  "credentials": { "licensed": true, "insured": true, "bonded": true },
+  "tagline": "Quality concrete solutions",
+  "subheadline": "Your trusted concrete partner",
+  "about_text": "Tena’s Concrete LLC excels in delivering high-quality concrete services in the Phoenix area. We specialize in a variety of projects, including driveways, sidewalks, foundations, stamped patios, retaining walls, excavation, and grading. Our team is licensed, insured, and bonded, ensuring peace of mind for both residential and commercial clients.",
+  "social": {
+    "instagram": "https://www.instagram.com/tenasconcretellc"
+  },
+  "brand": {
+    "fonts": { "display": "Oswald", "body": "Quattrocento" },
+    "colors": {
+      "accent_candidate": "#0693a9",
+      "accent_dark_candidate": "#046878",
+      "text_candidate": "#020305",
+      "candidates": ["#0693a9", "#046878", "#141C26", "#263547", "#020305"]
+    },
+    "logo_url": null,
+    "logo_note": "No image logo on the existing site — text wordmark only (\"TENA’S CONCRETE LLC\", Oswald, uppercase)."
+  },
+  "services": [
+    {
+      "name": "Driveways",
+      "slug": "driveways",
+      "short_description": "Transform your entryway with durable and stylish driveways.",
+      "long_description": "At Tena’s Concrete LLC, we specialize in crafting durable and visually appealing driveways that enhance the curb appeal of your property. Our expert team uses high-quality materials and innovative techniques to ensure that your driveway withstands the test of time. Whether you prefer a classic look or a more modern design, we customize each project to meet your specific needs.",
+      "hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/21e08498-e8a2-11ef-a5ca-0242ac110002-jpeg-hero_image.jpeg"
+    },
+    {
+      "name": "Stamped Patios",
+      "slug": "stamped-patios",
+      "short_description": "Elevate your outdoor space with stunning stamped patios.",
+      "long_description": "Create a stunning outdoor oasis with our stamped patios at Tena’s Concrete LLC. Our skilled professionals utilize advanced techniques to replicate the look of natural stone, brick, or tile, giving you a beautiful and functional space to enjoy. Stamped patios not only enhance your outdoor aesthetics but are also durable and easy to maintain.",
+      "hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/2c43aeee-e8c3-11ef-9e2c-0242ac110002-jpeg-hero_image.jpeg"
+    },
+    {
+      "name": "Retaining Walls",
+      "slug": "retaining-walls",
+      "short_description": "Strengthen your landscape with expertly crafted retaining walls.",
+      "long_description": "Retaining walls by Tena’s Concrete LLC are the perfect solution for managing elevation changes in your landscape while adding visual interest. Our team specializes in designing and constructing retaining walls that are both functional and aesthetically pleasing, using high-quality materials to withstand pressure and erosion over time.",
+      "hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/738ff37a-e8c3-11ef-9210-0242ac110002-jpeg-hero_image.jpeg"
+    },
+    {
+      "name": "Pavers",
+      "slug": "pavers",
+      "short_description": "Expert paver installation for durable & stylish outdoor spaces.",
+      "long_description": "Our professional paver installation services offer a durable, stylish, and customizable solution for driveways, walkways, patios, and outdoor spaces. We use only high-quality pavers in a wide range of colors, patterns, and textures. From classic brick to modern interlocking pavers, we deliver exceptional craftsmanship that enhances the beauty and functionality of your property.",
+      "hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/8922037e-e82b-11ef-9e48-0242ac110002-jpeg-hero_image.jpeg"
+    },
+    {
+      "name": "Sidewalks",
+      "slug": "side-walks",
+      "short_description": "Expertly crafted for safe and accessible pedestrian paths.",
+      "long_description": "Our concrete sidewalks are designed with both durability and aesthetics in mind, providing a strong, smooth, and safe walking surface for residential and commercial properties. We offer custom designs and a high-quality concrete mix for long-lasting, low-maintenance results, with finish options ranging from smooth to textured for added traction.",
+      "hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/0488c5d4-e96c-11ef-adb4-0242ac110002-png-hero_image.png"
+    }
+  ],
+  "gallery_candidates": [
+    { "title": "Residential driveway installation", "description": "A beautiful new driveway that enhances curb appeal and durability.", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/d541ade4-e96c-11ef-aa0e-0242ac110002-jpeg-hero_image.jpeg" },
+    { "title": "Commercial sidewalk construction", "description": "A functional and attractive sidewalk for a busy retail center.", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/21eb3b0c-e8c2-11ef-88b8-0242ac110002-png-hero_image.png" },
+    { "title": "Stamped patio creation", "description": "An outdoor oasis featuring a beautifully stamped patio.", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/8cc6a128-e8c2-11ef-9210-0242ac110002-jpeg-hero_image.jpeg" },
+    { "title": "Concrete project", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/40095a28-e9c7-11ef-b213-0242ac110002-png-hero_image.png" },
+    { "title": "Concrete project", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/3f685b64-e9c7-11ef-ae9f-0242ac110002-jpeg-hero_image.jpeg" },
+    { "title": "Concrete project", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/3f67bc2c-e9c7-11ef-afed-0242ac110002-jpeg-hero_image.jpeg" },
+    { "title": "Concrete project", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/596faa18-eaa2-11ef-a3b3-0242ac110002-jpeg-hero_image.jpeg" },
+    { "title": "Concrete project", "photo": "https://cdn.b12.io/client_media/bM2oDFSS/17409d30-e96e-11ef-ade8-0242ac110002-jpeg-hero_image.jpeg" }
+  ],
+  "default_hero_photo": "https://cdn.b12.io/client_media/bM2oDFSS/77e0d106-e96d-11ef-b19c-0242ac110002-jpeg-hero_image.jpeg",
+  "about_photo": "https://cdn.b12.io/client_media/bM2oDFSS/a68e5df4-e821-11ef-915a-0242ac110002-jpg-hero_image.jpeg",
+  "testimonials": [],
+  "team_members": [],
+  "faqs": [],
+  "notes": "No dedicated testimonials, pricing, team bios, or FAQ content found on the existing B12 site — thin starter-template content. Testimonials to be filled from GBP reviews via find-business. No street address listed publicly; using city/state/postal only."
+}
