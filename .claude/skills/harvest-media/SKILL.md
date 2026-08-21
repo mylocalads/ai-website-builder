@@ -1,6 +1,6 @@
 ---
 name: harvest-media
-description: Pick up to 15 marketing-worthy images for a client from the scrape the website build already paid for, or generate one from a prompt, and upload them into the customer portal's Files page under an AI Generated folder.
+description: Pick up to 15 marketing-worthy images for a client from the scrape the website build already paid for, or generate new ones from a prompt at a chosen shape, size and count, and upload them into the customer portal's Files page under an AI Generated folder.
 trigger: "harvest-media" or "harvest images" or "find images for" or "generate image for"
 ---
 
@@ -89,7 +89,16 @@ Read `.env` for `BUILD_API_SECRET` and the portal URL. If either is missing,
 
 ```json
 { "id": "...", "job": "harvest",
-  "prompt": null,
+  "prompt": null, "aspectRatio": null, "resolution": null, "versions": null,
+  "business": { "id": "...", "slug": "...", "name": "..." }, "intake": { ... } }
+```
+
+A `generate` entry looks like this instead:
+
+```json
+{ "id": "...", "job": "generate",
+  "prompt": "a stone retaining wall at golden hour",
+  "aspectRatio": "4:3", "resolution": "720p", "versions": 2,
   "business": { "id": "...", "slug": "...", "name": "..." }, "intake": { ... } }
 ```
 
@@ -98,7 +107,10 @@ Read `.env` for `BUILD_API_SECRET` and the portal URL. If either is missing,
 | `job` | What it means | Where to go |
 |---|---|---|
 | `harvest` | Find images that already exist | Step 2 onward |
-| `generate` | Make a new image from `prompt` | **Step G**, then Step 5 |
+| `generate` | Make new images from `prompt` | **Step G**, then Step 5 |
+
+A `generate` entry also carries `aspectRatio`, `resolution` and `versions` —
+what the user picked on the confirmation card. They are null on a `harvest`.
 
 A business that cannot be identified is **held by the portal and never served**
 — but only for a `harvest`. A `generate` is never held, because the prompt is
@@ -116,9 +128,10 @@ not expand it, restyle it, or add "professional, 4k, highly detailed" — the us
 approved the words they wrote, and a generation they did not ask for still costs
 them and still has to be hidden by hand.
 
-1. Generate **one** image from `prompt` by calling the Higgsfield REST API with
-   `curl`. One, not a set of four: the portal files everything you send, and a
-   client who asked for an image gets an image.
+1. Generate `versions` image(s) from `prompt` by calling the Higgsfield REST API
+   with `curl` — the count the user chose, no more and no fewer. The portal files
+   everything you send, so an extra one is an extra file on a client's page that
+   nobody asked for.
 
    **NOT THE MCP SERVER.** Higgsfield's MCP connector is attached to a person's
    Claude account in an interactive client; this runs headless as `claude -p` on
@@ -126,18 +139,41 @@ them and still has to be hidden by hand.
    `generate_image` as a tool fails with "no MCP servers are configured" — which
    is exactly what happened on 2026-08-21, and is why this step is curl.
 
-   Submit:
+   **USE THE SHAPE THE PAYLOAD GIVES YOU.** The user chose it on the card, next
+   to the prompt they wrote — `aspectRatio`, `resolution` and `versions` are as
+   much a part of the confirmed request as the words are. Do not substitute your
+   own, and do not "improve" a 1:1 into a 16:9 because the subject looks wide.
 
    ```bash
    curl -s -X POST "https://platform.higgsfield.ai/higgsfield-ai/soul/standard" \
      -H "Authorization: Key ${HIGGSFIELD_API_KEY_ID}:${HIGGSFIELD_API_KEY_SECRET}" \
      -H "Content-Type: application/json" \
-     -d "$(jq -nc --arg p "$PROMPT" \
-           '{prompt:$p, aspect_ratio:"4:3", resolution:"720p"}')"
+     -d "$(jq -nc --arg p "$PROMPT" --arg a "$ASPECT_RATIO" --arg r "$RESOLUTION" \
+           '{prompt:$p, aspect_ratio:$a, resolution:$r}')"
    ```
 
    Both credentials are already in `.env` and therefore in your environment. The
    header really is one value: `Key <id>:<secret>`, colon-separated.
+
+   **`versions` IS A COUNT OF REQUESTS.** The API has no batch parameter —
+   `batch_size` and `num_images` are accepted and silently ignored — so
+   `versions: 4` means submitting the same prompt four times and polling four
+   request ids. Each one costs its own credits.
+
+   Send all of them; a client who asked for four versions and got one has been
+   given the wrong thing. If some succeed and some fail, upload the ones that
+   worked and complete as `succeeded` with `imagesFound` set to what you asked
+   for and the shortfall visible in the count — that is more use than failing the
+   whole job over one bad render.
+
+   Valid values, read out of the API's own 422 rather than guessed:
+
+   | Field | Accepted |
+   |---|---|
+   | `aspect_ratio` | `9:16` `16:9` `4:3` `3:4` `1:1` `2:3` `3:2` |
+   | `resolution` | `720p` `1080p` |
+
+   Anything else is a 422 and a failed card minutes after somebody asked.
 
    Submit returns:
 
@@ -191,7 +227,9 @@ them and still has to be hidden by hand.
      fact, and the portal accepts null here only for generated images.
    - `subject` is your best honest guess at what it depicts.
 
-3. Report with `usedCache: false` and `imagesFound: 1`.
+3. Report with `usedCache: false` and `imagesFound` set to how many you asked
+   the API for — so `versions`, not how many came back. The gap between that
+   and `imagesStored` is what tells an operator a render failed.
 
 **If the generation fails**, complete as `failed` with the real reason. Do not
 substitute a scraped image for a generation the user asked for — they asked for
