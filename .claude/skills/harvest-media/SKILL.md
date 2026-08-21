@@ -116,9 +116,46 @@ not expand it, restyle it, or add "professional, 4k, highly detailed" — the us
 approved the words they wrote, and a generation they did not ask for still costs
 them and still has to be hidden by hand.
 
-1. Generate **one** image from `prompt` using the Higgsfield MCP server
-   (`generate_image`). One, not a set of four: the portal files everything you
-   send, and a client who asked for an image gets an image.
+1. Generate **one** image from `prompt` by calling the Higgsfield REST API with
+   `curl`. One, not a set of four: the portal files everything you send, and a
+   client who asked for an image gets an image.
+
+   **NOT THE MCP SERVER.** Higgsfield's MCP connector is attached to a person's
+   Claude account in an interactive client; this runs headless as `claude -p` on
+   a droplet, where no MCP servers are configured at all. A run that reaches for
+   `generate_image` as a tool fails with "no MCP servers are configured" — which
+   is exactly what happened on 2026-08-21, and is why this step is curl.
+
+   Submit:
+
+   ```bash
+   curl -s -X POST "https://platform.higgsfield.ai/higgsfield-ai/soul/standard" \
+     -H "Authorization: Key ${HIGGSFIELD_API_KEY_ID}:${HIGGSFIELD_API_KEY_SECRET}" \
+     -H "Content-Type: application/json" \
+     -d "$(jq -nc --arg p "$PROMPT" \
+           '{prompt:$p, aspect_ratio:"4:3", resolution:"720p"}')"
+   ```
+
+   Both credentials are already in `.env` and therefore in your environment. The
+   header really is one value: `Key <id>:<secret>`, colon-separated.
+
+   The response carries `request_id`, `status` (`queued` at first) and a
+   `status_url`. **Poll `status_url` with the same Authorization header** until
+   the status stops being queued or in-progress, then take the image URL out of
+   the finished payload and download it.
+
+   Known responses, verified against the live API:
+
+   | HTTP | Body | What it means |
+   |---|---|---|
+   | 422 | `{"detail":[{"loc":["body","prompt"],...}]}` | your request body is wrong |
+   | 403 | `{"detail":"not_enough_credits"}` | the account is out of API credits |
+
+   **`not_enough_credits` is not your failure and not something to retry.**
+   Complete the harvest as `failed` with that exact reason, so an operator reads
+   "Higgsfield is out of API credits" rather than a stack trace. Higgsfield bills
+   API usage separately from the app subscription, so this can be true while the
+   web app still works.
 2. Save it locally, then go to **Step 5** with a single-entry manifest:
 
    ```json
@@ -259,8 +296,8 @@ Off by default and **not required for a working harvest.**
 
 Scraped images are often small, compressed, or a logo on a white rectangle. When
 `HIGGSFIELD_API_KEY_ID` and `HIGGSFIELD_API_KEY_SECRET` are set in `.env`, an
-image may be improved between step 6
-and step 7:
+image may be improved between step 6 and step 7 — over the REST API and `curl`,
+for the same reason Step G uses it: there is no MCP server on this droplet.
 
 - **Logo** → background removal, so it can sit on any colour
 - **Anything under 1200px** → upscale
