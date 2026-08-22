@@ -5140,3 +5140,45 @@ the `SERVICE_LIMIT` cap with no slicing needed. Payload's `service_city`/`servic
 `service_areas` were all `null` and the old site names no specific service-area cities
 beyond "Phoenix" (used as `marketing_city`), so no `service_areas/*.md` were written —
 `/service-area` self-hides with zero entries, which is correct here rather than a gap.
+
+## Tena's Concrete LLC — 2026-08-22 — six service-area pages added
+
+Queued `job: "edit"` build from the client portal (unattended). The agency operator
+confirmed the six service areas the 2026-08-21 build above had left at zero — Phoenix
+(primary), Buckeye, Goodyear, Avondale, Litchfield Park, Surprise, all AZ — and the
+payload's `instructions` field specified the exact city order and slugs. This exactly
+meets the owl template's `AREA_LIMIT` of 6.
+
+Wrote `src/content/service_areas/{phoenix,buckeye,goodyear,avondale,litchfield-park,surprise}-az.md`,
+matching the schema and voice of the existing five service pages and of `agc-concrete`
+(same trade, same template, already carrying 6 populated service-area pages used as the
+structural reference). All six are Maricopa County, AZ. No `landmark_photo`, gallery
+images, testimonials, or years-served claims were fabricated — `gallery: []` and
+`landmark_photo` left unset on every entry, exactly as the initial build omitted them
+elsewhere.
+
+Header, footer, `/service-area` index, sitemap, and `llms.txt`/`index.md` needed no
+manual edits — all six derive from `getCollection('service_areas')` already, per the
+generated-not-hand-written SEO invariant. `npm run build` produced all six pages under
+`/service-area/{slug}` with no `AREA_LIMIT` or reserved-slug warnings; confirmed present
+in `dist/client/sitemap-0.xml`, `llms.txt`, and `index.md`.
+
+Re-set `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET` / `LEAD_WEBHOOK_AUTH_HEADER` on the
+Vercel project (`prj_qj6mbYeyhMEWWyHOdmX8zd0suXEd`, production + preview) from this
+build's payload before the final deploy, per the build instructions — value read from
+the payload straight into the Vercel CLI via shell variables, never logged.
+
+Redeployed to production; alias `https://tena-s-concrete-llc.vercel.app` confirmed
+publicly viewable (200, correct `<title>`) with deployment protection off, and all six
+new service-area URLs return 200. Both previously-claimed hosts
+(`tena-s-concrete-llc.vercel.app`, `tena-s-concrete-llc.mylocalads-preview.co`) are
+still attached and `verified: true` on the Vercel project — no new domain attach was
+needed since the payload's `domain` was `null`.
+
+**The branded `mylocalads-preview.co` host did not answer from this build session** —
+TCP connects and DNS resolves, but the TLS handshake fails with `SSL_ERROR_SYSCALL`
+before any HTTP response. `docs/parked-preview-domain.md` now says this zone is live,
+but that could not be confirmed from here; this may be the same kind of sandbox-network
+limit noted in the 2026-08-21 entry above (no Playwright/Firecrawl), or a real gap in
+that domain. Reporting `stagingUrl` as the verified `.vercel.app` alias rather than the
+unverifiable branded host, per vercel-deploy's own fallback rule.
