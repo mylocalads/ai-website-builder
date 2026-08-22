@@ -97,6 +97,8 @@ Repeat this block for each service. Order matters — first entry is the "primar
 
 Repeat this block for each city/area served. Order matters — first entry is the "primary" area.
 
+> **If no service areas are supplied, do not write zero — derive them.** Accounts created from the portal's agency quick setup have no service-area field to fill in, so a null list means "not asked", never "serves nowhere". Seed from the marketing city (primary), add the nearest towns in the same metro within the intake radius or 30mi by default, and cap at the template limit. Landmark photos stay optional in that case rather than blocking the page. Log the derivation and the source of each city.
+
 - **[required] City name** —
   *Example: `Spokane`*
 - **[required] State (2-letter)** —
