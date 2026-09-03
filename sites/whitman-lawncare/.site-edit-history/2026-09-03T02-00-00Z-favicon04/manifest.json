@@ -1,0 +1,14 @@
+{
+  "batch_id": "2026-09-03T02-00-00Z-favicon04",
+  "mode": "edit",
+  "slug": "whitman-lawncare",
+  "operator_request": "Add the Whitman logo as the site favicon",
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_hvSiQbhk87fSvBqM4aZ8B2e1iuJy",
+    "canonical_url": "https://whitmanlawncare.com",
+    "at": "2026-09-03T02:00:00Z"
+  }
+}

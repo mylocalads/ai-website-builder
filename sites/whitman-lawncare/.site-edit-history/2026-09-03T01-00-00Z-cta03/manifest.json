@@ -1,0 +1,17 @@
+{
+  "batch_id": "2026-09-03T01-00-00Z-cta03",
+  "mode": "edit",
+  "slug": "whitman-lawncare",
+  "operator_request": "Eliminate all 'Free Lawn/Soil Analysis' references across pages, CTA buttons and the booking page; use 'Get Your Free Estimate' or similar",
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_EAPHGq9wU4mRcaaCkDUmgNuGzTAa",
+    "url": "https://whitman-lawncare-c3k33ye2g-mylocalads-projects.vercel.app",
+    "canonical_url": "https://whitmanlawncare.com",
+    "at": "2026-09-03T01:00:00Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

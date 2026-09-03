@@ -1,0 +1,31 @@
+{
+  "batch_id": "2026-09-03T00-00-00Z-copy02",
+  "mode": "edit",
+  "slug": "whitman-lawncare",
+  "operator_request": "Copy edits: remove soil-test language in named spots, Talk to Dan -> team member, Scranton -> NEPA headline, FAQ reword, add Monroe+Susquehanna counties, pricing clause, hours 8:00, footer mailing address, Moosic fix, add 4 service-area cities",
+  "files_touched": [
+    "src/content/site/home.json",
+    "src/content/site/config.json",
+    "src/content/site/about.json",
+    "src/content/service_areas/moosic-pa.md",
+    "src/content/service_areas/mountaintop-pa.md",
+    "src/content/service_areas/dallas-pa.md",
+    "src/content/service_areas/bear-creek-pa.md",
+    "src/content/service_areas/tobyhanna-pa.md",
+    "src/content/config.ts",
+    "src/components/ClosingCTA.astro",
+    "src/components/Footer.astro",
+    "src/pages/pricing.astro",
+    "src/lib/limits.ts"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "url": "https://whitman-lawncare-dmzeucqmf-mylocalads-projects.vercel.app",
+    "canonical_url": "https://whitmanlawncare.com",
+    "at": "2026-09-03T00:00:00Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null
+}

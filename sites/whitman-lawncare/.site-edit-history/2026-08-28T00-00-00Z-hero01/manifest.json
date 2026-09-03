@@ -1,0 +1,29 @@
+{
+  "batch_id": "2026-08-28T00-00-00Z-hero01",
+  "mode": "edit",
+  "slug": "whitman-lawncare",
+  "operator_request": "About page: make sure the description text below H1 is not cut off / truncated",
+  "diff_spec": [
+    {
+      "op": "SET",
+      "path": "src/pages/about.astro",
+      "field": "HeroOwl.subheadline",
+      "value": "heroSub (first paragraph trimmed at a sentence boundary) instead of story.slice(0, 190)"
+    }
+  ],
+  "files_touched": [
+    "src/pages/about.astro"
+  ],
+  "status": "deployed",
+  "astro_sync": "ok",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_87EgJxjyCjfKvqHKpnzi8JEG2FX4",
+    "url": "https://whitman-lawncare-gim3xqs6y-mylocalads-projects.vercel.app",
+    "canonical_url": "https://whitmanlawncare.com",
+    "at": "2026-08-28T00:00:00Z"
+  },
+  "rolls_back_to": null,
+  "reverted_by": null,
+  "note": "Write root is src/pages/ \u2014 outside this skill's normal allowed roots. Flagged to the operator."
+}
