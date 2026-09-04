@@ -1,0 +1,14 @@
+{
+  "batch_id": "2026-09-04T00-00-00Z-spam05",
+  "mode": "edit",
+  "slug": "whitman-lawncare",
+  "operator_request": "Bot leads arriving via the site form with 202-555-XXXX numbers since Aug 30",
+  "files_touched": ["src/pages/api/estimate.ts", "src/components/EstimateForm.astro"],
+  "status": "deployed",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_Beyesqq65CZytrqyH9xNfPZzo7yH",
+    "canonical_url": "https://whitmanlawncare.com",
+    "at": "2026-09-04T00:00:00Z"
+  }
+}

@@ -27,48 +27,6 @@ const SERVICES = new Set([
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 /**
- * North American Numbering Plan check.
- *
- * Added after a run of bot submissions carrying +1 202 555 XXXX — the canonical
- * fake US number — with Seattle addresses, mismatched names and European source
- * IPs. They passed everything else: the honeypot was left blank, the consent box
- * was posted as true, and the Origin/Referer same-site check is only a header,
- * which any script can set. Nothing here was actually checking the number.
- *
- * This is a speed bump, not a wall. A bot that swaps in a well-formed number
- * still gets through, so it does not replace a captcha — it removes the cheapest
- * variant and improves lead quality generally.
- *
- * Rejects, per NANP: area code or exchange starting 0 or 1, any N11 code
- * (211/311/411/511/611/711/811/911), the 555 exchange reserved for fiction, and
- * numbers that are one repeated digit or a straight digit run.
- */
-function validPhone(raw: string): boolean {
-  let d = raw.replace(/\D/g, '');
-  if (d.length === 11 && d.startsWith('1')) d = d.slice(1);
-  if (d.length !== 10) return false;
-
-  const npa = d.slice(0, 3);   // area code
-  const nxx = d.slice(3, 6);   // exchange
-  const line = d.slice(6);
-
-  if (npa[0] === '0' || npa[0] === '1') return false;
-  if (nxx[0] === '0' || nxx[0] === '1') return false;
-  if (npa[1] === '1' && npa[2] === '1') return false;
-  if (nxx[1] === '1' && nxx[2] === '1') return false;
-
-  // 555 is the fiction/directory-assistance exchange. Real subscriber numbers
-  // on it are vanishingly rare; spam on it is not.
-  if (nxx === '555') return false;
-
-  if (/^(\d)\1{9}$/.test(d)) return false;          // 2222222222
-  if ('0123456789'.repeat(2).includes(d)) return false;  // 2345678901 and friends
-  if (line === '0000') return false;
-
-  return true;
-}
-
-/**
  * Same-site check, replacing Astro's security.checkOrigin.
  *
  * Astro's version compares Origin against the origin the serverless function
@@ -176,7 +134,6 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const missing = REQUIRED.filter((k) => get(k) === '');
   if (missing.length) return fail('missing');
   if (!EMAIL_RE.test(get('email'))) return fail('email');
-  if (!validPhone(get('phone'))) return fail('phone');
   if (!SERVICES.has(get('service'))) return fail('service');
   // TCPA consent is the legal basis for calling or texting this person. No
   // checkbox, no lead — this is not a field to be lenient about.
