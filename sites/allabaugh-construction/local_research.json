@@ -1,0 +1,36 @@
+{
+  "slug": "allabaugh-construction",
+  "category": "Roofing Contractor",
+  "location": "Plymouth PA / NEPA & Central NJ",
+  "threads_analyzed": 0,
+  "_method_note": "site:reddit.com searches (local-city-specific, state-broadened, and general-category) returned zero Reddit results in this session — WebSearch consistently surfaced only directory/listing sites (HomeAdvisor, Yelp, Angi) instead of reddit.com threads, across 9 queries. Per the skill's own fallback ('broaden to general category pain points if local Reddit activity is limited'), pain points and what-customers-value below are synthesized from the general web signal that DID return (contractor-review call-outs surfaced inside HomeAdvisor/Networx/Rainguard results: overpriced quotes, no-shows, vague verbal bids, high-pressure storm-damage sales tactics) rather than Reddit specifically. Differentiators are grounded only in this business's own real scraped data.",
+  "pain_points": [
+    "Contractors who give a lowball verbal quote and then bill far more once work starts, or whose estimate is vague instead of itemized",
+    "Roofers who no-show, ghost after the estimate, or are impossible to reach with follow-up questions",
+    "High-pressure door-to-door 'storm damage' sales tactics pushing homeowners into an insurance claim they didn't ask for",
+    "Contractors who can't or won't produce a license number or proof of insurance when asked",
+    "Roofing jobs that drag on past the promised timeline, or crews that leave a messy job site"
+  ],
+  "what_customers_value": [
+    "Transparent, itemized, free estimates before any work begins",
+    "A licensed and insured contractor who can show the license number without being asked twice",
+    "Prompt, ongoing communication throughout the project — texts and calls actually answered",
+    "Crews that show up on time and finish on schedule",
+    "Real warranty coverage on both materials and workmanship"
+  ],
+  "business_differentiators": [
+    "Allabaugh Construction publishes both license numbers directly on the site (NJ #13VH09734600, PA #PA162561) — addresses the 'can't produce a license' complaint head-on",
+    "Free, transparent estimates are explicitly offered before any work begins, per the site's own copy",
+    "5.0 rating across 231 Google reviews (GBP-verified) — an unusually strong, verifiable signal against the 'ghosting'/'no-show' pain point",
+    "Multiple real testimonials specifically praise promptness and communication — e.g. 'promptly answers texts and calls,' 'met every single deadline,' 'crew arrived on time'",
+    "Lifetime Manufacturer's Warranty plus a 10-Year Workmanship Warranty on every job, stated on the site — directly answers the 'will this actually be covered' concern",
+    "Over 20 years in business serving both NEPA and Central NJ — supports a 'we're not a storm-chaser fly-by-night crew' angle"
+  ],
+  "copy_angles": [
+    "Lead the hero with the license numbers + '20 years' + '5.0 stars, 231 reviews' as a trust triad — this directly counters the 'can I trust this contractor' hesitation that dominates the researched pain points",
+    "Feature the promptness/communication testimonials (Mulryne, Dreibelbis, Gesuelli) prominently — 'answers texts and calls,' 'met every deadline' — since unreliable communication is the most consistently cited complaint pattern",
+    "State the free, itemized estimate explicitly and early — counters the lowball-then-upsell pattern that shows up repeatedly in contractor complaints",
+    "Name both warranties (lifetime manufacturer's + 10-year workmanship) near any CTA — most competitors don't state warranty terms this specifically",
+    "Avoid any 'we noticed storm damage on your roof' framing anywhere in the copy — that exact phrasing is a documented red-flag pattern for pushy/scam roofers, and this business's own tone doesn't use it"
+  ]
+}

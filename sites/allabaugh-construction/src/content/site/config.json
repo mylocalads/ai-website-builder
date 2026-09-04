@@ -1,0 +1,120 @@
+{
+  "kind": "config",
+  "business_name": "Allabaugh Construction",
+  "legal_name": "Allabaugh Construction, LLC",
+  "tagline": "Roofing Contractors Serving NEPA & Central New Jersey",
+  "phone": "+18143304897",
+  "phone_display": "(814) 330-4897",
+  "email": "allabaughconstruct@gmail.com",
+  "address": {
+    "street": "21 Flat Rd",
+    "city": "Plymouth",
+    "state": "PA",
+    "postal": "18651",
+    "country": "US"
+  },
+  "marketing_city": "Plymouth",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2330078, "lng": -75.9664276 },
+  "hours": {
+    "monday": "9:00am-5:00pm",
+    "tuesday": "9:00am-5:00pm",
+    "wednesday": "9:00am-5:00pm",
+    "thursday": "9:00am-5:00pm",
+    "friday": "9:00am-5:00pm",
+    "saturday": "9:00am-12:00pm",
+    "sunday": "9:00am-12:00pm"
+  },
+  "site_url": "https://allabaugh-construction.vercel.app",
+  "rating": 5,
+  "review_count": 231,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 20,
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100063709159854",
+    "instagram": "https://www.instagram.com/jaredallabaugh/",
+    "youtube": "https://www.youtube.com/channel/UCLkfhWMHN1WTfGT83A-FChg",
+    "google_maps": "https://www.google.com/maps/place/?q=place_id:ChIJY64ZlsgRxYkRg88uZAbBWF4"
+  },
+  "logo_url": "/logo.webp",
+  "default_hero_photo": "/img/hero-roof-install.webp",
+  "about_photo": "/img/completed-roof-2.webp",
+  "team_members": [
+    { "name": "Jared Allabaugh", "role": "Owner", "photo": "/logo.webp", "bio": "Jared has led Allabaugh Construction for over 20 years, working directly with homeowners across NEPA and Central New Jersey — reviews consistently point to him personally answering calls and texts throughout every job." }
+  ],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Dual-state licensed & insured",
+      "description": "Registered under NJ Contractor License #13VH09734600 and PA Contractor License #PA162561 — both numbers published on the site, not just claimed."
+    },
+    {
+      "title": "5.0 stars across 231 Google reviews",
+      "description": "A verified rating built over two decades of roofing work across Northeast Pennsylvania and New Jersey."
+    },
+    {
+      "title": "Lifetime & 10-Year Workmanship Warranty",
+      "description": "Every roof replacement comes with a lifetime Manufacturer's Warranty plus a 10-Year Workmanship Warranty."
+    },
+    {
+      "title": "Free, transparent estimates",
+      "description": "Every project starts with a free estimate before any work begins, so the scope and cost are clear from day one."
+    }
+  ],
+  "financing": { "enabled": false },
+  "us_vs_them": { "enabled": false, "us_label": "US", "them_label": "THEM", "rows": [] },
+  "gallery": [
+    {
+      "photo": "/img/hero-roof-install.webp",
+      "alt": "Aerial view of an Allabaugh Construction crew installing a new roof",
+      "title": "Full Roof Replacement",
+      "description": "Underlayment and shingle installation in progress on a residential re-roof."
+    },
+    {
+      "photo": "/img/completed-roof-2.webp",
+      "alt": "Completed roof replacement on a two-story home at dusk",
+      "title": "Completed Roof Replacement",
+      "description": "A finished residential roofing project."
+    },
+    {
+      "photo": "/img/completed-roof-1.webp",
+      "alt": "Crane truck delivering roofing materials to a job site",
+      "title": "On-Site Material Delivery",
+      "description": "Allabaugh Construction crew staging a job site for a full roof replacement."
+    }
+  ],
+  "compliance": { "ada": true, "gdpr": true, "a2p": true },
+  "crm": { "provider": "ghl" },
+  "code_injection": { "per_page": {} },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Full-Service Roofing",
+    "heading_rest": "For NEPA & NJ",
+    "subtitle": "Roof replacement, repair, maintenance, siding and gutters for homeowners and businesses across Northeast Pennsylvania and Central New Jersey."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Roofing Estimate",
+    "services": [
+      "Roof Replacement",
+      "Roof Repair",
+      "Roof Maintenance",
+      "Siding",
+      "Gutters",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Need a Roofing Estimate?",
+    "body": "Free estimates, licensed in both PA and NJ, and every roof backed by a lifetime Manufacturer's Warranty plus a 10-Year Workmanship Warranty. Call (814) 330-4897 or send us the details.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Roofing Advice for NEPA & NJ Homeowners",
+    "description": "Straight answers about roof repair, replacement, and maintenance across Northeast Pennsylvania and Central New Jersey."
+  }
+}

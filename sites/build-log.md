@@ -1,5 +1,6 @@
 | Business | Slug | Pages | Vercel URL | Date |
 |----------|------|-------|------------|------|
+| Allabaugh Construction | allabaugh-construction | 24 | https://allabaugh-construction.vercel.app | 2026-09-04 |
 | NEPA Roofing Pros | nepa-roofing-pros | 24 + /book (SSR) | https://nepa-roofing-pros.vercel.app | 2026-08-11 |
 | MNM Roofing Professionals | mnm-roofing-professionals | 24 | https://mnm-roofing-professionals.vercel.app | 2026-08-10 |
 | Raircon Corporation | raircon | 24 | https://raircon.vercel.app | 2026-08-04 |
@@ -5182,3 +5183,80 @@ but that could not be confirmed from here; this may be the same kind of sandbox-
 limit noted in the 2026-08-21 entry above (no Playwright/Firecrawl), or a real gap in
 that domain. Reporting `stagingUrl` as the verified `.vercel.app` alias rather than the
 unverifiable branded host, per vercel-deploy's own fallback rule.
+
+## Allabaugh Construction — 2026-09-04 — initial build, unattended, no GBP-API match
+
+Queued `job: "initial"` build from the client portal (unattended, `--auto`, no cost
+approvals). This sandbox session has neither a working headless browser
+(`libatk-1.0.so.0` missing, no root) nor a Firecrawl MCP tool — see project memory
+`sandbox-missing-browser-firecrawl.md`. Fell back to plain `curl` for the client's
+WordPress site (`allabaughconstructionllc.com`, server-rendered, worked fine) and skipped
+`site-audit`'s screenshot gracefully (`screenshotPath: null`, informational-only per that
+skill's own error handling).
+
+**Apify's Google Maps search actor found zero matches** for "Allabaugh Construction" /
+"Allabaugh Construction LLC" against every location guess tried (Hamilton Township NJ,
+Hamilton NJ, New Jersey, Scranton PA — five paid lookups, ~$0.02 total). The business's
+real GBP listing was recovered a different way: the client's own homepage embeds a Google
+Maps place link, and feeding that URL to the same Apify actor via `startUrls` (rather than
+a text search) resolved it — **Allabaugh Construction LLC, 21 Flat Rd, Plymouth, PA
+18651, phone (814) 330-4897 (exact match to the site's own primary number), 5.0 rating /
+231 reviews, category "Roofing contractor"**. The site's own JSON-LD `PostalAddress` names
+a second address (304 Lakeside Blvd, Hamilton Township, NJ 08610) presumably tied to the
+business's NJ contractor license; the GBP-verified Plymouth, PA address was used as
+`address`/`marketing_city` since it's the actual physical/operating location. Worth noting
+for future NEPA/dual-state builds: if a text-search Apify lookup returns zero results,
+try the client's own embedded Maps link via `startUrls` before concluding there's no GBP
+listing at all.
+
+**Local Reddit research also came back empty** — nine `site:reddit.com` queries (local
+city-specific, state-broadened, and general-category) returned zero actual Reddit threads
+across this session's `WebSearch`, only directory-site listings (HomeAdvisor, Yelp, Angi).
+Per the skill's own broadening fallback, `local_research.json` synthesizes pain
+points/differentiators from the general contractor-complaint signal that WebSearch did
+surface (overpriced/vague quotes, no-shows, storm-damage door-knocking pressure tactics),
+cross-referenced only against this business's own real data for differentiators.
+
+**Two-state service area, 8 real areas named on the client's own site, sliced to the
+`AREA_LIMIT` of 6.** The client's nav names 6 NJ areas (Ewing, Hamilton, Jackson, Mercer
+County, Princeton, West Windsor Township) plus 2 PA counties (Lackawanna, Luzerne — the
+PA pages additionally name individual NEPA cities within them, e.g. Scranton,
+Wilkes-Barre, Plymouth). Wrote `src/content/service_areas/{luzerne-county-pa,
+lackawanna-county-pa, princeton-nj, hamilton-nj, mercer-county-nj, ewing-nj}.md`, dropping
+Jackson NJ and West Windsor Township NJ as the two least-emphasized in the site's own
+copy. Five services populated (`roof-replacement`, `roof-repair`, `roof-maintenance`,
+`siding`, `gutters` — sub-services absorb skylight installation, roofing ventilation, GAF
+certification, and storm-damage repair, all real content from the client's own site,
+consolidated under the `SERVICE_LIMIT` of 5). All service/area/testimonial/FAQ copy is
+drawn directly from the client's homepage and five successfully-scraped inner pages
+(roughly two-thirds of the client's inner pages returned HTTP 500 during this scrape —
+cause unconfirmed, noted in `intake-scraped.json._notes`, not this pipeline's doing). Real
+project photos (logo, an aerial mid-installation drone shot, two completed-roof photos)
+were downloaded directly from the client's own media library into `public/` and
+`public/img/` rather than hotlinked.
+
+Brand accent `#F9AA4C` (amber) was read directly from the client's own button CSS and
+independently confirmed by eye against the client's real logo mark once downloaded — same
+color. No display font was traceable to real client CSS, so `Fraunces` (template default)
+was used per `design-reference`'s own fallback rule; body font `Work Sans` traced to a
+direct `font-family` declaration. Full WCAG contrast audit (all pairs AA or better) is in
+`design_reference.json.contrast_audit` — this client's dark band color (`#2b2420`) happens
+to be dark/warm enough that the raw accent passes AA as text on it directly, so
+`--color-accent-on-dark` needed no separate lighter tint (unlike the template default).
+
+**Lead webhook set on Vercel via the API directly, not the CLI, and not in the repo.**
+`LEAD_WEBHOOK_URL`, `LEAD_WEBHOOK_SECRET`, `LEAD_WEBHOOK_AUTH_HEADER` were POSTed to
+`prj_zABT8HajFAdQci6fQYKWFrvClKc3` (production + preview) straight from the payload's
+`leadWebhook` object via a short Python/curl block that never echoed the secret to a
+terminal argument or log line — the secret does not appear anywhere in this repo.
+
+Both hosts claimed and verified live (200, correct `<title>`, no login redirect,
+deployment protection off): `https://allabaugh-construction.vercel.app` (the project's
+own name already matched the slug, so Vercel auto-aliased it — a separate `vercel domains
+add` for that host correctly no-opped as `alias_conflict` against itself) and the payload's
+`stagingHost`, `https://allabaugh-construction.mylocalads-preview.co` (attached cleanly,
+certificate live immediately, no wait needed this time). Canonical `site_url` stays on the
+`.vercel.app` host per the skill's own rule — the payload's `domain` was `null`, so no
+custom-domain rewrite applied. `npm run build` produced 24 pages with no `AREA_LIMIT`,
+`SERVICE_LIMIT`, or reserved-slug warnings; `llms.txt`, `index.md`, and the `LocalBusiness`
+JSON-LD all confirmed correct post-deploy.

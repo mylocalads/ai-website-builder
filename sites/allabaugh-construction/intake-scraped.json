@@ -1,0 +1,232 @@
+{
+  "slug": "allabaugh-construction",
+  "business_name": "Allabaugh Construction",
+  "legal_name": "Allabaugh Construction, LLC",
+  "tagline": "Raises the Roofing Standard!",
+  "phone": "+18143304897",
+  "phone_display": "(814) 330-4897",
+  "email": "allabaughconstruct@gmail.com",
+  "address": {
+    "street": "21 Flat Rd",
+    "city": "Plymouth",
+    "state": "PA",
+    "postal": "18651",
+    "country": "US"
+  },
+  "marketing_city": "Plymouth",
+  "marketing_state": "PA",
+  "geo": { "lat": 41.2330078, "lng": -75.9664276 },
+  "hours": {
+    "monday": "9:00am-5:00pm",
+    "tuesday": "9:00am-5:00pm",
+    "wednesday": "9:00am-5:00pm",
+    "thursday": "9:00am-5:00pm",
+    "friday": "9:00am-5:00pm",
+    "saturday": "9:00am-12:00pm",
+    "sunday": "9:00am-12:00pm"
+  },
+  "rating": 5,
+  "review_count": 231,
+  "licensed": true,
+  "insured": true,
+  "bonded": false,
+  "years_in_business": 20,
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100063709159854",
+    "instagram": "https://www.instagram.com/jaredallabaugh/",
+    "youtube": "https://www.youtube.com/channel/UCLkfhWMHN1WTfGT83A-FChg",
+    "google_maps": "https://www.google.com/maps/place/?q=place_id:ChIJY64ZlsgRxYkRg88uZAbBWF4"
+  },
+  "site_url": "https://allabaughconstructionllc.com/",
+  "logo_url": "https://allabaughconstructionllc.com/wp-content/uploads/2023/02/allabaugh-logo.webp",
+  "default_hero_photo": "https://allabaughconstructionllc.com/wp-content/uploads/2023/06/home-roof-construction.webp",
+  "default_hero_video": null,
+  "about_photo": null,
+  "brand": {
+    "fonts": { "display": null, "body": "Work Sans" },
+    "colors": {
+      "bg": null,
+      "text": null,
+      "accent": "#F9AA4C",
+      "muted": null,
+      "surface": null,
+      "candidates": ["#F9AA4C", "#ef9d3c"]
+    }
+  },
+  "services": [
+    {
+      "title": "Roof Replacement",
+      "short_description": "If your roof is nearing the end of its lifespan or has suffered extensive damage, a full roof replacement may be the best option — we'll work with you to determine the best roofing materials for your home and budget.",
+      "long_description": "For over 20 years, Allabaugh Construction has provided full roof replacements across Northeast Pennsylvania and New Jersey, working with both modern and traditional materials — including architectural shingles and EPDM roofing systems — to deliver durable, high-quality results. Every replacement comes with a lifetime Manufacturer's Warranty and a 10-Year Workmanship Warranty.",
+      "sub_services": ["Full & Partial Tear-Offs", "Architectural & Asphalt Shingles", "EPDM Roofing Systems"],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Repair",
+      "short_description": "Whether it's a small leak or significant storm damage, our roof repair crew inspects the damage, advises the best course of action, and provides a comprehensive estimate of the costs involved.",
+      "long_description": "We're committed to providing fast, reliable roof repair services across Northeast Pennsylvania and New Jersey. Common repairs include leaky pipes, damaged flashing and chimney leaks, loose or curling shingles, wind damage, and rotting wood from prolonged moisture exposure. Our team inspects your roof, identifies the source of the issue, and provides a lasting solution.",
+      "sub_services": ["Leak Repair", "Storm Damage Repair", "Shingle & Flashing Repair"],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Roof Maintenance",
+      "short_description": "Regular roof maintenance is essential to prolonging the life of your roof and preventing costly repairs down the line.",
+      "long_description": "Our maintenance program includes inspection of the roof surface, flashing, and interior; gutter cleaning; debris removal; damage assessment; a detailed roof health report; and recommendations for extending your roof's lifespan. We recommend having your roof inspected at least once a year or after severe weather events.",
+      "sub_services": ["Roof Inspections", "Preventive Maintenance", "Roofing Ventilation"],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Siding",
+      "short_description": "For a complete exterior makeover, a new siding installation elevates your home's curb appeal.",
+      "long_description": "Allabaugh Construction provides professional siding installation as part of its full-service approach to home exteriors across NJ and NEPA, handling everything from remodeling to maintaining homes and businesses.",
+      "sub_services": [],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Gutters",
+      "short_description": "Our team handles gutter repair and installation efficiently and seamlessly, keeping your home's drainage system functioning correctly.",
+      "long_description": "Well-maintained gutters protect your property from water damage. We offer gutter repair and installation, gutter cleaning, and gutter guard installation to keep your home's drainage system working correctly year-round.",
+      "sub_services": ["Gutter Cleaning", "Gutter Guard Installation", "Gutter Repair & Installation"],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Luzerne County",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "luzerne-county-pa",
+      "local_context": "Allabaugh Construction is headquartered in Plymouth and provides affordable, professional roofing services throughout Luzerne County, PA.",
+      "neighborhoods": ["Edwardsville", "Larksville", "Pittston", "Wilkes-Barre", "Hazleton", "Dallas", "Kingston", "Plymouth", "Nanticoke", "Forty Fort"],
+      "_source": "scraped"
+    },
+    {
+      "name": "Lackawanna County",
+      "state": "PA",
+      "state_abbr": "pa",
+      "slug": "lackawanna-county-pa",
+      "local_context": "Allabaugh Construction proudly serves Lackawanna County, PA, including Scranton, with over 20 years of roofing and siding experience.",
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Princeton",
+      "state": "NJ",
+      "state_abbr": "nj",
+      "slug": "princeton-nj",
+      "local_context": "Allabaugh Construction has served Princeton, NJ homeowners and businesses with roof repair, replacement, and maintenance services for over 20 years.",
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Hamilton",
+      "state": "NJ",
+      "state_abbr": "nj",
+      "slug": "hamilton-nj",
+      "local_context": "Allabaugh Construction provides residential and commercial roofing services throughout Hamilton, NJ.",
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Mercer County",
+      "state": "NJ",
+      "state_abbr": "nj",
+      "slug": "mercer-county-nj",
+      "local_context": "Allabaugh Construction is a trusted Mercer County, NJ roofing company handling everything from roof repair to full replacements.",
+      "neighborhoods": [],
+      "_source": "scraped"
+    },
+    {
+      "name": "Ewing",
+      "state": "NJ",
+      "state_abbr": "nj",
+      "slug": "ewing-nj",
+      "local_context": "Allabaugh Construction serves Ewing, NJ with comprehensive roofing, siding, and gutter services.",
+      "neighborhoods": [],
+      "_source": "scraped"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "E Mulryne",
+      "location": null,
+      "text": "I am very happy we chose Allabaugh Construction to replace our roof. Jared is knowledgeable and came up with options and great solutions for our needs. Jared is easy to communicate with and promptly answers texts and calls. The crew was great and arrived on time. They worked together like a well oiled machine!",
+      "rating": null,
+      "_source": "scraped"
+    },
+    {
+      "name": "Dana Dreibelbis",
+      "location": null,
+      "text": "Allabaugh Construction is first class. Excellent communications, very timely and accurate information, met every single deadline!, very polite crew, cleaned up thoroughly and roof is getting compliments from neighbors. Highly recommend.",
+      "rating": null,
+      "_source": "scraped"
+    },
+    {
+      "name": "Robin Gesuelli",
+      "location": null,
+      "text": "5 stars for Allabaugh Construction! In a business where, despite the enormity of costs to replace a roof, it's near impossible to get prospective companies to call me back - Allabaugh is a breath of fresh air. Throughout the whole process, they promptly answered my (many, many, MANY) questions, provided details, and talked me through various options until I was satisfied.",
+      "rating": null,
+      "_source": "scraped"
+    },
+    {
+      "name": "Lacey L",
+      "location": null,
+      "text": "I cant say enough good things about our experience with Jared! He's super personable yet professional and you can see he loves his job. He takes pride in his company's work and also cares about you as the homeowner. He communicates and is transparent with every detail and does what he says he will.",
+      "rating": null,
+      "_source": "scraped"
+    },
+    {
+      "name": "Susan S.",
+      "location": null,
+      "text": "Jared and just team are professional and caring people. I recently had siding a roof and ceilings done. The work was impeccable. They kept to a great schedule and left the house clean and neat and the job was done perfectly. I am so happy with the results.",
+      "rating": null,
+      "_source": "scraped"
+    }
+  ],
+  "team_members": [
+    { "name": "Jared Allabaugh", "role": "Owner", "photo": null, "bio": null }
+  ],
+  "faqs": [
+    { "q": "How do I know if my roof needs repair or replacement?", "a": "Roof inspections by a professional can help determine whether your roof requires repair or replacement. Factors such as age, visible damage, and leaks will be considered when recommending a service." },
+    { "q": "How long does a typical asphalt shingle roofing installation last?", "a": "A roof's lifespan depends on the materials used and how well it has been maintained. With that said, asphalt shingle roofs generally last 20-30 years." },
+    { "q": "What is the best type of roof for my home?", "a": "The best roof for your home depends on factors such as your budget, the local climate, and your aesthetic preferences. Our team can help you determine the best roofing option for your needs." },
+    { "q": "How often should I schedule roof maintenance?", "a": "Regular roof maintenance is crucial for prolonging the life of your roof. Having your roof inspected at least once a year or after severe weather events is generally recommended." },
+    { "q": "How much does a roof replacement cost?", "a": "The cost of a new roof can vary based on factors like the size of your roof, the roofing material chosen, and any additional services needed. Consulting with a roofing contractor will provide you with an accurate estimate." },
+    { "q": "Will my new roof come with a warranty?", "a": "Yes, reputable roofing companies like Allabaugh Construction, LLC offer warranties on their workmanship and roofing materials. Discuss our warranty details with a roofing expert today." },
+    { "q": "What is the most common type of roof damage?", "a": "The most common types of roof damage include leaks, missing shingles, and water damage caused by poor ventilation or aging roofing materials." },
+    { "q": "If my roof is leaking, can I have it repaired, or will it need to be replaced?", "a": "Whether your roof needs repair or replacement depends on the extent of the damage. Our professional contractors can assess the situation and provide the appropriate solution for your specific roofing service needs." }
+  ],
+  "gallery": [],
+  "brand_voice_sample": "At Allabaugh Construction, we understand the importance of a reliable roofing contractor in NEPA and New Jersey. For over 20 years, we've built a reputation for delivering exceptional roofing and construction services to clients throughout Northeast Pennsylvania and New Jersey.",
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "No GHL/CRM iframes detected on scraped pages. Client's own contact form is a native WordPress/Elementor form (Name, Phone, Email, homeowner Y/N, Message, CAPTCHA) — not a CRM widget. Operator should paste GHL widgets during site-generate if desired."
+  },
+  "_notes": {
+    "gbp_confirmed": true,
+    "gbp_note": "GBP lookup via Apify search API (business name + several NJ location queries) returned zero results. The business's actual Google Business Profile was located via the client site's embedded Google Maps place link and confirmed by direct Apify startUrls scrape: 'Allabaugh Construction LLC', 21 Flat Rd, Plymouth, PA 18651, phone (814) 330-4897 (matches site), 5.0 rating / 231 reviews, category 'Roofing contractor'. This is a two-state service business (NEPA PA + Central NJ); the site's own JSON-LD lists a second address (304 Lakeside Blvd, Hamilton Township, NJ 08610) presumably tied to the NJ contractor license, but the Plymouth, PA address is the GBP-verified physical location and was used as address/marketing_city.",
+    "pages_scraped": ["/", "/roofing/roof-repair-nj-nepa/", "/roofing/roof-replacements-nepa-nj/", "/roofing/roof-maintenance-nepa-nj/", "/roofing/roof-shingle-work-nepa-nj/", "/roofing/luzerne-county-pa/"],
+    "pages_failed_500": ["/contact-us/", "/reviews/", "/gallery/", "/roofing/", "/gutters-nepa-nj/", "/gutter-cleaning-nepa-nj/", "/gutter-guard-installation-nepa-nj/", "/siding-nepa-nj/", "/skylight-installation/", "/roofing/roof-repair-storm-damage-nj-nepa/", "/roofing/gaf-certified-nj-nepa/", "/roofing/hamilton-nj/", "/roofing/princeton-nj/", "/roofing/ewing-nj/", "/roofing/jackson-nj/", "/roofing/west-windsor-township-nj/", "/roofing/mercer-county-nj/", "/roofing/lackawanna-county-pa/"],
+    "socials_scraped": [],
+    "method": "No Firecrawl MCP or headless browser available in this session (sandbox limitation, see project memory). Fell back to plain curl for server-rendered pages; client's WordPress site returned HTTP 500 on roughly 2/3 of inner-page requests — cause unconfirmed (WAF, transient WP error, or rate limiting), not this pipeline. Homepage content was rich enough (full services nav, testimonials, FAQs, licenses, JSON-LD business schema) to populate all fields below without those pages.",
+    "service_areas_note": "Client's real site names 8 service areas (6 NJ + 2 PA county pages, the PA pages also naming individual NEPA cities within them). AREA_LIMIT for the owl template is 6, so Jackson, NJ and West Windsor Township, NJ were dropped from the 8 real named areas — both were the least-emphasized in the site's own copy relative to Princeton, Hamilton, Mercer County, Luzerne County, and Lackawanna County.",
+    "generated_at": "2026-09-04",
+    "cost_estimate_usd": 0.024
+  }
+}

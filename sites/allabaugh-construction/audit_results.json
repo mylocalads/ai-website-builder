@@ -1,0 +1,22 @@
+{
+  "slug": "allabaugh-construction",
+  "url": "https://allabaughconstructionllc.com/",
+  "screenshotPath": null,
+  "assessment": "PARTIAL: Could not capture a screenshot — this sandbox session has no working headless browser (missing libatk-1.0.so.0, no root to install it) and no Firecrawl MCP tool, a known environment limitation, not a site issue. Assessment below is derived from the raw HTML/CSS instead of a visual capture.",
+  "strengths": [
+    "Real, substantial written content — services, FAQs, testimonials, and licensing info are all present and specific, not placeholder text",
+    "Uses HTTPS throughout",
+    "Has a responsive viewport meta tag",
+    "Displays concrete trust signals: both state contractor license numbers, 'Licensed & Insured', warranty terms, and a current copyright year (2026)",
+    "5.0 rating across 231 Google reviews is a strong, verifiable trust signal not being leveraged prominently in the page structure"
+  ],
+  "weaknesses": [
+    "Built on WordPress + Elementor 4.2.4 (a generic page-builder stack) with unmodified Gutenberg default color palette still present in the CSS custom properties (--wp--preset--color--vivid-purple etc.) — suggests the theme's default styling was never fully replaced with real brand colors",
+    "Only a single detected custom accent color (#F9AA4C amber) applied to buttons; no coherent broader palette",
+    "Roughly two-thirds of inner pages (service detail pages, all individual NJ city pages, the /gallery, /reviews, and /contact-us pages) returned HTTP 500 errors during this scrape — if that reflects the live site's actual behavior rather than a scraping fluke, it is a significant functional problem: broken navigation links across most of the site",
+    "No dedicated /about page or team bios found — the owner (Jared) is only known through customer testimonials mentioning him by first name, not through any self-authored bio or photo",
+    "Site relies on Google review screenshots/embeds shown as plain text blocks rather than a structured, filterable reviews section"
+  ],
+  "overall": "Content-rich but visually generic WordPress/Elementor build with an apparently broken majority of inner pages — strong candidate for redesign: the underlying business (20 years, 5.0/231 reviews, dual-state licensing) is far stronger than its current site presentation.",
+  "_notes": "screenshot skipped due to sandbox limitation (see project memory: sandbox-missing-browser-firecrawl). Does not block the pipeline per this skill's own error-handling rule."
+}

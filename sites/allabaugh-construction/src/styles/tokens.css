@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600..900&family=Work+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f7f5f2;
+  --color-text: #1a1a1a;
+  --color-muted: #5c5652;
+  --color-primary: #2b2420;
+  --color-on-primary: #ffffff;
+  --color-accent: #F9AA4C;
+  --color-on-accent: #1a1a1a;
+  --color-accent-ink: #8a4f0c;
+  --color-accent-on-dark: #F9AA4C;
+  --color-focus: #0057ff;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Work Sans', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

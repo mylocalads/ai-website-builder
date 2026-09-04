@@ -1,0 +1,169 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Plymouth, PA",
+    "headline": "Roof Replacement & Repair Across NEPA & New Jersey",
+    "subheadline": "Allabaugh Construction has served Northeast Pennsylvania and Central New Jersey for over 20 years — roof replacement, repair, maintenance, siding and gutters, backed by a lifetime Manufacturer's Warranty and a 10-Year Workmanship Warranty.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "video_link_text": "See our recent work",
+    "video_link_href": "/our-work",
+    "quote_card": {
+      "quote": "Jared is knowledgeable and came up with options and great solutions for our needs. Jared is easy to communicate with and promptly answers texts and calls. The crew was great and arrived on time.",
+      "author": "E Mulryne — Google Review",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book",
+      "rating": 5,
+      "review_count": 231
+    },
+    "trust_badges": [
+      { "mark": "google", "rating": 5, "label": "5.0 on Google", "sublabel": "231 reviews" },
+      { "label": "Licensed in PA & NJ", "sublabel": "NJ #13VH09734600 · PA #PA162561" }
+    ]
+  },
+  "promise_bar": [
+    { "text": "Free, itemized estimates", "icon": "clipboard" },
+    { "text": "Licensed in PA & NJ", "icon": "shield" },
+    { "text": "20+ years in business", "icon": "award" }
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "A Transparent, Free Estimate Before Anything Starts",
+    "body": "Before any construction begins, we offer a transparent, free estimate so you have a clear understanding of the project's scope and costs. Our commitment to transparent pricing means you're fully aware of current material costs, with no price gouging — even as the construction industry shifts with market conditions.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "icon": "handshake"
+  },
+  "signature_system": {
+    "eyebrow": "Why Homeowners Choose Us",
+    "headline": "Built On Outstanding Service, Not Just Roofs",
+    "intro": "For the last 20 years, we've built our business on outstanding customer service, quality craftsmanship, and transparent pricing — earning a reputation as one of the most trusted roofing companies in NEPA and New Jersey.",
+    "blocks": [
+      {
+        "title": "Experienced Roofing Professionals",
+        "body": "Our team of skilled roofing experts has years of experience in the roofing industry and stays up-to-date with the latest roofing trends and techniques, so your roof is installed or repaired using the best practices.",
+        "icon": "shield"
+      },
+      {
+        "title": "Quality Craftsmanship",
+        "body": "We are committed to providing exceptional work on every project, backed by a lifetime Manufacturer's Warranty and a 10-Year Workmanship Warranty on our roofing work.",
+        "icon": "award"
+      },
+      {
+        "title": "Competitive, Honest Pricing",
+        "body": "Roofing jobs can be expensive, so we work hard to keep our rates fair without sacrificing quality — and we'll help you find the option that gives you the most value for your budget.",
+        "icon": "document"
+      }
+    ],
+    "steps_title": "What Our Reviews Keep Mentioning",
+    "steps_icon": "broom",
+    "steps": [
+      { "title": "They answer the phone", "body": "\"Jared is easy to communicate with and promptly answers texts and calls\" — a recurring theme across our Google reviews." },
+      { "title": "They show up on time", "body": "\"The crew was great and arrived on time. They worked together like a well oiled machine.\"" },
+      { "title": "They clean up thoroughly", "body": "\"Very polite crew, cleaned up thoroughly, and the roof is getting compliments from neighbors.\"" }
+    ],
+    "guarantee": {
+      "title": "Lifetime & 10-Year Workmanship Warranty",
+      "body": "All our roofing work comes with a lifetime Manufacturer's Warranty and a 10-Year Workmanship Warranty. We stand by every job we complete — unlike some contractors who may leave projects unfinished.",
+      "cta_text": "Get My Free Estimate",
+      "cta_href": "/book"
+    }
+  },
+  "process_steps": {
+    "headline": "The Roof Repair & Replacement Process",
+    "steps": [
+      { "label": "Step One", "title": "Request a Free Estimate", "icon": "clipboard", "body": "We believe in transparent, fair pricing. One of our professional roofers will assess your needs and provide a detailed quote." },
+      { "label": "Step Two", "title": "Detailed Estimation", "icon": "document", "body": "Once we've assessed your roof's condition, we provide a detailed estimate and discuss the options with you so you have all the information needed to decide." },
+      { "label": "Step Three", "title": "Installation", "icon": "hammer", "body": "Our experienced crew completes the work efficiently and professionally, whether it's a repair, replacement, siding job, or gutter installation." },
+      { "label": "Step Four", "title": "Complete Satisfaction", "icon": "broom", "body": "We work closely with you from the initial quote through the final inspection to address any concerns and ensure the highest quality workmanship." }
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Allabaugh Construction",
+    "headline": "A NEPA & NJ Roofing Company Built Over 20 Years",
+    "body": "Allabaugh Construction, LLC is led by owner Jared Allabaugh out of Plymouth, PA. For over 20 years, we've built a reputation for delivering exceptional roofing and construction services to clients throughout Northeast Pennsylvania — including Scranton, Wilkes-Barre, and Hazleton — as well as New Jersey communities like Princeton and Hamilton. Our full-service approach handles everything from roof repairs and replacements to siding, gutters, and skylight installation for residential and commercial properties.",
+    "checklist": [
+      "NJ Contractor License #13VH09734600",
+      "PA Contractor License #PA162561",
+      "Licensed & Insured",
+      "5.0 rating across 231 Google reviews",
+      "Lifetime Manufacturer's Warranty + 10-Year Workmanship Warranty"
+    ],
+    "photo": "/img/completed-roof-2.webp",
+    "photo_alt": "Completed roof replacement on a two-story home at dusk",
+    "photo_cutout": false,
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Comprehensive Roofing Services",
+    "headline": "Roofing Contractors in Northeast Pennsylvania & New Jersey",
+    "paragraphs": [
+      "When searching for a reliable roofing company in NJ and NEPA, homeowners need a strong, durable roof to protect their family and belongings from the elements. Allabaugh Construction, LLC's team of skilled professionals delivers top-notch repair, installation, and maintenance services, tailored to your specific requirements.",
+      "We work with both modern and traditional materials, including architectural shingles and EPDM roofing systems, to deliver durable, high-quality results — whether your property needs re-roofing, maintenance, partial or full tear-offs, or assessment after storm damage.",
+      "We proudly serve all of New Jersey, Lackawanna County, and Luzerne County, PA, offering high-quality roofing and siding solutions, and we specialize in both asphalt shingle roofs and flat roofs for homes and businesses alike."
+    ],
+    "checklist": [
+      "Roof repair, replacement & installation",
+      "Roof maintenance & inspections",
+      "Siding installation",
+      "Gutter repair, installation, cleaning & guards",
+      "Skylight installation & roofing ventilation"
+    ],
+    "image": "/img/hero-roof-install.webp",
+    "image_alt": "Aerial view of an Allabaugh Construction crew installing a new roof",
+    "image_position": "left",
+    "review": {
+      "name": "Susan S.",
+      "source": "Google Review",
+      "rating": 5,
+      "text": "Jared and just team are professional and caring people. I recently had siding a roof and ceilings done. The work was impeccable. They kept to a great schedule and left the house clean and neat and the job was done perfectly."
+    },
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [
+    {
+      "name": "E Mulryne",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "I am very happy we chose Allabaugh Construction to replace our roof. Jared is knowledgeable and came up with options and great solutions for our needs. Jared is easy to communicate with and promptly answers texts and calls. The crew was great and arrived on time. They worked together like a well oiled machine!"
+    },
+    {
+      "name": "Dana Dreibelbis",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Allabaugh Construction is first class. Excellent communications, very timely and accurate information, met every single deadline!, very polite crew, cleaned up thoroughly and roof is getting compliments from neighbors. Highly recommend."
+    },
+    {
+      "name": "Robin Gesuelli",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "5 stars for Allabaugh Construction! In a business where, despite the enormity of costs to replace a roof, it's near impossible to get prospective companies to call me back - Allabaugh is a breath of fresh air. Throughout the whole process, they promptly answered my questions, provided details, and talked me through various options until I was satisfied."
+    },
+    {
+      "name": "Lacey L",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "I cant say enough good things about our experience with Jared! He's super personable yet professional and you can see he loves his job. He communicates and is transparent with every detail and does what he says he will. He and his crew show up on time, if not early."
+    },
+    {
+      "name": "Susan S.",
+      "location": "Google Review",
+      "rating": 5,
+      "text": "Jared and just team are professional and caring people. I recently had siding a roof and ceilings done. The work was impeccable. They kept to a great schedule and left the house clean and neat and the job was done perfectly."
+    }
+  ],
+  "faqs": [
+    { "q": "How do I know if my roof needs repair or replacement?", "a": "Roof inspections by a professional can help determine whether your roof requires repair or replacement. Factors such as age, visible damage, and leaks will be considered when recommending a service." },
+    { "q": "How long does a typical asphalt shingle roofing installation last?", "a": "A roof's lifespan depends on the materials used and how well it has been maintained. With that said, asphalt shingle roofs generally last 20-30 years." },
+    { "q": "What is the best type of roof for my home?", "a": "The best roof for your home depends on factors such as your budget, the local climate, and your aesthetic preferences. Our team can help you determine the best roofing option for your needs." },
+    { "q": "How often should I schedule roof maintenance?", "a": "Regular roof maintenance is crucial for prolonging the life of your roof. Having your roof inspected at least once a year or after severe weather events is generally recommended." },
+    { "q": "How much does a roof replacement cost?", "a": "The cost of a new roof can vary based on factors like the size of your roof, the roofing material chosen, and any additional services needed. Consulting with our team will provide you with an accurate, free estimate." },
+    { "q": "Will my new roof come with a warranty?", "a": "Yes — every roof we install comes with a lifetime Manufacturer's Warranty and a 10-Year Workmanship Warranty. Discuss the warranty details with our team today." },
+    { "q": "Are you licensed and insured?", "a": "Yes. We're licensed and insured in both states — NJ Contractor License #13VH09734600 and PA Contractor License #PA162561." },
+    { "q": "Which areas do you serve?", "a": "We serve all of New Jersey and Northeast Pennsylvania, including Luzerne County, Lackawanna County, Scranton, Wilkes-Barre, Hazleton, Princeton, Hamilton, Mercer County and Ewing." }
+  ]
+}
