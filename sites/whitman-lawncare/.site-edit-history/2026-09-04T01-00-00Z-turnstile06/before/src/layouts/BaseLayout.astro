@@ -1,12 +1,11 @@
 ---
 import '../styles/global.css';
-import { getEntry, getCollection } from 'astro:content';
-import { agentSiteSummary, publishedServices, publishedAreas } from '../lib/agent-docs.js';
+import { getEntry } from 'astro:content';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SkipNav from '../components/SkipNav.astro';
 import CookieConsent from '../components/CookieConsent.astro';
-import AttributionCapture from '../components/AttributionCapture.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
 
 export interface Props {
   title: string;
@@ -63,29 +62,6 @@ const localBusinessLd = {
     : undefined,
 };
 
-// Agent summary, homepage only. It restates the business in markdown, so
-// repeating it on every page would be duplicate weight for no gain.
-const agentSummary =
-  pathKey === '/'
-    ? agentSiteSummary({
-        site,
-        services: publishedServices(await getCollection('services')),
-        areas: publishedAreas(await getCollection('service_areas')),
-      })
-    : null;
-
-// Links the site itself to the business by @id, so a crawler resolves the two
-// as one entity rather than two unrelated nodes.
-const websiteLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': `${site.site_url}#website`,
-  url: site.site_url,
-  name: site.business_name,
-  inLanguage: 'en-US',
-  publisher: { '@id': `${site.site_url}#localbusiness` },
-};
-
 const breadcrumbLd = breadcrumbs && breadcrumbs.length > 0 ? {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -94,14 +70,23 @@ const breadcrumbLd = breadcrumbs && breadcrumbs.length > 0 ? {
   })),
 } : null;
 
-const ldPayloads = [localBusinessLd, websiteLd, breadcrumbLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])].filter(Boolean);
+const ldPayloads = [localBusinessLd, breadcrumbLd, ...(Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [])].filter(Boolean);
 ---
 <!doctype html>
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="content-language" content="en-us" />
+
+    {/* Favicons are cropped from the sun-and-grass mark on the left of
+        public/logo-whitman.png. The full logo is 600x140 — squeezed into a
+        32px square the wordmark is an unreadable smear, so only the badge is
+        used. apple-touch-icon is flattened onto white because iOS composites
+        transparency onto black. */}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -130,23 +115,7 @@ const ldPayloads = [localBusinessLd, websiteLd, breadcrumbLd, ...(Array.isArray(
     <link rel="alternate" hreflang="en-US" href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     {ldPayloads.map((ld) => <script type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, '\\u003c')} />)}
-    {/* Inert to browsers (type is not JS), readable to agents parsing the DOM. */}
-    {agentSummary && (
-      <script type="text/markdown" id="agent-site-summary" set:html={agentSummary.replace(/</g, '\\u003c')} />
-    )}
     {injection.head && <Fragment set:html={`<!-- code-injection:head -->\n${injection.head}\n<!-- /code-injection:head -->`} />}
-
-    {/* Turnstile loader. Here rather than in EstimateForm because several pages
-        render two forms (hero panel + booking section) and the script must not
-        be requested twice. It auto-renders every .cf-turnstile element on the
-        page, so one loader covers both. Loaded whenever a site key is set —
-        a handful of pages carry no form and pay for it, which is cheaper than
-        the alternatives and keeps the rule easy to reason about. */}
-    {site.crm?.turnstile_site_key && (
-      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline></script>
-    )}
-    {/* Must run on EVERY page: the parameters are on the landing page, not on /book. */}
-    <AttributionCapture />
   </head>
   <body>
     {injection.body_start && <Fragment set:html={`<!-- code-injection:body_start -->\n${injection.body_start}\n<!-- /code-injection:body_start -->`} />}
@@ -155,6 +124,13 @@ const ldPayloads = [localBusinessLd, websiteLd, breadcrumbLd, ...(Array.isArray(
     <main id="main" tabindex="-1"><slot /></main>
     <Footer />
     {site.compliance?.gdpr && <CookieConsent />}
+    {/* Site-wide, not per-page. Individual pages used to each import this and
+        only 9 of 17 did, so the chat was missing from the blog, both index
+        pages and /thank-you — exactly the pages a search visitor lands on
+        cold. Rendering it here means a page cannot be built without it.
+        Self-closing when no snippet is configured, so this is inert until
+        crm.chat_widget_snippet is set. */}
+    <GHLChatWidget />
     {injection.body_end && <Fragment set:html={`<!-- code-injection:body_end -->\n${injection.body_end}\n<!-- /code-injection:body_end -->`} />}
   </body>
 </html>

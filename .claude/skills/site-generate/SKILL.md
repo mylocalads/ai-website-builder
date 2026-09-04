@@ -196,6 +196,13 @@ CRM paste-only block (intake §12 — paste verbatim, DO NOT synthesize URLs, DO
 - `crm.estimate_form_embed_url` — bare iframe src URL for the shorter estimate form on service pages.
 - `crm.call_tracking_snippet` — GHL number-swap `<script>`.
 - `crm.call_tracking_number` — the display number that number-swap replaces.
+- `crm.turnstile_site_key` — **do NOT ask the operator for this and do NOT invent
+  it.** `vercel-deploy` step 5b creates the Cloudflare widget once the final
+  hostnames are known and writes the key itself, together with the matching
+  `TURNSTILE_SECRET_KEY` on the Vercel project. Leave the field absent here.
+  Setting a key at generate time, before the domain exists, produces a widget
+  whose hostname list is wrong — and Turnstile then rejects every real
+  submission from the live domain.
 
 Omit any key the operator left blank. Do not write empty-string values.
 

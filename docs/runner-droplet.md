@@ -44,6 +44,17 @@ has to be changed in both places.
 | `VERCEL_TOKEN` | Same value as the Mac's `.env` |
 | `APIFY_TOKEN` | Same value as the Mac's `.env` |
 | `SHORTIO_API_KEY` | Same value as the Mac's `.env` — optional, currently unset |
+| `CLOUDFLARE_API_TOKEN` | Same value as the Mac's `.env`. Scope: **Account → Turnstile → Edit**, nothing wider |
+| `CLOUDFLARE_ACCOUNT_ID` | Same value as the Mac's `.env`. The path segment in `dash.cloudflare.com/<ACCOUNT_ID>` |
+
+The two Cloudflare keys are what let `vercel-deploy` step 5b create a Turnstile
+widget per client. **They matter more here than on the Mac.** Queued builds run
+on this box with nobody watching, so a site generated from the portal is the one
+most likely to go live unprotected. With both unset the deploy still succeeds and
+reports `Turnstile: SKIPPED` — deliberately, so a missing captcha never fails an
+otherwise good build. The cost of that choice is that a silent skip looks like
+success, which is exactly how the protection stayed off everywhere until Whitman
+took five bot leads through a live form.
 
 No DNS credential lives here. Branded preview URLs are parked until
 `mylocalads.co` moves off Squarespace — see `parked-preview-domain.md`.

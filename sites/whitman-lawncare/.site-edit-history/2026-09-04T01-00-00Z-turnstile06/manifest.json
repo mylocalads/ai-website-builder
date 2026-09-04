@@ -1,0 +1,14 @@
+{
+  "batch_id": "2026-09-04T01-00-00Z-turnstile06",
+  "mode": "edit",
+  "slug": "whitman-lawncare",
+  "operator_request": "Add Cloudflare Turnstile to the estimate form and wire it into the build pipeline",
+  "status": "deployed",
+  "npm_build": "ok",
+  "deploy": {
+    "vercel_deployment_id": "dpl_5vw35R8Gwi3EjCFzFaRiTEVshXfs",
+    "canonical_url": "https://whitmanlawncare.com",
+    "at": "2026-09-04T01:00:00Z"
+  },
+  "note": "Turnstile widget 'whitman-lawncare', sitekey 0x4AAAAAAEnVMe6knsGlgMLB, mode managed, 4 hostnames. Secret lives only in Vercel env."
+}

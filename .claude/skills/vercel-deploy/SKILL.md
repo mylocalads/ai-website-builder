@@ -171,6 +171,150 @@ Store the final URL:
 - If `--domain` was passed: `final_url = https://{domain}`
 - Otherwise: `final_url = interim_url`
 
+### 5b. Turnstile — create the widget and wire both keys
+
+Runs on EVERY deploy, after the final hostname set is known (so after any
+`--domain` attach) and BEFORE the Step 7 redeploy, because the site key is baked
+into the HTML at build time.
+
+**Why this is automated rather than documented.** `api/estimate.ts` has verified
+Turnstile tokens since the template was written, and it sat switched off on every
+site for months, because nothing in the pipeline ever set a key. A protection
+that depends on a human remembering is a protection you do not have. Whitman took
+five bot leads through a live form in six days before anyone noticed.
+
+Needs `CLOUDFLARE_API_TOKEN` (scope: *Account → Turnstile → Edit*) and
+`CLOUDFLARE_ACCOUNT_ID` in `.env`. **If either is unset, skip this step, say so in
+the summary, and carry on.** A missing captcha must never fail a deploy that is
+otherwise good.
+
+One widget per client, named for the slug — so a leaked secret is one site's
+problem, hostnames stay accurate, and Cloudflare analytics separate per client.
+
+```bash
+cd sites/{slug}
+if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+  echo "Turnstile: CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID unset — skipping"
+else
+  CF="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/challenges/widgets"
+  AUTH="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+
+  # Every hostname the form can be served from. Miss one and Turnstile rejects
+  # every submission from it — hostname validation is enforced, not advisory.
+  # Apex, www, the vercel.app alias, and the preview subdomain.
+  DOMAINS_JSON=$(python3 -c "
+import json,sys
+slug, domain = sys.argv[1], sys.argv[2]
+hosts = [f'{slug}.vercel.app', f'{slug}.mylocalads-preview.co']
+if domain:
+    hosts = [domain, 'www.' + domain] + hosts
+print(json.dumps(hosts))
+" "{slug}" "{domain}")
+
+  # Reuse this slug's widget if it already exists. A second widget would orphan
+  # the secret already sitting in Vercel and silently break the live form.
+  SITEKEY=$(curl -s -H "$AUTH" "$CF" | python3 -c "
+import json,sys
+ws = json.load(sys.stdin).get('result') or []
+print(next((w['sitekey'] for w in ws if w.get('name') == '{slug}'), ''))
+")
+
+  if [ -n "$SITEKEY" ]; then
+    curl -s -X PATCH -H "$AUTH" -H 'Content-Type: application/json' \
+      --data "$(python3 -c "
+import json,sys;print(json.dumps({'domains': json.loads(sys.argv[1]), 'mode': 'managed'}))
+" "$DOMAINS_JSON")" "$CF/$SITEKEY" -o /dev/null
+    # Only a rotate hands back the secret; a GET never returns it.
+    SECRET=$(curl -s -X POST -H "$AUTH" "$CF/$SITEKEY/rotate_secret" \
+      | python3 -c "import json,sys;print(json.load(sys.stdin)['result']['secret'])")
+  else
+    RESP=$(curl -s -X POST -H "$AUTH" -H 'Content-Type: application/json' \
+      --data "$(python3 -c "
+import json,sys;print(json.dumps({'name': '{slug}', 'domains': json.loads(sys.argv[1]), 'mode': 'managed'}))
+" "$DOMAINS_JSON")" "$CF")
+    SITEKEY=$(echo "$RESP" | python3 -c "import json,sys;print(json.load(sys.stdin)['result']['sitekey'])")
+    SECRET=$(echo "$RESP"  | python3 -c "import json,sys;print(json.load(sys.stdin)['result']['secret'])")
+  fi
+fi
+```
+
+`mode: managed` — Cloudflare decides per visitor. Nearly every real person sees
+nothing; a suspicious one gets a checkbox. `invisible` looks tidier but leaves no
+fallback when Cloudflare is unsure, which on a lead form means silently losing a
+customer.
+
+Then set BOTH halves. **Never set one without the other.** A site key with no
+secret renders a widget that gates nothing: `captchaOk()` returns `true` when no
+secret is configured, so the form looks protected and is not.
+
+```bash
+# Public half -> content. It ships inside the HTML, so it is not a secret.
+python3 - "$SITEKEY" <<'PYEOF'
+import json, sys, io
+p = 'src/content/site/config.json'
+d = json.load(io.open(p, encoding='utf-8'))
+d.setdefault('crm', {})['turnstile_site_key'] = sys.argv[1]
+io.open(p, 'w', encoding='utf-8', newline='\n').write(json.dumps(d, indent=2) + '\n')
+PYEOF
+
+# Private half -> Vercel env. Remove first: `env add` does not overwrite.
+npx vercel env rm TURNSTILE_SECRET_KEY production --yes 2>/dev/null || true
+printf '%s' "$SECRET" | npx vercel env add TURNSTILE_SECRET_KEY production
+```
+
+**Never write the secret into `config.json`, into `sites/build-log.md`, or into a
+commit.** It is the only thing standing between the form and the bots, and the
+public site key sitting beside it makes the two easy to confuse.
+
+Verify after the Step 7 redeploy:
+
+```bash
+curl -s https://{domain}/book | grep -c 'challenges.cloudflare.com/turnstile'
+```
+
+Expect exactly `1` — the loader lives in `BaseLayout`, so two would mean a page
+is pulling it twice. Then check the rendered key matches:
+
+```bash
+curl -s https://{domain}/book | grep -o 'data-sitekey="[^"]*"' | head -1
+```
+
+Finally, confirm a REAL browser gets a token. A captcha that rejects real
+customers is worse than the spam it stops, and this is the only check that
+catches a hostname missing from the widget's list.
+
+**Turnstile will not solve inside the agent's automated browser.** No challenge
+iframe is created, no token appears, and — the part that wastes an hour — no
+error callback fires and the console stays clean, so it looks exactly like a
+broken configuration. It is not. Do not go hunting for a CSP, re-create the
+widget, or change `data-appearance` on this evidence. The two checks that ARE
+conclusive from here:
+
+```bash
+# Is the secret itself valid? invalid-input-response = good (only the dummy token
+# was rejected). invalid-input-secret = the secret is genuinely wrong.
+curl -s -X POST https://challenges.cloudflare.com/turnstile/v0/siteverify \
+  -d "secret=$SECRET" -d "response=dummy" | grep -o 'invalid-input-[a-z]*'
+
+# Is enforcement live? A tokenless POST must come back error=captcha.
+curl -s -o /dev/null -w '%{redirect_url}\n' -X POST https://{domain}/api/estimate \
+  -H 'Origin: https://{domain}' --data-urlencode 'full_name=x' --data-urlencode 'return_to=/book'
+```
+
+For the client half, ask the operator to open `/book` in a normal browser and
+confirm the green **Success!** tick. Until they confirm, **do not leave
+`TURNSTILE_SECRET_KEY` set** — with the secret present and tokens not generating,
+every real lead is rejected, which is far more expensive than the spam. Set the
+site key, deploy, get the confirmation, then add the secret and redeploy.
+
+Leave the widget VISIBLE — never `data-appearance="interaction-only"` on a lead
+form. Invisible is tidier right up until it fails, and then the visitor sees an
+ordinary form that silently refuses every submission with no error anywhere.
+
+**Firefly sites are out of scope.** That template has no `api/estimate.ts` — it
+embeds a GoHighLevel form in an iframe, so the form runs on GHL's servers and its
+spam settings live in GHL, not here. Skip this step entirely for firefly.
+
 ### 6. Rewrite the site URL
 
 Rewrite three files inside `sites/{slug}/`:
@@ -285,6 +429,8 @@ Show the user:
 - Business name, slug, final URL
 - Page count
 - GHL widget IDs status (chat / reviews / form embed URLs / call-tracking presence)
+- Turnstile status — `sitekey set + secret set`, or `SKIPPED (no Cloudflare credentials)`.
+  Say which, every time. A silent skip is how it stayed off everywhere before.
 - Compliance flags status (ADA / GDPR / A2P — all default true)
 - Code injection slots status (head / body_start / body_end presence)
 - Reserved-slug warnings if `getStaticPaths` filtered any service_areas
@@ -337,6 +483,14 @@ by someone outside the team.
 - Never touch `astro-templates/` — only `sites/{slug}/`.
 - Never chain `cd sites/{slug} && <cmd>` across separate Bash tool invocations — each is a fresh subshell, and the repeated `cd` silently fails when you're already inside `sites/{slug}`. Run one `cd` up-front per Bash block and confirm `pwd`.
 - Never disable Vercel SSO on a project by default — see §Deployment Protection above.
+- Never set `turnstile_site_key` without also setting `TURNSTILE_SECRET_KEY`, or the
+  form renders a widget that gates nothing — the endpoint skips verification when no
+  secret is present, so it looks protected and is not.
+- Never put a Turnstile secret in `config.json`, `build-log.md`, or a commit. The site
+  key beside it IS public; the secret is not.
+- Never attach a domain without adding it to the Turnstile widget in the same run. An
+  unlisted hostname makes Turnstile reject every submission from it — a silent, total
+  lead outage on the client's real domain.
 
 ## Failure recovery
 

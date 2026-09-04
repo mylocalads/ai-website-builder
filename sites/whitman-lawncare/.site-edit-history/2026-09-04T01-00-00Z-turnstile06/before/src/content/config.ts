@@ -11,8 +11,8 @@ const services = defineCollection({
     long_description: z.string(),
     icon: z.string().optional(),
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
-    // URL or local path (e.g. /img/foo.jpg). Client photos are better served
-    // from public/ than hotlinked off the client's old CMS, which can vanish.
+    // URL or local path, e.g. /img/fertilization.jpg. The client's own photos
+    // are served from public/ rather than hotlinked off their old WordPress.
     hero_photo: z.string().optional(),
     // A SECOND photo, distinct from hero_photo, for the AboutSection figure.
     // The service page used to pass hero_photo to BOTH the hero background and
@@ -20,9 +20,6 @@ const services = defineCollection({
     // Left unset, the About section renders text-only rather than repeating the
     // hero — that is the intended fallback, not a bug.
     about_photo: z.string().optional(),
-    // Describes the about_photo for screen readers. The page previously fell
-    // back to a templated "{title} — {business}" label, which names the service
-    // rather than describing the image. Mirrors landmark_alt on service_areas.
     about_photo_alt: z.string().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
@@ -61,8 +58,7 @@ const service_areas = defineCollection({
     // local_context — falling back to it would just restage the duplication.
     about_body: z.string().optional(),
     local_context: z.string().optional(),
-    // URL or local path (e.g. /img/foo.jpg). Client photos are better served
-    // from public/ than hotlinked off the client's old CMS, which can vanish.
+    // URL or local path, matching services.hero_photo.
     hero_photo: z.string().optional(),
     landmark_photo: z.string().optional(),
     landmark_alt: z.string().optional(),
@@ -94,8 +90,7 @@ const blog = defineCollection({
       message: 'publish_date must be ISO yyyy-mm-dd so posts sort correctly',
     }),
     read_time: z.string(),
-    // URL or local path (e.g. /img/foo.jpg). Client photos are better served
-    // from public/ than hotlinked off the client's old CMS, which can vanish.
+    // URL or local path, matching services.hero_photo.
     hero_image: z.string().optional(),
     author: z.string().optional(),
     tags: z.array(z.string()).default([]),
@@ -137,6 +132,12 @@ const site = defineCollection({
         postal: z.string().optional(),
         country: z.string().default('US'),
       }),
+      mailing_address: z.object({
+        line1: z.string(),
+        city: z.string(),
+        state: z.string(),
+        postal: z.string().optional(),
+      }).optional(),
       marketing_city: z.string().optional(),
       marketing_state: z.string().optional(),
       geo: z.object({ lat: z.number(), lng: z.number() }).optional(),
@@ -177,8 +178,8 @@ const site = defineCollection({
         headline: z.string().optional(),
         us_label: z.string().default('US'),
         them_label: z.string().default('THEM'),
-        us_photo: z.string().optional(),
-        them_photo: z.string().optional(),
+        us_photo: z.string().url().optional(),
+        them_photo: z.string().url().optional(),
         rows: z.array(z.object({
           label: z.string(),
           us: z.boolean().default(true),
@@ -211,17 +212,20 @@ const site = defineCollection({
         // markup. Never synthesize either — an unset action renders the
         // form disabled rather than silently dropping submissions.
         form_action_url: z.string().url().optional(),
-        // Cloudflare Turnstile. A site key is public, so it belongs in content
-        // rather than env; the matching secret is TURNSTILE_SECRET_KEY on the
-        // deployment and is what api/estimate.ts verifies against. Set one
-        // without the other and the form is NOT protected: with no secret the
-        // endpoint skips verification entirely, so `vercel-deploy` sets both or
-        // neither.
-        turnstile_site_key: z.string().optional(),
-        // Legacy paste-in for a hand-configured captcha. Prefer the key above —
-        // it is one value the pipeline can write, not markup a human must paste.
         captcha_snippet: z.string().optional(),
       }).default({ provider: 'ghl' }),
+      // Online payments. The PayPal client ID is a PUBLIC identifier — it ships
+      // in client-side JS on any site with a PayPal button, and is not a secret.
+      // The secret half of the credential pair never appears here or anywhere in
+      // this repo. Omit the whole block and /online-payments renders a "payments
+      // are not set up" notice instead of a broken button.
+      payments: z.object({
+        provider: z.literal('paypal').default('paypal'),
+        paypal_client_id: z.string().optional(),
+        currency: z.string().default('USD'),
+        // PayPal funding sources to switch on, comma-separated (e.g. "venmo").
+        enable_funding: z.string().optional(),
+      }).default({ provider: 'paypal', currency: 'USD' }),
       code_injection: codeInjectionSlots.extend({
         per_page: z.record(codeInjectionSlots).default({}),
       }).default({ per_page: {} }),
@@ -231,36 +235,6 @@ const site = defineCollection({
         heading_rest: z.string().optional(),
         subtitle: z.string().optional(),
       }).default({ eyebrow: 'Our Services' }),
-      // Native EstimateForm copy and options. `services` feeds BOTH the form's
-      // <select> and the server-side allowlist in pages/api/estimate.ts, which
-      // read it through src/lib/services.ts — see that file for why they must
-      // not be maintained separately. Left empty, the form falls back to a
-      // vertical-neutral list; a real intake should always supply this, because
-      // the options are what the lead record ends up saying the job is.
-      estimate_form: z.object({
-        heading: z.string().optional(),
-        services: z.array(z.string()).default([]),
-      }).default({ services: [] }),
-      // Site-wide default copy for the ClosingCTA band, which appears on eleven
-      // pages. Unset, only a neutral headline and button render — no body. That
-      // is deliberate: the body is where a guarantee ("no payment until you're
-      // satisfied"), a founding year, or a service area gets asserted, and none
-      // of those may be inherited from a template. Pages with a different ask
-      // still override per call site.
-      closing_cta: z.object({
-        headline: z.string().optional(),
-        body: z.string().optional(),
-        cta_text: z.string().optional(),
-        cta_href: z.string().optional(),
-      }).default({}),
-      // Blog section naming. `heading` is the <h2> above the recent-articles
-      // row; `description` is the /blog meta description. Both default to
-      // trade-agnostic copy — "Roofing Advice" on a landscaper's site is the
-      // kind of leftover this exists to prevent.
-      blog_section: z.object({
-        heading: z.string().optional(),
-        description: z.string().optional(),
-      }).default({}),
     }),
     z.object({
       kind: z.literal('home'),
@@ -270,7 +244,7 @@ const site = defineCollection({
         subheadline: z.string(),
         cta_text: z.string(),
         cta_href: z.string(),
-        photo: z.string().optional(),
+        photo: z.string().url().optional(),
         video: z.string().url().optional(),
         video_link_text: z.string().optional(),
         video_link_href: z.string().optional(),
@@ -283,7 +257,7 @@ const site = defineCollection({
         quote_card: z.object({
           quote: z.string(),
           author: z.string().optional(),
-          author_photo: z.string().optional(),
+          author_photo: z.string().url().optional(),
           cta_text: z.string(),
           cta_href: z.string(),
           rating: z.number().optional(),
@@ -314,7 +288,7 @@ const site = defineCollection({
           // document, umbrella, calendar, broom, home). An unknown key
           // renders nothing — it is never printed as text.
           icon: z.string().optional(),
-          image: z.string().optional(),
+          image: z.string().url().optional(),
         })).default([]),
         steps_title: z.string().optional(),
         steps_icon: z.string().optional(),   // icon registry key
@@ -385,29 +359,12 @@ const site = defineCollection({
         includes: z.array(z.string()), cta_text: z.string(), cta_href: z.string(),
       })),
       notes: z.string().optional(),
-      // Optional cost table on /pricing. Shape is deliberately generic — an
-      // n-column table of strings — because what a client can honestly publish
-      // varies: a roofer may have per-square ranges, a mechanical contractor
-      // may only have the variables that drive a quote. The template ships NO
-      // default rows: an invented rate card is a price the client never agreed
-      // to, so an unset cost_table hides the section entirely.
-      cost_table: z.object({
-        heading: z.string(),
-        lede: z.string().optional(),
-        columns: z.array(z.string()).min(2),
-        rows: z.array(z.array(z.string())).default([]),
-        footnote: z.string().optional(),
-      })
-        .refine((t) => t.rows.every((r) => r.length === t.columns.length), {
-          message: 'every cost_table row must have exactly as many cells as there are columns',
-        })
-        .optional(),
     }),
     z.object({
       kind: z.literal('our-work'),
       intro: z.string(),
       projects: z.array(z.object({
-        title: z.string(), location: z.string().optional(), photo: z.string(),
+        title: z.string(), location: z.string().optional(), photo: z.string().url(),
         alt: z.string(), description: z.string().optional(),
       })),
     }),
