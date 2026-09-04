@@ -96,11 +96,29 @@ async function captchaOk(form: FormData, ip: string | null): Promise<boolean> {
   const body = new URLSearchParams({ secret: (turnstile ?? recaptcha)!, response: token });
   if (ip) body.set('remoteip', ip);
 
+  // Every exit below is logged. A network blip talking to Cloudflare and a
+  // genuine bot both end as `return false`, and the visitor sees the same
+  // "spam check did not pass" either way. Without a log there is nothing to
+  // tell them apart, and an outage reads as a quiet afternoon rather than as
+  // every lead being turned away — which is the more expensive of the two by a
+  // wide margin. The token itself is never logged; it is a bearer credential.
   try {
     const res = await fetch(endpoint, { method: 'POST', body });
-    const json = (await res.json()) as { success?: boolean };
-    return json.success === true;
-  } catch {
+    if (!res.ok) {
+      console.error(`[estimate] captcha siteverify HTTP ${res.status} — rejecting, but this is OUR fault, not the visitor's`);
+      return false;
+    }
+    const json = (await res.json()) as { success?: boolean; 'error-codes'?: string[] };
+    if (json.success !== true) {
+      // invalid-input-secret means the deployment's secret does not match the
+      // widget — a config error that rejects EVERY real visitor, and the one
+      // failure here worth paging someone about.
+      console.error('[estimate] captcha rejected:', JSON.stringify(json['error-codes'] ?? []));
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error('[estimate] captcha siteverify unreachable — rejecting, but this is OUR fault, not the visitor\'s:', err);
     return false;
   }
 }
