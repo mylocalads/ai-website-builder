@@ -33,9 +33,10 @@
   "phone_display": "+1 509-295-9346",
   "email": "Office@fireflycd.com",
   "address": {
-    "street": "24307 E Kildea Rd",
-    "city": "Otis Orchards",
+    "street": "12018 E 1st Ave Suite D",
+    "city": "Spokane Valley",
     "state": "WA",
+    "postal": "99206",
     "country": "US"
   },
   "marketing_city": "Spokane",

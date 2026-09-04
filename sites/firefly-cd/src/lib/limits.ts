@@ -19,18 +19,23 @@
 /**
  * SITE-SPECIFIC CAPS — these deliberately differ from the template's 5 / 5.
  *
- * firefly-cd was raised to 7 services and 6 areas as those pages were added,
- * and every one of them is live and indexed on fireflycd.com. Re-copying
- * astro-templates/firefly/src/lib/limits.ts over this file would drop the site
- * back to 5 / 5 and silently delete `flooring`, `decking` (services 6 and 7 by
- * `order`) and `kootenai-county-id` (area 6). Slicing a collection is never a
- * build error, so nothing would warn you.
+ * AREA_LIMIT is 6, not the template's 5. Re-copying
+ * astro-templates/firefly/src/lib/limits.ts over this file would drop it back
+ * to 5 and silently delete `kootenai-county-id` (area 6 by `order`). Slicing a
+ * collection is never a build error, so nothing would warn you.
+ *
+ * SERVICE_LIMIT is 5 and happens to match the template today. It was 7 until
+ * the kitchen-remodels, bathroom-remodels and flooring pages were removed on
+ * 2026-09-04; the five that remain are roofing, siding, windows, insulation and
+ * decking. Keep this number equal to the number of service files — a cap higher
+ * than the collection is harmless, but a cap lower than it hides pages with no
+ * error, which is how the flooring page once vanished from /services/.
  *
  * If you raise these again, add the content first, then the cap.
  */
 
 /** Service detail pages generated, and services shown in nav/grids. */
-export const SERVICE_LIMIT = 7;
+export const SERVICE_LIMIT = 5;
 
 /** Service-area pages generated, and areas shown in nav/grids. */
 export const AREA_LIMIT = 6;
