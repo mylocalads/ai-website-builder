@@ -16,6 +16,26 @@ Takes a scaffolded Astro project at `sites/{slug}/` (produced by `site-generate`
 
 ## Process
 
+### 0. Pull first — ALWAYS, before reading or writing anything
+
+```bash
+git pull --rebase -q origin master || {
+  echo "could not pull. STOP. Do not build, do not deploy."
+  echo "A build from a stale checkout republishes a stale site."
+  exit 1
+}
+```
+
+**This is not housekeeping, it is the whole safety property.** Everything below
+edits files in `sites/{slug}` and then publishes them. If the checkout is behind,
+the edit is applied to old content and the old content is what goes live.
+
+That is what happened on 2026-09-09: a checkout 29 days stale for `firefly-cd`
+had one text change applied and the lot published. Three services deleted on 4
+September came back on a client's live site and a service added on 8 September
+disappeared. Pulling at the END — which this skill used to do, at step 9 — is too
+late: by then the wrong content has already been built and shipped.
+
 ### 1. Sanity check + CWD lock
 
 Verify `sites/{slug}/astro.config.mjs` and `sites/{slug}/package.json` exist. If not, stop and instruct the user to run `site-generate` first.
@@ -55,13 +75,17 @@ If build fails, stop and surface the error. Do NOT proceed to deploy a broken bu
 - Schema validation error in `src/content/site/config.json` (missing required fields)
 - Reserved-slug collisions in `src/content/service_areas/*.md` (see `RESERVED_SLUGS` set in `src/pages/[area].astro`)
 
-### 3. First deploy
+### 3. First deploy — the ONLY `vercel --prod` in this skill
 
 From inside `sites/{slug}`:
 
 ```bash
 npx vercel --prod --yes
 ```
+
+This one is a CLI upload on purpose: the Vercel project does not exist yet, and
+this is what creates it. **Every deploy after this comes from a git push** — see
+step 3b, which wires that up before anything else can deploy the old way.
 
 Capture the returned URL (typically `{project}.vercel.app`). Store as `interim_url`.
 
@@ -82,6 +106,35 @@ fi
 # Also sanity-check that .vercel/project.json landed inside sites/{slug}/ (not the workspace root):
 [ -f "$(pwd)/.vercel/project.json" ] || { echo "vercel link did not land in sites/{slug}/ — investigate"; exit 1; }
 ```
+
+### 3b. Connect the new project to this repo — before anything else deploys it
+
+A project that is not git-connected can only ever be published by uploading a
+folder, and whoever uploads last wins outright. Connect it the moment it exists:
+
+```bash
+PID=$(python3 -c "import json;print(json.load(open('.vercel/project.json'))['projectId'])")
+
+# Root Directory first. Linking without it makes Vercel build the repo root,
+# which is not an Astro site.
+curl -s -X PATCH -H "Authorization: Bearer $VERCEL_TOKEN" -H "Content-Type: application/json" \
+  -d "{\"rootDirectory\":\"sites/{slug}\",\"commandForIgnoringBuildStep\":\"git diff --quiet HEAD^ HEAD ./\"}" \
+  "https://api.vercel.com/v9/projects/$PID?teamId=$VERCEL_TEAM_ID" > /dev/null
+
+curl -s -X POST -H "Authorization: Bearer $VERCEL_TOKEN" -H "Content-Type: application/json" \
+  -d '{"type":"github","repo":"mylocalads/ai-website-builder","gitBranch":"master"}' \
+  "https://api.vercel.com/v9/projects/$PID/link?teamId=$VERCEL_TEAM_ID" | grep -q '"error"' && {
+    echo "could not connect the project to git — a site that only ever deploys by upload"
+    echo "is the 2026-09-09 failure waiting to happen. Fix this before finishing."
+    exit 1
+  }
+```
+
+**The Ignored Build Step is not optional.** Without it every push to `master`
+rebuilds all 43 site projects instead of the one that changed. `git diff --quiet
+HEAD^ HEAD ./` exits 0 — meaning skip — when nothing under this site's Root
+Directory changed. Verified 2026-09-09: a root-level commit produced 43 builds,
+all 43 skipped, none republished.
 
 ### 4. Make the deployment publicly viewable — every build, not optional
 
@@ -323,13 +376,25 @@ Rewrite three files inside `sites/{slug}/`:
 - `public/robots.txt` — replace `REPLACE_SITE_URL` (or the previous interim URL) with `final_url`
 - `src/content/site/config.json` — set `site_url` to `final_url`
 
-### 7. Redeploy
+### 7. Redeploy — by pushing, not by uploading
+
+Build locally to prove the URL rewrite compiles, then let **git** publish it:
 
 ```bash
-cd sites/{slug} && npm run build && vercel --prod --yes
+cd sites/{slug} && npm run build      # a gate, not a deploy
 ```
 
-Confirm the returned URL matches `final_url` (for custom domain) or matches `interim_url` (default).
+**Do NOT run `vercel --prod` here.** Every site project is connected to this repo
+(Root Directory `sites/{slug}`, branch `master`), so **the push in step 9 is the
+deploy.** Running the CLI as well uploads this box's folder directly to
+production, which is the one action that can put something live that is not in
+git — the exact failure this ordering exists to prevent.
+
+The only place `vercel --prod` still belongs is step 3, where it CREATES a
+project that does not exist yet.
+
+Confirm after step 9 that the deployment Vercel produced from the push carries
+`final_url` (custom domain) or `interim_url` (default).
 
 ### 8. Update `sites/build-log.md`
 
@@ -393,9 +458,11 @@ git commit -q -m "feat(sites): build {slug}
 Generated unattended from the portal build queue.
 Live: {final_url}"
 
-# NOW it is safe to pull: the work is in a commit, so a rebase moves it rather
-# than risking it. This lands on top of anything the operator pushed while the
-# build was running.
+# Pull again before pushing. Step 0 already pulled -- this is the second one, and
+# it catches anything the operator pushed WHILE the build was running. The work
+# is in a commit by now, so a rebase moves it rather than risking it.
+#
+# Step 0 is the one that protects the CONTENT; this one only protects the push.
 git pull --rebase -q origin master || {
   echo "rebase hit a conflict — STOP. Do not checkout, reset or force."
   echo "The site is built, live, and committed locally; only the push is pending."
@@ -411,6 +478,21 @@ git push -q origin master || {
 
 echo "pushed sites/{slug}"
 ```
+
+**THE PUSH IS THE DEPLOY.** Every site project is connected to this repo, so the
+push above is what publishes the site — not step 3, and not any `vercel --prod`
+you might be tempted to add. Confirm it landed before reporting success:
+
+```bash
+sleep 20
+curl -s -H "Authorization: Bearer $VERCEL_TOKEN" \
+  "https://api.vercel.com/v6/deployments?projectId=$PID&teamId=$VERCEL_TEAM_ID&limit=1" \
+  | python3 -c "import json,sys; d=json.load(sys.stdin)['deployments'][0]; print(d['uid'], d['state'], d.get('source'))"
+```
+
+Expect `source: git` and a state of `BUILDING` or `READY`. **`CANCELED` means the
+Ignored Build Step skipped it** — correct when this push changed nothing under
+`sites/{slug}`, and a real problem if it did.
 
 **Never `git push --force`, and never resolve a conflict by discarding.** The
 operator's own work is on the other side of that push — and on this side, so is
@@ -498,4 +580,4 @@ by someone outside the team.
 - **Vercel deploy fails auth:** run `vercel login`.
 - **Domain add fails "domain already used":** confirm the user hasn't attached this domain to another Vercel project.
 - **Redeploy shows old canonicals:** confirm astro.config.mjs `site:` was actually rewritten. Rebuild and verify `dist/index.html` head contains the new URL.
-- **Deploy returns 404 on every route:** the CWD hijack bug. Symptoms: `vercel --prod` succeeds, deployment API shows `readyState: READY`, but every URL 404s and the deployment metadata shows `framework: None`. Root cause: `.vercel/project.json` at the workspace root (parent of `sites/`) hijacked the link, so Vercel deployed the wrong directory. Recovery: `rm -rf ../../.vercel .vercel && cd sites/{slug} && npx vercel --prod --yes`, then run the post-deploy verification curl from Step 3.
+- **Deploy returns 404 on every route:** the CWD hijack bug. Symptoms: `vercel --prod` succeeds, deployment API shows `readyState: READY`, but every URL 404s and the deployment metadata shows `framework: None`. Root cause: `.vercel/project.json` at the workspace root (parent of `sites/`) hijacked the link, so Vercel deployed the wrong directory. Recovery: `rm -rf ../../.vercel .vercel && cd sites/{slug} && npx vercel --prod --yes`, then run the post-deploy verification curl from Step 3. **This recovery is for a FIRST deploy only** — a project that is already git-connected must be repaired by pushing a fix, never by uploading, or the upload becomes a live site that is not in git.

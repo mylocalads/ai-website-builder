@@ -123,8 +123,8 @@ heard of Firecrawl, and `design-reference` means nothing to them:
 | 5 | `Reviewing your existing site` | site-audit |
 | 6 | `Choosing your design` | design-reference |
 | 7 | `Building your pages` | site-generate |
-| 8 | `Publishing your site` | vercel-deploy |
-| 9 | `Finishing up` | commit + push — see **Deploying — commit first, ALWAYS**. Step 8 deployed, so the commit MUST land; a deployed site that never reached git is the 2026-09-09 failure. |
+| 8 | `Publishing your site` | vercel-deploy — creates the project on a FIRST build and connects it to git; on every later run the publishing happens at step 9's push |
+| 9 | `Finishing up` | commit + push — **this IS the deploy** for an existing site. See **Deploying — commit first, ALWAYS**. A site live but not in git is the 2026-09-09 failure. |
 
 `|| true` on the curl is deliberate: a failed progress ping is cosmetic, and it must never
 abort a build that is otherwise going fine. Losing a step name costs the client a moment's

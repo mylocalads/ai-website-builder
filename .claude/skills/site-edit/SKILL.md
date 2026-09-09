@@ -28,8 +28,12 @@ Two modes:
 
 **Mode B — Rollback.** Show the recent edit history for a site, let the operator pick an entry to revert to, restore the snapshotted files, re-validate + rebuild, and auto-deploy.
 
-Every edit run has the same six gates:
+Every edit run has the same gates, and **gate 0 comes before the operator is even
+asked anything**:
 
+0. **Pull first** — `git pull --rebase -q origin master`. Editing a stale checkout
+   applies the change to old content and then publishes the old content. See
+   "Gate 0" below; this is the 2026-09-09 failure and it is not optional.
 1. **Slug confirmation** — infer the slug from the operator's phrasing, echo it back, wait for "yes".
 2. **Technical diff spec** — rewrite the request into a numbered list of `SET path → value` lines, wait for "yes".
 3. **Snapshot** — copy every file the batch will touch into a timestamped history entry under `.site-edit-history/`.
@@ -144,6 +148,31 @@ Free for the edit + snapshot + build steps. The auto-deploy step invokes `vercel
 ## Process — Mode A (Edit)
 
 Execute in this order — do not reorder.
+
+### 0. Gate 0 — pull before you read a single file
+
+```bash
+git pull --rebase -q origin master || {
+  echo "could not pull. STOP. Do not edit, do not build, do not deploy."
+  exit 1
+}
+```
+
+**Why this is gate 0 and not a footnote.** Every step below reads the site's
+current files, changes a few of them, and publishes the result. If the checkout
+is behind, "current" is wrong: the edit lands on old content and the old content
+goes live, carrying away whatever anyone else changed in between.
+
+That is exactly what happened on 2026-09-09. This skill was asked for one text
+correction on `firefly-cd`. The checkout was 29 days stale for that site, so the
+correction was applied to August content and August content was published: three
+services deleted on 4 September reappeared on a client's live site, and a service
+added on 8 September vanished. The skill did nothing wrong after gate 0 — it never
+had a gate 0.
+
+**A conflict here is a STOP, not something to clear.** Never `git checkout -- .`,
+never `git reset --hard`, never `--force`. Report the conflict and let a human
+resolve it. The whole point of this gate is that other people's work is real.
 
 ### 1. Resolve and confirm the slug
 
@@ -330,7 +359,16 @@ limits precisely so they cannot advertise a page `getStaticPaths` never built.
 
 ### 6. Deploy
 
-On successful `npm run build`, delegate to the `vercel-deploy` skill for this slug (see `.agent/skills/vercel-deploy/SKILL.md`). Pass the slug; do NOT pass `--domain` unless the operator's original request explicitly asked to change or add a domain (a domain change is a distinct kind of edit — if the request implied one, it must have appeared in the confirmed spec).
+On successful `npm run build`, delegate to the `vercel-deploy` skill for this slug.
+
+**That skill publishes by PUSHING, not by uploading.** Every site project is
+connected to this repo, so the commit-and-push at its step 9 is what makes the
+change live; `vercel --prod` there is reserved for creating a project that does
+not exist yet. Do not add a CLI deploy of your own — an upload is the one action
+that can put something live which is not in git, and this skill's entire history
+mechanism assumes git holds what production holds.
+
+Delegate to `vercel-deploy` for this slug (see `.agent/skills/vercel-deploy/SKILL.md`). Pass the slug; do NOT pass `--domain` unless the operator's original request explicitly asked to change or add a domain (a domain change is a distinct kind of edit — if the request implied one, it must have appeared in the confirmed spec).
 
 Capture from `vercel-deploy`:
 
@@ -369,6 +407,16 @@ Rollback: `site-edit rollback firefly-cd` to revert this or an earlier batch.
 ## Process — Mode B (Rollback)
 
 Triggered by phrases like `site-edit rollback firefly-cd`, "rollback the firefly site", "undo the last edit on riverside-plumbing", "restore firefly-cd to yesterday's version".
+
+### 0. Gate 0 — pull first, here too
+
+```bash
+git pull --rebase -q origin master || { echo "could not pull. STOP."; exit 1; }
+```
+
+A rollback restores snapshotted files over the working tree and publishes the
+result. From a stale checkout that republishes everything else stale along with
+it — the same failure as an edit, reached by the other door.
 
 ### 1. Resolve and confirm the slug
 
