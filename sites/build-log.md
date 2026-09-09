@@ -5260,3 +5260,4 @@ certificate live immediately, no wait needed this time). Canonical `site_url` st
 custom-domain rewrite applied. `npm run build` produced 24 pages with no `AREA_LIMIT`,
 `SERVICE_LIMIT`, or reserved-slug warnings; `llms.txt`, `index.md`, and the `LocalBusiness`
 JSON-LD all confirmed correct post-deploy.
+| Morning Star Fields | morning-star-fields | 24 | https://morning-star-fields.vercel.app | 2026-08-31 |

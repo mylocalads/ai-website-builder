@@ -2,6 +2,34 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "morning-star-fields",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/morning-star-fields",
+        "--",
+        "--port",
+        "4347"
+      ],
+      "port": 4347
+    },
+    {
+      "name": "whitman-lawncare",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "sites/whitman-lawncare",
+        "--",
+        "--port",
+        "4345"
+      ],
+      "port": 4345
+    },
+    {
       "name": "dm-construction",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
