@@ -2,6 +2,12 @@
 
 > **Using Claude Code?** This file is loaded automatically. You're ready to go.
 
+> **Deploying anything?** `./scripts/deploy-site.sh {slug}` — it commits, pushes, builds
+> and deploys in the only safe order. Never run `vercel deploy` on its own: no project
+> here is git-connected, so a deploy uploads your whole folder and the last one wins.
+> That cost a client's live site a month of work on 2026-09-09. See
+> [Deploying — commit first, ALWAYS](#deploying--commit-first-always).
+
 ---
 
 ## STOP — Read This First
@@ -118,7 +124,7 @@ heard of Firecrawl, and `design-reference` means nothing to them:
 | 6 | `Choosing your design` | design-reference |
 | 7 | `Building your pages` | site-generate |
 | 8 | `Publishing your site` | vercel-deploy |
-| 9 | `Finishing up` | commit + push |
+| 9 | `Finishing up` | commit + push — see **Deploying — commit first, ALWAYS**. Step 8 deployed, so the commit MUST land; a deployed site that never reached git is the 2026-09-09 failure. |
 
 `|| true` on the curl is deliberate: a failed progress ping is cosmetic, and it must never
 abort a build that is otherwise going fine. Losing a step name costs the client a moment's
@@ -284,6 +290,78 @@ checklist and the link-resolution script.
 - **Never zero service areas — derive them when the intake has none** — an empty `service_areas` list is NOT a client who serves nowhere, it is a question nobody was asked. The portal's quick setup form (`QUICK_SETUP_KEYS`) collects trade, contact, website and — only when there is no website — city and state. It has no service-area field at all, and the portal's own gate treats name + trade + website as sufficient to build. So an agency-created account arrives with `service_areas: null` by construction. Writing zero area pages against that input leaves a `/service-area` index with nothing under it: a missing page type, not a correct empty state. DERIVE instead — seed with the marketing city (scraped or supplied, always first as the primary), then add the nearest towns in the same metro, within the intake's radius or 30mi when none is given, up to the template cap. Prefer cities the client's own site or GBP already names; fall back to the metro when it names none. Record the list, the radius and where each city came from in `sites/build-log.md`. Write zero only when the business genuinely serves no locality, and say so explicitly in the log.
 - **Copy angles drive messaging** — local research findings shape the hero, headlines, and initial content
 - **Compliance defaults ON** — ADA, GDPR, A2P flags default true across all sites
+
+---
+
+## Deploying — commit first, ALWAYS
+
+**One rule: `git push` before `vercel deploy`. Never the other way round, never only one.**
+
+Use the script and you cannot get it wrong:
+
+```bash
+./scripts/deploy-site.sh {slug}            # commit-check, push, build, deploy
+./scripts/deploy-site.sh {slug} --check    # say what it would do, change nothing
+```
+
+It refuses a dirty tree, unpushed commits, a branch behind origin, or a failing build —
+and each refusal prints the command that clears it.
+
+### Why this matters more than it looks
+
+**No Vercel project here is connected to a git repository.** A deploy is a whole-folder
+upload from whichever machine ran it. The last deploy wins outright: it does not merge,
+it does not warn, and it silently replaces everything the previous deploy contained.
+
+There are three parties deploying the same sites — you in Claude Code, other team members
+through the portal's AI assistant, and the portal's edit agent on the runner box. Git is
+the only thing they share. **A change that is not in git does not exist to the other two.**
+
+### What happened on 2026-09-09
+
+`firefly-cd` was deployed straight from a laptop on 8 September and never committed. The
+next day a client asked the portal's assistant for a text correction. The edit agent
+pulled this repo — 29 days stale for that site, because the laptop work had never landed
+— applied the change and published the whole folder.
+
+The live site lost the attic-insulation service added on the 8th, and regained three
+services deleted on 4 September. The agent was not careless; it used the best source it
+had. Recovery was only possible because Vercel still held the old deployment.
+
+### The order, and what each step buys
+
+| | Step | What it prevents |
+|---|---|---|
+| 1 | `git add sites/{slug} && git commit` | the agent rebuilding from a repo that has never seen your work |
+| 2 | `git push` | **your stale copy silently overwriting someone else's work** — a push is REFUSED where a deploy would not be |
+| 3 | `npm run build` | publishing something that does not compile |
+| 4 | `vercel deploy --prod` | — |
+
+Step 2 is the safety net. `git push` failing with *"Updates were rejected"* is the system
+working: pull, look at what arrived, then continue.
+
+### If a site "went back in time"
+
+Someone deployed without committing. Confirm it, do not guess:
+
+```bash
+git log -1 --format='%h %ad %s' --date=short -- sites/{slug}   # when git last saw it
+npx vercel ls {project} --scope mylocalads-projects            # when it was last deployed
+```
+
+A deployment newer than the last commit is drift. **The old deployment is still in Vercel** —
+`npx vercel promote <deployment-id>` puts it back instantly, and its files can be pulled
+from the API to recover the source. Restore first, diagnose second.
+
+### The end state
+
+Once each Vercel project is connected to this repo with **Root Directory = `sites/{slug}`**,
+deploys come from commits and this whole class of accident disappears. Until then the
+order above is the only thing standing in for it.
+
+**Do not connect a project whose live site is newer than git** — that publishes the stale
+repo immediately, which is the same accident by a different button. Get the live source
+into git first.
 
 ---
 
