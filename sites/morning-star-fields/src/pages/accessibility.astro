@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const site = (await getEntry('site', 'config')).data as any;
+const updated = '2026-07-22';
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'Accessibility', href: '/accessibility' }];
+---
+<BaseLayout
+  title={`Accessibility Statement — ${site.business_name}`}
+  description={`Accessibility Statement for ${site.business_name}.`}
+  breadcrumbs={crumbs}
+  pagePath="/accessibility"
+>
+  <article class="legal container">
+    <h1>Accessibility Statement</h1>
+    <p class="updated">Last updated: {updated}</p>
+
+    <h2>Our commitment</h2>
+    <p>{site.business_name} is committed to making our website accessible to people with disabilities. We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.</p>
+
+    <h2>What we do</h2>
+    <ul>
+      <li>Semantic HTML and ARIA where appropriate</li>
+      <li>Skip-to-content link, keyboard-navigable menus, visible focus indicators</li>
+      <li>Text alternatives for meaningful images</li>
+      <li>Sufficient color contrast (target 4.5:1 for body text)</li>
+      <li>Respect for <code>prefers-reduced-motion</code></li>
+      <li>Responsive design for a range of assistive technologies</li>
+    </ul>
+
+    <h2>Ongoing work</h2>
+    <p>Accessibility is an ongoing effort. We regularly audit the site and address issues we identify.</p>
+
+    <h2>Feedback</h2>
+    <p>If you encounter an accessibility barrier, contact us at {site.phone_display}{site.email ? ` or ${site.email}` : ''}. We aim to respond within 5 business days.</p>
+  </article>
+</BaseLayout>
+<style>
+  .legal { padding: var(--space-4) 0 var(--space-5); max-width: 800px; }
+  .legal h1 { font-size: clamp(2rem, 4vw, 3rem); }
+  .legal h2 { margin-top: var(--space-4); font-size: 1.5rem; }
+  .legal p, .legal li { font-size: 1.05rem; line-height: 1.65; }
+  .legal ul { padding-left: 1.5rem; }
+  .updated { color: var(--color-muted); font-style: italic; }
+  code { background: var(--color-surface); padding: 0.1rem 0.3rem; border-radius: 3px; }
+</style>

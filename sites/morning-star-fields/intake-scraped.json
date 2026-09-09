@@ -1,0 +1,381 @@
+{
+  "slug": "morning-star-fields",
+  "business_name": "Morning Star Fields",
+  "legal_name": null,
+  "tagline": "Good eggs do not travel far. They start right here in Florida.",
+  "phone": "+17727582778",
+  "phone_display": "(772) 758-2778",
+  "email": "MSFMarketing@MorningStarFields.com",
+  "address": {
+    "street": "22255 State Road 60",
+    "city": "Vero Beach",
+    "state": "FL",
+    "postal": "32966",
+    "country": "US"
+  },
+  "marketing_city": null,
+  "marketing_state": null,
+  "geo": null,
+  "hours": null,
+  "rating": null,
+  "review_count": null,
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "years_in_business": null,
+  "founded_year": 2022,
+  "social": {
+    "facebook": "https://www.facebook.com/1023218384198686",
+    "instagram": "https://www.instagram.com/morningstarfields"
+  },
+  "site_url": "https://morningstarfields.com",
+  "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/Transparent-Logo.png",
+  "favicon_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/favicon/39e15e05-e216-41ce-b20a-80a4bc260053.png",
+  "default_hero_photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/chicken%20up%20close%204.jpeg",
+  "default_hero_video": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/Morning%20Star%20Fields%20Introduction%201%20(1).mp4",
+  "about_photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/DSC_1214-18caa28.JPG",
+  "brand": {
+    "fonts": {
+      "display": "Adamina",
+      "body": "Poppins"
+    },
+    "fonts_detected_all": [
+      "Poppins",
+      "Adamina",
+      "Lato"
+    ],
+    "colors": {
+      "bg": "#ffffff",
+      "text": "#303030",
+      "accent": "#18143c",
+      "muted": "#595959",
+      "surface": "#f6f6f6",
+      "candidates": [
+        "#18143c",
+        "#41398c",
+        "#726bbf",
+        "#2c2662",
+        "#303030",
+        "#595959",
+        "#f6f6f6",
+        "#fdfdfd",
+        "#a8a7ba",
+        "#c4c3cc",
+        "#ffffff"
+      ]
+    }
+  },
+  "services": [
+    {
+      "title": "Certified Humane Cage-Free Eggs",
+      "short_description": "Fresh brown eggs laid, collected, and packaged on our family-owned Vero Beach farm.",
+      "long_description": "Fresh eggs are our main focus. Our hens are raised in state of the art facilities with certified humane care: fresh air, space to move, and cage-free living. Eggs are laid, packed, and shipped within 48 hours. We use no chemicals and no antibiotics.",
+      "sub_services": [
+        "Cage-free brown eggs",
+        "Certified Humane raised and handled",
+        "UEP Certified Cage-Free",
+        "Prop 12 compliant",
+        "Aleph Kosher certified",
+        "48-hour lay-to-ship"
+      ],
+      "hero_photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/egg.jpg",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Wholesale & Foodservice Supply",
+      "short_description": "Dependable B2B egg supply for retailers, distributors, and foodservice across Florida.",
+      "long_description": "Whether you are a retailer, distributor, or foodservice provider, Morning Star Fields is ready to help you deliver premium Certified Humane, cage-free eggs backed by consistent quality and dependable supply. We currently deliver B2B within about 250 miles of Vero Beach.",
+      "sub_services": [
+        "Retail supply",
+        "Distributor partnerships",
+        "Foodservice accounts",
+        "SQF Certified facility",
+        "Approximately 250-mile Florida delivery radius"
+      ],
+      "hero_photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/DSC_1214-18caa28.JPG",
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped"
+    },
+    {
+      "title": "Organic Chicken Manure Fertilizer",
+      "short_description": "100% organic fertilizer pellets made from our own hen manure.",
+      "long_description": "Part of our BioCircular system: hen manure is transformed into valuable organic fertilizer pellets rather than treated as waste. Listed by Morning Star Fields as an expanding product line alongside eggs.",
+      "sub_services": [
+        "100% organic",
+        "Fertilizer pellets",
+        "Closed-loop farm by-product"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped",
+      "_note": "Site describes this as an expanding line, not yet the main focus. Copy must not imply it is in full production."
+    },
+    {
+      "title": "Hydroponic Flowers, Herbs & Seasonal Produce",
+      "short_description": "Hydroponic growing fed by reclaimed egg wash water.",
+      "long_description": "Our hydroponic growing systems are supported by reused egg wash water, part of the BioCircular closed loop. Morning Star Fields lists hydroponic flowers, herbs, and seasonal farm products as an expanding line alongside eggs. Farm-grown marigolds and leafy greens also feed the hens and contribute to the rich orange yolk colour.",
+      "sub_services": [
+        "Hydroponic flowers",
+        "Fresh herbs",
+        "Seasonal farm products",
+        "Marigolds and leafy greens for hen feed"
+      ],
+      "hero_photo": null,
+      "gallery": [],
+      "faqs": [],
+      "_source": "scraped",
+      "_note": "Site describes this as an expanding line, not yet the main focus. Copy must not imply it is in full production."
+    }
+  ],
+  "service_areas": [
+    {
+      "name": "Vero Beach",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "vero-beach-fl",
+      "order": 1,
+      "_source": "operator"
+    },
+    {
+      "name": "Orlando",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "orlando-fl",
+      "order": 2,
+      "_source": "operator"
+    },
+    {
+      "name": "West Palm Beach",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "west-palm-beach-fl",
+      "order": 3,
+      "_source": "operator"
+    },
+    {
+      "name": "Miami",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "miami-fl",
+      "order": 4,
+      "_source": "operator"
+    },
+    {
+      "name": "Tampa",
+      "state": "Florida",
+      "state_abbr": "fl",
+      "slug": "tampa-fl",
+      "order": 5,
+      "_source": "operator"
+    }
+  ],
+  "_service_area_note": "Operator approved 5 Florida area pages, all inside the ~250-mile B2B delivery radius stated in the client FAQ. Vero Beach is HQ.",
+  "signature_system": {
+    "name": "BioCircular",
+    "headline": "A Better Way to Farm Starts With a Better System",
+    "intro": "At Morning Star Fields, BioCircular farming is the foundation of how we operate. We designed our farm as a closed-loop system where energy, water, nutrition, and natural resources work together to reduce waste and create a more responsible approach to food production.",
+    "blocks": [
+      {
+        "title": "Renewable Energy",
+        "body": "Integrating solar power to support responsible energy use."
+      },
+      {
+        "title": "Water Stewardship",
+        "body": "Capturing and reclaiming water to reduce waste and protect resources."
+      },
+      {
+        "title": "Natural Fertilizer",
+        "body": "Transforming hen manure into valuable fertilizer pellets."
+      },
+      {
+        "title": "Integrated Nutrition",
+        "body": "Reusing egg wash water to support hydroponic growing systems."
+      }
+    ],
+    "closing": "Every part of our farm is connected, creating a system built around efficiency, sustainability, and stewardship.",
+    "_source": "scraped",
+    "_note": "BioCircular is the CLIENT'S OWN program name, scraped from their site. Safe to use. Do not import any branded program name from the template or another client."
+  },
+  "about": {
+    "story": "At Morning Star Fields, we keep things close to home, with eggs that are laid, collected, and packaged on our family-owned farm. Established in 2022, we have grown into one of Florida's most certified local farms by focusing on a system that works in harmony with the land and our hens. Through our BioCircular approach, resources are reused, waste is minimized, and every part of the farm has a purpose. It is a thoughtful, closed-loop way of producing eggs you can feel good about, from our farm to your table.",
+    "history": "Established in 2022, Morning Star Fields began its journey as a groundbreaking hyper-sustainable agricultural venture on the outskirts of Vero Beach, Florida. Born from the remnants of a 276-acre orange grove, it swiftly embraced innovation to redefine farming practices.",
+    "mission": "At Morning Star Fields, our mission is to revolutionize agriculture through modern engineering and ethical practices. We strive to produce the highest quality farm products while minimizing our environmental footprint and promoting animal welfare.",
+    "team": "Made up of dedicated farmers, ranchers, and support staff who are passionate about what they do. We work hard every day to ensure that our animals are well-cared for and that our crops are healthy and abundant. We're proud to be a part of the local farming community.",
+    "_source": "scraped"
+  },
+  "testimonials": [],
+  "team_members": [],
+  "faqs": [
+    {
+      "q": "What is Morning Star Fields?",
+      "a": "We are a biocircular farm in Vero Beach. We grow food the way nature does it best, with care, reuse, and respect for the land.",
+      "_source": "scraped"
+    },
+    {
+      "q": "What do you produce?",
+      "a": "Fresh eggs are our main focus today, but we're expanding to include 100% organic chicken manure fertilizer, hydroponic flowers, herbs, and seasonal farm products. Every part of our farm works together in a biocircular system designed to make the most of every resource.",
+      "_source": "scraped"
+    },
+    {
+      "q": "What does biocircular mean?",
+      "a": "It means nothing goes to waste if we can help it. What the farm produces helps the farm right back.",
+      "_source": "scraped"
+    },
+    {
+      "q": "Do you use chemicals or antibiotics?",
+      "a": "Nope. We keep things natural and simple. The old fashioned way works just fine.",
+      "_source": "scraped"
+    },
+    {
+      "q": "Why are your eggs different?",
+      "a": "Our eggs come from hens raised in state of the art facilities with certified humane care. They get fresh air, space to move, and cage free living. Happy hens, better eggs, that is the simple truth.",
+      "_source": "scraped"
+    },
+    {
+      "q": "Where do your eggs go?",
+      "a": "We are based in Vero Beach. Our eggs are laid, packed, and shipped within 48 hours. Right now we deliver B2B within about 250 miles across Florida, keeping it local so everything stays fresh and close to home.",
+      "_source": "scraped"
+    },
+    {
+      "q": "Can I visit the farm?",
+      "a": "We are not open to the public at this time. We are focused on keeping the farm running smoothly and producing the best quality eggs and products for our partners.",
+      "_source": "scraped"
+    },
+    {
+      "q": "Is it only a chicken farm?",
+      "a": "Not at all. We've got cows, goats, pigs, two dogs, a cat, and even a roaming alligator that is not part of the family but likes to hang around outside.",
+      "_source": "scraped"
+    }
+  ],
+  "partners": [
+    {
+      "name": "UEP Certified Cage-Free",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/UEP%20useCapture.PNG/:/rs=w:158,h:100,cg:true,m/cr=w:158,h:100",
+      "_source": "operator"
+    },
+    {
+      "name": "NMSDC Certified",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/NMSDC_logo_acronym_CMYK.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:149,h:100,cg:true",
+      "_source": "operator"
+    },
+    {
+      "name": "Fresh From Florida",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/fresh-from-florida-email-logo.webp/:/rs=w:217,h:100,cg:true,m/cr=w:217,h:100",
+      "_source": "operator"
+    },
+    {
+      "name": "Certified Humane — Raised & Handled",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/cropped-760x280-1.webp/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:149,h:100,cg:true",
+      "_source": "operator"
+    },
+    {
+      "name": "Aleph Kosher",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/blob-800ebf0.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:80,h:100,cg:true",
+      "_source": "operator"
+    },
+    {
+      "name": "Prop 12 Compliant",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/Untitled%20design%20(10).png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:100,h:100,cg:true",
+      "_source": "operator"
+    },
+    {
+      "name": "SQF Certified",
+      "logo_url": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/Captusqfre.PNG/:/rs=w:150,h:100,cg:true,m/cr=w:150,h:100",
+      "_source": "operator"
+    }
+  ],
+  "gallery": [
+    {
+      "photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/chicken%20up%20close%204.jpeg",
+      "alt": "A brown hen inside the cage-free barn at Morning Star Fields",
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/egg.jpg",
+      "alt": "An open carton of fresh brown eggs held outdoors at the farm",
+      "_source": "scraped"
+    },
+    {
+      "photo": "https://img1.wsimg.com/isteam/ip/a0f8e391-f06a-47e4-99bf-876e059fabd7/DSC_1214-18caa28.JPG",
+      "alt": "The Morning Star Fields hen barns and feed silos in Vero Beach, Florida",
+      "_source": "scraped"
+    }
+  ],
+  "videos": [
+    {
+      "title": "Morning Star Fields Introduction",
+      "description": "Take a look inside Morning Star Fields in Vero Beach, Florida. Discover our farm, meet our hens, and see how our regenerative, bio-circular approach connects animal care, sustainability and egg production to create a better way of farming.",
+      "url": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/Morning%20Star%20Fields%20Introduction%201%20(1).mp4",
+      "_source": "scraped"
+    },
+    {
+      "title": "Morning Star Fields & Royal Hens",
+      "description": "Take a look inside Morning Star Fields and discover the story behind our farm and Royal Hens, an egg brand from Morning Star Fields.",
+      "url": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/Morning%20Star%20Fields%20X%20Royal%20Hens%20Bruno%20Voiceov.mp4",
+      "_source": "scraped"
+    },
+    {
+      "title": "The Egg Test: Morning Star Fields vs. Standard Eggs",
+      "description": "See the difference for yourself. A chef puts a standard egg and a Morning Star Fields egg side by side, comparing their appearance, yolk color and quality in a fun kitchen test.",
+      "url": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/This%20is%20what%20quality%20looks%20like.%20.mp4",
+      "_source": "scraped"
+    },
+    {
+      "title": "Morning Star Fields Gives Back",
+      "description": "Morning Star Fields was featured on Local 10 News for one of our largest egg donations to Feeding South Florida. See how our farm is helping provide fresh, local eggs to families throughout our community.",
+      "url": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/WPLG%20-%20Local%2010%20-%20FSF%20-%204-2-26.mp4",
+      "_source": "scraped"
+    },
+    {
+      "title": "The Science Behind Our Orange Yolks",
+      "description": "Our farm agronomist explains the science behind the rich orange color of Morning Star Fields egg yolks and how our hens' diet, including farm-grown marigolds and leafy greens, makes a difference naturally.",
+      "url": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/Untitled%20design%20(6).mp4",
+      "_source": "scraped"
+    }
+  ],
+  "brand_voice_sample": "Good eggs do not travel far. They start right here in Florida. It means nothing goes to waste if we can help it. What the farm produces helps the farm right back. Happy hens, better eggs, that is the simple truth. Warm, plain-spoken, lightly humorous, confident without hype.",
+  "sub_brands": [
+    {
+      "name": "Royal Hens",
+      "description": "Royal Hens is the egg brand of Morning Star Fields.",
+      "_source": "scraped"
+    }
+  ],
+  "_detected_crm_snippets": {
+    "contact_form_iframe_src": null,
+    "chat_widget_script_src": null,
+    "note": "Client site uses GoDaddy Website Builder native forms with Google reCAPTCHA on /become-a-distributor and /join-the-flock. No GHL widgets present. Operator must paste their own GHL snippets."
+  },
+  "_notes": {
+    "gbp_confirmed": false,
+    "gbp_result": "Apify Google Maps returned ZERO results for 'Morning Star Fields' in Vero Beach, FL. The business appears to have no Google Business Profile, or it is not indexed under this name.",
+    "scrape_method": "Direct HTTP fetch (curl). Content is fully server-rendered by GoDaddy Website Builder, so Firecrawl was NOT required and NOT paid for.",
+    "pages_scraped": [
+      "/",
+      "/about",
+      "/become-a-distributor",
+      "/biocircular-1",
+      "/discover-royal-hens",
+      "/faq",
+      "/introduction",
+      "/join-the-flock",
+      "/media-1"
+    ],
+    "socials_scraped": [],
+    "generated_at": "2026-08-31",
+    "cost_estimate_usd": 0.004,
+    "warnings": [
+      "No named team members on the site. team_members is empty.",
+      "No geo lat/lng. Address is known but coordinates were not fabricated.",
+      "No opening hours published. The FAQ states the farm is not open to the public.",
+      "Brand accent #18143c is a deep indigo. The roofing reference library lists indigo/violet accents as an anti-pattern 'unless explicitly requested'. This colour is the client's own detected brand colour, which is the intended exception.",
+      "This is an agricultural / B2B food producer, not a home-services contractor. The owl template is contractor-shaped. Operator approved Option A: adapt labels (services become product lines, estimate form becomes distributor enquiry)."
+    ],
+    "phone_source": "Operator-supplied GHL tracking number.",
+    "testimonials_decision": "Operator decision: testimonials section is REPLACED by the certification trust-badge row. Do not render an empty Testimonials block and do not invent reviews."
+  }
+}

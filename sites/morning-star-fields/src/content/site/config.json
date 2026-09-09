@@ -1,0 +1,159 @@
+{
+  "kind": "config",
+  "business_name": "Morning Star Fields",
+  "tagline": "Certified Humane Cage-Free Eggs from Vero Beach, Florida",
+  "phone": "+17727582778",
+  "phone_display": "(772) 758-2778",
+  "email": "MSFMarketing@MorningStarFields.com",
+  "address": {
+    "street": "22255 State Road 60",
+    "city": "Vero Beach",
+    "state": "FL",
+    "postal": "32966",
+    "country": "US"
+  },
+  "site_url": "https://morning-star-fields.mylocalads-preview.co",
+  "licensed": false,
+  "insured": false,
+  "bonded": false,
+  "social": {
+    "facebook": "https://www.facebook.com/1023218384198686",
+    "instagram": "https://www.instagram.com/morningstarfields"
+  },
+  "logo_url": "/logo.png",
+  "default_hero_photo": "/img/hero-eggs.jpg",
+  "about_photo": "/img/farm-barns.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [
+    {
+      "name": "Certified Humane — Raised & Handled",
+      "logo_url": "/img/badges/certified-humane.png"
+    },
+    {
+      "name": "UEP Certified Cage-Free",
+      "logo_url": "/img/badges/uep-cage-free.jpg"
+    },
+    {
+      "name": "SQF Certified",
+      "logo_url": "/img/badges/sqf.jpg"
+    },
+    {
+      "name": "Prop 12 Compliant",
+      "logo_url": "/img/badges/prop-12.jpg"
+    },
+    {
+      "name": "Aleph Kosher",
+      "logo_url": "/img/badges/aleph-kosher.png"
+    },
+    {
+      "name": "NMSDC Certified",
+      "logo_url": "/img/badges/nmsdc.png"
+    },
+    {
+      "name": "Fresh From Florida",
+      "logo_url": "/img/badges/fresh-from-florida.png"
+    }
+  ],
+  "why_choose_us": [
+    {
+      "title": "48 hours, farm to truck",
+      "description": "Our eggs are laid, packed and shipped within 48 hours. No aggregation warehouse in the middle, no guessing how old a case is when it reaches you."
+    },
+    {
+      "title": "One farm, not a blend",
+      "description": "Every case traces back to our farm on State Road 60. When a buyer asks where the eggs came from, there is one answer instead of a supplier list."
+    },
+    {
+      "title": "Certified, then inspected",
+      "description": "Certified Humane is audited by third-party veterinarians and animal-welfare scientists. It is not a label we award ourselves, which is the difference between it and a plain cage-free claim."
+    },
+    {
+      "title": "Built as a closed loop",
+      "description": "Solar power, reclaimed water, manure turned into fertiliser and egg wash water feeding hydroponics. Our BioCircular system is how the farm runs, not a page on the website."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [
+    {
+      "photo": "/img/hen-closeup.jpg",
+      "alt": "A brown hen in the open cage-free barn at Morning Star Fields in Vero Beach, Florida",
+      "title": "Inside the barn",
+      "location": "Vero Beach, FL",
+      "description": "Our hens live cage-free with room to move, perch and dust bathe."
+    },
+    {
+      "photo": "/img/egg-carton.jpg",
+      "alt": "An open carton of fresh brown eggs held outdoors at Morning Star Fields",
+      "title": "Freshly packed",
+      "location": "Vero Beach, FL",
+      "description": "Laid, collected and packed on the same farm, then shipped inside 48 hours."
+    },
+    {
+      "photo": "/img/farm-barns.jpg",
+      "alt": "The hen barns and feed silos at Morning Star Fields on State Road 60 in Vero Beach, Florida",
+      "title": "The farm",
+      "location": "Vero Beach, FL",
+      "description": "Built on 276 acres that used to be an orange grove."
+    }
+  ],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {},
+    "body_end": "<script>\n    (function(d){\n      var s = d.createElement(\"script\");\n      /* uncomment the following line to override default position*/\n      /* s.setAttribute(\"data-position\", 3);*/\n      /* uncomment the following line to override default size (values: small, large)*/\n      /* s.setAttribute(\"data-size\", \"small\");*/\n      /* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/\n      /* s.setAttribute(\"data-language\", \"language\");*/\n      /* uncomment the following line to override color set via widget (e.g., #413a8d)*/\n      /* s.setAttribute(\"data-color\", \"#413a8d\");*/\n      /* uncomment the following line to override type set via widget (1=person, 2=chair, 3=eye, 4=text)*/\n      /* s.setAttribute(\"data-type\", \"1\");*/\n      /* s.setAttribute(\"data-statement_text\", \"Our Accessibility Statement\");*/\n      /* s.setAttribute(\"data-statement_url\", \"http://www.example.com/accessibility\");*/\n      /* uncomment the following line to override support on mobile devices*/\n      /* s.setAttribute(\"data-mobile\", true);*/\n      /* uncomment the following line to set custom trigger action for accessibility menu*/\n      /* s.setAttribute(\"data-trigger\", \"triggerId\")*/\n      /* uncomment the following line to override widget's z-index property*/\n      /* s.setAttribute(\"data-z-index\", 10001);*/\n      /* uncomment the following line to enable Live site translations (e.g., fr, de, es, he, nl, etc.)*/\n      /* s.setAttribute(\"data-site-language\", \"null\");*/\n      /* s.setAttribute(\"data-widget_layout\", \"full\"); */\n      s.setAttribute(\"data-account\", \"Kr4R6Esvbd\");\n      s.setAttribute(\"src\", \"https://cdn.userway.org/widget.js\");\n      (d.body || d.head).appendChild(s);\n    })(document)\n    </script>\n    <noscript>Please ensure Javascript is enabled for purposes of <a href=\"https://userway.org\">website accessibility</a></noscript>"
+  },
+  "services_section": {
+    "eyebrow": "What We Produce",
+    "heading_lead": "Florida eggs,",
+    "heading_rest": "and what the farm makes around them",
+    "subtitle": "Eggs are the main focus today. The BioCircular system turns what the flock produces into the rest of the farm."
+  },
+  "estimate_form": {
+    "heading": "Talk to us about supply",
+    "services": [
+      "Wholesale egg supply — retail",
+      "Wholesale egg supply — foodservice",
+      "Distributor partnership",
+      "Kosher-certified supply",
+      "Organic chicken manure fertiliser",
+      "Hydroponic flowers, herbs and produce",
+      "Media or press enquiry",
+      "Something else"
+    ],
+    "address_label": "Business name and delivery city",
+    "address_autocomplete": "organization",
+    "submit_label": "Submit - Let's Talk Eggs!"
+  },
+  "closing_cta": {
+    "headline": "Let's talk about supply.",
+    "body": "Morning Star Fields has been farming outside Vero Beach since 2022 and delivers B2B within about 250 miles across Florida. Tell us what you need and we will tell you honestly whether we can cover it.",
+    "cta_text": "Become a distributor",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "From the Farm",
+    "description": "Notes from Morning Star Fields on cage-free egg production, egg labels, and BioCircular farming in Vero Beach, Florida."
+  },
+  "book_page": {
+    "eyebrow": "Wholesale & distribution",
+    "heading": "Tell us what you need and we'll tell you what we can supply",
+    "title": "Become a Distributor — Morning Star Fields",
+    "description": "Talk to Morning Star Fields about wholesale Certified Humane cage-free egg supply in Vero Beach, Florida. Tell us your volume, pack size and delivery city and we will give you a straight answer."
+  }
+}

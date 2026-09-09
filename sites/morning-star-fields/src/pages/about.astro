@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import AboutSection from '../components/AboutSection.astro';
+import SectionHead from '../components/SectionHead.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import GHLReviewsWidget from '../components/GHLReviewsWidget.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+/* From config — the literal was contractor wording. See index.astro. */
+const ctaText = site.closing_cta?.cta_text ?? 'Get Your Free Estimate!';
+const aboutEntry = await getEntry('site', 'about').catch(() => null);
+const story = (aboutEntry?.data as any)?.story ?? `${site.business_name} — locally owned and operated in ${site.address.city}, ${site.address.state}.`;
+const teamMembers = site.team_members ?? [];
+const teamHero = site.team_photo;
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
+---
+<BaseLayout
+  title={`About ${site.business_name}`}
+  description={`About ${site.business_name} — serving ${site.address.city}, ${site.address.state}.`}
+  breadcrumbs={crumbs}
+  pagePath="/about"
+>
+
+  <HeroOwl
+    eyebrow={`About ${site.business_name}`}
+    headline={`About ${site.business_name}`}
+    subheadline={story.slice(0, 190)}
+    cta_text={ctaText}
+    cta_href="/book"
+    photo={site.about_photo ?? site.default_hero_photo}
+    show_form
+  />
+
+  {teamHero && (
+    <section class="team-hero">
+      <img src={teamHero} alt={`${site.business_name} team`} />
+      <div class="team-hero-overlay">
+        <div class="container">
+          <h1>Meet the {site.business_name} team</h1>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <AboutSection eyebrow="About Us" heading="About us" body={story} photo={site.about_photo} photo_alt={`${site.business_name}`} photo_position="right" />
+
+  {teamMembers.length > 0 && (
+    <section class="team-grid" aria-label="Team members">
+      <div class="container">
+        <h2>Our team</h2>
+        <div class="grid">
+          {teamMembers.map((m: any) => (
+            <figure class="member">
+              <img src={m.photo} alt={m.name} loading="lazy" />
+              <figcaption>
+                <h3>{m.name}</h3>
+                {m.role && <p class="role">{m.role}</p>}
+                {m.bio && <p class="bio">{m.bio}</p>}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* Pointer to the BioCircular explainer. The About story mentions the system
+      by name but never says what it is, which left the reader with a branded
+      term and nowhere to go. */}
+  <section class="biocircular-ref" aria-labelledby="bc-ref-heading">
+    <div class="container">
+      <div class="bc-inner">
+        <div class="bc-copy">
+          <SectionHead
+            eyebrow="Our system"
+            heading="BioCircular farming"
+            subtitle="Our About story mentions BioCircular. Here is what it actually is: a closed loop where solar power, reclaimed water, hen manure and egg wash water all feed back into the farm instead of leaving it as waste."
+            align="left"
+          />
+          <a class="bc-btn" href="/biocircular">See how BioCircular works</a>
+        </div>
+        <a class="bc-figure" href="/biocircular" aria-label="See how BioCircular works">
+          <img
+            src="/img/biocircular-diagram.jpg"
+            alt="The Morning Star Fields BioCircular loop, drawn as a heart: barns feed the chickens, eggs are collected and washed, the nutrient-rich egg-wash water grows feed through hydroponics, manure is processed into fertiliser, fertilised crops grow food, and the food and water return to the flock."
+            loading="lazy"
+          />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <TrustBadges />
+  <GHLReviewsWidget />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .team-hero { position: relative; height: 420px; overflow: hidden; }
+  .team-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .team-hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(15,20,25,0.35), rgba(15,20,25,0.65)); display: flex; align-items: flex-end; padding: var(--space-4) 0; }
+  .team-hero-overlay h1 { color: white; font-size: clamp(2rem, 4vw, 3rem); text-shadow: 0 2px 12px rgba(0,0,0,0.35); }
+  .team-grid { padding: var(--space-5) 0; background: var(--color-surface); }
+  /* Matches SectionHead — one section-heading scale site-wide. */
+  .team-grid h2 { text-align: center; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.85rem, 3.5vw, 3rem); line-height: 1.15; text-transform: uppercase; letter-spacing: 0.01em; margin-bottom: var(--space-3); }
+
+  .biocircular-ref { padding: var(--space-5) 0; background: var(--color-bg); }
+  .bc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: center; }
+  .bc-copy { min-width: 0; }
+  .bc-figure { display: block; min-width: 0; border-radius: var(--radius-lg); overflow: hidden; background: var(--color-surface); }
+  .bc-figure img { display: block; width: 100%; height: auto; }
+  .bc-btn {
+    display: inline-block; margin-top: var(--space-2);
+    background: var(--color-accent); color: var(--color-on-accent);
+    padding: 0.9rem 1.9rem; border-radius: var(--radius-sm);
+    font-weight: 700; letter-spacing: 0.02em; text-transform: uppercase;
+    text-decoration: none;
+  }
+  .bc-btn:hover, .bc-btn:focus-visible { filter: brightness(1.08); }
+  @media (max-width: 820px) {
+    .bc-inner { grid-template-columns: 1fr; }
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-3); }
+  .member { margin: 0; background: var(--color-bg); border-radius: var(--radius-md); overflow: hidden; }
+  .member img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; }
+  .member figcaption { padding: var(--space-2); }
+  .member h3 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+  .role { color: var(--color-accent-ink); font-size: 0.9rem; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+  .bio { color: var(--color-muted); font-size: 0.95rem; margin: 0; line-height: 1.5; }
+</style>

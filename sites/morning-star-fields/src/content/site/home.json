@@ -1,0 +1,152 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Vero Beach, FL",
+    "headline": "Good eggs do not travel far. Buy local!",
+    "subheadline": "Certified Humane, cage-free eggs laid, packed and shipped within 48 hours from one family-owned farm on State Road 60 — delivered B2B across roughly 250 miles of Florida.",
+    "cta_text": "Become a distributor",
+    "cta_href": "/book",
+    "photo": "/img/hero-eggs.jpg",
+    "quote_card": {
+      "quote": "Laid, packed and shipped in 48 hours. From one Florida farm, not a blend of a dozen.",
+      "cta_text": "Talk to us about supply",
+      "cta_href": "/book"
+    }
+  },
+  "promise_bar": [
+    {
+      "text": "Certified Humane",
+      "icon": "award"
+    },
+    {
+      "text": "48-hour lay-to-ship",
+      "icon": "clock"
+    },
+    {
+      "text": "SQF certified facility",
+      "icon": "shield"
+    },
+    {
+      "text": "Family-owned since 2022",
+      "icon": "home"
+    }
+  ],
+  "video_section": {
+    "eyebrow": "Inside the farm",
+    "headline": "Learn What's Special About Morning Star Fields & How Our Farm Works",
+    "body": "Step inside our barns in Vero Beach and see how the hens, the farm and the BioCircular system all fit together.",
+    "src": "https://img1.wsimg.com/blobby/go/a0f8e391-f06a-47e4-99bf-876e059fabd7/video/Morning%20Star%20Fields%20Introduction%201%20(1).mp4",
+    "poster": "/img/farm-barns.jpg"
+  },
+  "promise_band": {
+    "eyebrow": "Why buyers switch",
+    "headline": "Cage-free is a claim. Certified Humane is an inspection.",
+    "body": "A plain \"cage-free\" label does not say how much space a hen gets, does not require outdoor access, and is not enforced by anyone visiting the farm. Certified Humane is audited by third-party veterinarians and animal-welfare scientists against published standards. Morning Star Fields holds it, and holds UEP Certified Cage-Free on top of it.",
+    "cta_text": "See all seven certifications",
+    "cta_href": "/about",
+    "image": "/img/hen-closeup.jpg",
+    "image_alt": "A brown hen in the open cage-free barn at Morning Star Fields in Vero Beach, Florida",
+    "image_badge": "/img/badges/certified-humane.png",
+    "image_badge_alt": "Certified Humane — Raised & Handled"
+  },
+  "signature_system": {
+    "eyebrow": "Our system",
+    "headline": "BioCircular",
+    "intro": "At Morning Star Fields, BioCircular farming is the foundation of how we operate. We designed our farm as a closed-loop system where energy, water, nutrition and natural resources work together to reduce waste and create a more responsible approach to food production.",
+    "guarantee": {
+      "title": "Every part of the farm has a purpose",
+      "body": "That is the whole idea behind BioCircular. Nothing goes to waste if we can help it, and what the farm produces helps the farm right back."
+    },
+    "image": "/img/biocircular-diagram.jpg",
+    "image_alt": "The Morning Star Fields BioCircular loop, drawn as a heart: barns feed the chickens, eggs are collected and washed, the nutrient-rich egg-wash water grows feed through hydroponics, manure is processed into fertiliser, fertilised crops grow food, and the food and water return to the flock."
+  },
+  "process_steps": {
+    "headline": "Working with us",
+    "steps": [
+      {
+        "label": "01",
+        "title": "Tell us what you need",
+        "body": "Volume, pack size, delivery window and where you are. We will say plainly whether we can cover it."
+      },
+      {
+        "label": "02",
+        "title": "We confirm supply",
+        "body": "You get a straight answer on what we can commit to and how consistently, rather than a promise we cannot keep in a short month."
+      },
+      {
+        "label": "03",
+        "title": "Eggs are laid and packed",
+        "body": "Collected and packed on the same farm they were laid on, inside our SQF certified facility."
+      },
+      {
+        "label": "04",
+        "title": "Delivered inside 48 hours",
+        "body": "Shipped B2B within roughly 250 miles across Florida, so the case that reaches you is days fresher than a national blend."
+      }
+    ],
+    "cta_text": "Become a distributor",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About us",
+    "headline": "One of Florida's most certified local farms",
+    "body": "At Morning Star Fields, we keep things close to home, with eggs that are laid, collected and packaged on our family-owned farm. Established in 2022 on the remnants of a 276-acre orange grove outside Vero Beach, we have grown by focusing on a system that works in harmony with the land and our hens. Through our BioCircular approach, resources are reused, waste is minimised, and every part of the farm has a purpose.",
+    "checklist": [
+      "Certified Humane — Raised & Handled",
+      "UEP Certified Cage-Free",
+      "SQF certified facility",
+      "Aleph Kosher certified",
+      "Prop 12 compliant",
+      "NMSDC certified diverse supplier",
+      "Fresh From Florida member"
+    ],
+    "photo": "/img/farm-barns.jpg",
+    "photo_alt": "The hen barns and feed silos at Morning Star Fields on State Road 60 in Vero Beach, Florida",
+    "cta_text": "Read our story",
+    "cta_href": "/about"
+  },
+  "social_embed": {
+    "eyebrow": "Follow along",
+    "headline": "See what's growing",
+    "snippet": "<!-- Elfsight Social Feed | Morning Star Fields -->\n<script src=\"https://elfsightcdn.com/platform.js\" async></script>\n<div class=\"elfsight-app-e6ed08b2-f2a1-4198-9214-b14657da9fd0\" data-elfsight-app-lazy></div>"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "What is Morning Star Fields?",
+      "a": "We are a biocircular farm in Vero Beach, Florida, established in 2022 on a former 276-acre orange grove. We grow food the way nature does it best, with care, reuse and respect for the land."
+    },
+    {
+      "q": "What do you produce?",
+      "a": "Fresh cage-free eggs are our main focus today. We are expanding to include 100% organic chicken manure fertiliser, hydroponic flowers, herbs and seasonal farm products. Every part of the farm works together in a biocircular system designed to make the most of every resource."
+    },
+    {
+      "q": "What does biocircular mean?",
+      "a": "It means nothing goes to waste if we can help it. What the farm produces helps the farm right back — manure becomes fertiliser, egg wash water feeds the hydroponics, and greens grown on site go back into the hens' diet."
+    },
+    {
+      "q": "Do you use chemicals or antibiotics?",
+      "a": "No. We keep things natural and simple. The old fashioned way works just fine."
+    },
+    {
+      "q": "Why are your eggs different?",
+      "a": "Our eggs come from hens raised in state of the art facilities with certified humane care. They get fresh air, space to move and cage-free living. Happy hens, better eggs, that is the simple truth. The deep orange yolk colour comes from their diet, including marigolds and leafy greens grown on the farm."
+    },
+    {
+      "q": "Where do your eggs go, and how fresh are they?",
+      "a": "We are based in Vero Beach. Our eggs are laid, packed and shipped within 48 hours. Right now we deliver B2B within about 250 miles across Florida, keeping it local so everything stays fresh and close to home."
+    },
+    {
+      "q": "How do I become a distributor or wholesale customer?",
+      "a": "Tell us your volume, pack size, delivery window and location through the form on this site, or call (772) 758-2778. We will give you a straight answer on what we can commit to. We supply retailers, distributors and foodservice providers."
+    },
+    {
+      "q": "Can I visit the farm?",
+      "a": "We are not open to the public at this time. We are focused on keeping the farm running smoothly and producing the best quality eggs and products for our partners."
+    },
+    {
+      "q": "Is it only a chicken farm?",
+      "a": "Not at all. We have cows, goats, pigs, two dogs, a cat, and even a roaming alligator that is not part of the family but likes to hang around outside."
+    }
+  ]
+}

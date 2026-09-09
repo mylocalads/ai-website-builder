@@ -1,0 +1,39 @@
+{
+  "slug": "morning-star-fields",
+  "url": "https://morningstarfields.com/",
+  "audited_at": "2026-08-31",
+  "platform": "GoDaddy Website Builder (UX 7.3.0 widgets)",
+  "screenshot": "Hero captured in-session. Full-page screenshots could NOT be produced: the builder lazy-loads section content on scroll and rendered blank below the fold in an automated browser. This is recorded as a FINDING, not as a missing artifact.",
+  "purpose_note": "OPERATOR REFERENCE ONLY. Per the pipeline's anti-pattern lock, nothing in this file may be used as design DNA. The owl template is the sole source of design and structure.",
+  "strengths": [
+    "Genuinely good original photography: hen close-ups, an egg carton in the field, and the barn/silo exterior. All real, none of it stock.",
+    "Seven third-party certification marks displayed on the homepage. That is a strong, uncommon trust asset.",
+    "Five produced videos including a Local 10 News feature about an egg donation to Feeding South Florida.",
+    "Clear, warm brand voice in the FAQ copy. Plain-spoken and human.",
+    "Clean indigo-and-white brand identity with a distinctive star wordmark.",
+    "Mobile viewport meta tag is present and correct."
+  ],
+  "weaknesses": [
+    "NO phone number anywhere on the site. Both tel: and mailto: hrefs render empty. A B2B supplier site with no callable number is a direct lead leak.",
+    "NO structured data. Zero application/ld+json blocks, so no LocalBusiness, Organization, Product, or FAQPage markup. Search engines and LLMs get nothing machine-readable.",
+    "NO meta description on the homepage.",
+    "The single H1 on the homepage reads 'Our Certifications:' — an H1 that describes a logo strip rather than the business.",
+    "21 of 23 images carry no alt attribute. That is an ADA exposure and it wastes the SEO value of good photography.",
+    "Content is JS-gated. Sections did not paint below the fold in an automated browser, which is a warning sign for crawlers, slow connections, and assistive tech.",
+    "A 404 resource error fires on page load.",
+    "The cookie consent panel overlays page content on desktop and covers part of the first screen.",
+    "No customer reviews or testimonials exist anywhere on the site.",
+    "No Google Business Profile could be found, so the business is absent from Maps and from local pack results.",
+    "Thin homepage: a logo hero, three short about blocks, a certification strip, an Instagram embed and a newsletter form. The strongest assets, the certifications and the 48-hour freshness claim, are not merchandised.",
+    "No service-area or location pages despite a stated ~250-mile Florida delivery radius.",
+    "The distributor enquiry page is a bare name/email/message form with no reason-to-act copy beside it."
+  ],
+  "anti_patterns_observed_on_client_site": [
+    "logo-only hero with no headline, no value proposition and no call to action",
+    "H1 used as a section label rather than a page subject",
+    "certification logos presented without any explanation of what each mark means",
+    "images without alt text",
+    "content that requires JavaScript to become visible"
+  ],
+  "opportunity_summary": "Every ingredient for a strong B2B supplier site already exists — real photography, seven certifications, produced video, a specific 48-hour freshness claim, a named sustainability system, and a warm brand voice. None of it is being merchandised. The rebuild's job is to put the assets to work, add the missing phone number, and ship the structured data and agent-discoverability files the current site lacks entirely."
+}

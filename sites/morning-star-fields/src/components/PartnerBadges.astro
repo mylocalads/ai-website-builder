@@ -1,0 +1,83 @@
+---
+/* CLIENT DEVIATION FROM STOCK OWL — deliberate, operator-directed.
+   Morning Star Fields has no customer reviews anywhere: no Google Business
+   Profile, no testimonials on their old site. Rather than ship an empty
+   Testimonials band or invent quotes, the operator asked for the certification
+   marks to take that slot on the home page. See index.astro, where this
+   component replaces <Testimonials />.
+
+   Two changes from the template version:
+   1. Named section with an eyebrow, heading and a caption under each mark.
+      Stock owl renders a bare logo strip. design_reference.json lists
+      "certification logos shown with no explanation of what each mark means"
+      as an anti-pattern, and seven unlabelled marks is exactly that.
+   2. Full colour, full opacity. The template greys logos back to 0.8 opacity
+      and 0.2 grayscale, which suits a row of manufacturer partner logos but
+      undersells a certification the business is audited against. */
+import { getEntry } from 'astro:content';
+import SectionHead from './SectionHead.astro';
+
+export interface Props {
+  eyebrow?: string;
+  headline?: string;
+  intro?: string;
+}
+const {
+  eyebrow = 'Independently certified',
+  headline = 'Seven marks, and somebody else checks every one',
+  intro,
+} = Astro.props;
+
+const site = (await getEntry('site', 'config')).data as any;
+const partners = site.partners ?? [];
+---
+{partners.length > 0 && (
+  <section class="badges" aria-label={headline}>
+    <div class="container">
+      <SectionHead eyebrow={eyebrow} heading={headline} subtitle={intro} align="center" />
+      <ul>
+        {partners.map((p: any) => (
+          <li>
+            <span class="frame">
+              {p.link_url ? (
+                <a href={p.link_url} rel="noopener" target="_blank">
+                  <img src={p.logo_url} alt={p.name} loading="lazy" />
+                </a>
+              ) : (
+                <img src={p.logo_url} alt={p.name} loading="lazy" />
+              )}
+            </span>
+            <span class="label">{p.name}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}
+<style>
+  .badges { padding: var(--space-5) 0; background: var(--color-bg); }
+  ul {
+    list-style: none; padding: 0; margin: var(--space-4) 0 0;
+    display: grid; gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--space-1); }
+  .frame {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 92px; padding: var(--space-2);
+    background: var(--color-surface);
+    border: 1px solid rgba(24, 20, 60, 0.10);
+    border-radius: var(--radius-md);
+  }
+  /* Full colour and full opacity: these are audited certifications, not
+     decorative partner logos. */
+  img { max-height: 56px; width: auto; max-width: 100%; }
+  .label {
+    font-family: var(--font-body); font-size: 0.78rem; line-height: 1.35;
+    color: var(--color-muted); max-width: 20ch;
+  }
+  @media (max-width: 640px) {
+    ul { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    .frame { min-height: 78px; }
+  }
+</style>

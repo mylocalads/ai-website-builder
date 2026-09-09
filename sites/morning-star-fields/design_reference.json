@@ -1,0 +1,89 @@
+{
+  "slug": "morning-star-fields",
+  "sources": {
+    "mode": "library",
+    "library": "roofing",
+    "primary_reference": "ai-website-builder/astro-templates/owl/",
+    "urls": [],
+    "cost_usd": 0,
+    "note": "The roofing library's role:primary entry IS the local owl template directory. It was read from disk, so no Firecrawl URL scrape was needed and nothing was paid. Brand tokens come from the client's own site via intake-scraped.json, per the pipeline's brand-only rule."
+  },
+  "palette": {
+    "bg": "#f6f6f6",
+    "surface": "#ffffff",
+    "text": "#303030",
+    "muted": "#595959",
+    "primary": "#18143c",
+    "on_primary": "#ffffff",
+    "accent": "#41398c",
+    "on_accent": "#ffffff",
+    "accent_ink": "#41398c",
+    "accent_on_dark": "#a49ddb",
+    "focus": "#0057ff"
+  },
+  "palette_provenance": {
+    "#18143c": "Client brand indigo. Detected 8 times in homepage CSS as rgb(24,20,60). Also the colour of the logo wordmark. Used as --color-primary for the dark bands.",
+    "#41398c": "Detected in homepage CSS as rgb(65,57,140). Used as the accent fill and as accent ink on light.",
+    "#a49ddb": "A lightened tint of the client's own rgb(114,107,191) / #726bbf, raised until it clears WCAG AA as text inside the #18143c band. Derived, not invented — same hue family as a detected brand colour.",
+    "#303030": "Detected as rgb(48,48,48), the client's body text colour.",
+    "#595959": "Detected as rgb(89,89,89), the client's muted text colour.",
+    "#f6f6f6": "Detected as rgb(246,246,246), the client's light surface tone.",
+    "#ffffff": "Detected as rgb(255,255,255)."
+  },
+  "contrast_check": {
+    "method": "WCAG 2.1 relative luminance, computed 2026-08-31.",
+    "results": {
+      "text on bg": 12.21,
+      "text on surface": 13.2,
+      "muted on bg": 6.48,
+      "muted on surface": 7.0,
+      "on_primary (white) on primary": 17.44,
+      "on_accent (white) on accent fill": 9.59,
+      "accent_ink on bg": 8.88,
+      "accent_ink on surface": 9.59,
+      "accent_on_dark on primary": 7.0
+    },
+    "verdict": "All nine pairs clear WCAG AA (4.5:1) for normal text. No token needed a compromise."
+  },
+  "typography": {
+    "display": "Adamina",
+    "body": "Poppins",
+    "provenance": "Both detected in the client's homepage CSS. Adamina appears as font-family:'Adamina', serif; Poppins appears 12 times and is the dominant body face. Both are Google Fonts, so both load without a licensing question. Lato was also detected but is a third face and is dropped.",
+    "fallbacks": {
+      "display": "'Adamina', Georgia, 'Times New Roman', serif",
+      "body": "'Poppins', system-ui, -apple-system, sans-serif"
+    }
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px", "lg": "14px" },
+  "max_width": "1200px",
+  "section_styling_hints": [
+    "Dark bands use the client's own brand indigo #18143c rather than the template's default olive. This is the single largest visual difference from stock owl and it is the correct one — it is their real brand colour.",
+    "Pair the cool indigo with the client's warm photography (brown hens, brown eggs, green foliage). The contrast between cool brand furniture and warm imagery is the intended look; do not tint the photos toward the brand.",
+    "The star motif from the logo wordmark is the one usable brand mark. Use it sparingly, as a divider or list marker, never as a decorative scatter.",
+    "Adamina is a true serif with a small x-height. Use it for headings only, at generous size. Do not set body copy in it.",
+    "The certification trust-badge row REPLACES the testimonials section. Render badges on --color-surface so the varied logo backgrounds sit on white rather than on the tinted page."
+  ],
+  "avoid": [
+    "gradient hero background",
+    "glass morphism / backdrop-blur panels",
+    "bento grid section layout",
+    "generic stock photography — the client has real farm photography, use only that",
+    "generic agriculture stock imagery (rolling wheat field, sunrise over a barn, hands holding soil)",
+    "Lucide icon rows (max 1 outline icon per section, semantic only)",
+    "\"Trusted by 10,000+ customers\" or any invented number — this business has no reviews and no published customer count",
+    "section headers reading \"Stunning\", \"Beautiful\", \"Powerful\", \"Seamless\", or \"Effortless\"",
+    "randomized section order — use the fixed owl order",
+    "any invented testimonial, star rating, or review count",
+    "logo-only hero with no headline or CTA (the client's current site does this)",
+    "H1 used as a section label rather than the page subject (the client's current H1 reads 'Our Certifications:')",
+    "images without alt text (21 of 23 images on the current site lack it)",
+    "certification logos shown with no explanation of what each mark means",
+    "content that only appears after JavaScript runs",
+    "claiming the fertiliser and hydroponic lines are in full production — the client calls them expanding",
+    "any branded program name from the template or another client; BioCircular and Royal Hens are the only program names, and both are the client's own"
+  ],
+  "avoid_exceptions": [
+    "The default and roofing libraries both list 'purple / indigo / violet accents' as an anti-pattern, qualified with 'unless explicitly requested'. Indigo #18143c IS this client's real, detected brand colour and appears in their logo. That is the intended exception and it is deliberate here, not an oversight."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "morning-star-fields",
+  "category": "Cage-free egg producer / B2B wholesale food supplier",
+  "location": "Vero Beach FL (approx. 250-mile Florida delivery radius)",
+  "threads_analyzed": 0,
+  "method_note": "REDDIT WAS NOT AVAILABLE. reddit.com blocks the web crawler used by this environment (HTTP 400 'domain not accessible to our user agent'), and Reddit's own search.json refuses unauthenticated requests. The skill's four site:reddit.com searches could not be run. Research was instead sourced from accessible industry and buyer-facing publications. Findings below are therefore INDUSTRY-LEVEL rather than Vero-Beach-local, and are labelled as such. No finding here is invented.",
+  "sources": [
+    "https://www.eggsunlimited.com/glossary/service-reliability-in-the-egg-supply-chain-ensuring-consistency-and-quality",
+    "https://www.eggsunlimited.com/glossary/your-comprehensive-guide-to-choosing-a-foodservice-egg-supplier-for-your-business-needs",
+    "https://www.eggsunlimited.com/glossary/how-to-identify-reliable-cage-free-egg-suppliers-a-comprehensive-guide-for-b2b-buyers",
+    "https://certifiedhumane.org/all-about-egg-labels/",
+    "https://www.farmforward.com/issues/animal-product-labeling/cage-free-eggs/",
+    "https://www.consumerreports.org/food-labels/seals-and-claims/certified-humane",
+    "https://www.foxnews.com/food-drink/egg-supply-strained-bird-flu-shortage-frustrates-americans-grocery-stores",
+    "https://progressivegrocer.com/ahold-delhaize-usa-renews-commitment-cage-free-eggs",
+    "https://www.eggsunlimited.com/florida-egg/"
+  ],
+  "pain_points": [
+    "Supply unreliability is the buyer's number-one worry. Delivery consistency is cited as the key performance indicator foodservice and retail buyers use to judge an egg supplier, and recent shortages pushed major chains to impose purchase limits.",
+    "Certification labels have lost meaning through overuse. Roughly three in four consumers say there are so many food certifications that they lose track of what they mean.",
+    "'Cage-free' on its own is a weak claim. It does not specify how much space hens get, does not guarantee outdoor access, and is not enforced by inspection.",
+    "Large egg suppliers consolidate sourcing from multiple producers to hit volume, which means a buyer often cannot say which farm their eggs came from or how old they are on arrival.",
+    "Price and supply volatility from bird flu and from state cage-free mandates has made buyers wary of single-channel dependence."
+  ],
+  "what_customers_value": [
+    "Delivery reliability and a predictable schedule above almost everything else.",
+    "Third-party-inspected certification rather than a self-applied label. Certified Humane is inspected by veterinarians and animal-welfare scientists, which is the distinction buyers and consumers actually trust.",
+    "Consistent egg size and shell integrity, plus documented food-safety compliance.",
+    "Traceability to a single named farm.",
+    "A local-sourcing story the buyer can pass on to their own customers. 64% of consumers say they prefer cage-free eggs, and retailers such as Ahold Delhaize are adding shelf tags to make cage-free sourcing visible."
+  ],
+  "business_differentiators": [
+    "Morning Star Fields is Certified Humane (Raised & Handled), which is the third-party-inspected label, not the unenforced bare 'cage-free' claim. It also holds UEP Certified Cage-Free on top of it.",
+    "SQF Certified. SQF is the food-safety scheme retail and foodservice buyers actually audit against, and it directly answers the compliance question buyers ask.",
+    "Eggs are laid, packed and shipped within 48 hours, delivered B2B inside roughly 250 miles. That is a specific, checkable answer to the freshness-and-distance pain point. (Client FAQ.)",
+    "One family-owned farm, not a consolidator. Every carton traces to Vero Beach, which answers the traceability gap.",
+    "NMSDC certified. Corporate and institutional buyers with diverse-supplier targets can count Morning Star Fields toward them, which is a purchasing reason no amount of egg quality provides.",
+    "Fresh From Florida membership plus Prop 12 compliance and Aleph Kosher certification gives buyers a ready-made local and compliance story, and opens kosher accounts.",
+    "The BioCircular closed-loop system (solar, reclaimed water, manure-to-fertiliser, egg-wash-water-to-hydroponics) is a real, specific sustainability claim rather than a generic green statement. It is the client's own program name."
+  ],
+  "copy_angles": [
+    "Lead the hero with the 48-hour, one-farm freshness claim. It is concrete, checkable, and it is the single thing a consolidator cannot match. Something in the register of 'Laid, packed and shipped in 48 hours. From one Florida farm.'",
+    "Make the certification row the trust spine of the page, high up. The client already calls itself 'one of Florida's most certified local farms' — seven third-party marks is the proof, and it directly answers the label-confusion pain point. This is why the trust-badge row replaces testimonials rather than merely filling a gap.",
+    "Draw the Certified Humane vs plain cage-free distinction explicitly somewhere in the SEO body. Buyers do not know that bare 'cage-free' is uninspected; saying so positions Morning Star Fields above the category default.",
+    "Give NMSDC its own moment on the distributor page. Diverse-supplier status is a procurement trigger for corporate and institutional buyers and it is currently buried in a logo row.",
+    "Use BioCircular as the signature-system block, with its four real pillars as the sub-blocks. It is the client's own named program and it carries the sustainability story without a single generic green claim.",
+    "Keep the client's plain-spoken voice. Lines like 'Happy hens, better eggs, that is the simple truth' and 'nothing goes to waste if we can help it' are warmer and more credible than standard B2B supplier copy. Do not sand them down.",
+    "Frame the service-area pages around dependable delivery inside the 250-mile radius, not around 'serving' the city. The buyer's question is whether the truck arrives on schedule."
+  ],
+  "gaps": [
+    "No Vero Beach or Treasure Coast local sentiment was obtainable. Reddit is blocked to this environment, so genuinely local voice-of-customer is missing. If it matters, this is worth a manual Reddit read or a paid Firecrawl pass.",
+    "No customer reviews exist for this business anywhere: no Google Business Profile, no testimonials on the site. Nothing in this research can be attributed to a Morning Star Fields customer.",
+    "No pricing signal. The client publishes no prices, so no cost angle can be written."
+  ]
+}

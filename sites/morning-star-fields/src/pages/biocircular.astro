@@ -1,0 +1,238 @@
+---
+/* The BioCircular explainer.
+
+   BioCircular is the client's OWN program name, scraped from their site — it is
+   safe to use here and must never be carried to another client. The four
+   pillars, the loop diagram and the closing lines all come from their
+   /biocircular-1 page; nothing on this page is invented.
+
+   The home page shows the same system as a short band with the diagram. This
+   page is the long-form version: what each loop actually replaces, and why a
+   buyer should care. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+import HeroOwl from '../components/HeroOwl.astro';
+import SectionHead from '../components/SectionHead.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import PartnerBadges from '../components/PartnerBadges.astro';
+import ClosingCTA from '../components/ClosingCTA.astro';
+import GHLChatWidget from '../components/GHLChatWidget.astro';
+
+const site = (await getEntry('site', 'config')).data as any;
+const home = (await getEntry('site', 'home')).data as any;
+const ss = home.signature_system ?? {};
+const ctaText = site.closing_cta?.cta_text ?? 'Get Your Free Estimate!';
+
+const crumbs = [{ name: 'Home', href: '/' }, { name: 'BioCircular', href: '/biocircular' }];
+
+const pillars = [
+  {
+    title: 'Renewable energy',
+    body: 'Solar power supports the farm’s energy use — the barns, the packing room and the growing beds all draw from it.',
+    replaces: 'Replaces: grid-only power for the whole operation.',
+  },
+  {
+    title: 'Water stewardship',
+    body: 'We capture and reclaim water rather than drawing fresh for every use. In Florida, where water is a live public question, that is not a small thing.',
+    replaces: 'Replaces: single-use water on a farm that needs a lot of it.',
+  },
+  {
+    title: 'Natural fertiliser',
+    body: 'Hen manure is the largest by-product of an egg farm, and on most farms it is a disposal cost. We turn ours into 100% organic fertiliser pellets.',
+    replaces: 'Replaces: a waste line, with a product line.',
+  },
+  {
+    title: 'Integrated nutrition',
+    body: 'Egg wash water would normally go down a drain. Ours feeds hydroponic growing beds, and the marigolds and leafy greens grown there go back into the hens’ diet.',
+    replaces: 'Replaces: waste water, and part of the bought-in feed bill.',
+  },
+];
+
+const faqs = [
+  { q: 'What does biocircular actually mean?', a: 'It means nothing goes to waste if we can help it. What the farm produces helps the farm right back — manure becomes fertiliser, egg wash water feeds the hydroponics, and the greens grown there go back into the hens’ diet.' },
+  { q: 'Is this the same as organic or regenerative?', a: 'It overlaps but it is not the same claim. Organic and regenerative are certification and practice standards. BioCircular is how we have engineered the farm: a closed loop where the outputs of one part become the inputs of another. We use no chemicals and no antibiotics on the flock.' },
+  { q: 'Does it change the eggs?', a: 'Yes, in one visible way. The deep orange yolk colour comes from the hens’ diet, including marigolds and leafy greens we grow on site with reclaimed egg wash water. That is the loop showing up in the carton.' },
+  { q: 'Why should a buyer care?', a: 'Because it is a sustainability story you can actually describe. Instead of an adjective on a shelf tag, there are four specific mechanisms — solar, reclaimed water, manure-to-fertiliser and egg-wash-to-feed — on one farm you can name.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<BaseLayout
+  title={`BioCircular Farming — ${site.business_name}`}
+  description={`How BioCircular farming works at ${site.business_name} in ${site.address.city}, ${site.address.state}: a closed-loop system where solar power, reclaimed water, manure and egg-wash water all feed back into the farm.`}
+  breadcrumbs={crumbs}
+  jsonLd={[jsonLd]}
+  pagePath="/biocircular"
+>
+  <HeroOwl
+    eyebrow="Our system"
+    headline="BioCircular"
+    subheadline="A better way to farm starts with a better system. We designed our farm as a closed loop, where energy, water, nutrition and natural resources work together to reduce waste."
+    cta_text={ctaText}
+    cta_href="/book"
+    photo="/img/farm-barns.jpg"
+    show_form
+  />
+
+  <section class="intro">
+    <div class="container">
+      <SectionHead
+        eyebrow="The idea"
+        heading="Nothing goes to waste if we can help it"
+        subtitle={ss.intro}
+        align="center"
+      />
+      {ss.image && (
+        <figure class="diagram">
+          <img src={ss.image} alt={ss.image_alt ?? 'The BioCircular loop at Morning Star Fields'} loading="lazy" />
+          <figcaption>The loop, start to finish: barns feed the flock, eggs are collected and washed, the nutrient-rich wash water grows feed through hydroponics, manure becomes fertiliser, fertilised crops grow food, and food and water return to the hens.</figcaption>
+        </figure>
+      )}
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="container">
+      <SectionHead eyebrow="Four loops" heading="What each part of the system replaces" align="center" />
+      <ul class="grid">
+        {pillars.map((p) => (
+          <li class="card">
+            <h3>{p.title}</h3>
+            <p>{p.body}</p>
+            <p class="replaces">{p.replaces}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {home.process_steps && <ProcessSteps data={home.process_steps} />}
+
+  {/* Two columns on purpose. This was a single left-aligned prose block with no
+      image, which made it the only left-aligned section on a page where every
+      other head is centred — it read as a rendering fault rather than a choice.
+      Paired with a photo, the left alignment is the layout doing its job. */}
+  <section class="why">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-copy">
+      <SectionHead
+        eyebrow="Why it matters"
+        heading="A sustainability story you can actually describe"
+        align="left"
+      />
+      <div class="prose">
+        <p>&ldquo;Sustainable&rdquo; is a word that has been asked to carry too much. A shelf tag says it, a supplier deck says it, and a buyer has no way to check any of it. That is the problem BioCircular is meant to solve for the people who stock our eggs.</p>
+        <p>Instead of an adjective, there are four mechanisms, all on one farm outside Vero Beach: solar power, reclaimed water, hen manure turned into organic fertiliser pellets, and egg wash water feeding the hydroponic beds that grow part of the flock&rsquo;s own feed. Each one closes a line that would otherwise leave the farm as waste.</p>
+        <p>BioCircular is also about more than production. As a Certified Humane, family-owned farm, we prioritise hen welfare through thoughtful barn design, responsible practices and a safe environment where the flock can thrive. The system and the welfare standard are the same decision made twice.</p>
+        <p>{ss.guarantee?.body ?? 'Every part of the farm has a purpose.'}</p>
+          </div>
+        </div>
+        <figure class="why-figure">
+          <img
+            src="/img/hen-closeup.jpg"
+            alt="A brown hen in the open cage-free barn at Morning Star Fields in Vero Beach, Florida"
+            loading="lazy"
+          />
+          <figcaption>The flock the loop is built around. Cage-free barns, Certified Humane, and the source of the manure that becomes our fertiliser.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-block">
+    <div class="container">
+      <SectionHead eyebrow="Questions" heading="BioCircular, answered" align="center" />
+      <dl class="faqs">
+        {faqs.map((f) => (
+          <div class="faq">
+            <dt>{f.q}</dt>
+            <dd>{f.a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <PartnerBadges
+    eyebrow="Independently certified"
+    headline="Seven marks, and somebody else checks every one"
+    intro="The system is ours. The standards it is measured against are not."
+  />
+  <ClosingCTA />
+  <GHLChatWidget />
+</BaseLayout>
+<style>
+  .intro, .pillars, .why, .faq-block { padding: var(--space-5) 0; }
+  .intro { background: var(--color-bg); }
+  .pillars { background: var(--color-surface); }
+  .why { background: var(--color-bg); }
+  .faq-block { background: var(--color-surface); }
+
+  .diagram { margin: var(--space-4) auto 0; max-width: 60rem; padding: 0; }
+  .diagram img { display: block; width: 100%; height: auto; }
+  .diagram figcaption {
+    margin-top: var(--space-2); text-align: center;
+    color: var(--color-muted); font-size: 0.95rem; line-height: 1.6;
+    max-width: 62ch; margin-inline: auto;
+  }
+
+  .grid {
+    list-style: none; padding: 0; margin: var(--space-4) 0 0;
+    display: grid; gap: var(--space-3);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .card {
+    background: var(--color-bg); border: 1px solid rgba(24, 20, 60, 0.10);
+    border-radius: var(--radius-md); padding: var(--space-3);
+  }
+  .card h3 {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.25rem;
+    color: var(--color-text); margin: 0 0 var(--space-1);
+  }
+  .card p { color: var(--color-muted); line-height: 1.65; margin: 0; }
+  .card .replaces {
+    margin-top: var(--space-2); padding-top: var(--space-2);
+    border-top: 1px solid rgba(24, 20, 60, 0.10);
+    color: var(--color-accent-ink); font-weight: 600; font-size: 0.92rem;
+  }
+
+  .why-grid {
+    display: grid; grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-5); align-items: start;
+  }
+  .why-copy { min-width: 0; }
+  .why-figure { margin: 0; min-width: 0; }
+  .why-figure img {
+    display: block; width: 100%; height: auto;
+    aspect-ratio: 4 / 5; object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+  .why-figure figcaption {
+    margin-top: var(--space-2); color: var(--color-muted);
+    font-size: 0.92rem; line-height: 1.6;
+  }
+  /* Stacks below the copy — the photo supports the argument, it does not open it. */
+  @media (max-width: 900px) {
+    .why-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+    .why-figure img { aspect-ratio: 16 / 10; }
+  }
+
+  .prose { max-width: 68ch; }
+  .prose p { color: var(--color-muted); font-size: 1.05rem; line-height: 1.75; margin: 0 0 var(--space-2); }
+
+  .faqs { margin: var(--space-4) 0 0; max-width: 68ch; margin-inline: auto; }
+  .faq { border-bottom: 1px solid rgba(24, 20, 60, 0.12); padding: var(--space-2) 0; }
+  .faq:last-child { border-bottom: 0; }
+  .faqs dt {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.15rem;
+    color: var(--color-text); margin-bottom: 0.4rem;
+  }
+  .faqs dd { margin: 0; color: var(--color-muted); line-height: 1.7; }
+</style>

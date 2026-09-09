@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Morning Star Fields — brand tokens.
+   Every colour below traces to a value detected in the client's own site CSS or
+   logo. See sites/morning-star-fields/design_reference.json for the provenance
+   of each one and the measured contrast ratio for each pairing. */
+:root {
+  --color-bg: #f6f6f6;
+  --color-surface: #ffffff;
+  --color-text: #303030;
+  --color-muted: #595959;
+
+  /* The client's brand indigo, taken from the logo wordmark and detected eight
+     times in their homepage CSS as rgb(24,20,60). Carries the dark bands.
+     White on it measures 17.44:1. */
+  --color-primary: #18143c;
+  --color-on-primary: #ffffff;
+
+  /* Three accent tokens, one per job — see the owl template README.
+       --color-accent          FILL behind --color-on-accent. White on it: 9.59:1.
+       --color-accent-ink      the accent as TEXT on light. 8.88:1 on bg, 9.59:1 on surface.
+       --color-accent-on-dark  the accent as TEXT inside the #18143c bands. 7.0:1.
+
+     accent and accent-ink are the same value here, which is unusual. It works
+     because the client's #41398c is dark enough to clear AA as text on the light
+     background AND deep enough to carry white button text — most brand accents
+     cannot do both, which is why the tokens are separate in the first place.
+     accent-on-dark is a lightened tint of the client's own rgb(114,107,191);
+     the undiluted value reaches only 3.8:1 on the primary band and fails AA. */
+  --color-accent: #41398c;
+  --color-on-accent: #ffffff;
+  --color-accent-ink: #41398c;
+  --color-accent-on-dark: #a49ddb;
+
+  --color-focus: #0057ff;
+
+  --font-display: 'Adamina', Georgia, 'Times New Roman', serif;
+  --font-body: 'Poppins', system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

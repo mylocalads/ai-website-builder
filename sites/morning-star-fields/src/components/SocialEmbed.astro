@@ -1,0 +1,76 @@
+---
+/* Operator-pasted social-feed embed (Elfsight, on this site).
+
+   The snippet is injected verbatim with set:html — it is NOT rewritten, and
+   nothing here synthesizes a loader URL. Astro strips <script> tags from
+   set:html, so the loader is re-attached at runtime by cloning the parsed
+   nodes; without that the container div renders and the widget never boots.
+
+   Note for the operator: this loads a third-party script that sets its own
+   cookies. The site ships compliance.gdpr = true and a consent banner, but this
+   embed does not currently wait for consent. Gating it is a real change and is
+   flagged rather than assumed. */
+import SectionHead from './SectionHead.astro';
+
+export interface Props {
+  snippet: string;
+  eyebrow?: string;
+  headline?: string;
+}
+const { snippet, eyebrow, headline } = Astro.props;
+---
+<section class="social-embed" data-pending aria-label={headline ?? 'Social feed'}>
+  <div class="container">
+    {headline && <SectionHead eyebrow={eyebrow} heading={headline} align="center" />}
+    <div class="embed" data-social-embed set:html={snippet} />
+  </div>
+</section>
+<script>
+  /* Astro removes <script> from set:html output, so re-create any the operator
+     pasted. Each is cloned into a fresh element because a script node inserted
+     via innerHTML never executes. */
+  document.querySelectorAll('[data-social-embed] script').forEach((old) => {
+    const s = document.createElement('script');
+    for (const { name, value } of Array.from(old.attributes)) s.setAttribute(name, value);
+    s.textContent = old.textContent;
+    old.replaceWith(s);
+  });
+
+  /* The section ships hidden and reveals itself only once the third-party
+     widget actually paints something.
+
+     A social embed can fail silently for reasons the page cannot see: the
+     widget id may not be authorised for this hostname, the account may be
+     suspended, or a content blocker may drop the loader. In every one of those
+     cases the vendor's container stays empty and the page is left showing a
+     heading over a blank band — which reads as a broken site rather than a
+     missing feed. Hiding until proven otherwise costs nothing when the widget
+     works and removes the hole when it does not. */
+  document.querySelectorAll('.social-embed[data-pending]').forEach((section) => {
+    const host = section.querySelector('[data-social-embed]');
+    if (!host) return;
+
+    const painted = () =>
+      host.querySelector('iframe, img, canvas, [class*="elfsight-app-"] > *') !== null ||
+      host.innerText.trim().length > 0;
+
+    const reveal = () => {
+      section.removeAttribute('data-pending');
+      observer.disconnect();
+      clearTimeout(timer);
+    };
+
+    const observer = new MutationObserver(() => { if (painted()) reveal(); });
+    observer.observe(host, { childList: true, subtree: true });
+
+    // Give the vendor a fair window, then give up and stay hidden.
+    const timer = setTimeout(() => observer.disconnect(), 12000);
+    if (painted()) reveal();
+  });
+</script>
+<style>
+  .social-embed { padding: var(--space-5) 0; background: var(--color-bg); }
+  .embed { min-height: 0; }
+  /* Hidden until the widget paints — see the script above. */
+  .social-embed[data-pending] { display: none; }
+</style>

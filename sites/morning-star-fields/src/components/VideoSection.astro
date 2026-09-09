@@ -1,0 +1,56 @@
+---
+/* Full-width video band with an eyebrow and heading above the player.
+
+   `controls` and no autoplay is deliberate: these films carry a voiceover, and
+   a video that starts itself with sound is the fastest way to make someone
+   close the tab. `preload="none"` matters more than usual here — the client's
+   films are 9MB and 28MB, so preloading metadata alone would still open a
+   connection on every page load for a video most visitors never press. */
+import SectionHead from './SectionHead.astro';
+
+export interface Props {
+  src: string;
+  eyebrow?: string;
+  headline: string;
+  body?: string;
+  poster?: string;
+  tone?: 'light' | 'dark';
+  align?: 'center' | 'left';
+}
+const { src, eyebrow, headline, body, poster, tone = 'light', align = 'center' } = Astro.props;
+---
+<section class:list={['video-band', tone]} aria-label={headline}>
+  <div class="container">
+    <SectionHead eyebrow={eyebrow} heading={headline} subtitle={body} align={align} />
+    <div class="frame">
+      <video
+        controls
+        preload="none"
+        playsinline
+        poster={poster}
+        src={src}
+      >
+        Your browser cannot play this video.
+        <a href={src}>Open the video directly</a>.
+      </video>
+    </div>
+  </div>
+</section>
+<style>
+  .video-band { padding: var(--space-5) 0; background: var(--color-surface); }
+  .video-band.dark { background: var(--color-primary); }
+  /* SectionHead owns the type scale so every h2 on the site matches. Only the
+     dark-band colour overrides are local. */
+  .video-band.dark :global(.section-head h2) { color: var(--color-on-primary); }
+  .video-band.dark :global(.section-head .eyebrow) { color: var(--color-accent-on-dark); }
+  .video-band.dark :global(.section-head .subtitle) { color: rgba(255, 255, 255, 0.82); }
+  .frame {
+    margin: var(--space-3) auto 0;
+    max-width: 68rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 1px 2px rgba(24, 20, 60, 0.10), 0 12px 32px rgba(24, 20, 60, 0.12);
+  }
+  video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
+</style>

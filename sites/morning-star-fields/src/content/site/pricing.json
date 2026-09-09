@@ -1,0 +1,19 @@
+{
+  "kind": "pricing",
+  "intro": "We do not publish a price list, because an honest egg price depends on things we need to hear from you first. Volume, pack size, how often you take delivery and how far the truck goes all move the number, and a headline figure that ignores them is a figure we would have to walk back. Tell us what you actually need and we will quote it straight.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What a wholesale egg quote depends on",
+    "lede": "These are the variables we work through with every new distributor, retailer and foodservice account.",
+    "columns": ["What we need to know", "Why it changes the number"],
+    "rows": [
+      ["Weekly volume", "Committed volume lets us plan flock output and packing runs instead of holding buffer stock."],
+      ["Pack format", "Retail cartons, flats and foodservice cases each carry different packing labour and materials."],
+      ["Delivery frequency", "A weekly standing drop costs less to run than irregular ad-hoc collections."],
+      ["Distance from Vero Beach", "We deliver B2B within roughly 250 miles across Florida. Where you sit inside that radius affects the freight share."],
+      ["Certification requirements", "Kosher-supervised or Prop 12 documented supply carries additional handling and paperwork."],
+      ["Contract length", "A longer commitment lets us hold a steadier price through the seasonal swings the whole category sees."]
+    ],
+    "footnote": "No prices are published here on purpose. Ask us and you will get a real number for your situation rather than a range we cannot honour."
+  }
+}
