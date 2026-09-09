@@ -1,4 +1,5 @@
 ---
+import SmartImage from './SmartImage.astro';
 // project-map — server-rendered project list, filter chips, and photo grid.
 //
 // NOTE: this component deliberately has NO <style> block. Astro scoped styles
@@ -67,7 +68,7 @@ const facetOrder: Array<'type' | 'product' | 'place'> = ['type', 'product', 'pla
             <li>
               <button type="button" class="pm-row" data-project-id={p.id}>
                 {p.photos[0]
-                  ? <img src={p.photos[0].url} alt={p.photos[0].alt} loading="lazy" />
+                  ? <SmartImage src={p.photos[0].url} alt={p.photos[0].alt} />
                   : <span />}
                 <span>
                   <h3>{p.title}</h3>
@@ -90,7 +91,7 @@ const facetOrder: Array<'type' | 'product' | 'place'> = ['type', 'product', 'pla
       <div class="pm-grid" data-pm-grid>
         {projects.map((p) => (
           <figure class="pm-card" data-project-id={p.id}>
-            {p.photos[0] && <img src={p.photos[0].url} alt={p.photos[0].alt} loading="lazy" />}
+            {p.photos[0] && <SmartImage src={p.photos[0].url} alt={p.photos[0].alt} />}
             <figcaption>
               <h3>{p.title}</h3>
               <p class="pm-meta">

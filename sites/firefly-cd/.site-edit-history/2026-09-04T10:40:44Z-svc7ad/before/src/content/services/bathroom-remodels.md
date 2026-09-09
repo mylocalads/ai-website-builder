@@ -11,11 +11,11 @@ sub_services:
   - Full Gut Renovations
   - Tile Showers, Vanities & Fixtures
   - Accessible / ADA-Friendly Baths
-hero_photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.05.08%E2%80%AFPM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true
+hero_photo: rs-w-600-cg-true-83e4a01a.jpg
 gallery:
-  - photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-20%20at%2010.49.33%E2%80%AFPM.png/:/cr=t:8.55%25,l:0%25,w:100%25,h:82.91%25/rs=w:365,h:365,cg:true
+  - photo: rs-w-365-h-365-cg-true-2b34db77.jpg
     alt: Modern bathroom with walk-in shower
-  - photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/WhatsApp%20Image%202026-04-28%20at%2019.51.25%20(2).jpeg/:/rs=w:1240,h:620,cg:true,m/cr=w:1240,h:620
+  - photo: cr-w-1240-h-620-2a84b0e6.jpg
     alt: Renovated bathroom with vanity
 faqs:
   - q: How long will my bathroom be out of service?

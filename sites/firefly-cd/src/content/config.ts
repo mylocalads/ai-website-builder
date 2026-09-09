@@ -1,5 +1,18 @@
 import { defineCollection, z } from 'astro:content';
 
+/**
+ * A reference to an image.
+ *
+ * Normally a bare filename in src/assets/images/ — scripts/localize-images.mjs
+ * pulls remote images into the repo so astro:assets + sharp can resize them,
+ * emit modern formats, and supply intrinsic width/height. A URL string is
+ * invisible to that pipeline, which is how this site once shipped a 2.1 MB PNG.
+ *
+ * Absolute URLs still validate, so a not-yet-localised image degrades to a
+ * plain remote <img> rather than failing the build.
+ */
+const imageRef = z.string().min(1);
+
 const services = defineCollection({
   type: 'content',
   schema: z.object({
@@ -10,10 +23,10 @@ const services = defineCollection({
     long_description: z.string(),
     icon: z.string().optional(),
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
-    hero_photo: z.string().url().optional(),
+    hero_photo: imageRef.optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
-      photo: z.string().url(),
+      photo: imageRef,
       alt: z.string(),
     })).default([]),
     sub_services: z.array(z.string()).default([]),
@@ -44,12 +57,12 @@ const service_areas = defineCollection({
       .optional(),
     neighborhoods: z.array(z.string()).default([]),
     local_context: z.string().optional(),
-    hero_photo: z.string().url().optional(),
-    landmark_photo: z.string().url().optional(),
+    hero_photo: imageRef.optional(),
+    landmark_photo: imageRef.optional(),
     landmark_alt: z.string().optional(),
     order: z.number().default(0),
     gallery: z.array(z.object({
-      photo: z.string().url(),
+      photo: imageRef,
       alt: z.string(),
     })).default([]),
   }),
@@ -100,7 +113,7 @@ const projectMapProject = z.object({
   project_type: z.string().min(1),
   products_used: z.array(z.string()).default([]),
   photos: z.array(z.object({
-    url: z.string().url(),
+    url: imageRef,
     alt: z.string().min(1),
   })).min(1),
   description: z.string().optional(),
@@ -118,15 +131,15 @@ const site = defineCollection({
       kind: z.literal('config'),
       business_name: z.string(),
       legal_name: z.string().optional(),
-      logo_url: z.string().url().optional(),
-      default_hero_photo: z.string().url().optional(),
+      logo_url: imageRef.optional(),
+      default_hero_photo: imageRef.optional(),
       default_hero_video: z.string().url().optional(),
-      about_photo: z.string().url().optional(),
-      team_photo: z.string().url().optional(),
+      about_photo: imageRef.optional(),
+      team_photo: imageRef.optional(),
       team_members: z.array(z.object({
         name: z.string(),
         role: z.string().optional(),
-        photo: z.string().url(),
+        photo: imageRef,
         bio: z.string().optional(),
       })).default([]),
       tagline: z.string(),
@@ -157,7 +170,7 @@ const site = defineCollection({
       section_rhythm: z.array(z.string()).default([]),
       partners: z.array(z.object({
         name: z.string(),
-        logo_url: z.string().url(),
+        logo_url: imageRef,
         link_url: z.string().url().optional(),
       })).default([]),
       why_choose_us: z.array(z.object({
@@ -171,15 +184,15 @@ const site = defineCollection({
         description: z.string().optional(),
         cta_text: z.string().optional(),
         cta_href: z.string().optional(),
-        logo_url: z.string().url().optional(),
+        logo_url: imageRef.optional(),
       }).default({ enabled: false }),
       us_vs_them: z.object({
         enabled: z.boolean().default(false),
         headline: z.string().optional(),
         us_label: z.string().default('US'),
         them_label: z.string().default('THEM'),
-        us_photo: z.string().url().optional(),
-        them_photo: z.string().url().optional(),
+        us_photo: imageRef.optional(),
+        them_photo: imageRef.optional(),
         rows: z.array(z.object({
           label: z.string(),
           us: z.boolean().default(true),
@@ -189,7 +202,7 @@ const site = defineCollection({
       gallery: z.array(z.object({
         title: z.string().optional(),
         location: z.string().optional(),
-        photo: z.string().url(),
+        photo: imageRef,
         alt: z.string(),
         description: z.string().optional(),
       })).default([]),
@@ -227,7 +240,7 @@ const site = defineCollection({
         subheadline: z.string(),
         cta_text: z.string(),
         cta_href: z.string(),
-        photo: z.string().url().optional(),
+        photo: imageRef.optional(),
       }),
       testimonials: z.array(z.object({
         name: z.string(), location: z.string().optional(), text: z.string(), rating: z.number().optional(),
@@ -249,7 +262,7 @@ const site = defineCollection({
       intro: z.string(),
       // LEGACY shape — unchanged, now defaulted so files that omit it validate.
       projects: z.array(z.object({
-        title: z.string(), location: z.string().optional(), photo: z.string().url(),
+        title: z.string(), location: z.string().optional(), photo: imageRef,
         alt: z.string(), description: z.string().optional(),
       })).default([]),
       // project-map:begin

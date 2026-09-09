@@ -1,4 +1,5 @@
 ---
+import SmartImage from './SmartImage.astro';
 import { getEntry } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
 const partners = site.partners ?? [];
@@ -10,9 +11,9 @@ const partners = site.partners ?? [];
         {partners.map((p: any) => (
           <li>
             {p.link_url ? (
-              <a href={p.link_url} rel="noopener" target="_blank"><img src={p.logo_url} alt={p.name} loading="lazy" /></a>
+              <a href={p.link_url} rel="noopener" target="_blank"><SmartImage src={p.logo_url} alt={p.name} /></a>
             ) : (
-              <img src={p.logo_url} alt={p.name} loading="lazy" />
+              <SmartImage src={p.logo_url} alt={p.name} />
             )}
           </li>
         ))}

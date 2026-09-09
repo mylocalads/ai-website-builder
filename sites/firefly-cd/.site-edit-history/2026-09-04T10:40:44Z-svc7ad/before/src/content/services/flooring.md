@@ -10,11 +10,11 @@ sub_services:
   - Luxury Vinyl Plank (LVP)
   - Tile & Carpet
   - Refinishing & Subfloor Repair
-hero_photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.04.12%E2%80%AFPM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true
+hero_photo: rs-w-600-cg-true-bf999c2f.jpg
 gallery:
-  - photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.20.43%E2%80%AFPM.png/:/cr=t:0.09%25,l:0%25,w:100%25,h:99.82%25/rs=w:365,h:365,cg:true
+  - photo: rs-w-365-h-365-cg-true-69f299c2.jpg
     alt: Hardwood floor installation
-  - photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.04.12%E2%80%AFPM.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:600,cg:true
+  - photo: rs-w-600-cg-true-bf999c2f.jpg
     alt: Tile flooring in a modern kitchen
 faqs:
   - q: What flooring types do you install?

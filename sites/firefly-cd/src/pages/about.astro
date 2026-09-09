@@ -1,4 +1,5 @@
 ---
+import SmartImage from '../components/SmartImage.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -25,7 +26,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
 
   {teamHero && (
     <section class="team-hero">
-      <img src={teamHero} alt={`${site.business_name} team`} />
+      <SmartImage src={teamHero} alt={`${site.business_name} team`} />
       <div class="team-hero-overlay">
         <div class="container">
           <h1>Meet the {site.business_name} team</h1>
@@ -43,7 +44,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }];
         <div class="grid">
           {teamMembers.map((m: any) => (
             <figure class="member">
-              <img src={m.photo} alt={m.name} loading="lazy" />
+              <SmartImage src={m.photo} alt={m.name} />
               <figcaption>
                 <h3>{m.name}</h3>
                 {m.role && <p class="role">{m.role}</p>}

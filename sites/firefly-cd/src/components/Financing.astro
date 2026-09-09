@@ -1,4 +1,5 @@
 ---
+import SmartImage from './SmartImage.astro';
 import { getEntry } from 'astro:content';
 const site = (await getEntry('site', 'config')).data as any;
 const f = site.financing ?? { enabled: false };
@@ -11,7 +12,7 @@ const f = site.financing ?? { enabled: false };
         {f.description && <p>{f.description}</p>}
         {f.cta_text && f.cta_href && <a href={f.cta_href} class="cta">{f.cta_text}</a>}
       </div>
-      {f.logo_url && <img src={f.logo_url} alt="Financing partner" class="logo" loading="lazy" />}
+      {f.logo_url && <SmartImage src={f.logo_url} alt="Financing partner" class="logo" />}
     </div>
   </section>
 )}

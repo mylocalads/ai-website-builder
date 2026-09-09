@@ -1,0 +1,55 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "headers": [
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/services/kitchen-remodels",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/kitchen-remodels/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/bathroom-remodels",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/bathroom-remodels/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/flooring",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services/flooring/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

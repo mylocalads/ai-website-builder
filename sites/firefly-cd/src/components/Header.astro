@@ -1,13 +1,15 @@
 ---
+import SmartImage from './SmartImage.astro';
 import { getEntry, getCollection } from 'astro:content';
+import { SERVICE_LIMIT, AREA_LIMIT } from '../lib/limits.ts';
 const site = (await getEntry('site', 'config')).data as any;
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 7);
-const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, 6);
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
+const areas = (await getCollection('service_areas')).sort((a, b) => a.data.order - b.data.order).slice(0, AREA_LIMIT);
 ---
 <header class="site-header">
   <div class="container header-row">
     <a href="/" class="brand" aria-label={`${site.business_name} — Home`}>
-      {site.logo_url ? <img src={site.logo_url} alt={site.business_name} class="brand-logo" /> : site.business_name}
+      {site.logo_url ? <SmartImage src={site.logo_url} alt={site.business_name} class="brand-logo" /> : site.business_name}
     </a>
     <nav aria-label="Primary" class="primary-nav">
       <ul class="nav-list">

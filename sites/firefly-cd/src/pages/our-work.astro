@@ -1,4 +1,6 @@
 ---
+import { imageUrl } from '../lib/images.ts';
+import SmartImage from '../components/SmartImage.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getEntry, getCollection } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -19,6 +21,7 @@ const workEntry = await getEntry('site', 'our-work').catch(() => null);
 const intro = (workEntry?.data as any)?.intro ?? `A sample of recent projects from ${site.business_name}.`;
 const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-work' }];
+const heroBgUrl = await imageUrl(site.default_hero_photo, { width: 1600 });
 ---
 <BaseLayout
   title={`Our Work — ${site.business_name}`}
@@ -27,7 +30,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
   pagePath="/our-work"
 >
   <div class="container"><Breadcrumbs items={crumbs} /></div>
-  <section class="ow-hero" style={site.default_hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${site.default_hero_photo});`}>
+  <section class="ow-hero" style={heroBgUrl && `background-image: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)), url(${heroBgUrl});`}>
     <div class="container">
       <h1>Our work</h1>
       <p>{intro}</p>
@@ -69,7 +72,7 @@ const crumbs = [{ name: 'Home', href: '/' }, { name: 'Our Work', href: '/our-wor
           <div class="strip">
             {gallery.map((g: any) => (
               <a href={`/services/${s.slug}`} class="tile">
-                <img src={g.photo} alt={g.alt} loading="lazy" />
+                <SmartImage src={g.photo} alt={g.alt} />
               </a>
             ))}
           </div>

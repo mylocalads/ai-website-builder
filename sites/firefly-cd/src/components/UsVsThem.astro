@@ -1,4 +1,5 @@
 ---
+import SmartImage from './SmartImage.astro';
 import { getEntry } from 'astro:content';
 import SectionHead from './SectionHead.astro';
 const site = (await getEntry('site', 'config')).data as any;
@@ -15,7 +16,7 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
         </div>
         <div class="col us-col">
           <div class="col-header">
-            {u.us_photo && <img src={u.us_photo} alt="" class="col-photo" loading="lazy" />}
+            {u.us_photo && <SmartImage src={u.us_photo} alt="" class="col-photo" />}
             <span class="col-title-overlay">{u.us_label ?? 'US'}</span>
           </div>
           {u.rows.map((row: any) => (
@@ -24,7 +25,7 @@ const u = site.us_vs_them ?? { enabled: false, rows: [] };
         </div>
         <div class="col them-col">
           <div class="col-header">
-            {u.them_photo && <img src={u.them_photo} alt="" class="col-photo" loading="lazy" />}
+            {u.them_photo && <SmartImage src={u.them_photo} alt="" class="col-photo" />}
             <span class="col-title-overlay">{u.them_label ?? 'THEM'}</span>
           </div>
           {u.rows.map((row: any) => (

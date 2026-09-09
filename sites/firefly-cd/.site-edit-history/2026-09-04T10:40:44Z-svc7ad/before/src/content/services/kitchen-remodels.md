@@ -11,11 +11,11 @@ sub_services:
   - Custom Cabinetry & Quartz/Granite Countertops
   - Flooring, Tile & Backsplash
   - Full Gut Remodels
-hero_photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-25%20at%201.01.10%E2%80%AFPM.png/:/rs=w:600,h:800,cg:true,m/cr=w:600,h:800
+hero_photo: cr-w-600-h-800-85e2be8a.jpg
 gallery:
-  - photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/Screenshot%202024-09-20%20at%2010.48.33%E2%80%AFPM.png/:/cr=t:8.76%25,l:0%25,w:100%25,h:82.48%25/rs=w:365,h:365,cg:true
+  - photo: rs-w-365-h-365-cg-true-7738ce4d.jpg
     alt: Custom farmhouse kitchen with wood accents
-  - photo: https://img1.wsimg.com/isteam/ip/8ccee4a6-dc98-4457-b34a-4e887318ba7f/WhatsApp%20Image%202026-04-28%20at%2019.51.29%20(1).jpeg/:/cr=t:21.47%25,l:0%25,w:100%25,h:37.5%25/rs=w:1240,h:620,cg:true
+  - photo: rs-w-1240-h-620-cg-true-b95fb06f.jpg
     alt: Modern kitchen remodel with island
 faqs:
   - q: "How long does a full kitchen remodel take?"

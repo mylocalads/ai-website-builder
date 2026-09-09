@@ -2,6 +2,8 @@
 import { getEntry } from 'astro:content';
 import GHLFormEmbed from './GHLFormEmbed.astro';
 import SMSConsent from './SMSConsent.astro';
+import SmartImage from './SmartImage.astro';
+import { getImage } from 'astro:assets';
 export interface Props {
   eyebrow?: string;
   headline: string;
@@ -18,14 +20,49 @@ const site = (await getEntry('site', 'config')).data as any;
 const calendarSnippet = site.crm?.calendar_embed_snippet;
 const heroPhoto = photo ?? site.default_hero_photo;
 const heroVideo = video ?? site.default_hero_video;
+
+/**
+ * The <video> poster needs a real URL, but content now stores images as bare
+ * filenames, so it has to be resolved and optimised here. Without this the
+ * poster attribute would emit the filename verbatim and 404.
+ *
+ * The poster matters more than it looks: on a hero video it is what the user
+ * (and Lighthouse) sees until enough video has buffered, so on a throttled
+ * mobile connection it is effectively the LCP element. Serving it as a sized
+ * WebP rather than the original file is most of the win.
+ */
+const localImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/**/*.{jpg,jpeg,png,webp,avif,gif}',
+  { eager: true }
+);
+const heroAsset =
+  heroPhoto && !/^https?:\/\//.test(heroPhoto)
+    ? localImages[`/src/assets/images/${heroPhoto}`]?.default ?? null
+    : null;
+const posterUrl = heroAsset
+  ? (await getImage({ src: heroAsset, width: 1600, format: 'webp', quality: 70 })).src
+  : heroPhoto;
 ---
 <section class="hero">
   {heroVideo ? (
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster={heroPhoto}>
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster={posterUrl}>
       <source src={heroVideo} type="video/mp4" />
     </video>
   ) : heroPhoto ? (
-    <div class="hero-photo" style={`background-image: url(${heroPhoto});`}></div>
+    /* A real <img>, not a CSS background. The browser's preload scanner finds
+       an <img> in the raw HTML and can start fetching it before CSS has even
+       parsed; a background-image is only discovered after the stylesheet loads
+       and the rule matches. This is the hero — it IS the LCP element — so it
+       gets priority and a responsive srcset instead of one full-size file. */
+    <SmartImage
+      src={heroPhoto}
+      alt=""
+      class="hero-photo"
+      priority
+      sizes="100vw"
+      widths={[640, 1024, 1440, 1920]}
+      quality={70}
+    />
   ) : null}
   <div class="hero-overlay"></div>
   <div class="container hero-inner">
@@ -52,7 +89,7 @@ const heroVideo = video ?? site.default_hero_video;
 <style>
   .hero { padding: var(--space-5) 0; color: white; position: relative; overflow: hidden; }
   .hero-video, .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .hero-photo { background-size: cover; background-position: center; background-repeat: no-repeat; }
+  .hero-photo { object-position: center; }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(rgba(15,20,25,0.55), rgba(15,20,25,0.55)); z-index: 1; }
   .hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: var(--space-4); align-items: start; min-height: 480px; position: relative; z-index: 2; }
   .hero-copy { max-width: 34rem; padding-top: var(--space-3); }

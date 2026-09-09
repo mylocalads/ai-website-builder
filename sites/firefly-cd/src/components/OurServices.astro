@@ -1,8 +1,19 @@
 ---
 import { getEntry, getCollection } from 'astro:content';
-const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, 7);
+import { SERVICE_LIMIT } from '../lib/limits.ts';
+import { imageUrl } from '../lib/images.ts';
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order).slice(0, SERVICE_LIMIT);
 const site = (await getEntry('site', 'config')).data as any;
 const section = site.services_section ?? { eyebrow: 'Our Services' };
+
+// Card backgrounds are CSS, so each filename has to be resolved to a real URL
+// up front — a template cannot await inside .map(). These are tiles, not the
+// LCP element, so one modest width is enough.
+const cardBg = new Map(
+  await Promise.all(
+    services.map(async (s) => [s.slug, await imageUrl(s.data.hero_photo, { width: 800 })] as const)
+  )
+);
 ---
 <section id="services" class="our-services" aria-label="Services">
   <div class="container">
@@ -16,7 +27,7 @@ const section = site.services_section ?? { eyebrow: 'Our Services' };
         <a
           href={`/services/${s.slug}`}
           class="card"
-          style={s.data.hero_photo && `background-image: linear-gradient(rgba(15,20,25,0.20) 0%, rgba(15,20,25,0.85) 100%), url(${s.data.hero_photo});`}
+          style={cardBg.get(s.slug) && `background-image: linear-gradient(rgba(15,20,25,0.20) 0%, rgba(15,20,25,0.85) 100%), url(${cardBg.get(s.slug)});`}
         >
           <div class="card-inner">
             <h3 class="tile-title">{s.data.title}</h3>
