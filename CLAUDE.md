@@ -353,11 +353,24 @@ A deployment newer than the last commit is drift. **The old deployment is still 
 `npx vercel promote <deployment-id>` puts it back instantly, and its files can be pulled
 from the API to recover the source. Restore first, diagnose second.
 
-### The end state
+### This is now live — deploys come from git
 
-Once each Vercel project is connected to this repo with **Root Directory = `sites/{slug}`**,
-deploys come from commits and this whole class of accident disappears. Until then the
-order above is the only thing standing in for it.
+**As of 2026-09-09 all 43 site projects are connected to this repo**, each with
+**Root Directory = `sites/{slug}`** and production branch `master`.
+
+**A push to `master` is the deploy.** Vercel rebuilds only the projects whose folder
+changed — the Ignored Build Step `git diff --quiet HEAD^ HEAD ./` skips the rest, so a
+change to one site does not rebuild the other 42, and a change to a root-level file like
+this one rebuilds nothing at all.
+
+`./scripts/deploy-site.sh {slug}` still works and is still the safe path: it commits,
+pushes, and lets git do the deploying. **You should no longer need `vercel deploy` by
+hand.** If you run it, you are back to uploading a folder and the last-one-wins problem
+comes with it.
+
+**Adding a NEW site?** Connect its Vercel project the same way before the first deploy:
+Root Directory `sites/{slug}`, branch `master`, and that Ignored Build Step. A project
+left unconnected is the only way this can happen again.
 
 **Do not connect a project whose live site is newer than git** — that publishes the stale
 repo immediately, which is the same accident by a different button. Get the live source
