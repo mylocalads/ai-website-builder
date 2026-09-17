@@ -1,0 +1,21 @@
+{
+  "batch_id": "2026-09-17T15:20:00Z-9ad4c1",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "Badge too small and wrongly placed: move it out from under the hero into the footer at 2-3x size. Rebuild the hero on the concept of the Tropical South hero (NOT its visual style) using Firefly's own visual DNA.",
+  "note": "DESIGN change. Touches src/components, src/pages and tokens.css. src/pages is outside the site-edit skill's write roots; recorded here so it stays rollback-able.",
+  "diff_spec": [
+    { "op": "SET",    "path": "src/styles/tokens.css", "field": "--color-on-accent / --radius-lg", "value": "new tokens; brand teal is 1.94:1 with white" },
+    { "op": "SET",    "path": "src/components/Hero.astro", "field": "markup + style", "value": "eyebrow rule, derived trust points, secondary link, left-weighted scrim, accessible CTA" },
+    { "op": "CREATE", "path": "src/components/TrustStrip.astro", "value": "promise band under the hero, fed by site.why_choose_us" },
+    { "op": "SET",    "path": "src/components/Footer.astro", "field": "award band", "value": "site.partners rendered at 160px above the footer grid, every page" },
+    { "op": "SET",    "path": "src/pages/index.astro", "field": "PartnerBadges -> TrustStrip, hero secondary link", "value": "" },
+    { "op": "REMOVE", "path": "src/pages/[area].astro", "field": "PartnerBadges", "value": "" },
+    { "op": "REMOVE", "path": "src/pages/services/[slug].astro", "field": "PartnerBadges", "value": "" },
+    { "op": "SET",    "path": "Header/OurServices/Financing/PricingTable/CookieConsent/Footer", "field": "button color", "value": "white -> var(--color-on-accent) on teal fills (operator chose 'buttons only')" }
+  ],
+  "status": "applied",
+  "npm_build": "ok (22 pages)",
+  "verification": "browser 1440x900 and 375x812: no horizontal scroll; hero 1-col and strip 2x2 on mobile; award mark measured 160x160; 5 buttons measured 8.30:1 contrast; 0 failing requests from our own origin; 0 broken internal links; award band on 22/22 pages.",
+  "deploy": null, "rolls_back_to": null, "reverted_by": null
+}

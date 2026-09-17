@@ -4,6 +4,7 @@ import { getCollection, getEntry } from 'astro:content';
 import { SERVICE_LIMIT } from '../../lib/limits.ts';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Hero from '../../components/Hero.astro';
+import PartnerBadges from '../../components/PartnerBadges.astro';
 import AboutSection from '../../components/AboutSection.astro';
 import Gallery from '../../components/Gallery.astro';
 import WhyChooseUs from '../../components/WhyChooseUs.astro';
@@ -72,6 +73,7 @@ const faqLd = service.data.faqs.length > 0 ? {
     form_embed_url={heroFormUrl}
     form_title={`${service.data.title} estimate`}
   />
+  <PartnerBadges />
   <AboutSection
     eyebrow="Our Service"
     heading={service.data.about_heading ?? `About our ${service.data.title.toLowerCase()} services`}

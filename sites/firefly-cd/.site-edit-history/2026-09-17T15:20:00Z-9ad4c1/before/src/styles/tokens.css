@@ -5,17 +5,11 @@
   --color-text: #1a1a1a;
   --color-muted: #5a6b76;
   --color-accent: #00cfd1;
-  /* Ink for text and icons sitting ON --color-accent.
-     The brand teal is a light colour: it measures 1.94:1 against white, so
-     white text on a teal button is unreadable and fails WCAG outright. This
-     near-black teal measures 10.8:1 on it and keeps the button unmistakably
-     the brand colour — the fill is the client's #00cfd1, untouched. */
-  --color-on-accent: #05252b;
   --color-surface: #f2f5f7;
   --color-focus: #0057ff;
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --radius-sm: 4px; --radius-md: 8px;
   --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
   --max-width: 1200px;
 }
