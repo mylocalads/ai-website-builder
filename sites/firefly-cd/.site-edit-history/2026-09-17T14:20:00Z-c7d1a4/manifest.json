@@ -4,16 +4,62 @@
   "slug": "firefly-cd",
   "operator_request": "Intercom ticket 215475966187542 (Adrian Loera, Firefly CD): add CRI Business Excellence award badge; remove generic/QA placeholder content from the Our Work page; use different photos for the roofing section.",
   "diff_spec": [
-    { "op": "CREATE", "path": "src/assets/images/cri-business-excellence-badge.png", "note": "client-supplied badge, resized 1410px -> 400px" },
-    { "op": "CREATE", "path": "src/assets/images/firefly-roofing-designer-shingle.jpg", "note": "client photo IMG_1463, resized to 1600px" },
-    { "op": "CREATE", "path": "src/assets/images/firefly-roofing-hip-roof-vents.jpg", "note": "client photo IMG_8366, resized to 1600px" },
-    { "op": "CREATE", "path": "src/assets/images/firefly-roofing-completed-home.jpg", "note": "client photo IMG_1285, resized to 1600px" },
-    { "op": "SET", "path": "src/content/site/config.json", "field": "partners", "value": "[{name: 'Awarded for Business Excellence — Consumer Ratings Institute', logo_url: 'cri-business-excellence-badge.png'}]" },
-    { "op": "SET", "path": "src/content/services/roofing.md", "field": "frontmatter.gallery[0]", "value": "firefly-roofing-designer-shingle.jpg" },
-    { "op": "SET", "path": "src/content/services/roofing.md", "field": "frontmatter.gallery[1]", "value": "firefly-roofing-hip-roof-vents.jpg" },
-    { "op": "SET", "path": "src/content/services/roofing.md", "field": "frontmatter.gallery[2]", "value": "firefly-roofing-completed-home.jpg" },
-    { "op": "REMOVE", "path": "src/content/site/our-work.json", "field": "project_map.projects[6]", "note": "fake QA row 'Zzzqqxxville, WA'" },
-    { "op": "REMOVE", "path": "src/content/site/our-work.json", "field": "project_map.projects[5].description", "note": "QA text 'Deliberately unresolvable address to exercise geocode fallback tiers.'" }
+    {
+      "op": "CREATE",
+      "path": "src/assets/images/cri-business-excellence-badge.png",
+      "note": "client-supplied badge, resized 1410px -> 400px"
+    },
+    {
+      "op": "CREATE",
+      "path": "src/assets/images/firefly-roofing-designer-shingle.jpg",
+      "note": "client photo IMG_1463, resized to 1600px"
+    },
+    {
+      "op": "CREATE",
+      "path": "src/assets/images/firefly-roofing-hip-roof-vents.jpg",
+      "note": "client photo IMG_8366, resized to 1600px"
+    },
+    {
+      "op": "CREATE",
+      "path": "src/assets/images/firefly-roofing-completed-home.jpg",
+      "note": "client photo IMG_1285, resized to 1600px"
+    },
+    {
+      "op": "SET",
+      "path": "src/content/site/config.json",
+      "field": "partners",
+      "value": "[{name: 'Awarded for Business Excellence \u2014 Consumer Ratings Institute', logo_url: 'cri-business-excellence-badge.png'}]"
+    },
+    {
+      "op": "SET",
+      "path": "src/content/services/roofing.md",
+      "field": "frontmatter.gallery[0]",
+      "value": "firefly-roofing-designer-shingle.jpg"
+    },
+    {
+      "op": "SET",
+      "path": "src/content/services/roofing.md",
+      "field": "frontmatter.gallery[1]",
+      "value": "firefly-roofing-hip-roof-vents.jpg"
+    },
+    {
+      "op": "SET",
+      "path": "src/content/services/roofing.md",
+      "field": "frontmatter.gallery[2]",
+      "value": "firefly-roofing-completed-home.jpg"
+    },
+    {
+      "op": "REMOVE",
+      "path": "src/content/site/our-work.json",
+      "field": "project_map.projects[6]",
+      "note": "fake QA row 'Zzzqqxxville, WA'"
+    },
+    {
+      "op": "REMOVE",
+      "path": "src/content/site/our-work.json",
+      "field": "project_map.projects[5].description",
+      "note": "QA text 'Deliberately unresolvable address to exercise geocode fallback tiers.'"
+    }
   ],
   "files_touched": [
     "src/content/site/config.json",
@@ -24,11 +70,16 @@
     "src/assets/images/firefly-roofing-hip-roof-vents.jpg",
     "src/assets/images/firefly-roofing-completed-home.jpg"
   ],
-  "status": "applied",
+  "status": "deployed",
   "astro_sync": "ok",
   "npm_build": "ok (22 pages)",
   "seo_check": "ok (no QA text in dist, no undefined in llms.txt/index.md, 0 broken internal links)",
-  "deploy": null,
+  "deploy": {
+    "url": "https://firefly-nwf8iw53g-mylocalads-projects.vercel.app",
+    "canonical_url": "https://fireflycd.com",
+    "trigger": "git push to master (257cffc)",
+    "at": "2026-09-17T14:31:00Z"
+  },
   "rolls_back_to": null,
   "reverted_by": null
 }
