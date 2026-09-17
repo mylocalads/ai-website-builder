@@ -1,0 +1,19 @@
+{
+  "batch_id": "2026-09-17T14:45:00Z-e2b8f6",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "Map pin photos render broken. Root cause: /projects.json emitted bare source filenames, which project-map.js put straight into <img src> -> 404.",
+  "note": "CODE fix, not a content edit. Touches src/lib/ and public/, which are OUTSIDE the site-edit skill's normal write roots (src/content, src/styles/tokens.css, src/components). Recorded here so it is still rollback-able.",
+  "diff_spec": [
+    { "op": "SET", "path": "src/lib/project-map-payload.ts", "field": "ProjectMapPhoto", "value": "add resolved `src` field alongside bare `url`" },
+    { "op": "SET", "path": "src/lib/project-map-payload.ts", "field": "buildProjectMapPayload.projects", "value": "await imageUrl(ph.url, {width:800}) per photo" },
+    { "op": "SET", "path": "public/project-map.js", "field": "photoSrc()", "value": "new helper returning photo.src || photo.url" },
+    { "op": "SET", "path": "public/project-map.js", "field": "popupHtml/renderRow/renderCard", "value": "use photoSrc(photo) instead of photo.url" }
+  ],
+  "files_touched": ["src/lib/project-map-payload.ts", "public/project-map.js"],
+  "status": "applied",
+  "astro_sync": "ok",
+  "npm_build": "ok (22 pages)",
+  "verification": "browser: 21 server-rendered imgs 0 broken; filtered re-render 12 imgs 0 broken; map pin popup loads /_astro/...LQeRy.webp naturalWidth 800, 0 broken. All localhost requests 200.",
+  "deploy": null, "rolls_back_to": null, "reverted_by": null
+}

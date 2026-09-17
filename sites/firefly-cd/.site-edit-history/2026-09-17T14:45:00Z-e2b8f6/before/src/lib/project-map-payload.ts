@@ -10,21 +10,10 @@
 // could drift.
 
 import { getEntry } from 'astro:content';
-import { imageUrl } from './images.ts';
 
 export interface ProjectMapPhoto {
-  /** Bare filename, as stored in our-work.json. For <SmartImage>, which needs it. */
   url: string;
   alt: string;
-  /**
-   * The built, optimised URL for `url`.
-   *
-   * project-map.js re-renders the cards client-side from /projects.json and
-   * puts this straight into an <img src>. A bare filename there is a 404 (see
-   * the note at the top of src/lib/images.ts), so the resolution has to happen
-   * here, at build time, where astro:assets can do it.
-   */
-  src: string;
 }
 
 export interface ProjectMapEntry {
@@ -116,32 +105,23 @@ export async function buildProjectMapPayload(): Promise<ProjectMapPayload> {
 
   const source: any[] = pm.enabled ? (pm.projects ?? []) : [];
 
-  const projects: ProjectMapEntry[] = (
-    await Promise.all(
-      source.map(async (p) => ({
-        id: p.id,
-        title: p.title ?? `Project in ${p.city}, ${p.state}`,
-        city: p.city,
-        state: p.state,
-        place: `${p.city}, ${p.state}`,
-        lat: p.lat ?? null,
-        lng: p.lng ?? null,
-        precision: p.precision ?? 'street',
-        completed: p.completed,
-        completed_label: monthYear(p.completed),
-        project_type: p.project_type,
-        products_used: p.products_used ?? [],
-        photos: await Promise.all(
-          (p.photos ?? []).map(async (ph: any) => ({
-            url: ph.url,
-            alt: ph.alt,
-            src: (await imageUrl(ph.url, { width: 800 })) ?? ph.url,
-          }))
-        ),
-        description: p.description ?? null,
-      }))
-    )
-  )
+  const projects: ProjectMapEntry[] = source
+    .map((p) => ({
+      id: p.id,
+      title: p.title ?? `Project in ${p.city}, ${p.state}`,
+      city: p.city,
+      state: p.state,
+      place: `${p.city}, ${p.state}`,
+      lat: p.lat ?? null,
+      lng: p.lng ?? null,
+      precision: p.precision ?? 'street',
+      completed: p.completed,
+      completed_label: monthYear(p.completed),
+      project_type: p.project_type,
+      products_used: p.products_used ?? [],
+      photos: p.photos ?? [],
+      description: p.description ?? null,
+    }))
     // Newest first — the most recent work is the most persuasive.
     .sort((a, b) => b.completed.localeCompare(a.completed) || a.id.localeCompare(b.id));
 

@@ -47,17 +47,6 @@
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  /* The built, optimised URL for a photo.
-   *
-   * photo.url is the bare source filename as stored in our-work.json, and is a
-   * 404 if put into an <img src> — see the note at the top of src/lib/images.ts.
-   * buildProjectMapPayload resolves it at build time into photo.src, which is
-   * what belongs in markup. The fallback exists only so a stale cached
-   * /projects.json from before that field existed still renders something. */
-  function photoSrc(photo) {
-    return photo.src || photo.url;
-  }
-
   function debounce(fn, ms) {
     var t;
     return function () {
@@ -126,7 +115,7 @@
     // never a day-level date.
     return (
       '<div class="pm-popup">' +
-      (photo ? '<img src="' + esc(photoSrc(photo)) + '" alt="' + esc(photo.alt) + '" loading="lazy">' : '') +
+      (photo ? '<img src="' + esc(photo.url) + '" alt="' + esc(photo.alt) + '" loading="lazy">' : '') +
       '<div class="pm-popup-body">' +
       '<h3>' + esc(p.title) + '</h3>' +
       '<p>' + esc(p.completed_label) + ' &middot; ' + esc(p.project_type) + '</p>' +
@@ -140,7 +129,7 @@
     var photo = p.photos && p.photos[0];
     return (
       '<li><button type="button" class="pm-row" data-project-id="' + esc(p.id) + '">' +
-      (photo ? '<img src="' + esc(photoSrc(photo)) + '" alt="' + esc(photo.alt) + '" loading="lazy">' : '<span></span>') +
+      (photo ? '<img src="' + esc(photo.url) + '" alt="' + esc(photo.alt) + '" loading="lazy">' : '<span></span>') +
       '<span><h3>' + esc(p.title) + '</h3>' +
       '<p class="pm-meta">' + esc(p.completed_label) + ' &middot; ' + esc(p.project_type) + '</p>' +
       '</span></button></li>'
@@ -151,7 +140,7 @@
     var photo = p.photos && p.photos[0];
     return (
       '<figure class="pm-card" data-project-id="' + esc(p.id) + '">' +
-      (photo ? '<img src="' + esc(photoSrc(photo)) + '" alt="' + esc(photo.alt) + '" loading="lazy">' : '') +
+      (photo ? '<img src="' + esc(photo.url) + '" alt="' + esc(photo.alt) + '" loading="lazy">' : '') +
       '<figcaption><h3>' + esc(p.title) + '</h3>' +
       '<p class="pm-meta">' + esc(p.completed_label) + ' &middot; ' + esc(p.project_type) +
       (p.products_used && p.products_used.length ? ' &middot; ' + esc(p.products_used.join(', ')) : '') +
