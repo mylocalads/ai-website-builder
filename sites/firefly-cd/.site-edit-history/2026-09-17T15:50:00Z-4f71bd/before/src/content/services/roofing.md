@@ -18,12 +18,6 @@ gallery:
     alt: New charcoal shingle hip roof with ridge vents and roof vents
   - photo: firefly-roofing-completed-home.jpg
     alt: Finished dark shingle roof on a green sided home surrounded by pines
-  - photo: firefly-roofing-drone-green-home.jpg
-    alt: Aerial view of a finished dark shingle roof over a green home with a cedar garage door
-  - photo: firefly-roofing-weathered-shingle.jpg
-    alt: Long weathered-wood shingle roof photographed from above beside a garden pond
-  - photo: firefly-roofing-standing-seam-metal.jpg
-    alt: Dark grey standing seam metal roof on a rural Spokane-area property
 faqs:
   - q: How do I know if I need a repair or a full replacement?
     a: We do a free on-site inspection and give you an honest assessment. If your roof has 5+ good years left, we'll say so — we only recommend replacement when the numbers actually favor it.

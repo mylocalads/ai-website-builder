@@ -1,0 +1,22 @@
+{
+  "batch_id": "2026-09-17T15:50:00Z-4f71bd",
+  "mode": "edit",
+  "slug": "firefly-cd",
+  "operator_request": "Apply ALL photos Adrian sent, excluding the three annotated bug screenshots.",
+  "diff_spec": [
+    { "op": "CREATE", "path": "src/assets/images/firefly-roofing-drone-green-home.jpg",    "note": "IMG_1284" },
+    { "op": "CREATE", "path": "src/assets/images/firefly-roofing-weathered-shingle.jpg",   "note": "IMG_8703" },
+    { "op": "CREATE", "path": "src/assets/images/firefly-roofing-standing-seam-metal.jpg", "note": "IMG_2779, 507px letterbox bars detected and cropped off top and bottom" },
+    { "op": "CREATE", "path": "src/assets/images/firefly-decking-cedar-lakeside.jpg",      "note": "IMG_7535" },
+    { "op": "CREATE", "path": "src/assets/images/firefly-decking-composite-boards.jpg",    "note": "IMG_7934" },
+    { "op": "CREATE", "path": "src/assets/images/firefly-decking-composite-evening.jpg",   "note": "IMG_5820" },
+    { "op": "CREATE", "path": "src/assets/images/firefly-decking-timber-pavilion.jpg",     "note": "IMG_1659" },
+    { "op": "APPEND", "path": "src/content/services/roofing.md", "field": "frontmatter.gallery", "value": "3 more roof photos (gallery 3 -> 6)" },
+    { "op": "SET",    "path": "src/content/services/decking.md", "field": "frontmatter.gallery", "value": "replaced 1 stock photo with 4 client deck photos" }
+  ],
+  "files_touched": ["src/content/services/roofing.md","src/content/services/decking.md","src/assets/images/*"],
+  "status": "applied",
+  "npm_build": "ok (22 pages)",
+  "verification": "browser: roofing gallery 6 tiles, decking 4 tiles, all naturalWidth 512 once on screen; all 10 client photos appear on 2 pages each; 0 broken internal links; 0 missing built images.",
+  "deploy": null, "rolls_back_to": null, "reverted_by": null
+}

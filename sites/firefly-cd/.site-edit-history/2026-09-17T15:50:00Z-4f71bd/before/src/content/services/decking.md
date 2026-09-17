@@ -12,14 +12,8 @@ sub_services:
   - Railing, Stairs & Privacy Screens
 hero_photo: rs-w-1200-cg-true-22b495f8.jpg
 gallery:
-  - photo: firefly-decking-cedar-lakeside.jpg
-    alt: New cedar deck with black metal railing overlooking the water
-  - photo: firefly-decking-composite-boards.jpg
-    alt: Composite deck boards running alongside green lap siding under tall pines
-  - photo: firefly-decking-composite-evening.jpg
-    alt: Finished composite deck with black railing and outdoor seating at dusk
-  - photo: firefly-decking-timber-pavilion.jpg
-    alt: Stained timber-frame pavilion ceiling with exposed beams over a deck
+  - photo: rs-w-600-cg-true-34d101da.jpg
+    alt: Composite deck with vinyl railing built by Firefly in the Spokane region
 faqs:
   - q: How long does a new deck take to build?
     a: Most residential decks go up in one to two weeks once permits are in hand, depending on size, height off the ground, and whether stairs and railing are part of the scope.
