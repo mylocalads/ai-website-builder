@@ -12,12 +12,12 @@ sub_services:
   - Shingle, Metal, Tile, and Flat Roofs
 hero_photo: rs-w-1280-h-720-a776d659.jpg
 gallery:
-  - photo: firefly-roofing-designer-shingle.jpg
-    alt: Completed grey designer asphalt shingle roof seen from above
-  - photo: firefly-roofing-hip-roof-vents.jpg
-    alt: New charcoal shingle hip roof with ridge vents and roof vents
-  - photo: firefly-roofing-completed-home.jpg
-    alt: Finished dark shingle roof on a green sided home surrounded by pines
+  - photo: rs-w-365-h-365-cg-true-m-6870bb1b.jpg
+    alt: Freshly installed shingle roof
+  - photo: rs-w-1280-h-960-6907595c.jpg
+    alt: Roofing project in progress
+  - photo: rs-w-1280-h-720-c9a59f13.jpg
+    alt: Firefly roofing project in the Spokane region
 faqs:
   - q: How do I know if I need a repair or a full replacement?
     a: We do a free on-site inspection and give you an honest assessment. If your roof has 5+ good years left, we'll say so — we only recommend replacement when the numbers actually favor it.

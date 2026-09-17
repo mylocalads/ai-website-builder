@@ -124,7 +124,26 @@
         ],
         "precision": "city",
         "lat": 47.7110106,
-        "lng": -116.9480877
+        "lng": -116.9480877,
+        "description": "Deliberately unresolvable address to exercise geocode fallback tiers."
+      },
+      {
+        "id": "zzzqqxxville-wa-2025-09-01",
+        "city": "Zzzqqxxville",
+        "state": "WA",
+        "completed": "2025-09",
+        "project_type": "Flooring",
+        "products_used": [
+          "LVP"
+        ],
+        "photos": [
+          {
+            "url": "rs-w-365-h-365-cg-true-69f299c2.jpg",
+            "alt": "Hardwood floor installation"
+          }
+        ],
+        "precision": "street",
+        "description": "Row with an unresolvable city to exercise the no-coordinates path."
       }
     ]
   }
