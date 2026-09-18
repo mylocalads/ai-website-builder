@@ -192,16 +192,38 @@ const asideMode = form_embed_url && calendarSnippet
   .badge-label { color: #ffffff; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
   .badge-sub { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
 
-  /* Below 560px the pair would wrap: 147 + 202 + a 40px gap overflows a 342px
-     container. Tighten the gap and the type so both sit on one row. */
+  /* Below 560px, shrink the badges so a SHORT pair can share a row.
+     TIGHTEN, NEVER FORBID WRAPPING.
+
+     This block used to add `flex-wrap: nowrap` and `white-space: nowrap`,
+     having measured one pair of labels at 147 + 202 and concluded both would
+     always fit. That measured some copy, not all copy. Advanced Electrical's
+     badges read "Licensed Electricians" and "Emergency Service Available" --
+     183 + 207 plus the gap, so 406px wanted where 327px was available.
+
+     Forbidding the wrap does not make text narrower. It makes the overflow
+     somebody else's problem, and the overflow does not stay in the badges: the
+     list cannot shrink, so the hero's grid track is pinned at 405px, the
+     container goes to 453px, and THE WHOLE PAGE ends up 78px wider than the
+     phone -- heading clipped, estimate form pushed half off the right edge. A
+     trust badge broke the lead form.
+
+     `min-width: 0` on the li was already here and could not help, because the
+     floor was the text's own minimum width and `white-space: nowrap` is exactly
+     what stops that minimum from being small.
+
+     So the sizes below stay -- they are what lets a short pair share a row --
+     and wrapping stays allowed. `wrap` only breaks a line when it must, so
+     short labels still sit side by side and long ones stack instead of dragging
+     the page off screen. Nothing here has to know how wide the words are. */
   @media (max-width: 560px) {
-    .trust-badges { flex-wrap: nowrap; gap: var(--space-2); }
+    .trust-badges { gap: var(--space-2); }
     .trust-badges li { gap: 0.45rem; min-width: 0; }
     .mark-g { width: 1.85rem; height: 1.85rem; font-size: 1.05rem; }
     .mark-bbb { font-size: 0.95rem; padding: 0.15rem 0.3rem; }
     .badge-copy .stars { font-size: 0.8rem; letter-spacing: 0.04em; }
-    .badge-label { font-size: 0.74rem; letter-spacing: 0.03em; white-space: nowrap; }
-    .badge-sub { font-size: 0.66rem; white-space: nowrap; }
+    .badge-label { font-size: 0.74rem; letter-spacing: 0.03em; }
+    .badge-sub { font-size: 0.66rem; }
   }
 
   .actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
