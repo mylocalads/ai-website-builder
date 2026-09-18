@@ -1,0 +1,13 @@
+@import './tokens.css';
+@import './a11y.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-body); line-height: 1.5; -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 var(--space-2); }
+a { color: inherit; text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-3); }

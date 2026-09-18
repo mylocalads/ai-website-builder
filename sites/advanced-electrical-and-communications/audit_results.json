@@ -1,0 +1,22 @@
+{
+  "slug": "advanced-electrical-and-communications",
+  "website": "https://adv-elec.net/nsite/",
+  "screenshotPath": null,
+  "assessment": "ERROR: Could not capture a screenshot — this build environment has no working headless browser (missing system libraries, no root access to install them). Assessment below is based on raw HTML/CSS inspection instead of a visual capture.",
+  "strengths": [
+    "Phone number, address, and hours are visible on every page",
+    "Clear top-level nav separating Residential / Commercial-Industrial / Low Voltage",
+    "Emergency services messaging is called out prominently"
+  ],
+  "weaknesses": [
+    "Built on an old Divi/WordPress theme (generator tag confirms Divi 4.27) with default slider hero using generic Shutterstock stock photography, not real jobsite photos",
+    "Inner pages (Commercial/Industrial, Low Voltage) are placeholder-only — literally render 'Need Info.' with no real content",
+    "No testimonials, no team bios, no FAQ, no project gallery anywhere on the site",
+    "No email address published anywhere on the site",
+    "Only two Google Fonts loaded (Open Sans, Adamina) with otherwise default Divi module styling — no distinct brand identity"
+  ],
+  "overall": "Strong candidate for redesign — real local business with consistent NAP and a legitimate emergency-service offering, but the current site is a thin, mostly-unfinished Divi template with almost no unique content to lose.",
+  "_notes": {
+    "method": "HTML fetched via curl (no headless browser available in this environment); text/CSS parsed directly rather than via visual screenshot review."
+  }
+}

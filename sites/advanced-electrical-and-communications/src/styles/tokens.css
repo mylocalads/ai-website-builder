@@ -1,0 +1,31 @@
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f5f7fa;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-primary: #212957;
+  --color-on-primary: #ffffff;
+  --color-accent: #2ea3f2;
+  /* All three accent tokens are re-derived from the client's own brand blue
+     #2ea3f2 (the header/menu background on adv-elec.net is the matching navy
+     #212957, and the accent blue appears throughout their body CSS):
+
+       --color-accent          FILL behind --color-on-accent (buttons, icon
+                               circles, badges).
+       --color-accent-ink      the blue as TEXT on a LIGHT background. Raw
+                               #2ea3f2 is only 2.75:1 on --color-bg, so
+                               eyebrows, ticks and chevrons use this darker
+                               blue instead, at 5.27:1 on bg / 4.91:1 on surface.
+       --color-accent-on-dark  the blue as TEXT inside the navy --color-primary
+                               bands. Raw #2ea3f2 already clears AA there at
+                               5.03:1, so no further lightening is needed. */
+  --color-on-accent: #212957;
+  --color-accent-ink: #0f6fb8;
+  --color-accent-on-dark: #2ea3f2;
+  --color-focus: #0057ff;
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --radius-sm: 4px; --radius-md: 8px; --radius-lg: 14px;
+  --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem; --space-4: 2.5rem; --space-5: 4rem;
+  --max-width: 1200px;
+}

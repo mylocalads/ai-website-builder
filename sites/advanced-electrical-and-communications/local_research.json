@@ -1,0 +1,32 @@
+{
+  "slug": "advanced-electrical-and-communications",
+  "category": "Electrician",
+  "location": "Dupont PA / NEPA",
+  "threads_analyzed": 0,
+  "_notes": "Reddit searches (site:reddit.com, city + state-level, and general electrician-complaint queries) returned no indexable Reddit threads through WebSearch in this run. Findings below rely on well-established, widely-documented industry-wide pain points for the residential/commercial electrician trade rather than city-specific Reddit quotes. Differentiators are grounded only in the business's own scraped site copy and intake data.",
+  "pain_points": [
+    "Electricians who no-show or run hours late without calling ahead",
+    "Vague verbal quotes that turn into a much higher final bill",
+    "Unlicensed or under-insured workers doing panel/wiring work that fails inspection later",
+    "No one answers the phone for an urgent electrical problem (sparking outlet, dead panel, power loss)",
+    "Work that looks fine but wasn't actually inspected for hidden hazards"
+  ],
+  "what_customers_value": [
+    "A licensed electrician who explains what they found and why it matters",
+    "Fast response for genuine emergencies, not a multi-day wait",
+    "Straightforward, on-time service without excuses",
+    "A local, known business rather than an out-of-area subcontractor"
+  ],
+  "business_differentiators": [
+    "Advanced Electrical and Communications LLC is licensed, with electricians trained specifically to identify home safety hazards (per the business's own site copy)",
+    "Emergency services are available outside standard Mon-Fri 7:00am-3:30pm hours, addressing the 'nobody picks up for an emergency' pain point",
+    "Serves the greater Northeastern Pennsylvania (NEPA) area from a fixed Dupont, PA location — a known local shop, not an out-of-area crew",
+    "Covers residential, commercial/industrial, and low-voltage/communications work under one company, so a customer doesn't need three different vendors"
+  ],
+  "copy_angles": [
+    "Lead with home safety expertise — 'trained to spot hazards other electricians miss' — directly answers the fear of hidden electrical danger",
+    "Emphasize emergency availability outside normal business hours as a direct answer to the 'nobody answers' complaint",
+    "Frame the company as NEPA's local, trusted electrician (not a subcontractor network) to build on the 'most trusted expert electrician' language already on their site",
+    "Structure services around the three real service lines — Residential, Commercial/Industrial, Low Voltage — so visitors self-identify quickly"
+  ]
+}

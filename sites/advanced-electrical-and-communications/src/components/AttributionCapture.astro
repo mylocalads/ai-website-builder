@@ -1,0 +1,72 @@
+---
+/**
+ * Records where a visitor came from, once, and keeps it for the session.
+ *
+ * WHY IT RUNS ON EVERY PAGE AND NOT ON THE FORM: almost nobody lands on /book.
+ * They arrive on a service page or the home page with `?utm_source=…&gclid=…`,
+ * read for a while, and only then click through to the form — by which point the
+ * parameters are long gone from the URL. Capturing at the form would attribute
+ * every paid lead to nothing, which looks identical to having no campaigns.
+ *
+ * FIRST TOUCH WINS. A value already stored is never overwritten, so a visitor
+ * who arrives on an ad and later returns through an internal link keeps the ad.
+ *
+ * sessionStorage, not a cookie: it needs no consent banner, is not sent to any
+ * third party, and dies with the tab. The trade is that attribution does not
+ * survive a browser restart, which is the correct side to err on.
+ *
+ * This is the website twin of the funnel kit's src/lib/attribution.ts. The two
+ * emit the SAME field names on purpose — the portal reads one flat block from
+ * both surfaces.
+ */
+---
+<script is:inline>
+  (function () {
+    var KEY = 'mla_attr';
+    // Canonical names, plus the aliases the ad platforms actually emit. Google
+    // Ads' own template uses utm_id for the campaign id and plenty of media
+    // buyers hand-write utm_keyword where the spec says utm_term.
+    var FIELDS = [
+      'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+      'gclid', 'fbclid', 'msclkid',
+    ];
+
+    var stored = {};
+    try { stored = JSON.parse(sessionStorage.getItem(KEY) || '{}') || {}; } catch (e) { stored = {}; }
+
+    var params = new URLSearchParams(window.location.search);
+    var changed = false;
+
+    for (var i = 0; i < FIELDS.length; i++) {
+      var f = FIELDS[i];
+      var v = params.get(f);
+      if (v && !stored[f]) { stored[f] = v; changed = true; }
+    }
+
+    // The page they actually arrived on, and who sent them. Only set once, so
+    // these describe the entry to the site rather than the last click inside it.
+    if (!stored.landing_page) { stored.landing_page = window.location.href; changed = true; }
+    if (!stored.referrer && document.referrer) { stored.referrer = document.referrer; changed = true; }
+
+    if (changed) {
+      try { sessionStorage.setItem(KEY, JSON.stringify(stored)); } catch (e) { /* private mode */ }
+    }
+
+    // Fill any matching hidden input on the page. Runs on DOMContentLoaded as
+    // well as immediately, because this script is in <head> on a prerendered
+    // page and the form does not exist yet on the first pass.
+    function fill() {
+      var forms = document.querySelectorAll('form[data-attribution]');
+      for (var f = 0; f < forms.length; f++) {
+        for (var k in stored) {
+          if (!Object.prototype.hasOwnProperty.call(stored, k)) continue;
+          var el = forms[f].querySelector('input[name="' + k + '"]');
+          if (el) el.value = stored[k];
+        }
+      }
+    }
+
+    fill();
+    document.addEventListener('DOMContentLoaded', fill);
+  })();
+</script>

@@ -1,0 +1,18 @@
+{
+  "kind": "pricing",
+  "intro": "We don't publish a flat-rate price list, because electrical work isn't one-size-fits-all — the number depends on what's actually going on behind the wall or in the panel. What we can tell you is exactly what goes into a quote, so you know what to expect before we start.",
+  "packages": [],
+  "cost_table": {
+    "heading": "What Actually Drives The Price",
+    "lede": "These are the things we look at before we put a number on a job.",
+    "columns": ["Type of work", "What the quote depends on"],
+    "rows": [
+      ["Residential repairs & service calls", "Scope of the issue, accessibility of the wiring or panel, and whether parts need to be sourced"],
+      ["Panel upgrades & rewiring", "Panel size and age, amount of wiring involved, and any code-compliance work needed"],
+      ["Commercial & industrial work", "Size of the space, equipment being powered, and whether work has to be scheduled around business hours"],
+      ["Low voltage & communications wiring", "Number of runs, cable length required, and the type of system being installed"],
+      ["Emergency service", "Time of day and how quickly the issue needs to be addressed"]
+    ]
+  },
+  "notes": "Call 570-472-3300 for a free estimate. We'll tell you what the job needs before any work begins."
+}

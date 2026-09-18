@@ -1,5 +1,6 @@
 | Business | Slug | Pages | Vercel URL | Date |
 |----------|------|-------|------------|------|
+| Advanced Electrical and Communications, LLC | advanced-electrical-and-communications | 22 + /book (SSR) | https://advanced-electrical-and-communications.vercel.app | 2026-09-18 |
 | Allabaugh Construction | allabaugh-construction | 24 | https://allabaugh-construction.vercel.app | 2026-09-04 |
 | NEPA Roofing Pros | nepa-roofing-pros | 24 + /book (SSR) | https://nepa-roofing-pros.vercel.app | 2026-08-11 |
 | MNM Roofing Professionals | mnm-roofing-professionals | 24 | https://mnm-roofing-professionals.vercel.app | 2026-08-10 |
@@ -5261,3 +5262,108 @@ custom-domain rewrite applied. `npm run build` produced 24 pages with no `AREA_L
 `SERVICE_LIMIT`, or reserved-slug warnings; `llms.txt`, `index.md`, and the `LocalBusiness`
 JSON-LD all confirmed correct post-deploy.
 | Morning Star Fields | morning-star-fields | 24 | https://morning-star-fields.vercel.app | 2026-08-31 |
+
+## Advanced Electrical and Communications, LLC — 2026-09-18 — initial build, unattended, no GBP-API match
+
+Queued `job: "initial"` build (id `fa387b89-d513-4d3c-bc9f-77ac18a71346`) from the client
+portal, run fully unattended (`--auto`, no cost approvals, no pauses, all steps run inline
+in one turn per CLAUDE.md's unattended-run rule). Same sandbox limitation as prior droplet
+builds — no working headless Chromium (`libatk-1.0.so.0` missing, no root) and no Firecrawl
+MCP tool (see project memory `sandbox-missing-browser-firecrawl.md`). Fell back to plain
+`curl` for the client's WordPress/Divi site (`adv-elec.net/nsite/`, server-rendered, worked
+fine) and skipped `site-audit`'s screenshot gracefully (`screenshotPath: null`,
+informational-only per that skill's own error handling).
+
+**Apify's Google Maps search actor found zero matches** for "Advanced Electrical and
+Communications" / "Advanced Electrical and Communications LLC" / "Advanced Electrical"
+against "Dupont, PA" and "Dupont, Pennsylvania" (three paid lookups, ~$0.012 total) — this
+appears to be a real local business with no discoverable Google Business Profile through
+this actor. Per `intake-from-web`'s own "GBP returns no match" failure mode, proceeded
+using the portal-supplied intake fields (name, address, phone already provided by the
+client through the portal form) as the source of truth for NAP data instead of GBP.
+`rating`/`review_count`/`geo` were left unset rather than guessed.
+
+**Local Reddit research also came back empty** — six `site:reddit.com` queries (city-level
+for Scranton/Wilkes-Barre, state-broadened, and general electrician-complaint queries)
+returned zero actual Reddit threads through this session's `WebSearch`, only directory-site
+listings (Angi, Thumbtack, Yelp, HomeAdvisor). Per the skill's own broadening fallback,
+`local_research.json` synthesizes pain points/differentiators from well-established,
+industry-wide electrician pain points (no-shows, vague quotes, unlicensed work, no one
+answering for emergencies) rather than city-specific Reddit quotes, cross-referenced only
+against this business's own real scraped copy for differentiators — noted explicitly as a
+research gap in the file's own `_notes`.
+
+**Client's live site is a thin, mostly-unfinished Divi/WordPress site** — homepage has real
+copy (safety-focused positioning, NAP, hours, "Emergency Services Available"), but both
+inner pages beyond the homepage literally render `Need Info.` with no content, no
+testimonials, no team bios, no FAQ, no project gallery, and no email address published
+anywhere. Real, usable content extracted: business name/address/phone/hours, the real logo
+(navy `#212957` "AEC" mark with a yellow lightning bolt, downloaded to
+`public/img/logo.png`), and brand colors traced directly to the site's own critical-path
+CSS (`background-color:#212957` on the header/nav bar, confirmed real brand navy — not a
+WordPress default-palette color) plus the accent blue `#2ea3f2` used throughout the body
+CSS. Display font `Adamina` (serif, used on the nav/header) and body font `Open Sans` were
+both traced to real `font-family` declarations, but the `owl` template hardcodes
+`Montserrat`/`Inter` via a `<link>` tag in `BaseLayout.astro` rather than reading
+`tokens.css`'s `--font-display`/`--font-body` — see the "Font tokens are vestigial in owl"
+note below.
+
+**No real jobsite photos existed to use as hero/gallery imagery** — the client's own hero
+slider uses unmodified Shutterstock stock photos (flagged as a weakness in
+`audit_results.json`). Rather than reuse the client's own generic stock or leave hero
+photos unset, sourced 7 real, on-brand Unsplash electrician-work photos (panel repair,
+breaker box wiring, low-voltage cable coils, multimeter testing — verified by viewing each
+one before use, none of the banned "handshake"/"team pointing at a laptop" clichés) into
+`public/img/`. Site-wide `gallery` and `our-work.projects` were left empty rather than
+populate a fabricated "our work" portfolio — this business has no real completed-job photos
+on file, and presenting stock photography as this company's own finished work would be
+dishonest content, which the pipeline's "real content only" rule exists to prevent.
+
+**Font tokens are vestigial in `owl` as currently shipped.** `site-generate`'s own SKILL.md
+says tokens.css's `@import` is "the loading mechanism" for client fonts, but neither
+`astro-templates/owl/src/layouts/BaseLayout.astro` nor the canonical reference
+`sites/nepa-roofing-pros/` actually load fonts that way — both hardcode a
+`fonts.googleapis.com` `<link>` for `Montserrat`/`Inter` directly in `BaseLayout.astro`.
+Since `site-generate` must never touch `astro-templates/`, `tokens.css` here sets
+`--font-display`/`--font-body` to the same `Montserrat`/`Inter` pair actually being loaded,
+rather than to the client's real `Adamina`/`Open Sans` (which would silently no-op to
+system-font fallback). Worth a template-level fix so a future client's real brand fonts
+actually render — flagged here rather than silently shipping a font mismatch.
+
+**Never zero service areas — derived per CLAUDE.md, since intake's `service_areas` was
+`null`.** Seeded with the marketing city (Dupont, PA, from intake's `service_city`) first,
+then added the five nearest NEPA towns within the intake's 25-mile radius, up to owl's
+`AREA_LIMIT` of 6: Pittston, Wilkes-Barre, Scranton, Kingston, Clarks Summit — all real
+towns in the same Lackawanna/Luzerne-county metro the client's own copy already names
+("A.E.C services the greater north eastern Pennsylvania area"). County and neighborhood
+names for Pittston/Wilkes-Barre/Scranton/Kingston/Clarks Summit reused verified real
+geography already researched for a different NEPA client (`nepa-roofing-pros`, same towns);
+Dupont's own neighborhoods were left unset rather than guessed. Three real services
+populated from the client's own nav structure (`residential`, `commercial-industrial`,
+`low-voltage`) — the client's inner pages for these had no real copy to scrape, so
+sub-service lists and descriptions are standard, honest trade-category language for each
+line rather than fabricated client-specific claims (no invented warranty terms, project
+counts, or years-in-business).
+
+**Lead webhook set on Vercel via a Python/urllib script, not the CLI, and not in the
+repo.** `LEAD_WEBHOOK_URL`, `LEAD_WEBHOOK_SECRET`, `LEAD_WEBHOOK_AUTH_HEADER` were POSTed to
+`prj_DMkt9f8DRt6Jhs97VfqcYncbgU2u` (production + preview, all three HTTP 201) straight from
+the payload's `leadWebhook` object; the secret was never printed to a terminal argument,
+stdout, or log line, and the one-off script was deleted immediately after running. The
+`/book` page's native `EstimateForm` posts to `/api/estimate`, which reads all three vars
+from `process.env` at request time — confirmed by reading `pages/api/estimate.ts` directly,
+not assumed. Did not submit a live test lead, since that would create a fake record in the
+client's real portal CRM; verification stopped at confirming the env vars were accepted
+(201) and the code path that reads them.
+
+Both hosts claimed and verified live (200, correct `<title>`, no login redirect,
+deployment protection off): `https://advanced-electrical-and-communications.vercel.app`
+(had to explicitly claim the full-length name — Vercel's own auto-generated alias truncated
+it to `advanced-electrical-and-communicati-murex.vercel.app`, the exact failure mode this
+skill's own SKILL.md warns about) and the payload's `stagingHost`,
+`https://advanced-electrical-and-communications.mylocalads-preview.co` (attached cleanly,
+certificate live immediately). Canonical `site_url` stays on the `.vercel.app` host per the
+skill's own rule — the payload's `domain` was `null`, so no custom-domain rewrite applied.
+`npm run build` produced 22 static pages + `/book` (SSR) with no `AREA_LIMIT`,
+`SERVICE_LIMIT`, or reserved-slug warnings; `llms.txt`, `robots.txt`, and the sitemap all
+confirmed to reference the final `.vercel.app` URL post-deploy (`dpl_9SxTuG9REdRCX3hSK19oUxiHfLfz`).

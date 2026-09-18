@@ -1,0 +1,106 @@
+{
+  "kind": "home",
+  "hero": {
+    "eyebrow": "Dupont, PA",
+    "headline": "The Home Safety Experts Serving Northeastern PA",
+    "subheadline": "Residential, commercial/industrial and low voltage electrical work from a team trained to catch the hazards other electricians miss — with emergency service available outside our regular hours.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book",
+    "photo": "/img/hero-electrician-panel.jpg",
+    "trust_badges": [
+      {
+        "label": "Licensed Electricians",
+        "sublabel": "Trained to spot home safety hazards"
+      },
+      {
+        "label": "Emergency Service Available",
+        "sublabel": "Beyond our standard Mon-Fri hours"
+      }
+    ]
+  },
+  "promise_bar": [
+    "Licensed & trained for safety",
+    "Emergency service available",
+    "Residential, commercial & low voltage"
+  ],
+  "promise_band": {
+    "eyebrow": "Our Promise",
+    "headline": "We Look For What Other Electricians Miss",
+    "body": "When it comes to protecting your home or business, you need an electrician who knows what to look for. Every electrician on our team is trained to spot safety hazards and point out each concern — not just fix the one problem you called about.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "process_steps": {
+    "headline": "How We Handle A Job",
+    "steps": [
+      { "label": "Step One", "title": "Contact Us", "body": "Call 570-472-3300 or send us the details of the job." },
+      { "label": "Step Two", "title": "We Look At The Problem", "body": "A licensed electrician inspects the issue, not just the symptom you noticed." },
+      { "label": "Step Three", "title": "You Get A Straight Answer", "body": "We tell you what we found and what it takes to fix it." },
+      { "label": "Step Four", "title": "We Do The Work", "body": "Quick, on-time service from start to finish." }
+    ],
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "about_block": {
+    "eyebrow": "About Advanced Electrical and Communications",
+    "headline": "A Dupont, PA Electrician Built Around Safety",
+    "body": "Advanced Electrical and Communications, LLC is a licensed electrical contractor based in Dupont, serving the greater Northeastern Pennsylvania area. We specialize in residential electrical service and repair, and handle jobs of every size — from a single outlet to full commercial and industrial projects. Our electricians are trained to look for the safety hazards other contractors miss, and we back that up with quick, on-time service and real customer care.",
+    "checklist": [
+      "Licensed electricians on every job",
+      "Residential, commercial/industrial & low voltage work",
+      "Emergency service available outside normal hours",
+      "Serving Dupont and the greater NEPA area"
+    ],
+    "photo": "/img/about-electrician-wiring.jpg",
+    "photo_alt": "Electrician's hands holding electrical wiring before a repair",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "seo_body": {
+    "eyebrow": "Why NEPA Chooses Us",
+    "headline": "Electricians Serving Northeastern Pennsylvania",
+    "paragraphs": [
+      "Electrical problems rarely announce themselves clearly. A flickering light, a warm outlet, or a breaker that trips for no obvious reason can be a minor nuisance — or the first sign of a wiring problem that gets more expensive, and more dangerous, the longer it sits. Advanced Electrical and Communications trains every electrician on staff to recognize those warning signs, not just fix the symptom in front of them.",
+      "We handle residential and commercial/industrial electrical work throughout Dupont and the surrounding Northeastern Pennsylvania communities, along with low voltage and communications wiring for homes and businesses that need more than standard power. Whatever the job, large or small, we're standing by to meet the need.",
+      "Our regular hours are Monday through Friday, 7:00am to 3:30pm, and we offer emergency service outside of that window for problems that can't wait."
+    ],
+    "checklist": [
+      "Residential electrical service & repair",
+      "Commercial & industrial electrical work",
+      "Low voltage & communications wiring",
+      "Emergency service outside normal hours"
+    ],
+    "image": "/img/hero-residential.jpg",
+    "image_alt": "Electrician in a hard hat working on an exterior electrical panel",
+    "image_position": "left",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "testimonials": [],
+  "faqs": [
+    {
+      "q": "Are your electricians licensed?",
+      "a": "Yes. Every electrician on our team is licensed, and trained specifically to look for safety hazards beyond just the job in front of them."
+    },
+    {
+      "q": "Do you offer emergency electrical service?",
+      "a": "Yes. Our standard hours are Monday through Friday, 7:00am to 3:30pm, but emergency service is available outside of that window for problems that can't wait."
+    },
+    {
+      "q": "What areas do you serve?",
+      "a": "We're based in Dupont, PA and serve the greater Northeastern Pennsylvania area, including Pittston, Wilkes-Barre, Scranton, Kingston and Clarks Summit."
+    },
+    {
+      "q": "Do you handle both residential and commercial work?",
+      "a": "Yes. We work on homes, businesses and industrial facilities, plus low voltage and communications wiring for both."
+    },
+    {
+      "q": "What is low voltage or communications wiring?",
+      "a": "It covers wiring for systems that don't run standard household power — things like structured data cabling, security and access control wiring, and other low-voltage systems in a home or building."
+    },
+    {
+      "q": "How do I get an estimate?",
+      "a": "Call 570-472-3300 or send us the details of the job through our website, and we'll get back to you to schedule a look at the work."
+    }
+  ]
+}

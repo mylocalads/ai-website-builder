@@ -1,0 +1,34 @@
+{
+  "sources": {
+    "mode": "library",
+    "library": "default",
+    "urls": []
+  },
+  "palette": {
+    "bg": "#ffffff",
+    "surface": "#f5f7fa",
+    "text": "#0f172a",
+    "muted": "#64748b",
+    "accent": "#2ea3f2",
+    "primary": "#212957",
+    "on_primary": "#ffffff",
+    "on_accent": "#212957",
+    "accent_ink": "#0f6fb8",
+    "accent_on_dark": "#2ea3f2",
+    "_notes": "accent (#2ea3f2), primary/navy (#212957), and the light teal icon accent (#7EBEC5) are the client's own brand colors, detected from adv-elec.net's header/nav CSS (background-color:#212957 on the header bar and menu) and body CSS custom values. accent_ink (#0f6fb8) is a darkened variant of the client accent, derived to clear 4.5:1 text contrast on white/surface — the raw accent only clears 2.75:1 as text. on_accent uses the client's own navy (contrast 5.03:1 on the accent fill) rather than white, since white-on-accent only clears 2.75:1."
+  },
+  "typography": {
+    "display": "Adamina",
+    "body": "Open Sans"
+  },
+  "spacing": ["0.5rem", "1rem", "1.5rem", "2.5rem", "4rem"],
+  "radius": { "sm": "4px", "md": "8px" },
+  "avoid": [
+    "gradient hero",
+    "glass morphism",
+    "bento grid",
+    "purple / indigo / violet accents",
+    "generic stock photography (client's current site uses unmodified Shutterstock slider images with no real jobsite photos)",
+    "placeholder / unfinished inner pages"
+  ]
+}

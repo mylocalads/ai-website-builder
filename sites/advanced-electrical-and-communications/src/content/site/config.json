@@ -1,0 +1,94 @@
+{
+  "kind": "config",
+  "business_name": "Advanced Electrical and Communications, LLC",
+  "tagline": "Dupont, PA Electricians for Homes, Businesses & Low Voltage",
+  "phone": "+15704723300",
+  "phone_display": "570-472-3300",
+  "email": "Jondich@adv-elec.net",
+  "address": {
+    "street": "311 Simpson St.",
+    "city": "Dupont",
+    "state": "PA",
+    "postal": "18641",
+    "country": "US"
+  },
+  "marketing_city": "Dupont",
+  "marketing_state": "PA",
+  "site_url": "https://advanced-electrical-and-communications.vercel.app",
+  "licensed": true,
+  "insured": false,
+  "bonded": false,
+  "social": {},
+  "logo_url": "/img/logo.png",
+  "default_hero_photo": "/img/hero-electrician-panel.jpg",
+  "about_photo": "/img/about-electrician-wiring.jpg",
+  "team_members": [],
+  "reference_urls": [],
+  "section_rhythm": [],
+  "partners": [],
+  "why_choose_us": [
+    {
+      "title": "Licensed Electricians Trained For Home Safety",
+      "description": "Every electrician on our team is licensed and trained specifically to spot the hazards a homeowner or building manager would never notice on their own."
+    },
+    {
+      "title": "Emergency Services Available",
+      "description": "Standard hours are Monday through Friday, 7:00am to 3:30pm — but an electrical emergency doesn't wait for business hours, so we don't either."
+    },
+    {
+      "title": "Serving All Of Northeastern Pennsylvania",
+      "description": "Based in Dupont, we serve homeowners, businesses and contractors across the greater NEPA area — Pittston, Wilkes-Barre, Scranton, Kingston, Clarks Summit and the towns between them."
+    },
+    {
+      "title": "Quick, On-Time Service",
+      "description": "Customers choose us for our knowledge and expertise, but they stay with us for our quick, on-time service and the level of care we bring to every job."
+    }
+  ],
+  "financing": {
+    "enabled": false
+  },
+  "us_vs_them": {
+    "enabled": false,
+    "us_label": "US",
+    "them_label": "THEM",
+    "rows": []
+  },
+  "gallery": [],
+  "compliance": {
+    "ada": true,
+    "gdpr": true,
+    "a2p": true
+  },
+  "crm": {
+    "provider": "ghl"
+  },
+  "code_injection": {
+    "per_page": {}
+  },
+  "services_section": {
+    "eyebrow": "Our Services",
+    "heading_lead": "Electrical Work Done",
+    "heading_rest": "Right, The First Time",
+    "subtitle": "Residential, commercial/industrial and low voltage electrical services for homes and businesses across Northeastern Pennsylvania."
+  },
+  "estimate_form": {
+    "heading": "Get Your Free Estimate",
+    "services": [
+      "Residential Electrical",
+      "Commercial/Industrial Electrical",
+      "Low Voltage & Communications Wiring",
+      "Electrical Emergency",
+      "Something else"
+    ]
+  },
+  "closing_cta": {
+    "headline": "Need An Electrician?",
+    "body": "Call 570-472-3300 or send us the details of the job. We serve Dupont and the greater Northeastern Pennsylvania area, with emergency service available outside our normal Monday–Friday, 7:00am–3:30pm hours.",
+    "cta_text": "Get My Free Estimate",
+    "cta_href": "/book"
+  },
+  "blog_section": {
+    "heading": "Electrical Advice For NEPA Homes & Businesses",
+    "description": "Straight answers about home and commercial electrical work in Northeastern Pennsylvania — panel upgrades, safety inspections, and when to call an electrician instead of waiting."
+  }
+}
