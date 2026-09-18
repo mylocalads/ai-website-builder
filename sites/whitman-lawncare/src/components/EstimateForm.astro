@@ -234,7 +234,14 @@ const SERVICES = [
   .consent input { margin-top: 0.2rem; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
   .consent label { font-weight: 400; font-size: 0.78rem; line-height: 1.5; color: var(--color-muted); }
 
-  .captcha { margin-top: var(--space-1); }
+  /* Turnstile renders a FIXED 300px-wide iframe. Below ~372px of viewport the
+     form is narrower than that, and a fixed width that cannot shrink pins the
+     hero's grid track and overflows the whole page -- the same failure mode as
+     the old `nowrap` trust badges. `overflow-x` gives the widget its own
+     scroll box: it stays whole and clickable, and its width stops being
+     everybody else's problem. Pairs with `.panel { min-width: 0 }` in
+     HeroOwl.astro -- both are needed. */
+  .captcha { margin-top: var(--space-1); max-width: 100%; overflow-x: auto; }
   .captcha-missing { font-size: 0.8rem; color: var(--color-muted); margin: 0; }
   .fallback { margin-top: var(--space-1); }
   .fallback .btn { display: inline-block; text-decoration: none; margin: 0; }

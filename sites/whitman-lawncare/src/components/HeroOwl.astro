@@ -211,7 +211,12 @@ const asideMode = form_embed_url && calendarSnippet
   @media (max-width: 400px) { .btn { padding: 0.85rem 1.15rem; font-size: 1rem; } }
   .btn-block { display: block; text-align: center; }
 
-  .panel { background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); color: var(--color-text); }
+  /* `min-width: 0` for the same reason the badges must be allowed to wrap: a
+     grid item's automatic minimum size is its MIN-CONTENT width, so anything
+     fixed-width inside the panel (the 300px Turnstile iframe) would otherwise
+     pin this track and push the whole page off a phone screen. See the
+     `.captcha` rule in EstimateForm.astro for the other half of this. */
+  .panel { min-width: 0; background: var(--color-surface); border-radius: var(--radius-lg); padding: var(--space-3); box-shadow: 0 18px 42px rgba(15,20,25,0.28); color: var(--color-text); }
   .panel :global(iframe) { border-radius: var(--radius-sm); }
   /* The form brings its own surface and shadow, so the wrapper gets out of the way. */
   .form-panel { padding: 0; background: transparent; box-shadow: none; }
