@@ -180,9 +180,27 @@ const asideMode = form_embed_url && calendarSnippet
   .badge-sub { color: rgba(255,255,255,0.75); font-size: 0.75rem; }
 
   /* Below 560px, shrink the badges so a SHORT pair can share a row.
-     TIGHTEN, NEVER FORBID WRAPPING -- a `nowrap` here pins the list's width,
-     which pins the hero grid track, which overflows the whole page. See
-     astro-templates/owl/src/components/HeroOwl.astro for the full reasoning. */
+     TIGHTEN, NEVER FORBID WRAPPING.
+
+     This block used to add `flex-wrap: nowrap` and `white-space: nowrap`,
+     having measured one pair of labels at 147 + 202 and concluded that every
+     pair would fit. That measured some copy, not all copy.
+
+     Forbidding a wrap does not make text narrower. The list gets stuck at its
+     text width, that pins the hero's grid track, the container grows past the
+     viewport, and THE WHOLE PAGE ends up wider than the phone -- heading
+     clipped, estimate form pushed off the right edge. A trust badge breaks the
+     lead form. On 2026-09-18 six live sites were overflowing by 6 to 250px.
+
+     `min-width: 0` on the li was already here and could not help, because the
+     floor is the text's own minimum width and `white-space: nowrap` is exactly
+     what stops that minimum from being small.
+
+     So the sizes below stay -- they are what lets a short pair share a row --
+     and wrapping stays allowed. `wrap` only breaks a line when it must, so
+     short labels still sit side by side and long ones stack instead of
+     dragging the page off screen. Nothing here has to know how wide the words
+     are. */
   @media (max-width: 560px) {
     .trust-badges { gap: var(--space-2); }
     .trust-badges li { gap: 0.45rem; min-width: 0; }
