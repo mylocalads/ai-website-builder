@@ -5367,3 +5367,64 @@ skill's own rule — the payload's `domain` was `null`, so no custom-domain rewr
 `npm run build` produced 22 static pages + `/book` (SSR) with no `AREA_LIMIT`,
 `SERVICE_LIMIT`, or reserved-slug warnings; `llms.txt`, `robots.txt`, and the sitemap all
 confirmed to reference the final `.vercel.app` URL post-deploy (`dpl_9SxTuG9REdRCX3hSK19oUxiHfLfz`).
+
+---
+
+## Six sites — 2026-09-18 — hero mobile overflow fixed and deployed
+
+Per `docs/HANDOFF-hero-badge-mobile-overflow.md`. No rebuilds, no scrapes, no cost:
+a CSS-only patch to each site's existing source, then a deploy.
+
+**The bug.** `HeroOwl.astro`'s `@media (max-width: 560px)` block set `flex-wrap: nowrap`
+on `.trust-badges` and `white-space: nowrap` on both label lines. Forbidding a wrap does
+not make text narrower — the list got stuck at its text width, which pinned the hero's
+grid track, which widened the container past the viewport. Heading clipped, estimate form
+pushed off the right edge. The block was byte-identical across all six files (md5
+`4f56a14cde565953e18901d8e6d73daa`), so one patch covered them all; each is now
+byte-identical to the template block fixed in `9f53fb5`. The size reductions were kept —
+they are what lets a short pair share a row.
+
+Measured with `documentElement.scrollWidth - clientWidth` at a 375px viewport, on the
+LIVE site after deploy:
+
+| Site | Before | After |
+|---|---:|---:|
+| `royal-roofing-systems` | 250px | 0 |
+| `garp-construction-group` | 118px | 0 |
+| `advanced-electrical-and-communications` | 78px | 0 |
+| `nepa-roofing-pros` | 71px | 0 |
+| `whitman-lawncare` | 21px | 0 |
+| `stubbs-landscaping` | 6px | 0 |
+
+**A second, unrelated cause on `whitman-lawncare`.** With the badge fix in, it still
+measured 21px. Cloudflare Turnstile renders a FIXED 300px-wide iframe, and a grid item's
+automatic minimum size is its min-content width, so that 300px propagated outward
+untouched: captcha 300 + form padding 48 = panel 348, + container padding 48 = 396, minus
+a 375px viewport = 21px. The same failure mode as the badges, from a different fixed
+width. Fixed with two rules that are both required — `.panel { min-width: 0 }` in
+`HeroOwl.astro` lets the track shrink, `.captcha { overflow-x: auto }` in
+`EstimateForm.astro` gives the widget its own scroll box so it stays whole and clickable.
+Applied to `astro-templates/owl` as well: whitman is the only one of the 37 live sites
+built since the Turnstile widget was added to `EstimateForm`, so every FUTURE site would
+otherwise have shipped this.
+
+**Deploy.** Five of the six Vercel projects are git-connected (root `sites/{slug}`, branch
+`master`), so the push was the deploy. `advanced-electrical-and-communications` is NOT
+connected — it still deploys as a CLI folder upload — so it went out through
+`./scripts/deploy-site.sh`, after confirming git was newer than production (commit 18:22,
+last deploy 18:17) and that the live HTML matched the local build byte for byte. Connecting
+it is still open; see below.
+
+**Trap worth remembering: two commits in one push skips deploys.** Vercel's Ignored Build
+Step is `git diff --quiet HEAD^ HEAD ./`, which compares only the pushed TIP commit against
+its parent. The badge fix (`0a5db9f`) and the captcha fix (`e34c095`) were pushed together,
+so Vercel evaluated `e34c095` alone — that touched only whitman and the template, and the
+other four sites were CANCELED with their fix sitting unbuilt in git. Cleared with a third
+commit (`b5b6739`) touching all six folders. Either push each site-touching commit
+separately, or finish with one commit that spans every folder you need built.
+
+**Found, NOT fixed** (pre-existing, unrelated to this change): `royal-roofing-systems`,
+`whitman-lawncare` and `stubbs-landscaping` have no `src/pages/llms.txt.js` and no
+`src/lib/agent-docs.js`, so `/llms.txt` and `/index.md` 404 on all three. They predate the
+agent-docs generator. The other three serve both (HTTP 200). `robots.txt` and
+`sitemap-index.xml` are 200 on all six, and `LocalBusiness` JSON-LD is present on all six.
